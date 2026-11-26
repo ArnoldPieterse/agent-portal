@@ -1,10 +1,10 @@
 {
  "ok": true,
- "generated": "2026-11-26 22:08:44",
+ "generated": "2026-11-26 23:09:11",
  "fleet": {
-  "done": 55,
+  "done": 70,
   "total": 111,
-  "pct": 49.5
+  "pct": 63.1
  },
  "throughput_goals_per_hour": 12.96,
  "next10": [
@@ -14,7 +14,7 @@
    "type": "ops",
    "complexity": 1,
    "p_reached": 0.758,
-   "eta": "2026-11-26 23:55",
+   "eta": "2026-11-27 00:56",
    "hours": 1.78,
    "order": 0,
    "rank": 1,
@@ -24,58 +24,12 @@
     "execute from non-sandbox session",
     "verify registration/health + evidence leaf"
    ],
-   "outcome": "reached ~2026-11-26 23:55 (P=76%)",
+   "outcome": "reached ~2026-11-27 00:56 (P=76%)",
    "consequences": [
-    "verifier: **Chaos-recovery verification** - periodically kill a model  (2026-11-27 03:17) - shared scope model,recovery",
-    "archivist: **Decision Quality Longitudinal Analysis** - 6-cycle trend o (2026-11-27 04:23) - shared scope detection,output",
-    "orchestrator: **Human-Ratification Minimizer** - `python memory/orchestrat (2026-11-27 04:26) - shared scope human,touch",
-    "lane end outlet: 11-28 12:27 (slowest lane)"
-   ]
-  },
-  {
-   "agent": "forge",
-   "goal": "**Dispatch-Correctness Deploy Gate** - extend the canary pipeline: before promoting any change that touches dispatch logic, run dispatch_audit on synthetic+historical data; BLOCK promotion if conformance<100%. Verified: ",
-   "type": "ops",
-   "complexity": 2,
-   "p_reached": 0.463,
-   "eta": "2026-11-27 00:40",
-   "hours": 2.52,
-   "order": 0,
-   "rank": 2,
-   "title": "Dispatch-Correctness Deploy Gate",
-   "steps": [
-    "pre-flight checks (targets exist, idempotent)",
-    "execute from non-sandbox session",
-    "verify registration/health + evidence leaf"
-   ],
-   "outcome": "reached ~2026-11-27 00:40 (P=46%)",
-   "consequences": [
-    "orchestrator: **Human-Ratification Minimizer** - `python memory/orchestrat (2026-11-27 04:26) - shared scope audit,touches",
-    "verifier: **Canary gate verification** - before Forge promotes a canar (2026-11-27 17:16) - shared scope before,canary,promotion",
-    "forge: **Forecast-Calibration Backtest Harness** - `python memory/f (2026-11-27 20:06) - shared scope dispatch,historical",
-    "lane end outlet: 11-28 12:27 (slowest lane)"
-   ]
-  },
-  {
-   "agent": "builder",
-   "goal": "**Model-Swap Convergence Guard** - `python memory/builder/swap_guard.py`: wrap model_swap.py with a convergence-aware pre-flight \u2014 block any swap whose target seat has an in-flight goal that downtime would orphan, check ",
-   "type": "verify",
-   "complexity": 2,
-   "p_reached": 0.515,
-   "eta": "2026-11-27 00:43",
-   "hours": 2.58,
-   "order": 0,
-   "rank": 3,
-   "title": "Model-Swap Convergence Guard",
-   "steps": [
-    "build the test battery / audit script",
-    "run against live sources",
-    "record verdict + evidence leaf"
-   ],
-   "outcome": "reached ~2026-11-27 00:43 (P=52%)",
-   "consequences": [
-    "orchestrator: **Convergence-Aware Seat Sizing** - `python memory/orchestra (2026-11-27 09:08) - shared scope aware,convergence",
-    "lane end outlet: 11-28 12:27 (slowest lane)"
+    "archivist: **Autonomy Progression Model** - model how each agent's auto (2026-11-27 03:51) - shared scope model,output",
+    "verifier: **Chaos-recovery verification** - periodically kill a model  (2026-11-27 04:18) - shared scope model,recovery",
+    "outlet: **Trend-to-draft pipeline** - Researcher briefs auto-generat (2026-11-27 11:11) - shared scope human,output",
+    "lane end outlet: 11-28 13:27 (slowest lane)"
    ]
   },
   {
@@ -84,22 +38,21 @@
    "type": "verify",
    "complexity": 2,
    "p_reached": 0.515,
-   "eta": "2026-11-27 00:43",
+   "eta": "2026-11-27 01:43",
    "hours": 2.58,
    "order": 0,
-   "rank": 4,
+   "rank": 2,
    "title": "Auto-trigger regression battery",
    "steps": [
     "build the test battery / audit script",
     "run against live sources",
     "record verdict + evidence leaf"
    ],
-   "outcome": "reached ~2026-11-27 00:43 (P=52%)",
+   "outcome": "reached ~2026-11-27 01:43 (P=52%)",
    "consequences": [
-    "designer: **Regression Alert Banner** - red slide-in when autonomy sco (2026-11-27 01:23) - shared scope regression,trigger",
-    "orchestrator: **Human-Ratification Minimizer** - `python memory/orchestrat (2026-11-27 04:26) - shared scope human,trigger",
-    "outlet: **Hard verification gate** - `queue_check.py` blocks unverif (2026-11-27 14:40) - shared scope human,without",
-    "lane end outlet: 11-28 12:27 (slowest lane)"
+    "designer: **Regression Alert Banner** - red slide-in when autonomy sco (2026-11-27 02:24) - shared scope regression,trigger",
+    "outlet: **Hard verification gate** - `queue_check.py` blocks unverif (2026-11-27 15:41) - shared scope human,without",
+    "lane end outlet: 11-28 13:27 (slowest lane)"
    ]
   },
   {
@@ -108,46 +61,22 @@
    "type": "measurement",
    "complexity": 2,
    "p_reached": 0.046,
-   "eta": "2026-11-27 01:23",
+   "eta": "2026-11-27 02:24",
    "hours": 3.25,
    "order": 0,
-   "rank": 5,
+   "rank": 3,
    "title": "Regression Alert Banner",
    "steps": [
     "instrument or extend the scorer",
     "two-run delta check",
     "publish snapshot + report leaf"
    ],
-   "outcome": "reached ~2026-11-27 01:23 (P=5%)",
+   "outcome": "reached ~2026-11-27 02:24 (P=5%)",
    "consequences": [
-    "verifier: **Auto-trigger regression battery** - hook into commit event (2026-11-27 00:43) - shared scope regression,trigger",
-    "orchestrator: **Convergence Regression Sentinel** - `python memory/orchest (2026-11-27 01:44) - shared scope autonomy,regression,score",
-    "scribe: **Convergence Exit-Trigger Monitor** - `python memory/scribe (2026-11-27 02:00) - shared scope autonomy,score,trigger",
-    "lane end outlet: 11-28 12:27 (slowest lane)"
-   ]
-  },
-  {
-   "agent": "orchestrator",
-   "goal": "**Convergence Regression Sentinel** - `python memory/orchestrator/convergence_sentinel.py`: watch autonomy-score.json across cycles; on DROP > threshold from last cycle (regression, not mere deceleration) AUTO-OPEN a rem",
-   "type": "measurement",
-   "complexity": 2,
-   "p_reached": 0.325,
-   "eta": "2026-11-27 01:44",
-   "hours": 3.59,
-   "order": 0,
-   "rank": 6,
-   "title": "Convergence Regression Sentinel",
-   "steps": [
-    "instrument or extend the scorer",
-    "two-run delta check",
-    "publish snapshot + report leaf"
-   ],
-   "outcome": "reached ~2026-11-27 01:44 (P=32%)",
-   "consequences": [
-    "designer: **Regression Alert Banner** - red slide-in when autonomy sco (2026-11-27 01:23) - shared scope autonomy,regression,score",
-    "scribe: **Convergence Exit-Trigger Monitor** - `python memory/scribe (2026-11-27 02:00) - shared scope autonomy,convergence,score",
-    "archivist: **Decision Quality Longitudinal Analysis** - 6-cycle trend o (2026-11-27 04:23) - shared scope cycle,regression",
-    "lane end outlet: 11-28 12:27 (slowest lane)"
+    "verifier: **Auto-trigger regression battery** - hook into commit event (2026-11-27 01:43) - shared scope regression,trigger",
+    "scribe: **Convergence Exit-Trigger Monitor** - `python memory/scribe (2026-11-27 03:00) - shared scope autonomy,score,trigger",
+    "mechanic: **Fleet Health Heartbeat Consolidation (single JSON, 4 seats (2026-11-27 04:23) - shared scope autonomy,score",
+    "lane end outlet: 11-28 13:27 (slowest lane)"
    ]
   },
   {
@@ -156,22 +85,47 @@
    "type": "measurement",
    "complexity": 2,
    "p_reached": 0.515,
-   "eta": "2026-11-27 02:00",
+   "eta": "2026-11-27 03:00",
    "hours": 3.86,
    "order": 0,
-   "rank": 7,
+   "rank": 4,
    "title": "Convergence Exit-Trigger Monitor",
    "steps": [
     "instrument or extend the scorer",
     "two-run delta check",
     "publish snapshot + report leaf"
    ],
-   "outcome": "reached ~2026-11-27 02:00 (P=52%)",
+   "outcome": "reached ~2026-11-27 03:00 (P=52%)",
    "consequences": [
-    "designer: **Regression Alert Banner** - red slide-in when autonomy sco (2026-11-27 01:23) - shared scope autonomy,score,trigger",
-    "orchestrator: **Convergence Regression Sentinel** - `python memory/orchest (2026-11-27 01:44) - shared scope autonomy,convergence,score",
-    "scribe: **Decision Replay & Counterfactual Log** - `python memory/sc (2026-11-27 05:52) - shared scope autonomy,score,scribe",
-    "lane end outlet: 11-28 12:27 (slowest lane)"
+    "designer: **Regression Alert Banner** - red slide-in when autonomy sco (2026-11-27 02:24) - shared scope autonomy,score,trigger",
+    "archivist: **Autonomy Progression Model** - model how each agent's auto (2026-11-27 03:51) - shared scope autonomy,which",
+    "mechanic: **Fleet Health Heartbeat Consolidation (single JSON, 4 seats (2026-11-27 04:23) - shared scope autonomy,score",
+    "lane end outlet: 11-28 13:27 (slowest lane)"
+   ]
+  },
+  {
+   "agent": "forge",
+   "goal": "**Autonomous Chair Idempotency Test** - `python memory/forge/chair_idempotency.py`: run auto_chair twice on the same closed cycle; assert no double-archive, no duplicate goals, ledger unchanged. Verified: a 2nd run produ",
+   "type": "build",
+   "complexity": 2,
+   "p_reached": 0.158,
+   "eta": "2026-11-27 03:39",
+   "hours": 4.5,
+   "order": 0,
+   "rank": 5,
+   "title": "Autonomous Chair Idempotency Test",
+   "steps": [
+    "scaffold the module file",
+    "implement core logic",
+    "self-test until AC green",
+    "evidence leaf + index line (AC: a 2nd run produ)"
+   ],
+   "outcome": "reached ~2026-11-27 03:39 (P=16%)",
+   "consequences": [
+    "outlet: **Milestone auto-detection** - parse goal_ledger state chang (2026-11-27 08:09) - shared scope cycle,ledger",
+    "verifier: **Cross-lane contract tests** - define 5 inter-agent API con (2026-11-27 08:51) - shared scope assert,cycle,ledger",
+    "forge: **Forecast-Calibration Backtest Harness** - `python memory/f (2026-11-27 10:40) - shared scope assert,cycle,forge",
+    "lane end outlet: 11-28 13:27 (slowest lane)"
    ]
   },
   {
@@ -180,10 +134,10 @@
    "type": "build",
    "complexity": 2,
    "p_reached": 0.158,
-   "eta": "2026-11-27 02:38",
+   "eta": "2026-11-27 03:39",
    "hours": 4.5,
    "order": 0,
-   "rank": 8,
+   "rank": 6,
    "title": "First live account connection + end-to-end ship",
    "steps": [
     "scaffold the module file",
@@ -191,37 +145,60 @@
     "self-test until AC green",
     "evidence leaf + index line (AC: one post shipped on a real platform with zero manual edits after staging; tim)"
    ],
-   "outcome": "reached ~2026-11-27 02:38 (P=16%)",
+   "outcome": "reached ~2026-11-27 03:39 (P=16%)",
    "consequences": [
-    "outlet: **Milestone auto-detection** - parse goal_ledger state chang (2026-11-27 07:09) - shared scope cycle,draft",
-    "archivist: **Onboarding Pack Generator** - auto-generate a new-agent on (2026-11-27 10:06) - shared scope cycle,first",
-    "outlet: **Per-platform voice variants + lint** - X (\u2264280 chars, punc (2026-11-27 18:05) - shared scope draft,platform",
-    "lane end outlet: 11-28 12:27 (slowest lane)"
+    "outlet: **Milestone auto-detection** - parse goal_ledger state chang (2026-11-27 08:09) - shared scope cycle,draft",
+    "outlet: **Per-platform voice variants + lint** - X (\u2264280 chars, punc (2026-11-27 19:06) - shared scope draft,platform",
+    "forge: **Full Convergence-Loop E2E Drill** - `python memory/forge/c (2026-11-27 21:03) - shared scope autonomously,cycle,draft",
+    "lane end outlet: 11-28 13:27 (slowest lane)"
    ]
   },
   {
    "agent": "pixel",
-   "goal": "**Per-host 24h health sparkline** - Compact reduced-motion-safe trend per host card in `ui/fleet_health.js`. Verified: renders per host from existing health samples; explicit empty state when no samples; scales without c",
+   "goal": "**Close the live CDP screenshot leg (goal #5 carry-over)** - Run the deferred @375/768 live screenshots on a non-sandbox seat and archive under `memory/pixel/`. Verified: 2 screenshots archived; no horizontal overflow; a",
    "type": "build",
    "complexity": 2,
    "p_reached": 0.158,
-   "eta": "2026-11-27 02:38",
+   "eta": "2026-11-27 03:39",
    "hours": 4.5,
    "order": 0,
-   "rank": 9,
-   "title": "Per-host 24h health sparkline",
+   "rank": 7,
+   "title": "Close the live CDP screenshot leg (goal #5 carry-over)",
    "steps": [
     "scaffold the module file",
     "implement core logic",
     "self-test until AC green",
-    "evidence leaf + index line (AC: renders per host from existing health samples; explicit empty state when no samples; scale)"
+    "evidence leaf + index line (AC: 2 screenshots archived; no horizontal overflow; a)"
    ],
-   "outcome": "reached ~2026-11-27 02:38 (P=16%)",
+   "outcome": "reached ~2026-11-27 03:39 (P=16%)",
    "consequences": [
-    "designer: **Goal Pipeline Flow** - Proposed\u2192Active\u2192Verified\u2192Closed wit (2026-11-27 12:16) - shared scope renders,state",
-    "outlet: **Hard verification gate** - `queue_check.py` blocks unverif (2026-11-27 14:40) - shared scope state,without",
-    "designer: **Convergence Velocity Indicator** - 120\u00d732 sparkline + dire (2026-11-27 16:36) - shared scope motion,reduced,sparkline",
-    "lane end outlet: 11-28 12:27 (slowest lane)"
+    "forge: **Full Convergence-Loop E2E Drill** - `python memory/forge/c (2026-11-27 21:03) - shared scope archive,close",
+    "lane end outlet: 11-28 13:27 (slowest lane)"
+   ]
+  },
+  {
+   "agent": "archivist",
+   "goal": "**Autonomy Progression Model** - model how each agent's autonomy has grown (interventions per cycle, escalation rate, self-correction rate). Predict which agents will reach full autonomy next and when. Output: memory/arc",
+   "type": "build",
+   "complexity": 2,
+   "p_reached": 0.278,
+   "eta": "2026-11-27 03:51",
+   "hours": 4.7,
+   "order": 0,
+   "rank": 8,
+   "title": "Autonomy Progression Model",
+   "steps": [
+    "scaffold the module file",
+    "implement core logic",
+    "self-test until AC green",
+    "write evidence leaf + index line"
+   ],
+   "outcome": "reached ~2026-11-27 03:51 (P=28%)",
+   "consequences": [
+    "mechanic: **Autonomous OOM Recovery Loop (<60s MTTR, unattended)** - o (2026-11-27 00:56) - shared scope model,output",
+    "scribe: **Convergence Exit-Trigger Monitor** - `python memory/scribe (2026-11-27 03:00) - shared scope autonomy,which",
+    "designer: **Cross-Lane Assist Graph** - SVG graph of who helped whom t (2026-11-27 06:43) - shared scope agents,cycle",
+    "lane end outlet: 11-28 13:27 (slowest lane)"
    ]
   },
   {
@@ -230,20 +207,44 @@
    "type": "ops",
    "complexity": 2,
    "p_reached": 0.515,
-   "eta": "2026-11-27 03:17",
+   "eta": "2026-11-27 04:18",
    "hours": 2.58,
    "order": 1,
-   "rank": 10,
+   "rank": 9,
    "title": "Chaos-recovery verification",
    "steps": [
     "pre-flight checks (targets exist, idempotent)",
     "execute from non-sandbox session",
     "verify registration/health + evidence leaf"
    ],
-   "outcome": "reached ~2026-11-27 03:17 (P=52%)",
+   "outcome": "reached ~2026-11-27 04:18 (P=52%)",
    "consequences": [
-    "mechanic: **Autonomous OOM Recovery Loop (<60s MTTR, unattended)** - o (2026-11-26 23:55) - shared scope model,recovery",
-    "lane end outlet: 11-28 12:27 (slowest lane)"
+    "mechanic: **Autonomous OOM Recovery Loop (<60s MTTR, unattended)** - o (2026-11-27 00:56) - shared scope model,recovery",
+    "lane end outlet: 11-28 13:27 (slowest lane)"
+   ]
+  },
+  {
+   "agent": "mechanic",
+   "goal": "**Fleet Health Heartbeat Consolidation (single JSON, 4 seats)** - merge seat-matrix.json, autonomy-score.json, recovery-sla-summary.json into one unified heartbeat: memory/ops/fleet-heartbeat.json updated every probe cyc",
+   "type": "measurement",
+   "complexity": 2,
+   "p_reached": 0.224,
+   "eta": "2026-11-27 04:23",
+   "hours": 3.46,
+   "order": 1,
+   "rank": 10,
+   "title": "Fleet Health Heartbeat Consolidation (single JSON, 4 seats)",
+   "steps": [
+    "instrument or extend the scorer",
+    "two-run delta check",
+    "publish snapshot + report leaf"
+   ],
+   "outcome": "reached ~2026-11-27 04:23 (P=22%)",
+   "consequences": [
+    "designer: **Regression Alert Banner** - red slide-in when autonomy sco (2026-11-27 02:24) - shared scope autonomy,score",
+    "scribe: **Convergence Exit-Trigger Monitor** - `python memory/scribe (2026-11-27 03:00) - shared scope autonomy,score",
+    "designer: **Fleet Health Composite Gauge** - single 0-100 number blend (2026-11-27 08:58) - shared scope health,recovery,single",
+    "lane end outlet: 11-28 13:27 (slowest lane)"
    ]
   }
  ],
@@ -251,45 +252,45 @@
   {
    "label": "30m",
    "hours": 0.5,
-   "end": "2026-11-26 22:38",
+   "end": "2026-11-26 23:39",
    "completes": 0,
-   "fleet_pct": 49.5,
+   "fleet_pct": 63.1,
    "top": []
   },
   {
    "label": "1h",
    "hours": 1.0,
-   "end": "2026-11-26 23:08",
+   "end": "2026-11-27 00:09",
    "completes": 0,
-   "fleet_pct": 49.5,
+   "fleet_pct": 63.1,
    "top": []
   },
   {
    "label": "1d",
    "hours": 24.0,
-   "end": "2026-11-27 22:08",
-   "completes": 47,
-   "fleet_pct": 91.9,
+   "end": "2026-11-27 23:09",
+   "completes": 35,
+   "fleet_pct": 94.6,
    "top": [
-    "#1 mechanic: Autonomous OOM Recovery Loop (<60s MTTR, unattended) (2026-11-26 23:55)",
-    "#2 forge: Dispatch-Correctness Deploy Gate (2026-11-27 00:40)",
-    "#3 builder: Model-Swap Convergence Guard (2026-11-27 00:43)",
-    "#4 verifier: Auto-trigger regression battery (2026-11-27 00:43)",
-    "#5 designer: Regression Alert Banner (2026-11-27 01:23)"
+    "#1 mechanic: Autonomous OOM Recovery Loop (<60s MTTR, unattended) (2026-11-27 00:56)",
+    "#2 verifier: Auto-trigger regression battery (2026-11-27 01:43)",
+    "#3 designer: Regression Alert Banner (2026-11-27 02:24)",
+    "#4 scribe: Convergence Exit-Trigger Monitor (2026-11-27 03:00)",
+    "#5 forge: Autonomous Chair Idempotency Test (2026-11-27 03:39)"
    ]
   },
   {
    "label": "1w",
    "hours": 168.0,
-   "end": "2026-12-03 22:08",
-   "completes": 56,
+   "end": "2026-12-03 23:09",
+   "completes": 41,
    "fleet_pct": 100.0,
    "top": [
-    "#1 mechanic: Autonomous OOM Recovery Loop (<60s MTTR, unattended) (2026-11-26 23:55)",
-    "#2 forge: Dispatch-Correctness Deploy Gate (2026-11-27 00:40)",
-    "#3 builder: Model-Swap Convergence Guard (2026-11-27 00:43)",
-    "#4 verifier: Auto-trigger regression battery (2026-11-27 00:43)",
-    "#5 designer: Regression Alert Banner (2026-11-27 01:23)"
+    "#1 mechanic: Autonomous OOM Recovery Loop (<60s MTTR, unattended) (2026-11-27 00:56)",
+    "#2 verifier: Auto-trigger regression battery (2026-11-27 01:43)",
+    "#3 designer: Regression Alert Banner (2026-11-27 02:24)",
+    "#4 scribe: Convergence Exit-Trigger Monitor (2026-11-27 03:00)",
+    "#5 forge: Autonomous Chair Idempotency Test (2026-11-27 03:39)"
    ],
    "next_cycle_candidates": [
     {
@@ -345,15 +346,15 @@
   {
    "label": "1m",
    "hours": 720.0,
-   "end": "2026-12-26 22:08",
-   "completes": 56,
+   "end": "2026-12-26 23:09",
+   "completes": 41,
    "fleet_pct": 100.0,
    "top": [
-    "#1 mechanic: Autonomous OOM Recovery Loop (<60s MTTR, unattended) (2026-11-26 23:55)",
-    "#2 forge: Dispatch-Correctness Deploy Gate (2026-11-27 00:40)",
-    "#3 builder: Model-Swap Convergence Guard (2026-11-27 00:43)",
-    "#4 verifier: Auto-trigger regression battery (2026-11-27 00:43)",
-    "#5 designer: Regression Alert Banner (2026-11-27 01:23)"
+    "#1 mechanic: Autonomous OOM Recovery Loop (<60s MTTR, unattended) (2026-11-27 00:56)",
+    "#2 verifier: Auto-trigger regression battery (2026-11-27 01:43)",
+    "#3 designer: Regression Alert Banner (2026-11-27 02:24)",
+    "#4 scribe: Convergence Exit-Trigger Monitor (2026-11-27 03:00)",
+    "#5 forge: Autonomous Chair Idempotency Test (2026-11-27 03:39)"
    ],
    "next_cycle_candidates": [
     {
@@ -409,65 +410,65 @@
  ],
  "lanes": {
   "archivist": {
-   "done": 4,
-   "total": 10,
-   "end": "2026-11-27 23:45"
-  },
-  "builder": {
    "done": 9,
    "total": 10,
-   "end": "2026-11-27 00:43"
+   "end": "2026-11-27 03:51"
+  },
+  "builder": {
+   "done": 10,
+   "total": 10,
+   "end": "2026-11-26 23:09"
   },
   "designer": {
    "done": 3,
    "total": 10,
-   "end": "2026-11-28 02:23"
+   "end": "2026-11-28 03:23"
   },
   "forge": {
-   "done": 2,
+   "done": 5,
    "total": 10,
-   "end": "2026-11-28 06:29"
+   "end": "2026-11-27 21:03"
   },
   "mechanic": {
-   "done": 4,
+   "done": 2,
    "total": 10,
-   "end": "2026-11-27 17:25"
+   "end": "2026-11-28 00:28"
   },
   "orchestrator": {
-   "done": 6,
+   "done": 10,
    "total": 10,
-   "end": "2026-11-27 12:44"
+   "end": "2026-11-26 23:09"
   },
   "outlet": {
    "done": 0,
    "total": 10,
-   "end": "2026-11-28 12:27"
+   "end": "2026-11-28 13:27"
   },
   "pixel": {
-   "done": 4,
+   "done": 7,
    "total": 10,
-   "end": "2026-11-27 23:11"
+   "end": "2026-11-27 12:39"
   },
   "researcher": {
    "done": 11,
    "total": 11,
-   "end": "2026-11-26 22:08"
+   "end": "2026-11-26 23:09"
   },
   "scribe": {
-   "done": 8,
+   "done": 9,
    "total": 10,
-   "end": "2026-11-27 05:52"
+   "end": "2026-11-27 03:00"
   },
   "verifier": {
    "done": 4,
    "total": 10,
-   "end": "2026-11-27 17:16"
+   "end": "2026-11-27 18:16"
   }
  },
- "level_up_eta": "2026-11-28 12:27",
+ "level_up_eta": "2026-11-28 13:27",
  "plan": {
   "cycle_state": "in flight: 10 goal(s) open",
-  "level_up_eta": "2026-11-28 12:27",
+  "level_up_eta": "2026-11-28 13:27",
   "planned": [
    {
     "agent": "mechanic",
@@ -475,7 +476,7 @@
     "type": "ops",
     "complexity": 1,
     "p_reached": 0.758,
-    "eta": "2026-11-26 23:55",
+    "eta": "2026-11-27 00:56",
     "hours": 1.78,
     "order": 0,
     "rank": 1,
@@ -485,83 +486,21 @@
      "execute from non-sandbox session",
      "verify registration/health + evidence leaf"
     ],
-    "outcome": "reached ~2026-11-26 23:55 (P~76%)",
+    "outcome": "reached ~2026-11-27 00:56 (P~76%)",
     "consequences": [
-     "verifier: **Chaos-recovery verification** - periodically kill a model  (2026-11-27 03:17) - shared scope model,recovery",
-     "archivist: **Decision Quality Longitudinal Analysis** - 6-cycle trend o (2026-11-27 04:23) - shared scope detection,output",
-     "orchestrator: **Human-Ratification Minimizer** - `python memory/orchestrat (2026-11-27 04:26) - shared scope human,touch",
-     "lane end outlet: 11-28 12:27 (slowest lane)"
+     "archivist: **Autonomy Progression Model** - model how each agent's auto (2026-11-27 03:51) - shared scope model,output",
+     "verifier: **Chaos-recovery verification** - periodically kill a model  (2026-11-27 04:18) - shared scope model,recovery",
+     "outlet: **Trend-to-draft pipeline** - Researcher briefs auto-generat (2026-11-27 11:11) - shared scope human,output",
+     "lane end outlet: 11-28 13:27 (slowest lane)"
     ],
     "projected": false,
-    "why": "planned as ops work (cx1); already open on the mechanic lane - FIFO order keeps evidence leaves consistent; moderate confidence (P(reached) ~76%): slip model flags some risk, ETA already inflated; lane mechanic has 4/10 done; this goal ends its lane at 2026-11-26 23:55",
+    "why": "planned as ops work (cx1); already open on the mechanic lane - FIFO order keeps evidence leaves consistent; moderate confidence (P(reached) ~76%): slip model flags some risk, ETA already inflated; lane mechanic has 2/10 done; this goal ends its lane at 2026-11-27 00:56",
     "deliverable": {
      "name": "Autonomous OOM Recovery Loop (<60s MTTR, unattended)",
      "stream": "General"
     },
-    "then": "lane clear - level-up gate re-check (2026-11-28 12:27)",
-    "then_eta": "2026-11-28 12:27"
-   },
-   {
-    "agent": "forge",
-    "goal": "**Dispatch-Correctness Deploy Gate** - extend the canary pipeline: before promoting any change that touches dispatch logic, run dispatch_audit on synthetic+historical data; BLOCK promotion if conformance<100%. Verified: ",
-    "type": "ops",
-    "complexity": 2,
-    "p_reached": 0.463,
-    "eta": "2026-11-27 00:40",
-    "hours": 2.52,
-    "order": 0,
-    "rank": 2,
-    "title": "Dispatch-Correctness Deploy Gate",
-    "steps": [
-     "pre-flight checks (targets exist, idempotent)",
-     "execute from non-sandbox session",
-     "verify registration/health + evidence leaf"
-    ],
-    "outcome": "reached ~2026-11-27 00:40 (P~46%)",
-    "consequences": [
-     "orchestrator: **Human-Ratification Minimizer** - `python memory/orchestrat (2026-11-27 04:26) - shared scope audit,touches",
-     "verifier: **Canary gate verification** - before Forge promotes a canar (2026-11-27 17:16) - shared scope before,canary,promotion",
-     "forge: **Forecast-Calibration Backtest Harness** - `python memory/f (2026-11-27 20:06) - shared scope dispatch,historical",
-     "lane end outlet: 11-28 12:27 (slowest lane)"
-    ],
-    "projected": false,
-    "why": "planned as ops work (cx2); already open on the forge lane - FIFO order keeps evidence leaves consistent; lower confidence (P(reached) ~46%): kept in plan because its scope gates later work; lane forge has 2/10 done; this goal ends its lane at 2026-11-27 00:40",
-    "deliverable": {
-     "name": "Dispatch-Correctness Deploy Gate",
-     "stream": "General"
-    },
-    "then": "lane clear - level-up gate re-check (2026-11-28 12:27)",
-    "then_eta": "2026-11-28 12:27"
-   },
-   {
-    "agent": "builder",
-    "goal": "**Model-Swap Convergence Guard** - `python memory/builder/swap_guard.py`: wrap model_swap.py with a convergence-aware pre-flight \u2014 block any swap whose target seat has an in-flight goal that downtime would orphan, check ",
-    "type": "verify",
-    "complexity": 2,
-    "p_reached": 0.515,
-    "eta": "2026-11-27 00:43",
-    "hours": 2.58,
-    "order": 0,
-    "rank": 3,
-    "title": "Model-Swap Convergence Guard",
-    "steps": [
-     "build the test battery / audit script",
-     "run against live sources",
-     "record verdict + evidence leaf"
-    ],
-    "outcome": "reached ~2026-11-27 00:43 (P~52%)",
-    "consequences": [
-     "orchestrator: **Convergence-Aware Seat Sizing** - `python memory/orchestra (2026-11-27 09:08) - shared scope aware,convergence",
-     "lane end outlet: 11-28 12:27 (slowest lane)"
-    ],
-    "projected": false,
-    "why": "planned as verify work (cx2); already open on the builder lane - FIFO order keeps evidence leaves consistent; lower confidence (P(reached) ~52%): kept in plan because its scope gates later work; lane builder has 9/10 done; this goal ends its lane at 2026-11-27 00:43",
-    "deliverable": {
-     "name": "Model-Swap Convergence Guard",
-     "stream": "General"
-    },
-    "then": "lane clear - level-up gate re-check (2026-11-28 12:27)",
-    "then_eta": "2026-11-28 12:27"
+    "then": "#10 [mechanic] Fleet Health Heartbeat Consolidation (single JSON, 4 seats)",
+    "then_eta": "2026-11-27 04:23"
    },
    {
     "agent": "verifier",
@@ -569,31 +508,30 @@
     "type": "verify",
     "complexity": 2,
     "p_reached": 0.515,
-    "eta": "2026-11-27 00:43",
+    "eta": "2026-11-27 01:43",
     "hours": 2.58,
     "order": 0,
-    "rank": 4,
+    "rank": 2,
     "title": "Auto-trigger regression battery",
     "steps": [
      "build the test battery / audit script",
      "run against live sources",
      "record verdict + evidence leaf"
     ],
-    "outcome": "reached ~2026-11-27 00:43 (P~52%)",
+    "outcome": "reached ~2026-11-27 01:43 (P~52%)",
     "consequences": [
-     "designer: **Regression Alert Banner** - red slide-in when autonomy sco (2026-11-27 01:23) - shared scope regression,trigger",
-     "orchestrator: **Human-Ratification Minimizer** - `python memory/orchestrat (2026-11-27 04:26) - shared scope human,trigger",
-     "outlet: **Hard verification gate** - `queue_check.py` blocks unverif (2026-11-27 14:40) - shared scope human,without",
-     "lane end outlet: 11-28 12:27 (slowest lane)"
+     "designer: **Regression Alert Banner** - red slide-in when autonomy sco (2026-11-27 02:24) - shared scope regression,trigger",
+     "outlet: **Hard verification gate** - `queue_check.py` blocks unverif (2026-11-27 15:41) - shared scope human,without",
+     "lane end outlet: 11-28 13:27 (slowest lane)"
     ],
     "projected": false,
-    "why": "planned as verify work (cx2); already open on the verifier lane - FIFO order keeps evidence leaves consistent; lower confidence (P(reached) ~52%): kept in plan because its scope gates later work; lane verifier has 4/10 done; this goal ends its lane at 2026-11-27 00:43",
+    "why": "planned as verify work (cx2); already open on the verifier lane - FIFO order keeps evidence leaves consistent; lower confidence (P(reached) ~52%): kept in plan because its scope gates later work; lane verifier has 4/10 done; this goal ends its lane at 2026-11-27 01:43",
     "deliverable": {
      "name": "Auto-trigger regression battery",
      "stream": "General"
     },
-    "then": "#10 [verifier] Chaos-recovery verification",
-    "then_eta": "2026-11-27 03:17"
+    "then": "#9 [verifier] Chaos-recovery verification",
+    "then_eta": "2026-11-27 04:18"
    },
    {
     "agent": "designer",
@@ -601,63 +539,31 @@
     "type": "measurement",
     "complexity": 2,
     "p_reached": 0.046,
-    "eta": "2026-11-27 01:23",
+    "eta": "2026-11-27 02:24",
     "hours": 3.25,
     "order": 0,
-    "rank": 5,
+    "rank": 3,
     "title": "Regression Alert Banner",
     "steps": [
      "instrument or extend the scorer",
      "two-run delta check",
      "publish snapshot + report leaf"
     ],
-    "outcome": "reached ~2026-11-27 01:23 (P~5%)",
+    "outcome": "reached ~2026-11-27 02:24 (P~5%)",
     "consequences": [
-     "verifier: **Auto-trigger regression battery** - hook into commit event (2026-11-27 00:43) - shared scope regression,trigger",
-     "orchestrator: **Convergence Regression Sentinel** - `python memory/orchest (2026-11-27 01:44) - shared scope autonomy,regression,score",
-     "scribe: **Convergence Exit-Trigger Monitor** - `python memory/scribe (2026-11-27 02:00) - shared scope autonomy,score,trigger",
-     "lane end outlet: 11-28 12:27 (slowest lane)"
+     "verifier: **Auto-trigger regression battery** - hook into commit event (2026-11-27 01:43) - shared scope regression,trigger",
+     "scribe: **Convergence Exit-Trigger Monitor** - `python memory/scribe (2026-11-27 03:00) - shared scope autonomy,score,trigger",
+     "mechanic: **Fleet Health Heartbeat Consolidation (single JSON, 4 seats (2026-11-27 04:23) - shared scope autonomy,score",
+     "lane end outlet: 11-28 13:27 (slowest lane)"
     ],
     "projected": false,
-    "why": "planned as measurement work (cx2); already open on the designer lane - FIFO order keeps evidence leaves consistent; lower confidence (P(reached) ~5%): kept in plan because its scope gates later work; lane designer has 3/10 done; this goal ends its lane at 2026-11-27 01:23",
+    "why": "planned as measurement work (cx2); already open on the designer lane - FIFO order keeps evidence leaves consistent; lower confidence (P(reached) ~5%): kept in plan because its scope gates later work; lane designer has 3/10 done; this goal ends its lane at 2026-11-27 02:24",
     "deliverable": {
      "name": "Regression Alert Banner",
      "stream": "General"
     },
-    "then": "lane clear - level-up gate re-check (2026-11-28 12:27)",
-    "then_eta": "2026-11-28 12:27"
-   },
-   {
-    "agent": "orchestrator",
-    "goal": "**Convergence Regression Sentinel** - `python memory/orchestrator/convergence_sentinel.py`: watch autonomy-score.json across cycles; on DROP > threshold from last cycle (regression, not mere deceleration) AUTO-OPEN a rem",
-    "type": "measurement",
-    "complexity": 2,
-    "p_reached": 0.325,
-    "eta": "2026-11-27 01:44",
-    "hours": 3.59,
-    "order": 0,
-    "rank": 6,
-    "title": "Convergence Regression Sentinel",
-    "steps": [
-     "instrument or extend the scorer",
-     "two-run delta check",
-     "publish snapshot + report leaf"
-    ],
-    "outcome": "reached ~2026-11-27 01:44 (P~32%)",
-    "consequences": [
-     "designer: **Regression Alert Banner** - red slide-in when autonomy sco (2026-11-27 01:23) - shared scope autonomy,regression,score",
-     "scribe: **Convergence Exit-Trigger Monitor** - `python memory/scribe (2026-11-27 02:00) - shared scope autonomy,convergence,score",
-     "archivist: **Decision Quality Longitudinal Analysis** - 6-cycle trend o (2026-11-27 04:23) - shared scope cycle,regression",
-     "lane end outlet: 11-28 12:27 (slowest lane)"
-    ],
-    "projected": false,
-    "why": "planned as measurement work (cx2); already open on the orchestrator lane - FIFO order keeps evidence leaves consistent; lower confidence (P(reached) ~32%): kept in plan because its scope gates later work; lane orchestrator has 6/10 done; this goal ends its lane at 2026-11-27 01:44",
-    "deliverable": {
-     "name": "Convergence Regression Sentinel",
-     "stream": "General"
-    },
-    "then": "lane clear - level-up gate re-check (2026-11-28 12:27)",
-    "then_eta": "2026-11-28 12:27"
+    "then": "lane clear - level-up gate re-check (2026-11-28 13:27)",
+    "then_eta": "2026-11-28 13:27"
    },
    {
     "agent": "scribe",
@@ -665,31 +571,64 @@
     "type": "measurement",
     "complexity": 2,
     "p_reached": 0.515,
-    "eta": "2026-11-27 02:00",
+    "eta": "2026-11-27 03:00",
     "hours": 3.86,
     "order": 0,
-    "rank": 7,
+    "rank": 4,
     "title": "Convergence Exit-Trigger Monitor",
     "steps": [
      "instrument or extend the scorer",
      "two-run delta check",
      "publish snapshot + report leaf"
     ],
-    "outcome": "reached ~2026-11-27 02:00 (P~52%)",
+    "outcome": "reached ~2026-11-27 03:00 (P~52%)",
     "consequences": [
-     "designer: **Regression Alert Banner** - red slide-in when autonomy sco (2026-11-27 01:23) - shared scope autonomy,score,trigger",
-     "orchestrator: **Convergence Regression Sentinel** - `python memory/orchest (2026-11-27 01:44) - shared scope autonomy,convergence,score",
-     "scribe: **Decision Replay & Counterfactual Log** - `python memory/sc (2026-11-27 05:52) - shared scope autonomy,score,scribe",
-     "lane end outlet: 11-28 12:27 (slowest lane)"
+     "designer: **Regression Alert Banner** - red slide-in when autonomy sco (2026-11-27 02:24) - shared scope autonomy,score,trigger",
+     "archivist: **Autonomy Progression Model** - model how each agent's auto (2026-11-27 03:51) - shared scope autonomy,which",
+     "mechanic: **Fleet Health Heartbeat Consolidation (single JSON, 4 seats (2026-11-27 04:23) - shared scope autonomy,score",
+     "lane end outlet: 11-28 13:27 (slowest lane)"
     ],
     "projected": false,
-    "why": "planned as measurement work (cx2); already open on the scribe lane - FIFO order keeps evidence leaves consistent; lower confidence (P(reached) ~52%): kept in plan because its scope gates later work; lane scribe has 8/10 done; this goal ends its lane at 2026-11-27 02:00",
+    "why": "planned as measurement work (cx2); already open on the scribe lane - FIFO order keeps evidence leaves consistent; lower confidence (P(reached) ~52%): kept in plan because its scope gates later work; lane scribe has 9/10 done; this goal ends its lane at 2026-11-27 03:00",
     "deliverable": {
      "name": "Convergence Exit-Trigger Monitor",
      "stream": "General"
     },
-    "then": "lane clear - level-up gate re-check (2026-11-28 12:27)",
-    "then_eta": "2026-11-28 12:27"
+    "then": "lane clear - level-up gate re-check (2026-11-28 13:27)",
+    "then_eta": "2026-11-28 13:27"
+   },
+   {
+    "agent": "forge",
+    "goal": "**Autonomous Chair Idempotency Test** - `python memory/forge/chair_idempotency.py`: run auto_chair twice on the same closed cycle; assert no double-archive, no duplicate goals, ledger unchanged. Verified: a 2nd run produ",
+    "type": "build",
+    "complexity": 2,
+    "p_reached": 0.158,
+    "eta": "2026-11-27 03:39",
+    "hours": 4.5,
+    "order": 0,
+    "rank": 5,
+    "title": "Autonomous Chair Idempotency Test",
+    "steps": [
+     "scaffold the module file",
+     "implement core logic",
+     "self-test until AC green",
+     "evidence leaf + index line (AC: a 2nd run produ)"
+    ],
+    "outcome": "reached ~2026-11-27 03:39 (P~16%)",
+    "consequences": [
+     "outlet: **Milestone auto-detection** - parse goal_ledger state chang (2026-11-27 08:09) - shared scope cycle,ledger",
+     "verifier: **Cross-lane contract tests** - define 5 inter-agent API con (2026-11-27 08:51) - shared scope assert,cycle,ledger",
+     "forge: **Forecast-Calibration Backtest Harness** - `python memory/f (2026-11-27 10:40) - shared scope assert,cycle,forge",
+     "lane end outlet: 11-28 13:27 (slowest lane)"
+    ],
+    "projected": false,
+    "why": "planned as build work (cx2); already open on the forge lane - FIFO order keeps evidence leaves consistent; lower confidence (P(reached) ~16%): kept in plan because its scope gates later work; lane forge has 5/10 done; this goal ends its lane at 2026-11-27 03:39",
+    "deliverable": {
+     "name": "Archive + evidence leaves",
+     "stream": "Memory quality"
+    },
+    "then": "lane clear - level-up gate re-check (2026-11-28 13:27)",
+    "then_eta": "2026-11-28 13:27"
    },
    {
     "agent": "outlet",
@@ -697,10 +636,10 @@
     "type": "build",
     "complexity": 2,
     "p_reached": 0.158,
-    "eta": "2026-11-27 02:38",
+    "eta": "2026-11-27 03:39",
     "hours": 4.5,
     "order": 0,
-    "rank": 8,
+    "rank": 6,
     "title": "First live account connection + end-to-end ship",
     "steps": [
      "scaffold the module file",
@@ -708,54 +647,85 @@
      "self-test until AC green",
      "evidence leaf + index line (AC: one post shipped on a real platform with zero manual edits after staging; tim)"
     ],
-    "outcome": "reached ~2026-11-27 02:38 (P~16%)",
+    "outcome": "reached ~2026-11-27 03:39 (P~16%)",
     "consequences": [
-     "outlet: **Milestone auto-detection** - parse goal_ledger state chang (2026-11-27 07:09) - shared scope cycle,draft",
-     "archivist: **Onboarding Pack Generator** - auto-generate a new-agent on (2026-11-27 10:06) - shared scope cycle,first",
-     "outlet: **Per-platform voice variants + lint** - X (\u2264280 chars, punc (2026-11-27 18:05) - shared scope draft,platform",
-     "lane end outlet: 11-28 12:27 (slowest lane)"
+     "outlet: **Milestone auto-detection** - parse goal_ledger state chang (2026-11-27 08:09) - shared scope cycle,draft",
+     "outlet: **Per-platform voice variants + lint** - X (\u2264280 chars, punc (2026-11-27 19:06) - shared scope draft,platform",
+     "forge: **Full Convergence-Loop E2E Drill** - `python memory/forge/c (2026-11-27 21:03) - shared scope autonomously,cycle,draft",
+     "lane end outlet: 11-28 13:27 (slowest lane)"
     ],
     "projected": false,
-    "why": "planned as build work (cx2); already open on the outlet lane - FIFO order keeps evidence leaves consistent; lower confidence (P(reached) ~16%): kept in plan because its scope gates later work; lane outlet has 0/10 done; this goal ends its lane at 2026-11-27 02:38",
+    "why": "planned as build work (cx2); already open on the outlet lane - FIFO order keeps evidence leaves consistent; lower confidence (P(reached) ~16%): kept in plan because its scope gates later work; lane outlet has 0/10 done; this goal ends its lane at 2026-11-27 03:39",
     "deliverable": {
      "name": "First live account connection + end-to-end ship",
      "stream": "General"
     },
-    "then": "lane clear - level-up gate re-check (2026-11-28 12:27)",
-    "then_eta": "2026-11-28 12:27"
+    "then": "lane clear - level-up gate re-check (2026-11-28 13:27)",
+    "then_eta": "2026-11-28 13:27"
    },
    {
     "agent": "pixel",
-    "goal": "**Per-host 24h health sparkline** - Compact reduced-motion-safe trend per host card in `ui/fleet_health.js`. Verified: renders per host from existing health samples; explicit empty state when no samples; scales without c",
+    "goal": "**Close the live CDP screenshot leg (goal #5 carry-over)** - Run the deferred @375/768 live screenshots on a non-sandbox seat and archive under `memory/pixel/`. Verified: 2 screenshots archived; no horizontal overflow; a",
     "type": "build",
     "complexity": 2,
     "p_reached": 0.158,
-    "eta": "2026-11-27 02:38",
+    "eta": "2026-11-27 03:39",
     "hours": 4.5,
     "order": 0,
-    "rank": 9,
-    "title": "Per-host 24h health sparkline",
+    "rank": 7,
+    "title": "Close the live CDP screenshot leg (goal #5 carry-over)",
     "steps": [
      "scaffold the module file",
      "implement core logic",
      "self-test until AC green",
-     "evidence leaf + index line (AC: renders per host from existing health samples; explicit empty state when no samples; scale)"
+     "evidence leaf + index line (AC: 2 screenshots archived; no horizontal overflow; a)"
     ],
-    "outcome": "reached ~2026-11-27 02:38 (P~16%)",
+    "outcome": "reached ~2026-11-27 03:39 (P~16%)",
     "consequences": [
-     "designer: **Goal Pipeline Flow** - Proposed\u2192Active\u2192Verified\u2192Closed wit (2026-11-27 12:16) - shared scope renders,state",
-     "outlet: **Hard verification gate** - `queue_check.py` blocks unverif (2026-11-27 14:40) - shared scope state,without",
-     "designer: **Convergence Velocity Indicator** - 120\u00d732 sparkline + dire (2026-11-27 16:36) - shared scope motion,reduced,sparkline",
-     "lane end outlet: 11-28 12:27 (slowest lane)"
+     "forge: **Full Convergence-Loop E2E Drill** - `python memory/forge/c (2026-11-27 21:03) - shared scope archive,close",
+     "lane end outlet: 11-28 13:27 (slowest lane)"
     ],
     "projected": false,
-    "why": "planned as build work (cx2); already open on the pixel lane - FIFO order keeps evidence leaves consistent; lower confidence (P(reached) ~16%): kept in plan because its scope gates later work; lane pixel has 4/10 done; this goal ends its lane at 2026-11-27 02:38",
+    "why": "planned as build work (cx2); already open on the pixel lane - FIFO order keeps evidence leaves consistent; lower confidence (P(reached) ~16%): kept in plan because its scope gates later work; lane pixel has 7/10 done; this goal ends its lane at 2026-11-27 03:39",
     "deliverable": {
-     "name": "Per-host 24h health sparkline",
+     "name": "Archive + evidence leaves",
+     "stream": "Memory quality"
+    },
+    "then": "lane clear - level-up gate re-check (2026-11-28 13:27)",
+    "then_eta": "2026-11-28 13:27"
+   },
+   {
+    "agent": "archivist",
+    "goal": "**Autonomy Progression Model** - model how each agent's autonomy has grown (interventions per cycle, escalation rate, self-correction rate). Predict which agents will reach full autonomy next and when. Output: memory/arc",
+    "type": "build",
+    "complexity": 2,
+    "p_reached": 0.278,
+    "eta": "2026-11-27 03:51",
+    "hours": 4.7,
+    "order": 0,
+    "rank": 8,
+    "title": "Autonomy Progression Model",
+    "steps": [
+     "scaffold the module file",
+     "implement core logic",
+     "self-test until AC green",
+     "write evidence leaf + index line"
+    ],
+    "outcome": "reached ~2026-11-27 03:51 (P~28%)",
+    "consequences": [
+     "mechanic: **Autonomous OOM Recovery Loop (<60s MTTR, unattended)** - o (2026-11-27 00:56) - shared scope model,output",
+     "scribe: **Convergence Exit-Trigger Monitor** - `python memory/scribe (2026-11-27 03:00) - shared scope autonomy,which",
+     "designer: **Cross-Lane Assist Graph** - SVG graph of who helped whom t (2026-11-27 06:43) - shared scope agents,cycle",
+     "lane end outlet: 11-28 13:27 (slowest lane)"
+    ],
+    "projected": false,
+    "why": "planned as build work (cx2); already open on the archivist lane - FIFO order keeps evidence leaves consistent; lower confidence (P(reached) ~28%): kept in plan because its scope gates later work; lane archivist has 9/10 done; this goal ends its lane at 2026-11-27 03:51",
+    "deliverable": {
+     "name": "Autonomy Progression Model",
      "stream": "General"
     },
-    "then": "lane clear - level-up gate re-check (2026-11-28 12:27)",
-    "then_eta": "2026-11-28 12:27"
+    "then": "lane clear - level-up gate re-check (2026-11-28 13:27)",
+    "then_eta": "2026-11-28 13:27"
    },
    {
     "agent": "verifier",
@@ -763,218 +733,250 @@
     "type": "ops",
     "complexity": 2,
     "p_reached": 0.515,
-    "eta": "2026-11-27 03:17",
+    "eta": "2026-11-27 04:18",
     "hours": 2.58,
     "order": 1,
-    "rank": 10,
+    "rank": 9,
     "title": "Chaos-recovery verification",
     "steps": [
      "pre-flight checks (targets exist, idempotent)",
      "execute from non-sandbox session",
      "verify registration/health + evidence leaf"
     ],
-    "outcome": "reached ~2026-11-27 03:17 (P~52%)",
+    "outcome": "reached ~2026-11-27 04:18 (P~52%)",
     "consequences": [
-     "mechanic: **Autonomous OOM Recovery Loop (<60s MTTR, unattended)** - o (2026-11-26 23:55) - shared scope model,recovery",
-     "lane end outlet: 11-28 12:27 (slowest lane)"
+     "mechanic: **Autonomous OOM Recovery Loop (<60s MTTR, unattended)** - o (2026-11-27 00:56) - shared scope model,recovery",
+     "lane end outlet: 11-28 13:27 (slowest lane)"
     ],
     "projected": false,
-    "why": "planned as ops work (cx2); already open on the verifier lane - FIFO order keeps evidence leaves consistent; lower confidence (P(reached) ~52%): kept in plan because its scope gates later work; lane verifier has 4/10 done; this goal ends its lane at 2026-11-27 03:17",
+    "why": "planned as ops work (cx2); already open on the verifier lane - FIFO order keeps evidence leaves consistent; lower confidence (P(reached) ~52%): kept in plan because its scope gates later work; lane verifier has 4/10 done; this goal ends its lane at 2026-11-27 04:18",
     "deliverable": {
      "name": "Chaos-recovery verification",
      "stream": "General"
     },
-    "then": "lane clear - level-up gate re-check (2026-11-28 12:27)",
-    "then_eta": "2026-11-28 12:27"
+    "then": "lane clear - level-up gate re-check (2026-11-28 13:27)",
+    "then_eta": "2026-11-28 13:27"
+   },
+   {
+    "agent": "mechanic",
+    "goal": "**Fleet Health Heartbeat Consolidation (single JSON, 4 seats)** - merge seat-matrix.json, autonomy-score.json, recovery-sla-summary.json into one unified heartbeat: memory/ops/fleet-heartbeat.json updated every probe cyc",
+    "type": "measurement",
+    "complexity": 2,
+    "p_reached": 0.224,
+    "eta": "2026-11-27 04:23",
+    "hours": 3.46,
+    "order": 1,
+    "rank": 10,
+    "title": "Fleet Health Heartbeat Consolidation (single JSON, 4 seats)",
+    "steps": [
+     "instrument or extend the scorer",
+     "two-run delta check",
+     "publish snapshot + report leaf"
+    ],
+    "outcome": "reached ~2026-11-27 04:23 (P~22%)",
+    "consequences": [
+     "designer: **Regression Alert Banner** - red slide-in when autonomy sco (2026-11-27 02:24) - shared scope autonomy,score",
+     "scribe: **Convergence Exit-Trigger Monitor** - `python memory/scribe (2026-11-27 03:00) - shared scope autonomy,score",
+     "designer: **Fleet Health Composite Gauge** - single 0-100 number blend (2026-11-27 08:58) - shared scope health,recovery,single",
+     "lane end outlet: 11-28 13:27 (slowest lane)"
+    ],
+    "projected": false,
+    "why": "planned as measurement work (cx2); already open on the mechanic lane - FIFO order keeps evidence leaves consistent; lower confidence (P(reached) ~22%): kept in plan because its scope gates later work; lane mechanic has 2/10 done; this goal ends its lane at 2026-11-27 04:23",
+    "deliverable": {
+     "name": "Load-test evidence",
+     "stream": "Reliability"
+    },
+    "then": "lane clear - level-up gate re-check (2026-11-28 13:27)",
+    "then_eta": "2026-11-28 13:27"
    }
   ],
   "horizons": [
    {
     "label": "30m",
     "hours": 0.5,
-    "end": "2026-11-26 22:38",
+    "end": "2026-11-26 23:39",
     "completes": 0,
     "top": [],
-    "why_line": "queue order from the auto-loop: these complete first because their lanes are shortest; expected outcome: fleet 55/111 -> 49%"
+    "why_line": "queue order from the auto-loop: these complete first because their lanes are shortest; expected outcome: fleet 70/111 -> 63%"
    },
    {
     "label": "1h",
     "hours": 1.0,
-    "end": "2026-11-26 23:08",
+    "end": "2026-11-27 00:09",
     "completes": 0,
     "top": [],
-    "why_line": "queue order from the auto-loop: these complete first because their lanes are shortest; expected outcome: fleet 55/111 -> 49%"
+    "why_line": "queue order from the auto-loop: these complete first because their lanes are shortest; expected outcome: fleet 70/111 -> 63%"
    },
    {
     "label": "1d",
     "hours": 24.0,
-    "end": "2026-11-27 22:08",
+    "end": "2026-11-27 23:09",
     "completes": 10,
     "top": [
      {
       "rank": 1,
       "agent": "mechanic",
       "title": "Autonomous OOM Recovery Loop (<60s MTTR, unattended)",
-      "eta": "2026-11-26 23:55",
+      "eta": "2026-11-27 00:56",
       "type": "ops",
-      "why": "planned as ops work (cx1); already open on the mechanic lane - FIFO order keeps evidence leaves consistent; moderate confidence (P(reached) ~76%): slip model flags some risk, ETA already inflated; lane mechanic has 4/10 done; this goal ends its lane at 2026-11-26 23:55"
+      "why": "planned as ops work (cx1); already open on the mechanic lane - FIFO order keeps evidence leaves consistent; moderate confidence (P(reached) ~76%): slip model flags some risk, ETA already inflated; lane mechanic has 2/10 done; this goal ends its lane at 2026-11-27 00:56"
      },
      {
       "rank": 2,
-      "agent": "forge",
-      "title": "Dispatch-Correctness Deploy Gate",
-      "eta": "2026-11-27 00:40",
-      "type": "ops",
-      "why": "planned as ops work (cx2); already open on the forge lane - FIFO order keeps evidence leaves consistent; lower confidence (P(reached) ~46%): kept in plan because its scope gates later work; lane forge has 2/10 done; this goal ends its lane at 2026-11-27 00:40"
+      "agent": "verifier",
+      "title": "Auto-trigger regression battery",
+      "eta": "2026-11-27 01:43",
+      "type": "verify",
+      "why": "planned as verify work (cx2); already open on the verifier lane - FIFO order keeps evidence leaves consistent; lower confidence (P(reached) ~52%): kept in plan because its scope gates later work; lane verifier has 4/10 done; this goal ends its lane at 2026-11-27 01:43"
      },
      {
       "rank": 3,
-      "agent": "builder",
-      "title": "Model-Swap Convergence Guard",
-      "eta": "2026-11-27 00:43",
-      "type": "verify",
-      "why": "planned as verify work (cx2); already open on the builder lane - FIFO order keeps evidence leaves consistent; lower confidence (P(reached) ~52%): kept in plan because its scope gates later work; lane builder has 9/10 done; this goal ends its lane at 2026-11-27 00:43"
+      "agent": "designer",
+      "title": "Regression Alert Banner",
+      "eta": "2026-11-27 02:24",
+      "type": "measurement",
+      "why": "planned as measurement work (cx2); already open on the designer lane - FIFO order keeps evidence leaves consistent; lower confidence (P(reached) ~5%): kept in plan because its scope gates later work; lane designer has 3/10 done; this goal ends its lane at 2026-11-27 02:24"
      },
      {
       "rank": 4,
-      "agent": "verifier",
-      "title": "Auto-trigger regression battery",
-      "eta": "2026-11-27 00:43",
-      "type": "verify",
-      "why": "planned as verify work (cx2); already open on the verifier lane - FIFO order keeps evidence leaves consistent; lower confidence (P(reached) ~52%): kept in plan because its scope gates later work; lane verifier has 4/10 done; this goal ends its lane at 2026-11-27 00:43"
+      "agent": "scribe",
+      "title": "Convergence Exit-Trigger Monitor",
+      "eta": "2026-11-27 03:00",
+      "type": "measurement",
+      "why": "planned as measurement work (cx2); already open on the scribe lane - FIFO order keeps evidence leaves consistent; lower confidence (P(reached) ~52%): kept in plan because its scope gates later work; lane scribe has 9/10 done; this goal ends its lane at 2026-11-27 03:00"
      },
      {
       "rank": 5,
-      "agent": "designer",
-      "title": "Regression Alert Banner",
-      "eta": "2026-11-27 01:23",
-      "type": "measurement",
-      "why": "planned as measurement work (cx2); already open on the designer lane - FIFO order keeps evidence leaves consistent; lower confidence (P(reached) ~5%): kept in plan because its scope gates later work; lane designer has 3/10 done; this goal ends its lane at 2026-11-27 01:23"
+      "agent": "forge",
+      "title": "Autonomous Chair Idempotency Test",
+      "eta": "2026-11-27 03:39",
+      "type": "build",
+      "why": "planned as build work (cx2); already open on the forge lane - FIFO order keeps evidence leaves consistent; lower confidence (P(reached) ~16%): kept in plan because its scope gates later work; lane forge has 5/10 done; this goal ends its lane at 2026-11-27 03:39"
      }
     ],
-    "why_line": "queue order from the auto-loop: these complete first because their lanes are shortest; expected outcome: fleet 55/111 -> 58%"
+    "why_line": "queue order from the auto-loop: these complete first because their lanes are shortest; expected outcome: fleet 70/111 -> 72%"
    },
    {
     "label": "1w",
     "hours": 168.0,
-    "end": "2026-12-03 22:08",
+    "end": "2026-12-03 23:09",
     "completes": 10,
     "top": [
      {
       "rank": 1,
       "agent": "mechanic",
       "title": "Autonomous OOM Recovery Loop (<60s MTTR, unattended)",
-      "eta": "2026-11-26 23:55",
+      "eta": "2026-11-27 00:56",
       "type": "ops",
-      "why": "planned as ops work (cx1); already open on the mechanic lane - FIFO order keeps evidence leaves consistent; moderate confidence (P(reached) ~76%): slip model flags some risk, ETA already inflated; lane mechanic has 4/10 done; this goal ends its lane at 2026-11-26 23:55"
+      "why": "planned as ops work (cx1); already open on the mechanic lane - FIFO order keeps evidence leaves consistent; moderate confidence (P(reached) ~76%): slip model flags some risk, ETA already inflated; lane mechanic has 2/10 done; this goal ends its lane at 2026-11-27 00:56"
      },
      {
       "rank": 2,
-      "agent": "forge",
-      "title": "Dispatch-Correctness Deploy Gate",
-      "eta": "2026-11-27 00:40",
-      "type": "ops",
-      "why": "planned as ops work (cx2); already open on the forge lane - FIFO order keeps evidence leaves consistent; lower confidence (P(reached) ~46%): kept in plan because its scope gates later work; lane forge has 2/10 done; this goal ends its lane at 2026-11-27 00:40"
+      "agent": "verifier",
+      "title": "Auto-trigger regression battery",
+      "eta": "2026-11-27 01:43",
+      "type": "verify",
+      "why": "planned as verify work (cx2); already open on the verifier lane - FIFO order keeps evidence leaves consistent; lower confidence (P(reached) ~52%): kept in plan because its scope gates later work; lane verifier has 4/10 done; this goal ends its lane at 2026-11-27 01:43"
      },
      {
       "rank": 3,
-      "agent": "builder",
-      "title": "Model-Swap Convergence Guard",
-      "eta": "2026-11-27 00:43",
-      "type": "verify",
-      "why": "planned as verify work (cx2); already open on the builder lane - FIFO order keeps evidence leaves consistent; lower confidence (P(reached) ~52%): kept in plan because its scope gates later work; lane builder has 9/10 done; this goal ends its lane at 2026-11-27 00:43"
+      "agent": "designer",
+      "title": "Regression Alert Banner",
+      "eta": "2026-11-27 02:24",
+      "type": "measurement",
+      "why": "planned as measurement work (cx2); already open on the designer lane - FIFO order keeps evidence leaves consistent; lower confidence (P(reached) ~5%): kept in plan because its scope gates later work; lane designer has 3/10 done; this goal ends its lane at 2026-11-27 02:24"
      },
      {
       "rank": 4,
-      "agent": "verifier",
-      "title": "Auto-trigger regression battery",
-      "eta": "2026-11-27 00:43",
-      "type": "verify",
-      "why": "planned as verify work (cx2); already open on the verifier lane - FIFO order keeps evidence leaves consistent; lower confidence (P(reached) ~52%): kept in plan because its scope gates later work; lane verifier has 4/10 done; this goal ends its lane at 2026-11-27 00:43"
+      "agent": "scribe",
+      "title": "Convergence Exit-Trigger Monitor",
+      "eta": "2026-11-27 03:00",
+      "type": "measurement",
+      "why": "planned as measurement work (cx2); already open on the scribe lane - FIFO order keeps evidence leaves consistent; lower confidence (P(reached) ~52%): kept in plan because its scope gates later work; lane scribe has 9/10 done; this goal ends its lane at 2026-11-27 03:00"
      },
      {
       "rank": 5,
-      "agent": "designer",
-      "title": "Regression Alert Banner",
-      "eta": "2026-11-27 01:23",
-      "type": "measurement",
-      "why": "planned as measurement work (cx2); already open on the designer lane - FIFO order keeps evidence leaves consistent; lower confidence (P(reached) ~5%): kept in plan because its scope gates later work; lane designer has 3/10 done; this goal ends its lane at 2026-11-27 01:23"
+      "agent": "forge",
+      "title": "Autonomous Chair Idempotency Test",
+      "eta": "2026-11-27 03:39",
+      "type": "build",
+      "why": "planned as build work (cx2); already open on the forge lane - FIFO order keeps evidence leaves consistent; lower confidence (P(reached) ~16%): kept in plan because its scope gates later work; lane forge has 5/10 done; this goal ends its lane at 2026-11-27 03:39"
      }
     ],
-    "why_line": "queue order from the auto-loop: these complete first because their lanes are shortest; expected outcome: fleet 55/111 -> 58%"
+    "why_line": "queue order from the auto-loop: these complete first because their lanes are shortest; expected outcome: fleet 70/111 -> 72%"
    },
    {
     "label": "1m",
     "hours": 720.0,
-    "end": "2026-12-26 22:08",
+    "end": "2026-12-26 23:09",
     "completes": 10,
     "top": [
      {
       "rank": 1,
       "agent": "mechanic",
       "title": "Autonomous OOM Recovery Loop (<60s MTTR, unattended)",
-      "eta": "2026-11-26 23:55",
+      "eta": "2026-11-27 00:56",
       "type": "ops",
-      "why": "planned as ops work (cx1); already open on the mechanic lane - FIFO order keeps evidence leaves consistent; moderate confidence (P(reached) ~76%): slip model flags some risk, ETA already inflated; lane mechanic has 4/10 done; this goal ends its lane at 2026-11-26 23:55"
+      "why": "planned as ops work (cx1); already open on the mechanic lane - FIFO order keeps evidence leaves consistent; moderate confidence (P(reached) ~76%): slip model flags some risk, ETA already inflated; lane mechanic has 2/10 done; this goal ends its lane at 2026-11-27 00:56"
      },
      {
       "rank": 2,
-      "agent": "forge",
-      "title": "Dispatch-Correctness Deploy Gate",
-      "eta": "2026-11-27 00:40",
-      "type": "ops",
-      "why": "planned as ops work (cx2); already open on the forge lane - FIFO order keeps evidence leaves consistent; lower confidence (P(reached) ~46%): kept in plan because its scope gates later work; lane forge has 2/10 done; this goal ends its lane at 2026-11-27 00:40"
+      "agent": "verifier",
+      "title": "Auto-trigger regression battery",
+      "eta": "2026-11-27 01:43",
+      "type": "verify",
+      "why": "planned as verify work (cx2); already open on the verifier lane - FIFO order keeps evidence leaves consistent; lower confidence (P(reached) ~52%): kept in plan because its scope gates later work; lane verifier has 4/10 done; this goal ends its lane at 2026-11-27 01:43"
      },
      {
       "rank": 3,
-      "agent": "builder",
-      "title": "Model-Swap Convergence Guard",
-      "eta": "2026-11-27 00:43",
-      "type": "verify",
-      "why": "planned as verify work (cx2); already open on the builder lane - FIFO order keeps evidence leaves consistent; lower confidence (P(reached) ~52%): kept in plan because its scope gates later work; lane builder has 9/10 done; this goal ends its lane at 2026-11-27 00:43"
+      "agent": "designer",
+      "title": "Regression Alert Banner",
+      "eta": "2026-11-27 02:24",
+      "type": "measurement",
+      "why": "planned as measurement work (cx2); already open on the designer lane - FIFO order keeps evidence leaves consistent; lower confidence (P(reached) ~5%): kept in plan because its scope gates later work; lane designer has 3/10 done; this goal ends its lane at 2026-11-27 02:24"
      },
      {
       "rank": 4,
-      "agent": "verifier",
-      "title": "Auto-trigger regression battery",
-      "eta": "2026-11-27 00:43",
-      "type": "verify",
-      "why": "planned as verify work (cx2); already open on the verifier lane - FIFO order keeps evidence leaves consistent; lower confidence (P(reached) ~52%): kept in plan because its scope gates later work; lane verifier has 4/10 done; this goal ends its lane at 2026-11-27 00:43"
+      "agent": "scribe",
+      "title": "Convergence Exit-Trigger Monitor",
+      "eta": "2026-11-27 03:00",
+      "type": "measurement",
+      "why": "planned as measurement work (cx2); already open on the scribe lane - FIFO order keeps evidence leaves consistent; lower confidence (P(reached) ~52%): kept in plan because its scope gates later work; lane scribe has 9/10 done; this goal ends its lane at 2026-11-27 03:00"
      },
      {
       "rank": 5,
-      "agent": "designer",
-      "title": "Regression Alert Banner",
-      "eta": "2026-11-27 01:23",
-      "type": "measurement",
-      "why": "planned as measurement work (cx2); already open on the designer lane - FIFO order keeps evidence leaves consistent; lower confidence (P(reached) ~5%): kept in plan because its scope gates later work; lane designer has 3/10 done; this goal ends its lane at 2026-11-27 01:23"
+      "agent": "forge",
+      "title": "Autonomous Chair Idempotency Test",
+      "eta": "2026-11-27 03:39",
+      "type": "build",
+      "why": "planned as build work (cx2); already open on the forge lane - FIFO order keeps evidence leaves consistent; lower confidence (P(reached) ~16%): kept in plan because its scope gates later work; lane forge has 5/10 done; this goal ends its lane at 2026-11-27 03:39"
      }
     ],
-    "why_line": "queue order from the auto-loop: these complete first because their lanes are shortest; expected outcome: fleet 55/111 -> 58%"
+    "why_line": "queue order from the auto-loop: these complete first because their lanes are shortest; expected outcome: fleet 70/111 -> 72%"
    }
   ],
   "tree": {
-   "state": "Fleet 55/111 (50%)",
+   "state": "Fleet 70/111 (63%)",
    "gate": "all goals 100%?",
    "branch_taken": "NO - queue in flight",
    "yes": {
     "action": "level-up gate fires -> Lv increments, report written",
     "then": "Orchestrator proposes cycle N+1 from ranked backlog (8 candidates)",
     "first_planned": [
-     "#1 [mechanic] Autonomous OOM Recovery Loop (<60s MTTR, unattended) ~2026-11-26 23:55",
-     "#2 [forge] Dispatch-Correctness Deploy Gate ~2026-11-27 00:40",
-     "#3 [builder] Model-Swap Convergence Guard ~2026-11-27 00:43",
-     "#4 [verifier] Auto-trigger regression battery ~2026-11-27 00:43"
+     "#1 [mechanic] Autonomous OOM Recovery Loop (<60s MTTR, unattended) ~2026-11-27 00:56",
+     "#2 [verifier] Auto-trigger regression battery ~2026-11-27 01:43",
+     "#3 [designer] Regression Alert Banner ~2026-11-27 02:24",
+     "#4 [scribe] Convergence Exit-Trigger Monitor ~2026-11-27 03:00"
     ]
    },
    "no": {
     "action": "keep current queue; next completion gates progress",
-    "then": "when the last lane ends (2026-11-28 12:27) the gate re-checks",
+    "then": "when the last lane ends (2026-11-28 13:27) the gate re-checks",
     "first_planned": [
-     "#1 [mechanic] Autonomous OOM Recovery Loop (<60s MTTR, unattended) ~2026-11-26 23:55",
-     "#2 [forge] Dispatch-Correctness Deploy Gate ~2026-11-27 00:40",
-     "#3 [builder] Model-Swap Convergence Guard ~2026-11-27 00:43",
-     "#4 [verifier] Auto-trigger regression battery ~2026-11-27 00:43"
+     "#1 [mechanic] Autonomous OOM Recovery Loop (<60s MTTR, unattended) ~2026-11-27 00:56",
+     "#2 [verifier] Auto-trigger regression battery ~2026-11-27 01:43",
+     "#3 [designer] Regression Alert Banner ~2026-11-27 02:24",
+     "#4 [scribe] Convergence Exit-Trigger Monitor ~2026-11-27 03:00"
     ]
    }
   },
@@ -1451,7 +1453,7 @@
   ],
   "plan_meta": {
    "sig": "05dcc83e6301",
-   "computed_at": "2026-11-26 22:08:44",
+   "computed_at": "2026-11-26 23:09:11",
    "basis": "live goal ledger + next-10 ETAs + fleet throughput ~12.96 goals/h; recomputed every refresh",
    "delta": [],
    "history": [

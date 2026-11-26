@@ -4848,6 +4848,227 @@ _LAST_SHELL_NOTE = None   # 2026-11-26 (prompt audit P0): hash-gate static statu
 _LAST_MLS_NOTE = None     # so unchanged text is not re-injected on every pass
 
 
+# ---------------------------------------------------------------------------
+# MIND LAB (2026-11-26): OpenRA-style RTS world for the user's mind.
+# Canvas isometric client (ui/pages/mind-lab.html) + this stateless-on-top-of-
+# world.json backend. User places abilities/skills/tools/objects as buildings
+# and characters; 3 AI factions run their own layouts from the SAME shared
+# unlock pool (unlocks are global - "we unlock at the same time and share").
+# Knowledge streams = deterministic veins harvested by collectors. Ideas feed
+# the agent portal via umq_add (broadcast); accepted results solidify into
+# memory/mind-lab/solidified.jsonl as the most-probable outcomes.
+# ---------------------------------------------------------------------------
+_MINDLAB_DIR = os.path.join(HERE, "memory", "mind-lab")
+_MINDLAB_FILE = os.path.join(_MINDLAB_DIR, "world.json")
+_mindlab_lock = threading.Lock()
+
+ML_BUILDINGS = {
+    "collector":     {"name": "Knowledge Collector", "cost": 20,  "kind": "building",  "glyph": "K"},
+    "researcher":    {"name": "Researcher (unit)",   "cost": 30,  "kind": "character", "glyph": "R"},
+    "ability_lab":   {"name": "Ability Lab",         "cost": 60,  "kind": "building",  "glyph": "A"},
+    "skill_forge":   {"name": "Skill Forge",         "cost": 60,  "kind": "building",  "glyph": "S"},
+    "tool_workshop": {"name": "Tool Workshop",       "cost": 80,  "kind": "building",  "glyph": "T"},
+    "architect":     {"name": "Architect (unit)",    "cost": 40,  "kind": "character", "glyph": "C"},
+    "object_vault":  {"name": "Object Vault",        "cost": 100, "kind": "building",  "glyph": "O"},
+    "idea_reactor":  {"name": "Idea Reactor",        "cost": 150, "kind": "building",  "glyph": "I"},
+}
+ML_FACTIONS = {
+    "you":       {"color": "#4da3ff", "home": [8, 8]},
+    "axiom":     {"color": "#ff5d73", "home": [-16, -12]},
+    "empiric":   {"color": "#ffc24d", "home": [18, -14]},
+    "synthetix": {"color": "#7dff8a", "home": [-14, 18]},
+}
+ML_UNLOCKS = ["collector", "researcher", "ability_lab", "skill_forge",
+              "tool_workshop", "architect", "object_vault", "idea_reactor"]
+
+
+def _ml_read():
+    try:
+        with open(_MINDLAB_FILE, encoding="utf-8") as f:
+            w = json.load(f)
+        if isinstance(w, dict) and isinstance(w.get("buildings"), list):
+            return w
+    except Exception:
+        pass
+    w = {"seed": 1337, "knowledge": 50, "unlocks": ["collector", "researcher"],
+         "buildings": [], "claims": {}, "ideas": [], "results": [], "solidified": [],
+         "tick_n": 0, "next_id": 1}
+    for fn, meta in ML_FACTIONS.items():
+        hx, hy = meta["home"]
+        w["claims"]["%d,%d" % (hx, hy)] = fn
+    return w
+
+
+def _ml_write(w):
+    os.makedirs(_MINDLAB_DIR, exist_ok=True)
+    tmp = _MINDLAB_FILE + ".tmp"
+    with open(tmp, "w", encoding="utf-8") as f:
+        json.dump(w, f, ensure_ascii=False)
+    os.replace(tmp, _MINDLAB_FILE)
+
+
+def _ml_vein(x, y, seed):
+    h = (x * 73856093) ^ (y * 19349663) ^ (seed * 83492791)
+    return (h & 0xFFFFF) % 23 == 0
+
+
+def _ml_unlocks_for(w):
+    # shared pool: any faction's progress unlocks for everyone, by cumulative knowledge earned
+    n = len(w["buildings"])
+    got = list(w["unlocks"])
+    for i, u in enumerate(ML_UNLOCKS):
+        if u not in got and (w.get("total_earned", 0) >= i * 120 or n >= i + 1):
+            got.append(u)
+    w["unlocks"] = got
+    return got
+
+
+def _ml_tick_ai(w):
+    """One step per AI faction: harvest, claim up to 2 tiles, build one affordable structure."""
+    earned = 0
+    for fn in ML_FACTIONS:
+        if fn == "you":
+            continue
+        mine = [b for b in w["buildings"] if b["faction"] == fn]
+        cols = [b for b in mine if b["type"] == "collector"]
+        for c in cols:
+            for dx in (-1, 0, 1):
+                for dy in (-1, 0, 1):
+                    if _ml_vein(c["x"] + dx, c["y"] + dy, w["seed"]):
+                        earned += 2
+        # claim: expand from any claimed tile of this faction
+        myc = [k for k, v in w["claims"].items() if v == fn]
+        added = 0
+        for k in myc:
+            if added >= 2:
+                break
+            x, y = (int(v) for v in k.split(","))
+            for dx, dy in ((1, 0), (-1, 0), (0, 1), (0, -1), (1, 1), (-1, -1)):
+                nk = "%d,%d" % (x + dx, y + dy)
+                if nk not in w["claims"] and abs(x + dx) < 256 and abs(y + dy) < 256:
+                    w["claims"][nk] = fn
+                    added += 1
+                    break
+        # build: cheapest unlocked affordable type on a claimed empty tile
+        if myc and w["knowledge"] >= 20:
+            opts = [u for u in _ml_unlocks_for(w) if ML_BUILDINGS[u]["cost"] <= w["knowledge"]]
+            if opts:
+                t = min(opts, key=lambda u: ML_BUILDINGS[u]["cost"])
+                taken = {(b["x"], b["y"]) for b in w["buildings"]}
+                for k in myc:
+                    x, y = (int(v) for v in k.split(","))
+                    if (x, y) not in taken and _ml_vein(x, y, w["seed"]) or t == "collector":
+                        w["buildings"].append({"id": "b%d" % w["next_id"], "x": x, "y": y,
+                                                "type": t, "faction": fn,
+                                                "ts": time.strftime("%Y-%m-%dT%H:%M:%SZ", time.gmtime())})
+                        w["next_id"] += 1
+                        w["knowledge"] -= ML_BUILDINGS[t]["cost"]
+                        break
+    w["total_earned"] = w.get("total_earned", 0) + earned
+    w["knowledge"] += earned
+    w["tick_n"] = int(w.get("tick_n", 0)) + 1
+    # efficiency-scan result card every 5 ticks: the live "best outcome" to accept/reject
+    if w["tick_n"] % 5 == 0 and len(w["buildings"]) >= 3:
+        from collections import Counter
+        cnt = Counter(b["faction"] for b in w["buildings"])
+        top_fn, top_n = cnt.most_common(1)[0]
+        kps = round(2.0 * sum(1 for b in w["buildings"] if b["type"] == "collector") / max(1, len(w["buildings"])), 3)
+        rid = "r%d" % w["next_id"]
+        w["next_id"] += 1
+        w["results"].append({"id": rid, "ts": time.strftime("%Y-%m-%dT%H:%M:%SZ", time.gmtime()),
+                             "kind": "efficiency-scan", "faction": top_fn,
+                             "value": kps, "status": "open",
+                             "desc": "%s leads with %d structures; lab efficiency %.3f k/s. Accept to solidify as most-probable layout." % (top_fn, top_n, kps)})
+        w["results"] = w["results"][-40:]
+    return earned
+
+
+def _mind_lab(op, body):
+    with _mindlab_lock:
+        w = _ml_read()
+        if op == "state":
+            return {"ok": True, "world": w,
+                    "catalog": ML_BUILDINGS, "factions": ML_FACTIONS}
+        if op == "place":
+            fn = str(body.get("faction") or "you")[:20]
+            t = str(body.get("type") or "")[:30]
+            try:
+                x, y = int(body.get("x")), int(body.get("y"))
+            except Exception:
+                return {"ok": False, "error": "bad coords"}
+            if t not in ML_BUILDINGS or fn not in ML_FACTIONS:
+                return {"ok": False, "error": "unknown type/faction"}
+            if abs(x) > 256 or abs(y) > 256:
+                return {"ok": False, "error": "out of world bounds"}
+            if any(b["x"] == x and b["y"] == y for b in w["buildings"]):
+                return {"ok": False, "error": "tile occupied"}
+            cost = ML_BUILDINGS[t]["cost"]
+            if w["knowledge"] < cost:
+                return {"ok": False, "error": "insufficient knowledge (%d < %d)" % (w["knowledge"], cost)}
+            w["claims"]["%d,%d" % (x, y)] = fn
+            w["buildings"].append({"id": "b%d" % w["next_id"], "x": x, "y": y,
+                                   "type": t, "faction": fn,
+                                   "ts": time.strftime("%Y-%m-%dT%H:%M:%SZ", time.gmtime())})
+            w["next_id"] += 1
+            w["knowledge"] -= cost
+            _ml_write(w)
+            return {"ok": True, "world": w}
+        if op == "idea":
+            text = str(body.get("text") or "").strip()[:2000]
+            if not text:
+                return {"ok": False, "error": "text required"}
+            w["ideas"].append({"id": "i%d" % w["next_id"], "ts": time.strftime("%Y-%m-%dT%H:%M:%SZ", time.gmtime()),
+                               "text": text})
+            w["next_id"] += 1
+            w["ideas"] = w["ideas"][-50:]
+            # spawn a visible build job near user home + feed the agent portal (broadcast)
+            hx, hy = ML_FACTIONS["you"]["home"]
+            taken = {(b["x"], b["y"]) for b in w["buildings"]}
+            sx = sy = None
+            for dx in range(0, 6):
+                for dy in range(-dx, dx + 1):
+                    if (hx + dx, hy + dy) not in taken and abs(hx + dx) < 256:
+                        sx, sy = hx + dx, hy + dy
+                        break
+                if sx is not None:
+                    break
+            if sx is not None:
+                w["buildings"].append({"id": "b%d" % w["next_id"], "x": sx, "y": sy,
+                                       "type": "idea_reactor", "faction": "you",
+                                       "ts": time.strftime("%Y-%m-%dT%H:%M:%SZ", time.gmtime())})
+                w["next_id"] += 1
+            try:
+                umq_add("[MIND LAB IDEA] %s (world tick %d, knowledge %d) - evaluate and propose a concrete next step in the mind lab." % (text, w["tick_n"], w["knowledge"]))
+            except Exception:
+                pass
+            _ml_write(w)
+            return {"ok": True, "world": w, "fed_to_portal": True}
+        if op == "tick":
+            earned = _ml_tick_ai(w)
+            _ml_write(w)
+            return {"ok": True, "earned": earned, "world": w}
+        if op == "solidify":
+            rid = str(body.get("id") or "")[:20]
+            accept = bool(body.get("accept", True))
+            r = next((x for x in w["results"] if x["id"] == rid), None)
+            if not r:
+                return {"ok": False, "error": "unknown result"}
+            r["status"] = "solidified" if accept else "rejected"
+            if accept:
+                rec = dict(r)
+                rec["note"] = str(body.get("note") or "")[:500]
+                w["solidified"].append(rec)
+                w["solidified"] = w["solidified"][-100:]
+                try:
+                    with open(os.path.join(_MINDLAB_DIR, "solidified.jsonl"), "a", encoding="utf-8") as f:
+                        f.write(json.dumps(rec, ensure_ascii=False) + "\n")
+                except Exception:
+                    pass
+            _ml_write(w)
+            return {"ok": True, "world": w}
+        return {"ok": False, "error": "unknown op: %s" % str(op)[:20]}
+
+
 def start_group_run(text, extra=None):
     """Create + launch a backend-owned group run. Returns (run, error).
     `extra` is merged into the run record BEFORE the first save (e.g. the auto-resume budget)."""
@@ -6895,7 +7116,7 @@ class Handler(BaseHTTPRequestHandler):
             return self._html("index.html")
         if p.startswith("/page/") and p.endswith(".html"):
             n = p[len("/page/"):-len(".html")]
-            if n in ("goals", "activity", "fleet", "files", "ops", "evolve", "world", "mind", "voxray"):  # voxray = ray-rendered voxel world view
+            if n in ("goals", "activity", "fleet", "files", "ops", "evolve", "world", "mind", "voxray", "mind-lab"):  # voxray = ray-rendered voxel world view; mind-lab = OpenRA-style RTS mind world
                 fp = os.path.join(HERE, "ui", "pages", n + ".html")
                 try:
                     html = open(fp, encoding="utf-8").read()
@@ -7578,6 +7799,12 @@ class Handler(BaseHTTPRequestHandler):
             except Exception as e:
                 return self._json(500, {"error": str(e)[:120]})
             return self._json(200, {"ok": True})
+        if p == "/api/mind-lab":
+            # 2026-11-26: Mind Lab RTS world (state/place/idea/tick/solidify).
+            try:
+                return self._json(200, _mind_lab(str((body or {}).get("op") or "state"), body or {}))
+            except Exception as e:
+                return self._json(500, {"error": str(e)[:160]})
         if p == "/api/user-messages":
             autoloop_note_human()   # AUTO-LOOP: a queued human message resets the streak budget
             entry = umq_add(body.get("text"), body.get("mentions"))
