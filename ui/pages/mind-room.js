@@ -60,7 +60,7 @@ var grid=new THREE.GridHelper(64,48,0x27395e,0x15203a);grid.position.y=0.01;scen
  for(var i=0;i<n;i++){var r=60+Math.random()*80,a=Math.random()*Math.PI*2,b=Math.acos(2*Math.random()-1);
   p[i*3]=r*Math.sin(b)*Math.cos(a);p[i*3+1]=Math.abs(r*Math.cos(b))*.7+2;p[i*3+2]=r*Math.sin(b)*Math.sin(a);}
  var g=new THREE.BufferGeometry();g.setAttribute('position',new THREE.BufferAttribute(p,3));
- scene.add(new THREE.Points(g,new THREE.PointsMaterial({color:0x9fb4cc,size:.55,transparent:true,opacity:.75})));})();
+ scene.add(new THREE.Points(g,new THREE.PointsMaterial({color:0x9fb4cc,size:.22,transparent:true,opacity:.75})));})();
 var wallMat=new THREE.MeshStandardMaterial({color:0x161f38,roughness:.9,metalness:.05,side:THREE.FrontSide});
 function wall(w,h,x,y,z,ry){var m=new THREE.Mesh(new THREE.PlaneGeometry(w,h),wallMat);
 m.position.set(x,y,z);m.rotation.y=ry;scene.add(m);return m;}
@@ -106,35 +106,33 @@ tTop.position.y=.95;table.add(tTop);
 /* ============ YOU: Super Saiyan Arnold, floating over the table ============ */
 var NPOS=new THREE.Vector3(3.4,2.3,-1.6);      /* my neurons: brain-in-a-jar beside you */
 var ssj=new THREE.Group();ssj.position.set(0,3.1,0);scene.add(ssj);
-var gold=new THREE.MeshStandardMaterial({color:0xffd54a,emissive:0xffaa00,emissiveIntensity:.6,roughness:.3});
-var suit=new THREE.MeshStandardMaterial({color:0x1c2748,emissive:0x0a1230,emissiveIntensity:.5,roughness:.5});
-var skin=new THREE.MeshStandardMaterial({color:0xf0c9a2,roughness:.6});
-ssj.add(new THREE.Mesh(new THREE.SphereGeometry(.52,24,20),skin));
-ssj.children[ssj.children.length-1].position.y=2.35;
-var torso=new THREE.Mesh(new THREE.CapsuleGeometry(.5,1.1,6,16),suit);torso.position.y=1.15;ssj.add(torso);
-for(var i=0;i<14;i++){var h=.7+sr(i)*.85;
- var spike=new THREE.Mesh(new THREE.ConeGeometry(.15,h,6),gold);
- var a=i/14*Math.PI*2,tilt=.25+sr(i+40)*.55;
- spike.position.set(Math.cos(a)*.34,2.72+sr(i+80)*.18,Math.sin(a)*.34);
- spike.rotation.set(Math.sin(a)*tilt,0,-Math.cos(a)*tilt);ssj.add(spike);}
-var shL=new THREE.Vector3(-.58,1.75,0),shR=new THREE.Vector3(.58,1.75,0);
-ssj.add(limb(shL,new THREE.Vector3(-1.25,.9,.35),.16,suit));
-var handR=new THREE.Vector3(3.1,-.55,-1.35);   /* reaches toward the brain jar */
-ssj.add(limb(shR,new THREE.Vector3(1.7,1.2,-.6),.16,suit));
-ssj.add(limb(new THREE.Vector3(1.7,1.2,-.6),handR,.13,skin));
-var fist=new THREE.Mesh(new THREE.SphereGeometry(.17,12,10),skin);fist.position.copy(handR);ssj.add(fist);
-ssj.add(limb(new THREE.Vector3(-.28,.45,0),new THREE.Vector3(-.5,-.95,.25),.19,suit));
-ssj.add(limb(new THREE.Vector3(.28,.45,0),new THREE.Vector3(.42,-.85,-.3),.19,suit));
+/* 2D billboard avatar (sprite-first: clean 2D character in the 3D field, RA-style) */
+var avC=document.createElement('canvas');avC.width=256;avC.height=384;
+(function(){var x=avC.getContext('2d');x.translate(128,0);
+ x.fillStyle='#ffd54a';x.beginPath();
+ for(var k=0;k<=9;k++){var a=-Math.PI/2+(k-4.5)*.36;x.lineTo(Math.cos(a)*98,118+Math.sin(a)*98);}
+ x.closePath();x.fill();
+ x.fillStyle='#f0c9a2';x.beginPath();x.arc(0,130,44,0,7);x.fill();
+ x.fillStyle='#1b2a4a';x.fillRect(-21,120,13,8);x.fillRect(8,120,13,8);
+ x.fillStyle='#1c2748';x.beginPath();
+ x.moveTo(-54,192);x.lineTo(54,192);x.lineTo(40,302);x.lineTo(-40,302);x.closePath();x.fill();
+ x.strokeStyle='#ffd54a';x.lineWidth=6;x.stroke();
+ x.fillStyle='#f0c9a2';x.fillRect(-78,198,22,88);x.fillRect(56,198,22,88);
+ x.fillStyle='#16203a';x.fillRect(-36,302,28,72);x.fillRect(8,302,28,72);
+})();
+var avTex=new THREE.CanvasTexture(avC);avTex.colorSpace=THREE.SRGBColorSpace;
+var ssjAvatar=new THREE.Sprite(new THREE.SpriteMaterial({map:avTex,transparent:true,depthWrite:false}));
+ssjAvatar.scale.set(1.5,2.25,1);ssjAvatar.position.y=1.3;ssj.add(ssjAvatar);
 var ssjBody=new THREE.Group();while(ssj.children.length)ssjBody.add(ssj.children[0]);ssj.add(ssjBody);
 /* rising golden aura */
-var AUR=380,ap=new Float32Array(AUR*3),abase=new Float32Array(AUR*3);
-for(i=0;i<AUR;i++){var aa=sr(i)*Math.PI*2,ar=.9+sr(i+7)*1.5;
- abase[i*3]=Math.cos(aa)*ar;abase[i*3+1]=sr(i+13)*4.6-1;abase[i*3+2]=Math.sin(aa)*ar;}
+var AUR=140,ap=new Float32Array(AUR*3),abase=new Float32Array(AUR*3);
+for(i=0;i<AUR;i++){var aa=sr(i)*Math.PI*2,ar=.55+sr(i+7)*.6;
+ abase[i*3]=Math.cos(aa)*ar;abase[i*3+1]=sr(i+13)*2.6-.6;abase[i*3+2]=Math.sin(aa)*ar;}
 ap.set(abase);
 var ag=new THREE.BufferGeometry();ag.setAttribute('position',new THREE.BufferAttribute(ap,3));
-var aura=new THREE.Points(ag,new THREE.PointsMaterial({color:0xffc233,size:.09,transparent:true,opacity:.85,blending:THREE.AdditiveBlending,depthWrite:false}));
+var aura=new THREE.Points(ag,new THREE.PointsMaterial({color:0xffc233,size:.05,transparent:true,opacity:.85,blending:THREE.AdditiveBlending,depthWrite:false}));
 ssj.add(aura);
-var auraLight=new THREE.PointLight(0xffc233,30,24);auraLight.position.y=1.4;ssj.add(auraLight);
+var auraLight=new THREE.PointLight(0xffc233,14,18);auraLight.position.y=1.4;ssj.add(auraLight);
 /* ============ MY NEURONS: brain-in-a-jar on a pedestal beside you ============ */
 (function(){
  var ped=new THREE.Mesh(new THREE.CylinderGeometry(.55,.7,.9,20),new THREE.MeshStandardMaterial({color:0x131b2e,roughness:.6}));
@@ -142,17 +140,17 @@ var auraLight=new THREE.PointLight(0xffc233,30,24);auraLight.position.y=1.4;ssj.
  var jar=new THREE.Mesh(new THREE.SphereGeometry(1.02,28,22),new THREE.MeshStandardMaterial({color:0xbfeaff,transparent:true,opacity:.14,roughness:.1,metalness:.1}));
  jar.position.copy(NPOS);scene.add(jar);
 })();
-var NN=200,np=new Float32Array(NN*3),blobs=[];
-for(i=0;i<4;i++)blobs.push(new THREE.Vector3((sr(i+200)-.5)*1.6,(sr(i+210)-.5)*1.1,(sr(i+220)-.5)*1.6));
+var NN=150,np=new Float32Array(NN*3),blobs=[];
+for(i=0;i<4;i++)blobs.push(new THREE.Vector3((sr(i+200)-.5)*0.8,(sr(i+210)-.5)*0.6,(sr(i+220)-.5)*0.8));
 for(i=0;i<NN;i++){var b=blobs[i%4];
- np[i*3]=b.x+(sr(i+300)-.5)*1.0;np[i*3+1]=b.y+(sr(i+310)-.5)*.9;np[i*3+2]=b.z+(sr(i+310+40)-.5)*1.0;}
+ np[i*3]=b.x+(sr(i+300)-.5)*0.5;np[i*3+1]=b.y+(sr(i+310)-.5)*0.45;np[i*3+2]=b.z+(sr(i+310+40)-.5)*0.5;}
 var ng=new THREE.BufferGeometry();ng.setAttribute('position',new THREE.BufferAttribute(np,3));
-var nmat=new THREE.PointsMaterial({color:0x7dd3fc,size:.14,transparent:true,opacity:.95,blending:THREE.AdditiveBlending,depthWrite:false});
+var nmat=new THREE.PointsMaterial({color:0x7dd3fc,size:.07,transparent:true,opacity:.85,blending:THREE.AdditiveBlending,depthWrite:false});
 var neurons=new THREE.Points(ng,nmat);neurons.position.copy(NPOS);scene.add(neurons);
 (function(){var L=[];
  for(var a=0;a<NN;a++)for(var b2=a+1;b2<NN;b2++){
   var dx=np[a*3]-np[b2*3],dy=np[a*3+1]-np[b2*3+1],dz=np[a*3+2]-np[b2*3+2];
-  if(dx*dx+dy*dy+dz*dz<.7){L.push(np[a*3],np[a*3+1],np[a*3+2],np[b2*3],np[b2*3+1],np[b2*3+2]);if(L.length>500)break;}}
+  if(dx*dx+dy*dy+dz*dz<.35){L.push(np[a*3],np[a*3+1],np[a*3+2],np[b2*3],np[b2*3+1],np[b2*3+2]);if(L.length>500)break;}}
  var lg=new THREE.BufferGeometry();lg.setAttribute('position',new THREE.BufferAttribute(new Float32Array(L),3));
  neurons.add(new THREE.LineSegments(lg,new THREE.LineBasicMaterial({color:0x2e7ea6,transparent:true,opacity:.4})));})();
 var hubs=[];
@@ -366,10 +364,17 @@ function buildPods(roster){
   var g=new THREE.Group();g.position.set(x,0,z);g.userData.podId=id;podsGroup.add(g);
   desk.userData.podId=id;
   var orbM=new THREE.MeshStandardMaterial({color:new THREE.Color(color),emissive:new THREE.Color(color),emissiveIntensity:.9});
-  var orb=new THREE.Mesh(new THREE.SphereGeometry(sub?.11:.17,14,12),orbM);orb.position.y=sub?1.75:2.5;orb.userData.podId=id;g.add(orb);
+var oC=document.createElement('canvas');oC.width=128;oC.height=128;
+(function(){var x=oC.getContext('2d');
+ x.beginPath();x.arc(64,64,54,0,7);x.fillStyle='#0d1526';x.fill();x.lineWidth=8;x.strokeStyle=color;x.stroke();
+ x.beginPath();x.arc(64,64,38,0,7);x.fillStyle=color;x.globalAlpha=.28;x.fill();x.globalAlpha=1;
+ x.fillStyle='#fff';x.font='700 62px "Segoe UI", Arial';x.textAlign='center';x.textBaseline='middle';
+ x.fillText((a.name||id).slice(0,1).toUpperCase(),64,68);})();
+var oTex=new THREE.CanvasTexture(oC);oTex.colorSpace=THREE.SRGBColorSpace;
+var orb=new THREE.Sprite(new THREE.SpriteMaterial({map:oTex,transparent:true,depthWrite:false}));orb.scale.set(sub?.5:.72,sub?.5:.72,1);orb.position.y=sub?1.05:1.35;g.add(orb);
   var lightMat=new THREE.MeshStandardMaterial({color:0x334155,emissive:0x475569,emissiveIntensity:.8});
   var lt=new THREE.Mesh(new THREE.SphereGeometry(.05,8,6),lightMat);lt.position.set(sub?.5:-.75,sub?1.28:1.55,sub?.3:-.6);g.add(lt);
-  var l=makeLabel(a.name||id,(a.color||'#c8d2e0'),sub?.6:.85);l.position.y=sub?1.25:1.9;g.add(l);
+  var l=makeLabel(a.name||id,(a.color||'#c8d2e0'),sub?.6:.85);l.position.y=sub?1.4:2.35;g.add(l);
   var pill=makePill();pill.s.position.set(0,sub?1.5:1.72,0);g.add(pill.s);
   agentHome[id]=SEATS[id]?cellOf(new THREE.Vector3(x,2.5,z)):null;
   agents.push({id:id,name:a.name||id,color:color,g:g,orb:orb,pos:new THREE.Vector3(x,sub?1.75:2.5,z),
@@ -492,7 +497,7 @@ function frame(){
   a.orb.rotation.y+=dt*.8;}
  coin.rotation.x+=dt*2;
  helix.rotation.y+=dt*.6;
- ring.material.emissiveIntensity=.55+.35*Math.sin(t*1.3);
+ ring.material.emissiveIntensity=.3+.15*Math.sin(t*1.3);
  for(i=0;i<leds.length;i++)leds[i].m.material.emissiveIntensity=.3+.7*(0.5+0.5*Math.sin(t*2.2+leds[i].ph));
  renderer.render(scene,camera);}
 window.__mind={scene:scene,camera:camera,canvas:renderer.domElement,agents:agents,agentHome:agentHome,
