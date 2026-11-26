@@ -1,0 +1,61 @@
+{
+  "ts": "2026-11-26T20:30:46.190812+00:00",
+  "sla_s": 120,
+  "variants": {
+    "Q8_0": [
+      "black",
+      "pale",
+      "red",
+      "white"
+    ],
+    "UD-Q4_K_S": [
+      "black",
+      "pale",
+      "white"
+    ],
+    "MTP": [
+      "white"
+    ],
+    "UD-Q4_K_XL": [
+      "red"
+    ]
+  },
+  "agent_map": {
+    "Orchestrator": "Q8_0",
+    "Researcher": "UD-Q4_K_S",
+    "Builder": "Q8_0",
+    "Verifier": "UD-Q4_K_S",
+    "Designer": "UD-Q4_K_S",
+    "Archivist": "Q8_0",
+    "Scribe": "Q8_0",
+    "Mechanic": "UD-Q4_K_S",
+    "Outlet": "UD-Q4_K_S",
+    "Pixel": "Q8_0",
+    "Forge": "Q8_0",
+    "Lumen": "UD-Q4_K_S",
+    "Reel": "UD-Q4_K_S",
+    "Splice": "UD-Q4_K_S"
+  },
+  "gaps": [
+    {
+      "variant": "MTP",
+      "hosts": [
+        "white"
+      ],
+      "host_count": 1,
+      "affected_agents": [],
+      "risk": "SINGLE-POINT-OF-FAILURE: host-down = full reload (120-240s)"
+    },
+    {
+      "variant": "UD-Q4_K_XL",
+      "hosts": [
+        "red"
+      ],
+      "host_count": 1,
+      "affected_agents": [],
+      "risk": "SINGLE-POINT-OF-FAILURE: host-down = full reload (120-240s)"
+    }
+  ],
+  "verdict": "GAP",
+  "summary": "4 model variants across 4 hosts; 2 variant(s) below dual-residency threshold"
+}
