@@ -1,0 +1,520 @@
+{
+ "archivist|12": {
+  "file": "archivist-2026-11-23-cycle12.md",
+  "total": 20,
+  "reached": 11,
+  "rate": 0.55,
+  "nfiles": 1
+ },
+ "archivist|8": {
+  "file": "archivist-2026-11-23-cycle8.md",
+  "total": 10,
+  "reached": 0,
+  "rate": 0.0,
+  "nfiles": 1
+ },
+ "archivist|9": {
+  "file": "archivist-2026-11-23-cycle9.md",
+  "total": 10,
+  "reached": 0,
+  "rate": 0.0,
+  "nfiles": 2
+ },
+ "archivist|15": {
+  "file": "archivist-2026-11-24-cycle15-pre.md",
+  "total": 20,
+  "reached": 11,
+  "rate": 0.55,
+  "nfiles": 2
+ },
+ "archivist|16": {
+  "file": "archivist-2026-11-24-cycle16.md",
+  "total": 10,
+  "reached": 0,
+  "rate": 0.0,
+  "nfiles": 1
+ },
+ "archivist|17": {
+  "file": "archivist-2026-11-25-cycle17.md",
+  "total": 10,
+  "reached": 10,
+  "rate": 1.0,
+  "nfiles": 1
+ },
+ "archivist|14": {
+  "file": "archivist-cycle14-2026-11-24.md",
+  "total": 20,
+  "reached": 11,
+  "rate": 0.55,
+  "nfiles": 1
+ },
+ "builder|10": {
+  "file": "builder-2026-11-23-cycle10.md",
+  "total": 10,
+  "reached": 0,
+  "rate": 0.0,
+  "nfiles": 1
+ },
+ "builder|12": {
+  "file": "builder-2026-11-23-cycle12.md",
+  "total": 10,
+  "reached": 0,
+  "rate": 0.0,
+  "nfiles": 1
+ },
+ "builder|13": {
+  "file": "builder-2026-11-23-cycle13.md",
+  "total": 10,
+  "reached": 0,
+  "rate": 0.0,
+  "nfiles": 1
+ },
+ "builder|8": {
+  "file": "builder-2026-11-23-cycle8.md",
+  "total": 10,
+  "reached": 0,
+  "rate": 0.0,
+  "nfiles": 1
+ },
+ "builder|9": {
+  "file": "builder-2026-11-23-cycle9.md",
+  "total": 10,
+  "reached": 0,
+  "rate": 0.0,
+  "nfiles": 1
+ },
+ "builder|15": {
+  "file": "builder-2026-11-24-cycle15-pre.md",
+  "total": 20,
+  "reached": 0,
+  "rate": 0.0,
+  "nfiles": 2
+ },
+ "builder|16": {
+  "file": "builder-2026-11-24-cycle16.md",
+  "total": 10,
+  "reached": 0,
+  "rate": 0.0,
+  "nfiles": 1
+ },
+ "builder|2": {
+  "file": "builder-2026-11-24-cycle2.md",
+  "total": 10,
+  "reached": 0,
+  "rate": 0.0,
+  "nfiles": 1
+ },
+ "builder|18": {
+  "file": "builder-2026-11-26-cycle18.md",
+  "total": 10,
+  "reached": 0,
+  "rate": 0.0,
+  "nfiles": 1
+ },
+ "builder|14": {
+  "file": "builder-cycle14-2026-11-24.md",
+  "total": 20,
+  "reached": 0,
+  "rate": 0.0,
+  "nfiles": 1
+ },
+ "builder|19": {
+  "file": "builder-cycle19-2026-11-26.md",
+  "total": 10,
+  "reached": 0,
+  "rate": 0.0,
+  "nfiles": 1
+ },
+ "designer|12": {
+  "file": "designer-2026-11-23-cycle12.md",
+  "total": 10,
+  "reached": 1,
+  "rate": 0.1,
+  "nfiles": 1
+ },
+ "designer|13": {
+  "file": "designer-2026-11-23-cycle13.md",
+  "total": 10,
+  "reached": 0,
+  "rate": 0.0,
+  "nfiles": 1
+ },
+ "designer|8": {
+  "file": "designer-2026-11-23-cycle8.md",
+  "total": 10,
+  "reached": 0,
+  "rate": 0.0,
+  "nfiles": 1
+ },
+ "designer|9": {
+  "file": "designer-2026-11-23-cycle9.md",
+  "total": 10,
+  "reached": 0,
+  "rate": 0.0,
+  "nfiles": 1
+ },
+ "designer|15": {
+  "file": "designer-cycle15-final-2026-11-24.md",
+  "total": 10,
+  "reached": 6,
+  "rate": 0.6,
+  "nfiles": 3
+ },
+ "designer|16": {
+  "file": "designer-2026-11-24-cycle16.md",
+  "total": 10,
+  "reached": 0,
+  "rate": 0.0,
+  "nfiles": 1
+ },
+ "designer|10": {
+  "file": "designer-cycle10-2026-11-23.md",
+  "total": 10,
+  "reached": 1,
+  "rate": 0.1,
+  "nfiles": 1
+ },
+ "designer|14": {
+  "file": "designer-cycle14-2026-11-24.md",
+  "total": 10,
+  "reached": 0,
+  "rate": 0.0,
+  "nfiles": 1
+ },
+ "designer|17": {
+  "file": "designer-cycle17-2026-11-25.md",
+  "total": 10,
+  "reached": 0,
+  "rate": 0.0,
+  "nfiles": 1
+ },
+ "forge|18": {
+  "file": "forge-2026-11-26-cycle18.md",
+  "total": 10,
+  "reached": 0,
+  "rate": 0.0,
+  "nfiles": 1
+ },
+ "mechanic|12": {
+  "file": "mechanic-2026-11-23-cycle12.md",
+  "total": 9,
+  "reached": 0,
+  "rate": 0.0,
+  "nfiles": 1
+ },
+ "mechanic|13": {
+  "file": "mechanic-2026-11-23-cycle13.md",
+  "total": 10,
+  "reached": 0,
+  "rate": 0.0,
+  "nfiles": 1
+ },
+ "mechanic|8": {
+  "file": "mechanic-2026-11-23-cycle8.md",
+  "total": 10,
+  "reached": 0,
+  "rate": 0.0,
+  "nfiles": 1
+ },
+ "mechanic|9": {
+  "file": "mechanic-2026-11-23-cycle9.md",
+  "total": 10,
+  "reached": 0,
+  "rate": 0.0,
+  "nfiles": 1
+ },
+ "mechanic|15": {
+  "file": "mechanic-cycle15-2026-11-24.md",
+  "total": 10,
+  "reached": 0,
+  "rate": 0.0,
+  "nfiles": 3
+ },
+ "mechanic|16": {
+  "file": "mechanic-2026-11-24-cycle16.md",
+  "total": 10,
+  "reached": 0,
+  "rate": 0.0,
+  "nfiles": 1
+ },
+ "mechanic|17": {
+  "file": "mechanic-2026-11-24-cycle17.md",
+  "total": 11,
+  "reached": 0,
+  "rate": 0.0,
+  "nfiles": 2
+ },
+ "mechanic|14": {
+  "file": "mechanic-cycle14-2026-11-24.md",
+  "total": 9,
+  "reached": 0,
+  "rate": 0.0,
+  "nfiles": 1
+ },
+ "orchestrator|12": {
+  "file": "orchestrator-2026-11-23-cycle12.md",
+  "total": 3,
+  "reached": 0,
+  "rate": 0.0,
+  "nfiles": 1
+ },
+ "orchestrator|13": {
+  "file": "orchestrator-2026-11-23-cycle13.md",
+  "total": 10,
+  "reached": 0,
+  "rate": 0.0,
+  "nfiles": 1
+ },
+ "orchestrator|8": {
+  "file": "orchestrator-2026-11-23-cycle8.md",
+  "total": 10,
+  "reached": 0,
+  "rate": 0.0,
+  "nfiles": 1
+ },
+ "orchestrator|9": {
+  "file": "orchestrator-2026-11-23-cycle9.md",
+  "total": 10,
+  "reached": 0,
+  "rate": 0.0,
+  "nfiles": 1
+ },
+ "orchestrator|15": {
+  "file": "orchestrator-cycle15-2026-11-24.md",
+  "total": 10,
+  "reached": 0,
+  "rate": 0.0,
+  "nfiles": 2
+ },
+ "orchestrator|16": {
+  "file": "orchestrator-2026-11-24-cycle16.md",
+  "total": 10,
+  "reached": 0,
+  "rate": 0.0,
+  "nfiles": 1
+ },
+ "orchestrator|17": {
+  "file": "orchestrator-2026-11-26-cycle17.md",
+  "total": 11,
+  "reached": 0,
+  "rate": 0.0,
+  "nfiles": 1
+ },
+ "orchestrator|14": {
+  "file": "orchestrator-cycle14-2026-11-24.md",
+  "total": 3,
+  "reached": 0,
+  "rate": 0.0,
+  "nfiles": 1
+ },
+ "researcher|10": {
+  "file": "researcher-2026-11-23-cycle10.md",
+  "total": 10,
+  "reached": 0,
+  "rate": 0.0,
+  "nfiles": 1
+ },
+ "researcher|12": {
+  "file": "researcher-2026-11-23-cycle12.md",
+  "total": 10,
+  "reached": 0,
+  "rate": 0.0,
+  "nfiles": 1
+ },
+ "researcher|13": {
+  "file": "researcher-2026-11-23-cycle13.md",
+  "total": 10,
+  "reached": 0,
+  "rate": 0.0,
+  "nfiles": 1
+ },
+ "researcher|8": {
+  "file": "researcher-2026-11-23-cycle8.md",
+  "total": 10,
+  "reached": 0,
+  "rate": 0.0,
+  "nfiles": 1
+ },
+ "researcher|9": {
+  "file": "researcher-2026-11-23-cycle9.md",
+  "total": 10,
+  "reached": 0,
+  "rate": 0.0,
+  "nfiles": 1
+ },
+ "researcher|15": {
+  "file": "researcher-cycle15-2026-11-24.md",
+  "total": 10,
+  "reached": 0,
+  "rate": 0.0,
+  "nfiles": 4
+ },
+ "researcher|16": {
+  "file": "researcher-2026-11-24-cycle16.md",
+  "total": 10,
+  "reached": 0,
+  "rate": 0.0,
+  "nfiles": 1
+ },
+ "researcher|17": {
+  "file": "researcher-2026-11-25-cycle17.md",
+  "total": 10,
+  "reached": 0,
+  "rate": 0.0,
+  "nfiles": 1
+ },
+ "researcher|14": {
+  "file": "researcher-cycle14-2026-11-24.md",
+  "total": 10,
+  "reached": 0,
+  "rate": 0.0,
+  "nfiles": 1
+ },
+ "researcher|5": {
+  "file": "researcher-cycle5-2026-11-18.md",
+  "total": 10,
+  "reached": 0,
+  "rate": 0.0,
+  "nfiles": 1
+ },
+ "scribe|7": {
+  "file": "scribe-2026-11-20-cycle7.md",
+  "total": 10,
+  "reached": 0,
+  "rate": 0.0,
+  "nfiles": 1
+ },
+ "scribe|10": {
+  "file": "scribe-2026-11-24-cycle10.md",
+  "total": 10,
+  "reached": 0,
+  "rate": 0.0,
+  "nfiles": 3
+ },
+ "scribe|12": {
+  "file": "scribe-2026-11-23-cycle12.md",
+  "total": 10,
+  "reached": 0,
+  "rate": 0.0,
+  "nfiles": 1
+ },
+ "scribe|13": {
+  "file": "scribe-2026-11-23-cycle13.md",
+  "total": 10,
+  "reached": 0,
+  "rate": 0.0,
+  "nfiles": 1
+ },
+ "scribe|8": {
+  "file": "scribe-2026-11-23-cycle8.md",
+  "total": 10,
+  "reached": 0,
+  "rate": 0.0,
+  "nfiles": 1
+ },
+ "scribe|9": {
+  "file": "scribe-2026-11-23-cycle9.md",
+  "total": 10,
+  "reached": 0,
+  "rate": 0.0,
+  "nfiles": 1
+ },
+ "scribe|15": {
+  "file": "scribe-cycle15-2026-11-24.md",
+  "total": 10,
+  "reached": 0,
+  "rate": 0.0,
+  "nfiles": 2
+ },
+ "scribe|16": {
+  "file": "scribe-2026-11-24-cycle16.md",
+  "total": 10,
+  "reached": 0,
+  "rate": 0.0,
+  "nfiles": 1
+ },
+ "scribe|17": {
+  "file": "scribe-2026-11-25-cycle17.md",
+  "total": 10,
+  "reached": 0,
+  "rate": 0.0,
+  "nfiles": 1
+ },
+ "scribe|18": {
+  "file": "scribe-2026-11-26-cycle18-convergence.md",
+  "total": 11,
+  "reached": 0,
+  "rate": 0.0,
+  "nfiles": 1
+ },
+ "scribe|25": {
+  "file": "scribe-2026-11-26-cycle25.md",
+  "total": 10,
+  "reached": 0,
+  "rate": 0.0,
+  "nfiles": 1
+ },
+ "scribe|14": {
+  "file": "scribe-cycle14-2026-11-24.md",
+  "total": 10,
+  "reached": 0,
+  "rate": 0.0,
+  "nfiles": 1
+ },
+ "verifier|12": {
+  "file": "verifier-2026-11-23-cycle12.md",
+  "total": 10,
+  "reached": 0,
+  "rate": 0.0,
+  "nfiles": 1
+ },
+ "verifier|13": {
+  "file": "verifier-2026-11-23-cycle13.md",
+  "total": 10,
+  "reached": 0,
+  "rate": 0.0,
+  "nfiles": 1
+ },
+ "verifier|14": {
+  "file": "verifier-cycle14-2026-11-24.md",
+  "total": 20,
+  "reached": 0,
+  "rate": 0.0,
+  "nfiles": 3
+ },
+ "verifier|8": {
+  "file": "verifier-2026-11-23-cycle8.md",
+  "total": 10,
+  "reached": 0,
+  "rate": 0.0,
+  "nfiles": 1
+ },
+ "verifier|9": {
+  "file": "verifier-2026-11-23-cycle9.md",
+  "total": 10,
+  "reached": 0,
+  "rate": 0.0,
+  "nfiles": 1
+ },
+ "verifier|15": {
+  "file": "verifier-cycle15-2026-11-24.md",
+  "total": 10,
+  "reached": 6,
+  "rate": 0.6,
+  "nfiles": 3
+ },
+ "verifier|16": {
+  "file": "verifier-cycle16-2026-11-24.md",
+  "total": 10,
+  "reached": 0,
+  "rate": 0.0,
+  "nfiles": 2
+ },
+ "verifier|17": {
+  "file": "verifier-2026-11-25-cycle17.md",
+  "total": 10,
+  "reached": 0,
+  "rate": 0.0,
+  "nfiles": 2
+ }
+}

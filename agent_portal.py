@@ -5236,12 +5236,36 @@ def start_group_run(text, extra=None):
                 return None, ("blocked: model not loaded/unreachable for " + ", ".join(sorted(_missing)))
         except Exception:
             pass
+        # 2026-11-26: modulization (user idea) - recursive prompt shrinking with an exact
+        # round-trip legend at the top of the prompt. Opt-in via memory/ops/modulize.json
+        # {"enabled": true, "min_gain": 30}; only applied when it nets >= 60 chars.
+        _mod_stats = None
+        try:
+            _mcf = os.path.join(HERE, "memory", "ops", "modulize.json")
+            if os.path.exists(_mcf):
+                with open(_mcf, encoding="utf-8") as _mfh:
+                    _mcfg = json.load(_mfh)
+                if _mcfg.get("enabled") and len(full_text) > 500:
+                    import importlib.util as _ilu
+                    _mspec = _ilu.spec_from_file_location("ml_modulize",
+                                                          os.path.join(HERE, "memory", "archivist", "modulize.py"))
+                    _mm = _ilu.module_from_spec(_mspec)
+                    _mspec.loader.exec_module(_mm)
+                    _mres = _mm.modulize(full_text, min_gain=int(_mcfg.get("min_gain", 30)))
+                    if _mres and _mres["saved"] >= 60:
+                        full_text = _mres["text"]
+                        _mod_stats = {"before": _mres["before"], "after": _mres["after"],
+                                      "saved": _mres["saved"], "entries": len(_mres["legend"])}
+        except Exception:
+            pass
         hist = _load_history("group")
-        run = {"id": rid, "status": "running", "prompt": full_text[:4000],
+        run = {"id": rid, "status": "running", "prompt": full_text[:4000], 
                "cast": (_goal_round_cast or (extra or {}).get("cast_override") or mentioned or names),
                "settled": [], "nudges": 0, "phase": "prompt",
                "started": time.time(), "ended": None, "verdict": None, "error": None,
                "hist_start": len(hist)}
+        if _mod_stats:
+            run["modulized"] = _mod_stats
         if _mls is not None:
             run["model_load"] = _mls
         if extra:

@@ -1,0 +1,5 @@
+{
+ "enabled": true,
+ "min_gain": 30,
+ "note": "modulization on for group-run prompts; set enabled=false to disable"
+}

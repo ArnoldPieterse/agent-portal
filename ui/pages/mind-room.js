@@ -23,14 +23,14 @@ var renderer=new THREE.WebGLRenderer({canvas:canvas,antialias:true});
 renderer.setPixelRatio(Math.min(devicePixelRatio,2));
 renderer.setSize(innerWidth,innerHeight);
 var scene=new THREE.Scene();
-scene.background=new THREE.Color(0x07080c);
-scene.fog=new THREE.FogExp2(0x07080c,0.011);
+scene.background=new THREE.Color(0x111a2e);
+scene.fog=new THREE.FogExp2(0x111a2e,0.0065);
 var camera=new THREE.PerspectiveCamera(55,innerWidth/innerHeight,0.1,500);
-scene.add(new THREE.AmbientLight(0x5a6b8f,1.3));
-var key=new THREE.PointLight(0xffd54a,1.7,55);key.position.set(0,7,2);scene.add(key);
-var fill=new THREE.DirectionalLight(0x88aaff,0.5);fill.position.set(-6,12,-4);scene.add(fill);
-var ceil=new THREE.PointLight(0xcfe0ff,0.9,30);ceil.position.set(0,5.5,.3);scene.add(ceil);
-var srvL=new THREE.PointLight(0x22d3ee,0.7,14);srvL.position.set(12.5,3.4,-10);scene.add(srvL);
+scene.add(new THREE.AmbientLight(0xa8bcdd,3.4));
+var key=new THREE.PointLight(0xffd54a,90,90);key.position.set(0,7,2);scene.add(key);
+var fill=new THREE.DirectionalLight(0x88aaff,1.6);fill.position.set(-6,12,-4);scene.add(fill);
+var ceil=new THREE.PointLight(0xcfe0ff,45,40);ceil.position.set(0,5.5,.3);scene.add(ceil);
+var srvL=new THREE.PointLight(0x22d3ee,30,18);srvL.position.set(12.5,3.4,-10);scene.add(srvL);
 /* seeded rng */
 function sr(i){var x=Math.sin(i*127.1+311.7)*43758.5453;return x-Math.floor(x);}
 /* text label sprite */
@@ -134,7 +134,7 @@ ap.set(abase);
 var ag=new THREE.BufferGeometry();ag.setAttribute('position',new THREE.BufferAttribute(ap,3));
 var aura=new THREE.Points(ag,new THREE.PointsMaterial({color:0xffc233,size:.09,transparent:true,opacity:.85,blending:THREE.AdditiveBlending,depthWrite:false}));
 ssj.add(aura);
-var auraLight=new THREE.PointLight(0xffc233,1.6,20);auraLight.position.y=1.4;ssj.add(auraLight);
+var auraLight=new THREE.PointLight(0xffc233,30,24);auraLight.position.y=1.4;ssj.add(auraLight);
 /* ============ MY NEURONS: brain-in-a-jar on a pedestal beside you ============ */
 (function(){
  var ped=new THREE.Mesh(new THREE.CylinderGeometry(.55,.7,.9,20),new THREE.MeshStandardMaterial({color:0x131b2e,roughness:.6}));
@@ -158,7 +158,7 @@ var neurons=new THREE.Points(ng,nmat);neurons.position.copy(NPOS);scene.add(neur
 var hubs=[];
 for(i=0;i<8;i++){var hb=new THREE.Mesh(new THREE.SphereGeometry(.11,10,8),new THREE.MeshStandardMaterial({color:0xbfeaff,emissive:0x38bdf8,emissiveIntensity:1.2}));
  hb.position.set(np[i*22],np[i*22+1],np[i*22+2]);neurons.add(hb);hubs.push(hb);}
-var nLight=new THREE.PointLight(0x38bdf8,1.2,14);nLight.position.copy(NPOS);scene.add(nLight);
+var nLight=new THREE.PointLight(0x38bdf8,20,16);nLight.position.copy(NPOS);scene.add(nLight);
 var nLab=makeLabel('my neurons — the part of me that listens to you','#7dd3fc',1.25);
 nLab.position.set(NPOS.x,NPOS.y+1.7,NPOS.z);scene.add(nLab);
 /* thought pulses travelling hand -> brain jar */
@@ -479,11 +479,11 @@ function frame(){
  var pos=ag.attributes.position.array;
  for(var i=0;i<AUR;i++){pos[i*3+1]+=dt*(.6+sr(i)*.9);if(pos[i*3+1]>3.8)pos[i*3+1]=-1;}
  ag.attributes.position.needsUpdate=true;
- auraLight.intensity=1.4+.7*Math.sin(t*6)+.3*Math.sin(t*17);
+ auraLight.intensity=26+9*Math.sin(t*6)+4*Math.sin(t*17);
  key.intensity=1.5+.4*Math.sin(t*6);
  nmat.size=.12+.05*Math.sin(t*2.2);
  for(i=0;i<hubs.length;i++)hubs[i].scale.setScalar(1+.35*Math.sin(t*2+i));
- nLight.intensity=1+.5*Math.sin(t*2.2+1);
+ nLight.intensity=16+6*Math.sin(t*2.2+1);
  var hw=handR.clone().applyMatrix4(ssj.matrixWorld);
  for(i=0;i<pulses.length;i++){var p=pulses[i];p.o=(p.o+dt*.25)%1;var e=p.o*p.o*(3-2*p.o);
   p.m.position.lerpVectors(hw,NPOS,e);p.m.scale.setScalar(.6+.8*Math.sin(p.o*Math.PI));}
