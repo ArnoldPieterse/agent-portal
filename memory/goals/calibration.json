@@ -1,14 +1,6 @@
 {
  "runs": [
   {
-   "at": "2026-11-24 10:23:43",
-   "scored_forecast": "2026-11-24 10:06:10",
-   "hit_on_time": 0,
-   "late": 0,
-   "slipped": 0,
-   "total": 10
-  },
-  {
    "at": "2026-11-24 10:31:22",
    "scored_forecast": "2026-11-24 10:23:43",
    "hit_on_time": 0,
@@ -479,10 +471,18 @@
    "late": 0,
    "slipped": 0,
    "total": 10
+  },
+  {
+   "at": "2026-11-26 22:08:44",
+   "scored_forecast": "2026-11-26 21:03:30",
+   "hit_on_time": 3,
+   "late": 0,
+   "slipped": 0,
+   "total": 10
   }
  ],
  "rolling": {
-  "hit_rate": 0.191,
+  "hit_rate": 0.196,
   "slip_rate": 0.0
  },
  "last_check": "2026-11-25 13:31:17 (no prior forecast to score)"

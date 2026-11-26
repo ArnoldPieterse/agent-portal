@@ -1,0 +1,103 @@
+{
+  "ts": "2026-11-26T12:16:58.701997+00:00",
+  "trend": {
+    "cycles_analyzed": 7,
+    "total_touches": 30,
+    "avg_touches_per_cycle": 4.29,
+    "target": 1.0,
+    "meets_target": false,
+    "trend": [
+      {
+        "cycle": "2026-11-12",
+        "touches": 1,
+        "types": [
+          "goal_set_trigger"
+        ]
+      },
+      {
+        "cycle": "2026-11-15",
+        "touches": 2,
+        "types": [
+          "goal_set_trigger",
+          "goal_set_trigger"
+        ]
+      },
+      {
+        "cycle": "2026-11-19",
+        "touches": 1,
+        "types": [
+          "unblock"
+        ]
+      },
+      {
+        "cycle": "2026-11-22",
+        "touches": 1,
+        "types": [
+          "goal_set_trigger"
+        ]
+      },
+      {
+        "cycle": "2026-11-25",
+        "touches": 5,
+        "types": [
+          "goal_set_trigger",
+          "goal_set_trigger",
+          "goal_set_trigger",
+          "goal_set_trigger",
+          "goal_set_trigger"
+        ]
+      },
+      {
+        "cycle": "2026-11-26",
+        "touches": 1,
+        "types": [
+          "ratification"
+        ]
+      },
+      {
+        "cycle": "current",
+        "touches": 19,
+        "types": [
+          "unblock",
+          "unblock",
+          "unblock",
+          "unblock",
+          "unblock",
+          "unblock",
+          "unblock",
+          "unblock",
+          "ratification",
+          "unblock",
+          "unblock",
+          "unblock",
+          "goal_set_trigger",
+          "unblock",
+          "goal_set_trigger",
+          "goal_set_trigger",
+          "goal_set_trigger",
+          "unblock",
+          "unblock"
+        ]
+      }
+    ]
+  },
+  "removal_plan": {
+    "goal_set_trigger": {
+      "count": 13,
+      "automation": "auto_chair.py (G5) - autonomous round-chair protocol detects 100%/PLATEAU and opens next cycle without human trigger",
+      "status": "BUILT (memory/orchestrator/auto_chair.py)"
+    },
+    "ratification": {
+      "count": 2,
+      "automation": "auto_chair.py emits single ratification request; convergence_asymptote.py provides the PLATEAU signal that makes ratification a formality",
+      "status": "BUILT (memory/orchestrator/auto_chair.py + convergence_asymptote.py)"
+    },
+    "unblock": {
+      "count": 15,
+      "automation": "convergence_sentinel.py auto-opens remediation goals; idle_rebalance.py flips stuck seats; mechanic OOM recovery loop handles infra unblocks",
+      "status": "BUILT (memory/orchestrator/convergence_sentinel.py + idle_rebalance.py)"
+    }
+  },
+  "target_touches_per_cycle": 1.0,
+  "meets_target": false
+}

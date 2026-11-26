@@ -1,0 +1,127 @@
+{
+  "ts": "2026-11-26T12:21:23.303630+00:00",
+  "status": "ok",
+  "n_predictions": 10,
+  "n_reached": 3,
+  "overall_brier": 0.203,
+  "per_lane": {
+    "builder": {
+      "brier": 0.2352,
+      "n_predictions": 1,
+      "avg_predicted": 0.515,
+      "actual_hit_rate": 1.0,
+      "calibration_gap": -0.485
+    },
+    "designer": {
+      "brier": 0.0021,
+      "n_predictions": 1,
+      "avg_predicted": 0.046,
+      "actual_hit_rate": 0.0,
+      "calibration_gap": 0.046
+    },
+    "forge": {
+      "brier": 0.2144,
+      "n_predictions": 1,
+      "avg_predicted": 0.463,
+      "actual_hit_rate": 0.0,
+      "calibration_gap": 0.463
+    },
+    "mechanic": {
+      "brier": 0.5746,
+      "n_predictions": 1,
+      "avg_predicted": 0.758,
+      "actual_hit_rate": 0.0,
+      "calibration_gap": 0.758
+    },
+    "orchestrator": {
+      "brier": 0.1303,
+      "n_predictions": 1,
+      "avg_predicted": 0.639,
+      "actual_hit_rate": 1.0,
+      "calibration_gap": -0.361
+    },
+    "outlet": {
+      "brier": 0.025,
+      "n_predictions": 1,
+      "avg_predicted": 0.158,
+      "actual_hit_rate": 0.0,
+      "calibration_gap": 0.158
+    },
+    "pixel": {
+      "brier": 0.025,
+      "n_predictions": 1,
+      "avg_predicted": 0.158,
+      "actual_hit_rate": 0.0,
+      "calibration_gap": 0.158
+    },
+    "scribe": {
+      "brier": 0.2927,
+      "n_predictions": 1,
+      "avg_predicted": 0.459,
+      "actual_hit_rate": 1.0,
+      "calibration_gap": -0.541
+    },
+    "verifier": {
+      "brier": 0.2652,
+      "n_predictions": 2,
+      "avg_predicted": 0.515,
+      "actual_hit_rate": 0.0,
+      "calibration_gap": 0.515
+    }
+  },
+  "miscalibrated_lanes": [
+    {
+      "agent": "builder",
+      "gap": -0.485,
+      "direction": "under-forecasting",
+      "weight_adjustment": 0.485
+    },
+    {
+      "agent": "forge",
+      "gap": 0.463,
+      "direction": "over-forecasting",
+      "weight_adjustment": -0.463
+    },
+    {
+      "agent": "mechanic",
+      "gap": 0.758,
+      "direction": "over-forecasting",
+      "weight_adjustment": -0.758
+    },
+    {
+      "agent": "orchestrator",
+      "gap": -0.361,
+      "direction": "under-forecasting",
+      "weight_adjustment": 0.361
+    },
+    {
+      "agent": "outlet",
+      "gap": 0.158,
+      "direction": "over-forecasting",
+      "weight_adjustment": -0.158
+    },
+    {
+      "agent": "pixel",
+      "gap": 0.158,
+      "direction": "over-forecasting",
+      "weight_adjustment": -0.158
+    },
+    {
+      "agent": "scribe",
+      "gap": -0.541,
+      "direction": "under-forecasting",
+      "weight_adjustment": 0.541
+    },
+    {
+      "agent": "verifier",
+      "gap": 0.515,
+      "direction": "over-forecasting",
+      "weight_adjustment": -0.515
+    }
+  ],
+  "interpretation": {
+    "brier_0": "perfect foresight",
+    "brier_0.25": "random guess (coin flip)",
+    "brier_1.0": "worst possible (always wrong)"
+  }
+}

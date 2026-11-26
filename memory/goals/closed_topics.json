@@ -3666,5 +3666,41 @@
 "text": "**Elevated Command Audit Trail (elev-audit.jsonl + weekly summary)** - every `python elev.py` call logs to memory/ops/elev-audit.jsonl (time",
 "agent": "mechanic",
 "at": "2026-11-26"
+},
+{
+"sig": "5b6be7754e14fe9e",
+"text": "**Model-Swap Convergence Guard** - `python memory/builder/swap_guard.py`: wrap model_swap.py with a convergence-aware pre-flight \u2014 block any",
+"agent": "builder",
+"at": "2026-11-26"
+},
+{
+"sig": "394886279a43966f",
+"text": "**Convergence Regression Sentinel** - `python memory/orchestrator/convergence_sentinel.py`: watch autonomy-score.json across cycles; on DROP",
+"agent": "orchestrator",
+"at": "2026-11-26"
+},
+{
+"sig": "d88f4f60072747da",
+"text": "**Human-Ratification Minimizer** - `python memory/orchestrator/ratification_audit.py`: log EVERY human touch in the cycle lifecycle (goal-se",
+"agent": "orchestrator",
+"at": "2026-11-26"
+},
+{
+"sig": "b348f48fad09b628",
+"text": "**Convergence-Aware Seat Sizing** - `python memory/orchestrator/seat_sizing.py`: from per-seat productive-pass rate + goal-completion + role",
+"agent": "orchestrator",
+"at": "2026-11-26"
+},
+{
+"sig": "66dba7fbd0afc832",
+"text": "**Dispatch-Forecast Calibration Loop** - `python memory/orchestrator/forecast_calibration.py`: track next10.json forecast accuracy per lane ",
+"agent": "orchestrator",
+"at": "2026-11-26"
+},
+{
+"sig": "94548f1afc0b369a",
+"text": "**Decision Replay & Counterfactual Log** - `python memory/scribe/decision_replay.py`: for each decision that eliminated an intervention clas",
+"agent": "scribe",
+"at": "2026-11-26"
 }
 ]

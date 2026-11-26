@@ -1,0 +1,210 @@
+{
+  "ts": "2026-11-26T12:19:47.835997+00:00",
+  "model": "RETIRE if 100% complete + redundancy>0.7; RE-ROLE if >=80% + <2 open; SCALE if pass_rate<90% or >5 open; else MAINTAIN",
+  "recommendations": {
+    "orchestrator": {
+      "action": "MAINTAIN",
+      "productive_pass_rate": 98.5,
+      "total_passes": 66,
+      "goal_completion_pct": 60.0,
+      "goals_reached": 6,
+      "goals_total": 10,
+      "role_redundancy": 0.179,
+      "overlap_with": "builder",
+      "evidence": [
+        "pass_rate=98.5%, completion=60.0%, redundancy=0.179"
+      ]
+    },
+    "researcher": {
+      "action": "SCALE",
+      "productive_pass_rate": 98.9,
+      "total_passes": 92,
+      "goal_completion_pct": 27.3,
+      "goals_reached": 3,
+      "goals_total": 11,
+      "role_redundancy": 0.078,
+      "overlap_with": "orchestrator",
+      "evidence": [
+        "open_goals=8 (>5, overloaded)"
+      ]
+    },
+    "builder": {
+      "action": "MAINTAIN",
+      "productive_pass_rate": 99.2,
+      "total_passes": 118,
+      "goal_completion_pct": 80.0,
+      "goals_reached": 8,
+      "goals_total": 10,
+      "role_redundancy": 0.179,
+      "overlap_with": "orchestrator",
+      "evidence": [
+        "pass_rate=99.2%, completion=80.0%, redundancy=0.179"
+      ]
+    },
+    "verifier": {
+      "action": "SCALE",
+      "productive_pass_rate": 98.8,
+      "total_passes": 86,
+      "goal_completion_pct": 0.0,
+      "goals_reached": 0,
+      "goals_total": 10,
+      "role_redundancy": 0.025,
+      "overlap_with": "forge",
+      "evidence": [
+        "open_goals=10 (>5, overloaded)"
+      ]
+    },
+    "designer": {
+      "action": "SCALE",
+      "productive_pass_rate": 98.9,
+      "total_passes": 93,
+      "goal_completion_pct": 0.0,
+      "goals_reached": 0,
+      "goals_total": 10,
+      "role_redundancy": 0.033,
+      "overlap_with": "pixel",
+      "evidence": [
+        "open_goals=10 (>5, overloaded)"
+      ]
+    },
+    "archivist": {
+      "action": "SCALE",
+      "productive_pass_rate": 99.1,
+      "total_passes": 113,
+      "goal_completion_pct": 0.0,
+      "goals_reached": 0,
+      "goals_total": 10,
+      "role_redundancy": 0.0,
+      "overlap_with": null,
+      "evidence": [
+        "open_goals=10 (>5, overloaded)"
+      ]
+    },
+    "scribe": {
+      "action": "MAINTAIN",
+      "productive_pass_rate": 98.6,
+      "total_passes": 72,
+      "goal_completion_pct": 50.0,
+      "goals_reached": 5,
+      "goals_total": 10,
+      "role_redundancy": 0.158,
+      "overlap_with": "orchestrator",
+      "evidence": [
+        "pass_rate=98.6%, completion=50.0%, redundancy=0.158"
+      ]
+    },
+    "mechanic": {
+      "action": "SCALE",
+      "productive_pass_rate": 99.0,
+      "total_passes": 99,
+      "goal_completion_pct": 0.0,
+      "goals_reached": 0,
+      "goals_total": 10,
+      "role_redundancy": 0.008,
+      "overlap_with": "pixel",
+      "evidence": [
+        "open_goals=10 (>5, overloaded)"
+      ]
+    },
+    "outlet": {
+      "action": "SCALE",
+      "productive_pass_rate": 98.3,
+      "total_passes": 60,
+      "goal_completion_pct": 0.0,
+      "goals_reached": 0,
+      "goals_total": 10,
+      "role_redundancy": 0.005,
+      "overlap_with": "builder",
+      "evidence": [
+        "open_goals=10 (>5, overloaded)"
+      ]
+    },
+    "pixel": {
+      "action": "SCALE",
+      "productive_pass_rate": 98.3,
+      "total_passes": 59,
+      "goal_completion_pct": 30.0,
+      "goals_reached": 3,
+      "goals_total": 10,
+      "role_redundancy": 0.083,
+      "overlap_with": "scribe",
+      "evidence": [
+        "open_goals=7 (>5, overloaded)"
+      ]
+    },
+    "forge": {
+      "action": "SCALE",
+      "productive_pass_rate": 98.7,
+      "total_passes": 76,
+      "goal_completion_pct": 20.0,
+      "goals_reached": 2,
+      "goals_total": 10,
+      "role_redundancy": 0.079,
+      "overlap_with": "orchestrator",
+      "evidence": [
+        "open_goals=8 (>5, overloaded)"
+      ]
+    },
+    "lumen": {
+      "action": "MAINTAIN",
+      "productive_pass_rate": 98.0,
+      "total_passes": 50,
+      "goal_completion_pct": 0.0,
+      "goals_reached": 0,
+      "goals_total": 0,
+      "role_redundancy": 0.008,
+      "overlap_with": "pixel",
+      "evidence": [
+        "pass_rate=98.0%, completion=0.0%, redundancy=0.008"
+      ]
+    },
+    "reel": {
+      "action": "MAINTAIN",
+      "productive_pass_rate": 98.0,
+      "total_passes": 49,
+      "goal_completion_pct": 0.0,
+      "goals_reached": 0,
+      "goals_total": 0,
+      "role_redundancy": 0.0,
+      "overlap_with": null,
+      "evidence": [
+        "pass_rate=98.0%, completion=0.0%, redundancy=0.0"
+      ]
+    },
+    "splice": {
+      "action": "MAINTAIN",
+      "productive_pass_rate": 97.8,
+      "total_passes": 46,
+      "goal_completion_pct": 0.0,
+      "goals_reached": 0,
+      "goals_total": 0,
+      "role_redundancy": 0.0,
+      "overlap_with": null,
+      "evidence": [
+        "pass_rate=97.8%, completion=0.0%, redundancy=0.0"
+      ]
+    }
+  },
+  "summary": {
+    "retire": [],
+    "re_role": [],
+    "scale": [
+      "researcher",
+      "verifier",
+      "designer",
+      "archivist",
+      "mechanic",
+      "outlet",
+      "pixel",
+      "forge"
+    ],
+    "maintain": [
+      "orchestrator",
+      "builder",
+      "scribe",
+      "lumen",
+      "reel",
+      "splice"
+    ]
+  }
+}

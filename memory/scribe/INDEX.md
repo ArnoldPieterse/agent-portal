@@ -19,6 +19,8 @@ Last updated: 2026-11-26.
 - goal #6 (prior) convergence readiness checklist -> memory/scribe/convergence-readiness.md   8 criteria, 3 PASS / 0 FAIL / 5 INCOMPLETE
 - goal #7 agent autonomy contribution matrix -> memory/scribe/agent-autonomy-matrix.md   **REACHED** 10 agents ranked; top-3: Researcher(9.1), Mechanic(8.9), Orchestrator(8.2)
 - goal #8 convergence anomaly detector -> memory/scribe/convergence_anomaly.py   **REACHED** runs on real data; detected intervention_count drop -100%; alerts to memory/ops/anomalies.jsonl
+- goal #9 convergence exit-trigger monitor -> memory/scribe/exit_trigger.py   **REACHED** T1_plateau + T2_zero_interventions; eps=1.0, N=3; synthetic tests pass; real data: not yet fired (deltas 4.6, 2.2 > eps)
+- goal #10 decision replay & counterfactual log -> memory/scribe/decision_replay.py   **REACHED** 3 decisions × 2 metrics = 6 entries; intervention gain +7.25 (17.25 projected vs 10 actual); score method documented
 - goal #9 autonomy handoff protocol -> memory/scribe/autonomy-handoff-protocol.md   **REACHED** 3 sections (evidence/recording/verification) + N=3 cycle rule + regression protocol
 - goal #10 autonomy score decomposition -> memory/scribe/autonomy-decomposition.jsonl   **REACHED** 4 components × 3 cycles; bottleneck=pass_autonomy (gap narrowing: 50→36.7→30.7)
 - (prior) convergence readiness checklist -> memory/scribe/convergence-readiness.md   8 criteria, 3 PASS / 0 FAIL / 5 INCOMPLETE (data gaps)
