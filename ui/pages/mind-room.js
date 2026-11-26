@@ -347,7 +347,7 @@ function drawPill(p,txt,color){
  x.fillStyle=color;x.font='700 30px "Segoe UI", Arial';x.textAlign='center';x.textBaseline='middle';
  x.fillText(txt,64,33);p.t.needsUpdate=true;}
 function buildPods(roster){
- while(podsGroup.children.length){var c=podsGroup.children.pop();c.traverse&&c.traverse(function(o){if(o.geometry)o.geometry.dispose();});}
+ while(podsGroup.children.length){var c=podsGroup.children.pop();c.traverse&&c.traverse(function(o){if(o.geometry)o.geometry.dispose();if(o.material){if(o.material.map)o.material.map.dispose();o.material.dispose();}});}
  /* mutate in place: window.__mind (and voxel-ui.js) hold references to these exact objects */
  agents.length=0;for(var k0 in agentHome)delete agentHome[k0];
  roster.forEach(function(a,ai){

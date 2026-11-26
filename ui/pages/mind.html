@@ -24,6 +24,16 @@ html,body{margin:0;height:100%;background:#07080c;overflow:hidden;font-family:'S
 <div id=hint>drag = orbit · wheel = zoom · P = floor plan · <a href="/">&larr; chat</a></div>
 <script src="https://unpkg.com/three@0.160.0/build/three.min.js" onerror="window.__three_failed=true"></script>
 <script src="/ui/assets/js/GLTFLoader.js" onerror=""></script>
+<script>
+/* 2026-11-26: visible JS error surface - a blank canvas must never be the only signal */
+window.addEventListener('error',function(e){
+ var d=document.createElement('div');
+ d.style.cssText='position:fixed;top:58px;left:10px;right:10px;background:#3a0d0d;color:#ffb4b4;padding:8px 12px;font:12px/1.5 monospace;z-index:9999;border:1px solid #f66;white-space:pre-wrap';
+ d.textContent='JS ERROR: '+(e.message||'unknown')+' @ line '+(e.lineno||'?')+' col '+(e.colno||'?');
+ document.body.appendChild(d);
+});
+window.__errbox=function(m){var d=document.createElement('div');d.style.cssText='position:fixed;top:58px;left:10px;right:10px;background:#3a2a0d;color:#ffd9a4;padding:8px 12px;font:12px/1.5 monospace;z-index:9999;border:1px solid #fa6;white-space:pre-wrap';d.textContent=m;document.body.appendChild(d);};
+</script>
 <script src="/ui/pages/mind-room.js"></script>
 <script>
 /* ================= 2D FALLBACK (no three.js / offline): TOP-DOWN FLOOR PLAN ============ */

@@ -1,52 +1,52 @@
 # Fleet Forecast - 10 steps ahead
 
-Generated: 2026-11-26 23:26:09 | Fleet: 73/111 (66%) | throughput ~13.0 goals/h
+Generated: 2026-11-27 00:30:57 | Fleet: 77/111 (69%) | throughput ~13.0 goals/h
 
 ## Next 10 goals (queue order)
 
-**#1 [mechanic] Autonomous OOM Recovery Loop (<60s MTTR, unattended)** - ETA 2026-11-27 01:13, P(reached) 76% (ops, cx1)
+**#1 [mechanic] Autonomous OOM Recovery Loop (<60s MTTR, unattended)** - ETA 2026-11-27 02:17, P(reached) 76% (ops, cx1)
    steps: pre-flight checks (targets exist, idempotent) -> execute from non-sandbox session -> verify registration/health + evidence leaf
-   consequences: archivist: **Autonomy Progression Model** - model how each agent's auto (2026-11-27 04:08) - shared scope model,output | verifier: **Chaos-recovery verification** - periodically kill a model  (2026-11-27 04:35) - shared scope model,recovery | outlet: **Trend-to-draft pipeline** - Researcher briefs auto-generat (2026-11-27 11:28) - shared scope human,output
-**#2 [verifier] Auto-trigger regression battery** - ETA 2026-11-27 02:00, P(reached) 52% (verify, cx2)
+   consequences: verifier: **Chaos-recovery verification** - periodically kill a model  (2026-11-27 05:40) - shared scope model,recovery | outlet: **Trend-to-draft pipeline** - Researcher briefs auto-generat (2026-11-27 12:32) - shared scope human,output | mechanic: **Mirror Sync Drift Monitor (>10min sustained → alert + runb (2026-11-27 16:20) - shared scope mechanic,output,recovery
+**#2 [verifier] Auto-trigger regression battery** - ETA 2026-11-27 03:05, P(reached) 52% (verify, cx2)
    steps: build the test battery / audit script -> run against live sources -> record verdict + evidence leaf
-   consequences: designer: **Regression Alert Banner** - red slide-in when autonomy sco (2026-11-27 02:41) - shared scope regression,trigger | outlet: **Hard verification gate** - `queue_check.py` blocks unverif (2026-11-27 15:58) - shared scope human,without | lane end outlet: 11-28 13:44 (slowest lane)
-**#3 [designer] Regression Alert Banner** - ETA 2026-11-27 02:41, P(reached) 5% (measurement, cx2)
+   consequences: designer: **Regression Alert Banner** - red slide-in when autonomy sco (2026-11-27 03:45) - shared scope regression,trigger | outlet: **Hard verification gate** - `queue_check.py` blocks unverif (2026-11-27 17:03) - shared scope human,without | lane end outlet: 11-28 14:49 (slowest lane)
+**#3 [designer] Regression Alert Banner** - ETA 2026-11-27 03:45, P(reached) 5% (measurement, cx2)
    steps: instrument or extend the scorer -> two-run delta check -> publish snapshot + report leaf
-   consequences: verifier: **Auto-trigger regression battery** - hook into commit event (2026-11-27 02:00) - shared scope regression,trigger | mechanic: **Fleet Health Heartbeat Consolidation (single JSON, 4 seats (2026-11-27 04:40) - shared scope autonomy,score | outlet: **Milestone auto-detection** - parse goal_ledger state chang (2026-11-27 08:26) - shared scope simulated,within
-**#4 [forge] Forecast-Calibration Backtest Harness** - ETA 2026-11-27 03:56, P(reached) 16% (build, cx2)
-   steps: scaffold the module file -> implement core logic -> self-test until AC green -> write evidence leaf + index line
-   consequences: verifier: **Cross-lane contract tests** - define 5 inter-agent API con (2026-11-27 09:08) - shared scope assert,cycle | forge: **Full Convergence-Loop E2E Drill** - `python memory/forge/c (2026-11-27 14:18) - shared scope assert,cycle,dispatch | designer: **Convergence Velocity Indicator** - 120×32 sparkline + dire (2026-11-27 17:53) - shared scope cycle,cycles
-**#5 [outlet] First live account connection + end-to-end ship** - ETA 2026-11-27 03:56, P(reached) 16% (build, cx2)
+   consequences: verifier: **Auto-trigger regression battery** - hook into commit event (2026-11-27 03:05) - shared scope regression,trigger | mechanic: **Fleet Health Heartbeat Consolidation (single JSON, 4 seats (2026-11-27 05:45) - shared scope autonomy,score | outlet: **Milestone auto-detection** - parse goal_ledger state chang (2026-11-27 09:31) - shared scope simulated,within
+**#4 [outlet] First live account connection + end-to-end ship** - ETA 2026-11-27 05:01, P(reached) 16% (build, cx2)
    steps: scaffold the module file -> implement core logic -> self-test until AC green -> evidence leaf + index line (AC: one post shipped on a real platform with zero manual edits after staging; tim)
-   consequences: outlet: **Milestone auto-detection** - parse goal_ledger state chang (2026-11-27 08:26) - shared scope cycle,draft | forge: **Full Convergence-Loop E2E Drill** - `python memory/forge/c (2026-11-27 14:18) - shared scope autonomously,cycle,draft | outlet: **Per-platform voice variants + lint** - X (≤280 chars, punc (2026-11-27 19:23) - shared scope draft,platform
-**#6 [pixel] Close the live CDP screenshot leg (goal #5 carry-over)** - ETA 2026-11-27 03:56, P(reached) 16% (build, cx2)
+   consequences: outlet: **Milestone auto-detection** - parse goal_ledger state chang (2026-11-27 09:31) - shared scope cycle,draft | outlet: **Per-platform voice variants + lint** - X (≤280 chars, punc (2026-11-27 20:27) - shared scope draft,platform | lane end outlet: 11-28 14:49 (slowest lane)
+**#5 [pixel] Close the live CDP screenshot leg (goal #5 carry-over)** - ETA 2026-11-27 05:01, P(reached) 16% (build, cx2)
    steps: scaffold the module file -> implement core logic -> self-test until AC green -> evidence leaf + index line (AC: 2 screenshots archived; no horizontal overflow; a)
-   consequences: forge: **Full Convergence-Loop E2E Drill** - `python memory/forge/c (2026-11-27 14:18) - shared scope archive,close | lane end outlet: 11-28 13:44 (slowest lane)
-**#7 [archivist] Autonomy Progression Model** - ETA 2026-11-27 04:08, P(reached) 28% (build, cx2)
-   steps: scaffold the module file -> implement core logic -> self-test until AC green -> write evidence leaf + index line
-   consequences: mechanic: **Autonomous OOM Recovery Loop (<60s MTTR, unattended)** - o (2026-11-27 01:13) - shared scope model,output | designer: **Cross-Lane Assist Graph** - SVG graph of who helped whom t (2026-11-27 07:00) - shared scope agents,cycle | mechanic: **Cycle Timeout Auto-Diagnostic (auto-capture on breach)** - (2026-11-27 09:13) - shared scope cycle,model
-**#8 [verifier] Chaos-recovery verification** - ETA 2026-11-27 04:35, P(reached) 52% (ops, cx2)
+   consequences: lane end outlet: 11-28 14:49 (slowest lane)
+**#6 [verifier] Chaos-recovery verification** - ETA 2026-11-27 05:40, P(reached) 52% (ops, cx2)
    steps: pre-flight checks (targets exist, idempotent) -> execute from non-sandbox session -> verify registration/health + evidence leaf
-   consequences: mechanic: **Autonomous OOM Recovery Loop (<60s MTTR, unattended)** - o (2026-11-27 01:13) - shared scope model,recovery | lane end outlet: 11-28 13:44 (slowest lane)
-**#9 [mechanic] Fleet Health Heartbeat Consolidation (single JSON, 4 seats)** - ETA 2026-11-27 04:40, P(reached) 22% (measurement, cx2)
+   consequences: mechanic: **Autonomous OOM Recovery Loop (<60s MTTR, unattended)** - o (2026-11-27 02:17) - shared scope model,recovery | lane end outlet: 11-28 14:49 (slowest lane)
+**#7 [mechanic] Fleet Health Heartbeat Consolidation (single JSON, 4 seats)** - ETA 2026-11-27 05:45, P(reached) 22% (measurement, cx2)
    steps: instrument or extend the scorer -> two-run delta check -> publish snapshot + report leaf
-   consequences: designer: **Regression Alert Banner** - red slide-in when autonomy sco (2026-11-27 02:41) - shared scope autonomy,score | designer: **Fleet Health Composite Gauge** - single 0-100 number blend (2026-11-27 09:15) - shared scope health,recovery,single | mechanic: **Elevated Command Audit Trail (elev-audit.jsonl + weekly su (2026-11-27 11:48) - shared scope every,summary
-**#10 [designer] Cross-Lane Assist Graph** - ETA 2026-11-27 07:00, P(reached) 4% (build, cx2)
+   consequences: designer: **Regression Alert Banner** - red slide-in when autonomy sco (2026-11-27 03:45) - shared scope autonomy,score | designer: **Fleet Health Composite Gauge** - single 0-100 number blend (2026-11-27 10:19) - shared scope health,recovery,single | mechanic: **Elevated Command Audit Trail (elev-audit.jsonl + weekly su (2026-11-27 12:53) - shared scope every,summary
+**#8 [designer] Cross-Lane Assist Graph** - ETA 2026-11-27 08:05, P(reached) 4% (build, cx2)
    steps: scaffold the module file -> implement core logic -> self-test until AC green -> evidence leaf + index line (AC: renders from real assist-log data; all agents with >=1 assist appear; edge widths scale co)
-   consequences: archivist: **Autonomy Progression Model** - model how each agent's auto (2026-11-27 04:08) - shared scope agents,cycle | verifier: **Cross-lane contract tests** - define 5 inter-agent API con (2026-11-27 09:08) - shared scope cross,cycle | designer: **Agent Utilization Timeline** - 14-row stacked bar, 24h win (2026-11-27 22:12) - shared scope agents,appear,legend
+   consequences: verifier: **Cross-lane contract tests** - define 5 inter-agent API con (2026-11-27 10:13) - shared scope cross,cycle | designer: **Agent Utilization Timeline** - 14-row stacked bar, 24h win (2026-11-27 23:17) - shared scope agents,appear,legend | lane end outlet: 11-28 14:49 (slowest lane)
+**#9 [outlet] Milestone auto-detection** - ETA 2026-11-27 09:31, P(reached) 16% (build, cx2)
+   steps: scaffold the module file -> implement core logic -> self-test until AC green -> evidence leaf + index line (AC: 3 simulated threshold crossings each produce a staged)
+   consequences: designer: **Regression Alert Banner** - red slide-in when autonomy sco (2026-11-27 03:45) - shared scope simulated,within | outlet: **First live account connection + end-to-end ship** - connec (2026-11-27 05:01) - shared scope cycle,draft | verifier: **Cross-lane contract tests** - define 5 inter-agent API con (2026-11-27 10:13) - shared scope cycle,ledger
+**#10 [pixel] Debug-artifact purge + asset gate** - ETA 2026-11-27 09:31, P(reached) 16% (build, cx2)
+   steps: scaffold the module file -> implement core logic -> self-test until AC green -> write evidence leaf + index line
+   consequences: outlet: **Hard verification gate** - `queue_check.py` blocks unverif (2026-11-27 17:03) - shared scope blocks,check | lane end outlet: 11-28 14:49 (slowest lane)
 
 ## Planned work (decision tree)
 
-- state: Fleet 73/111 (66%) | gate: all goals 100%? -> **NO - queue in flight**
+- state: Fleet 77/111 (69%) | gate: all goals 100%? -> **NO - queue in flight**
 - cycle: in flight: 10 goal(s) open
-- #1 [mechanic] Autonomous OOM Recovery Loop (<60s MTTR, unattended) ~2026-11-27 01:13 (P~76%) - planned as ops work (cx1); already open on the mechanic lane - FIFO order keeps evidence leaves consistent; moderate confidence (P(reached)  | delivers: Autonomous OOM Recovery Loop (<60s MTTR, unattended)
-- #2 [verifier] Auto-trigger regression battery ~2026-11-27 02:00 (P~52%) - planned as verify work (cx2); already open on the verifier lane - FIFO order keeps evidence leaves consistent; lower confidence (P(reached)  | delivers: Auto-trigger regression battery
-- #3 [designer] Regression Alert Banner ~2026-11-27 02:41 (P~5%) - planned as measurement work (cx2); already open on the designer lane - FIFO order keeps evidence leaves consistent; lower confidence (P(reac | delivers: Regression Alert Banner
-- #4 [forge] Forecast-Calibration Backtest Harness ~2026-11-27 03:56 (P~16%) - planned as build work (cx2); already open on the forge lane - FIFO order keeps evidence leaves consistent; lower confidence (P(reached) ~16% | delivers: Forecast calibration
-- #5 [outlet] First live account connection + end-to-end ship ~2026-11-27 03:56 (P~16%) - planned as build work (cx2); already open on the outlet lane - FIFO order keeps evidence leaves consistent; lower confidence (P(reached) ~16 | delivers: First live account connection + end-to-end ship
-- #6 [pixel] Close the live CDP screenshot leg (goal #5 carry-over) ~2026-11-27 03:56 (P~16%) - planned as build work (cx2); already open on the pixel lane - FIFO order keeps evidence leaves consistent; lower confidence (P(reached) ~16% | delivers: Archive + evidence leaves
-- #7 [archivist] Autonomy Progression Model ~2026-11-27 04:08 (P~28%) - planned as build work (cx2); already open on the archivist lane - FIFO order keeps evidence leaves consistent; lower confidence (P(reached)  | delivers: Autonomy Progression Model
-- #8 [verifier] Chaos-recovery verification ~2026-11-27 04:35 (P~52%) - planned as ops work (cx2); already open on the verifier lane - FIFO order keeps evidence leaves consistent; lower confidence (P(reached) ~52 | delivers: Chaos-recovery verification
+- #1 [mechanic] Autonomous OOM Recovery Loop (<60s MTTR, unattended) ~2026-11-27 02:17 (P~76%) - planned as ops work (cx1); already open on the mechanic lane - FIFO order keeps evidence leaves consistent; moderate confidence (P(reached)  | delivers: Autonomous OOM Recovery Loop (<60s MTTR, unattended)
+- #2 [verifier] Auto-trigger regression battery ~2026-11-27 03:05 (P~52%) - planned as verify work (cx2); already open on the verifier lane - FIFO order keeps evidence leaves consistent; lower confidence (P(reached)  | delivers: Auto-trigger regression battery
+- #3 [designer] Regression Alert Banner ~2026-11-27 03:45 (P~5%) - planned as measurement work (cx2); already open on the designer lane - FIFO order keeps evidence leaves consistent; lower confidence (P(reac | delivers: Regression Alert Banner
+- #4 [outlet] First live account connection + end-to-end ship ~2026-11-27 05:01 (P~16%) - planned as build work (cx2); already open on the outlet lane - FIFO order keeps evidence leaves consistent; lower confidence (P(reached) ~16 | delivers: First live account connection + end-to-end ship
+- #5 [pixel] Close the live CDP screenshot leg (goal #5 carry-over) ~2026-11-27 05:01 (P~16%) - planned as build work (cx2); already open on the pixel lane - FIFO order keeps evidence leaves consistent; lower confidence (P(reached) ~16% | delivers: Archive + evidence leaves
+- #6 [verifier] Chaos-recovery verification ~2026-11-27 05:40 (P~52%) - planned as ops work (cx2); already open on the verifier lane - FIFO order keeps evidence leaves consistent; lower confidence (P(reached) ~52 | delivers: Chaos-recovery verification
+- #7 [mechanic] Fleet Health Heartbeat Consolidation (single JSON, 4 seats) ~2026-11-27 05:45 (P~22%) - planned as measurement work (cx2); already open on the mechanic lane - FIFO order keeps evidence leaves consistent; lower confidence (P(reac | delivers: Load-test evidence
+- #8 [designer] Cross-Lane Assist Graph ~2026-11-27 08:05 (P~4%) - planned as build work (cx2); already open on the designer lane - FIFO order keeps evidence leaves consistent; lower confidence (P(reached) ~ | delivers: Cross-Lane Assist Graph
 
 ## Functional capability chain (PM view)
 
@@ -147,39 +147,39 @@ The week ahead: every 15-day step clamped to days 0-7 and split finer - one line
 
 plan history (oldest -> newest): a4f106fb3413 @ 11-24 23:09:16, 05dcc83e6301 @ 11-25 02:40:36, df19237b8736 @ 11-25 17:52:34, 05dcc83e6301 @ 11-26 20:05:18
 
-## 30m ahead (by 2026-11-26 23:56)
-- completes: **0** goal(s) -> fleet ~66%
-- why: queue order from the auto-loop: these complete first because their lanes are shortest; expected outcome: fleet 73/111 -> 65%
+## 30m ahead (by 2026-11-27 01:00)
+- completes: **0** goal(s) -> fleet ~69%
+- why: queue order from the auto-loop: these complete first because their lanes are shortest; expected outcome: fleet 77/111 -> 69%
 
-## 1h ahead (by 2026-11-27 00:26)
-- completes: **0** goal(s) -> fleet ~66%
-- why: queue order from the auto-loop: these complete first because their lanes are shortest; expected outcome: fleet 73/111 -> 65%
+## 1h ahead (by 2026-11-27 01:30)
+- completes: **0** goal(s) -> fleet ~69%
+- why: queue order from the auto-loop: these complete first because their lanes are shortest; expected outcome: fleet 77/111 -> 69%
 
-## 1d ahead (by 2026-11-27 23:26)
-- completes: **32** goal(s) -> fleet ~95%
-  - #1 mechanic: Autonomous OOM Recovery Loop (<60s MTTR, unattended) (2026-11-27 01:13)
-  - #2 verifier: Auto-trigger regression battery (2026-11-27 02:00)
-  - #3 designer: Regression Alert Banner (2026-11-27 02:41)
-  - #4 forge: Forecast-Calibration Backtest Harness (2026-11-27 03:56)
-  - #5 outlet: First live account connection + end-to-end ship (2026-11-27 03:56)
-- why: queue order from the auto-loop: these complete first because their lanes are shortest; expected outcome: fleet 73/111 -> 74%
+## 1d ahead (by 2026-11-28 00:30)
+- completes: **28** goal(s) -> fleet ~95%
+  - #1 mechanic: Autonomous OOM Recovery Loop (<60s MTTR, unattended) (2026-11-27 02:17)
+  - #2 verifier: Auto-trigger regression battery (2026-11-27 03:05)
+  - #3 designer: Regression Alert Banner (2026-11-27 03:45)
+  - #4 outlet: First live account connection + end-to-end ship (2026-11-27 05:01)
+  - #5 pixel: Close the live CDP screenshot leg (goal #5 carry-over) (2026-11-27 05:01)
+- why: queue order from the auto-loop: these complete first because their lanes are shortest; expected outcome: fleet 77/111 -> 78%
 
-## 1w ahead (by 2026-12-03 23:26)
-- completes: **38** goal(s) -> fleet ~100%
-  - #1 mechanic: Autonomous OOM Recovery Loop (<60s MTTR, unattended) (2026-11-27 01:13)
-  - #2 verifier: Auto-trigger regression battery (2026-11-27 02:00)
-  - #3 designer: Regression Alert Banner (2026-11-27 02:41)
-  - #4 forge: Forecast-Calibration Backtest Harness (2026-11-27 03:56)
-  - #5 outlet: First live account connection + end-to-end ship (2026-11-27 03:56)
-- why: queue order from the auto-loop: these complete first because their lanes are shortest; expected outcome: fleet 73/111 -> 74%
+## 1w ahead (by 2026-12-04 00:30)
+- completes: **34** goal(s) -> fleet ~100%
+  - #1 mechanic: Autonomous OOM Recovery Loop (<60s MTTR, unattended) (2026-11-27 02:17)
+  - #2 verifier: Auto-trigger regression battery (2026-11-27 03:05)
+  - #3 designer: Regression Alert Banner (2026-11-27 03:45)
+  - #4 outlet: First live account connection + end-to-end ship (2026-11-27 05:01)
+  - #5 pixel: Close the live CDP screenshot leg (goal #5 carry-over) (2026-11-27 05:01)
+- why: queue order from the auto-loop: these complete first because their lanes are shortest; expected outcome: fleet 77/111 -> 78%
 - next-cycle candidates: ARCHIVIST#6 Knowledge decay model productionization - run deca; ARCHIVIST#8 Snapshot diff weekly report - extend cycle-2 snaps; MECHANIC#1 Portal load test completion (cycle-2 #4 carryover); MECHANIC#2 Self-healing mirror productionization - the cycle-
 
-## 1m ahead (by 2026-12-26 23:26)
-- completes: **38** goal(s) -> fleet ~100%
-  - #1 mechanic: Autonomous OOM Recovery Loop (<60s MTTR, unattended) (2026-11-27 01:13)
-  - #2 verifier: Auto-trigger regression battery (2026-11-27 02:00)
-  - #3 designer: Regression Alert Banner (2026-11-27 02:41)
-  - #4 forge: Forecast-Calibration Backtest Harness (2026-11-27 03:56)
-  - #5 outlet: First live account connection + end-to-end ship (2026-11-27 03:56)
-- why: queue order from the auto-loop: these complete first because their lanes are shortest; expected outcome: fleet 73/111 -> 74%
+## 1m ahead (by 2026-12-27 00:30)
+- completes: **34** goal(s) -> fleet ~100%
+  - #1 mechanic: Autonomous OOM Recovery Loop (<60s MTTR, unattended) (2026-11-27 02:17)
+  - #2 verifier: Auto-trigger regression battery (2026-11-27 03:05)
+  - #3 designer: Regression Alert Banner (2026-11-27 03:45)
+  - #4 outlet: First live account connection + end-to-end ship (2026-11-27 05:01)
+  - #5 pixel: Close the live CDP screenshot leg (goal #5 carry-over) (2026-11-27 05:01)
+- why: queue order from the auto-loop: these complete first because their lanes are shortest; expected outcome: fleet 77/111 -> 78%
 - next-cycle candidates: ARCHIVIST#6 Knowledge decay model productionization - run deca; ARCHIVIST#8 Snapshot diff weekly report - extend cycle-2 snaps; MECHANIC#1 Portal load test completion (cycle-2 #4 carryover); MECHANIC#2 Self-healing mirror productionization - the cycle-
