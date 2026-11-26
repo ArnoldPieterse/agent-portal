@@ -47,17 +47,25 @@ def _parse(addr):
 
 def _vstr(base): return "V(" + base + ")"
 
+_BOUNDS_CACHE = {}   # addr string -> bounds (immutable once computed); hot path: _cascade visits every node every tick
+
 def bounds_of(addr):
-    p = _parse(addr)
-    if not p: return None
-    base, segs = p
-    x, y, z = (int(v) for v in base.split(","))
-    mn = [ORIGIN[0] + x * CELL, ORIGIN[1] + y * CELL, ORIGIN[2] + z * CELL]
-    sz = CELL
-    for s in segs:
-        mn = [mn[i] + (sz / 2) * s[i] for i in range(3)]
-        sz /= 2
-    return [round(v, 4) for v in mn] + [round(v + sz, 4) for v in mn]
+    b = _BOUNDS_CACHE.get(addr)
+    if b is None:
+        p = _parse(addr)
+        if not p:
+            if len(_BOUNDS_CACHE) < 65536: _BOUNDS_CACHE[addr] = False
+            return None
+        base, segs = p
+        x, y, z = (int(v) for v in base.split(","))
+        mn = [ORIGIN[0] + x * CELL, ORIGIN[1] + y * CELL, ORIGIN[2] + z * CELL]
+        sz = CELL
+        for s in segs:
+            mn = [mn[i] + (sz / 2) * s[i] for i in range(3)]
+            sz /= 2
+        b = [round(v, 4) for v in mn] + [round(v + sz, 4) for v in mn]
+        if len(_BOUNDS_CACHE) < 65536: _BOUNDS_CACHE[addr] = b
+    return b or None
 
 def load_db():
     if os.path.exists(DB): return json.load(open(DB, encoding="utf-8"))
@@ -87,6 +95,7 @@ class PulseEngine:
         self.running = False
         self.thread = None
         self._dirty = False
+        self._visit = 0   # per-tick node counter: yields the GIL so portal HTTP threads don't starve (2026-11-26)
 
     # ---------- state ----------
     def _load_state(self):
@@ -116,6 +125,8 @@ class PulseEngine:
         return n
 
     def _cascade(self, n, addr, depth, tick, hops_left, jumped):
+        self._visit += 1
+        if (self._visit & 511) == 0: time.sleep(0)   # cooperative GIL yield every 512 nodes
         b = bounds_of(addr)
         if b and n.get("bounds") != b: n["bounds"] = b
         n["last_tick"] = tick
@@ -168,6 +179,8 @@ class PulseEngine:
     # ---------- the 10 ms tick ----------
     def tick(self):
         with self.lock:
+            self._visit = 0
+            _touched = set()
             self.st["tick"] += 1; tick = self.st["tick"]
             if not self.st.get("started"): self.st["started"] = time.strftime("%Y-%m-%dT%H:%M:%SZ", time.gmtime())
             for pid, P in list(self.st["pulses"].items()):
@@ -191,11 +204,18 @@ class PulseEngine:
                             key = (pid, base, P["ring"])
                             if key not in seen:
                                 seen.add(key)
-                                self._cascade(n, _vstr(base), 0, tick, 8, set())
+                                # 2026-11-26 perf: one cascade per cell per tick - with several
+                                # pulses reaching the same cell, re-cascading it N times/tick was
+                                # pure waste (drill is already idempotent via the 'no sub' gate).
+                                if base not in _touched:
+                                    _touched.add(base)
+                                    self._cascade(n, _vstr(base), 0, tick, 8, set())
                 if P["ring"] >= P["radius"]: P["done"] = True
+        # stats are expensive (full recursive count) - refresh on the save cadence only
+        if tick % 100 == 0:
             self.st["stats"] = {"cells": sum(self._count(v) for v in self.db["cells"].values()),
-                                "hops_total": len(self.st["last_hops"])}
-            if tick % 100 == 0: self.save()
+                                "hops_total": len(self.st["last_hops"]), "tick": tick}
+            self.save()
 
     def _count(self, n):
         return 1 + sum(self._count(c) for c in (n.get("sub") or {}).values())

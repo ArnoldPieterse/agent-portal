@@ -1,5 +1,5 @@
 {
-  "ts": "2026-11-26T07:55:18.865335+00:00",
+  "ts": "2026-11-26T09:04:42.930640+00:00",
   "health_score": 80,
   "fleet_status": "NOMINAL",
   "agents": [
@@ -47,9 +47,9 @@
   "hosts": [
     {
       "host": "WHITE",
-      "vram_pct": 0.0,
-      "cpu_pct": 6.0,
-      "temp_c": 38.09
+      "vram_pct": 3.0,
+      "cpu_pct": 100.0,
+      "temp_c": 42.64
     }
   ],
   "goals": {

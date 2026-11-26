@@ -1,45 +1,23 @@
 {
  "ok": true,
- "generated": "2026-11-26 12:53:54",
+ "generated": "2026-11-26 18:57:27",
  "fleet": {
-  "done": 114,
+  "done": 115,
   "total": 116,
-  "pct": 98.3
+  "pct": 99.1
  },
- "throughput_goals_per_hour": 17.69,
+ "throughput_goals_per_hour": 12.96,
  "next10": [
-  {
-   "agent": "researcher",
-   "goal": "**Repetitive-task inventory + first lead list** - memory/researcher/stealth/task-inventory.md: top 10 repetitive SMB business tasks companies pay humans to do repeatedly, with labor-rate benchmarks per task; memory/resea",
-   "type": "build",
-   "complexity": 2,
-   "p_reached": 0.072,
-   "eta": "2026-11-26 17:16",
-   "hours": 4.37,
-   "order": 0,
-   "rank": 1,
-   "title": "Repetitive-task inventory + first lead list",
-   "steps": [
-    "scaffold the module file",
-    "implement core logic",
-    "self-test until AC green",
-    "write evidence leaf + index line"
-   ],
-   "outcome": "reached ~2026-11-26 17:16 (P=7%)",
-   "consequences": [
-    "lane end orchestrator: 11-26 17:36 (slowest lane)"
-   ]
-  },
   {
    "agent": "orchestrator",
    "goal": "**Day-7 checkpoint review (2026-12-02)** - level-report style: ledger totals vs $3,800 target, per-workflow attribution, scale/kill decisions, cycle-25 goal set for the engine. Output memory/orchestrator/stealth-day7-rev",
    "type": "build",
    "complexity": 2,
    "p_reached": 0.278,
-   "eta": "2026-11-26 17:36",
+   "eta": "2026-11-26 23:39",
    "hours": 4.7,
    "order": 0,
-   "rank": 2,
+   "rank": 1,
    "title": "Day-7 checkpoint review (2026-12-02)",
    "steps": [
     "scaffold the module file",
@@ -47,9 +25,9 @@
     "self-test until AC green",
     "write evidence leaf + index line"
    ],
-   "outcome": "reached ~2026-11-26 17:36 (P=28%)",
+   "outcome": "reached ~2026-11-26 23:39 (P=28%)",
    "consequences": [
-    "lane end orchestrator: 11-26 17:36 (slowest lane)"
+    "lane end orchestrator: 11-26 23:39 (slowest lane)"
    ]
   }
  ],
@@ -57,39 +35,37 @@
   {
    "label": "30m",
    "hours": 0.5,
-   "end": "2026-11-26 13:23",
+   "end": "2026-11-26 19:27",
    "completes": 0,
-   "fleet_pct": 98.3,
+   "fleet_pct": 99.1,
    "top": []
   },
   {
    "label": "1h",
    "hours": 1.0,
-   "end": "2026-11-26 13:53",
+   "end": "2026-11-26 19:57",
    "completes": 0,
-   "fleet_pct": 98.3,
+   "fleet_pct": 99.1,
    "top": []
   },
   {
    "label": "1d",
    "hours": 24.0,
-   "end": "2026-11-27 12:53",
-   "completes": 2,
+   "end": "2026-11-27 18:57",
+   "completes": 1,
    "fleet_pct": 100.0,
    "top": [
-    "#1 researcher: Repetitive-task inventory + first lead list (2026-11-26 17:16)",
-    "#2 orchestrator: Day-7 checkpoint review (2026-12-02) (2026-11-26 17:36)"
+    "#1 orchestrator: Day-7 checkpoint review (2026-12-02) (2026-11-26 23:39)"
    ]
   },
   {
    "label": "1w",
    "hours": 168.0,
-   "end": "2026-12-03 12:53",
-   "completes": 2,
+   "end": "2026-12-03 18:57",
+   "completes": 1,
    "fleet_pct": 100.0,
    "top": [
-    "#1 researcher: Repetitive-task inventory + first lead list (2026-11-26 17:16)",
-    "#2 orchestrator: Day-7 checkpoint review (2026-12-02) (2026-11-26 17:36)"
+    "#1 orchestrator: Day-7 checkpoint review (2026-12-02) (2026-11-26 23:39)"
    ],
    "next_cycle_candidates": [
     {
@@ -145,12 +121,11 @@
   {
    "label": "1m",
    "hours": 720.0,
-   "end": "2026-12-26 12:53",
-   "completes": 2,
+   "end": "2026-12-26 18:57",
+   "completes": 1,
    "fleet_pct": 100.0,
    "top": [
-    "#1 researcher: Repetitive-task inventory + first lead list (2026-11-26 17:16)",
-    "#2 orchestrator: Day-7 checkpoint review (2026-12-02) (2026-11-26 17:36)"
+    "#1 orchestrator: Day-7 checkpoint review (2026-12-02) (2026-11-26 23:39)"
    ],
    "next_cycle_candidates": [
     {
@@ -208,104 +183,74 @@
   "archivist": {
    "done": 10,
    "total": 10,
-   "end": "2026-11-26 12:53"
+   "end": "2026-11-26 18:57"
   },
   "builder": {
    "done": 11,
    "total": 11,
-   "end": "2026-11-26 12:53"
+   "end": "2026-11-26 18:57"
   },
   "designer": {
    "done": 10,
    "total": 10,
-   "end": "2026-11-26 12:53"
+   "end": "2026-11-26 18:57"
   },
   "forge": {
    "done": 10,
    "total": 10,
-   "end": "2026-11-26 12:53"
+   "end": "2026-11-26 18:57"
   },
   "mechanic": {
    "done": 11,
    "total": 11,
-   "end": "2026-11-26 12:53"
+   "end": "2026-11-26 18:57"
   },
   "orchestrator": {
    "done": 10,
    "total": 11,
-   "end": "2026-11-26 17:36"
+   "end": "2026-11-26 23:39"
   },
   "outlet": {
    "done": 11,
    "total": 11,
-   "end": "2026-11-26 12:53"
+   "end": "2026-11-26 18:57"
   },
   "pixel": {
    "done": 10,
    "total": 10,
-   "end": "2026-11-26 12:53"
+   "end": "2026-11-26 18:57"
   },
   "researcher": {
-   "done": 10,
+   "done": 11,
    "total": 11,
-   "end": "2026-11-26 17:16"
+   "end": "2026-11-26 18:57"
   },
   "scribe": {
    "done": 11,
    "total": 11,
-   "end": "2026-11-26 12:53"
+   "end": "2026-11-26 18:57"
   },
   "verifier": {
    "done": 10,
    "total": 10,
-   "end": "2026-11-26 12:53"
+   "end": "2026-11-26 18:57"
   }
  },
- "level_up_eta": "2026-11-26 17:36",
+ "level_up_eta": "2026-11-26 23:39",
  "plan": {
-  "cycle_state": "in flight: 2 goal(s) open",
-  "level_up_eta": "2026-11-26 17:36",
+  "cycle_state": "in flight: 1 goal(s) open",
+  "level_up_eta": "2026-11-26 23:39",
   "planned": [
-   {
-    "agent": "researcher",
-    "goal": "**Repetitive-task inventory + first lead list** - memory/researcher/stealth/task-inventory.md: top 10 repetitive SMB business tasks companies pay humans to do repeatedly, with labor-rate benchmarks per task; memory/resea",
-    "type": "build",
-    "complexity": 2,
-    "p_reached": 0.072,
-    "eta": "2026-11-26 17:16",
-    "hours": 4.37,
-    "order": 0,
-    "rank": 1,
-    "title": "Repetitive-task inventory + first lead list",
-    "steps": [
-     "scaffold the module file",
-     "implement core logic",
-     "self-test until AC green",
-     "write evidence leaf + index line"
-    ],
-    "outcome": "reached ~2026-11-26 17:16 (P~7%)",
-    "consequences": [
-     "lane end orchestrator: 11-26 17:36 (slowest lane)"
-    ],
-    "projected": false,
-    "why": "planned as build work (cx2); already open on the researcher lane - FIFO order keeps evidence leaves consistent; lower confidence (P(reached) ~7%): kept in plan because its scope gates later work; lane researcher has 10/11 done; this goal ends its lane at 2026-11-26 17:16",
-    "deliverable": {
-     "name": "Repetitive-task inventory + first lead list",
-     "stream": "General"
-    },
-    "then": "lane clear - level-up gate re-check (2026-11-26 17:36)",
-    "then_eta": "2026-11-26 17:36"
-   },
    {
     "agent": "orchestrator",
     "goal": "**Day-7 checkpoint review (2026-12-02)** - level-report style: ledger totals vs $3,800 target, per-workflow attribution, scale/kill decisions, cycle-25 goal set for the engine. Output memory/orchestrator/stealth-day7-rev",
     "type": "build",
     "complexity": 2,
     "p_reached": 0.278,
-    "eta": "2026-11-26 17:36",
+    "eta": "2026-11-26 23:39",
     "hours": 4.7,
     "order": 0,
-    "rank": 2,
+    "rank": 1,
     "title": "Day-7 checkpoint review (2026-12-02)",
     "steps": [
      "scaffold the module file",
@@ -313,131 +258,105 @@
      "self-test until AC green",
      "write evidence leaf + index line"
     ],
-    "outcome": "reached ~2026-11-26 17:36 (P~28%)",
+    "outcome": "reached ~2026-11-26 23:39 (P~28%)",
     "consequences": [
-     "lane end orchestrator: 11-26 17:36 (slowest lane)"
+     "lane end orchestrator: 11-26 23:39 (slowest lane)"
     ],
     "projected": false,
-    "why": "planned as build work (cx2); already open on the orchestrator lane - FIFO order keeps evidence leaves consistent; lower confidence (P(reached) ~28%): kept in plan because its scope gates later work; lane orchestrator has 10/11 done; this goal ends its lane at 2026-11-26 17:36",
+    "why": "planned as build work (cx2); already open on the orchestrator lane - FIFO order keeps evidence leaves consistent; lower confidence (P(reached) ~28%): kept in plan because its scope gates later work; lane orchestrator has 10/11 done; this goal ends its lane at 2026-11-26 23:39",
     "deliverable": {
      "name": "Day-7 checkpoint review (2026-12-02)",
      "stream": "General"
     },
-    "then": "lane clear - level-up gate re-check (2026-11-26 17:36)",
-    "then_eta": "2026-11-26 17:36"
+    "then": "lane clear - level-up gate re-check (2026-11-26 23:39)",
+    "then_eta": "2026-11-26 23:39"
    }
   ],
   "horizons": [
    {
     "label": "30m",
     "hours": 0.5,
-    "end": "2026-11-26 13:23",
+    "end": "2026-11-26 19:27",
     "completes": 0,
     "top": [],
-    "why_line": "queue order from the auto-loop: these complete first because their lanes are shortest; expected outcome: fleet 114/116 -> 98%"
+    "why_line": "queue order from the auto-loop: these complete first because their lanes are shortest; expected outcome: fleet 115/116 -> 99%"
    },
    {
     "label": "1h",
     "hours": 1.0,
-    "end": "2026-11-26 13:53",
+    "end": "2026-11-26 19:57",
     "completes": 0,
     "top": [],
-    "why_line": "queue order from the auto-loop: these complete first because their lanes are shortest; expected outcome: fleet 114/116 -> 98%"
+    "why_line": "queue order from the auto-loop: these complete first because their lanes are shortest; expected outcome: fleet 115/116 -> 99%"
    },
    {
     "label": "1d",
     "hours": 24.0,
-    "end": "2026-11-27 12:53",
-    "completes": 2,
+    "end": "2026-11-27 18:57",
+    "completes": 1,
     "top": [
      {
       "rank": 1,
-      "agent": "researcher",
-      "title": "Repetitive-task inventory + first lead list",
-      "eta": "2026-11-26 17:16",
-      "type": "build",
-      "why": "planned as build work (cx2); already open on the researcher lane - FIFO order keeps evidence leaves consistent; lower confidence (P(reached) ~7%): kept in plan because its scope gates later work; lane researcher has 10/11 done; this goal ends its lane at 2026-11-26 17:16"
-     },
-     {
-      "rank": 2,
       "agent": "orchestrator",
       "title": "Day-7 checkpoint review (2026-12-02)",
-      "eta": "2026-11-26 17:36",
+      "eta": "2026-11-26 23:39",
       "type": "build",
-      "why": "planned as build work (cx2); already open on the orchestrator lane - FIFO order keeps evidence leaves consistent; lower confidence (P(reached) ~28%): kept in plan because its scope gates later work; lane orchestrator has 10/11 done; this goal ends its lane at 2026-11-26 17:36"
+      "why": "planned as build work (cx2); already open on the orchestrator lane - FIFO order keeps evidence leaves consistent; lower confidence (P(reached) ~28%): kept in plan because its scope gates later work; lane orchestrator has 10/11 done; this goal ends its lane at 2026-11-26 23:39"
      }
     ],
-    "why_line": "queue order from the auto-loop: these complete first because their lanes are shortest; expected outcome: fleet 114/116 -> 100%"
+    "why_line": "queue order from the auto-loop: these complete first because their lanes are shortest; expected outcome: fleet 115/116 -> 100%"
    },
    {
     "label": "1w",
     "hours": 168.0,
-    "end": "2026-12-03 12:53",
-    "completes": 2,
+    "end": "2026-12-03 18:57",
+    "completes": 1,
     "top": [
      {
       "rank": 1,
-      "agent": "researcher",
-      "title": "Repetitive-task inventory + first lead list",
-      "eta": "2026-11-26 17:16",
-      "type": "build",
-      "why": "planned as build work (cx2); already open on the researcher lane - FIFO order keeps evidence leaves consistent; lower confidence (P(reached) ~7%): kept in plan because its scope gates later work; lane researcher has 10/11 done; this goal ends its lane at 2026-11-26 17:16"
-     },
-     {
-      "rank": 2,
       "agent": "orchestrator",
       "title": "Day-7 checkpoint review (2026-12-02)",
-      "eta": "2026-11-26 17:36",
+      "eta": "2026-11-26 23:39",
       "type": "build",
-      "why": "planned as build work (cx2); already open on the orchestrator lane - FIFO order keeps evidence leaves consistent; lower confidence (P(reached) ~28%): kept in plan because its scope gates later work; lane orchestrator has 10/11 done; this goal ends its lane at 2026-11-26 17:36"
+      "why": "planned as build work (cx2); already open on the orchestrator lane - FIFO order keeps evidence leaves consistent; lower confidence (P(reached) ~28%): kept in plan because its scope gates later work; lane orchestrator has 10/11 done; this goal ends its lane at 2026-11-26 23:39"
      }
     ],
-    "why_line": "queue order from the auto-loop: these complete first because their lanes are shortest; expected outcome: fleet 114/116 -> 100%"
+    "why_line": "queue order from the auto-loop: these complete first because their lanes are shortest; expected outcome: fleet 115/116 -> 100%"
    },
    {
     "label": "1m",
     "hours": 720.0,
-    "end": "2026-12-26 12:53",
-    "completes": 2,
+    "end": "2026-12-26 18:57",
+    "completes": 1,
     "top": [
      {
       "rank": 1,
-      "agent": "researcher",
-      "title": "Repetitive-task inventory + first lead list",
-      "eta": "2026-11-26 17:16",
-      "type": "build",
-      "why": "planned as build work (cx2); already open on the researcher lane - FIFO order keeps evidence leaves consistent; lower confidence (P(reached) ~7%): kept in plan because its scope gates later work; lane researcher has 10/11 done; this goal ends its lane at 2026-11-26 17:16"
-     },
-     {
-      "rank": 2,
       "agent": "orchestrator",
       "title": "Day-7 checkpoint review (2026-12-02)",
-      "eta": "2026-11-26 17:36",
+      "eta": "2026-11-26 23:39",
       "type": "build",
-      "why": "planned as build work (cx2); already open on the orchestrator lane - FIFO order keeps evidence leaves consistent; lower confidence (P(reached) ~28%): kept in plan because its scope gates later work; lane orchestrator has 10/11 done; this goal ends its lane at 2026-11-26 17:36"
+      "why": "planned as build work (cx2); already open on the orchestrator lane - FIFO order keeps evidence leaves consistent; lower confidence (P(reached) ~28%): kept in plan because its scope gates later work; lane orchestrator has 10/11 done; this goal ends its lane at 2026-11-26 23:39"
      }
     ],
-    "why_line": "queue order from the auto-loop: these complete first because their lanes are shortest; expected outcome: fleet 114/116 -> 100%"
+    "why_line": "queue order from the auto-loop: these complete first because their lanes are shortest; expected outcome: fleet 115/116 -> 100%"
    }
   ],
   "tree": {
-   "state": "Fleet 114/116 (98%)",
+   "state": "Fleet 115/116 (99%)",
    "gate": "all goals 100%?",
    "branch_taken": "NO - queue in flight",
    "yes": {
     "action": "level-up gate fires -> Lv increments, report written",
     "then": "Orchestrator proposes cycle N+1 from ranked backlog (8 candidates)",
     "first_planned": [
-     "#1 [researcher] Repetitive-task inventory + first lead list ~2026-11-26 17:16",
-     "#2 [orchestrator] Day-7 checkpoint review (2026-12-02) ~2026-11-26 17:36"
+     "#1 [orchestrator] Day-7 checkpoint review (2026-12-02) ~2026-11-26 23:39"
     ]
    },
    "no": {
     "action": "keep current queue; next completion gates progress",
-    "then": "when the last lane ends (2026-11-26 17:36) the gate re-checks",
+    "then": "when the last lane ends (2026-11-26 23:39) the gate re-checks",
     "first_planned": [
-     "#1 [researcher] Repetitive-task inventory + first lead list ~2026-11-26 17:16",
-     "#2 [orchestrator] Day-7 checkpoint review (2026-12-02) ~2026-11-26 17:36"
+     "#1 [orchestrator] Day-7 checkpoint review (2026-12-02) ~2026-11-26 23:39"
     ]
    }
   },
@@ -916,8 +835,8 @@
   ],
   "plan_meta": {
    "sig": "df19237b8736",
-   "computed_at": "2026-11-26 12:53:54",
-   "basis": "live goal ledger + next-10 ETAs + fleet throughput ~17.69 goals/h; recomputed every refresh",
+   "computed_at": "2026-11-26 18:57:27",
+   "basis": "live goal ledger + next-10 ETAs + fleet throughput ~12.96 goals/h; recomputed every refresh",
    "delta": [],
    "history": [
     {

@@ -1095,3 +1095,4 @@
 {"ts": "2026-11-26 14:17:06", "run": "g-1a216123cac-3fa3b7", "missing": {"Researcher": "unreachable", "Pixel": "unreachable", "Builder": "unreachable", "Scribe": "unreachable", "Verifier": "unreachable", "Outlet": "unreachable", "Forge": "unreachable"}, "relocated": {}}
 {"ts": "2026-11-26 15:16:53", "run": "g-1a21648bfa5-ecd6e5", "missing": {"Builder": "unreachable", "Orchestrator": "unreachable", "Pixel": "unreachable", "Scribe": "unreachable", "Forge": "unreachable"}, "relocated": {}}
 {"ts": "2026-11-26 15:46:25", "run": "g-1a21664000f-116fd9", "missing": {"Builder": "unreachable", "Orchestrator": "unreachable", "Scribe": "unreachable", "Pixel": "unreachable", "Forge": "unreachable"}, "relocated": {}}
+{"ts": "2026-11-26 18:26:49", "run": "g-1a216f67272-a2c96e", "missing": {"Forge": "unreachable", "Builder": "unreachable"}, "relocated": {"Orchestrator": "pale (home unreachable)", "Scribe": "pale (home unreachable)", "Pixel": "pale (home unreachable)"}}

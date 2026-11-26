@@ -1,22 +1,18 @@
 # Fleet Forecast - 10 steps ahead
 
-Generated: 2026-11-26 12:53:54 | Fleet: 114/116 (98%) | throughput ~17.7 goals/h
+Generated: 2026-11-26 18:57:27 | Fleet: 115/116 (99%) | throughput ~13.0 goals/h
 
 ## Next 10 goals (queue order)
 
-**#1 [researcher] Repetitive-task inventory + first lead list** - ETA 2026-11-26 17:16, P(reached) 7% (build, cx2)
+**#1 [orchestrator] Day-7 checkpoint review (2026-12-02)** - ETA 2026-11-26 23:39, P(reached) 28% (build, cx2)
    steps: scaffold the module file -> implement core logic -> self-test until AC green -> write evidence leaf + index line
-   consequences: lane end orchestrator: 11-26 17:36 (slowest lane)
-**#2 [orchestrator] Day-7 checkpoint review (2026-12-02)** - ETA 2026-11-26 17:36, P(reached) 28% (build, cx2)
-   steps: scaffold the module file -> implement core logic -> self-test until AC green -> write evidence leaf + index line
-   consequences: lane end orchestrator: 11-26 17:36 (slowest lane)
+   consequences: lane end orchestrator: 11-26 23:39 (slowest lane)
 
 ## Planned work (decision tree)
 
-- state: Fleet 114/116 (98%) | gate: all goals 100%? -> **NO - queue in flight**
-- cycle: in flight: 2 goal(s) open
-- #1 [researcher] Repetitive-task inventory + first lead list ~2026-11-26 17:16 (P~7%) - planned as build work (cx2); already open on the researcher lane - FIFO order keeps evidence leaves consistent; lower confidence (P(reached) | delivers: Repetitive-task inventory + first lead list
-- #2 [orchestrator] Day-7 checkpoint review (2026-12-02) ~2026-11-26 17:36 (P~28%) - planned as build work (cx2); already open on the orchestrator lane - FIFO order keeps evidence leaves consistent; lower confidence (P(reache | delivers: Day-7 checkpoint review (2026-12-02)
+- state: Fleet 115/116 (99%) | gate: all goals 100%? -> **NO - queue in flight**
+- cycle: in flight: 1 goal(s) open
+- #1 [orchestrator] Day-7 checkpoint review (2026-12-02) ~2026-11-26 23:39 (P~28%) - planned as build work (cx2); already open on the orchestrator lane - FIFO order keeps evidence leaves consistent; lower confidence (P(reache | delivers: Day-7 checkpoint review (2026-12-02)
 
 ## Functional capability chain (PM view)
 
@@ -118,30 +114,27 @@ The week ahead: every 15-day step clamped to days 0-7 and split finer - one line
 
 plan history (oldest -> newest): 05dcc83e6301 @ 11-24 13:46:57, a4f106fb3413 @ 11-24 23:09:16, 05dcc83e6301 @ 11-25 02:40:36, df19237b8736 @ 11-25 17:52:34
 
-## 30m ahead (by 2026-11-26 13:23)
-- completes: **0** goal(s) -> fleet ~98%
-- why: queue order from the auto-loop: these complete first because their lanes are shortest; expected outcome: fleet 114/116 -> 98%
+## 30m ahead (by 2026-11-26 19:27)
+- completes: **0** goal(s) -> fleet ~99%
+- why: queue order from the auto-loop: these complete first because their lanes are shortest; expected outcome: fleet 115/116 -> 99%
 
-## 1h ahead (by 2026-11-26 13:53)
-- completes: **0** goal(s) -> fleet ~98%
-- why: queue order from the auto-loop: these complete first because their lanes are shortest; expected outcome: fleet 114/116 -> 98%
+## 1h ahead (by 2026-11-26 19:57)
+- completes: **0** goal(s) -> fleet ~99%
+- why: queue order from the auto-loop: these complete first because their lanes are shortest; expected outcome: fleet 115/116 -> 99%
 
-## 1d ahead (by 2026-11-27 12:53)
-- completes: **2** goal(s) -> fleet ~100%
-  - #1 researcher: Repetitive-task inventory + first lead list (2026-11-26 17:16)
-  - #2 orchestrator: Day-7 checkpoint review (2026-12-02) (2026-11-26 17:36)
-- why: queue order from the auto-loop: these complete first because their lanes are shortest; expected outcome: fleet 114/116 -> 100%
+## 1d ahead (by 2026-11-27 18:57)
+- completes: **1** goal(s) -> fleet ~100%
+  - #1 orchestrator: Day-7 checkpoint review (2026-12-02) (2026-11-26 23:39)
+- why: queue order from the auto-loop: these complete first because their lanes are shortest; expected outcome: fleet 115/116 -> 100%
 
-## 1w ahead (by 2026-12-03 12:53)
-- completes: **2** goal(s) -> fleet ~100%
-  - #1 researcher: Repetitive-task inventory + first lead list (2026-11-26 17:16)
-  - #2 orchestrator: Day-7 checkpoint review (2026-12-02) (2026-11-26 17:36)
-- why: queue order from the auto-loop: these complete first because their lanes are shortest; expected outcome: fleet 114/116 -> 100%
+## 1w ahead (by 2026-12-03 18:57)
+- completes: **1** goal(s) -> fleet ~100%
+  - #1 orchestrator: Day-7 checkpoint review (2026-12-02) (2026-11-26 23:39)
+- why: queue order from the auto-loop: these complete first because their lanes are shortest; expected outcome: fleet 115/116 -> 100%
 - next-cycle candidates: ARCHIVIST#6 Knowledge decay model productionization - run deca; ARCHIVIST#8 Snapshot diff weekly report - extend cycle-2 snaps; MECHANIC#1 Portal load test completion (cycle-2 #4 carryover); MECHANIC#2 Self-healing mirror productionization - the cycle-
 
-## 1m ahead (by 2026-12-26 12:53)
-- completes: **2** goal(s) -> fleet ~100%
-  - #1 researcher: Repetitive-task inventory + first lead list (2026-11-26 17:16)
-  - #2 orchestrator: Day-7 checkpoint review (2026-12-02) (2026-11-26 17:36)
-- why: queue order from the auto-loop: these complete first because their lanes are shortest; expected outcome: fleet 114/116 -> 100%
+## 1m ahead (by 2026-12-26 18:57)
+- completes: **1** goal(s) -> fleet ~100%
+  - #1 orchestrator: Day-7 checkpoint review (2026-12-02) (2026-11-26 23:39)
+- why: queue order from the auto-loop: these complete first because their lanes are shortest; expected outcome: fleet 115/116 -> 100%
 - next-cycle candidates: ARCHIVIST#6 Knowledge decay model productionization - run deca; ARCHIVIST#8 Snapshot diff weekly report - extend cycle-2 snaps; MECHANIC#1 Portal load test completion (cycle-2 #4 carryover); MECHANIC#2 Self-healing mirror productionization - the cycle-
