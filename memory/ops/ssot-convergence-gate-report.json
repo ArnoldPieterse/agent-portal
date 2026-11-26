@@ -1,0 +1,129 @@
+{
+  "overall": "DRIFT",
+  "exit_code": 1,
+  "tolerance": 0,
+  "fleet": {
+    "total": 111,
+    "ledger_reached": 75,
+    "forecast_done": 77,
+    "reached_delta": 2
+  },
+  "max_abs_lane_delta": 1,
+  "lanes": [
+    {
+      "lane": "archivist",
+      "ledger_reached": 9,
+      "forecast_done": 10,
+      "total_ledger": 10,
+      "total_forecast": 10,
+      "delta": 1,
+      "total_delta": 0,
+      "status": "DRIFT"
+    },
+    {
+      "lane": "builder",
+      "ledger_reached": 10,
+      "forecast_done": 10,
+      "total_ledger": 10,
+      "total_forecast": 10,
+      "delta": 0,
+      "total_delta": 0,
+      "status": "CLEAN"
+    },
+    {
+      "lane": "designer",
+      "ledger_reached": 3,
+      "forecast_done": 3,
+      "total_ledger": 10,
+      "total_forecast": 10,
+      "delta": 0,
+      "total_delta": 0,
+      "status": "CLEAN"
+    },
+    {
+      "lane": "forge",
+      "ledger_reached": 9,
+      "forecast_done": 10,
+      "total_ledger": 10,
+      "total_forecast": 10,
+      "delta": 1,
+      "total_delta": 0,
+      "status": "DRIFT"
+    },
+    {
+      "lane": "mechanic",
+      "ledger_reached": 2,
+      "forecast_done": 2,
+      "total_ledger": 10,
+      "total_forecast": 10,
+      "delta": 0,
+      "total_delta": 0,
+      "status": "CLEAN"
+    },
+    {
+      "lane": "orchestrator",
+      "ledger_reached": 10,
+      "forecast_done": 10,
+      "total_ledger": 10,
+      "total_forecast": 10,
+      "delta": 0,
+      "total_delta": 0,
+      "status": "CLEAN"
+    },
+    {
+      "lane": "outlet",
+      "ledger_reached": 0,
+      "forecast_done": 0,
+      "total_ledger": 10,
+      "total_forecast": 10,
+      "delta": 0,
+      "total_delta": 0,
+      "status": "CLEAN"
+    },
+    {
+      "lane": "pixel",
+      "ledger_reached": 7,
+      "forecast_done": 7,
+      "total_ledger": 10,
+      "total_forecast": 10,
+      "delta": 0,
+      "total_delta": 0,
+      "status": "CLEAN"
+    },
+    {
+      "lane": "researcher",
+      "ledger_reached": 11,
+      "forecast_done": 11,
+      "total_ledger": 11,
+      "total_forecast": 11,
+      "delta": 0,
+      "total_delta": 0,
+      "status": "CLEAN"
+    },
+    {
+      "lane": "scribe",
+      "ledger_reached": 10,
+      "forecast_done": 10,
+      "total_ledger": 10,
+      "total_forecast": 10,
+      "delta": 0,
+      "total_delta": 0,
+      "status": "CLEAN"
+    },
+    {
+      "lane": "verifier",
+      "ledger_reached": 4,
+      "forecast_done": 4,
+      "total_ledger": 10,
+      "total_forecast": 10,
+      "delta": 0,
+      "total_delta": 0,
+      "status": "CLEAN"
+    }
+  ],
+  "generated": "2026-11-26T15:19:49Z",
+  "sources": {
+    "ledger": "C:\\Users\\White\\.unsloth\\studio\\sandbox\\_default\\goal_ledger.json",
+    "next10": "C:\\Users\\White\\.unsloth\\studio\\sandbox\\_default\\memory\\goals\\next10.json"
+  }
+}

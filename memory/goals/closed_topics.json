@@ -3816,5 +3816,17 @@
 "text": "**Debug-artifact purge + asset gate** - Remove the ~15MB of stray debug PNGs from `ui/` (band_*, dash_*, segA-D, plan_*, crop_top, chk); add",
 "agent": "pixel",
 "at": "2026-11-27"
+},
+{
+"sig": "e7e936bbbc33fa6f",
+"text": "**Milestone auto-detection** - parse goal_ledger state changes; when fleet level or goal pct crosses threshold, auto-stage a milestone draft",
+"agent": "outlet",
+"at": "2026-11-27"
+},
+{
+"sig": "b2de18807baa0d01",
+"text": "**Cross-lane contract tests** - define 5 inter-agent API contracts (e.g., goal_ledger schema, convergence_api response shape) and assert the",
+"agent": "verifier",
+"at": "2026-11-27"
 }
 ]

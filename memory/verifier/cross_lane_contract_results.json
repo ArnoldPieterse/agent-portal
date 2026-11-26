@@ -1,0 +1,74 @@
+{
+  "ok": true,
+  "generated": "2026-11-26T15:19:17.297205+00:00",
+  "owner": "verifier",
+  "assist_by": "builder",
+  "goal": "Verifier goal #4 - cross-lane contract tests (file-based data contracts)",
+  "contracts_total": 5,
+  "current_pass": 5,
+  "drift_caught": 5,
+  "all_current_pass": true,
+  "all_drift_caught": true,
+  "rows": [
+    {
+      "id": "C1_agents_roster",
+      "name": "agents.json roster (every lane reads the seat registry)",
+      "current": "PASS",
+      "current_errors": [],
+      "golden_written": true,
+      "drift_caught": true,
+      "drift_desc": "drop required top-level key 'agents'",
+      "drift_errors_sample": [
+        "$: missing required key 'agents'"
+      ]
+    },
+    {
+      "id": "C2_goal_ledger_ssot",
+      "name": "goal_ledger.json SSOT ledger (all lanes write/read)",
+      "current": "PASS",
+      "current_errors": [],
+      "golden_written": true,
+      "drift_caught": true,
+      "drift_desc": "fleet_pct_reached -> 150 (violates maximum 100)",
+      "drift_errors_sample": [
+        "$.fleet_pct_reached: 150 > maximum 100"
+      ]
+    },
+    {
+      "id": "C3_next10_forecast_queue",
+      "name": "next10.json forecast queue (forecast engine -> all lanes)",
+      "current": "PASS",
+      "current_errors": [],
+      "golden_written": true,
+      "drift_caught": true,
+      "drift_desc": "next10 -> string (violates array type)",
+      "drift_errors_sample": [
+        "$.next10: expected array, got str"
+      ]
+    },
+    {
+      "id": "C4_convergence_api_response",
+      "name": "convergence_api.handle_convergence() response shape (Designer/Verifier/Mechanic consume)",
+      "current": "PASS",
+      "current_errors": [],
+      "golden_written": true,
+      "drift_caught": true,
+      "drift_desc": "autonomy.trend -> 'exploding' (not in enum)",
+      "drift_errors_sample": [
+        "$.autonomy.trend: 'exploding' not in enum ['improving', 'stable', 'declining']"
+      ]
+    },
+    {
+      "id": "C5_fleet_mode_state",
+      "name": "fleet-mode.json mode/state (convergence_api writes, cockpit reads)",
+      "current": "PASS",
+      "current_errors": [],
+      "golden_written": true,
+      "drift_caught": true,
+      "drift_desc": "goal_pct -> -5 (violates minimum 0)",
+      "drift_errors_sample": [
+        "$.goal_pct: -5 < minimum 0"
+      ]
+    }
+  ]
+}

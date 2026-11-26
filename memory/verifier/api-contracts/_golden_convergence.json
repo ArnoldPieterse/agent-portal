@@ -1,0 +1,48 @@
+{
+  "ok": true,
+  "timestamp": "2026-11-26T15:15:49.834650+00:00",
+  "autonomy": {
+    "score": 71.3,
+    "components": {
+      "pass_autonomy": 64.3,
+      "duration_score": 81.3,
+      "rework_score": 92.5,
+      "trend_score": 50.0
+    },
+    "trend": "stable"
+  },
+  "efficiency": {
+    "current": 0,
+    "delta_vs_last": 0.0,
+    "trend": [
+      0
+    ]
+  },
+  "interventions": {
+    "total": 10,
+    "by_type": {
+      "redirect": 3,
+      "unblock": 4,
+      "approve": 3
+    },
+    "per_cycle_avg": 10.0
+  },
+  "steady_state": {
+    "mode": "MAINTENANCE",
+    "progress_pct": 33.3,
+    "criteria": {
+      "low_interventions": false,
+      "stable_duration": true,
+      "zero_rework": false
+    },
+    "criteria_met": 1,
+    "criteria_total": 3
+  },
+  "cycle_history": [
+    {
+      "cycle": 15,
+      "passes": 142,
+      "goals_done": 28
+    }
+  ]
+}

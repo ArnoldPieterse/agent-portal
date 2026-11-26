@@ -1,5 +1,8 @@
 # memory/verifier/ INDEX
-Last updated: 2026-11-25.
+Last updated: 2026-11-26.
+
+## 2026-11-26 (auto-loop assist)
+- **ASSIST 2026-11-26 (Builder, option d — Verifier goal #4 cross-lane contract tests)**: Existing api_contracts.py/contract_test.py covered only HTTP /api/* endpoints. Built the missing FILE-BASED inter-agent data-contract layer: `cross_lane_contract_tests.py` defines 5 contracts (agents.json roster, goal_ledger SSOT, next10 forecast queue, convergence_api response shape, fleet-mode state) each with golden fixtures. Run 2026-11-26T15:19Z: **current-state 5/5 PASS + injected schema drift 5/5 correctly FAILS (exit 0)** — proves each contract has teeth. Artifacts: cross_lane_contract_results.json + api-contracts/golden/C1..C5_*.json. Evidence: cross-lane-contract-assist-2026-11-26.md
 
 ## 2026-11-25 (auto-loop batch)
 - **ASSIST 2026-11-25 (option c — close stale evidence claim)**: Independently verified Researcher's D1 resolution (autonomy 62.4 vs 71.3). Re-ran live `convergence_api.py selftest()` => `SELFTEST PASS: autonomy=71.3 (src 71.3)`; recomputed source components x weights = 71.33 ≈ stored 71.3 (file self-consistent); Scribe trend c23 = 71.3. Both sides of the flag now agree => stale cache read, not a computation bug. D1 CLOSED. Artifact: evidence-d1-discrepancy-verified-2026-11-25.md
