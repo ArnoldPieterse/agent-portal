@@ -1085,3 +1085,5 @@
 {"timestamp": "2026-11-26T12:23:06.217114+00:00", "agent": "Scribe", "task_type": "WORK", "task_text": "", "productive": true, "duration_ms": 1909275}
 {"timestamp": "2026-11-26T12:23:06.226953+00:00", "agent": "Mechanic", "task_type": "WORK", "task_text": "", "productive": true, "duration_ms": 1909274}
 {"timestamp": "2026-11-26T12:23:06.240100+00:00", "agent": "Outlet", "task_type": "WORK", "task_text": "", "productive": true, "duration_ms": 1909271}
+{"timestamp": "2026-11-26T12:32:08.433332+00:00", "agent": "Researcher", "task_type": "WORK", "task_text": "", "productive": true, "duration_ms": 2451544}
+{"timestamp": "2026-11-26T12:32:08.447779+00:00", "agent": "Archivist", "task_type": "WORK", "task_text": "", "productive": true, "duration_ms": 1459708}

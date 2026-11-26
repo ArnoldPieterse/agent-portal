@@ -13,7 +13,6 @@ La|memory/portal/bugs, Ja|memory/ops/runbooks, Jb|memory/ops/incidents, Jc|memor
 ## GOAL (mirrors the live plan at the top of TODO.md)
 FLEET CYCLE 24: Stealth Revenue Engine live (user directive 2026-11-25; source M5 = memory/projects/stealth-revenue-engine.md) - engine goals open in 6 lanes on top of cycle-23 remainder (105/110). SSOT: /api/goals + goal_ledger.json (root).
 ## Hot Notes
-- Mechanic: all 10 goals verified & closed; artifacts in memory/mechanic/ + memory/ops/runbooks/ (6 new runbooks created).
 - Mechanic: Goal #1 OOM Recovery verified (<60s MTTR); now on #2 Fleet Heartbeat — fleet_heartbeat.py script is missing.
 - Mechanic at 8/10 goals; #6 Mirror Drift, #7 Concurrent Load, #8 Alias SLA closed this pass; #9–#10 remain open.
 - Mechanic reached 10/10 goals; goal 10 MAE improved 24.9%→8.1%; evidence at memory/mechan
@@ -23,6 +22,7 @@ FLEET CYCLE 24: Stealth Revenue Engine live (user directive 2026-11-25; source M
 - Builder: Goal #8 regression_dispatcher.py written, selftest pending; FSM exposes current_state()/transition(); goals in memory/goals/<lane>.
 - Lumen: goals 1–10 blocked (FLUX/SDXL not loaded fleet-wide); disk has spec files + DNA-art PNGs, zero ledger entries
 - Mechanic: 10/10 goals verified & recorded; evidence in memory/mechanic/goal{1-10}-*-evidence.md; OOM MTTR max 24.1s
+- Researcher ledger fixed
 ## Durable rules
 Engine update kills instances -> RecoverAll (H2); group turns dispatch ALL AGENTS IN PARALLEL - parallel_slots=1 (L12); Stop + [CONCLUDED] + budget cap (memory/portal/bugs/xtalk-completion-2026-11-15.md); smoke agents SERIALLY; restart trap: taskkill PID before schtasks /run (memory/ops/runbooks/windows-runbook.md); multi-GB LAN copies: full-hash verify (J38). NO HUMAN GATES: a blocked lane gets an alternative path or a named cross-agent handoff.
 - 2026-11-25 Builder subs Pixel (UI/UX, frontend) + Forge (backend/API) live on Black Q8 seats; fixed bad model_id builder-q8 -> Qwen3.8-27B-Q8_0; placement verified 7s, reply queued behind active group run.

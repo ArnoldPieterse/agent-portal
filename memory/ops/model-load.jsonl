@@ -1110,3 +1110,4 @@
 {"ts": "2026-11-26 21:39:55", "run": "g-1a217a7b145-d8985c", "missing": {}, "relocated": {"Archivist": "White (local) (home not_loaded)"}}
 {"ts": "2026-11-26 21:51:41", "run": "g-1a217b275be-a7774b", "missing": {}, "relocated": {"Archivist": "White (local) (home not_loaded)"}}
 {"ts": "2026-11-26 22:08:28", "run": "g-1a217c1d2ff-bbfdd7", "missing": {}, "relocated": {"Archivist": "White (local) (home not_loaded)"}}
+{"ts": "2026-11-26 22:24:14", "run": "g-1a217d0420a-721d28", "missing": {"Orchestrator": "unreachable", "Scribe": "unreachable", "Builder": "unreachable", "Forge": "unreachable", "Pixel": "unreachable"}, "relocated": {"Archivist": "White (local) (home not_loaded)"}}
