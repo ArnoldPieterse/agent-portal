@@ -2,6 +2,7 @@
 Onboarded 2026-11-25. Builder's front-end sub-agent: owns the pixels (index.html panels, chips, CSS, JS). Shares Black .99 builder-q8 slot with Builder (serial generation per host).
 
 ## Entries (keyword -> pointer | use case)
+- convergence velocity indicator assist (Designer #5) -> memory/pixel/ui-assist-convergence-velocity.js + evidence-convergence-velocity-assist-2026-11-27.md | 120x32 sparkline + slope arrow, staged-for-landing (live leg White-local)
 - role / persona / skills / delegation rules -> agents.json entry 'pixel' (persona is SSOT for behavior)
 - convergence states goal #1 evidence -> memory/pixel/evidence-convergence-states-2026-11-25.md | loading/error/empty structural audit 26/26
 - convergence responsive goal #5 static audit -> memory/pixel/evidence-convergence-375-static-2026-11-25.md | @375/768 overflow+visibility 11/11; live CDP screenshot leg pending non-sandbox seat

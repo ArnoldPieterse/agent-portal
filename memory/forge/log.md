@@ -83,3 +83,4 @@ Result: EXIT 1 (CIRCUIT_BREAKER) - correct: all 4 smoke runs show 100% TCP-fail 
 | 2026-11-27 04:23:15 | canary_deploy: PROMOTION PARTIAL: ok=[] fail=['Red', 'Pale', 'Black'] -> rolling back promoted hosts |
 | 2026-11-27 04:23:22 | canary_deploy: START canary=White file=_deploy_test.txt sha=70044f8a3946563b |
 | 2026-11-27 04:23:22 | canary_deploy: GATE TOKEN BLOCKED file=_deploy_test.txt -> token stale (400s old, TTL 300s) |
+- 2026-11-27 04:35 | chaos_recovery_drill.py --self-test | PASS 8/8 | evidence-chaos-drill-assist-2026-11-27.md

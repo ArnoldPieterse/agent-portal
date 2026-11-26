@@ -1,6 +1,6 @@
 # Chaos-Recovery Drill Report
 
-Run: 2026-11-26T18:54:27.822007Z
+Run: 2026-11-26T19:07:09.081072Z
 SLA target: recovery < 120s (goal #2 AC).
 
 ## Real production incidents (memory/ops/recovery-times.jsonl)

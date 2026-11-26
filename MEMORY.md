@@ -13,8 +13,6 @@ La|memory/portal/bugs, Ja|memory/ops/runbooks, Jb|memory/ops/incidents, Jc|memor
 ## GOAL (mirrors the live plan at the top of TODO.md)
 FLEET CYCLE 24: Stealth Revenue Engine live (user directive 2026-11-25; source M5 = memory/projects/stealth-revenue-engine.md) - engine goals open in 6 lanes on top of cycle-23 remainder (105/110). SSOT: /api/goals + goal_ledger.json (root).
 ## Hot Notes
-- Verifier goal #1: auto_trigger_regression.py written+hashed, pending live e2e run and schtask registration via elev.py.
-- Pixel closed Goal #1 (Convergence cross-cycle trend timeline): all 10 ACs verified in ui/cockpit-convergence.js, was implemented prior cycle
 - Next step: wire verify_token() into canary_deploy.py before promotion loop (canary gate token built & tested 2026-11-27).
 - Fleet heartbeat goes stale repeatedly (sandbox can't persist probe cadence); runbook at memory/mechanic/fleet-heartbeat-reremediation-2026-1
 - Goal #6 hard-blocked: elev.py SYSTEM dead + loopback egress-blocked; unblock cmd in memory/ops/blockers.md; anti-loop rule active (no re-pro
@@ -23,6 +21,8 @@ FLEET CYCLE 24: Stealth Revenue Engine live (user directive 2026-11-25; source M
 - Built memory/verifier/acceptance
 - G1 simulate PASS; final schtask reg blocked: sandbox COM "Class not registered" + elev.py port 8098 WinError 10013
 - Builder built verification_coverage.py → 91.2% prod+ops verified (>90% target met); --check mode gates cycle boundaries
+- Verifier goal #2: chaos drill self-test PASS 8/8; prod 0/7 incidents meet <120s SLA (reload latency dominates); fix = pre-stage models
+- Pixel Goal #6 hard-blocked: no non-sandbox seat, Playwright absent; blocker logged in memory/ops/blockers.md this cycle.
 ## Durable rules
 Engine update kills instances -> RecoverAll (H2); group turns dispatch ALL AGENTS IN PARALLEL - parallel_slots=1 (L12); Stop + [CONCLUDED] + budget cap (memory/portal/bugs/xtalk-completion-2026-11-15.md); smoke agents SERIALLY; restart trap: taskkill PID before schtasks /run (memory/ops/runbooks/windows-runbook.md); multi-GB LAN copies: full-hash verify (J38). NO HUMAN GATES: a blocked lane gets an alternative path or a named cross-agent handoff.
 - 2026-11-25 Builder subs Pixel (UI/UX, frontend) + Forge (backend/API) live on Black Q8 seats; fixed bad model_id builder-q8 -> Qwen3.8-27B-Q8_0; placement verified 7s, reply queued behind active group run.
