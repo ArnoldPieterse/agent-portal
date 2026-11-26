@@ -1,0 +1,302 @@
+{
+ "meta": {
+  "source": "memory/goals/*.md + archive (verified: markers)",
+  "axis": "days since 2026-11-13",
+  "metric": "cumulative goals reached (running max across dated snapshots) = autonomy throughput proxy",
+  "generated": "2026-11-27"
+ },
+ "agents": {
+  "orchestrator": {
+   "points": 7,
+   "first": "2026-11-13",
+   "last": "2026-11-26",
+   "cum_series": {
+    "x": [
+     0,
+     5,
+     6,
+     7,
+     10,
+     11,
+     13
+    ],
+    "y": [
+     10,
+     24,
+     45,
+     45,
+     45,
+     45,
+     45
+    ]
+   },
+   "slope_reaches_per_day": 2.735,
+   "intercept": 16.68,
+   "r2": 0.6983,
+   "total_reached": 45,
+   "trending_to_autonomy": false,
+   "eta_days_to_next_5_reaches": 12.2
+  },
+  "researcher": {
+   "points": 9,
+   "first": "2026-11-13",
+   "last": "2026-11-26",
+   "cum_series": {
+    "x": [
+     0,
+     5,
+     6,
+     7,
+     9,
+     10,
+     11,
+     12,
+     13
+    ],
+    "y": [
+     0,
+     19,
+     21,
+     21,
+     21,
+     21,
+     21,
+     21,
+     21
+    ]
+   },
+   "slope_reaches_per_day": 1.329,
+   "intercept": 7.67,
+   "r2": 0.6073,
+   "total_reached": 21,
+   "trending_to_autonomy": false,
+   "eta_days_to_next_5_reaches": 13.8
+  },
+  "builder": {
+   "points": 7,
+   "first": "2026-11-13",
+   "last": "2026-11-26",
+   "cum_series": {
+    "x": [
+     0,
+     5,
+     6,
+     7,
+     10,
+     11,
+     13
+    ],
+    "y": [
+     10,
+     16,
+     19,
+     21,
+     21,
+     41,
+     41
+    ]
+   },
+   "slope_reaches_per_day": 2.459,
+   "intercept": 5.88,
+   "r2": 0.7803,
+   "total_reached": 41,
+   "trending_to_autonomy": false,
+   "eta_days_to_next_5_reaches": 16.3
+  },
+  "verifier": {
+   "points": 9,
+   "first": "2026-11-13",
+   "last": "2026-11-26",
+   "cum_series": {
+    "x": [
+     0,
+     5,
+     6,
+     7,
+     8,
+     10,
+     11,
+     12,
+     13
+    ],
+    "y": [
+     9,
+     15,
+     27,
+     27,
+     27,
+     27,
+     27,
+     27,
+     27
+    ]
+   },
+   "slope_reaches_per_day": 1.364,
+   "intercept": 12.76,
+   "r2": 0.667,
+   "total_reached": 27,
+   "trending_to_autonomy": false,
+   "eta_days_to_next_5_reaches": 14.1
+  },
+  "designer": {
+   "points": 11,
+   "first": "2026-11-13",
+   "last": "2026-11-26",
+   "cum_series": {
+    "x": [
+     0,
+     3,
+     4,
+     5,
+     6,
+     7,
+     8,
+     10,
+     11,
+     12,
+     13
+    ],
+    "y": [
+     8,
+     17,
+     17,
+     21,
+     23,
+     23,
+     23,
+     23,
+     23,
+     23,
+     23
+    ]
+   },
+   "slope_reaches_per_day": 0.943,
+   "intercept": 13.59,
+   "r2": 0.6566,
+   "total_reached": 23,
+   "trending_to_autonomy": false,
+   "eta_days_to_next_5_reaches": 15.3
+  },
+  "scribe": {
+   "points": 9,
+   "first": "2026-11-13",
+   "last": "2026-11-26",
+   "cum_series": {
+    "x": [
+     0,
+     5,
+     6,
+     7,
+     8,
+     10,
+     11,
+     12,
+     13
+    ],
+    "y": [
+     10,
+     19,
+     22,
+     22,
+     22,
+     22,
+     22,
+     22,
+     22
+    ]
+   },
+   "slope_reaches_per_day": 0.795,
+   "intercept": 13.97,
+   "r2": 0.6525,
+   "total_reached": 22,
+   "trending_to_autonomy": false,
+   "eta_days_to_next_5_reaches": 16.4
+  },
+  "mechanic": {
+   "points": 10,
+   "first": "2026-11-13",
+   "last": "2026-11-26",
+   "cum_series": {
+    "x": [
+     0,
+     4,
+     5,
+     6,
+     7,
+     9,
+     10,
+     11,
+     12,
+     13
+    ],
+    "y": [
+     10,
+     10,
+     12,
+     19,
+     20,
+     20,
+     21,
+     22,
+     22,
+     22
+    ]
+   },
+   "slope_reaches_per_day": 1.117,
+   "intercept": 9.2,
+   "r2": 0.8045,
+   "total_reached": 22,
+   "trending_to_autonomy": true,
+   "eta_days_to_next_5_reaches": 15.9
+  },
+  "archivist": {
+   "points": 10,
+   "first": "2026-11-13",
+   "last": "2026-11-26",
+   "cum_series": {
+    "x": [
+     0,
+     3,
+     5,
+     6,
+     7,
+     9,
+     10,
+     11,
+     12,
+     13
+    ],
+    "y": [
+     10,
+     20,
+     20,
+     20,
+     20,
+     20,
+     30,
+     31,
+     31,
+     31
+    ]
+   },
+   "slope_reaches_per_day": 1.568,
+   "intercept": 11.38,
+   "r2": 0.8466,
+   "total_reached": 31,
+   "trending_to_autonomy": true,
+   "eta_days_to_next_5_reaches": 15.7
+  },
+  "outlet": {
+   "points": 2,
+   "note": "<3 cycles; too new to fit"
+  },
+  "pixel": {
+   "points": 1,
+   "note": "<3 cycles; too new to fit"
+  },
+  "forge": {
+   "points": 2,
+   "note": "<3 cycles; too new to fit"
+  }
+ }
+}

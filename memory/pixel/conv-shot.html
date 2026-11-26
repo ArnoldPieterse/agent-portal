@@ -1,0 +1,72 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Convergence @responsive — live capture harness (Pixel goal #6)</title>
+<link rel="stylesheet" href="../../ui/tokens.css">
+<link rel="stylesheet" href="../../ui/app.css">
+<style>
+  html,body{margin:0;padding:0}
+  body{background:var(--bg-1,#0d1117);color:var(--text,#e6edf3);
+       font-family:system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;padding:10px}
+  .hd{font-size:12px;letter-spacing:.08em;text-transform:uppercase;color:var(--dim,#8a8f98);margin:2px 2px 8px}
+</style>
+<script>
+/* Faithful /api/convergence mock — real field shape from ui/cockpit-convergence.js,
+   chosen so all four widgets render populated (gauge/trend/interventions/progress),
+   not skeletons or empty states. Data values are representative; the leg under test is
+   LAYOUT/responsiveness in a real browser engine, not live data values. */
+window.__CONV = {
+  fleet_autonomy_score: 87,
+  cycle_duration_trend: { cycles:[{duration_h:14},{duration_h:12},{duration_h:9},{duration_h:7}], direction:"improving" },
+  human_intervention_count: { per_cycle:{ "20":2,"21":1,"22":1,"23":0 } },
+  steady_state_progress: { progress_pct:65, steady_state_reached:false, consecutive_passes:2 },
+  score_history:[{cycle:1,score:45},{cycle:2,score:52},{cycle:3,score:61},{cycle:4,score:68},
+                 {cycle:5,score:74},{cycle:6,score:79},{cycle:7,score:83},{cycle:8,score:87}]
+};
+window.fetch = function(url){
+  if(String(url).indexOf("/api/convergence")===0)
+    return Promise.resolve({ok:true,status:200,json:function(){return Promise.resolve(window.__CONV);}});
+  return Promise.reject(new Error("no route "+url));
+};
+</script>
+</head>
+<body>
+  <div id="ckpPanel">
+    <div class="hd">Convergence &middot; fleet autonomy</div>
+    <div id="ckconvBox"></div>
+  </div>
+  <pre id="metrics" style="position:absolute;left:-9999px;top:0"></pre>
+  <script src="../../ui/cockpit-convergence.js"></script>
+  <script>
+  /* Self-report: horizontal overflow + per-widget presence/size/in-viewport.
+     Written into #metrics once the grid has rendered (or on a 5s fallback). */
+  (function(){
+    var done=false;
+    function finish(){
+      if(done) return; done=true;
+      var de=document.documentElement, vw=window.innerWidth, vh=window.innerHeight;
+      function vis(sel){
+        var el=document.querySelector(sel);
+        if(!el) return {present:false};
+        var r=el.getBoundingClientRect();
+        return {present:true,w:Math.round(r.width),h:Math.round(r.height),
+                inView:(r.left>=-1&&r.top>=-1&&r.right<=vw+1&&r.bottom<=vh+1)};
+      }
+      var out={vw:vw,vh:vh,scrollW:de.scrollWidth,bodyScrollW:document.body?document.body.scrollWidth:0,
+               overflowX:de.scrollWidth-vw,widgets:{}};
+      ["ckconv-gauge","ckconv-trend","ckconv-interventions","ckconv-progress"].forEach(function(c){out.widgets[c]=vis("."+c);});
+      document.getElementById("metrics").textContent="METRICS_JSON:"+JSON.stringify(out);
+      document.title="METRICSDONE";
+    }
+    var t0=Date.now();
+    (function poll(){
+      if(document.querySelector("#ckconvBox .ckconv")) finish();
+      else if(Date.now()-t0>5000) finish();
+      else setTimeout(poll,25);
+    })();
+  })();
+  </script>
+</body>
+</html>

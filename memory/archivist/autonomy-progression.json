@@ -1,0 +1,186 @@
+{
+  "generated": "2026-11-26T14:21:28Z",
+  "owner": "archivist",
+  "built_by": "builder (assist; credited to archivist)",
+  "round_topic": "Fleet Autonomy Convergence",
+  "data_sources": [
+    "C:\\Users\\White\\.unsloth\\studio\\sandbox\\_default\\memory\\archivist\\convergence-forecast.json",
+    "C:\\Users\\White\\.unsloth\\studio\\sandbox\\_default\\memory\\researcher\\maturity-scorecard-results.json",
+    "C:\\Users\\White\\.unsloth\\studio\\sandbox\\_default\\memory\\ops\\human-interventions.jsonl"
+  ],
+  "fleet_level": {
+    "series_cycles": [
+      12,
+      15,
+      16,
+      17,
+      18
+    ],
+    "completion_pct_by_cycle": {
+      "12": 14.6,
+      "15": 0.0,
+      "16": 0.0,
+      "17": 86.0,
+      "18": 86.0
+    },
+    "intervention_rate_by_cycle": {
+      "12": 1,
+      "15": 1,
+      "16": 2,
+      "17": 3,
+      "18": 3
+    },
+    "fits": {
+      "completion_linear": {
+        "model": "linear",
+        "intercept": -164.479,
+        "slope_per_cycle": 12.9358,
+        "r2": 0.4412
+      },
+      "completion_logistic": {
+        "model": "logistic",
+        "L": 100,
+        "k": 1.58,
+        "x0": 17,
+        "r2": 0.7729
+      },
+      "interventions_linear": {
+        "model": "linear",
+        "intercept": -3.887,
+        "slope_per_cycle": 0.3774,
+        "r2": 0.7547
+      },
+      "interventions_logistic": {
+        "model": "logistic",
+        "L": 11,
+        "k": 0.3,
+        "x0": 21,
+        "r2": 0.8383
+      }
+    },
+    "selected_fit": {
+      "model": "logistic",
+      "L": 100,
+      "k": 1.58,
+      "x0": 17,
+      "r2": 0.7729
+    },
+    "r2": 0.7729,
+    "verified": true,
+    "n_cycles_fitted": 5,
+    "steady_state_threshold_pct": 85.0,
+    "projected_steady_state_cycle": 15.9,
+    "cycles_to_steady_state_from_last": -2.1
+  },
+  "per_agent": [
+    {
+      "agent": "builder",
+      "composite_autonomy_score": 77.8,
+      "rank": 1,
+      "convergence_trend_dim": 64.23,
+      "trend_class": "stable",
+      "human_interventions_total": 3,
+      "gap_to_full_autonomy": 22.2,
+      "directional_eta_cycles_to_full": "not trending to full autonomy yet",
+      "prediction_type": "directional",
+      "verified": false,
+      "caveat": "single per-agent snapshot (maturity scorecard); multi-cycle per-agent series not yet on disk"
+    },
+    {
+      "agent": "scribe",
+      "composite_autonomy_score": 73.2,
+      "rank": 2,
+      "convergence_trend_dim": 75.06,
+      "trend_class": "trending_up",
+      "human_interventions_total": 0,
+      "gap_to_full_autonomy": 26.8,
+      "directional_eta_cycles_to_full": "not trending to full autonomy yet",
+      "prediction_type": "directional",
+      "verified": false,
+      "caveat": "single per-agent snapshot (maturity scorecard); multi-cycle per-agent series not yet on disk"
+    },
+    {
+      "agent": "verifier",
+      "composite_autonomy_score": 72.6,
+      "rank": 3,
+      "convergence_trend_dim": 76.59,
+      "trend_class": "trending_up",
+      "human_interventions_total": 1,
+      "gap_to_full_autonomy": 27.4,
+      "directional_eta_cycles_to_full": "not trending to full autonomy yet",
+      "prediction_type": "directional",
+      "verified": false,
+      "caveat": "single per-agent snapshot (maturity scorecard); multi-cycle per-agent series not yet on disk"
+    },
+    {
+      "agent": "designer",
+      "composite_autonomy_score": 72.2,
+      "rank": 4,
+      "convergence_trend_dim": 70.47,
+      "trend_class": "trending_up",
+      "human_interventions_total": 1,
+      "gap_to_full_autonomy": 27.8,
+      "directional_eta_cycles_to_full": "not trending to full autonomy yet",
+      "prediction_type": "directional",
+      "verified": false,
+      "caveat": "single per-agent snapshot (maturity scorecard); multi-cycle per-agent series not yet on disk"
+    },
+    {
+      "agent": "orchestrator",
+      "composite_autonomy_score": 71.6,
+      "rank": 5,
+      "convergence_trend_dim": 72.39,
+      "trend_class": "trending_up",
+      "human_interventions_total": 2,
+      "gap_to_full_autonomy": 28.4,
+      "directional_eta_cycles_to_full": "not trending to full autonomy yet",
+      "prediction_type": "directional",
+      "verified": false,
+      "caveat": "single per-agent snapshot (maturity scorecard); multi-cycle per-agent series not yet on disk"
+    },
+    {
+      "agent": "mechanic",
+      "composite_autonomy_score": 66.9,
+      "rank": 6,
+      "convergence_trend_dim": 65.12,
+      "trend_class": "stable",
+      "human_interventions_total": 2,
+      "gap_to_full_autonomy": 33.1,
+      "directional_eta_cycles_to_full": "not trending to full autonomy yet",
+      "prediction_type": "directional",
+      "verified": false,
+      "caveat": "single per-agent snapshot (maturity scorecard); multi-cycle per-agent series not yet on disk"
+    },
+    {
+      "agent": "archivist",
+      "composite_autonomy_score": 63.8,
+      "rank": 7,
+      "convergence_trend_dim": 80.03,
+      "trend_class": "trending_up",
+      "human_interventions_total": 0,
+      "gap_to_full_autonomy": 36.2,
+      "directional_eta_cycles_to_full": "not trending to full autonomy yet",
+      "prediction_type": "directional",
+      "verified": false,
+      "caveat": "single per-agent snapshot (maturity scorecard); multi-cycle per-agent series not yet on disk"
+    },
+    {
+      "agent": "researcher",
+      "composite_autonomy_score": 53.2,
+      "rank": 8,
+      "convergence_trend_dim": 84.24,
+      "trend_class": "trending_up",
+      "human_interventions_total": 1,
+      "gap_to_full_autonomy": 46.8,
+      "directional_eta_cycles_to_full": "not trending to full autonomy yet",
+      "prediction_type": "directional",
+      "verified": false,
+      "caveat": "single per-agent snapshot (maturity scorecard); multi-cycle per-agent series not yet on disk"
+    }
+  ],
+  "data_coverage": {
+    "fleet_level_cycles": 5,
+    "per_agent_time_series_cycles": 1,
+    "note": "Fleet-level series spans 5 real cycles (verified fit). Per-agent data is a single maturity-scorecard snapshot; per-agent multi-cycle prediction requires >=2 more scorecard snapshots. No per-agent R^2 is claimed."
+  }
+}

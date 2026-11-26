@@ -3798,5 +3798,17 @@
 "text": "**Convergence-Plateau Detection Gate** - `python memory/forge/plateau_gate.py`: validate the asymptote/plateau detector fires correctly (syn",
 "agent": "forge",
 "at": "2026-11-26"
+},
+{
+"sig": "068cbdb614397199",
+"text": "**Full Convergence-Loop E2E Drill** - `python memory/forge/convergence_e2e_drill.py`: periodic drill simulating a WHOLE cycle autonomously \u2014",
+"agent": "forge",
+"at": "2026-11-27"
+},
+{
+"sig": "3966cd33993e0042",
+"text": "**Autonomy Progression Model** - model how each agent's autonomy has grown (interventions per cycle, escalation rate, self-correction rate).",
+"agent": "archivist",
+"at": "2026-11-27"
 }
 ]

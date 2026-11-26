@@ -544,3 +544,5 @@
 {"ts": "2026-11-26 23:22:36", "file": "ui/pages/mind-lab.html", "sha": "2c82a4367b", "size": 15753, "snapshot": null}
 {"ts": "2026-11-26 23:56:45", "file": "agent_portal.py", "sha": "e5e75fd04d", "size": 420983, "snapshot": "memory/ops/merge-queue/agent_portal.py.e5e75fd04d"}
 {"ts": "2026-11-26 23:56:45", "file": "ui/pages/mind-room.js", "sha": "b44703de2a", "size": 47617, "snapshot": null}
+{"ts": "2026-11-27 00:13:22", "file": "ui/pages/mind-room.js", "sha": "ffea29e09d", "size": 47610, "snapshot": null}
+{"ts": "2026-11-27 00:29:13", "file": "ui/pages/mind-room.js", "sha": "a592803696", "size": 47890, "snapshot": null}

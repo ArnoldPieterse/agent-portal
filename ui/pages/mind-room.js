@@ -503,7 +503,7 @@ function frame(){
 window.__mind={scene:scene,camera:camera,canvas:renderer.domElement,agents:agents,agentHome:agentHome,
  neuronsPos:NPOS,rigids:{ssj:ssj,neurons:neurons,portal:portal,helix:helix,coin:coin}};
 /* ============ HIGH-DETAIL ASSETS (Blender GLBs) ============ */
-if(THREE.GLTFLoader){
+if(THREE.GLTFLoader && window.__USE_GLB===true){ /* 2026-11-26: GLB auto-load gated off - sprite-first rendering is the default; set window.__USE_GLB=true (console) to preview the Blender assets */
  var gl=new THREE.GLTFLoader();
  function recenterLater(root,g,anchorLocal){requestAnimationFrame(function(){requestAnimationFrame(function(){
   root.updateMatrixWorld(true);

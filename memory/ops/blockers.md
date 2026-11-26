@@ -210,3 +210,11 @@ python memory/orchestrator/model_scheduler.py --execute agents=researcher reside
 - **Root cause 3 (false evidence claim)**: Mechanic #11 evidence claimed `stealth_workflows` was added to portal_scheduler.py JOBS - it was not in the file. Added + verified live via /api/scheduler (7 jobs) after host relaunch; goal then registered with verified marker.
 - **Related gap**: Researcher had replied [CONCLUDED] on #11 claiming memory/researcher/stealth/task-inventory.md delivered - file does not exist anywhere in memory/. Goal left open; lane now unblocked so the real build can happen. Builder #11 (packages top-3 workflows) is downstream of it.
 
+## [OPS-NOTE 2026-11-27 Forge] auto_cycle_transition.py `--check` mutates instead of reporting
+- **Found by:** `memory/forge/convergence_e2e_drill.py` (goal #10 E2E drill) while driving the REAL transition in a sandbox.
+- **Symptom:** `auto_cycle_transition.py --check` is documented as "report status only" (module docstring line 13) but in `main()` it sets `dry = (mode == "--dry-run")`, so under `--check` `dry=False`. After the all-closed gate passes it then RUNS `save_roster_snapshot / archive_goals / create_goal_files / generate_kickoff / update_todo` with `dry_run=False` — i.e. it **executes a full transition** (archives goal files + recreates skeletons) when it was only asked to check.
+- **Repro:** seed a closed cycle, run `--check`; the just-checked goal files get moved to `archive/` and replaced by `(TBD)` skeletons. Observed in-sandbox: builder.md went from drafted goals back to `**Goal 1** - (TBD)` after a single `--check`.
+- **Workaround used by the drill:** the re-close gate uses `--dry-run` (truly read-only, prints "ALL CLOSED") instead of `--check`. Drill still PASSES on real code paths.
+- **Owner / unblock step:** Orchestrator owns `memory/orchestrator/auto_cycle_transition.py`. Fix = set `dry = (mode in ("--check", "--dry-run"))` (or early-return after the status print for `--check`). Not fixed by Forge (another agent's load-bearing file); recorded once per anti-loop rule.
+- **Impact:** low severity in production (the scheduled transition runs `--run`, not `--check`), but any tooling/agent using `--check` to *probe* state will silently consume a cycle. Flagged for the next Orchestrator pass.
+
