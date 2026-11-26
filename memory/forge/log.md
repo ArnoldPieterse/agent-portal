@@ -41,3 +41,16 @@ Result: EXIT 1 (CIRCUIT_BREAKER) - correct: all 4 smoke runs show 100% TCP-fail 
 - Goal #2 (Fleet Heartbeat): evidence at memory/mechanic/evidence-fleet-heartbeat-2026-11-27.md
 - Goals #3-#10 already had markers (marker_guard ran earlier this pass).
 **Result:** Mechanic 10/10 verified markers present in goal file. Fleet count should update on next dashboard sweep.
+| 2026-11-27 03:30:06 | smoke_suite: REMEDIATING White - TCP: PermissionError: [WinError 10013] An attempt was made to access a socket in a way forbidden by its access permissions |
+| 2026-11-27 03:31:21 | smoke_suite: White REMEDIATION FAILED (status=CRIT) |
+| 2026-11-27 03:31:21 | smoke_suite: REMEDIATING Red - TCP: gaierror: [Errno 11001] getaddrinfo failed |
+| 2026-11-27 03:32:19 | smoke_suite: REMEDIATING White - TCP: PermissionError: [WinError 10013] An attempt was made to access a socket in a way forbidden by its access permissions |
+| 2026-11-27 03:33:35 | smoke_suite: White REMEDIATION FAILED (status=CRIT) |
+| 2026-11-27 03:33:35 | smoke_suite: REMEDIATING Red - TCP: gaierror: [Errno 11001] getaddrinfo failed |
+| 2026-11-27 03:34:23 | smoke_suite: REMEDIATING White - TCP: PermissionError: [WinError 10013] An attempt was made to access a socket in a way forbidden by its access permissions |
+| 2026-11-27 03:35:39 | smoke_suite: White REMEDIATION FAILED (status=CRIT) |
+| 2026-11-27 03:35:39 | smoke_suite: REMEDIATING Red - TCP: gaierror: [Errno 11001] getaddrinfo failed |
+| 2026-11-27 03:36:41 | smoke_suite: REMEDIATING White - TCP: PermissionError: [WinError 10013] An attempt was made to access a socket in a way forbidden by its access permissions |
+| 2026-11-27 03:37:56 | smoke_suite: White REMEDIATION FAILED (status=CRIT) |
+| 2026-11-27 03:37:56 | smoke_suite: REMEDIATING Red - TCP: gaierror: [Errno 11001] getaddrinfo failed |
+| 2026-11-27 03:38 | canary_gate_token.py built + verified (ASSIST Verifier #5): 3 scenarios pass (valid/missing/stale). Evidence: evidence-canary-gate-token-2026-11-27.md |

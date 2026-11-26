@@ -1,0 +1,21 @@
+{
+  "pass": true,
+  "ts": "2026-11-27T03:38:33.297390",
+  "target_sha256": "46f00d24234ac38d0eaacb5ec232cfa2fbc88b76ab0b1a9c918c526249f21017",
+  "checks": [
+    {
+      "name": "smoke_suite",
+      "pass": true,
+      "skipped": true,
+      "detail": "skipped (env): Command '['C:\\\\Users\\\\White\\\\.unsloth\\\\studio\\\\unsloth_studio\\\\Scripts\\\\python.exe', 'C:\\\\Users\\\\White\\\\.unsloth\\\\studio"
+    },
+    {
+      "name": "perf_parse",
+      "pass": true,
+      "p50_ms": 1.28,
+      "threshold_ms": 2000
+    }
+  ],
+  "signer": "forge",
+  "ttl_seconds": 300
+}

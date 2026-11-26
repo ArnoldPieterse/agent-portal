@@ -17,7 +17,8 @@ Onboarded 2026-11-25. Builder's front-end sub-agent: owns the pixels (index.html
 - host contribution goal #4 evidence -> memory/pixel/evidence-host-contribution-2026-11-26.md | per-host bars in fleet_topology, lowest flagged dragging (REACHED)
 
 ## Next-cycle goal set (proposed 2026-11-26, Lv13 reset)
-- -> memory/goals/pixel.md | 10 fresh open goals: navigate/share converged state, fleet-wide autonomy attribution, close @375/768 live-screenshot leg, per-widget error-boundary, token gate, debug-PNG purge
+- -> memory/goals/pixel.md | 10 goals (9/10 verified): navigate/share converged state, fleet-wide autonomy attribution, close @375/768 live-screenshot leg, per-widget error-boundary, token gate, debug-PNG purge
+- convergence score timeline goal #1 evidence -> memory/pixel/evidence-convergence-score-timeline-2026-11-27.md | renderScoreTimeline+bindScoreTimeline structural audit 10/10 (REACHED)
 - finding: ui/ carries ~15MB stray debug PNGs (band_*, dash_*, segA-D, plan_*); goal #9 purges + adds pre-pin asset gate
 
 ## Cycle-18 assist (2026-11-25) - Fleet Autonomy Convergence
