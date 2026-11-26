@@ -18,12 +18,12 @@
   "note": "consolidated 2026-11-23: fleet_probe + load_probe; fleet_mode.py added 2026-11-24 (cycle-15 mode controller refresh so /api/fleet/mode + idle dispatch see fresh state); feed_refresh.py added 2026-11-25 (was never scheduled - cockpit-feed.json sat 35h stale while the coverage gate expected <=5min; it now re-renders the feed from fleet-metrics every 10min)",
   "daily": null,
   "next_run": 1795695280.8265743,
-  "last_run": 1795694090.6189594,
+  "last_run": 1795694695.8413048,
   "last_rc": 0,
   "last_err": "fleet_probe.py\r\nrun_steps [2/4]: memory/ops/load_probe.py\r\nrun_steps [3/4]: memory/orchestrator/fleet_mode.py\r\nrun_steps [4/4]: memory/builder/feed_refresh.py",
   "runs": 43,
   "paused": false,
-  "running": true
+  "running": false
  },
  "cycle_30m": {
   "name": "cycle_30m",
@@ -44,12 +44,12 @@
   "note": "consolidated 2026-11-23: maintenance_window + memory_audit (decay+size_guard+snapshot-diff) + state_snapshot + daily_git_commit LAST so the commit captures this cycle's output",
   "daily": null,
   "next_run": 1795698280.8265743,
-  "last_run": 1795691094.5701394,
+  "last_run": 1795694700.844241,
   "last_rc": 2,
   "last_err": "[3/6] FAIL rc=2\r\nrun_steps [4/6]: memory/archivist/snapshot.py --diff\r\nrun_steps [5/6]: memory/builder/state_snapshot.py\r\nrun_steps [6/6]: daily_git_commit.py",
   "runs": 8,
   "paused": false,
-  "running": true
+  "running": false
  },
  "stealth_workflows": {
   "name": "stealth_workflows",
