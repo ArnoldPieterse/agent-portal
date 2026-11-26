@@ -4,8 +4,7 @@ Date: 2026-11-26 | source: llm-single-draft | round: 3 planners + judge (winning
 
 ## Today's todos
 
-1. [ ] **Hook commit events to auto-trigger full regression battery** _(from Auto-trigger regression battery)_ — Queue #4 requires unattended verification
-2. [ ] **Define 5 inter-agent API contract tests for goal_ledger schema** _(from Cross-lane contract tests)_ — Ensures cross-lane data integrity
-3. [ ] **Generate acceptance tests from active lane goals files** _(from Acceptance-test auto-generation)_ — Automates verification criteria creation
+1. [ ] **Execute auto-trigger regression battery on latest commits** _(from #2 [verifier] Auto-trigger regression battery)_ — Queue item #2, ensure stability before day-5 runs
+2. [ ] **Run chaos-recovery verification to test seat resilience** _(from #8 [verifier] Chaos-recovery verification)_ — Queue item #8, validate OOM recovery SLA
 
 _Max 40 items per day (tune as we benchmark performance); anything beyond today rolls into the 7-day plan._

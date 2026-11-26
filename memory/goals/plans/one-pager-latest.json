@@ -1,7 +1,7 @@
 {
- "ts": 1795691271,
+ "ts": 1795699652,
  "date": "2026-11-26",
- "sig": "5ad91397cbda",
+ "sig": "0354c9440b20",
  "source": "llm-single-draft",
  "winner_label": "A",
  "planners": [
@@ -16,225 +16,180 @@
  "pagers": {
   "orchestrator": [
    {
-    "item": "Run dispatch_audit.py to replay last N dispatches for stale conformance",
-    "why": "Detects routing drift before next cycle",
-    "ref": "Dispatch Anti-Stale Conformance Audit"
+    "item": "Review fleet status at 65.8% and confirm day-4 milestones for tenders/money",
+    "why": "Ensure alignment with 7-day plan",
+    "ref": "Writing valid tenders [day 4-7]; Making money (revenue channels live) [day 4-7]"
    },
    {
-    "item": "Execute convergence_coupling.py to map cross-lane dependencies",
-    "why": "Identifies bottlenecks in lane handoffs",
-    "ref": "Cross-Lane Convergence Coupling Map"
-   },
-   {
-    "item": "Trigger convergence_sentinel.py to monitor autonomy scope creep",
-    "why": "Prevents uncontrolled agent behavior expansion",
-    "ref": "Convergence Regression Sentinel"
+    "item": "Validate that 'Custom input detection' for tenders is unblocked",
+    "why": "Day 4 dependency check",
+    "ref": "Writing valid tenders: Custom input detection by ~day 4"
    }
   ],
   "researcher": [
    {
-    "item": "Compile market data sources for Predicting markets scaffold",
-    "why": "Day 5 requires wired-up prediction pipeline",
+    "item": "Prepare market data ingestion schema for Predicting markets scaffold",
+    "why": "Support day-5 start of prediction lane",
     "ref": "Predicting markets [day 5-7]"
    },
    {
-    "item": "Validate data freshness for revenue channel inputs",
-    "why": "Supports Making money (revenue channels live) day 4-7",
-    "ref": "Making money (revenue channels live) [day 4-7]"
+    "item": "Draft research briefs for social media post generation",
+    "why": "Feed content pipeline for days 2-4",
+    "ref": "Generate daily social media posts [day 2-4]"
    }
   ],
   "builder": [
    {
-    "item": "Implement cycle_closeout.py to automate unattended cycle end",
-    "why": "Queue #3 requires zero-touch closeout",
-    "ref": "Zero-Touch Cycle Closeout Orchestrator"
+    "item": "Scaffold and wire up 'Writing valid tenders' module",
+    "why": "Day 4 critical path item",
+    "ref": "Writing valid tenders: scaffold + wire up Writing valid tenders"
    },
    {
-    "item": "Run infra_health.py liveness probe on Builder's infrastructure",
-    "why": "Ensures stability for upcoming scaffolds",
-    "ref": "Autonomy-Infra Self-Health Probe"
+    "item": "Scaffold and wire up 'Making money (revenue channels live)' module",
+    "why": "Day 4 critical path item",
+    "ref": "Making money (revenue channels live): scaffold + wire up Making money"
    },
    {
-    "item": "Lint cross-lane JSON contracts in contracts.py registry",
-    "why": "Prevents schema mismatches in new lanes",
-    "ref": "Data-Contract Registry + Lint"
+    "item": "Implement camera access integration for tender generation",
+    "why": "Day 4 dependency for tenders",
+    "ref": "Writing valid tenders: Camera access by ~day 4"
    }
   ],
   "verifier": [
    {
-    "item": "Hook commit events to auto-trigger full regression battery",
-    "why": "Queue #4 requires unattended verification",
-    "ref": "Auto-trigger regression battery"
+    "item": "Execute auto-trigger regression battery on latest commits",
+    "why": "Queue item #2, ensure stability before day-5 runs",
+    "ref": "#2 [verifier] Auto-trigger regression battery"
    },
    {
-    "item": "Define 5 inter-agent API contract tests for goal_ledger schema",
-    "why": "Ensures cross-lane data integrity",
-    "ref": "Cross-lane contract tests"
-   },
-   {
-    "item": "Generate acceptance tests from active lane goals files",
-    "why": "Automates verification criteria creation",
-    "ref": "Acceptance-test auto-generation"
+    "item": "Run chaos-recovery verification to test seat resilience",
+    "why": "Queue item #8, validate OOM recovery SLA",
+    "ref": "#8 [verifier] Chaos-recovery verification"
    }
   ],
   "designer": [
    {
-    "item": "Build red slide-in banner for autonomy score drops >5pts",
-    "why": "Queue #6 requires immediate regression alerting",
-    "ref": "Regression Alert Banner"
+    "item": "Implement Regression Alert Banner UI component",
+    "why": "Queue item #3, monitor autonomy drops",
+    "ref": "#3 [designer] Regression Alert Banner"
    },
    {
-    "item": "Render SVG graph of cross-lane assists with edge thickness",
-    "why": "Visualizes collaboration efficiency",
-    "ref": "Cross-Lane Assist Graph"
-   },
-   {
-    "item": "Create single 0-100 fleet health composite gauge widget",
-    "why": "Provides unified status view for operators",
-    "ref": "Fleet Health Composite Gauge"
+    "item": "Draft Cross-Lane Assist Graph SVG structure",
+    "why": "Queue item #10, visualize agent collaboration",
+    "ref": "#10 [designer] Cross-Lane Assist Graph"
    }
   ],
   "archivist": [
    {
-    "item": "Analyze 6-cycle trend in decision-quality.jsonl",
-    "why": "Tracks long-term decision quality improvement",
-    "ref": "Decision Quality Longitudinal Analysis"
+    "item": "Develop Autonomy Progression Model data schema",
+    "why": "Open goal: track agent autonomy growth",
+    "ref": "archivist: Autonomy Progression Model"
    },
    {
-    "item": "Design 3-tier knowledge system (T0/T1/T2) for small models",
-    "why": "Optimizes context usage for constrained agents",
-    "ref": "Knowledge Tiering for Small-Context Models"
-   },
-   {
-    "item": "Compile anomaly baseline library from OOM/timeout logs",
-    "why": "Establishes reference for future anomaly detection",
-    "ref": "Anomaly Baseline Library"
+    "item": "Log day-4 scaffold completions for tenders and money lanes",
+    "why": "Record evidence for 7-day plan progress",
+    "ref": "Writing valid tenders [day 4-7]; Making money (revenue channels live) [day 4-7]"
    }
   ],
   "scribe": [
    {
-    "item": "Consolidate scattered convergence metrics into single KPI rollup",
-    "why": "Queue #9 requires single source of truth",
-    "ref": "Convergence KPI Rollup (single source of truth)"
+    "item": "Document API contracts for inter-agent communication",
+    "why": "Support verifier's cross-lane contract tests",
+    "ref": "verifier: Cross-lane contract tests"
    },
    {
-    "item": "Parse cross-talk DMs to attribute assists across lanes",
-    "why": "Quantifies collaborative value per agent",
-    "ref": "Cross-Lane Assist Attribution"
-   },
-   {
-    "item": "Monitor conditions for convergence exit triggers",
-    "why": "Identifies when fleet can reduce oversight",
-    "ref": "Convergence Exit-Trigger Monitor"
+    "item": "Update goal_ledger with day-4 status for tenders and money",
+    "why": "Maintain single source of truth for progress",
+    "ref": "Writing valid tenders [day 4-7]; Making money (revenue channels live) [day 4-7]"
    }
   ],
   "mechanic": [
    {
-    "item": "Implement OOM detection to identify victim seat and unload model",
-    "why": "Queue #1 requires <60s MTTR unattended recovery",
-    "ref": "Autonomous OOM Recovery Loop (<60s MTTR, unattended)"
+    "item": "Implement Autonomous OOM Recovery Loop with <60s MTTR",
+    "why": "Queue item #1, critical for unattended operation",
+    "ref": "#1 [mechanic] Autonomous OOM Recovery Loop"
    },
    {
-    "item": "Merge seat-matrix.json and autonomy-score.json into single heartbeat",
-    "why": "Reduces polling overhead for health checks",
-    "ref": "Fleet Health Heartbeat Consolidation (single JSON, 4 seats)"
-   },
-   {
-    "item": "Auto-capture diagnostics when cycle exceeds duration SLA",
-    "why": "Enables rapid root-cause analysis on timeouts",
-    "ref": "Cycle Timeout Auto-Diagnostic (auto-capture on breach)"
+    "item": "Consolidate Fleet Health Heartbeat into single JSON file",
+    "why": "Queue item #9, simplify monitoring",
+    "ref": "#9 [mechanic] Fleet Health Heartbeat Consolidation"
    }
   ],
   "outlet": [
    {
-    "item": "Connect one real platform account for end-to-end ship test",
-    "why": "Queue #7 requires live account validation",
-    "ref": "First live account connection + end-to-end ship"
+    "item": "Connect first live platform account for end-to-end ship test",
+    "why": "Queue item #5, validate revenue channel",
+    "ref": "#5 [outlet] First live account connection + end-to-end ship"
    },
    {
-    "item": "Implement queue_check.py to block unverified factual claims",
-    "why": "Prevents hallucinated content from shipping",
-    "ref": "Hard verification gate"
-   },
-   {
-    "item": "Generate X and LinkedIn voice variants for draft posts",
-    "why": "Supports Generate daily social media posts day 2-4",
-    "ref": "Per-platform voice variants + lint"
+    "item": "Implement hard verification gate in queue_check.py",
+    "why": "Open goal: block unverified claims",
+    "ref": "outlet: Hard verification gate"
    }
   ],
   "pixel": [
    {
-    "item": "Render compact reduced-motion-safe 24h health sparkline per host",
-    "why": "Queue #8 requires visual health trends",
-    "ref": "Per-host 24h health sparkline"
+    "item": "Execute deferred @375/768 live CDP screenshots",
+    "why": "Queue item #6, close carry-over goal",
+    "ref": "#6 [pixel] Close the live CDP screenshot leg"
    },
    {
-    "item": "Add JS exception boundary to render inline error messages",
-    "why": "Prevents full UI crash on widget failure",
-    "ref": "Per-widget render error-boundary"
-   },
-   {
-    "item": "Audit ui/cockpit-*.js for hardcoded hex outside tokens.css",
-    "why": "Enforces design system consistency",
-    "ref": "High-contrast / token-enforcement audit"
+    "item": "Purge ~15MB of stray debug PNGs from ui/ directory",
+    "why": "Open goal: reduce asset bloat",
+    "ref": "pixel: Debug-artifact purge + asset gate"
    }
   ],
   "forge": [
    {
-    "item": "Extend canary pipeline to gate dispatch-correctness changes",
-    "why": "Queue #2 requires deploy safety for routing logic",
-    "ref": "Dispatch-Correctness Deploy Gate"
+    "item": "Build Forecast-Calibration Backtest Harness script",
+    "why": "Queue item #4, support Predicting markets lane",
+    "ref": "#4 [forge] Forecast-Calibration Backtest Harness"
    },
    {
-    "item": "Run scheduled check to enforce idle-productivity floor",
-    "why": "Prevents agent stagnation during low activity",
-    "ref": "Idle-Productivity Floor Enforcer"
-   },
-   {
-    "item": "Validate convergence_sentinel precision with test cases",
-    "why": "Ensures alerting system accuracy",
-    "ref": "Regression Sentinel Precision Test"
+    "item": "Implement Convergence-Plateau Detection Gate logic",
+    "why": "Open goal: validate asymptote detection",
+    "ref": "forge: Convergence-Plateau Detection Gate"
    }
   ],
   "lumen": [
    {
-    "item": "Document current fleet autonomy status for stakeholder review",
-    "why": "Supports transparency in 37.8% completion state",
-    "ref": "Fleet: {'done': 42, 'total': 111, 'pct': 37.8}"
+    "item": "Monitor 'Commenting on posts' loop for daily unattended runs",
+    "why": "Day 2 milestone: ensure automation is stable",
+    "ref": "Commenting on posts: daily unattended runs begin"
    },
    {
-    "item": "Summarize day 1-2 progress on Commenting on posts lane",
-    "why": "Tracks early-stage lane execution",
-    "ref": "Commenting on posts [day 1-5]"
+    "item": "Verify first usable output from 'Generate daily social media posts'",
+    "why": "Day 3 milestone: record evidence leaf",
+    "ref": "Generate daily social media posts: produce first usable output + record evidence leaf"
    }
   ],
   "reel": [
    {
-    "item": "Record video evidence of first automated social media post run",
-    "why": "Supports day 3 evidence leaf requirement",
+    "item": "Prepare video asset pipeline for social media posts",
+    "why": "Support day-2 to day-4 content generation",
     "ref": "Generate daily social media posts [day 2-4]"
    },
    {
-    "item": "Capture screen recording of phone call scaffold wiring",
-    "why": "Documents day 3 Making phone calls setup",
-    "ref": "Making phone calls [day 3-7]"
+    "item": "Test audio integration for 'Making phone calls' scaffold",
+    "why": "Day 3 dependency: mic access and call simulation",
+    "ref": "Making phone calls: Mic access by ~day 3"
    }
   ],
   "splice": [
    {
-    "item": "Merge research briefs into skeleton post drafts for outlet",
-    "why": "Feeds trend-to-draft pipeline for social media",
-    "ref": "Trend-to-draft pipeline"
+    "item": "Integrate tender generation with revenue channel logic",
+    "why": "Ensure day-4 to day-7 workflow continuity",
+    "ref": "Writing valid tenders [day 4-7]; Making money (revenue channels live) [day 4-7]"
    },
    {
-    "item": "Combine market data streams for Predicting markets input",
-    "why": "Prepares day 5 scaffold with unified data source",
+    "item": "Validate data flow between researcher and forge for predictions",
+    "why": "Prepare for day-5 Predicting markets start",
     "ref": "Predicting markets [day 5-7]"
    }
   ]
  },
  "stats": {
-  "sig": "5ad91397cbda",
+  "sig": "0354c9440b20",
   "date": "2026-11-26",
   "drafts": [
    {
@@ -243,9 +198,9 @@
     "model": "mechanic-q4",
     "stats": {
      "agents": 14,
-     "items": 38,
-     "grounded": 35,
-     "ratio": 0.92,
+     "items": 29,
+     "grounded": 29,
+     "ratio": 1.0,
      "missing": [],
      "repaired": false,
      "model": null

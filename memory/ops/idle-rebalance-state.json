@@ -1,0 +1,77 @@
+{
+  "Archivist": {
+    "last_ts": "2026-11-26T13:21:01.886080+00:00",
+    "mode": "MAINTENANCE",
+    "run": 0
+  },
+  "Builder": {
+    "last_ts": "2026-11-26T13:21:01.747696+00:00",
+    "mode": "MAINTENANCE",
+    "run": 0
+  },
+  "Designer": {
+    "last_ts": "2026-11-26T13:10:10.593657+00:00",
+    "mode": "MAINTENANCE",
+    "run": 0
+  },
+  "Forge": {
+    "last_ts": "2026-11-26T13:21:01.875883+00:00",
+    "mode": "MAINTENANCE",
+    "run": 0
+  },
+  "Lumen": {
+    "last_ts": "2026-11-26T13:00:55.655524+00:00",
+    "mode": "MAINTENANCE",
+    "run": 0
+  },
+  "Mechanic": {
+    "last_ts": "2026-11-26T13:10:10.609763+00:00",
+    "mode": "MAINTENANCE",
+    "run": 0
+  },
+  "Orchestrator": {
+    "last_ts": "2026-11-26T13:21:01.738786+00:00",
+    "mode": "MAINTENANCE",
+    "run": 0
+  },
+  "Outlet": {
+    "last_ts": "2026-11-26T13:10:10.617098+00:00",
+    "mode": "MAINTENANCE",
+    "run": 0
+  },
+  "Pixel": {
+    "last_ts": "2026-11-26T13:21:01.865396+00:00",
+    "mode": "MAINTENANCE",
+    "run": 0
+  },
+  "Reel": {
+    "last_ts": "2026-11-26T13:00:55.670876+00:00",
+    "mode": "MAINTENANCE",
+    "run": 0
+  },
+  "Researcher": {
+    "last_ts": "2026-11-26T13:21:01.853832+00:00",
+    "mode": "MAINTENANCE",
+    "run": 0
+  },
+  "Scribe": {
+    "last_ts": "2026-11-26T13:21:01.761930+00:00",
+    "mode": "MAINTENANCE",
+    "run": 0
+  },
+  "Splice": {
+    "last_ts": "2026-11-26T13:00:55.689169+00:00",
+    "mode": "MAINTENANCE",
+    "run": 0
+  },
+  "Verifier": {
+    "last_ts": "2026-11-26T13:10:10.584822+00:00",
+    "mode": "MAINTENANCE",
+    "run": 0
+  },
+  "test_agent": {
+    "last_ts": "2026-11-24T01:33:38.805885+00:00",
+    "mode": "MAINTENANCE",
+    "run": 1
+  }
+}

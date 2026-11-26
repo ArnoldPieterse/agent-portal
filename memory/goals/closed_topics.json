@@ -3780,5 +3780,23 @@
 "text": "**Seat-Sizing Decision Audit** - `python memory/forge/seat_sizing_audit.py`: replay last K cycles' sizing recommendations vs outcomes; measu",
 "agent": "forge",
 "at": "2026-11-26"
+},
+{
+"sig": "c127d62be8722113",
+"text": "**Convergence Exit-Trigger Monitor** - `python memory/scribe/exit_trigger.py`: watch for the conditions under which the fleet should STOP co",
+"agent": "scribe",
+"at": "2026-11-26"
+},
+{
+"sig": "84abde9d33a36db2",
+"text": "**Forecast-Calibration Backtest Harness** - `python memory/forge/forecast_backtest.py`: backtest forecast_calibration over historical cycles",
+"agent": "forge",
+"at": "2026-11-26"
+},
+{
+"sig": "dedffb01bb35e878",
+"text": "**Convergence-Plateau Detection Gate** - `python memory/forge/plateau_gate.py`: validate the asymptote/plateau detector fires correctly (syn",
+"agent": "forge",
+"at": "2026-11-26"
 }
 ]

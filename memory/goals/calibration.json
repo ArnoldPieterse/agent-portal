@@ -1,14 +1,6 @@
 {
  "runs": [
   {
-   "at": "2026-11-24 10:55:12",
-   "scored_forecast": "2026-11-24 10:31:22",
-   "hit_on_time": 2,
-   "late": 0,
-   "slipped": 0,
-   "total": 10
-  },
-  {
    "at": "2026-11-24 11:24:01",
    "scored_forecast": "2026-11-24 10:55:12",
    "hit_on_time": 1,
@@ -476,6 +468,14 @@
    "at": "2026-11-26 23:09:11",
    "scored_forecast": "2026-11-26 22:08:44",
    "hit_on_time": 4,
+   "late": 0,
+   "slipped": 0,
+   "total": 10
+  },
+  {
+   "at": "2026-11-26 23:26:09",
+   "scored_forecast": "2026-11-26 23:09:11",
+   "hit_on_time": 2,
    "late": 0,
    "slipped": 0,
    "total": 10

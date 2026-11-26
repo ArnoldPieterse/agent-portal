@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Convergence Panel - Screenshot Test</title>
+<link rel="stylesheet" href="ui/tokens.css">
+<link rel="stylesheet" href="ui/app.css">
+<style>body{margin:0;padding:12px;background:#0d1117;color:#e6edf3;font-family:system-ui,sans-serif}</style>
+</head>
+<body>
+<div id="ckconvBox"></div>
+<script>
+// Mock fetch to return convergence data before cockpit-convergence.js loads
+var _mockData = {
+  fleet_autonomy_score: 87.3,
+  cycle_duration_trend: {cycles:[42,38,35,31,29,27,25,24], direction:"decelerating"},
+  human_intervention_count: {per_cycle:[12,9,7,5,4,3,2,1]},
+  steady_state_progress: {steady_state_reached:true, pct:87.3, target_pct:95, cycles_to_target:3},
+  score_history: [{cycle:1,score:45},{cycle:2,score:52},{cycle:3,score:61},{cycle:4,score:68},{cycle:5,score:74},{cycle:6,score:79},{cycle:7,score:83},{cycle:8,score:87.3}]
+};
+var _origFetch = window.fetch;
+window.fetch = function(url, opts) {
+  if (url && url.indexOf('/api/convergence') !== -1) {
+    return Promise.resolve({ok:true, json:function(){return Promise.resolve(_mockData)}});
+  }
+  return _origFetch.apply(this, arguments);
+};
+</script>
+<script src="ui/cockpit-convergence.js"></script>
+</body>
+</html>

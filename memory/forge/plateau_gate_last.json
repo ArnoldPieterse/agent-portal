@@ -1,0 +1,116 @@
+{
+  "ts": "2026-11-26T23:36:02.134320",
+  "part_a": {
+    "T1_plateau": {
+      "state": "PLATEAU",
+      "fit_A": 85.0,
+      "latest": 84.995,
+      "pass": true
+    },
+    "T2_climb": {
+      "state": "CLIMBING",
+      "fit_A": 91.71,
+      "latest": 80.523,
+      "pass": true
+    },
+    "T3_boundary": {
+      "near_state": "PLATEAU",
+      "far_state": "CLIMBING",
+      "pass": true
+    }
+  },
+  "part_b": {
+    "real_open_goal_count": 65,
+    "real_open_sample": [
+      {
+        "agent": "researcher",
+        "title": "Convergence Trajectory Model"
+      },
+      {
+        "agent": "researcher",
+        "title": "Failure Mode Taxonomy"
+      },
+      {
+        "agent": "researcher",
+        "title": "Goal Acceptance Rate Predictor"
+      },
+      {
+        "agent": "researcher",
+        "title": "Cross-Agent Dependency Graph"
+      },
+      {
+        "agent": "researcher",
+        "title": "Cycle Efficiency Index"
+      },
+      {
+        "agent": "researcher",
+        "title": "Knowledge Decay Rate Measurement"
+      }
+    ],
+    "B1_safe": {
+      "budget": 32,
+      "window": 4,
+      "horizon": 8,
+      "starved": [],
+      "pass": true
+    },
+    "B2_unsafe_caught": {
+      "budget": 32,
+      "hidden_goal_idx": 32,
+      "starved_under_naive": [
+        32,
+        33,
+        34,
+        35,
+        36,
+        37,
+        38,
+        39,
+        40,
+        41,
+        42,
+        43,
+        44,
+        45,
+        46,
+        47,
+        48,
+        49,
+        50,
+        51,
+        52,
+        53,
+        54,
+        55,
+        56,
+        57,
+        58,
+        59,
+        60,
+        61,
+        62,
+        63,
+        64
+      ],
+      "gate_flagged_hidden": true,
+      "pass": true
+    },
+    "B3_coupling": {
+      "climbing_budget": 65,
+      "plateau_budget": 32,
+      "climbing_starved": [],
+      "plateau_fair_starved": [],
+      "state_dependent": true,
+      "pass": true
+    }
+  },
+  "checks": {
+    "T1_plateau_converged": true,
+    "T2_climb_not_converged": true,
+    "T3_boundary_correct": true,
+    "B1_real_open_no_starvation": true,
+    "B2_hidden_goal_caught": true,
+    "B3_state_dependent": true
+  },
+  "status": "PASS"
+}

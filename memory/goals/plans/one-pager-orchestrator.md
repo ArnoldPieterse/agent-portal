@@ -4,8 +4,7 @@ Date: 2026-11-26 | source: llm-single-draft | round: 3 planners + judge (winning
 
 ## Today's todos
 
-1. [ ] **Run dispatch_audit.py to replay last N dispatches for stale conformance** _(from Dispatch Anti-Stale Conformance Audit)_ — Detects routing drift before next cycle
-2. [ ] **Execute convergence_coupling.py to map cross-lane dependencies** _(from Cross-Lane Convergence Coupling Map)_ — Identifies bottlenecks in lane handoffs
-3. [ ] **Trigger convergence_sentinel.py to monitor autonomy scope creep** _(from Convergence Regression Sentinel)_ — Prevents uncontrolled agent behavior expansion
+1. [ ] **Review fleet status at 65.8% and confirm day-4 milestones for tenders/money** _(from Writing valid tenders [day 4-7]; Making money (revenue channels live) [day 4-7])_ — Ensure alignment with 7-day plan
+2. [ ] **Validate that 'Custom input detection' for tenders is unblocked** _(from Writing valid tenders: Custom input detection by ~day 4)_ — Day 4 dependency check
 
 _Max 40 items per day (tune as we benchmark performance); anything beyond today rolls into the 7-day plan._

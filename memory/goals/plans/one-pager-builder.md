@@ -4,8 +4,8 @@ Date: 2026-11-26 | source: llm-single-draft | round: 3 planners + judge (winning
 
 ## Today's todos
 
-1. [ ] **Implement cycle_closeout.py to automate unattended cycle end** _(from Zero-Touch Cycle Closeout Orchestrator)_ — Queue #3 requires zero-touch closeout
-2. [ ] **Run infra_health.py liveness probe on Builder's infrastructure** _(from Autonomy-Infra Self-Health Probe)_ — Ensures stability for upcoming scaffolds
-3. [ ] **Lint cross-lane JSON contracts in contracts.py registry** _(from Data-Contract Registry + Lint)_ — Prevents schema mismatches in new lanes
+1. [ ] **Scaffold and wire up 'Writing valid tenders' module** _(from Writing valid tenders: scaffold + wire up Writing valid tenders)_ — Day 4 critical path item
+2. [ ] **Scaffold and wire up 'Making money (revenue channels live)' module** _(from Making money (revenue channels live): scaffold + wire up Making money)_ — Day 4 critical path item
+3. [ ] **Implement camera access integration for tender generation** _(from Writing valid tenders: Camera access by ~day 4)_ — Day 4 dependency for tenders
 
 _Max 40 items per day (tune as we benchmark performance); anything beyond today rolls into the 7-day plan._

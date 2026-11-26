@@ -1120,3 +1120,5 @@
 {"ts": "2026-11-26 23:08:35", "run": "g-1a217f8dbb5-74a41a", "missing": {"Verifier": "unreachable", "Outlet": "unreachable", "Reel": "unreachable", "Designer": "unreachable", "Splice": "unreachable", "Researcher": "unreachable", "Lumen": "unreachable"}, "relocated": {"Archivist": "White (local) (home not_loaded)"}}
 {"ts": "2026-11-26 23:10:35", "run": "g-1a217fab3a3-fa55b3", "missing": {}, "relocated": {"Archivist": "White (local) (home not_loaded)"}}
 {"ts": "2026-11-26 23:21:37", "run": "g-1a21804ccad-3e8fd0", "missing": {}, "relocated": {"Archivist": "White (local) (home not_loaded)"}}
+{"ts": "2026-11-26 23:22:36", "run": "g-1a21805b1a5-bb21e5", "missing": {"Researcher": "unreachable", "Outlet": "unreachable", "Verifier": "unreachable", "Lumen": "unreachable", "Reel": "unreachable", "Splice": "unreachable", "Designer": "unreachable"}, "relocated": {"Archivist": "White (local) (home not_loaded)"}}
+{"ts": "2026-11-26 23:23:35", "run": "g-1a218068812-a7839b", "missing": {}, "relocated": {"Archivist": "White (local) (home not_loaded)"}}

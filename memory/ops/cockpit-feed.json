@@ -1,5 +1,5 @@
 {
-  "ts": "2026-11-26T13:14:50.914968+00:00",
+  "ts": "2026-11-26T13:34:51.250810+00:00",
   "health_score": 60,
   "fleet_status": "DEGRADED",
   "agents": [
@@ -89,7 +89,7 @@
     }
   ],
   "goals": {
-    "fleet_pct": 90.3,
+    "fleet_pct": 90.9,
     "lanes": {
       "2026-11-13-agent-goals": {
         "total": 2,
@@ -432,8 +432,8 @@
         "pct": 0.0
       },
       "forge": {
-        "total": 5,
-        "verified": 5,
+        "total": 7,
+        "verified": 7,
         "pct": 100.0
       },
       "mechanic-cycle9-proposals-2026-11-23": {
@@ -582,8 +582,8 @@
         "pct": 100.0
       },
       "scribe": {
-        "total": 5,
-        "verified": 5,
+        "total": 7,
+        "verified": 7,
         "pct": 100.0
       },
       "slip_prediction_table": {
@@ -622,8 +622,8 @@
         "pct": 0.0
       }
     },
-    "total_goals": 31,
-    "total_verified": 28
+    "total_goals": 33,
+    "total_verified": 30
   },
   "open_blockers": 29,
   "autonomous_actions": [

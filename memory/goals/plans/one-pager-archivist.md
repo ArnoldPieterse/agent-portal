@@ -4,8 +4,7 @@ Date: 2026-11-26 | source: llm-single-draft | round: 3 planners + judge (winning
 
 ## Today's todos
 
-1. [ ] **Analyze 6-cycle trend in decision-quality.jsonl** _(from Decision Quality Longitudinal Analysis)_ — Tracks long-term decision quality improvement
-2. [ ] **Design 3-tier knowledge system (T0/T1/T2) for small models** _(from Knowledge Tiering for Small-Context Models)_ — Optimizes context usage for constrained agents
-3. [ ] **Compile anomaly baseline library from OOM/timeout logs** _(from Anomaly Baseline Library)_ — Establishes reference for future anomaly detection
+1. [ ] **Develop Autonomy Progression Model data schema** _(from archivist: Autonomy Progression Model)_ — Open goal: track agent autonomy growth
+2. [ ] **Log day-4 scaffold completions for tenders and money lanes** _(from Writing valid tenders [day 4-7]; Making money (revenue channels live) [day 4-7])_ — Record evidence for 7-day plan progress
 
 _Max 40 items per day (tune as we benchmark performance); anything beyond today rolls into the 7-day plan._
