@@ -63,7 +63,16 @@ def load_db():
     if os.path.exists(DB): return json.load(open(DB, encoding="utf-8"))
     return {"meta": {}, "cells": {}}
 
-def save_db(db): json.dump(db, open(DB, "w", encoding="utf-8"), indent=1)
+def save_db(db):
+    tmp = "%s.tmp%d" % (DB, os.getpid())   # per-process tmp: portal + CLI may both write
+    for attempt in range(5):  # Windows can briefly lock the file (AV/indexer)
+        try:
+            json.dump(db, open(tmp, "w", encoding="utf-8"), indent=1)
+            os.replace(tmp, DB)  # atomic: readers never see a half-write
+            return
+        except PermissionError:
+            time.sleep(0.05 * (attempt + 1))
+    raise RuntimeError("save_db blocked after retries")
 
 def has_content(n):
     return any(n.get(k) for k in ("label", "ref", "rigid", "code", "jump"))

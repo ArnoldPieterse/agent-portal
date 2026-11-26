@@ -55,7 +55,7 @@ def save(db):
     m = db.get("meta") or {}
     m.update({"grid": GRID, "origin": ORIGIN, "size": SIZE})
     db["meta"] = m
-    tmp = DB + ".tmp"
+    tmp = "%s.tmp%d" % (DB, os.getpid())   # per-process tmp: portal + CLI may both write
     for attempt in range(5):  # Windows can briefly lock the file (AV/indexer)
         try:
             json.dump(db, open(tmp, "w", encoding="utf-8"), indent=1)

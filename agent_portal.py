@@ -6255,20 +6255,24 @@ def _goals_snapshot():
                 continue  # skip summary/dated rollup files (all-goals-*, *-agent-goals, etc.)
             goals = parse(os.path.join(gdir, fn))
             done = sum(1 for g in goals if g["status"] == "reached")
-            not_done = [g["text"] for g in goals if g["status"] != "reached"]
+            sched = sum(1 for g in goals if g["status"] == "scheduled")
+            not_done = [g["text"] for g in goals if g["status"] not in ("reached", "scheduled")]
             blocked = sum(1 for t in not_done if GOAL_BLOCKED_PAT.search(t))
             for g in goals:
                 if g["status"] == "reached":
                     _reached_now.append((g["text"], fn[:-3]))
             agents.append({"agent": fn[:-3], "total": len(goals), "done": done,
-                           "open": len(not_done), "blocked": blocked})
+                           "open": len(not_done), "blocked": blocked, "scheduled": sched})
     except Exception as e:
         return {"ok": False, "error": str(e), "agents": []}
     try:
         _record_reached_goals(_reached_now)   # anti-repeat ledger (idempotent per sig)
     except Exception:
         pass
-    total = sum(a["total"] for a in agents)
+    # 2026-11-26: scheduled (future date-gated) goals are excluded from the fleet
+    # denominator - they cannot be reached before their due date and must not block
+    # 100% / level-ups. Reported separately per agent ("scheduled" field).
+    total = sum(a["total"] - a.get("scheduled", 0) for a in agents)
     done_all = sum(a["done"] for a in agents)
     resp = {"ok": True, "generated": time.strftime("%Y-%m-%d %H:%M:%S"),
             "fleet_pct": round(100.0 * done_all / total, 1) if total else 0.0,
@@ -6785,7 +6789,7 @@ class Handler(BaseHTTPRequestHandler):
             return self._html("index.html")
         if p.startswith("/page/") and p.endswith(".html"):
             n = p[len("/page/"):-len(".html")]
-            if n in ("goals", "activity", "fleet", "files", "ops", "evolve", "world", "mind"):  # mind = the room I know you in
+            if n in ("goals", "activity", "fleet", "files", "ops", "evolve", "world", "mind", "voxray"):  # voxray = ray-rendered voxel world view
                 fp = os.path.join(HERE, "ui", "pages", n + ".html")
                 try:
                     html = open(fp, encoding="utf-8").read()
@@ -7000,8 +7004,10 @@ class Handler(BaseHTTPRequestHandler):
             except Exception as e:
                 return self._json(500, {"error": str(e)[:200]})
 
-        elif p == "/api/voxel/pulse":
-            # Pulse engine readout (2026-11-26): status for the mind-room monitor block.
+        elif p == "/api/voxel/all":
+            # All materialized voxels with content/subs (2026-11-26): feed for the
+            # ray-render view (ui/pages/voxray.html). Compact: addr, label, kind, ref,
+            # pos (min corner), size, depth.
             try:
                 _g = globals()
                 _vx = _g.get("_VXMOD")
@@ -7012,14 +7018,22 @@ class Handler(BaseHTTPRequestHandler):
                     _vx = _ilu_vx.module_from_spec(_spec)
                     _spec.loader.exec_module(_vx)
                     _g["_VXMOD"] = _vx
-                _s = _vx.pulse_status()
-                _db = _vx.load()
-                return self._json(200, {"tick": _s["ticks"], "status": {
-                    "running": _s["running"],
-                    "last_hops": [{"from": j["id"].split("->")[0], "to": j["id"].split("->")[1]}
-                                  for j in _s["jumps"] if j.get("hops") and "->" in j["id"]]},
-                    "stats": {"cells": (_db.get("meta") or {}).get("cell_count", _vx.count_cells(_db)),
-                              "hops_total": sum(j["hops"] for j in _s["jumps"])}})
+                db = _vx.load()
+                out = []
+                def walk(node, addr):
+                    w = _vx.cell_world(addr)
+                    if not w:
+                        return
+                    if any(node.get(k) for k in ("label", "ref", "rigid")) or node.get("sub"):
+                        out.append({"a": addr, "l": (node.get("label") or "")[:40],
+                                    "k": node.get("kind", "space"), "r": node.get("ref", ""),
+                                    "p": [round(w[0], 3), round(w[1], 3), round(w[2], 3)],
+                                    "s": round(w[3], 4), "d": len(_vx._parse(addr)[1])})
+                    for k, ch in (node.get("sub") or {}).items():
+                        walk(ch, addr + "/" + "/".join(k.split(",")))
+                for b, c2 in db["cells"].items():
+                    walk(c2, "V(" + b + ")")
+                return self._json(200, {"n": len(out), "cells": out[:4096]})
             except Exception as e:
                 return self._json(500, {"error": str(e)[:200]})
         elif p == "/api/voxel":
@@ -7048,12 +7062,21 @@ class Handler(BaseHTTPRequestHandler):
                 if not _addr:
                     return self._json(400, {"error": "addr required, e.g. V(4,2,4)"})
                 if _pu:
-                    return self._json(200, {"armed": _vx.pulse_arm(
-                        _addr,
-                        speed=int((_q.get("speed") or ["8"])[0]),
-                        max_depth=int((_q.get("depth") or [str(_vx.MAX_DEPTH)])[0]),
-                        every_ms=int((_q.get("every_ms") or ["10"])[0]),
-                        to=(_q.get("to") or [None])[0])})
+                    # Arm a 10ms wavefront from this object's top-level voxel in the
+                    # resident voxel_pulse engine (shared singleton, started at boot).
+                    _vp = globals().get("_VP_MOD")
+                    if _vp is None:
+                        import importlib.util as _ilu_vp2
+                        _spec2 = _ilu_vp2.spec_from_file_location(
+                            "_voxel_pulse_api", os.path.join(HERE, "memory/archivist/voxel_pulse.py"))
+                        _vp = _ilu_vp2.module_from_spec(_spec2)
+                        _spec2.loader.exec_module(_vp)
+                        globals()["_VP_MOD"] = _vp
+                    _pid = ("P-" + (_q.get("id") or [_addr.replace("V(", "").replace(")", "")])[0]).replace(",", "-")
+                    _e = _vp.engine()
+                    if _pid not in _e.st["pulses"]:
+                        _e.seed(_pid, _addr, int((_q.get("radius") or ["3"])[0]))
+                    return self._json(200, {"armed": _pid, "origin": _addr})
                 return self._json(200, _vx.resolve_payload(_addr))
             except Exception as e:
                 return self._json(500, {"error": str(e)[:200]})

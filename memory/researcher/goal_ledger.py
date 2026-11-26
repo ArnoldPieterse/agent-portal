@@ -175,6 +175,18 @@ def parse_agent_file(path):
                 continue
             evidence, via, dangling = _line_evidence(line, root, cache)
             status = "reached" if evidence else "open"
+            # Date-gated goal with a FUTURE checkpoint date -> "scheduled", not open
+            # (2026-11-26): a goal that cannot run before its due date must not block
+            # fleet 100% / level-ups. Past or absent dates keep normal open/reached logic.
+            if status == "open":
+                _m_dg = re.search(r"\((\d{4}-\d{2}-\d{2})\)", text)
+                if _m_dg:
+                    try:
+                        import datetime as _dt_dg
+                        if _dt_dg.date.fromisoformat(_m_dg.group(1)) > _dt_dg.date.today():
+                            status = "scheduled"
+                    except ValueError:
+                        pass
             g = {"text": text, "status": status, "checked": False,
                  "evidence": evidence, "form": "numbered", "evidence_via": via}
             if dangling:

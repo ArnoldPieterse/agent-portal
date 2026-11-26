@@ -51,7 +51,7 @@ var row=document.getElementById('pulsemon');
 if(!row){row=document.createElement('div');row.id='pulsemon';
 row.style.cssText='margin-top:8px;padding-top:6px;border-top:1px solid rgba(255,255,255,.15);font-size:11px;opacity:.75';
 el.appendChild(row);}
-var st=d.status||{};
+var st=d.status||d;
 row.innerHTML='<b>pulse</b> '+(st.running?'\u25cf':'\u25cb')+' tick '+d.tick+
 ' \u00b7 cells '+ (d.stats?d.stats.cells:'-') +
 ' \u00b7 hops '+(d.stats?d.stats.hops_total:0)+

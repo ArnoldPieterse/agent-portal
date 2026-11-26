@@ -1,7 +1,7 @@
 {
-  "generated": "2026-11-26T07:26:01.032038",
+  "generated": "2026-11-26T15:04:31.947425",
   "host": "WHITE",
-  "task_count": 2,
+  "task_count": 3,
   "tasks": [
     {
       "name": "\\GCC",
@@ -11,9 +11,15 @@
     },
     {
       "name": "\\PortalRun",
-      "status": "Ready",
+      "status": "Running",
       "schedule_type": "One Time Only",
       "next_run": "N/A"
+    },
+    {
+      "name": "\\PortalWatchdog",
+      "status": "Ready",
+      "schedule_type": "One Time Only, Minute",
+      "next_run": "26/11/2026 3:05:00 PM"
     }
   ],
   "edges": [
@@ -34,7 +40,9 @@
     }
   ],
   "diff": {
-    "added": [],
+    "added": [
+      "\\PortalWatchdog"
+    ],
     "removed": []
   }
 }

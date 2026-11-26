@@ -15,3 +15,4 @@
 {"ts": "2026-11-17 18:36:04.480", "op": "fleet", "target": "Red,Pale,Black", "ok": true, "ms": 0, "detail": "{'Red': [8099, 8888], 'Pale': [8099, 8888], 'Black': [8099, 8888]}"}
 {"ts": "2026-11-17 18:36:23.555", "op": "fleet", "target": "Red,Pale,Black", "ok": true, "ms": 0, "detail": "{'Red': [8099, 8888], 'Pale': [8099, 8888], 'Black': [8099, 8888]}"}
 {"ts": "2026-11-17 18:36:57.709", "op": "fleet", "target": "Red,Pale,Black", "ok": true, "ms": 0, "detail": "{'Red': [8099, 8888], 'Pale': [8099, 8888], 'Black': [8099, 8888]}"}
+{"ts": "2026-11-26 14:04:17.414", "op": "fleet", "target": "IP_LAN,IP_LAN,IP_LAN", "ok": true, "ms": 0, "detail": "{'Red': [8099, 8888], 'Pale': [8099, 8888], 'Black': [8099, 8888]}"}
