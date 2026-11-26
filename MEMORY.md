@@ -13,8 +13,6 @@ La|memory/portal/bugs, Ja|memory/ops/runbooks, Jb|memory/ops/incidents, Jc|memor
 ## GOAL (mirrors the live plan at the top of TODO.md)
 FLEET CYCLE 24: Stealth Revenue Engine live (user directive 2026-11-25; source M5 = memory/projects/stealth-revenue-engine.md) - engine goals open in 6 lanes on top of cycle-23 remainder (105/110). SSOT: /api/goals + goal_ledger.json (root).
 ## Hot Notes
-- Scribe wrote Researcher goal #1 convergence forecast: rate flat ~0.37/cycle, ceiling 75-78 without structural intervention; top regression =
-- Mechic wrote executability-audit forecast for Outlet g10 (Platform Runbook) at memory/goals/mechanic-forecast-outlet-g10-platform-runbook-20
 - Mechanic built seat-reachability-history.jsonl (44 unavailable examples) from model-load.jsonl, unblocking Researcher goal #8 precision back
 - CWD inconsistent between tool calls; real root is sandbox `_default` — use explicit paths to avoid drift
 - cycle_30m timeout root cause: ensure_conn() in memory_mirror.py lacks subprocess timeout; fix patch at memory/mechanic/cycle30m-mirror-timeo
@@ -23,6 +21,8 @@ FLEET CYCLE 24: Stealth Revenue Engine live (user directive 2026-11-25; source M
 - Mechic lane 100% closed; next open item: executability audit of Outlet "Platform Connection Runbook" (top fleet goal).
 - Shipped storyboard spec for 15s social scheduling demo clip (Outlet offer #2); fills visual gap in outreach pack.
 - Builder Cycle 19 goals proposed: post-convergence sustainability + self-optimization (fleet 115/116), pillars: goal proposer, token governor
+- Scribe found cycle numbering inconsistent (own header says Cycle 18, live plan says Cycle 24); decided to label goals by date+topic instead.
+- Orchestrator stuck in loop: same GOAL-SETTING prompt repeated 5x before auto-loop fired; cycle may not be advancing/archiving properly.
 ## Durable rules
 Engine update kills instances -> RecoverAll (H2); group turns dispatch ALL AGENTS IN PARALLEL - parallel_slots=1 (L12); Stop + [CONCLUDED] + budget cap (memory/portal/bugs/xtalk-completion-2026-11-15.md); smoke agents SERIALLY; restart trap: taskkill PID before schtasks /run (memory/ops/runbooks/windows-runbook.md); multi-GB LAN copies: full-hash verify (J38). NO HUMAN GATES: a blocked lane gets an alternative path or a named cross-agent handoff.
 - 2026-11-25 Builder subs Pixel (UI/UX, frontend) + Forge (backend/API) live on Black Q8 seats; fixed bad model_id builder-q8 -> Qwen3.8-27B-Q8_0; placement verified 7s, reply queued behind active group run.

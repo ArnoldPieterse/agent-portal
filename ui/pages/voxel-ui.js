@@ -17,10 +17,21 @@ function pulseRigid(name){var m=window.__mind;if(!m||!m.rigids)return;var o=m.ri
   o.scale.copy(o.userData.__s0).multiplyScalar(1+.16*Math.sin(t*9)*Math.exp(-t*.7));requestAnimationFrame(step);})();}
 /* click room -> resolve cell (2026-11-26) */
 var box=null;
+/* 2026-11-26: mini-voxel clouds anchor objects at their real room positions (the centre
+   Super Saiyan floats at (0,3,0), not in his raw voxel cell) - the selection highlight
+   must follow the object, or it looks like a stray box in a random spot. */
+function anchorNear(p){var m=window.__mind;if(!m||!THREE)return null;var c=[];
+ if(m.rigids){c.push([m.rigids.ssj.position,2.1]);c.push([new THREE.Vector3(7.6,3.5,-1.2),1.7]);
+  ['portal','helix','coin'].forEach(function(k){if(m.rigids[k])c.push([m.rigids[k].position,1.5]);});}
+ if(m.agents)m.agents.forEach(function(o){c.push([new THREE.Vector3(o.r*Math.cos(o.a),o.y,o.r*Math.sin(o.a)),1.3]);});
+ for(var i=0;i<c.length;i++)if(p.distanceTo(c[i][0])<c[i][1])return c[i][0];return null;}
 function markPoint(p){var m=window.__mind;if(!m||!THREE)return;if(box)m.scene.remove(box);
  var o=[-12,-4.5,-12],f=function(v,i){return Math.min(i===1?3:7,Math.max(0,Math.floor((v-o[i])/3)))};
  box=new THREE.LineSegments(new THREE.EdgesGeometry(new THREE.BoxGeometry(3,3,3)),new THREE.LineBasicMaterial({color:0xe3344f}));
- box.position.set(o[0]+(f(p.x,0)+.5)*3,o[1]+(f(p.y,1)+.5)*3,o[2]+(f(p.z,2)+.5)*3);m.scene.add(box);}
+ var an=anchorNear(p);
+ if(an)box.position.copy(an);
+ else box.position.set(o[0]+(f(p.x,0)+.5)*3,o[1]+(f(p.y,1)+.5)*3,o[2]+(f(p.z,2)+.5)*3);
+ m.scene.add(box);}
 function init(){var m=window.__mind;if(!m||!THREE)return;
  var pel=document.getElementById('vpanel');
  if(pel)pel.addEventListener('click',function(ev){var t=ev.target;
@@ -32,13 +43,17 @@ function init(){var m=window.__mind;if(!m||!THREE)return;
   vv.set((ev.clientX-r.left)/r.width*2-1,-(ev.clientY-r.top)/r.height*2+1);
   rc.setFromCamera(vv,m.camera);var hits=rc.intersectObjects(m.scene.children,true);
   if(!hits.length)return;
+  /* 2026-11-26: mini-voxel clouds are decorative - clicks pass through them to the object behind,
+     so a click on the centre character resolves the character, not a stray voxel at the cloud edge */
+  var solid=hits.filter(function(h){return !h.object.isInstancedMesh;});
+  var h0=(solid.length?solid[0]:hits[0]);
   /* agent orb? -> resolve its home voxel, where its memory is anchored (orbits drift, anchors don't) */
-  var o=hits[0].object,ag=-1;
+  var o=h0.object,ag=-1;
   while(o){for(var j=0;j<(m.agents?m.agents.length:0);j++){if(m.agents[j].g===o)ag=j;}
    if(ag>=0)break;o=o.parent;}
   if(ag>=0&&m.agentHome&&m.agentDefs){var nm=m.agentDefs[ag][0];
-   if(m.agentHome[nm]){show(m.agentHome[nm]);markPoint(hits[0].point);return;}}
-  show(cellOf(hits[0].point));markPoint(hits[0].point);});}
+   if(m.agentHome[nm]){show(m.agentHome[nm]);markPoint(h0.point);return;}}
+  show(cellOf(h0.point));markPoint(h0.point);});}
 if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',init);else init();
 
 })();

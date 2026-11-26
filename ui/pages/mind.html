@@ -291,66 +291,167 @@ function frame(){
 }
 window.__mind={scene:scene,camera:camera,canvas:renderer.domElement,agents:agents,agentDefs:agentDefs,agentHome:agentHome,rigids:{ssj:ssj,neurons:neurons,portal:portal,helix:helix,coin:window.__coin}};
 var _vp=document.createElement('div');_vp.id='vpanel';_vp.style.cssText='display:none;position:fixed;right:12px;top:12px;width:300px;max-height:62vh;overflow:auto;background:rgba(8,10,18,.93);border:1px solid #e3344f;border-radius:8px;padding:10px;color:#e2e8f0;font:12px/1.5 ui-monospace,monospace;z-index:9';document.body.appendChild(_vp);
-/* ============ LIVE VOXEL SUBDIVISION LAYER (2026-11-26) ============
-   Draws the live subdivision data from /api/voxel/all: each memory object's top-level
-   voxel as a faint wireframe cell, its drill-chain tip (pulsing dot + depth label for
-   the hero objects), and ghost octants where detail grows next. Polls every 2 s. */
+/* ============ LIVE VOXEL SUBDIVISION LAYER (2026-11-26, v2: mini-voxel clouds) ============
+   Every memory object is rendered out of thousands of mini voxels (InstancedMesh), anchored
+   on the object's real position in the room - the centre Super Saiyan gets the hero cloud.
+   Live drill-chain data from /api/voxel/all drives detail: the subdivision tip lights up,
+   ghost octants show where detail grows next. Polls every 2 s; rebuilds only when the
+   drill signature changes. */
 (function(){
  var group=new THREE.Group(); scene.add(group);
  var ghosts=[],tips=[];
+ /* ---------- mini-voxel cloud machinery ---------- */
+ var MAXH=9500,MAXR=14000;
+ var boxGeo=new THREE.BoxGeometry(1,1,1);
+ var cv=document.createElement('canvas');cv.width=cv.height=64;var cx2=cv.getContext('2d');
+ cx2.fillStyle='#777';cx2.fillRect(0,0,64,64);
+ for(var ti=0;ti<900;ti++){var vv=110+(sr(ti*7)*145|0);cx2.fillStyle='rgb('+vv+','+vv+','+vv+')';cx2.fillRect((sr(ti)*64)|0,(sr(ti+400)*64)|0,2,2);}
+ var tex=new THREE.CanvasTexture(cv);tex.magFilter=THREE.NearestFilter;
+ function mkCloud(cap){
+  var mat=new THREE.MeshStandardMaterial({map:tex,color:0xffffff,roughness:.5,metalness:.3,transparent:true,opacity:.95});
+  var msh=new THREE.InstancedMesh(boxGeo,mat,cap);
+  msh.instanceMatrix.setUsage(THREE.DynamicDrawUsage);
+  /* pre-allocate instanceColor at FULL capacity: r128 sizes it from mesh.count when null,
+     and count starts at 0 -> empty buffer -> all-black fragments (the voxray killer) */
+  msh.geometry.setAttribute('instanceColor',new THREE.InstancedBufferAttribute(new Float32Array(cap*3),3));
+  msh.count=0;return msh;
+ }
+ var heroMesh=mkCloud(MAXH);
+ var heroGroup=new THREE.Group();heroGroup.add(heroMesh);scene.add(heroGroup);
+ var restMesh=mkCloud(MAXR);scene.add(restMesh);
+ var _m4=new THREE.Matrix4(),_q=new THREE.Quaternion(),_eul=new THREE.Euler(),_pv=new THREE.Vector3(),_sv=new THREE.Vector3(),_col=new THREE.Color();
+ function put(mesh,slot,px,py,pz,scale,colHex,bright){
+  _pv.set(px,py,pz);
+  _sv.setScalar(scale*(0.72+sr(slot*13)*0.56));
+  _eul.set(sr(slot)-0.5, sr(slot+9)-0.5, sr(slot+17)-0.5);
+  _q.setFromEuler(_eul);_m4.compose(_pv,_q,_sv);mesh.setMatrixAt(slot,_m4);
+  _col.setHex(colHex).multiplyScalar((0.62+sr(slot*31)*0.6)*(bright||1));
+  mesh.setColorAt(slot,_col);
+ }
+ /* hero silhouette mask: head + torso + legs, in metres relative to the ssj anchor */
+ function heroMask(px,py,pz){
+  if(py>1.85)return (px*px+pz*pz)<0.34&&Math.abs(py-2.35)<0.62;          /* head */
+  if(py>-1.75){var rad=py<-0.45?0.4:0.7;return (px*px+pz*pz)<rad*rad;}   /* torso + legs */
+  return false;
+ }
+ function anchors(){
+  var M=window.__mind||{},A={};
+  if(M.rigids&&M.rigids.ssj)A.ssj=M.rigids.ssj.position.clone();else A.ssj=new THREE.Vector3(0,3,0);
+  A.neurons=new THREE.Vector3(7.6,3.5,-1.2);
+  if(M.rigids&&M.rigids.portal)A.portal=M.rigids.portal.position.clone();
+  if(M.rigids&&M.rigids.helix)A.helix=M.rigids.helix.position.clone();
+  if(M.rigids&&M.rigids.coin)A.coin=M.rigids.coin.position.clone();
+  var ag=[];if(M.agents){M.agents.forEach(function(o,i){var d=M.agentDefs[i]||['?','#94a3b8'];
+   ag.push({name:d[0],color:d[1],pos:new THREE.Vector3(o.r*Math.cos(o.a),o.y,o.r*Math.sin(o.a))});});}
+  A.agents=ag;return A;
+ }
+ function matchCell(c,A){
+  if((c.r||'').indexOf('ssj.glb')>=0)return{key:'ssj',pos:A.ssj,color:0xffc233,kind:'hero'};
+  if((c.r||'').indexOf('neurons.glb')>=0)return{key:'neurons',pos:A.neurons,color:0x7fd4ff,kind:'blob'};
+  if(/coin/i.test(c.l||''))return{key:'coin',pos:A.coin,color:0xfbbf24,kind:'ring'};
+  if(/evolution column/i.test(c.l||''))return{key:'helix',pos:A.helix,color:0x34d399,kind:'blob'};
+  if(/^agent portal/i.test(c.l||''))return{key:'portal',pos:A.portal,color:0x22d3ee,kind:'ring'};
+  var mm=/^agent (\w+) - home/.exec(c.l||'');
+  if(mm){for(var i=0;i<A.agents.length;i++)if(A.agents[i].name===mm[1])
+   return{key:'agent:'+mm[1],pos:A.agents[i].pos,color:parseInt(A.agents[i].color.slice(1),16),kind:'blob'};}
+  return null;
+ }
  function wireBox(p,s,color,op){
   var g=new THREE.EdgesGeometry(new THREE.BoxGeometry(s,s,s));
   var m=new THREE.LineBasicMaterial({color:color,transparent:true,opacity:op});
-  var l=new THREE.LineSegments(g,m);
-  l.position.set(p[0]+s/2,p[1]+s/2,p[2]+s/2);
-  group.add(l); return m;
+  var l=new THREE.LineSegments(g,m);l.position.set(p[0]+s/2,p[1]+s/2,p[2]+s/2);group.add(l);return m;
  }
  function clearLayer(){
-  while(group.children.length){var c=group.children.pop(); if(c.geometry)c.geometry.dispose(); if(c.material)c.material.dispose();}
-  ghosts.length=0; tips.length=0;
+  while(group.children.length){var c=group.children.pop();if(c.geometry)c.geometry.dispose();if(c.material)c.material.dispose();}
+  ghosts.length=0;tips.length=0;
  }
+ var lastSig='';
  function build(cells){
-  clearLayer();
-  var byBase={};
+  clearLayer();heroMesh.count=0;restMesh.count=0;
+  var A=anchors(),byBase={};
   cells.forEach(function(c){var b=c.a.split('/')[0];(byBase[b]=byBase[b]||[]).push(c);});
+  var sig='';
   Object.keys(byBase).forEach(function(base){
    var list=byBase[base],top=null;
    list.forEach(function(c){if(c.d===0&&(c.l||c.r))top=c;});
    if(!top)return;
-   var col=(top.k==='rigid')?0x2dd4bf:0xfbbf24;
-   wireBox(top.p,top.s,col,.16); /* the object's 3 m cell */
-   var tip=top; list.forEach(function(c){if(c.d>tip.d)tip=c;});
-   if(tip.d>0){
-    var ts=3/Math.pow(2,tip.d); /* tip size in metres */
-    var cx=[tip.p[0]+ts/2,tip.p[1]+ts/2,tip.p[2]+ts/2];
-    var sm=new THREE.MeshBasicMaterial({color:0x7fd4ff,transparent:true,opacity:.95,blending:THREE.AdditiveBlending,depthWrite:false});
-    var dot=new THREE.Mesh(new THREE.SphereGeometry(.16,10,10),sm);
-    dot.position.set(cx[0],cx[1],cx[2]); group.add(dot); tips.push(dot);
-    if(top.rigid==='ssj'||top.rigid==='neurons'||top.rigid==='portal'){
-     var lab=makeLabel('d'+tip.d+' \u00b7 '+(ts*1000).toFixed(1)+'mm','#7fd4ff',.55);
-     lab.position.set(cx[0],cx[1]+.5,cx[2]); group.add(lab);
+   var tip=top;list.forEach(function(c){if(c.d>tip.d)tip=c;});
+   sig+=base+':'+tip.d+';';
+   var m=matchCell(top,A);
+   /* drill-tip world centre (raw voxel space) + offset into anchor space */
+   var ts=3/Math.pow(2,tip.d);
+   var tipC=[tip.p[0]+ts/2,tip.p[1]+ts/2,tip.p[2]+ts/2];
+   var cc=[top.p[0]+top.s/2,top.p[1]+top.s/2,top.p[2]+top.s/2];
+   if(m&&m.pos){
+    var off=new THREE.Vector3(m.pos.x-cc[0],m.pos.y-cc[1],m.pos.z-cc[2]);
+    var glow=new THREE.Vector3(tipC[0]-cc[0],tipC[1]-cc[1],tipC[2]-cc[2]);
+    if(m.kind==='hero'){
+     /* THE CENTRE CHARACTER: ~9k mini voxels in the body silhouette, gold */
+     var slot=0,tries=0;
+     while(slot<MAXH&&tries<MAXH*4){tries++;
+      var px=(sr(tries)*2-1)*0.95,py=sr(tries+70001)*4.7-1.85,pz=(sr(tries+35000)*2-1)*0.95;
+      if(!heroMask(px,py,pz))continue;
+      var b=1+(glow.distanceTo(new THREE.Vector3(px,py,pz))<0.5?0.9:0); /* tip glow */
+      put(heroMesh,slot,px,py,pz,0.052,m.color,b);slot++;}
+     heroMesh.count=slot;heroGroup.position.copy(m.pos);
+    }else{
+     var R=m.kind==='ring'?1.05:0.8,n=m.kind==='blob'?1300:900;
+     for(var s2=0;s2<n&&restMesh.count<MAXR;s2++){
+      var u=sr(s2*3+base.length)*2-1,w=sr(s2*5+7)*2-1,vv2=sr(s2*11+13)*2-1;
+      var dl=Math.sqrt(u*u+w*w+vv2*vv2);if(dl>0.98||dl<0.001)continue;
+      var fall=1-dl/0.98;if(sr(s2*17)>Math.pow(fall,0.6))continue; /* core-dense falloff */
+      var wx=m.pos.x+u*R,wy=m.pos.y+w*R*0.85,wz=m.pos.z+vv2*R;
+      var b=1+(new THREE.Vector3(wx,wy,wz).distanceTo(m.pos.clone().add(glow))<0.4?0.9:0);
+      put(restMesh,restMesh.count,wx,wy,wz,m.kind==='ring'?0.05:0.062,m.color,b);
+      restMesh.count++;}
     }
-   }
-   var have={}; list.forEach(function(c){if(c.d===1)have[c.a]=1;});
-   for(var i=0;i<8;i++){ /* ghost frontier: missing level-1 octants */
-    var x=i&1,y=(i>>1)&1,z=(i>>2)&1;
-    if(have[base+'/'+x+'/'+y+'/'+z])continue;
-    ghosts.push(wireBox([top.p[0]+x*top.s/2,top.p[1]+y*top.s/2,top.p[2]+z*top.s/2],top.s/2,0x22d3ee,.09));
+    /* drill tip marker + ghost frontier, offset into anchor space */
+    if(tip.d>0){
+     var dm=new THREE.MeshBasicMaterial({color:0x7fd4ff,transparent:true,opacity:.95,blending:THREE.AdditiveBlending,depthWrite:false});
+     var dot=new THREE.Mesh(new THREE.SphereGeometry(.13,10,10),dm);
+     dot.position.set(m.pos.x+glow.x,m.pos.y+glow.y,m.pos.z+glow.z);group.add(dot);tips.push(dot);
+     if(m.kind==='hero'){var lab=makeLabel('d'+tip.d+' \u00b7 '+(ts*1000).toFixed(1)+'mm','#7fd4ff',.55);
+      lab.position.set(m.pos.x+glow.x,m.pos.y+glow.y+.5,m.pos.z+glow.z);group.add(lab);}
+    }
+   }else{
+    /* no scene anchor: keep the structural wireframe at raw voxel position */
+    var col=(top.k==='rigid')?0x2dd4bf:0xfbbf24;
+    wireBox(top.p,top.s,col,.13);
+    if(tip.d>0){
+     var sm=new THREE.MeshBasicMaterial({color:0x7fd4ff,transparent:true,opacity:.95,blending:THREE.AdditiveBlending,depthWrite:false});
+     var dot2=new THREE.Mesh(new THREE.SphereGeometry(.16,10,10),sm);
+     dot2.position.set(tipC[0],tipC[1],tipC[2]);group.add(dot2);tips.push(dot2);
+    }
+    var have={};list.forEach(function(c){if(c.d===1)have[c.a]=1;});
+    for(var i=0;i<8;i++){var x=i&1,y=(i>>1)&1,z=(i>>2)&1;
+     if(have[base+'/'+x+'/'+y+'/'+z])continue;
+     ghosts.push(wireBox([top.p[0]+x*top.s/2,top.p[1]+y*top.s/2,top.p[2]+z*top.s/2],top.s/2,0x22d3ee,.09));}
    }
   });
+  heroMesh.instanceMatrix.needsUpdate=true;restMesh.instanceMatrix.needsUpdate=true;
+  if(heroMesh.instanceColor)heroMesh.instanceColor.needsUpdate=true;
+  if(restMesh.instanceColor)restMesh.instanceColor.needsUpdate=true;
+  lastSig=sig;
  }
- function load(){ if(document.hidden)return;
-  fetch('/api/voxel/all').then(function(r){return r.json();}).then(function(d){build(d.cells||[]);}).catch(function(){});
+ function load(){if(document.hidden)return;
+  fetch('/api/voxel/all').then(function(r){return r.json();}).then(function(d){
+   var cells=d.cells||[];
+   var sig='';cells.forEach(function(c){sig+=(c.d>0?c.a+'@'+c.d:'|');});
+   if(sig!==lastSig)build(cells);
+  }).catch(function(){});
  }
- load(); setInterval(load,2000);
+ load();setInterval(load,2000);
  var t0=performance.now();
- (function anim(){ requestAnimationFrame(anim);
+ (function anim(){requestAnimationFrame(anim);
   var ph=.5+.5*Math.sin((performance.now()-t0)/350);
   ghosts.forEach(function(m){m.opacity=.05+.11*ph;});
   tips.forEach(function(d){d.scale.setScalar(.7+.6*ph);});
+  /* hero cloud follows the floating Super Saiyan */
+  var M=window.__mind;
+  if(M&&M.rigids&&M.rigids.ssj)heroGroup.position.copy(M.rigids.ssj.position);
  })();
 })();
-frame();
+frame();frame();
 })();}
 </script><script src="/ui/pages/voxel-ui.js"></script>
 </body></html>

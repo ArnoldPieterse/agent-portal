@@ -498,3 +498,5 @@
 {"ts": "2026-11-26 13:37:29", "file": "ui/pages/voxel-ui.js", "sha": "3996d32f98", "size": 4722, "snapshot": null}
 {"ts": "2026-11-26 14:13:20", "file": "agent_portal.py", "sha": "56af7836bf", "size": 401427, "snapshot": "memory/ops/merge-queue/agent_portal.py.56af7836bf"}
 {"ts": "2026-11-26 15:17:04", "file": "ui/pages/mind.html", "sha": "8a10fe87bd", "size": 20318, "snapshot": null}
+{"ts": "2026-11-26 19:10:21", "file": "ui/pages/mind.html", "sha": "2d0de585df", "size": 23190, "snapshot": null}
+{"ts": "2026-11-26 19:10:21", "file": "ui/pages/voxel-ui.js", "sha": "23d0852bd6", "size": 5289, "snapshot": null}

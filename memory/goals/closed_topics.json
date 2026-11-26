@@ -3372,5 +3372,41 @@
 "text": "**Repetitive-task inventory + first lead list** - memory/researcher/stealth/task-inventory.md: top 10 repetitive SMB business tasks companie",
 "agent": "researcher",
 "at": "2026-11-26"
+},
+{
+"sig": "f6e49bbd443202c1",
+"text": "**Mode SSOT Live Feed** - GET /api/fleet/mode + an SSE stream of mode/convergence_state transitions so the cockpit AND dispatch read one liv",
+"agent": "builder",
+"at": "2026-11-26"
+},
+{
+"sig": "dd27f7af8954ba45",
+"text": "**Idle-to-Work Mode Rebalancer** - `python memory/orchestrator/idle_rebalance.py`: read per-role productive-pass rate (autoloop.jsonl); when",
+"agent": "orchestrator",
+"at": "2026-11-26"
+},
+{
+"sig": "1d69fc50d62fa128",
+"text": "**Autonomous Round-Chair Protocol** - `python memory/orchestrator/auto_chair.py`: the runbook + script that chairs a cycle transition END-TO",
+"agent": "orchestrator",
+"at": "2026-11-26"
+},
+{
+"sig": "6d1b668289294dc8",
+"text": "**Next-Elimination Recommender** - `python memory/scribe/next_elimination.py`: read intervention-patterns.jsonl + autonomy-decomposition.jso",
+"agent": "scribe",
+"at": "2026-11-26"
+},
+{
+"sig": "44b782d382918e21",
+"text": "**Autonomy Score Calibration Audit** - `python memory/scribe/score_calibration.py`: per cycle correlate the composite autonomy score against",
+"agent": "scribe",
+"at": "2026-11-26"
+},
+{
+"sig": "143941a43590d5d3",
+"text": "**Intervention Cost Model** - Assign each intervention pattern (from intervention-patterns.jsonl) a cost in agent-minutes (and a $ proxy at ",
+"agent": "scribe",
+"at": "2026-11-26"
 }
 ]
