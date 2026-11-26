@@ -123,6 +123,7 @@ var avC=document.createElement('canvas');avC.width=256;avC.height=384;
 var avTex=new THREE.CanvasTexture(avC);avTex.colorSpace=THREE.SRGBColorSpace;
 var ssjAvatar=new THREE.Sprite(new THREE.SpriteMaterial({map:avTex,transparent:true,depthWrite:false}));
 ssjAvatar.scale.set(1.5,2.25,1);ssjAvatar.position.y=1.3;ssj.add(ssjAvatar);
+var handR=new THREE.Vector3(3.1,-.55,-1.35); /* thought-pulse origin: hand -> brain jar (kept for the animation at line ~492) */
 var ssjBody=new THREE.Group();while(ssj.children.length)ssjBody.add(ssj.children[0]);ssj.add(ssjBody);
 /* rising golden aura */
 var AUR=140,ap=new Float32Array(AUR*3),abase=new Float32Array(AUR*3);
