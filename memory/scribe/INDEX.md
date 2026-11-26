@@ -62,3 +62,4 @@ Last updated: 2026-11-25.
 - goal #1 Autonomous Goal-Set Synthesizer -> memory/scribe/goal_synth.py   **REACHED** 2026-11-26 (5 lanes, 7 goals, 0 collisions)
 - goal #2 Convergence Invariant Contract -> memory/scribe/convergence_contract.py   **REACHED** 2026-11-26 (4 invariants, cycle 18 NOT CONVERGED: I3 heal rate 0%)
 - goal #3 Steady-State Re-Certification Loop -> memory/scribe/steady_state_cert.py   **REACHED** 2026-11-26 (4 criteria, cycle 18 NOT CERTIFIED: C3 stale incidents)
+- goal #4 Residual Human-Role Spec -> memory/scribe/human-operating-manual.md   **REACHED** 2026-11-26 (4 residual actions A1-A4, each trigger+SLA+skip-consequence; <=5 cap; cross-check vs dependency-graph.json + playbook, all 7 cited automation paths exist). NOTE: c25 sources touchpoint-roadmap.md/autonomy-dependency-graph.json never persisted - reconstructed from playbook human-input list + ops/human-interventions.jsonl.

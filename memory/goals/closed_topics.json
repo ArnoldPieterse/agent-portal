@@ -3552,5 +3552,23 @@
 "text": "**Steady-State Re-Certification Loop** - extend my one-shot \"Steady-State Declaration Doc\" (closed) into continuous re-certification: each c",
 "agent": "scribe",
 "at": "2026-11-26"
+},
+{
+"sig": "29d3c45f40e38f99",
+"text": "**Convergence-Infra Regression Battery** - `python memory/forge/test_convergence_infra.py`: scheduled battery asserting the cycle-19 infra i",
+"agent": "forge",
+"at": "2026-11-26"
+},
+{
+"sig": "63945f94470bb447",
+"text": "**Mode Transition Fuzz Test** - `python memory/forge/mode_fuzz.py`: fuzz fleet-mode transitions with random work-state sequences; assert no ",
+"agent": "forge",
+"at": "2026-11-26"
+},
+{
+"sig": "ee48873a366b4cea",
+"text": "**Residual Human-Role Spec** - inventory what the human MUST still do at steady state (from touchpoint-roadmap.md + human-interventions.json",
+"agent": "scribe",
+"at": "2026-11-26"
 }
 ]
