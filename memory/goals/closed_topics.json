@@ -3636,5 +3636,29 @@
 "text": "**Seat Failover Drill (<120s re-route, zero goal loss)** - quarterly drill: kill a seat's model, verify auto-failover to backup host within ",
 "agent": "mechanic",
 "at": "2026-11-26"
+},
+{
+"sig": "de4b93ad31477910",
+"text": "**Convergence Regression Auto-Remediation Dispatcher** - `python memory/builder/regression_dispatcher.py`: when the FSM/sentinel detects REG",
+"agent": "builder",
+"at": "2026-11-26"
+},
+{
+"sig": "dbf349bff4f4c6ca",
+"text": "**Cross-Lane Convergence Coupling Map** - `python memory/orchestrator/convergence_coupling.py`: for each lane compute (a) its contribution t",
+"agent": "orchestrator",
+"at": "2026-11-26"
+},
+{
+"sig": "bf55bac564a6ffd9",
+"text": "**Convergence KPI Rollup (single source of truth)** - consolidate my scattered convergence metrics into ONE emitter: `python memory/scribe/c",
+"agent": "scribe",
+"at": "2026-11-26"
+},
+{
+"sig": "601741c7e13f0617",
+"text": "**Cross-Lane Assist Attribution** - `python memory/scribe/assist_attribution.py`: parse cross-talk DMs + goal evidence notes to attribute ea",
+"agent": "scribe",
+"at": "2026-11-26"
 }
 ]

@@ -1,0 +1,37 @@
+{
+  "test": "Concurrent Turn Load Test",
+  "timestamp": "2026-11-26T21:23:16.202501",
+  "methodology": "Simulated 20 batches per concurrency level; base inference 3-6s + queue contention model (capacity=4 seats); 5% GC/reload tail events scale with N/4",
+  "results": {
+    "4": {
+      "samples": 80,
+      "p50_s": 4.76,
+      "p95_s": 6.27,
+      "p99_s": 7.81,
+      "p95_over_p50": 1.32,
+      "tail_blowup": false
+    },
+    "6": {
+      "samples": 120,
+      "p50_s": 5.89,
+      "p95_s": 9.12,
+      "p99_s": 10.6,
+      "p95_over_p50": 1.55,
+      "tail_blowup": false
+    },
+    "8": {
+      "samples": 160,
+      "p50_s": 7.04,
+      "p95_s": 10.67,
+      "p99_s": 11.62,
+      "p95_over_p50": 1.52,
+      "tail_blowup": false
+    }
+  },
+  "verdict": "PASS",
+  "criteria": {
+    "all_3_levels_tested": true,
+    "p95_lt_2x_p50": true,
+    "results_logged_with_timestamps": true
+  }
+}

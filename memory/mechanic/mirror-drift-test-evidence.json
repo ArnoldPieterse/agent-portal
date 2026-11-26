@@ -1,0 +1,32 @@
+{
+  "test": "mirror-drift-monitor self-test",
+  "timestamp": "2026-11-26T21:22:54.567661",
+  "results": [
+    {
+      "scenario": "normal_5min",
+      "lag_min": 5.0,
+      "alert": false
+    },
+    {
+      "scenario": "drift_12min_first",
+      "lag_min": 12.0,
+      "alert": false
+    },
+    {
+      "scenario": "drift_12min_sustained",
+      "lag_min": 12.0,
+      "alert": true
+    },
+    {
+      "scenario": "recovered_3min",
+      "lag_min": 3.0,
+      "alert": false
+    }
+  ],
+  "verdict": "PASS",
+  "criteria": {
+    "simulated_12min_triggers_alert": true,
+    "false_positive_rate_normal": 0,
+    "sustained_detection": true
+  }
+}

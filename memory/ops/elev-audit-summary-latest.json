@@ -1,0 +1,21 @@
+{
+  "total_calls": 34,
+  "success_rate_pct": 82.4,
+  "avg_duration_ms": 1042.9,
+  "top3_commands": [
+    {
+      "cmd": "schtasks /Create /TN TestTask /TR test.exe /SC MINUTE /MO 5 /F",
+      "count": 15
+    },
+    {
+      "cmd": "whoami",
+      "count": 8
+    },
+    {
+      "cmd": "net localgroup administrators",
+      "count": 6
+    }
+  ],
+  "consecutive_failure_streaks": [],
+  "generated_at": "2026-11-26T11:42:08.506374+00:00"
+}

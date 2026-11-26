@@ -1,0 +1,32 @@
+{
+  "generated": "2026-11-26T11:45:49.196142+00:00",
+  "total_credits_found": 34,
+  "assist_in": {
+    "Archivist": 13,
+    "Scribe": 7,
+    "Mechanic": 7,
+    "Builder": 1,
+    "Designer": 4,
+    "Verifier": 2
+  },
+  "assist_out": {
+    "Builder": 7,
+    "Archivist": 4,
+    "Mechanic": 3,
+    "Designer": 6,
+    "Orchestrator": 5,
+    "Researcher": 6,
+    "Verifier": 2,
+    "Scribe": 1
+  },
+  "net_assist": {
+    "Archivist": -9,
+    "Builder": 6,
+    "Designer": 2,
+    "Mechanic": -4,
+    "Orchestrator": 5,
+    "Researcher": 6,
+    "Scribe": -6,
+    "Verifier": 0
+  }
+}
