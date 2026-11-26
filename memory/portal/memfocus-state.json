@@ -9,24 +9,32 @@
    31
   ],
   [
-   "memory/synthesis/hotfile-archive-20261125.md",
-   38
+   "memory/workspace/INDEX.md",
+   54
+  ],
+  [
+   "memory/workspace/INDEX.md",
+   73
+  ],
+  [
+   "memory/goals/archive/researcher-2026-11-18.md",
+   13
+  ],
+  [
+   "memory/goals/archive/researcher-2026-11-18.md",
+   21
+  ],
+  [
+   "memory/goals/archive/mechanic-2026-11-23-cycle8.md",
+   11
   ],
   [
    "memory/goals/archive/orchestrator-2026-11-13.md",
    11
   ],
   [
-   "memory/workspace/INDEX.md",
-   54
-  ],
-  [
-   "memory/goals/mechanic-goal1-winrm-forecast-2026-11-20.md",
-   18
-  ],
-  [
-   "memory/goals/archive/researcher-2026-11-20b.md",
-   5
+   "memory/researcher/INDEX.md",
+   20
   ],
   [
    "memory/scribe/MEMORY.md",
@@ -37,21 +45,13 @@
    79
   ],
   [
-   "memory/goals/archive/orchestrator-2026-11-23-cycle8.md",
-   5
-  ],
-  [
-   "memory/ops/blockers.md",
-   160
-  ],
-  [
-   "memory/workspace/INDEX.md",
-   68
+   "memory/goals/archive/researcher-2026-11-18.md",
+   22
   ]
  ],
- "focus_sig": "bb8c89ca",
- "parked_total": 45,
- "last_gc_ts": "2026-11-26T23:23:46",
- "rounds": 111,
- "updated": "2026-11-26T23:36:50"
+ "focus_sig": "d24dec57",
+ "parked_total": 51,
+ "last_gc_ts": "2026-11-26T23:41:16",
+ "rounds": 119,
+ "updated": "2026-11-26T23:44:59"
 }

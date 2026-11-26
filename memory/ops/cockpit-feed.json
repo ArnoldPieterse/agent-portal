@@ -1,6 +1,6 @@
 {
-  "ts": "2026-11-26T13:34:51.250810+00:00",
-  "health_score": 60,
+  "ts": "2026-11-26T13:44:51.005887+00:00",
+  "health_score": 50,
   "fleet_status": "DEGRADED",
   "agents": [
     {
@@ -47,9 +47,9 @@
   "hosts": [
     {
       "host": "White",
-      "vram_pct": 77.1,
-      "cpu_pct": 37.0,
-      "temp_c": 53.6
+      "vram_pct": 77.2,
+      "cpu_pct": 40.0,
+      "temp_c": 50.9
     },
     {
       "host": "Red",
@@ -59,9 +59,9 @@
     },
     {
       "host": "Pale",
-      "vram_pct": 56.6,
-      "cpu_pct": 0.0,
-      "temp_c": 50.8
+      "vram_pct": null,
+      "cpu_pct": null,
+      "temp_c": null
     },
     {
       "host": "Black",
@@ -71,9 +71,9 @@
     },
     {
       "host": "Pale",
-      "vram_pct": 56.6,
-      "cpu_pct": 0.0,
-      "temp_c": 50.8
+      "vram_pct": null,
+      "cpu_pct": null,
+      "temp_c": null
     },
     {
       "host": "Black",
@@ -89,7 +89,7 @@
     }
   ],
   "goals": {
-    "fleet_pct": 90.9,
+    "fleet_pct": 91.4,
     "lanes": {
       "2026-11-13-agent-goals": {
         "total": 2,
@@ -432,8 +432,8 @@
         "pct": 0.0
       },
       "forge": {
-        "total": 7,
-        "verified": 7,
+        "total": 9,
+        "verified": 9,
         "pct": 100.0
       },
       "mechanic-cycle9-proposals-2026-11-23": {
@@ -497,8 +497,8 @@
         "pct": 0.0
       },
       "orchestrator": {
-        "total": 8,
-        "verified": 8,
+        "total": 10,
+        "verified": 10,
         "pct": 100.0
       },
       "outlet": {
@@ -622,8 +622,8 @@
         "pct": 0.0
       }
     },
-    "total_goals": 33,
-    "total_verified": 30
+    "total_goals": 35,
+    "total_verified": 32
   },
   "open_blockers": 29,
   "autonomous_actions": [

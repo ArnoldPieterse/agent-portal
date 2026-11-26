@@ -1122,3 +1122,4 @@
 {"ts": "2026-11-26 23:21:37", "run": "g-1a21804ccad-3e8fd0", "missing": {}, "relocated": {"Archivist": "White (local) (home not_loaded)"}}
 {"ts": "2026-11-26 23:22:36", "run": "g-1a21805b1a5-bb21e5", "missing": {"Researcher": "unreachable", "Outlet": "unreachable", "Verifier": "unreachable", "Lumen": "unreachable", "Reel": "unreachable", "Splice": "unreachable", "Designer": "unreachable"}, "relocated": {"Archivist": "White (local) (home not_loaded)"}}
 {"ts": "2026-11-26 23:23:35", "run": "g-1a218068812-a7839b", "missing": {}, "relocated": {"Archivist": "White (local) (home not_loaded)"}}
+{"ts": "2026-11-26 23:41:03", "run": "g-1a218169900-a5f5c5", "missing": {"Pixel": "unreachable", "Scribe": "unreachable", "Builder": "unreachable", "Forge": "unreachable", "Orchestrator": "unreachable"}, "relocated": {"Archivist": "White (local) (home not_loaded)"}}

@@ -276,3 +276,9 @@
 {"ts": "2026-11-26T23:23:46", "ref": ["memory/researcher/INDEX.md", 20], "focus_sig": "bb8c89ca", "reason": "lod-evict"}
 {"ts": "2026-11-26T23:23:46", "ref": ["memory/workspace/INDEX.md", 73], "focus_sig": "bb8c89ca", "reason": "lod-evict"}
 {"ts": "2026-11-26T23:23:46", "ref": ["memory/goals/archive/researcher-2026-11-18.md", 22], "focus_sig": "bb8c89ca", "reason": "lod-evict"}
+{"ts": "2026-11-26T23:41:16", "ref": ["memory/synthesis/hotfile-archive-20261125.md", 38], "focus_sig": "d24dec57", "reason": "lod-evict"}
+{"ts": "2026-11-26T23:41:16", "ref": ["memory/goals/mechanic-goal1-winrm-forecast-2026-11-20.md", 18], "focus_sig": "d24dec57", "reason": "lod-evict"}
+{"ts": "2026-11-26T23:41:16", "ref": ["memory/goals/archive/researcher-2026-11-20b.md", 5], "focus_sig": "d24dec57", "reason": "lod-evict"}
+{"ts": "2026-11-26T23:41:16", "ref": ["memory/goals/archive/orchestrator-2026-11-23-cycle8.md", 5], "focus_sig": "d24dec57", "reason": "lod-evict"}
+{"ts": "2026-11-26T23:41:16", "ref": ["memory/ops/blockers.md", 160], "focus_sig": "d24dec57", "reason": "lod-evict"}
+{"ts": "2026-11-26T23:41:16", "ref": ["memory/workspace/INDEX.md", 68], "focus_sig": "d24dec57", "reason": "lod-evict"}
