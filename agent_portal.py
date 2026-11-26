@@ -6990,6 +6990,22 @@ class Handler(BaseHTTPRequestHandler):
             except Exception as e:
                 return self._json(500, {"error": str(e)[:200]})
 
+        elif p == "/api/voxel":
+            # Voxel memory API (2026-11-26): 3D world cell -> memory chain resolution.
+            try:
+                import importlib.util as _ilu_vx
+                import urllib.parse as _up_vx
+                _spec = _ilu_vx.spec_from_file_location(
+                    "_voxel_api", os.path.join(HERE, "memory/archivist/voxel.py"))
+                _vx = _ilu_vx.module_from_spec(_spec)
+                _spec.loader.exec_module(_vx)
+                _q = _up_vx.parse_qs(_up_vx.urlsplit(self.path).query)
+                _addr = (_q.get("addr") or [""])[0]
+                if not _addr:
+                    return self._json(400, {"error": "addr required, e.g. V(4,2,4)"})
+                return self._json(200, _vx.resolve_payload(_addr))
+            except Exception as e:
+                return self._json(500, {"error": str(e)[:200]})
         elif p == "/api/goals/topic":
             # Round topic + queue (P1, 2026-11-22): current round focus, queued user topics,
             # recent past topics. Mutations via POST /api/goals/topic.

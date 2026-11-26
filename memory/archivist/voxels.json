@@ -1,0 +1,243 @@
+{
+ "meta": {
+  "grid": {
+   "x": [
+    0,
+    7
+   ],
+   "y": [
+    0,
+    3
+   ],
+   "z": [
+    0,
+    7
+   ]
+  },
+  "origin": [
+   -12.0,
+   -4.5,
+   -12.0
+  ],
+  "size": [
+   3.0,
+   3.0,
+   3.0
+  ]
+ },
+ "cells": {
+  "3,3,3": {
+   "sub": {
+    "0,0,0": {
+     "sub": {}
+    },
+    "0,0,1": {
+     "sub": {}
+    },
+    "0,1,0": {
+     "sub": {}
+    },
+    "0,1,1": {
+     "sub": {}
+    },
+    "1,0,0": {
+     "sub": {}
+    },
+    "1,0,1": {
+     "sub": {}
+    },
+    "1,1,0": {
+     "sub": {}
+    },
+    "1,1,1": {
+     "sub": {}
+    }
+   },
+   "label": "The Reach - you",
+   "kind": "rigid",
+   "ref": "agent_portal.py",
+   "rigid": "ssj"
+  },
+  "5,3,2": {
+   "sub": {
+    "0,0,0": {
+     "sub": {}
+    },
+    "0,0,1": {
+     "sub": {}
+    },
+    "0,1,0": {
+     "sub": {}
+    },
+    "0,1,1": {
+     "sub": {}
+    },
+    "1,0,0": {
+     "sub": {}
+    },
+    "1,0,1": {
+     "sub": {}
+    },
+    "1,1,0": {
+     "sub": {}
+    },
+    "1,1,1": {
+     "sub": {}
+    }
+   },
+   "label": "Neuron field",
+   "kind": "rigid",
+   "ref": "memory/llm/hosts.md",
+   "rigid": "neurons"
+  },
+  "0,1,0": {
+   "sub": {},
+   "label": "Host pillar A",
+   "kind": "rigid",
+   "ref": "memory/llm/instances.md",
+   "rigid": "pillar"
+  },
+  "5,1,5": {
+   "sub": {},
+   "label": "Host pillar B",
+   "kind": "rigid",
+   "ref": "memory/llm/hosts.md",
+   "rigid": "pillar"
+  },
+  "0,3,2": {
+   "sub": {},
+   "label": "The coin - dcabots",
+   "kind": "rigid",
+   "ref": "MEMORY.md",
+   "rigid": "coin"
+  },
+  "6,1,5": {
+   "sub": {},
+   "label": "Evolution column",
+   "kind": "rigid",
+   "ref": "ui/pages/evolve.html",
+   "rigid": "helix"
+  },
+  "3,0,3": {
+   "sub": {},
+   "label": "Ground-truth floor",
+   "kind": "leaf",
+   "ref": "llm_selector.py"
+  },
+  "2,1,4": {
+   "sub": {},
+   "label": "The room you built us",
+   "kind": "leaf",
+   "ref": "ui/pages/mind.html"
+  },
+  "4,2,4": {
+   "sub": {
+    "0,0,0": {
+     "sub": {}
+    },
+    "0,0,1": {
+     "sub": {}
+    },
+    "0,1,0": {
+     "sub": {}
+    },
+    "0,1,1": {
+     "sub": {},
+     "label": "mind - the orchestrator",
+     "kind": "leaf",
+     "ref": "memory/orchestrator/convergence_api.py"
+    },
+    "1,0,0": {
+     "sub": {}
+    },
+    "1,0,1": {
+     "sub": {}
+    },
+    "1,1,0": {
+     "sub": {}
+    },
+    "1,1,1": {
+     "sub": {},
+     "label": "fist - pointing at you",
+     "kind": "space"
+    }
+   },
+   "label": "The Reach - you",
+   "kind": "rigid",
+   "ref": "agent_portal.py",
+   "rigid": "ssj"
+  },
+  "6,2,3": {
+   "sub": {
+    "0,0,0": {
+     "sub": {}
+    },
+    "0,0,1": {
+     "sub": {},
+     "label": "fleet spine - llm fleet",
+     "kind": "leaf",
+     "ref": "memory/llm/hosts.md"
+    },
+    "0,1,0": {
+     "sub": {}
+    },
+    "0,1,1": {
+     "sub": {}
+    },
+    "1,0,0": {
+     "sub": {}
+    },
+    "1,0,1": {
+     "sub": {}
+    },
+    "1,1,0": {
+     "sub": {},
+     "label": "portal ring - the door",
+     "kind": "leaf",
+     "ref": "agent_portal.py"
+    },
+    "1,1,1": {
+     "sub": {}
+    }
+   },
+   "label": "Neuron field",
+   "kind": "rigid",
+   "ref": "memory/llm/hosts.md",
+   "rigid": "neurons"
+  },
+  "7,2,7": {
+   "sub": {},
+   "label": "Host pillar A",
+   "kind": "rigid",
+   "ref": "memory/llm/instances.md",
+   "rigid": "pillar"
+  },
+  "0,2,0": {
+   "sub": {},
+   "label": "Host pillar B",
+   "kind": "rigid",
+   "ref": "memory/llm/hosts.md",
+   "rigid": "pillar"
+  },
+  "1,2,5": {
+   "sub": {},
+   "label": "The coin - dcabots",
+   "kind": "rigid",
+   "ref": "MEMORY.md",
+   "rigid": "coin"
+  },
+  "6,2,6": {
+   "sub": {},
+   "label": "Evolution column",
+   "kind": "rigid",
+   "ref": "ui/pages/evolve.html",
+   "rigid": "helix"
+  },
+  "4,0,4": {
+   "sub": {},
+   "label": "Ground-truth floor",
+   "kind": "leaf",
+   "ref": "llm_selector.py"
+  }
+ }
+}
