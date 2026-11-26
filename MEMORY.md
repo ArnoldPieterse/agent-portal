@@ -13,8 +13,6 @@ La|memory/portal/bugs, Ja|memory/ops/runbooks, Jb|memory/ops/incidents, Jc|memor
 ## GOAL (mirrors the live plan at the top of TODO.md)
 FLEET CYCLE 24: Stealth Revenue Engine live (user directive 2026-11-25; source M5 = memory/projects/stealth-revenue-engine.md) - engine goals open in 6 lanes on top of cycle-23 remainder (105/110). SSOT: /api/goals + goal_ledger.json (root).
 ## Hot Notes
-- RECALL: - **M17** (`memory/researcher/INDEX.md:20`): The agent is following the "option(d) static-
-- Network widget bug: edge endpoints read `deg` before it's populated; needs fix to offset by actual node radius
 - Scribe reached goals #7 (convergence_kpi.py, 3 cycles) and #8 (assist_attribution.py, 29 entries from
 - Builder: Goal #8 regression_dispatcher.py written, selftest pending; FSM exposes current_state()/transition(); goals in memory/goals/<lane>.
 - Lumen: goals 1–10 blocked (FLUX/SDXL not loaded fleet-wide); disk has spec files + DNA-art PNGs, zero ledger entries
@@ -23,6 +21,8 @@ FLEET CYCLE 24: Stealth Revenue Engine live (user directive 2026-11-25; source M
 - Fleet diag 2026-11-26: 7 seats unreachable since Nov 24, portal down, mirror-drift + model-SLA alerts active
 - Verifier at 7/10 effective (up from 2/10); goals #1–#5 verified this pass with scripts passing selftests
 - Authored memory/archivist
+- Mechanic's goals need `(verified: YYYY-MM-DD - ...)` markers to match EVIDENCE_PAT; prose "Verified:" alone yields 0/10 parse.
+- Mechic wrote memory/archivist/anomaly-baseline-library.md (5 anomaly types w/ thresholds) + updated fleet-heartbeat.json
 ## Durable rules
 Engine update kills instances -> RecoverAll (H2); group turns dispatch ALL AGENTS IN PARALLEL - parallel_slots=1 (L12); Stop + [CONCLUDED] + budget cap (memory/portal/bugs/xtalk-completion-2026-11-15.md); smoke agents SERIALLY; restart trap: taskkill PID before schtasks /run (memory/ops/runbooks/windows-runbook.md); multi-GB LAN copies: full-hash verify (J38). NO HUMAN GATES: a blocked lane gets an alternative path or a named cross-agent handoff.
 - 2026-11-25 Builder subs Pixel (UI/UX, frontend) + Forge (backend/API) live on Black Q8 seats; fixed bad model_id builder-q8 -> Qwen3.8-27B-Q8_0; placement verified 7s, reply queued behind active group run.
