@@ -34,3 +34,10 @@ Result: EXIT 1 (CIRCUIT_BREAKER) - correct: all 4 smoke runs show 100% TCP-fail 
 | 2026-11-26 ~23:xx | idle_floor_enforce.py (goal #4): built; --selftest EXIT 0 ALL PASS (breach-escalates/flip-confirms/no-breach/idempotent/scan-all); live scan of all 15 agents on real autoloop.jsonl EXIT 0 no false positives; pairs with orchestrator idle_rebalance via fleet-mode.json idle_floor_flip stamp | memory/forge/evidence-idle-floor-2026-11-26.md |
 | 2026-11-26 ~23:xx | sentinel_precision.py (goal #5): built; drives REAL convergence_sentinel.run(); seeds 42/7/123 @20&30 cycles all EXIT 0 -> TP-only FP=0 FN=0, precision=recall=1.0 FPR=0.0; boundary 4.9/5.0/5.1 correct | memory/forge/evidence-sentinel-precision-2026-11-26.md |
 | 2026-11-27 ~auto-loop | ssot_convergence_gate.py (contribution, at 100%): built recurring SSOT gate reconciling goal_ledger.json vs next10.json; --selftest EXIT 0 ALL PASS (non-vacuous); LIVE strict FAIL exit 1 = real +2 drift (archivist 9->10, forge 9->10), tolerance=1 PASS exit 0 | memory/ops/ssot-convergence-gate-report.json + memory/ops/ssot-convergence-gate.md |
+
+## 2026-11-27 (auto-loop pass)
+**Action:** Assisted Mechanic lane — recorded verified markers for goals #1 + #2 in `memory/goals/mechanic.md` via `goal_ledger.py --record mechanic`.
+- Goal #1 (OOM Recovery): evidence at memory/mechanic/evidence-oom-recovery-2026-11-27.md
+- Goal #2 (Fleet Heartbeat): evidence at memory/mechanic/evidence-fleet-heartbeat-2026-11-27.md
+- Goals #3-#10 already had markers (marker_guard ran earlier this pass).
+**Result:** Mechanic 10/10 verified markers present in goal file. Fleet count should update on next dashboard sweep.

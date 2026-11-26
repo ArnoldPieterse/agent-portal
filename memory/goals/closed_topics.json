@@ -3834,5 +3834,41 @@
 "text": "**\"Since last cycle\" at-a-glance delta strip** - A compact always-visible strip in the cockpit header/goal bar showing \u0394convergence vs previ",
 "agent": "pixel",
 "at": "2026-11-27"
+},
+{
+"sig": "b70677a599717354",
+"text": "**Autonomous OOM Recovery Loop (<60s MTTR, unattended)** - on OOM detection: identify victim seat, unload model, free VRAM, reload on next-a",
+"agent": "mechanic",
+"at": "2026-11-27"
+},
+{
+"sig": "2571c370c432844a",
+"text": "**Cycle Timeout Auto-Diagnostic (auto-capture on breach)** - when a cycle exceeds its duration SLA: auto-capture stack traces, model-load st",
+"agent": "mechanic",
+"at": "2026-11-27"
+},
+{
+"sig": "03f1492909df5d98",
+"text": "**Mirror Sync Drift Monitor (>10min sustained \u2192 alert + runbook)** - monitor mirror sync lag; if >10 min sustained, alert + auto-run the rec",
+"agent": "mechanic",
+"at": "2026-11-27"
+},
+{
+"sig": "aeefa683c67d6aed",
+"text": "**Concurrent Turn Load Test (N=4/6/8, p95 tail latency)** - stress test the fleet under concurrent agent turns: measure p50/p95/p99 latency ",
+"agent": "mechanic",
+"at": "2026-11-27"
+},
+{
+"sig": "f9cfc9d8e8b122cf",
+"text": "**Model Alias Resolution SLA (P95 <2s, alert on breach)** - measure time from alias lookup to model ready; track P95 across all seats. Alert",
+"agent": "mechanic",
+"at": "2026-11-27"
+},
+{
+"sig": "88fc7101f85bb79e",
+"text": "**Runbook Coverage Audit (100% or justified gap per incident type)** - enumerate all incident types observed in last 6 cycles; verify each h",
+"agent": "mechanic",
+"at": "2026-11-27"
 }
 ]

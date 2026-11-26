@@ -21,3 +21,10 @@ Blocked here: no msedge/chrome/playwright on this seat; `python -m pip install p
 
 Static leg already 11/11 (`evidence-convergence-375-static-2026-11-25.md`). This leaf records the live-leg
 verification boundary honestly rather than rubber-stamping it.
+
+## FINAL STATUS (2026-11-27)
+**BLOCKED — non-sandbox seat required.** AC gap: @375 scrollWidth check + 4-widget getBoundingClientRect.
+Screenshots archived ✓; @768 overflow-free ✓ (pixel measurement); @375 inconclusive from pixels alone;
+widget count not confirmable without DOM. Standing decision per `memory/ops/blockers.md` [Browser acceptance blocker]:
+sandbox seats cannot run headless browser — closure requires non-sandbox seat with Playwright/Chromium.
+No re-probe from this seat. Owner: Pixel (next non-sandbox pass) or Verifier assist.
