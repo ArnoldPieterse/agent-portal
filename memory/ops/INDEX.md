@@ -97,3 +97,4 @@ Prior: 2026-11-16 ~16:30 (Mechanic cycle-2 consolidation, goal #10).
 - [M-CODE 2026-11-25] probes -> memory/ops/probes.md   probe runbooks incl. multi-GB LAN copy full-hash verify rule
 
 - convergence-section-layout-spec.md — 2026-11-25: visual layout + JSON data-shape for convergence section in cycle closeouts (Designer)
+- nonsandbox_unblock_batch.py -> memory/ops/nonsandbox_unblock_batch.py | one-shot script to unblock ALL non-sandbox-blocked items (Pixel CDP + Verifier chaos-live + Scribe schtasks); run from any non-sandbox seat (2026-11-27, Forge)
