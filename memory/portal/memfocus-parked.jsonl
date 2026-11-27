@@ -391,3 +391,7 @@
 {"ts": "2026-11-27T10:24:29", "ref": ["memory/synthesis/hotfile-archive-20261125.md", 38], "focus_sig": "1298fcdf", "reason": "lod-evict"}
 {"ts": "2026-11-27T10:24:29", "ref": ["memory/workspace/INDEX.md", 79], "focus_sig": "1298fcdf", "reason": "lod-evict"}
 {"ts": "2026-11-27T11:03:28", "ref": ["memory/researcher/open-questions-log.md", 131], "focus_sig": "d254cf87", "reason": "lod-evict"}
+{"ts": "2026-11-27T11:22:40", "ref": ["memory/goals/archive/mechanic-2026-11-23-cycle8.md", 11], "focus_sig": "1e935a7f", "reason": "lod-evict"}
+{"ts": "2026-11-27T11:22:40", "ref": ["memory/goals/archive/researcher-2026-11-18.md", 22], "focus_sig": "1e935a7f", "reason": "lod-evict"}
+{"ts": "2026-11-27T11:22:40", "ref": ["memory/workspace/INDEX.md", 3], "focus_sig": "1e935a7f", "reason": "lod-evict"}
+{"ts": "2026-11-27T11:22:40", "ref": ["memory/scribe/MEMORY.md", 12], "focus_sig": "1e935a7f", "reason": "lod-evict"}

@@ -86,3 +86,5 @@ Result: EXIT 1 (CIRCUIT_BREAKER) - correct: all 4 smoke runs show 100% TCP-fail 
 | 2026-11-27 04:23:22 | canary_deploy: START canary=White file=_deploy_test.txt sha=70044f8a3946563b |
 | 2026-11-27 04:23:22 | canary_deploy: GATE TOKEN BLOCKED file=_deploy_test.txt -> token stale (400s old, TTL 300s) |
 - 2026-11-27 04:35 | chaos_recovery_drill.py --self-test | PASS 8/8 | evidence-chaos-drill-assist-2026-11-27.md
+
+| 2026-11-27 11:27 | live-leg readiness readout (contribution, round=Fleet Autonomy Convergence) | gate re-measured Pixel CDP=INELIGIBLE(portal:8099 down,CDP egress 10013); reconciles Mechanic unblock-from-pale forecast; 6 blocked legs table -> memory/forge/live_leg_readiness_2026-11-27.md |

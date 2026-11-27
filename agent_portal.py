@@ -786,6 +786,109 @@ PULL_EXCLUDE_FILES = {"mingit.zip"}
 PULL_MAX_BYTES = 20 * 1024 * 1024     # size guard for new-only pulls
 
 
+# ---------------------------------------------------------------- data-request hub (2026-11-27, user directive)
+# "...and they can also request data." - the canonical pull endpoint. Remotes run bundle_host.py
+# with identical wire format scoped to their own mirror; this one serves HERE + SANDBOX_DIR.
+
+def _hub_data_request(body):
+    wants = body.get("wants")
+    if not isinstance(wants, list) or not wants:
+        return {"ok": False, "error": "wants must be a non-empty list of {path}|{query}"}
+    try:
+        max_bytes = int(body.get("max_bytes") or 200000)
+    except Exception:
+        max_bytes = 200000
+    max_bytes = max(1000, min(max_bytes, 2000000))
+
+    def safe_rel(rel):
+        rel = str(rel or "").strip().lstrip("/\\")
+        if not rel or rel.startswith((".",)):
+            return None
+        norm = rel.replace("/", os.sep)
+        parts = norm.split(os.sep)
+        if any(x.startswith(".") for x in parts):
+            return None
+        for base in (os.path.realpath(HERE), os.path.realpath(SANDBOX_DIR)):
+            p = os.path.normpath(os.path.join(base, norm))
+            rp = os.path.realpath(p)
+            if (rp == base or rp.startswith(base + os.sep)) and os.path.isfile(rp):
+                return rp
+        return None
+
+    def read_capped(p):
+        try:
+            size = os.path.getsize(p)
+            with open(p, "rb") as f:
+                raw = f.read(max_bytes)
+            return {"path": rel_of(p), "size": size, "truncated": size > max_bytes,
+                    "content": raw.decode("utf-8", errors="replace")}
+        except Exception as e:
+            return {"error": str(e)[:120]}
+
+    def rel_of(p):
+        for base in (HERE, SANDBOX_DIR):
+            try:
+                return os.path.relpath(p, base).replace(os.sep, "/")
+            except Exception:
+                pass
+        return p
+
+    def search(query, max_hits=25):
+        q = str(query or "").strip().lower()
+        if not q:
+            return {"error": "empty query"}
+        hits = []
+        for base in (os.path.join(HERE, "memory"), SANDBOX_DIR):
+            if not os.path.isdir(base):
+                continue
+            for root, dirs, files in os.walk(base):
+                dirs[:] = [d for d in dirs if d not in
+                           ("__pycache__", "archive", "history", "forecast", "node_modules")]
+                for f in files:
+                    if not f.endswith((".md", ".json", ".txt", ".jsonl")):
+                        continue
+                    fp = os.path.join(root, f)
+                    try:
+                        lines = open(fp, encoding="utf-8", errors="replace").read().splitlines()
+                    except Exception:
+                        continue
+                    for i, l in enumerate(lines):
+                        if q in l.lower():
+                            hits.append({"path": rel_of(fp), "line": i + 1, "text": l.strip()[:200]})
+                            if len(hits) >= max_hits:
+                                return {"query": query, "hits": hits, "capped": True}
+        return {"query": query, "hits": hits, "capped": False}
+
+    results = []
+    for w in wants[:25]:
+        if isinstance(w, str):
+            w = {"path": w}
+        if not isinstance(w, dict):
+            results.append({"error": "want must be {path} or {query}"})
+            continue
+        if "path" in w:
+            rp = safe_rel(w["path"])
+            if not rp:
+                results.append({"path": str(w["path"])[:200],
+                                "error": "not found or unsafe path (workspace + sandbox, no dotfiles)"})
+            else:
+                results.append(read_capped(rp))
+        elif "query" in w:
+            results.append(search(w["query"]))
+        else:
+            results.append({"error": "want needs a 'path' or 'query' key"})
+    try:
+        with open(os.path.join(HERE, "memory", "ops", "data-requests.jsonl"), "a",
+                  encoding="utf-8") as f:
+            f.write(json.dumps({"ts": time.strftime("%Y-%m-%dT%H:%M:%SZ", time.gmtime()),
+                                "kind": "data-request-hub", "from": str(body.get("from") or "?")[:60],
+                                "wants": [str(w)[:120] for w in wants[:25]],
+                                "results": len(results)}, ensure_ascii=False) + "\n")
+    except Exception:
+        pass
+    return {"ok": True, "host": "White", "results": results}
+
+
 def _git_allowlist():
     """The git-tracked file set (curated .gitignore allowlist, ~43 files). Fallback list when
     the repo is missing so sync degrades gracefully."""
@@ -5067,6 +5170,72 @@ def _mind_lab(op, body):
                     pass
             _ml_write(w)
             return {"ok": True, "world": w}
+        if op == "planet":
+            # 2026-11-27 (Phase 8 step 59): real-world feed. Threshold events from the GEV
+            # snapshot job (memory/world/events.jsonl) surface as mind-lab result cards of kind
+            # "planet event"; accept/reject solidify applies to world observations too.
+            wdir = os.path.join(HERE, "memory", "world")
+            acked_path = os.path.join(wdir, "planet-acked.json")
+            try:
+                acked = json.load(open(acked_path, encoding="utf-8"))
+                if not isinstance(acked, dict):
+                    acked = {}
+            except Exception:
+                acked = {}
+            cards = []
+            ev_path = os.path.join(wdir, "events.jsonl")
+            try:
+                for line in open(ev_path, encoding="utf-8"):
+                    try:
+                        e = json.loads(line)
+                    except Exception:
+                        continue
+                    if e.get("id") in acked:
+                        continue
+                    cards.append({"id": "p-%s" % str(e["id"])[:60], "kind": "planet event",
+                                  "faction": "you", "value": 0,
+                                  "desc": "%s: %s" % (e.get("kind", "?"), (e.get("desc") or "")[:160]),
+                                  "ts": e.get("ts", "")})
+            except Exception:
+                pass
+            cards = cards[-12:][::-1]
+            risk = None
+            try:
+                risk = json.load(open(os.path.join(wdir, "host-risk.json"), encoding="utf-8"))
+            except Exception:
+                pass
+            return {"ok": True, "events": cards,
+                    "acked_count": len(acked),
+                    "host_risk_active": (risk or {}).get("active", [])[:5]}
+        if op == "planet-ack":
+            eid = str(body.get("id") or "")[2:][:80]   # strip the 'p-' prefix
+            accept = bool(body.get("accept", True))
+            wdir = os.path.join(HERE, "memory", "world")
+            acked_path = os.path.join(wdir, "planet-acked.json")
+            try:
+                acked = json.load(open(acked_path, encoding="utf-8"))
+                if not isinstance(acked, dict):
+                    acked = {}
+            except Exception:
+                acked = {}
+            acked[eid] = {"ts": time.strftime("%Y-%m-%dT%H:%M:%SZ", time.gmtime()),
+                          "accept": accept}
+            try:
+                os.makedirs(wdir, exist_ok=True)
+                tmp = acked_path + ".tmp"
+                with open(tmp, "w", encoding="utf-8") as f:
+                    json.dump(acked, f, ensure_ascii=False)
+                os.replace(tmp, acked_path)
+            except Exception as e:
+                return {"ok": False, "error": str(e)[:120]}
+            if accept:
+                # solidify: the observation becomes part of the world's most-probable state
+                w["solidified"].append({"id": "p-%s" % eid[:40], "ts": acked[eid]["ts"],
+                                        "faction": "you", "kind": "planet event",
+                                        "value": 0, "desc": "accepted world observation: %s" % eid[:120]})
+                w["solidified"] = w["solidified"][-100:]
+                _ml_write(w)
+            return {"ok": True, "id": eid, "accept": accept}
         return {"ok": False, "error": "unknown op: %s" % str(op)[:20]}
 
 
@@ -7345,6 +7514,40 @@ class Handler(BaseHTTPRequestHandler):
         elif p == "/api/goals":
             # Goal Velocity dashboard (2026-11-15, Designer): per-agent goal progress.
             return self._json(200, _goals_snapshot())
+        elif p == "/api/context-bundle":
+            # 2026-11-27: the single GET-able context + API-inputs file (user directive).
+            # Regenerates when stale; every host also serves the same bytes on :8199
+            # (bundle_host.py, SMB-mirrored) - see how_to_use inside the bundle.
+            try:
+                import importlib.util as _ilu_cb
+                _spec = _ilu_cb.spec_from_file_location(
+                    "_context_bundle", os.path.join(HERE, "memory", "portal", "context_bundle.py"))
+                _cb = _ilu_cb.module_from_spec(_spec)
+                _spec.loader.exec_module(_cb)
+                path, age, rebuilt = _cb.write_if_stale()
+                raw = open(path, "rb").read()
+                self.send_response(200)
+                self.send_header("Content-Type", "application/json")
+                self.send_header("Content-Length", str(len(raw)))
+                self.send_header("X-Bundle-Host", "White")
+                self.send_header("X-Bundle-Rebuilt", "1" if rebuilt else "0")
+                self.end_headers()
+                return self.wfile.write(raw)
+            except Exception as e:
+                return self._json(500, {"error": str(e)[:200]})
+        elif p == "/api/gev/ping":
+            # 2026-11-27 (Phase 8 step 52): watchdog health probe for God's Eye View.
+            try:
+                import importlib.util as _ilu_gp
+                _spec = _ilu_gp.spec_from_file_location(
+                    "_gev_ping", os.path.join(HERE, "memory", "archivist", "gev_bridge.py"))
+                _gp = _ilu_gp.module_from_spec(_spec)
+                _spec.loader.exec_module(_gp)
+                return self._json(200, {"ok": True, "globe_up": _gp.ping(),
+                                        "url": "http://localhost:4173",
+                                        "embed": "/page/gods-eye.html"})
+            except Exception as e:
+                return self._json(200, {"ok": False, "globe_up": False, "error": str(e)[:150]})
         elif p == "/api/convergence":
             # Convergence Dashboard API (Orchestrator cycle-17 goal 1, wired 2026-11-25).
             try:
@@ -7847,9 +8050,129 @@ class Handler(BaseHTTPRequestHandler):
                 if op == "call":
                     r = _gm.call(str(body.get("name") or ""), body.get("arguments") or {})
                     return self._json(200, r)
-                return self._json(400, {"ok": False, "error": "op must be ping|tools|call"})
+                if op == "query":
+                    # 2026-11-27 (Phase 8 step 55 cont.): curated one-call planet queries.
+                    # {kind: flights|ships|satellites|passes|weather|brief|quakes|fires|
+                    #  launches|datacenters|dams, near:{lat,lon,radius_km} | place:"...",
+                    #  + pass-throughs: limit, min_magnitude, satellite, group}
+                    kind = str(body.get("kind") or "").strip().lower()
+                    near = body.get("near") or {}
+                    place = str(near.get("place") or body.get("place") or "").strip()
+                    area, location = {}, {}
+                    if place:
+                        area["place"] = place
+                        location["place"] = place
+                    elif isinstance(near, dict) and (near.get("lat") is not None or near.get("lon") is not None):
+                        a = {"lat": float(near["lat"]), "lon": float(near["lon"])}
+                        if near.get("radius_km") is not None:
+                            a["radius_km"] = float(near["radius_km"])
+                        area = a
+                        location = {k: v for k, v in a.items() if k != "radius_km"}
+                    args = {}
+                    extra = {k: v for k, v in body.items()
+                             if k in ("limit", "min_magnitude", "satellite", "group", "military")}
+                    if kind in ("flights",):
+                        args = {"area": area} if area else {}
+                        args.update(extra)
+                        tool = "aircraft_in_area"
+                    elif kind in ("ships",):
+                        args = {"area": area} if area else {}
+                        args.update(extra)
+                        tool = "vessels_in_area"
+                    elif kind == "satellites":
+                        args = {"location": location} if location else {}
+                        args.update(extra)
+                        tool = "satellites_overhead"
+                    elif kind == "passes":
+                        args = {"location": location} if location else {}
+                        args.update(extra)
+                        tool = "next_satellite_pass"
+                    elif kind in ("weather", "brief"):
+                        if not area:
+                            return self._json(400, {"ok": False,
+                                                    "error": "weather/brief need near:{lat,lon,radius_km} or place"})
+                        tool = "situation_brief"
+                        args = {"area": area}
+                    elif kind == "quakes":
+                        args.update(extra)
+                        tool = "get_earthquakes"
+                    elif kind == "fires":
+                        if area:
+                            args["area"] = area
+                        args.update(extra)
+                        tool = "get_active_fires"
+                    elif kind == "launches":
+                        args.update(extra)
+                        tool = "get_recent_launches"
+                    elif kind in ("datacenters", "dams"):
+                        args = {"kind": kind}
+                        if area:
+                            args["area"] = area
+                        args.update({k: v for k, v in extra.items() if k == "limit"})
+                        tool = "find_infrastructure"
+                    else:
+                        return self._json(400, {"ok": False,
+                                                "error": "kind must be flights|ships|satellites|passes|weather|brief|quakes|fires|launches|datacenters|dams (or use op=call with any of the 30 MCP tools)"})
+                    r = _gm.call(tool, args)
+                    r["tool"] = tool
+                    return self._json(200, r)
+                if op == "annotate":
+                    # 2026-11-27 (Phase 8 steps 55/61): drop a finding on the shared canvas.
+                    # {target:{lat,lon,radius_km}|{place}, note, by?, save_scene?}
+                    target = body.get("target") or {}
+                    note = str(body.get("note") or "").strip()[:2000]
+                    if not note:
+                        return self._json(400, {"ok": False, "error": "note required"})
+                    a = {}
+                    place = str(target.get("place") or "").strip()
+                    if place:
+                        a["place"] = place
+                    elif target.get("lat") is not None and target.get("lon") is not None:
+                        a["lat"] = float(target["lat"]); a["lon"] = float(target["lon"])
+                        if target.get("radius_km") is not None:
+                            a["radius_km"] = float(target["radius_km"])
+                    if not a:
+                        return self._json(400, {"ok": False,
+                                                "error": "target needs place or lat+lon (optionally radius_km)"})
+                    r = _gm.call("show_in_gods_eye_view", {"area": a})
+                    share_urls = re.findall(r"https?://\S+", r.get("text") or "")
+                    rec = {"ts": time.strftime("%Y-%m-%dT%H:%M:%SZ", time.gmtime()),
+                           "by": str(body.get("by") or "?")[:60], "target": a,
+                           "note": note, "share_url": share_urls[0] if share_urls else None}
+                    try:
+                        os.makedirs(os.path.join(HERE, "memory", "world"), exist_ok=True)
+                        with open(os.path.join(HERE, "memory", "world", "annotations.jsonl"), "a",
+                                  encoding="utf-8") as f:
+                            f.write(json.dumps(rec, ensure_ascii=False) + "\n")
+                    except Exception:
+                        pass
+                    scene = None
+                    if body.get("save_scene"):
+                        # Phase 8 step 61: Director scenes as fleet artifacts.
+                        try:
+                            sid = str(body.get("scene_id") or time.strftime("%Y%m%d-%H%M%S"))[:40]
+                            sdir = os.path.join(HERE, "memory", "world", "scenes")
+                            os.makedirs(sdir, exist_ok=True)
+                            scene_path = os.path.join(sdir, sid + ".json")
+                            with open(scene_path, "w", encoding="utf-8") as f:
+                                json.dump({"scene": sid, "created": rec["ts"], "by": rec["by"],
+                                           "annotations": [rec],
+                                           "open_in_gev": (share_urls[0] if share_urls
+                                                           else "http://localhost:4173 + fly to target manually")},
+                                          f, ensure_ascii=False, indent=1)
+                            scene = os.path.relpath(scene_path, HERE).replace(os.sep, "/")
+                        except Exception as se:
+                            scene = "scene-save failed: %s" % str(se)[:100]
+                    return self._json(200, {"ok": r.get("ok", False), "share_url": rec["share_url"],
+                                            "scene": scene, "text": (r.get("text") or "")[:1500]})
+                return self._json(400, {"ok": False, "error": "op must be ping|tools|call|query|annotate"})
             except Exception as e:
                 return self._json(500, {"ok": False, "error": str(e)[:200]})
+        if p == "/api/data-request":
+            # 2026-11-27 (user directive): the HUB data-request endpoint. Any host/agent can
+            # pull files or run memory searches against the canonical workspace + agent sandbox.
+            # Same wire format as bundle_host.py on the remotes: {from?, wants:[{path}|{query}], max_bytes?}
+            return self._json(200, _hub_data_request(body))
         if p == "/api/user-messages":
             autoloop_note_human()   # AUTO-LOOP: a queued human message resets the streak budget
             entry = umq_add(body.get("text"), body.get("mentions"))
@@ -8202,6 +8525,32 @@ def _level_heartbeat():
             pass
 
 
+def _world_watchdog():
+    """2026-11-27 (user directive + Phase 8 steps 57/58): keep the context bundle fresh for the
+    SMB mirror to push to every host, and take a GEV world snapshot every 30 min. Everything is
+    best-effort - this thread must never die noisily or take the portal down with it."""
+    import importlib.util as _ilu_wd
+    while True:
+        try:
+            time.sleep(60)
+            spec = _ilu_wd.spec_from_file_location(
+                "_context_bundle_wd", os.path.join(HERE, "memory", "portal", "context_bundle.py"))
+            cb = _ilu_wd.module_from_spec(spec)
+            spec.loader.exec_module(cb)
+            if time.time() - getattr(_world_watchdog, "_last_bundle", 0) > 600:
+                cb.write_if_stale(force=True)
+                _world_watchdog._last_bundle = time.time()
+            if time.time() - getattr(_world_watchdog, "_last_snap", 0) > 1800:
+                spec2 = _ilu_wd.spec_from_file_location(
+                    "_gev_snapshot_wd", os.path.join(HERE, "memory", "world", "gev_snapshot.py"))
+                gs = _ilu_wd.module_from_spec(spec2)
+                spec2.loader.exec_module(gs)
+                gs.take_snapshot()
+                _world_watchdog._last_snap = time.time()
+        except Exception:
+            pass   # next tick retries; a world failure is never portal-critical
+
+
 if __name__ == "__main__":
     srv = ThreadingHTTPServer(("127.0.0.1", PORT), Handler)   # bind FIRST: only the port owner may mutate run state
     _portal_live = True
@@ -8224,6 +8573,7 @@ if __name__ == "__main__":
     threading.Thread(target=_autoloop_watchdog, daemon=True).start()   # AUTO-LOOP (2026-11-16)
     threading.Thread(target=_level_heartbeat, daemon=True).start()   # LEVEL HEARTBEAT (2026-11-23)
     threading.Thread(target=_stale_run_watchdog, daemon=True).start()   # STALE-RUN REAPER (2026-11-25)
+    threading.Thread(target=_world_watchdog, daemon=True).start()       # BUNDLE + WORLD SNAPSHOT (2026-11-27)
     try:
         import importlib.util as _ilu_vps
         _spec_vps = _ilu_vps.spec_from_file_location("_voxel_pulse_boot", os.path.join(HERE, "memory/archivist/voxel_pulse.py"))
