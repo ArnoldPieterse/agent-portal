@@ -7141,7 +7141,7 @@ class Handler(BaseHTTPRequestHandler):
             return self._html("index.html")
         if p.startswith("/page/") and p.endswith(".html"):
             n = p[len("/page/"):-len(".html")]
-            if n in ("goals", "activity", "fleet", "files", "ops", "evolve", "world", "mind", "voxray", "mind-lab"):  # voxray = ray-rendered voxel world view; mind-lab = OpenRA-style RTS mind world
+            if n in ("goals", "activity", "fleet", "files", "ops", "evolve", "world", "mind", "voxray", "mind-lab", "gods-eye"):  # gods-eye = live planet embed (Phase 8)
                 fp = os.path.join(HERE, "ui", "pages", n + ".html")
                 try:
                     html = open(fp, encoding="utf-8").read()
@@ -7830,6 +7830,26 @@ class Handler(BaseHTTPRequestHandler):
                 return self._json(200, _mind_lab(str((body or {}).get("op") or "state"), body or {}))
             except Exception as e:
                 return self._json(500, {"error": str(e)[:160]})
+        if p == "/api/gev":
+            # 2026-11-27 (Phase 8 step 55): God's Eye View MCP bridge - agents query the
+            # live planet (flights/ships/satellites/weather/...) and get share links back.
+            try:
+                import importlib.util as _ilu_gev
+                _gspec = _ilu_gev.spec_from_file_location(
+                    "ml_gev", os.path.join(HERE, "memory", "archivist", "gev_bridge.py"))
+                _gm = _ilu_gev.module_from_spec(_gspec)
+                _gspec.loader.exec_module(_gm)
+                op = body.get("op", "tools")
+                if op == "ping":
+                    return self._json(200, {"ok": True, "globe_up": _gm.ping()})
+                if op == "tools":
+                    return self._json(200, {"ok": True, "tools": _gm.tools()})
+                if op == "call":
+                    r = _gm.call(str(body.get("name") or ""), body.get("arguments") or {})
+                    return self._json(200, r)
+                return self._json(400, {"ok": False, "error": "op must be ping|tools|call"})
+            except Exception as e:
+                return self._json(500, {"ok": False, "error": str(e)[:200]})
         if p == "/api/user-messages":
             autoloop_note_human()   # AUTO-LOOP: a queued human message resets the streak budget
             entry = umq_add(body.get("text"), body.get("mentions"))

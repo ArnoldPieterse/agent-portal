@@ -16,8 +16,27 @@ STALE_HOURS = 48
 TARGET_PCT = 90
 OUTPUT = Path(__file__).parent / "verification_coverage_map.json"
 
+# Exclusions: build artifacts, backups, binary assets, vendored libs
+EXCLUDE_DIRS = {'__pycache__', 'node_modules', '.git'}
+EXCLUDE_SUFFIXES = {'.pyc', '.png', '.glb', '.jpg', '.svg', '.ico', '.woff', '.woff2'}
+EXCLUDE_PATTERNS = ('.bak-', '.min.js', 'GLTFLoader.js')  # backups + vendored libs
+
+def _excluded(filepath):
+    parts = filepath.replace('\\', '/').split('/')
+    if any(p in EXCLUDE_DIRS for p in parts):
+        return True
+    name = os.path.basename(filepath)
+    if name.startswith('.'):
+        return True
+    _, ext = os.path.splitext(name)
+    if ext.lower() in EXCLUDE_SUFFIXES:
+        return True
+    if any(pat in name for pat in EXCLUDE_PATTERNS):
+        return True
+    return False
+
 def get_tracked_files():
-    """Enumerate all portal-tracked files."""
+    """Enumerate all portal-tracked files (excludes artifacts, binaries, vendored libs)."""
     tracked = []
     for f in sorted(Path('.').glob('*.py')):
         if f.is_file():
@@ -25,12 +44,12 @@ def get_tracked_files():
     ui = Path('ui')
     if ui.exists():
         for f in sorted(ui.rglob('*')):
-            if f.is_file() and not f.name.startswith('.'):
+            if f.is_file() and not _excluded(str(f).replace(os.sep, '/')):
                 tracked.append(str(f).replace(os.sep, '/'))
     mem = Path('memory')
     if mem.exists():
         for f in sorted(mem.rglob('*.py')):
-            if f.is_file():
+            if f.is_file() and not _excluded(str(f).replace(os.sep, '/')):
                 tracked.append(str(f).replace(os.sep, '/'))
     return sorted(set(tracked))
 

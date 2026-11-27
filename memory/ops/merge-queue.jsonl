@@ -552,3 +552,4 @@
 {"ts": "2026-11-27 04:48:40", "file": "ui/cockpit.js", "sha": "7746b3fea0", "size": 29763, "snapshot": null}
 {"ts": "2026-11-27 06:09:13", "file": "ui/cockpit-convergence.js", "sha": "ff5c2bec83", "size": 42022, "snapshot": null}
 {"ts": "2026-11-27 09:17:29", "file": "ui/pages/mind-room.js", "sha": "130eaff656", "size": 48146, "snapshot": null}
+{"ts": "2026-11-27 10:39:15", "file": "agent_portal.py", "sha": "063b178e71", "size": 422427, "snapshot": "memory/ops/merge-queue/agent_portal.py.063b178e71"}

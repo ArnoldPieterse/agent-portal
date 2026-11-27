@@ -1,5 +1,6 @@
 # SCRIBE INDEX — synthesis + compression leaves (newest first).
 Last updated: 2026-11-26.
+- assist Verifier #7 coverage map (exclusion filter) -> memory/scribe/evidence-assist-verifier-g7-coverage-081-27.md
 
 ## Cycle 26 (Fleet Autonomy Convergence) — started 2026-11-26
 - goal #1 autonomous goal-set synthesizer -> memory/scribe/goal_synth.py   **REACHED** 5 lanes drafted, 7 goals, 0 collisions

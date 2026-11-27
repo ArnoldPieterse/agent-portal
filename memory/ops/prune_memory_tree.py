@@ -2,13 +2,20 @@
 """Prune the memory tree to stay under size limits.
 Dry-run by default; --apply actually deletes.
 Exit 0 = under limit after prune (or would be); 1 = still over.
+
+2026-11-27 (Orchestrator): aligned with archivist/size_guard.py, which was
+recalibrated 2026-11-23 to WARN>200MB / FAIL>300MB (the old 4/5MB limits are
+obsolete). This script handles AGE-BASED rules; the CONSOLIDATION strategies
+(stale merge-queue snapshots, browser-profile dirs, redundant same-scope fleet
+backups) live in memory/ops/tree_reclaim.py - run that one first for big wins.
 """
 import argparse, os, sys, time, glob as globmod
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parent.parent.parent
-LIMIT_BYTES = 5 * 1024 * 1024  # 5 MB hard limit (size_guard target)
-PRACTICAL_LIMIT = 50 * 1024 * 1024  # practical target with headroom
+# Aligned to size_guard.py recalibrated thresholds (2026-11-23): WARN>200MB / FAIL>300MB.
+HARD_BYTES = 300 * 1024 * 1024   # size_guard FAIL line
+PRACTICAL_LIMIT = 250 * 1024 * 1024  # target with headroom under the 300MB hard line
 
 PRUNE_RULES = [
     # (path_glob_relative_to_ROOT, max_age_days, description)
@@ -56,7 +63,7 @@ def find_prunable(root: Path):
 def main():
     ap = argparse.ArgumentParser(description="Prune memory tree to size limit")
     ap.add_argument('--apply', action='store_true', help='Actually delete (default: dry-run)')
-    ap.add_argument('--limit-mb', type=float, default=50, help='Target total size in MB')
+    ap.add_argument('--limit-mb', type=float, default=250, help='Target memory/ size in MB (size_guard FAILs >300)')
     args = ap.parse_args()
 
     limit = int(args.limit_mb * 1024 * 1024)

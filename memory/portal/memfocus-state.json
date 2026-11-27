@@ -29,29 +29,29 @@
    13
   ],
   [
-   "memory/scribe/MEMORY.md",
-   19
-  ],
-  [
    "memory/goals/archive/researcher-2026-11-18.md",
    22
+  ],
+  [
+   "memory/scribe/MEMORY.md",
+   19
   ],
   [
    "memory/researcher/open-questions-log.md",
    131
   ],
   [
-   "memory/goals/archive/orchestrator-2026-11-13.md",
-   11
-  ],
-  [
    "memory/researcher/open-questions-log.md",
    148
+  ],
+  [
+   "memory/workspace/INDEX.md",
+   3
   ]
  ],
- "focus_sig": "1298fcdf",
+ "focus_sig": "03375f1d",
  "parked_total": 0,
  "last_gc_ts": null,
- "rounds": 7,
- "updated": "2026-11-27T10:32:12"
+ "rounds": 15,
+ "updated": "2026-11-27T10:40:10"
 }
