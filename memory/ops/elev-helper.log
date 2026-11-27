@@ -23,3 +23,5 @@
 2026-11-26T08:35:32.695696 start pid=4660 elevated=False user=White
 2026-11-27T06:33:25.518098 start pid=3876 elevated=False user=White
 2026-11-27T10:05:25.749591 RUN ['winget', 'install', '-y', '--id', 'OpenJS.NodeJS.LTS', '--accept-source-agreements', '--accept-package-agreements']
+2026-11-27T10:10:54.232033 RUN ['winget', 'install', '--id', 'OpenJS.NodeJS.LTS', '--accept-source-agreements', '--accept-package-agreements']
+2026-11-27T10:17:18.233170 RUN ['msiexec', '/i', 'C:\\Projects\\AgentPortal\\node-setup.msi', '/qn', '/norestart']

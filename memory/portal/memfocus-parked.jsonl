@@ -382,3 +382,7 @@
 {"ts": "2026-11-27T09:51:13", "ref": ["memory/synthesis/cycle-narrative.md", 12], "focus_sig": "0c0ea2d7", "reason": "lod-evict"}
 {"ts": "2026-11-27T09:51:13", "ref": ["memory/researcher/open-questions-log.md", 131], "focus_sig": "0c0ea2d7", "reason": "lod-evict"}
 {"ts": "2026-11-27T10:02:11", "ref": ["memory/workspace/INDEX.md", 79], "focus_sig": "c0585997", "reason": "lod-evict"}
+{"ts": "2026-11-27T10:08:22", "ref": ["memory/goals/archive/researcher-2026-11-18.md", 13], "focus_sig": "538eefb8", "reason": "lod-evict"}
+{"ts": "2026-11-27T10:08:22", "ref": ["memory/goals/archive/researcher-2026-11-18.md", 22], "focus_sig": "538eefb8", "reason": "lod-evict"}
+{"ts": "2026-11-27T10:08:22", "ref": ["memory/researcher/open-questions-log.md", 131], "focus_sig": "538eefb8", "reason": "lod-evict"}
+{"ts": "2026-11-27T10:08:22", "ref": ["memory/scribe/MEMORY.md", 12], "focus_sig": "538eefb8", "reason": "lod-evict"}
