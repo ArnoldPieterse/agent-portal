@@ -1,0 +1,355 @@
+{
+ "threshold": 0.75,
+ "roots": [
+  "memory/synthesis",
+  "memory/goals"
+ ],
+ "files_scanned": 225,
+ "pairs": [
+  {
+   "similarity": 1.0,
+   "keep": "memory/synthesis\\2026-11-14-planning-meeting-v2.md",
+   "keep_bytes": 2794,
+   "redirect": "memory/synthesis\\planning-meeting-minutes-v2-2026-11-14.md",
+   "redirect_bytes": 2794,
+   "recoverable_bytes": 2794
+  },
+  {
+   "similarity": 1.0,
+   "keep": "memory/goals\\2026-11-13-agent-goals.md",
+   "keep_bytes": 11927,
+   "redirect": "memory/goals\\archive\\2026-11-13-agent-goals-SUPERSEDED-partial.md",
+   "redirect_bytes": 11927,
+   "recoverable_bytes": 11927
+  },
+  {
+   "similarity": 1.0,
+   "keep": "memory/goals\\2026-11-13-agent-goals.md",
+   "keep_bytes": 11927,
+   "redirect": "memory/goals\\archive\\cycle2-2026-11-17\\2026-11-13-agent-goals.md",
+   "redirect_bytes": 11927,
+   "recoverable_bytes": 11927
+  },
+  {
+   "similarity": 1.0,
+   "keep": "memory/goals\\all-goals-2026-11-13.md",
+   "keep_bytes": 12263,
+   "redirect": "memory/goals\\archive\\cycle2-2026-11-17\\all-goals-2026-11-13.md",
+   "redirect_bytes": 12263,
+   "recoverable_bytes": 12263
+  },
+  {
+   "similarity": 1.0,
+   "keep": "memory/goals\\cycle2-dependency-map.md",
+   "keep_bytes": 2446,
+   "redirect": "memory/goals\\archive\\cycle2-2026-11-17\\cycle2-dependency-map.md",
+   "redirect_bytes": 2446,
+   "recoverable_bytes": 2446
+  },
+  {
+   "similarity": 1.0,
+   "keep": "memory/goals\\cycle2-kickoff-2026-11-16.md",
+   "keep_bytes": 4392,
+   "redirect": "memory/goals\\archive\\cycle2-2026-11-17\\cycle2-kickoff-2026-11-16.md",
+   "redirect_bytes": 4392,
+   "recoverable_bytes": 4392
+  },
+  {
+   "similarity": 1.0,
+   "keep": "memory/goals\\cycle2-proposals-raw-2026-11-16.txt",
+   "keep_bytes": 48773,
+   "redirect": "memory/goals\\archive\\cycle2-2026-11-17\\cycle2-proposals-raw-2026-11-16.txt",
+   "redirect_bytes": 48773,
+   "recoverable_bytes": 48773
+  },
+  {
+   "similarity": 1.0,
+   "keep": "memory/goals\\designer-goal2-ops-tiers.md",
+   "keep_bytes": 2643,
+   "redirect": "memory/goals\\archive\\cycle2-2026-11-17\\designer-goal2-ops-tiers.md",
+   "redirect_bytes": 2643,
+   "recoverable_bytes": 2643
+  },
+  {
+   "similarity": 1.0,
+   "keep": "memory/goals\\designer-goal7-forecast-2026-11-17.md",
+   "keep_bytes": 2877,
+   "redirect": "memory/goals\\archive\\cycle2-2026-11-17\\designer-goal7-forecast-2026-11-17.md",
+   "redirect_bytes": 2877,
+   "recoverable_bytes": 2877
+  },
+  {
+   "similarity": 1.0,
+   "keep": "memory/goals\\forecast-mechanic-g4.md",
+   "keep_bytes": 1463,
+   "redirect": "memory/goals\\archive\\cycle2-2026-11-17\\forecast-mechanic-g4.md",
+   "redirect_bytes": 1463,
+   "recoverable_bytes": 1463
+  },
+  {
+   "similarity": 1.0,
+   "keep": "memory/goals\\forecast-mechanic1-adaptive-probe-2026-11-17.md",
+   "keep_bytes": 2665,
+   "redirect": "memory/goals\\archive\\cycle2-2026-11-17\\forecast-mechanic1-adaptive-probe-2026-11-17.md",
+   "redirect_bytes": 2665,
+   "recoverable_bytes": 2665
+  },
+  {
+   "similarity": 1.0,
+   "keep": "memory/goals\\mechanic-goal4-forecast-2026-11-17.md",
+   "keep_bytes": 2576,
+   "redirect": "memory/goals\\archive\\cycle2-2026-11-17\\mechanic-goal4-forecast-2026-11-17.md",
+   "redirect_bytes": 2576,
+   "recoverable_bytes": 2576
+  },
+  {
+   "similarity": 1.0,
+   "keep": "memory/goals\\researcher-log-2026-11-13.md",
+   "keep_bytes": 6913,
+   "redirect": "memory/goals\\archive\\researcher-2026-11-13.md",
+   "redirect_bytes": 6913,
+   "recoverable_bytes": 6913
+  },
+  {
+   "similarity": 1.0,
+   "keep": "memory/goals\\researcher-log-2026-11-13.md",
+   "keep_bytes": 6913,
+   "redirect": "memory/goals\\archive\\researcher-log-2026-11-13.md",
+   "redirect_bytes": 6913,
+   "recoverable_bytes": 6913
+  },
+  {
+   "similarity": 1.0,
+   "keep": "memory/goals\\researcher-log-2026-11-13.md",
+   "keep_bytes": 6913,
+   "redirect": "memory/goals\\archive\\cycle2-2026-11-17\\researcher-log-2026-11-13.md",
+   "redirect_bytes": 6913,
+   "recoverable_bytes": 6913
+  },
+  {
+   "similarity": 1.0,
+   "keep": "memory/goals\\archive\\2026-11-13-agent-goals-SUPERSEDED-partial.md",
+   "keep_bytes": 11927,
+   "redirect": "memory/goals\\archive\\cycle2-2026-11-17\\2026-11-13-agent-goals.md",
+   "redirect_bytes": 11927,
+   "recoverable_bytes": 11927
+  },
+  {
+   "similarity": 1.0,
+   "keep": "memory/goals\\archive\\archivist-2026-11-16.md",
+   "keep_bytes": 5172,
+   "redirect": "memory/goals\\archive\\cycle2-2026-11-17\\archivist.md",
+   "redirect_bytes": 5172,
+   "recoverable_bytes": 5172
+  },
+  {
+   "similarity": 1.0,
+   "keep": "memory/goals\\archive\\archivist-2026-11-19.md",
+   "keep_bytes": 5370,
+   "redirect": "memory/goals\\archive\\archivist-2026-11-20.md",
+   "redirect_bytes": 5370,
+   "recoverable_bytes": 5370
+  },
+  {
+   "similarity": 1.0,
+   "keep": "memory/goals\\archive\\builder-2026-11-19.md",
+   "keep_bytes": 5202,
+   "redirect": "memory/goals\\archive\\builder-2026-11-20.md",
+   "redirect_bytes": 5202,
+   "recoverable_bytes": 5202
+  },
+  {
+   "similarity": 1.0,
+   "keep": "memory/goals\\archive\\designer-2026-11-16.md",
+   "keep_bytes": 5358,
+   "redirect": "memory/goals\\archive\\cycle2-2026-11-17\\designer.md",
+   "redirect_bytes": 5358,
+   "recoverable_bytes": 5358
+  },
+  {
+   "similarity": 1.0,
+   "keep": "memory/goals\\archive\\designer-2026-11-19.md",
+   "keep_bytes": 16489,
+   "redirect": "memory/goals\\archive\\designer-2026-11-20.md",
+   "redirect_bytes": 16489,
+   "recoverable_bytes": 16489
+  },
+  {
+   "similarity": 1.0,
+   "keep": "memory/goals\\archive\\mechanic-2026-11-19.md",
+   "keep_bytes": 6848,
+   "redirect": "memory/goals\\archive\\mechanic-2026-11-20.md",
+   "redirect_bytes": 6848,
+   "recoverable_bytes": 6848
+  },
+  {
+   "similarity": 1.0,
+   "keep": "memory/goals\\archive\\mechanic-2026-11-19.md",
+   "keep_bytes": 6848,
+   "redirect": "memory/goals\\archive\\mechanic-cycle5-closed-2026-11-19.md",
+   "redirect_bytes": 6848,
+   "recoverable_bytes": 6848
+  },
+  {
+   "similarity": 1.0,
+   "keep": "memory/goals\\archive\\mechanic-2026-11-20.md",
+   "keep_bytes": 6848,
+   "redirect": "memory/goals\\archive\\mechanic-cycle5-closed-2026-11-19.md",
+   "redirect_bytes": 6848,
+   "recoverable_bytes": 6848
+  },
+  {
+   "similarity": 1.0,
+   "keep": "memory/goals\\archive\\orchestrator-2026-11-19.md",
+   "keep_bytes": 15284,
+   "redirect": "memory/goals\\archive\\orchestrator-2026-11-20.md",
+   "redirect_bytes": 15284,
+   "recoverable_bytes": 15284
+  },
+  {
+   "similarity": 1.0,
+   "keep": "memory/goals\\archive\\researcher-2026-11-13.md",
+   "keep_bytes": 6913,
+   "redirect": "memory/goals\\archive\\researcher-log-2026-11-13.md",
+   "redirect_bytes": 6913,
+   "recoverable_bytes": 6913
+  },
+  {
+   "similarity": 1.0,
+   "keep": "memory/goals\\archive\\researcher-2026-11-13.md",
+   "keep_bytes": 6913,
+   "redirect": "memory/goals\\archive\\cycle2-2026-11-17\\researcher-log-2026-11-13.md",
+   "redirect_bytes": 6913,
+   "recoverable_bytes": 6913
+  },
+  {
+   "similarity": 1.0,
+   "keep": "memory/goals\\archive\\researcher-2026-11-19.md",
+   "keep_bytes": 9105,
+   "redirect": "memory/goals\\archive\\researcher-2026-11-20.md",
+   "redirect_bytes": 9105,
+   "recoverable_bytes": 9105
+  },
+  {
+   "similarity": 1.0,
+   "keep": "memory/goals\\archive\\researcher-log-2026-11-13.md",
+   "keep_bytes": 6913,
+   "redirect": "memory/goals\\archive\\cycle2-2026-11-17\\researcher-log-2026-11-13.md",
+   "redirect_bytes": 6913,
+   "recoverable_bytes": 6913
+  },
+  {
+   "similarity": 1.0,
+   "keep": "memory/goals\\archive\\scribe-2026-11-19.md",
+   "keep_bytes": 5221,
+   "redirect": "memory/goals\\archive\\scribe-2026-11-20.md",
+   "redirect_bytes": 5221,
+   "recoverable_bytes": 5221
+  },
+  {
+   "similarity": 1.0,
+   "keep": "memory/goals\\archive\\scribe-2026-11-20-cycle7.md",
+   "keep_bytes": 7394,
+   "redirect": "memory/goals\\archive\\scribe-2026-11-20b.md",
+   "redirect_bytes": 7394,
+   "recoverable_bytes": 7394
+  },
+  {
+   "similarity": 1.0,
+   "keep": "memory/goals\\archive\\verifier-2026-11-19.md",
+   "keep_bytes": 6603,
+   "redirect": "memory/goals\\archive\\verifier-2026-11-20.md",
+   "redirect_bytes": 6603,
+   "recoverable_bytes": 6603
+  },
+  {
+   "similarity": 0.994,
+   "keep": "memory/synthesis\\2026-11-18-r1-round-record-DRAFT.md",
+   "keep_bytes": 8947,
+   "redirect": "memory/synthesis\\2026-11-18-r2-round-record-DRAFT.md",
+   "redirect_bytes": 8947,
+   "recoverable_bytes": 8947
+  },
+  {
+   "similarity": 0.994,
+   "keep": "memory/synthesis\\2026-11-18-r1-round-record-DRAFT.md",
+   "keep_bytes": 8947,
+   "redirect": "memory/synthesis\\2026-11-18-r3-round-record-DRAFT.md",
+   "redirect_bytes": 8947,
+   "recoverable_bytes": 8947
+  },
+  {
+   "similarity": 0.994,
+   "keep": "memory/synthesis\\2026-11-18-r2-round-record-DRAFT.md",
+   "keep_bytes": 8947,
+   "redirect": "memory/synthesis\\2026-11-18-r3-round-record-DRAFT.md",
+   "redirect_bytes": 8947,
+   "recoverable_bytes": 8947
+  },
+  {
+   "similarity": 0.983,
+   "keep": "memory/synthesis\\2026-11-17-r1-round-record-DRAFT.md",
+   "keep_bytes": 9133,
+   "redirect": "memory/synthesis\\2026-11-17-r2-round-record-DRAFT.md",
+   "redirect_bytes": 9043,
+   "recoverable_bytes": 9043
+  },
+  {
+   "similarity": 0.979,
+   "keep": "memory/synthesis\\2026-11-16-r1-round-record.md",
+   "keep_bytes": 9904,
+   "redirect": "memory/synthesis\\2026-11-16-r1-round-record-DRAFT.md",
+   "redirect_bytes": 9850,
+   "recoverable_bytes": 9850
+  },
+  {
+   "similarity": 0.87,
+   "keep": "memory/synthesis\\2026-11-17-r2-round-record-DRAFT.md",
+   "keep_bytes": 9043,
+   "redirect": "memory/synthesis\\2026-11-18-r2-round-record-DRAFT.md",
+   "redirect_bytes": 8947,
+   "recoverable_bytes": 8947
+  },
+  {
+   "similarity": 0.869,
+   "keep": "memory/synthesis\\2026-11-17-r2-round-record-DRAFT.md",
+   "keep_bytes": 9043,
+   "redirect": "memory/synthesis\\2026-11-18-r1-round-record-DRAFT.md",
+   "redirect_bytes": 8947,
+   "recoverable_bytes": 8947
+  },
+  {
+   "similarity": 0.869,
+   "keep": "memory/synthesis\\2026-11-17-r2-round-record-DRAFT.md",
+   "keep_bytes": 9043,
+   "redirect": "memory/synthesis\\2026-11-18-r3-round-record-DRAFT.md",
+   "redirect_bytes": 8947,
+   "recoverable_bytes": 8947
+  },
+  {
+   "similarity": 0.868,
+   "keep": "memory/synthesis\\2026-11-17-r1-round-record-DRAFT.md",
+   "keep_bytes": 9133,
+   "redirect": "memory/synthesis\\2026-11-18-r1-round-record-DRAFT.md",
+   "redirect_bytes": 8947,
+   "recoverable_bytes": 8947
+  },
+  {
+   "similarity": 0.867,
+   "keep": "memory/synthesis\\2026-11-17-r1-round-record-DRAFT.md",
+   "keep_bytes": 9133,
+   "redirect": "memory/synthesis\\2026-11-18-r2-round-record-DRAFT.md",
+   "redirect_bytes": 8947,
+   "recoverable_bytes": 8947
+  },
+  {
+   "similarity": 0.867,
+   "keep": "memory/synthesis\\2026-11-17-r1-round-record-DRAFT.md",
+   "keep_bytes": 9133,
+   "redirect": "memory/synthesis\\2026-11-18-r3-round-record-DRAFT.md",
+   "redirect_bytes": 8947,
+   "recoverable_bytes": 8947
+  }
+ ],
+ "total_recoverable_bytes": 361309
+}

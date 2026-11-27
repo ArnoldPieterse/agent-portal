@@ -50,12 +50,12 @@
   "daily": null,
   "env": null,
   "next_run": 1795758384.6697907,
-  "last_run": null,
-  "last_rc": null,
-  "last_err": "",
+  "last_run": 1795754799.7083633,
+  "last_rc": 1,
+  "last_err": "t/size_guard.py\r\nrun_steps [4/6]: memory/archivist/snapshot.py --diff\r\nrun_steps [5/6]: memory/builder/state_snapshot.py\r\nrun_steps [6/6]: daily_git_commit.py",
   "runs": 1,
   "paused": false,
-  "running": true
+  "running": false
  },
  "stealth_workflows": {
   "name": "stealth_workflows",
