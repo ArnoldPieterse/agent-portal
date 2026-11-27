@@ -424,3 +424,5 @@
 {"ts": "2026-11-27T12:05:38", "ref": ["memory/goals/archive/researcher-2026-11-18.md", 13], "focus_sig": "121bc190", "reason": "lod-evict"}
 {"ts": "2026-11-27T12:05:38", "ref": ["memory/goals/archive/mechanic-2026-11-23-cycle8.md", 11], "focus_sig": "121bc190", "reason": "lod-evict"}
 {"ts": "2026-11-27T12:05:38", "ref": ["memory/scribe/MEMORY.md", 12], "focus_sig": "121bc190", "reason": "lod-evict"}
+{"ts": "2026-11-27T12:15:49", "ref": ["memory/synthesis/cycle-narrative.md", 12], "focus_sig": "0a0ac051", "reason": "lod-evict"}
+{"ts": "2026-11-27T12:15:49", "ref": ["memory/researcher/open-questions-log.md", 131], "focus_sig": "0a0ac051", "reason": "lod-evict"}

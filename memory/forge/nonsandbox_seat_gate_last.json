@@ -1,5 +1,5 @@
 {
-  "ts": "2026-11-27T11:23:34",
+  "ts": "2026-11-27T12:20:54",
   "seat": "?",
   "verdict": "INELIGIBLE",
   "missing_required": [
@@ -27,7 +27,7 @@
       "detail": "exit 5"
     }
   },
-  "elapsed_s": 4.64,
+  "elapsed_s": 4.24,
   "unblock_command": "python memory\\pixel\\cdp_375_dom_check.py",
   "cdp_script_present": true
 }

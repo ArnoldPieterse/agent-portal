@@ -4163,3 +4163,10 @@
 {"t": "2026-11-27 12:04:14", "job": "cycle_10m", "event": "done", "rc": 0}
 {"t": "2026-11-27 12:09:04", "job": "cycle_5m", "event": "start", "pid": 24272}
 {"t": "2026-11-27 12:09:09", "job": "cycle_5m", "event": "done", "rc": 0}
+{"t": "2026-11-27 12:14:04", "job": "cycle_5m", "event": "start", "pid": 7832}
+{"t": "2026-11-27 12:14:04", "job": "cycle_10m", "event": "start", "pid": 25868}
+{"t": "2026-11-27 12:14:09", "job": "cycle_5m", "event": "done", "rc": 0}
+{"t": "2026-11-27 12:14:19", "job": "cycle_10m", "event": "done", "rc": 0}
+{"t": "2026-11-27 12:19:04", "job": "cycle_5m", "event": "start", "pid": 22592}
+{"t": "2026-11-27 12:19:09", "job": "cycle_5m", "event": "done", "rc": 0}
+{"t": "2026-11-27 12:19:14", "job": "cycle_30m", "event": "done", "rc": 124}
