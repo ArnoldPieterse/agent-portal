@@ -4176,3 +4176,10 @@
 {"t": "2026-11-27 12:24:14", "job": "cycle_10m", "event": "done", "rc": 0}
 {"t": "2026-11-27 12:29:04", "job": "cycle_5m", "event": "start", "pid": 11984}
 {"t": "2026-11-27 12:29:09", "job": "cycle_5m", "event": "done", "rc": 0}
+{"t": "2026-11-27 12:33:59", "job": "stealth_workflows", "event": "start", "pid": 18116}
+{"t": "2026-11-27 12:34:04", "job": "cycle_5m", "event": "start", "pid": 15104}
+{"t": "2026-11-27 12:34:04", "job": "cycle_10m", "event": "start", "pid": 6064}
+{"t": "2026-11-27 12:34:04", "job": "cycle_30m", "event": "start", "pid": 24804}
+{"t": "2026-11-27 12:34:04", "job": "cycle_1h", "event": "start", "pid": 25196}
+{"t": "2026-11-27 12:34:04", "job": "stealth_workflows", "event": "done", "rc": 0}
+{"t": "2026-11-27 12:34:09", "job": "cycle_5m", "event": "done", "rc": 0}

@@ -1,6 +1,6 @@
 # Decay report 2026-11-27
 
-Leaves: 11921 | flagged (<0.35): 0
+Leaves: 11972 | flagged (<0.35): 0
 
 | leaf | age_d | inrefs | indexed | score |
 |---|---|---|---|---|
@@ -10312,6 +10312,7 @@ Leaves: 11921 | flagged (<0.35): 0
 | memory/ops/merge-queue/memory_mirror.py.44931dd1e5 | 2 | 0 | n | 0.539 |
 | memory/ops/merge-queue/memory_mirror.py.56e34017e3 | 2 | 0 | n | 0.539 |
 | memory/ops/merge-queue/memory_mirror.py.75be858c9c | 2 | 0 | n | 0.539 |
+| memory/ops/merge-queue/memory_mirror.py.9fb2bce726 | 2 | 0 | n | 0.539 |
 | memory/ops/merge-queue/memory_mirror.py.f5216f8a2a | 2 | 0 | n | 0.539 |
 | memory/ops/merge-queue/memory_mirror.py.f87fd7c362 | 2 | 0 | n | 0.539 |
 | memory/ops/merge-queue/pale_dl.py.a25985a890 | 2 | 0 | n | 0.539 |
@@ -10861,7 +10862,6 @@ Leaves: 11921 | flagged (<0.35): 0
 | memory/mechanic/stealth/runs/lead_enrichment_20261126_050430.json | 1 | 0 | n | 0.544 |
 | memory/mechanic/stealth/runs/lead_enrichment_20261126_110434.json | 1 | 0 | n | 0.544 |
 | memory/mechanic/__pycache__/winrm_pool.cpython-315.pyc | 1 | 0 | n | 0.544 |
-| memory/mind-lab/world.json | 1 | 0 | n | 0.544 |
 | memory/ops/autonomy-score-history.jsonl | 1 | 0 | n | 0.544 |
 | memory/ops/boot-review-2026-11-26.md | 1 | 0 | n | 0.544 |
 | memory/ops/builder-prompt-audit-2026-11-26.md | 1 | 0 | n | 0.544 |
@@ -11026,6 +11026,9 @@ Leaves: 11921 | flagged (<0.35): 0
 | memory/builder/evidence-ledger-regen-mechanic-closeout-2026-11-27.md | 0 | 0 | n | 0.550 |
 | memory/builder/evidence-outlet-ship-pipeline-assist-2026-11-27.md | 0 | 0 | n | 0.550 |
 | memory/builder/evidence-prune-memory-tree-2026-11-27.md | 0 | 0 | n | 0.550 |
+| memory/builder/evidence-sim-v2-upgrade-2026-11-27.md | 0 | 0 | n | 0.550 |
+| memory/builder/sim-memory-improvement-2026-11-27.md | 0 | 0 | n | 0.550 |
+| memory/builder/sim.jsonl | 0 | 0 | n | 0.550 |
 | memory/builder/__pycache__/convergence_api.cpython-313.pyc | 0 | 0 | n | 0.550 |
 | memory/forge/convergence-drill.jsonl | 0 | 0 | n | 0.550 |
 | memory/forge/convergence-e2e-drill-report.md | 0 | 0 | n | 0.550 |
@@ -11034,10 +11037,12 @@ Leaves: 11921 | flagged (<0.35): 0
 | memory/forge/evidence-convergence-e2e-drill-2026-11-27.md | 0 | 0 | n | 0.550 |
 | memory/forge/evidence-nonsandbox-seat-gate-2026-11-27.md | 0 | 0 | n | 0.550 |
 | memory/forge/evidence-nonsandbox-unlock-batch-2026-11-27.md | 0 | 0 | n | 0.550 |
+| memory/forge/evidence-smoke-circuit-breaker-2026-11-27.md | 0 | 0 | n | 0.550 |
 | memory/forge/evidence-verify-token-wired-081-27.md | 0 | 0 | n | 0.550 |
 | memory/forge/nonsandbox_seat_gate_last.json | 0 | 0 | n | 0.550 |
 | memory/forge/__pycache__/canary_gate_token.cpython-313.pyc | 0 | 0 | n | 0.550 |
 | memory/forge/__pycache__/convergence_e2e_drill.cpython-313.pyc | 0 | 0 | n | 0.550 |
+| memory/forge/__pycache__/smoke_suite.cpython-313.pyc | 0 | 0 | n | 0.550 |
 | memory/goals/calibration.json | 0 | 0 | n | 0.550 |
 | memory/goals/cycle-proposal.md | 0 | 0 | n | 0.550 |
 | memory/goals/forecast-archivist-autonomy-progression-2026-11-27.md | 0 | 0 | n | 0.550 |
@@ -11058,6 +11063,7 @@ Leaves: 11921 | flagged (<0.35): 0
 | memory/goals/history/forecast-20261127-081949.json | 0 | 0 | n | 0.550 |
 | memory/goals/history/forecast-20261127-092935.json | 0 | 0 | n | 0.550 |
 | memory/goals/history/forecast-20261127-103934.json | 0 | 0 | n | 0.550 |
+| memory/goals/history/forecast-20261127-114703.json | 0 | 0 | n | 0.550 |
 | memory/mechanic/auto-loop-pass-2026-11-27.md | 0 | 0 | n | 0.550 |
 | memory/mechanic/auto-loop-pass-2026-11-27b.md | 0 | 0 | n | 0.550 |
 | memory/mechanic/auto-loop-pass-2026-11-27c.md | 0 | 0 | n | 0.550 |
@@ -11066,6 +11072,8 @@ Leaves: 11921 | flagged (<0.35): 0
 | memory/mechanic/evidence-oom-recovery-2026-11-27.md | 0 | 0 | n | 0.550 |
 | memory/mechanic/evidence-prestage-audit-assist-2026-11-27.md | 0 | 0 | n | 0.550 |
 | memory/mechanic/evidence-prestage-remediation-script-2026-11-27.md | 0 | 0 | n | 0.550 |
+| memory/mechanic/evidence-sim-memory-system-2026-11-27.md | 0 | 0 | n | 0.550 |
+| memory/mechanic/evidence-sim-upgrade-arxiv-2611.18856-2026-11-27.md | 0 | 0 | n | 0.550 |
 | memory/mechanic/evidence-verify-g1-e2e-trigger-081-27.md | 0 | 0 | n | 0.550 |
 | memory/mechanic/fleet-heartbeat-refresh-2026-11-27.md | 0 | 0 | n | 0.550 |
 | memory/mechanic/fleet-heartbeat-reremediation-2026-11-27.md | 0 | 0 | n | 0.550 |
@@ -11073,19 +11081,28 @@ Leaves: 11921 | flagged (<0.35): 0
 | memory/mechanic/model_prestage_audit.py | 0 | 0 | n | 0.550 |
 | memory/mechanic/prestage-audit-report.json | 0 | 0 | n | 0.550 |
 | memory/mechanic/prestage-audit-report.md | 0 | 0 | n | 0.550 |
+| memory/mechanic/sim.md | 0 | 0 | n | 0.550 |
+| memory/mechanic/sim_update.py | 0 | 0 | n | 0.550 |
 | memory/mechanic/winrm_rotate_log.jsonl | 0 | 0 | n | 0.550 |
 | memory/mechanic/stealth/output/enriched_leads_20261126_170437.csv | 0 | 0 | n | 0.550 |
 | memory/mechanic/stealth/output/enriched_leads_20261126_203357.csv | 0 | 0 | n | 0.550 |
+| memory/mechanic/stealth/output/enriched_leads_20261127_023400.csv | 0 | 0 | n | 0.550 |
 | memory/mechanic/stealth/output/invoice_summary_20261126_170437.json | 0 | 0 | n | 0.550 |
 | memory/mechanic/stealth/output/invoice_summary_20261126_203357.json | 0 | 0 | n | 0.550 |
+| memory/mechanic/stealth/output/invoice_summary_20261127_023400.json | 0 | 0 | n | 0.550 |
 | memory/mechanic/stealth/output/variants_20261126_170437.json | 0 | 0 | n | 0.550 |
 | memory/mechanic/stealth/output/variants_20261126_203357.json | 0 | 0 | n | 0.550 |
+| memory/mechanic/stealth/output/variants_20261127_023400.json | 0 | 0 | n | 0.550 |
 | memory/mechanic/stealth/runs/content_repurpose_20261126_170437.json | 0 | 0 | n | 0.550 |
 | memory/mechanic/stealth/runs/content_repurpose_20261126_203357.json | 0 | 0 | n | 0.550 |
+| memory/mechanic/stealth/runs/content_repurpose_20261127_023400.json | 0 | 0 | n | 0.550 |
 | memory/mechanic/stealth/runs/invoice_tracker_20261126_170437.json | 0 | 0 | n | 0.550 |
 | memory/mechanic/stealth/runs/invoice_tracker_20261126_203357.json | 0 | 0 | n | 0.550 |
+| memory/mechanic/stealth/runs/invoice_tracker_20261127_023400.json | 0 | 0 | n | 0.550 |
 | memory/mechanic/stealth/runs/lead_enrichment_20261126_170437.json | 0 | 0 | n | 0.550 |
 | memory/mechanic/stealth/runs/lead_enrichment_20261126_203357.json | 0 | 0 | n | 0.550 |
+| memory/mechanic/stealth/runs/lead_enrichment_20261127_023400.json | 0 | 0 | n | 0.550 |
+| memory/mind-lab/world.json | 0 | 0 | n | 0.550 |
 | memory/ops/auto-trigger-regression-battery-spec-2026-11-27.md | 0 | 0 | n | 0.550 |
 | memory/ops/autoloop.json | 0 | 0 | n | 0.550 |
 | memory/ops/autoloop.jsonl | 0 | 0 | n | 0.550 |
@@ -11119,6 +11136,8 @@ Leaves: 11921 | flagged (<0.35): 0
 | memory/ops/scheduler-state.json | 0 | 0 | n | 0.550 |
 | memory/ops/schtask-snapshot-2026-11-27-input.csv | 0 | 0 | n | 0.550 |
 | memory/ops/schtask-snapshot-2026-11-27.json | 0 | 0 | n | 0.550 |
+| memory/ops/sim_entries.json | 0 | 0 | n | 0.550 |
+| memory/ops/sim_memory.py | 0 | 0 | n | 0.550 |
 | memory/ops/size_guard_drift_fix.md | 0 | 0 | n | 0.550 |
 | memory/ops/ssot-convergence-gate-report.json | 0 | 0 | n | 0.550 |
 | memory/ops/ssot-convergence-gate.md | 0 | 0 | n | 0.550 |
@@ -11128,9 +11147,14 @@ Leaves: 11921 | flagged (<0.35): 0
 | memory/ops/merge-queue/agent_portal.py.1fe204b5e6 | 0 | 0 | n | 0.550 |
 | memory/ops/merge-queue/agent_portal.py.2593e953e6 | 0 | 0 | n | 0.550 |
 | memory/ops/merge-queue/agent_portal.py.9918402bb0 | 0 | 0 | n | 0.550 |
+| memory/ops/merge-queue/agent_portal.py.ef93d2e1b6 | 0 | 0 | n | 0.550 |
+| memory/ops/merge-queue/memory_mirror.py.f752ee4941 | 0 | 0 | n | 0.550 |
 | memory/ops/__pycache__/nonsandbox_unblock_batch.cpython-313.pyc | 0 | 0 | n | 0.550 |
+| memory/ops/__pycache__/sim_memory.cpython-313.pyc | 0 | 0 | n | 0.550 |
 | memory/orchestrator/assist-verifier-goal1-auto-trigger-2026-11-27.md | 0 | 0 | n | 0.550 |
 | memory/orchestrator/assist-verifier-goal2-chaos-recovery-drill-2026-11-27.md | 0 | 0 | n | 0.550 |
+| memory/orchestrator/evidence-sim-memory-v2-4way-decision-2026-11-27.md | 0 | 0 | n | 0.550 |
+| memory/orchestrator/evidence-sim-ops-memory-2026-11-27.md | 0 | 0 | n | 0.550 |
 | memory/orchestrator/liveleg-queue-refresh-2026-11-27.md | 0 | 0 | n | 0.550 |
 | memory/orchestrator/memory-tree-trim-2026-11-27.md | 0 | 0 | n | 0.550 |
 | memory/orchestrator/post-mirror-goal-repair-2026-11-27.md | 0 | 0 | n | 0.550 |
@@ -11138,6 +11162,7 @@ Leaves: 11921 | flagged (<0.35): 0
 | memory/pixel/cdp_probe_bounded.py | 0 | 0 | n | 0.550 |
 | memory/pixel/conv-shot.html | 0 | 0 | n | 0.550 |
 | memory/pixel/evidence-convergence-velocity-assist-2026-11-27.md | 0 | 0 | n | 0.550 |
+| memory/pixel/evidence-nonsandbox-closure-runbook-2026-11-27.md | 0 | 0 | n | 0.550 |
 | memory/pixel/prepin_asset_gate.py | 0 | 0 | n | 0.550 |
 | memory/pixel/_dom_smoke.html | 0 | 0 | n | 0.550 |
 | memory/pixel/_edge_log.txt | 0 | 0 | n | 0.550 |
@@ -11145,6 +11170,7 @@ Leaves: 11921 | flagged (<0.35): 0
 | memory/pixel/_smoke.html | 0 | 0 | n | 0.550 |
 | memory/pixel/_term_marker.txt | 0 | 0 | n | 0.550 |
 | memory/pixel/__pycache__/cdp_375_dom_check.cpython-313.pyc | 0 | 0 | n | 0.550 |
+| memory/pixel/__pycache__/nonsandbox_closure_runbook.cpython-313.pyc | 0 | 0 | n | 0.550 |
 | memory/portal/context_bundle.py | 0 | 0 | n | 0.550 |
 | memory/portal/memfocus-parked.jsonl | 0 | 0 | n | 0.550 |
 | memory/portal/memfocus-state.json | 0 | 0 | n | 0.550 |
@@ -11158,6 +11184,8 @@ Leaves: 11921 | flagged (<0.35): 0
 | memory/scribe/convergence-contract.jsonl | 0 | 0 | n | 0.550 |
 | memory/scribe/convergence-status-2026-11-27.md | 0 | 0 | n | 0.550 |
 | memory/scribe/evidence-convergence-i3-fix-2026-11-27.md | 0 | 0 | n | 0.550 |
+| memory/scribe/evidence-sim-adoption-2026-11-27.md | 0 | 0 | n | 0.550 |
+| memory/scribe/evidence-sim-v2-automation-2026-11-27.md | 0 | 0 | n | 0.550 |
 | memory/scribe/evidence-verifier-g1-deploy-2026-11-27.md | 0 | 0 | n | 0.550 |
 | memory/scribe/ledger-regen-discrepancy-flag-2026-11-27.md | 0 | 0 | n | 0.550 |
 | memory/verifier/auto_trigger_log.jsonl | 0 | 0 | n | 0.550 |
@@ -11236,9 +11264,23 @@ Leaves: 11921 | flagged (<0.35): 0
 | memory/verifier/tests/test_verifier_g3_evidence_freshness_sla.py | 0 | 0 | n | 0.550 |
 | memory/verifier/__pycache__/chaos_recovery_drill.cpython-313.pyc | 0 | 0 | n | 0.550 |
 | memory/verifier/__pycache__/deploy_commit_trigger.cpython-313.pyc | 0 | 0 | n | 0.550 |
+| memory/world/annotations.jsonl | 0 | 0 | n | 0.550 |
 | memory/world/config.json | 0 | 0 | n | 0.550 |
+| memory/world/events.jsonl | 0 | 0 | n | 0.550 |
+| memory/world/event_parse.py | 0 | 0 | n | 0.550 |
 | memory/world/gev-tools-cache.json | 0 | 0 | n | 0.550 |
 | memory/world/gev_snapshot.py | 0 | 0 | n | 0.550 |
+| memory/world/host-risk.json | 0 | 0 | n | 0.550 |
+| memory/world/key-strategy.md | 0 | 0 | n | 0.550 |
+| memory/world/planet-acked.json | 0 | 0 | n | 0.550 |
+| memory/world/snapshots.jsonl | 0 | 0 | n | 0.550 |
+| memory/world/scenes/e2e-quake-check-v2.json | 0 | 0 | n | 0.550 |
+| memory/world/scenes/e2e-quake-check.json | 0 | 0 | n | 0.550 |
+| memory/world/scenes/README.md | 0 | 0 | n | 0.550 |
+| memory/world/__pycache__/event_parse.cpython-313.pyc | 0 | 0 | n | 0.550 |
+| memory/world/__pycache__/event_parse.cpython-315.pyc | 0 | 0 | n | 0.550 |
+| memory/world/__pycache__/gev_snapshot.cpython-313.pyc | 0 | 0 | n | 0.550 |
+| memory/world/__pycache__/gev_snapshot.cpython-315.pyc | 0 | 0 | n | 0.550 |
 | memory/designer/ops-panel-hierarchy-evidence-2026-11-15b.md | 12 | 1 | n | 0.553 |
 | memory/designer/designer-goal-proposals-2026-11-16.md | 11 | 1 | n | 0.558 |
 | memory/mechanic/boot_recovery_test.py | 10 | 1 | n | 0.564 |
@@ -11491,7 +11533,6 @@ Leaves: 11921 | flagged (<0.35): 0
 | memory/dna/builds/b06-world-page.py | 2 | 1 | Y | 0.758 |
 | memory/forge/gate_health.py | 2 | 1 | Y | 0.758 |
 | memory/forge/gate_metrics.py | 2 | 1 | Y | 0.758 |
-| memory/forge/smoke_suite.py | 2 | 1 | Y | 0.758 |
 | memory/forge/test-topology.json | 2 | 1 | Y | 0.758 |
 | memory/goals/researcher-g1-convergence-forecast-2026-11-25.md | 2 | 1 | Y | 0.758 |
 | memory/ops/convergence-section-layout-spec.md | 2 | 1 | Y | 0.758 |
@@ -11611,10 +11652,13 @@ Leaves: 11921 | flagged (<0.35): 0
 | memory/forge/evidence-chaos-drill-assist-2026-11-27.md | 0 | 1 | Y | 0.769 |
 | memory/forge/log.md | 0 | 1 | Y | 0.769 |
 | memory/forge/nonsandbox_seat_gate.py | 0 | 1 | Y | 0.769 |
+| memory/forge/smoke_suite.py | 0 | 1 | Y | 0.769 |
 | memory/forge/ssot_convergence_gate.py | 0 | 1 | Y | 0.769 |
 | memory/goals/pixel.md | 0 | 1 | Y | 0.769 |
 | memory/mechanic/reboot-recovery.jsonl | 0 | 1 | Y | 0.769 |
+| memory/ops/gev-security-posture.md | 0 | 1 | Y | 0.769 |
 | memory/ops/prune_memory_tree.py | 0 | 1 | Y | 0.769 |
+| memory/ops/smoke-circuit-breaker.md | 0 | 1 | Y | 0.769 |
 | memory/outlet/ship_post.py | 0 | 1 | Y | 0.769 |
 | memory/pixel/cdp_375_dom_check.py | 0 | 1 | Y | 0.769 |
 | memory/pixel/evidence-cdp-artifact-fix-2026-11-27.md | 0 | 1 | Y | 0.769 |
@@ -11623,12 +11667,18 @@ Leaves: 11921 | flagged (<0.35): 0
 | memory/pixel/evidence-convergence-score-timeline-2026-11-27.md | 0 | 1 | Y | 0.769 |
 | memory/pixel/evidence-cycle-delta-strip-2026-11-27.md | 0 | 1 | Y | 0.769 |
 | memory/pixel/evidence-debug-purge-asset-gate-2026-11-27.md | 0 | 1 | Y | 0.769 |
+| memory/pixel/evidence-lane-file-truncation-audit-2026-11-27.md | 0 | 1 | Y | 0.769 |
 | memory/pixel/evidence-regression-banner-assist-2026-11-27.md | 0 | 1 | Y | 0.769 |
 | memory/pixel/evidence-selftest-goal6-support-2026-11-27.md | 0 | 1 | Y | 0.769 |
 | memory/pixel/log.md | 0 | 1 | Y | 0.769 |
+| memory/pixel/nonsandbox_closure_runbook.py | 0 | 1 | Y | 0.769 |
 | memory/pixel/ui-assist-convergence-velocity.js | 0 | 1 | Y | 0.769 |
+| memory/portal/context_bundle.md | 0 | 1 | Y | 0.769 |
 | memory/scribe/evidence-assist-verifier-g7-coverage-081-27.md | 0 | 1 | Y | 0.769 |
+| memory/scribe/sim.md | 0 | 1 | Y | 0.769 |
+| memory/scribe/sim_update.py | 0 | 1 | Y | 0.769 |
 | memory/verifier/acceptance_test_generator.py | 0 | 1 | Y | 0.769 |
+| memory/verifier/gev-evidence-convention.md | 0 | 1 | Y | 0.769 |
 | memory/verifier/multi_file_regression_trigger.py | 0 | 1 | Y | 0.769 |
 | memory/verifier/verification_coverage_map.json | 0 | 1 | Y | 0.769 |
 | memory/orchestrator/assist-mechanic-g1-winrm-forecast-2026-11-20.md | 7 | 2 | Y | 0.771 |
@@ -11831,6 +11881,7 @@ Leaves: 11921 | flagged (<0.35): 0
 | memory/builder/component_refactor_regression_2026-11-20.md | 6 | 3 | Y | 0.805 |
 | memory/ops/autoloop.md | 10 | 4 | Y | 0.805 |
 | memory/researcher/scribe-goal10-stale-citation-close-2026-11-20.md | 6 | 3 | Y | 0.805 |
+| memory/builder/sim_log.py | 0 | 2 | Y | 0.810 |
 | memory/forge/canary_deploy.py | 0 | 2 | Y | 0.810 |
 | memory/forge/live_leg_readiness_2026-11-27.md | 0 | 2 | Y | 0.810 |
 | memory/ops/nonsandbox_unblock_batch.py | 0 | 2 | Y | 0.810 |

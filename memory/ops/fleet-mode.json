@@ -1,12 +1,12 @@
 {
   "mode": "WORK",
-  "timestamp": "2026-11-27T02:24:13.926645+00:00",
+  "timestamp": "2026-11-27T02:34:13.345771+00:00",
   "goal_pct": 91.4,
   "goals_total": 81,
   "goals_reached": 74,
   "goals_open": 7,
   "elapsed_since_activity_h": 0.0,
-  "activity_source": "memory/ops/scheduler-log.jsonl",
+  "activity_source": "memory/ops/fleet-snapshots.jsonl",
   "threshold_idle_h": 6.0,
   "fsm_state": "CONVERGING",
   "fsm_validated": true
