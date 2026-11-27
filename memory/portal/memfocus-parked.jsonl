@@ -440,3 +440,6 @@
 {"ts": "2026-11-27T12:48:55", "ref": ["memory/workspace/INDEX.md", 3], "focus_sig": "5242ac6f", "reason": "lod-evict"}
 {"ts": "2026-11-27T12:48:55", "ref": ["memory/scribe/MEMORY.md", 12], "focus_sig": "5242ac6f", "reason": "lod-evict"}
 {"ts": "2026-11-27T12:57:07", "ref": ["memory/ops/fleet-summary-2026-11-23.md", 19], "focus_sig": "51640ef4", "reason": "lod-evict"}
+{"ts": "2026-11-27T13:06:42", "ref": ["memory/synthesis/cycle-narrative.md", 12], "focus_sig": "028160af", "reason": "lod-evict"}
+{"ts": "2026-11-27T13:06:42", "ref": ["memory/workspace/INDEX.md", 68], "focus_sig": "028160af", "reason": "lod-evict"}
+{"ts": "2026-11-27T13:06:42", "ref": ["memory/synthesis/hotfile-archive-20261125.md", 38], "focus_sig": "028160af", "reason": "lod-evict"}

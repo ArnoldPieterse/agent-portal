@@ -1,95 +1,25 @@
 {
-  "generated": "2026-11-27T00:26:12.170167+00:00",
+  "generated": "2026-11-27T03:10:53.571323+00:00",
   "version": 2,
-  "total_tracked": 1134,
-  "production_operational_total": 1001,
+  "total_tracked": 1145,
+  "production_operational_total": 1012,
   "stats_all": {
-    "verified": 1083,
-    "unverified": 34,
+    "verified": 1104,
+    "unverified": 24,
     "stale_verified": 17
   },
   "stats_production_operational": {
-    "verified": 982,
-    "unverified": 11,
+    "verified": 1003,
+    "unverified": 1,
     "stale_verified": 8
   },
-  "verified_pct_all": 95.5,
-  "verified_pct_production": 98.1,
+  "verified_pct_all": 96.4,
+  "verified_pct_production": 99.1,
   "target_pct": 90,
   "gap_to_target_production": 0,
   "stale_threshold_hours": 48,
-  "actionable_gap_count": 11,
+  "actionable_gap_count": 1,
   "gap_list": [
-    {
-      "file": "ui/assets/js/GLTFLoader.js",
-      "status": "unverified",
-      "scope": "production",
-      "evidence_count": 0,
-      "gap_action": "Add to regression battery or write evidence leaf referencing GLTFLoader.js"
-    },
-    {
-      "file": "ui/pages/activity.html",
-      "status": "unverified",
-      "scope": "production",
-      "evidence_count": 0,
-      "gap_action": "Add to regression battery or write evidence leaf referencing activity.html"
-    },
-    {
-      "file": "ui/pages/files.html",
-      "status": "unverified",
-      "scope": "production",
-      "evidence_count": 0,
-      "gap_action": "Add to regression battery or write evidence leaf referencing files.html"
-    },
-    {
-      "file": "ui/pages/fleet.html",
-      "status": "unverified",
-      "scope": "production",
-      "evidence_count": 0,
-      "gap_action": "Add to regression battery or write evidence leaf referencing fleet.html"
-    },
-    {
-      "file": "ui/pages/goals.html",
-      "status": "unverified",
-      "scope": "production",
-      "evidence_count": 0,
-      "gap_action": "Add to regression battery or write evidence leaf referencing goals.html"
-    },
-    {
-      "file": "ui/pages/mind-room.js",
-      "status": "unverified",
-      "scope": "production",
-      "evidence_count": 0,
-      "gap_action": "Add to regression battery or write evidence leaf referencing mind-room.js"
-    },
-    {
-      "file": "ui/pages/mind.html",
-      "status": "unverified",
-      "scope": "production",
-      "evidence_count": 0,
-      "gap_action": "Add to regression battery or write evidence leaf referencing mind.html"
-    },
-    {
-      "file": "ui/pages/ops.html",
-      "status": "unverified",
-      "scope": "production",
-      "evidence_count": 0,
-      "gap_action": "Add to regression battery or write evidence leaf referencing ops.html"
-    },
-    {
-      "file": "ui/pages/voxel-ui.js",
-      "status": "unverified",
-      "scope": "production",
-      "evidence_count": 0,
-      "gap_action": "Add to regression battery or write evidence leaf referencing voxel-ui.js"
-    },
-    {
-      "file": "ui/tools/mindroom_models.py",
-      "status": "unverified",
-      "scope": "production",
-      "evidence_count": 0,
-      "gap_action": "Add to regression battery or write evidence leaf referencing mindroom_models.py"
-    },
     {
       "file": "ui/tools/seed_voxels.py",
       "status": "unverified",
@@ -180,7 +110,7 @@
       "file": "agent_portal.py",
       "status": "verified",
       "scope": "production",
-      "evidence_count": 1050,
+      "evidence_count": 931,
       "gap_action": null
     },
     {
@@ -243,7 +173,7 @@
       "file": "elev.py",
       "status": "verified",
       "scope": "other",
-      "evidence_count": 396,
+      "evidence_count": 402,
       "gap_action": null
     },
     {
@@ -548,6 +478,13 @@
       "gap_action": null
     },
     {
+      "file": "memory/archivist/gev_bridge.py",
+      "status": "verified",
+      "scope": "operational",
+      "evidence_count": 1,
+      "gap_action": null
+    },
+    {
       "file": "memory/archivist/goal_provenance.py",
       "status": "verified",
       "scope": "operational",
@@ -817,7 +754,7 @@
       "file": "memory/archivist/size_guard.py",
       "status": "verified",
       "scope": "production",
-      "evidence_count": 4,
+      "evidence_count": 7,
       "gap_action": null
     },
     {
@@ -1062,21 +999,21 @@
       "file": "memory/builder/canary/black/agent_portal.py",
       "status": "verified",
       "scope": "production",
-      "evidence_count": 1050,
+      "evidence_count": 931,
       "gap_action": null
     },
     {
       "file": "memory/builder/canary/pale/agent_portal.py",
       "status": "verified",
       "scope": "production",
-      "evidence_count": 1050,
+      "evidence_count": 931,
       "gap_action": null
     },
     {
       "file": "memory/builder/canary/red/agent_portal.py",
       "status": "verified",
       "scope": "production",
-      "evidence_count": 1050,
+      "evidence_count": 931,
       "gap_action": null
     },
     {
@@ -1265,6 +1202,13 @@
       "file": "memory/builder/feedback_scorer.py",
       "status": "verified",
       "scope": "operational",
+      "evidence_count": 2,
+      "gap_action": null
+    },
+    {
+      "file": "memory/builder/fleet_health_gauge.py",
+      "status": "verified",
+      "scope": "production",
       "evidence_count": 2,
       "gap_action": null
     },
@@ -1623,6 +1567,13 @@
       "status": "verified",
       "scope": "operational",
       "evidence_count": 6,
+      "gap_action": null
+    },
+    {
+      "file": "memory/builder/sim_log.py",
+      "status": "verified",
+      "scope": "operational",
+      "evidence_count": 8,
       "gap_action": null
     },
     {
@@ -2609,7 +2560,7 @@
       "file": "memory/forge/nonsandbox_seat_gate.py",
       "status": "verified",
       "scope": "operational",
-      "evidence_count": 8,
+      "evidence_count": 11,
       "gap_action": null
     },
     {
@@ -2714,7 +2665,7 @@
       "file": "memory/forge/smoke_suite.py",
       "status": "verified",
       "scope": "operational",
-      "evidence_count": 8,
+      "evidence_count": 15,
       "gap_action": null
     },
     {
@@ -3078,7 +3029,7 @@
       "file": "memory/mechanic/deploy_all_schtasks.py",
       "status": "verified",
       "scope": "operational",
-      "evidence_count": 101,
+      "evidence_count": 105,
       "gap_action": null
     },
     {
@@ -3190,7 +3141,7 @@
       "file": "memory/mechanic/fleet_heartbeat.py",
       "status": "verified",
       "scope": "operational",
-      "evidence_count": 16,
+      "evidence_count": 17,
       "gap_action": null
     },
     {
@@ -3498,7 +3449,7 @@
       "file": "memory/mechanic/model_prestage_audit.py",
       "status": "verified",
       "scope": "operational",
-      "evidence_count": 3,
+      "evidence_count": 2,
       "gap_action": null
     },
     {
@@ -3716,6 +3667,13 @@
       "status": "verified",
       "scope": "operational",
       "evidence_count": 7,
+      "gap_action": null
+    },
+    {
+      "file": "memory/mechanic/sim_update.py",
+      "status": "verified",
+      "scope": "operational",
+      "evidence_count": 11,
       "gap_action": null
     },
     {
@@ -4212,7 +4170,7 @@
       "file": "memory/ops/fleet_heartbeat.py",
       "status": "verified",
       "scope": "operational",
-      "evidence_count": 16,
+      "evidence_count": 17,
       "gap_action": null
     },
     {
@@ -4310,7 +4268,7 @@
       "file": "memory/ops/nonsandbox_unblock_batch.py",
       "status": "verified",
       "scope": "operational",
-      "evidence_count": 11,
+      "evidence_count": 12,
       "gap_action": null
     },
     {
@@ -4338,7 +4296,7 @@
       "file": "memory/ops/prestage_remediate.py",
       "status": "verified",
       "scope": "operational",
-      "evidence_count": 6,
+      "evidence_count": 7,
       "gap_action": null
     },
     {
@@ -4359,7 +4317,7 @@
       "file": "memory/ops/prune_memory_tree.py",
       "status": "verified",
       "scope": "operational",
-      "evidence_count": 3,
+      "evidence_count": 9,
       "gap_action": null
     },
     {
@@ -4447,6 +4405,13 @@
       "gap_action": null
     },
     {
+      "file": "memory/ops/sim_memory.py",
+      "status": "verified",
+      "scope": "operational",
+      "evidence_count": 8,
+      "gap_action": null
+    },
+    {
       "file": "memory/ops/snapshot_score.py",
       "status": "verified",
       "scope": "operational",
@@ -4465,6 +4430,13 @@
       "status": "verified",
       "scope": "operational",
       "evidence_count": 1,
+      "gap_action": null
+    },
+    {
+      "file": "memory/ops/tree_reclaim.py",
+      "status": "verified",
+      "scope": "operational",
+      "evidence_count": 6,
       "gap_action": null
     },
     {
@@ -5003,7 +4975,7 @@
       "file": "memory/pixel/cdp_375_dom_check.py",
       "status": "verified",
       "scope": "operational",
-      "evidence_count": 23,
+      "evidence_count": 26,
       "gap_action": null
     },
     {
@@ -5021,6 +4993,13 @@
       "gap_action": null
     },
     {
+      "file": "memory/pixel/nonsandbox_closure_runbook.py",
+      "status": "verified",
+      "scope": "operational",
+      "evidence_count": 7,
+      "gap_action": null
+    },
+    {
       "file": "memory/pixel/prepin_asset_gate.py",
       "status": "verified",
       "scope": "operational",
@@ -5032,6 +5011,13 @@
       "status": "verified",
       "scope": "operational",
       "evidence_count": 6,
+      "gap_action": null
+    },
+    {
+      "file": "memory/portal/context_bundle.py",
+      "status": "verified",
+      "scope": "operational",
+      "evidence_count": 2,
       "gap_action": null
     },
     {
@@ -5822,7 +5808,7 @@
       "file": "memory/scribe/convergence_contract.py",
       "status": "verified",
       "scope": "operational",
-      "evidence_count": 10,
+      "evidence_count": 11,
       "gap_action": null
     },
     {
@@ -5948,7 +5934,7 @@
       "file": "memory/scribe/goalset_drift.py",
       "status": "verified",
       "scope": "operational",
-      "evidence_count": 6,
+      "evidence_count": 7,
       "gap_action": null
     },
     {
@@ -6110,6 +6096,13 @@
       "status": "verified",
       "scope": "operational",
       "evidence_count": 25,
+      "gap_action": null
+    },
+    {
+      "file": "memory/scribe/sim_update.py",
+      "status": "verified",
+      "scope": "operational",
+      "evidence_count": 11,
       "gap_action": null
     },
     {
@@ -6347,7 +6340,7 @@
       "file": "memory/verifier/chaos_recovery_drill.py",
       "status": "verified",
       "scope": "operational",
-      "evidence_count": 17,
+      "evidence_count": 18,
       "gap_action": null
     },
     {
@@ -6872,7 +6865,7 @@
       "file": "memory/verifier/register_trigger_task.py",
       "status": "verified",
       "scope": "production",
-      "evidence_count": 8,
+      "evidence_count": 9,
       "gap_action": null
     },
     {
@@ -7418,7 +7411,7 @@
       "file": "memory/verifier/verification_coverage.py",
       "status": "verified",
       "scope": "operational",
-      "evidence_count": 2,
+      "evidence_count": 3,
       "gap_action": null
     },
     {
@@ -7457,10 +7450,24 @@
       "gap_action": null
     },
     {
+      "file": "memory/world/event_parse.py",
+      "status": "verified",
+      "scope": "operational",
+      "evidence_count": 1,
+      "gap_action": null
+    },
+    {
+      "file": "memory/world/gev_snapshot.py",
+      "status": "verified",
+      "scope": "operational",
+      "evidence_count": 2,
+      "gap_action": null
+    },
+    {
       "file": "memory_mirror.py",
       "status": "verified",
       "scope": "production",
-      "evidence_count": 409,
+      "evidence_count": 406,
       "gap_action": null
     },
     {
@@ -7516,7 +7523,7 @@
       "file": "portal_host.py",
       "status": "verified",
       "scope": "other",
-      "evidence_count": 12,
+      "evidence_count": 13,
       "gap_action": null
     },
     {
@@ -7551,7 +7558,7 @@
       "file": "recover_all.py",
       "status": "verified",
       "scope": "other",
-      "evidence_count": 71,
+      "evidence_count": 72,
       "gap_action": null
     },
     {
@@ -7632,13 +7639,6 @@
       "gap_action": null
     },
     {
-      "file": "ui/assets/js/GLTFLoader.js",
-      "status": "unverified",
-      "scope": "production",
-      "evidence_count": 0,
-      "gap_action": "Add to regression battery or write evidence leaf referencing GLTFLoader.js"
-    },
-    {
       "file": "ui/cockpit-autonomy-cards.js",
       "status": "verified",
       "scope": "production",
@@ -7663,7 +7663,7 @@
       "file": "ui/cockpit-convergence.js",
       "status": "verified",
       "scope": "production",
-      "evidence_count": 50,
+      "evidence_count": 49,
       "gap_action": null
     },
     {
@@ -7857,10 +7857,10 @@
     },
     {
       "file": "ui/pages/activity.html",
-      "status": "unverified",
+      "status": "verified",
       "scope": "production",
-      "evidence_count": 0,
-      "gap_action": "Add to regression battery or write evidence leaf referencing activity.html"
+      "evidence_count": 1,
+      "gap_action": null
     },
     {
       "file": "ui/pages/evolve.html",
@@ -7871,24 +7871,31 @@
     },
     {
       "file": "ui/pages/files.html",
-      "status": "unverified",
+      "status": "verified",
       "scope": "production",
-      "evidence_count": 0,
-      "gap_action": "Add to regression battery or write evidence leaf referencing files.html"
+      "evidence_count": 1,
+      "gap_action": null
     },
     {
       "file": "ui/pages/fleet.html",
-      "status": "unverified",
+      "status": "verified",
       "scope": "production",
-      "evidence_count": 0,
-      "gap_action": "Add to regression battery or write evidence leaf referencing fleet.html"
+      "evidence_count": 1,
+      "gap_action": null
     },
     {
       "file": "ui/pages/goals.html",
-      "status": "unverified",
+      "status": "verified",
       "scope": "production",
-      "evidence_count": 0,
-      "gap_action": "Add to regression battery or write evidence leaf referencing goals.html"
+      "evidence_count": 1,
+      "gap_action": null
+    },
+    {
+      "file": "ui/pages/gods-eye.html",
+      "status": "verified",
+      "scope": "production",
+      "evidence_count": 1,
+      "gap_action": null
     },
     {
       "file": "ui/pages/mind-lab.html",
@@ -7899,31 +7906,31 @@
     },
     {
       "file": "ui/pages/mind-room.js",
-      "status": "unverified",
+      "status": "verified",
       "scope": "production",
-      "evidence_count": 0,
-      "gap_action": "Add to regression battery or write evidence leaf referencing mind-room.js"
+      "evidence_count": 1,
+      "gap_action": null
     },
     {
       "file": "ui/pages/mind.html",
-      "status": "unverified",
+      "status": "verified",
       "scope": "production",
-      "evidence_count": 0,
-      "gap_action": "Add to regression battery or write evidence leaf referencing mind.html"
+      "evidence_count": 1,
+      "gap_action": null
     },
     {
       "file": "ui/pages/ops.html",
-      "status": "unverified",
+      "status": "verified",
       "scope": "production",
-      "evidence_count": 0,
-      "gap_action": "Add to regression battery or write evidence leaf referencing ops.html"
+      "evidence_count": 1,
+      "gap_action": null
     },
     {
       "file": "ui/pages/voxel-ui.js",
-      "status": "unverified",
+      "status": "verified",
       "scope": "production",
-      "evidence_count": 0,
-      "gap_action": "Add to regression battery or write evidence leaf referencing voxel-ui.js"
+      "evidence_count": 1,
+      "gap_action": null
     },
     {
       "file": "ui/pages/voxray.html",
@@ -7969,10 +7976,10 @@
     },
     {
       "file": "ui/tools/mindroom_models.py",
-      "status": "unverified",
+      "status": "verified",
       "scope": "production",
-      "evidence_count": 0,
-      "gap_action": "Add to regression battery or write evidence leaf referencing mindroom_models.py"
+      "evidence_count": 1,
+      "gap_action": null
     },
     {
       "file": "ui/tools/seed_voxels.py",

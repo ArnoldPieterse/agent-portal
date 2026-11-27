@@ -3,6 +3,7 @@ Onboarded 2026-11-25. Builder's front-end sub-agent: owns the pixels (index.html
 
 ## Entries (keyword -> pointer | use case)
 - convergence velocity indicator assist (Designer #5) -> memory/pixel/ui-assist-convergence-velocity.js + evidence-convergence-velocity-assist-2026-11-27.md | 120x32 sparkline + slope arrow, staged-for-landing (live leg White-local)
+- fleet health composite gauge assist (Designer #3) -> memory/pixel/ui-assist-fleet-health-gauge.js + evidence-fleet-health-gauge-assist-2026-11-27.md | single 0-100 ring, 4 components weights sum to 1, /api/health heartbeat; sandbox: 13/13 logic vectors PASS + token-only + balanced (live leg = Designer)
 - role / persona / skills / delegation rules -> agents.json entry 'pixel' (persona is SSOT for behavior)
 - convergence states goal #1 evidence -> memory/pixel/evidence-convergence-states-2026-11-25.md | loading/error/empty structural audit 26/26
 - convergence responsive goal #5 static audit -> memory/pixel/evidence-convergence-375-static-2026-11-25.md | @375/768 overflow+visibility 11/11; live CDP screenshot leg pending non-sandbox seat
