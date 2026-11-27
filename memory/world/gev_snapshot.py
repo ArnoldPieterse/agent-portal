@@ -63,6 +63,15 @@ def _append_jsonl(path, rec):
         f.write(json.dumps(rec, ensure_ascii=False) + "\n")
 
 
+_EP = None
+def _event_parse():
+    global _EP
+    if _EP is None:
+        import sys as _s
+        _s.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
+        import event_parse as _EP
+    return _EP
+
 def _parse_coords(text):
     """GEV texts often carry 'lat, lon' pairs; grab the first plausible one."""
     m = re.search(r"(-?\d{1,2}\.\d+)\s*,\s*(-?\d{1,3}\.\d+)", text or "")
@@ -72,50 +81,14 @@ def _parse_coords(text):
 
 
 def _quake_events(r):
-    out = []
-    text = r.get("text") or ""
-    # each quake line: magnitude + place; we keep the raw lines and pull coords where present
-    for line in text.splitlines():
-        m = re.search(r"M(\d+\.?\d*)", line)
-        if not m:
-            continue
-        mag = float(m.group(1))
-        if mag < 5.0:
-            continue
-        out.append({"id": "quake-m%s-%s" % (m.group(1), re.sub(r"\W+", "-", line[:60]).strip("-"))[:80],
-                    "kind": "quake", "mag": mag, "desc": line.strip()[:220]})
-    return out
-
-
+    """JSON-blob aware via event_parse.py (2026-11-27 fix)."""
+    return [e for e in _event_parse().events_from({"quakes": r.get("text") or ""}) if e["kind"] == "quake"]
 def _cyclone_events(r):
-    out = []
-    text = r.get("text") or ""
-    if not text.strip() or re.search(r"(?i)no active cyclones|none", text):
-        return out
-    for line in text.splitlines():
-        s = line.strip()
-        if len(s) < 8:
-            continue
-        m = re.search(r"(?i)(hurricane|typhoon|cyclone|storm)\s+([A-Za-z]+)", s)
-        name = (m.group(2) if m else "unnamed")
-        out.append({"id": "cyc-%s" % name.lower()[:30],
-                    "kind": "cyclone", "name": name, "desc": s[:220]})
-    return out
-
-
+    """JSON-blob aware via event_parse.py (2026-11-27 fix)."""
+    return [e for e in _event_parse().events_from({"cyclones": r.get("text") or ""}) if e["kind"] == "cyclone"]
 def _launch_events(r):
-    out = []
-    text = r.get("text") or ""
-    for line in text.splitlines():
-        s = line.strip()
-        if not s:
-            continue
-        if re.search(r"(?i)crew|dragon|soyuz|starliner", s):
-            out.append({"id": "launch-%s" % re.sub(r"\W+", "-", s[:60]).strip("-")[:80],
-                        "kind": "launch", "desc": s[:220]})
-    return out
-
-
+    """JSON-blob aware via event_parse.py (2026-11-27 fix)."""
+    return [e for e in _event_parse().events_from({"launches": r.get("text") or ""}) if e["kind"] == "launch"]
 def take_snapshot():
     """One world pass. Returns the snapshot record (also appended to snapshots.jsonl)."""
     cfg = _load_config()

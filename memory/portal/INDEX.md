@@ -31,3 +31,4 @@ Last updated: 2026-11-16. Grep by keyword; open ONE leaf per question. Bug entry
 - -> memory/portal/api-index.md  full API call index with memory-module links (72 calls) + UI function map  2026-11-25
 
 -> memfocus.py  LOD focus-cursor over index-regex recall (2026-11-25) - host-budgeted T2/T1 tiers + GC park log (memfocus-state.json / memfocus-parked.jsonl); wired into _mem_local_hits; GET /api/memfocus
+-> context_bundle.md  2026-11-27: the gettable context+API-inputs file (context-bundle.json via :8099/:8199 on every host) + data-request hub (POST /api/data-request); bundle_host.py at project root

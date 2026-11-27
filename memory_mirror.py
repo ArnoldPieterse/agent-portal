@@ -41,7 +41,7 @@ SYNC_FILES = ["TODO.md", "MEMORY.md", "agents.json", "agent_portal.py"]   # fall
 # its per-host server ride the same push. On remotes they land in the Studio sandbox _default,
 # which is exactly where bundle_host.py runs from (its HERE = that dir) and where remote agents work.
 INTERNAL_ONLY = ["memory/llm/hosts.md", "agents.json", "memory_mirror_hosts.json",
-                 "context-bundle.json", "bundle_host.py"]
+                 "context-bundle.json", "bundle_host.py", "bundle_watchdog.bat"]
 GIT_EXE = os.path.join(HERE, "mingit", "cmd", "git.exe")
 CREATE_NO_WINDOW = 0x08000000  # runs under pythonw (no console): without this flag every child (net use / git) allocates a VISIBLE console window - user-critical popup complaint, fixed 2026-11-15 post-reboot
 

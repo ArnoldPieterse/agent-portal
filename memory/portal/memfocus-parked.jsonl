@@ -407,3 +407,16 @@
 {"ts": "2026-11-27T11:30:56", "ref": ["memory/goals/archive/researcher-2026-11-18.md", 13], "focus_sig": "8b35498e", "reason": "lod-evict"}
 {"ts": "2026-11-27T11:30:56", "ref": ["memory/goals/pixel.md", 20], "focus_sig": "8b35498e", "reason": "lod-evict"}
 {"ts": "2026-11-27T11:30:56", "ref": ["memory/synthesis/hotfile-archive-20261125.md", 38], "focus_sig": "8b35498e", "reason": "lod-evict"}
+{"ts": "2026-11-27T11:41:28", "ref": ["MEMORY.md", 25], "focus_sig": "8b35498e", "reason": "lod-evict"}
+{"ts": "2026-11-27T11:47:02", "ref": ["MEMORY.md", 27], "focus_sig": "66455548", "reason": "lod-evict"}
+{"ts": "2026-11-27T11:47:02", "ref": ["memory/archivist/citation-audit-cycle5-v2-report.md", 86], "focus_sig": "66455548", "reason": "lod-evict"}
+{"ts": "2026-11-27T11:47:02", "ref": ["memory/archivist/citation-audit-cycle5-v2-report.md", 87], "focus_sig": "66455548", "reason": "lod-evict"}
+{"ts": "2026-11-27T11:47:02", "ref": ["memory/archivist/citation-audit-cycle5-v2-report.md", 97], "focus_sig": "66455548", "reason": "lod-evict"}
+{"ts": "2026-11-27T11:47:02", "ref": ["memory/archivist/citation-audit-cycle5-v2-report.md", 98], "focus_sig": "66455548", "reason": "lod-evict"}
+{"ts": "2026-11-27T11:47:02", "ref": ["memory/archivist/citation-audit-cycle5-v2-report.md", 99], "focus_sig": "66455548", "reason": "lod-evict"}
+{"ts": "2026-11-27T11:47:02", "ref": ["memory/archivist/citation-audit-cycle5-v2-report.md", 100], "focus_sig": "66455548", "reason": "lod-evict"}
+{"ts": "2026-11-27T11:47:02", "ref": ["memory/archivist/citation-audit-cycle5-v2-report.md", 101], "focus_sig": "66455548", "reason": "lod-evict"}
+{"ts": "2026-11-27T11:47:02", "ref": ["memory/archivist/citation-audit-cycle5-v2-report.md", 126], "focus_sig": "66455548", "reason": "lod-evict"}
+{"ts": "2026-11-27T11:47:02", "ref": ["memory/researcher/citation-manifest-2026-11-15.md", 12], "focus_sig": "66455548", "reason": "lod-evict"}
+{"ts": "2026-11-27T11:47:02", "ref": ["memory/researcher/source-reliability-2026-11-22.md", 33], "focus_sig": "66455548", "reason": "lod-evict"}
+{"ts": "2026-11-27T11:47:02", "ref": ["memory/researcher/source-reliability-2026-11-22.md", 39], "focus_sig": "66455548", "reason": "lod-evict"}

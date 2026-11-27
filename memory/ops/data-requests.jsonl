@@ -1,3 +1,4 @@
 {"kind": "data-request", "from": "white-test", "wants": ["{'path': 'memory/goals/designer.md'}", "{'query': 'stealth revenue'}"], "results": 2, "ts": "2026-11-27T01:21:48Z", "host": "WHITE"}
 {"kind": "data-request", "from": "white-test", "wants": ["{'path': 'memory/goals/designer.md'}", "{'query': 'stealth revenue'}"], "results": 2, "ts": "2026-11-27T01:21:52Z", "host": "WHITE"}
 {"kind": "data-request", "from": "white-test", "wants": ["{'path': 'memory/goals/designer.md'}", "{'query': 'stealth revenue'}"], "results": 2, "ts": "2026-11-27T01:31:38Z", "host": "WHITE"}
+{"ts": "2026-11-27T01:44:33Z", "kind": "data-request-hub", "from": "e2e-test", "wants": ["{'path': 'memory/world/events.jsonl'}", "{'query': 'context bundle'}"], "results": 2}

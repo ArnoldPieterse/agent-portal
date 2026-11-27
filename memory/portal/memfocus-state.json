@@ -1,57 +1,57 @@
 {
  "window": [
   [
-   "memory/archivist/citation-audit-cycle5-v2-report.md",
-   86
+   "memory/goals/archive/researcher-2026-11-18.md",
+   31
   ],
   [
-   "memory/archivist/citation-audit-cycle5-v2-report.md",
-   87
+   "memory/goals/archive/researcher-2026-11-18.md",
+   15
   ],
   [
-   "memory/archivist/citation-audit-cycle5-v2-report.md",
-   97
+   "memory/workspace/INDEX.md",
+   73
   ],
   [
-   "memory/archivist/citation-audit-cycle5-v2-report.md",
-   98
+   "memory/workspace/INDEX.md",
+   54
   ],
   [
-   "memory/archivist/citation-audit-cycle5-v2-report.md",
-   99
+   "memory/goals/archive/researcher-2026-11-18.md",
+   21
   ],
   [
-   "memory/archivist/citation-audit-cycle5-v2-report.md",
-   100
+   "memory/workspace/INDEX.md",
+   79
   ],
   [
-   "memory/archivist/citation-audit-cycle5-v2-report.md",
-   101
+   "memory/scribe/MEMORY.md",
+   19
   ],
   [
-   "memory/archivist/citation-audit-cycle5-v2-report.md",
-   126
+   "memory/workspace/INDEX.md",
+   3
   ],
   [
-   "memory/researcher/citation-manifest-2026-11-15.md",
+   "memory/goals/archive/researcher-2026-11-18.md",
+   13
+  ],
+  [
+   "memory/researcher/open-questions-log.md",
+   131
+  ],
+  [
+   "memory/goals/archive/mechanic-2026-11-23-cycle8.md",
+   11
+  ],
+  [
+   "memory/scribe/MEMORY.md",
    12
-  ],
-  [
-   "memory/researcher/source-reliability-2026-11-22.md",
-   33
-  ],
-  [
-   "memory/researcher/source-reliability-2026-11-22.md",
-   39
-  ],
-  [
-   "memory/researcher/source-reliability-2026-11-22.md",
-   43
   ]
  ],
- "focus_sig": "8b35498e",
- "parked_total": 17,
- "last_gc_ts": "2026-11-27T11:30:56",
- "rounds": 33,
- "updated": "2026-11-27T11:32:32"
+ "focus_sig": "66455548",
+ "parked_total": 30,
+ "last_gc_ts": "2026-11-27T11:47:02",
+ "rounds": 45,
+ "updated": "2026-11-27T11:53:03"
 }

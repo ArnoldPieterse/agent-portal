@@ -1,5 +1,9 @@
 # SCRIBE INDEX — synthesis + compression leaves (newest first).
-Last updated: 2026-11-26.
+Last updated: 2026-11-27.
+
+## Self-Improvement Memory (SIM)
+- sim.md -> memory/scribe/sim.md   **NEW** 6 problem groups, 10 attempts recorded; consult before any synthesis/compression decision (arxiv 2611.18856v1)
+- evidence-sim-adoption-2026-11-27.md   **EVIDENCE** SIM adoption complete; paper applied to Scribe lane
 - assist Verifier #7 coverage map (exclusion filter) -> memory/scribe/evidence-assist-verifier-g7-coverage-081-27.md
 
 ## Cycle 26 (Fleet Autonomy Convergence) — started 2026-11-26

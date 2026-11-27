@@ -98,3 +98,5 @@ Prior: 2026-11-16 ~16:30 (Mechanic cycle-2 consolidation, goal #10).
 
 - convergence-section-layout-spec.md — 2026-11-25: visual layout + JSON data-shape for convergence section in cycle closeouts (Designer)
 - nonsandbox_unblock_batch.py -> memory/ops/nonsandbox_unblock_batch.py | one-shot script to unblock ALL non-sandbox-blocked items (Pixel CDP + Verifier chaos-live + Scribe schtasks); run from any non-sandbox seat (2026-11-27, Forge)
+- GEV security & privacy posture (keyless, loopback-only globe, no location leakage, :8199 bundle-server scope) -> memory/ops/gev-security-posture.md   2026-11-27 Phase 8 step 63; re-run after any GEV upgrade or key addition
+- Context bundle + data-request hub (context-bundle.json gettable from ANY host via :8199, POST /api/data-request) -> memory/portal/context_bundle.md   2026-11-27 user directive: one file = all context + all API inputs; per-host server bundle_host.py

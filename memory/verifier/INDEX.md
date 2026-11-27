@@ -164,3 +164,4 @@ Recommendation: archive ac-a2-r19 through r84 to memory/verifier/archive-ac-a2-2
 - budget_compliance.py
 - productivity_validate.py
 - cycle_rollback_test.py
+- -> memory/verifier/gev-evidence-convention.md   Phase 8 step 60 (2026-11-27): cite GEV share links on goal evidence lines - verifier re-opens the exact view (camera+layers+target) to re-check; local-only links, note host when cross-host

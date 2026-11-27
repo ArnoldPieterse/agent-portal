@@ -99,3 +99,5 @@
 {"ts": "2026-11-27T01:14:11.164844+00:00", "from": "CONVERGING", "to": "CONVERGING", "legal": true, "reason": "goal_pct=91.4,mode=WORK", "source": "orchestrator.fleet_mode"}
 {"ts": "2026-11-27T01:24:10.943102+00:00", "from": "CONVERGING", "to": "CONVERGING", "legal": true, "reason": "goal_pct=91.4,mode=WORK", "source": "orchestrator.fleet_mode"}
 {"ts": "2026-11-27T01:34:11.203552+00:00", "from": "CONVERGING", "to": "CONVERGING", "legal": true, "reason": "goal_pct=91.4,mode=WORK", "source": "orchestrator.fleet_mode"}
+{"ts": "2026-11-27T01:44:12.496247+00:00", "from": "CONVERGING", "to": "CONVERGING", "legal": true, "reason": "goal_pct=91.4,mode=WORK", "source": "orchestrator.fleet_mode"}
+{"ts": "2026-11-27T01:54:11.922627+00:00", "from": "CONVERGING", "to": "CONVERGING", "legal": true, "reason": "goal_pct=91.4,mode=WORK", "source": "orchestrator.fleet_mode"}

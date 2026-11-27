@@ -8134,7 +8134,13 @@ class Handler(BaseHTTPRequestHandler):
                     if not a:
                         return self._json(400, {"ok": False,
                                                 "error": "target needs place or lat+lon (optionally radius_km)"})
-                    r = _gm.call("show_in_gods_eye_view", {"area": a})
+                    # 2026-11-27 fix: show_in_gods_eye_view accepts view/camera reliably;
+                    # area.place geocoding fails keyless - prefer a camera when we have coords.
+                    if "lat" in a and "lon" in a:
+                        cam = {"lat": a["lat"], "lon": a["lon"], "altitude_m": 2000000}
+                        r = _gm.call("show_in_gods_eye_view", {"view": {"camera": cam}})
+                    else:
+                        r = _gm.call("show_in_gods_eye_view", {"area": a})
                     share_urls = re.findall(r"https?://\S+", r.get("text") or "")
                     rec = {"ts": time.strftime("%Y-%m-%dT%H:%M:%SZ", time.gmtime()),
                            "by": str(body.get("by") or "?")[:60], "target": a,

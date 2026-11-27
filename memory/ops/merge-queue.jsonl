@@ -559,3 +559,6 @@
 {"ts": "2026-11-27 11:30:33", "file": "ui/pages/gods-eye.html", "sha": "066cd1f6aa", "size": 1789, "snapshot": null}
 {"ts": "2026-11-27 11:30:33", "file": "ui/pages/mind-lab.html", "sha": "bb255d3141", "size": 15588, "snapshot": null}
 {"ts": "2026-11-27 11:30:33", "file": "ui/pages/mind-room.js", "sha": "882aee8744", "size": 48276, "snapshot": null}
+{"ts": "2026-11-27 11:46:37", "file": "agent_portal.py", "sha": "ef93d2e1b6", "size": 442830, "snapshot": "memory/ops/merge-queue/agent_portal.py.ef93d2e1b6"}
+{"ts": "2026-11-27 11:46:37", "file": "memory_mirror.py", "sha": "9fb2bce726", "size": 20158, "snapshot": "memory/ops/merge-queue/memory_mirror.py.9fb2bce726"}
+{"ts": "2026-11-27 12:03:09", "file": "memory_mirror.py", "sha": "f752ee4941", "size": 20513, "snapshot": "memory/ops/merge-queue/memory_mirror.py.f752ee4941"}

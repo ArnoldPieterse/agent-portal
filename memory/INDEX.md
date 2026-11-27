@@ -31,6 +31,7 @@ FILE ACCESS (python/terminal tools run in Studio's sandbox - use these paths):
 - levels        memory/levels/ - level-up reports (level_N_*.md) + levels.json
 - handoffs      memory/handoffs/ - lane-to-lane
 - dna           memory/dna/INDEX.md - self-rebuild: chained compressed build functions + scan regex (Y) handoff notes
+- world         memory/world/INDEX.md - real-world data layer from God's Eye View: 30-min snapshots, planet events, host-risk, keyless posture (Z)
 - portal        memory/portal/INDEX.md - portal file-modularity rules, UI notes
 
 ## Hot files

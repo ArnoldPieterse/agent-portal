@@ -1,0 +1,72 @@
+{
+ "entries": [
+  {
+   "root_cause": "memory tree size-guard FAIL",
+   "key": "6a666c8236f9",
+   "created": "2026-11-27",
+   "last_updated": "2026-11-27",
+   "attempts": [
+    {
+     "rationale": "size_guard limits drifted from prune target",
+     "predicted": "tree back under hard limit",
+     "observed": "663->427MB, 184 items reclaimed; residual archivist JSON still over",
+     "outcome": "improved",
+     "artifact": "memory/ops/tree_reclaim.py",
+     "agent": "orchestrator",
+     "date": "2026-11-27"
+    }
+   ]
+  },
+  {
+   "root_cause": "autonomy score stalled at low value",
+   "key": "c4da2f78ab75",
+   "created": "2026-11-27",
+   "last_updated": "2026-11-27",
+   "attempts": [
+    {
+     "rationale": "diagnose as data-freshness artifact not structural loss",
+     "predicted": "score rises after prediction correction",
+     "observed": "still 35% fleet_readiness (hosts down); corrected STALLED->STALE-DATA only",
+     "outcome": "neutral",
+     "artifact": "memory/ops/convergence-prediction.json",
+     "agent": "orchestrator",
+     "date": "2026-11-27"
+    }
+   ]
+  },
+  {
+   "root_cause": "non-sandbox live-leg queue stale",
+   "key": "fc3efc64e645",
+   "created": "2026-11-27",
+   "last_updated": "2026-11-27",
+   "attempts": [
+    {
+     "rationale": "queue predated current open-goal set",
+     "predicted": "queue matches live goals; last live leg identified",
+     "observed": "refreshed to current set, Phase-7 browser leg = last open live leg",
+     "outcome": "improved",
+     "artifact": "memory/ops/non-sandbox-queue.md",
+     "agent": "orchestrator",
+     "date": "2026-11-27"
+    }
+   ]
+  },
+  {
+   "root_cause": "chaos-recovery incidents exceed SLA",
+   "key": "0b666824c026",
+   "created": "2026-11-27",
+   "last_updated": "2026-11-27",
+   "attempts": [
+    {
+     "rationale": "measure real unload->re-residency timing",
+     "predicted": "production incidents meet <120s SLA",
+     "observed": "0/7 incidents met SLA (840s..5700s); live leg blocked from White seat",
+     "outcome": "regressed",
+     "artifact": "memory/verifier/chaos_recovery_drill.py",
+     "agent": "orchestrator",
+     "date": "2026-11-27"
+    }
+   ]
+  }
+ ]
+}

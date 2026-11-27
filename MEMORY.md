@@ -8,12 +8,12 @@ Formula: code = [A-Z][a-z]?\d+ . Uppercase letter = module folder, lowercase = i
 <!-- MCODE:BEGIN -->
 A|memory/archivist, B|memory/builder, C|memory/designer, Ca|memory/designer/lumen, Cb|memory/designer/reel, Cc|memory/designer/splice, D|memory/fleet, E|memory/goals, F|memory/handoffs, G|memory/levels, H|memory/llm, I|memory/mechanic, J|memory/ops, K|memory/orchestrator,
 L|memory/portal, M|memory/projects, N|memory/researcher, O|memory/scheme, P|memory/scribe, Q|memory/sink, R|memory/squire, S|memory/synthesis, T|memory/verifier, U|memory/workspace, V|memory/outlet, W|memory/pixel, X|memory/forge, Y|memory/dna,
-La|memory/portal/bugs, Ja|memory/ops/runbooks, Jb|memory/ops/incidents, Jc|memory/ops/post-mortems, Ea|memory/goals/plans, Eb|memory/goals/archive, Ec|memory/goals/history, Sa|memory/synthesis/decisions
+La|memory/portal/bugs, Ja|memory/ops/runbooks, Jb|memory/ops/incidents, Jc|memory/ops/post-mortems, Ea|memory/goals/plans, Eb|memory/goals/archive, Ec|memory/goals/history, Sa|memory/synthesis/decisions,
+Z|memory/world
 <!-- MCODE:END -->
 ## GOAL (mirrors the live plan at the top of TODO.md)
 FLEET CYCLE 24: Stealth Revenue Engine live (user directive 2026-11-25; source M5 = memory/projects/stealth-revenue-engine.md) - engine goals open in 6 lanes on top of cycle-23 remainder (105/110). SSOT: /api/goals + goal_ledger.json (root).
 ## Hot Notes
-- Wrote memory/ops/prestage_remediate.py (stdlib-only) to fix SPOF model variants via Studio /api/models/load; supports --report/--dry-run/--e
 - Pixel CDP leg confirmed unblockable from pale; decision: consolidate all open goals into one batched non-sandbox closure runbook.
 - Prune script `prune_memory_tree.py` in memory/ops/; dry-run reclaims 352MB (1.3GB→966MB); evidence at builder/evidence-prune-memory-tree-202
 - Scribe found 25-goal gap: forecast says 94/111 but only 69 have dated evidence; Designer/Verifier
@@ -23,6 +23,7 @@ FLEET CYCLE 24: Stealth Revenue Engine live (user directive 2026-11-25; source M
 - Memory tree at 663 MB vs 5 MB hard limit (132x over);
 - Goal #6 CDP screenshot blocked by WinError 10013; unblock: `python memory/ops/nonsandbox_unblock_batch.py --only cdp` from non-sandbox seat
 - Built SIM-style structured memory (sim.md + sim_update.py) from arxiv 2611.18856v1; 6 problem groups with attempt histories.
+- RECALL: - **M1** (MEMORY.md:27) — SIM-style structured memory (`sim.md` + `sim_update.py`) was already
 ## Durable rules
 Engine update kills instances -> RecoverAll (H2); group turns dispatch ALL AGENTS IN PARALLEL - parallel_slots=1 (L12); Stop + [CONCLUDED] + budget cap (memory/portal/bugs/xtalk-completion-2026-11-15.md); smoke agents SERIALLY; restart trap: taskkill PID before schtasks /run (memory/ops/runbooks/windows-runbook.md); multi-GB LAN copies: full-hash verify (J38). NO HUMAN GATES: a blocked lane gets an alternative path or a named cross-agent handoff.
 - 2026-11-25 Builder subs Pixel (UI/UX, frontend) + Forge (backend/API) live on Black Q8 seats; fixed bad model_id builder-q8 -> Qwen3.8-27B-Q8_0; placement verified 7s, reply queued behind active group run.

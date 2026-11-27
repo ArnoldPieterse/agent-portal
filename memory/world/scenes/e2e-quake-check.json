@@ -1,0 +1,17 @@
+{
+ "scene": "e2e-quake-check",
+ "created": "2026-11-27T01:44:43Z",
+ "by": "?",
+ "annotations": [
+  {
+   "ts": "2026-11-27T01:44:43Z",
+   "by": "?",
+   "target": {
+    "place": "Revilla Gigedo Islands"
+   },
+   "note": "M5.7 quake 2026-11-26 15:26Z - strongest in 24h (fleet evidence check)",
+   "share_url": null
+  }
+ ],
+ "open_in_gev": "http://localhost:4173 + fly to target manually"
+}
