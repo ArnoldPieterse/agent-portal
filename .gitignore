@@ -56,3 +56,7 @@ memory/ops/mirror_cache.json*
 
 # 2026-11-27: nightly fleet backups (backup.py) live outside memory/ so size_guard stays green; host-local, never commit tarballs
 archive/fleet-backups/
+
+# 2026-11-27: fleet/report tarballs never tracked again (they keep getting re-pulled from remotes and resurrected by git restore); backups live in archive/fleet-backups/ now
+memory/mechanic/backups/*.tar.gz
+memory/mechanic/backups/*.tar.json
