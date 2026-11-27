@@ -1,0 +1,63 @@
+{
+  "ts": "2026-11-26T23:43:21Z",
+  "markers_audited": 9,
+  "all_valid": true,
+  "phantom_flagged": true,
+  "overall_pass": true,
+  "details": [
+    {
+      "idx": 1,
+      "ok": true,
+      "reason": "OK (1437 bytes)",
+      "path": "memory/verifier/auto-trigger-goal1-evidence-2026-11-26.md"
+    },
+    {
+      "idx": 2,
+      "ok": true,
+      "reason": "OK (1019 bytes)",
+      "path": "memory/verifier/chaos-recovery-goal2-evidence-2026-11-26.md"
+    },
+    {
+      "idx": 3,
+      "ok": true,
+      "reason": "OK (1103 bytes)",
+      "path": "memory/verifier/freshness-goal3-evidence-2026-11-26.md"
+    },
+    {
+      "idx": 4,
+      "ok": true,
+      "reason": "inline evidence with timestamp",
+      "path": null
+    },
+    {
+      "idx": 5,
+      "ok": true,
+      "reason": "inline evidence with timestamp",
+      "path": null
+    },
+    {
+      "idx": 6,
+      "ok": true,
+      "reason": "OK (1226 bytes)",
+      "path": "memory/verifier/acceptance-test-goal6-evidence-2026-11-26.md"
+    },
+    {
+      "idx": 7,
+      "ok": true,
+      "reason": "OK (1078 bytes)",
+      "path": "memory/verifier/coverage-map-goal7-evidence-2026-11-26.md"
+    },
+    {
+      "idx": 8,
+      "ok": true,
+      "reason": "OK (1472 bytes)",
+      "path": "memory/verifier/canary-gate-goal8-evidence-2026-11-26.md"
+    },
+    {
+      "idx": 9,
+      "ok": true,
+      "reason": "inline evidence with timestamp",
+      "path": null
+    }
+  ]
+}

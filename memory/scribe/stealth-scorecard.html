@@ -1,0 +1,125 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Stealth Scorecard</title>
+<style>
+:root{--bg:#0d1117;--panel:#161b22;--line:#30363d;--fg:#e6edf3;--dim:#8b949e;
+--ok:#3fb950;--warn:#d29922;--bad:#f85149;--accent:#58a6ff;--chip:#21262d}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--fg);font:14px/1.5 -apple-system,Segoe UI,Roboto,sans-serif;padding:18px}
+h1{font-size:17px;margin:0 0 2px} .sub{color:var(--dim);margin:0 0 16px;font-size:12px}
+.badge{display:inline-block;font-size:11px;font-weight:600;padding:2px 8px;border-radius:20px;
+background:var(--chip);border:1px solid var(--line);color:var(--dim);margin-left:8px;vertical-align:middle}
+.badge.prov{color:var(--warn);border-color:var(--warn)}
+.strip{display:flex;gap:10px;flex-wrap:wrap;margin-bottom:16px}
+.kpi{background:var(--panel);border:1px solid var(--line);border-radius:8px;padding:10px 14px;min-width:120px}
+.kpi .n{font-size:20px;font-weight:700} .kpi .l{color:var(--dim);font-size:11px;text-transform:uppercase;letter-spacing:.04em}
+table{width:100%;border-collapse:collapse;background:var(--panel);border:1px solid var(--line);border-radius:8px;overflow:hidden}
+th,td{text-align:right;padding:9px 12px;border-bottom:1px solid var(--line);font-variant-numeric:tabular-nums}
+th:first-child,td:first-child{text-align:left}
+thead th{color:var(--dim);font-size:11px;text-transform:uppercase;letter-spacing:.04em;background:#0f141b}
+tr.winner td{background:rgba(63,185,80,.10)} tr.loser td{background:rgba(248,81,73,.10)}
+.tag{font-size:10px;font-weight:700;padding:1px 6px;border-radius:4px}
+.tag.w{color:var(--ok);background:rgba(63,185,80,.15)} .tag.l{color:var(--bad);background:rgba(248,81,73,.15)}
+.verdict{margin-top:14px;background:var(--panel);border:1px solid var(--line);border-radius:8px;padding:12px 14px}
+.verdict h2{font-size:13px;margin:0 0 6px;color:var(--dim);text-transform:uppercase;letter-spacing:.04em}
+.reason{color:var(--fg)} .muted{color:var(--dim)}
+.editor{margin-top:16px} .editor label{font-size:12px;color:var(--dim);display:block;margin-bottom:6px}
+textarea{width:100%;min-height:90px;background:#0f141b;border:1px solid var(--line);border-radius:8px;
+color:var(--fg);font:12px/1.5 ui-monospace,Consolas,monospace;padding:10px;resize:vertical}
+button{margin-top:8px;background:var(--accent);color:#04121f;border:0;border-radius:6px;
+padding:7px 14px;font-weight:600;cursor:pointer} button:hover{filter:brightness(1.1)}
+.err{color:var(--bad);font-size:12px;margin-top:6px;min-height:16px}
+a{color:var(--accent);text-decoration:none}
+</style>
+</head>
+<body>
+<h1>Stealth Revenue Engine — Scorecard<span class="badge" id="badge">loading</span></h1>
+<p class="sub">Source: <code>memory/scribe/stealth-ledger.jsonl</code> · Ranking: (1) revenue $ attributed, (2) reply rate, (3) close rate</p>
+
+<div class="strip" id="strip" role="group" aria-label="Totals"></div>
+
+<table aria-label="Per-workflow attribution">
+<thead><tr>
+<th scope="col">Workflow</th><th scope="col">Staged</th><th scope="col">Replies</th>
+<th scope="col">Closed</th><th scope="col">Reply rate</th><th scope="col">Close rate</th><th scope="col">$ attributed</th>
+</tr></thead>
+<tbody id="rows"></tbody>
+</table>
+
+<div class="verdict" aria-live="polite">
+<h2>Weekly verdict</h2>
+<p class="reason" id="verdictText"></p>
+</div>
+
+<div class="editor">
+<label for="jsonl">Update: paste latest <code>stealth-ledger.jsonl</code> (one JSON object per line) and re-render.</label>
+<textarea id="jsonl" spellcheck="false" aria-label="Paste latest ledger JSONL"></textarea>
+<button id="go" type="button">Re-render scorecard</button>
+<div class="err" id="err" role="alert"></div>
+</div>
+
+<script>
+const WF=[["wf1_ar_followup","WF1 · AR Followup"],["wf2_weekly_report","WF2 · Weekly Report"],["wf3_reminder_pipeline","WF3 · Reminder Pipeline"]];
+let DATA=[{"date":"2026-11-25","outreach_staged":3,"replies":0,"demos":0,"revenue_usd":0.0,"wf1_ar_followup":{"staged":3,"replies":0,"closed":0},"wf2_weekly_report":{"staged":0,"replies":0,"closed":0},"wf3_reminder_pipeline":{"staged":0,"replies":0,"closed":0},"notes":"WF1 first live run: 2 initial FAILs (attr error, missing key) resolved; final PASS with 3 batches. WF2/WF3 not yet scheduled. | auto: 1 pass / 2 fail job-runs; replies/demos/revenue pending inbound layer"}];
+function num(x){x=Number(x);return isFinite(x)?x:0;}
+function pct(a,b){return b>0?(a/b*100):0;}
+function money(n){return "$"+num(n).toLocaleString(undefined,{minimumFractionDigits:2,maximumFractionDigits:2});}
+function isoWeek(d){const t=new Date(d+"T00:00:00Z");t.setUTCDate(t.getUTCDate()+4-(t.getUTCDay()||7));
+const y=new Date(Date.UTC(t.getUTCFullYear(),0,1));return Math.ceil(((t-y)/864e5+1)/7);}
+function render(){
+ const err=document.getElementById("err");err.textContent="";
+ if(!Array.isArray(DATA)||!DATA.length){err.textContent="No rows.";return;}
+ // totals
+ let T={staged:0,replies:0,demos:0,rev:0};const per={};
+ WF.forEach(([k])=>per[k]={staged:0,replies:0,closed:0});
+ DATA.forEach(r=>{T.staged+=num(r.outreach_staged);T.replies+=num(r.replies);T.demos+=num(r.demos);T.rev+=num(r.revenue_usd);
+  WF.forEach(([k])=>{const o=r[k]||{};per[k].staged+=num(o.staged);per[k].replies+=num(o.replies);per[k].closed+=num(o.closed);});});
+ // KPI strip
+ document.getElementById("strip").innerHTML=
+  [["Staged",T.staged],["Replies",T.replies],["Demos",T.demos],["Revenue",money(T.rev)]]
+  .map(([l,n])=>`<div class="kpi"><div class="n">${n}</div><div class="l">${l}</div></div>`).join("");
+ // per-WF rows (pre-ranking, stable order)
+ document.getElementById("rows").innerHTML=WF.map(([k,label])=>{const o=per[k];
+  return `<tr id="row-${k}"><td>${label}</td><td>${o.staged}</td><td>${o.replies}</td><td>${o.closed}</td>`+
+   `<td>${pct(o.replies,o.staged).toFixed(1)}%</td><td>${pct(o.closed,o.replies).toFixed(1)}%</td>`+
+   `<td>—</td></tr>`;}).join("");
+ // revenue attribution per WF: split total by closed share, else 0 (confirmed $ only)
+ const totalClosed=WF.reduce((s,[k])=>s+per[k].closed,0);
+ const totalRev=num(T.rev);
+ // ranking
+ const early = totalRev===0 && T.replies===0;
+ const scored=WF.map(([k,label])=>({k,label,o:per[k],
+   rev:(totalClosed>0? totalRev*(per[k].closed/totalClosed):0),
+   rr:pct(per[k].replies,per[k].staged), cr:pct(per[k].closed,per[k].replies)}));
+ scored.sort((a,b)=> b.rev-a.rev || b.rr-a.rr || b.cr-a.cr);
+ // paint $ + tags
+ if(early){scored.forEach(s=>{const tr=document.getElementById("row-"+s.k);tr.querySelector("td:last-child").textContent="$0";});}
+ else{scored.forEach(s=>{const tr=document.getElementById("row-"+s.k);tr.querySelector("td:last-child").textContent=money(s.rev);});
+   document.getElementById("row-"+scored[0].k).classList.add("winner");
+   document.getElementById("row-"+scored[scored.length-1].k).classList.add("loser");}
+ // verdict text
+ const vt=document.getElementById("verdictText");
+ if(early){vt.innerHTML=`<span class="muted">n/a — too early.</span> No confirmed revenue or replies yet; ranking is noise until inbound data lands.`;}
+ else{const w=scored[0],l=scored[scored.length-1];
+  vt.innerHTML=`Winner: <b>${w.label}</b> (${money(w.rev)}, ${w.rr.toFixed(1)}% reply) · `+
+   `Loser: <b>${l.label}</b> — root-cause note pending (reply ${l.rr.toFixed(1)}%, close ${l.cr.toFixed(1)}%).`;}
+ // provisional badge by distinct ISO weeks
+ const weeks=new Set(DATA.map(r=>r.date?isoWeek(r.date):0));
+ const b=document.getElementById("badge");
+ if(weeks.size<3){b.textContent="provisional · "+weeks.size+" wk of data";b.classList.add("prov");}
+ else{b.textContent=weeks.size+" wks · actionable";b.classList.remove("prov");}
+}
+document.getElementById("jsonl").value=DATA.map(r=>JSON.stringify(r)).join("\n");
+document.getElementById("go").addEventListener("click",()=>{
+ const raw=document.getElementById("jsonl").value.trim();const out=[];
+ for(const line of raw.split(/\r?\n/)){line=line.trim();if(!line)continue;
+  try{out.push(JSON.parse(line));}catch(e){document.getElementById("err").textContent="Bad JSON on line: "+line.slice(0,40);return;}}
+ if(!out.length){document.getElementById("err").textContent="No rows parsed.";return;}
+ DATA=out;render();});
+render();
+</script>
+</body>
+</html>

@@ -1,0 +1,103 @@
+{
+  "generated": "2026-11-26T22:25:05.736726",
+  "data_source": "memory/archivist/decision-archive-data.jsonl",
+  "total_records": 56,
+  "date_range": [
+    "2026-11-13",
+    "2026-11-24"
+  ],
+  "owner_stats": {
+    "archivist": {
+      "decisions": 7,
+      "avg_quality": 0.628,
+      "positive_outcomes": 3,
+      "negative_outcomes": 1,
+      "success_rate": 0.75,
+      "categories": [
+        "knowledge-management",
+        "governance"
+      ]
+    },
+    "builder": {
+      "decisions": 23,
+      "avg_quality": 0.597,
+      "positive_outcomes": 15,
+      "negative_outcomes": 8,
+      "success_rate": 0.652,
+      "categories": [
+        "operational-runbook",
+        "operational-resilience",
+        "governance"
+      ]
+    },
+    "fleet-policy": {
+      "decisions": 6,
+      "avg_quality": 0.7,
+      "positive_outcomes": 0,
+      "negative_outcomes": 0,
+      "success_rate": null,
+      "categories": [
+        "policy"
+      ]
+    },
+    "mechanic": {
+      "decisions": 2,
+      "avg_quality": 0.69,
+      "positive_outcomes": 1,
+      "negative_outcomes": 0,
+      "success_rate": 1.0,
+      "categories": [
+        "operational-resilience",
+        "governance"
+      ]
+    },
+    "orchestrator": {
+      "decisions": 5,
+      "avg_quality": 0.956,
+      "positive_outcomes": 5,
+      "negative_outcomes": 0,
+      "success_rate": 1.0,
+      "categories": [
+        "governance"
+      ]
+    },
+    "researcher": {
+      "decisions": 1,
+      "avg_quality": 0.96,
+      "positive_outcomes": 1,
+      "negative_outcomes": 0,
+      "success_rate": 1.0,
+      "categories": [
+        "governance"
+      ]
+    }
+  },
+  "category_stats": {
+    "dispatch": {
+      "count": 4,
+      "avg_quality": 0.8
+    },
+    "governance": {
+      "count": 11,
+      "avg_quality": 0.922
+    },
+    "knowledge-management": {
+      "count": 6,
+      "avg_quality": 0.572
+    },
+    "operational-resilience": {
+      "count": 7,
+      "avg_quality": 0.8
+    },
+    "operational-runbook": {
+      "count": 22,
+      "avg_quality": 0.527
+    },
+    "policy": {
+      "count": 6,
+      "avg_quality": 0.7
+    }
+  },
+  "data_gap": "Only ~14 days of data (target: >=4 cycles). Trend analysis pending more data.",
+  "methodology": "Quality score = 0.4*confidence + 0.6*outcome_signal (positive=1, negative=0, neutral=0.5)"
+}

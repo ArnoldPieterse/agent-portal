@@ -46,13 +46,20 @@ GIT_EXE = os.path.join(HERE, "mingit", "cmd", "git.exe")
 CREATE_NO_WINDOW = 0x08000000  # runs under pythonw (no console): without this flag every child (net use / git) allocates a VISIBLE console window - user-critical popup complaint, fixed 2026-11-15 post-reboot
 
 def _allowlist():
-    """The git-tracked file set (curated .gitignore allowlist, ~43 files) - what gets pushed to the
-    remotes. Falls back to SYNC_FILES when the repo is missing so the mirror degrades safely."""
+    """The git-tracked ROOT file set (~120 files outside memory/) - what step 1 pushes to the
+    remotes with White-canonical semantics. Falls back to SYNC_FILES when the repo is missing.
+
+    2026-11-27 (the real mirror-timeout root cause): this used to return EVERY tracked file,
+    i.e. all ~11.6k memory/ files too. Step 1 then re-stated each one over SMB (~3-4 round
+    trips x 11.6k files = minutes per host) AND force-pushed them root_canonical=True -
+    clobbering remote-side edits and double-processing the whole tree that steps 2+3 already
+    sync with LWW. memory/ is excluded here; it belongs to the unified LWW loop only."""
     import subprocess
     try:
         r = subprocess.run([GIT_EXE, "ls-files"], cwd=HERE, capture_output=True, text=True, timeout=20,
                            creationflags=CREATE_NO_WINDOW)
-        out = [l.strip().replace("\\", "/") for l in (r.stdout or "").splitlines() if l.strip()]
+        out = [l.strip().replace("\\", "/") for l in (r.stdout or "").splitlines()
+               if l.strip() and not l.strip().startswith("memory/")]
         if out:
             return out + INTERNAL_ONLY   # internal-only files keep mirroring though untracked (public-repo hygiene)
     except Exception:

@@ -1,5 +1,7 @@
 # memory/verifier/ INDEX
-Last updated: 2026-11-26.
+Last updated: 2026-11-27.
+
+- **ASSIST 2026-11-27 (Archivist, option c - close stale ledger claim)**: Goal #7 (Verification coverage map) was FALSE-OPEN in goal_ledger.json (verifier counted 9/10). Root cause: the line's valid dated marker `(reached: 2026-11-27T03:45Z - Forge assist ...)` used a paren form the parser did not recognize, and its pointer leaf `verification_coverage.py` was unindexed (so pointer-validation also failed). Fix: goal_ledger.py now honors `(reached: <date>)` via PAREN_REACHED_DATE_PAT (date-required, so no bare-word inflation) + this index line connects the leaf. ACs independently re-verified against the fresh map (96.4% all / 99.1% production vs 90% target; 1 actionable gap). Verifier now 10/10.
 
 - **ASSIST 2026-11-27 (Orchestrator, option d — goal #2 chaos-recovery)**: Built `chaos_recovery_drill.py` (real unload->re-residency timing harness, fail-closed; self-test PASS 8/8). Production SLA analysis: **0/7 real incidents meet <120s** (840s..5700s) — failure mode documented per AC. Live 3-drill leg blocked from White seat (WinError 10013, no NVML), recorded once in memory/ops/blockers.md; run `SEAT_BASE=... --live` from a Studio-reachable seat to close. Evidence: memory/orchestrator/assist-verifier-goal2-chaos-recovery-drill-2026-11-27.md
 

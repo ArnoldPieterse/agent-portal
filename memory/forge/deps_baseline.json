@@ -1,0 +1,9 @@
+{
+  "generated": "2026-11-25T14:11:13.727828+00:00",
+  "third_party_deps": [
+    "wf1_ar_followup",
+    "wf2_weekly_report",
+    "wf3_reminder_pipeline"
+  ],
+  "registered_tests": []
+}

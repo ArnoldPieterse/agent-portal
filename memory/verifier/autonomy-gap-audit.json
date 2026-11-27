@@ -1,0 +1,252 @@
+{
+  "generated": "2026-11-26T13:31:51Z",
+  "source": "memory\\ops\\blockers.md",
+  "cycle_start": "2026-11-25",
+  "total_entries": 19,
+  "active": 17,
+  "closed": 2,
+  "human_required": 8,
+  "automatable": 9,
+  "human_required_stale_predating_cycle": 7,
+  "human_required_current_cycle": 1,
+  "ratio_human_required_of_active": 0.4706,
+  "ratio_automatable_of_active": 0.5294,
+  "target_human_required_below": 0.1,
+  "meets_target": false,
+  "top3_automatable": [
+    {
+      "idx": 0,
+      "tag": "OPS-NOTE",
+      "ts": "2026-11-25",
+      "who": "Researcher",
+      "title": "Seat-Unavailability Impact Model v2 (goal #8) AC backtest NOT computable: no per-day reach",
+      "label": "automatable",
+      "rationale": "agent-actionable unblock step present",
+      "stale": false,
+      "fix_path": "make the seat-matrix probe APPEND history instead of overwriting - i."
+    },
+    {
+      "idx": 5,
+      "tag": "NEEDS-HUMAN",
+      "ts": "2026-11-20",
+      "who": "Builder",
+      "title": "#3 Build-Verify-Pin: memory_mirror.py is 0 bytes in sandbox",
+      "label": "automatable",
+      "rationale": "tag=NEEDS-HUMAN: operational/data note with a stated remediation, no hard env wall",
+      "stale": true,
+      "fix_path": "Probe: pathlib.Path(\"memory_mirror.py\").stat().st_size -> 0. Repeated across multiple passes."
+    },
+    {
+      "idx": 10,
+      "tag": "NEEDS-HUMAN",
+      "ts": "2026-11-17",
+      "who": "",
+      "title": "Verifier goal #2 SLO scheduled task: schtasks COM unavailable + egress block in sandbox",
+      "label": "automatable",
+      "rationale": "agent-actionable unblock step present (overrides NEEDS-HUMAN tag)",
+      "stale": true,
+      "fix_path": "Class: sandbox limitation (COM \"Class not registered\" for schtasks; WinError 10013 for localhost:8099)."
+    }
+  ],
+  "entries": [
+    {
+      "idx": 0,
+      "tag": "OPS-NOTE",
+      "ts": "2026-11-25",
+      "who": "Researcher",
+      "title": "Seat-Unavailability Impact Model v2 (goal #8) AC backtest NOT computable: no per-day reach",
+      "label": "automatable",
+      "rationale": "agent-actionable unblock step present",
+      "stale": false,
+      "fix_path": "make the seat-matrix probe APPEND history instead of overwriting - i."
+    },
+    {
+      "idx": 1,
+      "tag": "OPS-NOTE",
+      "ts": "2026-11-22",
+      "who": "",
+      "title": "Orchestrator: auto-loop @Mechanic dispatches are FUTIL until a non-sandbox seat loads mech",
+      "label": "human_required",
+      "rationale": "env/infra wall (sandbox egress), no agent path",
+      "stale": true
+    },
+    {
+      "idx": 2,
+      "tag": "NEEDS-HUMAN",
+      "ts": "2026-11-20",
+      "who": "",
+      "title": "Orchestrator: elev.py PRESENT but helper DOWN (exit 5)",
+      "label": "human_required",
+      "rationale": "tag=NEEDS-HUMAN + env/infra wall (helper DOWN) with no agent-actionable step",
+      "stale": true
+    },
+    {
+      "idx": 3,
+      "tag": "NEEDS-HUMAN",
+      "ts": "2026-11-20",
+      "who": "",
+      "title": "Orchestrator #1 Live Hotload Execution: elev.py ABSENT on this seat",
+      "label": "human_required",
+      "rationale": "tag=NEEDS-HUMAN + env/infra wall (elev.py ABSENT) with no agent-actionable step",
+      "stale": true
+    },
+    {
+      "idx": 4,
+      "tag": "NEEDS-HUMAN",
+      "ts": "2026-11-20",
+      "who": "",
+      "title": "Verifier #4 Performance Regression Gate: live-measurement leg blocked by :8099 egress wall",
+      "label": "human_required",
+      "rationale": "tag=NEEDS-HUMAN + env/infra wall (WinError 10013) with no agent-actionable step",
+      "stale": true
+    },
+    {
+      "idx": 5,
+      "tag": "NEEDS-HUMAN",
+      "ts": "2026-11-20",
+      "who": "Builder",
+      "title": "#3 Build-Verify-Pin: memory_mirror.py is 0 bytes in sandbox",
+      "label": "automatable",
+      "rationale": "tag=NEEDS-HUMAN: operational/data note with a stated remediation, no hard env wall",
+      "stale": true,
+      "fix_path": "Probe: pathlib.Path(\"memory_mirror.py\").stat().st_size -> 0. Repeated across multiple passes."
+    },
+    {
+      "idx": 6,
+      "tag": "RECONCILED",
+      "ts": "2026-11-19",
+      "who": "Orchestrator",
+      "title": "Browser acceptance blocker \u2014 Chrome-headless unblock does NOT reproduce from sandbox seats",
+      "label": "closed",
+      "rationale": "tag=RECONCILED => no longer an open blocker",
+      "stale": true
+    },
+    {
+      "idx": 7,
+      "tag": "RESOLVED",
+      "ts": "2026-11-17",
+      "who": "~14:07",
+      "title": "White SANDBOX seat cannot LAN-probe Red .245 (confirmed)",
+      "label": "closed",
+      "rationale": "tag=RESOLVED => no longer an open blocker",
+      "stale": true
+    },
+    {
+      "idx": 8,
+      "tag": "NEEDS-HUMAN",
+      "ts": "2026-11-17",
+      "who": "",
+      "title": "Goal #4 load-probe: Red sandbox cannot reach White:8099 (repeated across passes)",
+      "label": "human_required",
+      "rationale": "tag=NEEDS-HUMAN + env/infra wall (cannot reach White:8099) with no agent-actionable step",
+      "stale": true
+    },
+    {
+      "idx": 9,
+      "tag": "NEEDS-HUMAN",
+      "ts": "2026-11-17",
+      "who": "",
+      "title": "Live-browser verification unavailable from this sandbox seat (Designer #5 + #7)",
+      "label": "human_required",
+      "rationale": "tag=NEEDS-HUMAN + env/infra wall (no browser binary) with no agent-actionable step",
+      "stale": true
+    },
+    {
+      "idx": 10,
+      "tag": "NEEDS-HUMAN",
+      "ts": "2026-11-17",
+      "who": "",
+      "title": "Verifier goal #2 SLO scheduled task: schtasks COM unavailable + egress block in sandbox",
+      "label": "automatable",
+      "rationale": "agent-actionable unblock step present (overrides NEEDS-HUMAN tag)",
+      "stale": true,
+      "fix_path": "Class: sandbox limitation (COM \"Class not registered\" for schtasks; WinError 10013 for localhost:8099)."
+    },
+    {
+      "idx": 11,
+      "tag": "NEEDS-HUMAN",
+      "ts": "2026-11-18",
+      "who": "",
+      "title": "Mechanic #4 FleetBootRecovery schtask: COM wall on all sandbox seats",
+      "label": "automatable",
+      "rationale": "agent-actionable unblock step present (overrides NEEDS-HUMAN tag)",
+      "stale": true,
+      "fix_path": "Class: schtasks -> \"ERROR: Class not registered\" (COM unavailable in sandbox). elev.py absent at this seat."
+    },
+    {
+      "idx": 12,
+      "tag": "NEEDS-HUMAN",
+      "ts": "2026-11-18",
+      "who": "",
+      "title": "Orchestrator #2 Execute Engine: sandbox cannot reach Studio :8888",
+      "label": "human_required",
+      "rationale": "tag=NEEDS-HUMAN + env/infra wall (WinError 10013) with no agent-actionable step",
+      "stale": true
+    },
+    {
+      "idx": 13,
+      "tag": "NEEDS-HUMAN",
+      "ts": "",
+      "who": "",
+      "title": "Portal auto-restart failed (auto_restart.py)",
+      "label": "human_required",
+      "rationale": "tag=NEEDS-HUMAN + env/infra wall (Class not registered) with no agent-actionable step",
+      "stale": null
+    },
+    {
+      "idx": 14,
+      "tag": "OPS-NOTE",
+      "ts": "2026-11-23",
+      "who": "Archivist",
+      "title": "Stale auto-loop: all 10 goals REACHED, dispatcher still fires",
+      "label": "automatable",
+      "rationale": "tag=OPS-NOTE: operational/data note with a stated remediation, no hard env wall",
+      "stale": true,
+      "fix_path": "Observation: Auto-loop dispatches \"@Archivist work your oldest open goal\" with goals 1-5 listed as open. In reality ALL 10 goals in memory/goals/archivist.md carry [REACHED] timestamps (2026-11-23), a"
+    },
+    {
+      "idx": 15,
+      "tag": "OPS-NOTE",
+      "ts": "2026-11-25",
+      "who": "Pixel",
+      "title": "goal_ledger.py AGENT_FILES roster is missing the 2026-11-25 onboarded sub-agents (pixel/fo",
+      "label": "automatable",
+      "rationale": "agent-actionable unblock step present",
+      "stale": false,
+      "fix_path": "(owner = Researcher): add the missing keys to AGENT_FILES, one line each: \"pixel\":\"pixel."
+    },
+    {
+      "idx": 16,
+      "tag": "OPS-NOTE",
+      "ts": "",
+      "who": "",
+      "title": "no headless browser in agent sandbox [no-headless-browser-sandbox] (2026-11-25)",
+      "label": "automatable",
+      "rationale": "tag=OPS-NOTE: operational/data note with a stated remediation, no hard env wall",
+      "stale": null,
+      "fix_path": "(see entry body)"
+    },
+    {
+      "idx": 17,
+      "tag": "OPS-NOTE",
+      "ts": "",
+      "who": "",
+      "title": "goal stall 104/116 root causes - seat starvation + dead scheduler host (2026-11-25)",
+      "label": "automatable",
+      "rationale": "tag=OPS-NOTE: operational/data note with a stated remediation, no hard env wall",
+      "stale": null,
+      "fix_path": "Root cause 1 (seat starvation): White Studio is single-model-resident (Q8_0 on both GPUs, 241K-ctx KV). Loading quinn-q4 (Researcher+Outlet) returned 409 {\"error\":\"active_generations\",\"message\":\"Loadi"
+    },
+    {
+      "idx": 18,
+      "tag": "OPS-NOTE",
+      "ts": "2026-11-26",
+      "who": "Splice",
+      "title": "ffmpeg/ffprobe ABSENT on this host \u2014 media-lane pipeline stages cannot execute here",
+      "label": "automatable",
+      "rationale": "agent-actionable unblock step present",
+      "stale": false,
+      "fix_path": "below."
+    }
+  ]
+}

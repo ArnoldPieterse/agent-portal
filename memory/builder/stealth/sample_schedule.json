@@ -1,0 +1,24 @@
+[
+  {
+    "id": "APPT-001",
+    "title": "Annual service - boiler",
+    "client": "John Smith",
+    "datetime_iso": "2026-11-25T09:00:00",
+    "lead_hours": 2
+  },
+  {
+    "id": "APPT-002",
+    "title": "New install - solar panels",
+    "client": "Jane Doe",
+    "datetime_iso": "2026-11-27T14:00:00",
+    "lead_hours": 4,
+    "reminded": true
+  },
+  {
+    "id": "APPT-003",
+    "title": "Follow-up inspection",
+    "client": "Mike Lee",
+    "datetime_iso": "2026-11-26T10:00:00",
+    "lead_hours": 1
+  }
+]

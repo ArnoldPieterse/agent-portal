@@ -1,52 +1,52 @@
 # Fleet Forecast - 10 steps ahead
 
-Generated: 2026-11-27 12:48:55 | Fleet: 93/111 (84%) | throughput ~13.0 goals/h
+Generated: 2026-11-27 13:54:22 | Fleet: 94/111 (85%) | throughput ~13.0 goals/h
 
 ## Next 10 goals (queue order)
 
-**#1 [designer] Regression Alert Banner** - ETA 2026-11-27 16:03, P(reached) 5% (measurement, cx2)
+**#1 [designer] Regression Alert Banner** - ETA 2026-11-27 17:09, P(reached) 5% (measurement, cx2)
    steps: instrument or extend the scorer -> two-run delta check -> publish snapshot + report leaf
-   consequences: lane end outlet: 11-28 22:37 (slowest lane)
-**#2 [outlet] First live account connection + end-to-end ship** - ETA 2026-11-27 17:19, P(reached) 16% (build, cx2)
+   consequences: lane end outlet: 11-28 23:42 (slowest lane)
+**#2 [outlet] First live account connection + end-to-end ship** - ETA 2026-11-27 18:24, P(reached) 16% (build, cx2)
    steps: scaffold the module file -> implement core logic -> self-test until AC green -> evidence leaf + index line (AC: one post shipped on a real platform with zero manual edits after staging; tim)
-   consequences: outlet: **Per-platform voice variants + lint** - X (≤280 chars, punc (2026-11-28 04:15) - shared scope draft,platform | lane end outlet: 11-28 22:37 (slowest lane)
-**#3 [pixel] Close the live CDP screenshot leg (goal #5 carry-over)** - ETA 2026-11-27 17:19, P(reached) 16% (build, cx2)
+   consequences: outlet: **Per-platform voice variants + lint** - X (≤280 chars, punc (2026-11-28 05:21) - shared scope draft,platform | lane end outlet: 11-28 23:42 (slowest lane)
+**#3 [pixel] Close the live CDP screenshot leg (goal #5 carry-over)** - ETA 2026-11-27 18:24, P(reached) 16% (build, cx2)
    steps: scaffold the module file -> implement core logic -> self-test until AC green -> evidence leaf + index line (AC: 2 screenshots archived; no horizontal overflow; a)
-   consequences: lane end outlet: 11-28 22:37 (slowest lane)
-**#4 [verifier] Verification coverage map** - ETA 2026-11-27 17:22, P(reached) 19% (build, cx2)
-   steps: scaffold the module file -> implement core logic -> self-test until AC green -> evidence leaf + index line (AC: map covers 100% of tracked files; pct computed correctl)
-   consequences: outlet: **Hard verification gate** - `queue_check.py` blocks unverif (2026-11-28 00:50) - shared scope unverified,verification | outlet: **Content fitness score** - per-post composite (engagement m (2026-11-28 20:06) - shared scope computed,coverage,verification | lane end outlet: 11-28 22:37 (slowest lane)
-**#5 [outlet] Trend-to-draft pipeline** - ETA 2026-11-27 20:20, P(reached) 36% (build, cx1)
+   consequences: lane end outlet: 11-28 23:42 (slowest lane)
+**#4 [outlet] Trend-to-draft pipeline** - ETA 2026-11-27 21:26, P(reached) 36% (build, cx1)
    steps: scaffold the module file -> implement core logic -> self-test until AC green -> evidence leaf + index line (AC: 5 real briefs → 5 skeletons → 5 lints, all <5 min each; output quality passes human review)
-   consequences: outlet: **Hard verification gate** - `queue_check.py` blocks unverif (2026-11-28 00:50) - shared scope human,posts | outlet: **Per-platform voice variants + lint** - X (≤280 chars, punc (2026-11-28 04:15) - shared scope draft,voice | outlet: **Content fitness score** - per-post composite (engagement m (2026-11-28 20:06) - shared scope output,trend
-**#6 [designer] Cross-Lane Assist Graph** - ETA 2026-11-27 20:23, P(reached) 4% (build, cx2)
+   consequences: outlet: **Hard verification gate** - `queue_check.py` blocks unverif (2026-11-28 01:56) - shared scope human,posts | outlet: **Per-platform voice variants + lint** - X (≤280 chars, punc (2026-11-28 05:21) - shared scope draft,voice | outlet: **Content fitness score** - per-post composite (engagement m (2026-11-28 21:11) - shared scope output,trend
+**#5 [designer] Cross-Lane Assist Graph** - ETA 2026-11-27 21:28, P(reached) 4% (build, cx2)
    steps: scaffold the module file -> implement core logic -> self-test until AC green -> evidence leaf + index line (AC: renders from real assist-log data; all agents with >=1 assist appear; edge widths scale co)
-   consequences: designer: **Agent Utilization Timeline** - 14-row stacked bar, 24h win (2026-11-28 11:35) - shared scope agents,appear,legend | lane end outlet: 11-28 22:37 (slowest lane)
-**#7 [designer] Fleet Health Composite Gauge** - ETA 2026-11-27 22:37, P(reached) 15% (ops, cx2)
+   consequences: designer: **Agent Utilization Timeline** - 14-row stacked bar, 24h win (2026-11-28 12:40) - shared scope agents,appear,legend | lane end outlet: 11-28 23:42 (slowest lane)
+**#6 [designer] Fleet Health Composite Gauge** - ETA 2026-11-27 23:43, P(reached) 15% (ops, cx2)
    steps: pre-flight checks (targets exist, idempotent) -> execute from non-sandbox session -> verify registration/health + evidence leaf
-   consequences: lane end outlet: 11-28 22:37 (slowest lane)
-**#8 [outlet] Hard verification gate** - ETA 2026-11-28 00:50, P(reached) 16% (build, cx2)
+   consequences: lane end outlet: 11-28 23:42 (slowest lane)
+**#7 [outlet] Hard verification gate** - ETA 2026-11-28 01:56, P(reached) 16% (build, cx2)
    steps: scaffold the module file -> implement core logic -> self-test until AC green -> evidence leaf + index line (AC: injected false claim blocked at gate; 10 real posts pass without blocking; gate log shows )
-   consequences: verifier: **Verification coverage map** - enumerate all files in the p (2026-11-27 17:22) - shared scope unverified,verification | outlet: **Trend-to-draft pipeline** - Researcher briefs auto-generat (2026-11-27 20:20) - shared scope human,posts | lane end outlet: 11-28 22:37 (slowest lane)
-**#9 [designer] Goal Pipeline Flow** - ETA 2026-11-28 02:57, P(reached) 4% (build, cx2)
+   consequences: outlet: **Trend-to-draft pipeline** - Researcher briefs auto-generat (2026-11-27 21:26) - shared scope human,posts | lane end outlet: 11-28 23:42 (slowest lane)
+**#8 [designer] Goal Pipeline Flow** - ETA 2026-11-28 04:02, P(reached) 4% (build, cx2)
    steps: scaffold the module file -> implement core logic -> self-test until AC green -> evidence leaf + index line (AC: renders current goal states from /api/goals; bottleneck badge appears when >3 in same stat)
-   consequences: lane end outlet: 11-28 22:37 (slowest lane)
-**#10 [outlet] Per-platform voice variants + lint** - ETA 2026-11-28 04:15, P(reached) 19% (measurement, cx2)
+   consequences: lane end outlet: 11-28 23:42 (slowest lane)
+**#9 [outlet] Per-platform voice variants + lint** - ETA 2026-11-28 05:21, P(reached) 19% (measurement, cx2)
    steps: instrument or extend the scorer -> two-run delta check -> publish snapshot + report leaf
-   consequences: outlet: **First live account connection + end-to-end ship** - connec (2026-11-27 17:19) - shared scope draft,platform | outlet: **Trend-to-draft pipeline** - Researcher briefs auto-generat (2026-11-27 20:20) - shared scope draft,voice | lane end outlet: 11-28 22:37 (slowest lane)
+   consequences: outlet: **First live account connection + end-to-end ship** - connec (2026-11-27 18:24) - shared scope draft,platform | outlet: **Trend-to-draft pipeline** - Researcher briefs auto-generat (2026-11-27 21:26) - shared scope draft,voice | lane end outlet: 11-28 23:42 (slowest lane)
+**#10 [designer] Convergence Velocity Indicator** - ETA 2026-11-28 08:21, P(reached) 4% (build, cx2)
+   steps: scaffold the module file -> implement core logic -> self-test until AC green -> evidence leaf + index line (AC: shows last 8 cycles; arrow direction matches slope sign; updates on new cycle data; reduce)
+   consequences: lane end outlet: 11-28 23:42 (slowest lane)
 
 ## Planned work (decision tree)
 
-- state: Fleet 93/111 (84%) | gate: all goals 100%? -> **NO - queue in flight**
+- state: Fleet 94/111 (85%) | gate: all goals 100%? -> **NO - queue in flight**
 - cycle: in flight: 10 goal(s) open
-- #1 [designer] Regression Alert Banner ~2026-11-27 16:03 (P~5%) - planned as measurement work (cx2); already open on the designer lane - FIFO order keeps evidence leaves consistent; lower confidence (P(reac | delivers: Regression Alert Banner
-- #2 [outlet] First live account connection + end-to-end ship ~2026-11-27 17:19 (P~16%) - planned as build work (cx2); already open on the outlet lane - FIFO order keeps evidence leaves consistent; lower confidence (P(reached) ~16 | delivers: First live account connection + end-to-end ship
-- #3 [pixel] Close the live CDP screenshot leg (goal #5 carry-over) ~2026-11-27 17:19 (P~16%) - planned as build work (cx2); already open on the pixel lane - FIFO order keeps evidence leaves consistent; lower confidence (P(reached) ~16% | delivers: Archive + evidence leaves
-- #4 [verifier] Verification coverage map ~2026-11-27 17:22 (P~19%) - planned as build work (cx2); already open on the verifier lane - FIFO order keeps evidence leaves consistent; lower confidence (P(reached) ~ | delivers: Verification coverage map
-- #5 [outlet] Trend-to-draft pipeline ~2026-11-27 20:20 (P~36%) - planned as build work (cx1); already open on the outlet lane - FIFO order keeps evidence leaves consistent; lower confidence (P(reached) ~36 | delivers: Mic access
-- #6 [designer] Cross-Lane Assist Graph ~2026-11-27 20:23 (P~4%) - planned as build work (cx2); already open on the designer lane - FIFO order keeps evidence leaves consistent; lower confidence (P(reached) ~ | delivers: Cross-Lane Assist Graph
-- #7 [designer] Fleet Health Composite Gauge ~2026-11-27 22:37 (P~15%) - planned as ops work (cx2); already open on the designer lane - FIFO order keeps evidence leaves consistent; lower confidence (P(reached) ~15 | delivers: Fleet Health Composite Gauge
-- #8 [outlet] Hard verification gate ~2026-11-28 00:50 (P~16%) - planned as build work (cx2); already open on the outlet lane - FIFO order keeps evidence leaves consistent; lower confidence (P(reached) ~16 | delivers: Hard verification gate
+- #1 [designer] Regression Alert Banner ~2026-11-27 17:09 (P~5%) - planned as measurement work (cx2); already open on the designer lane - FIFO order keeps evidence leaves consistent; lower confidence (P(reac | delivers: Regression Alert Banner
+- #2 [outlet] First live account connection + end-to-end ship ~2026-11-27 18:24 (P~16%) - planned as build work (cx2); already open on the outlet lane - FIFO order keeps evidence leaves consistent; lower confidence (P(reached) ~16 | delivers: First live account connection + end-to-end ship
+- #3 [pixel] Close the live CDP screenshot leg (goal #5 carry-over) ~2026-11-27 18:24 (P~16%) - planned as build work (cx2); already open on the pixel lane - FIFO order keeps evidence leaves consistent; lower confidence (P(reached) ~16% | delivers: Archive + evidence leaves
+- #4 [outlet] Trend-to-draft pipeline ~2026-11-27 21:26 (P~36%) - planned as build work (cx1); already open on the outlet lane - FIFO order keeps evidence leaves consistent; lower confidence (P(reached) ~36 | delivers: Mic access
+- #5 [designer] Cross-Lane Assist Graph ~2026-11-27 21:28 (P~4%) - planned as build work (cx2); already open on the designer lane - FIFO order keeps evidence leaves consistent; lower confidence (P(reached) ~ | delivers: Cross-Lane Assist Graph
+- #6 [designer] Fleet Health Composite Gauge ~2026-11-27 23:43 (P~15%) - planned as ops work (cx2); already open on the designer lane - FIFO order keeps evidence leaves consistent; lower confidence (P(reached) ~15 | delivers: Fleet Health Composite Gauge
+- #7 [outlet] Hard verification gate ~2026-11-28 01:56 (P~16%) - planned as build work (cx2); already open on the outlet lane - FIFO order keeps evidence leaves consistent; lower confidence (P(reached) ~16 | delivers: Hard verification gate
+- #8 [designer] Goal Pipeline Flow ~2026-11-28 04:02 (P~4%) - planned as build work (cx2); already open on the designer lane - FIFO order keeps evidence leaves consistent; lower confidence (P(reached) ~ | delivers: Goal Pipeline Flow
 
 ## Functional capability chain (PM view)
 
@@ -148,39 +148,39 @@ The week ahead: every 15-day step clamped to days 0-7 and split finer - one line
 
 plan history (oldest -> newest): 05dcc83e6301 @ 11-25 02:40:36, df19237b8736 @ 11-25 17:52:34, 05dcc83e6301 @ 11-26 20:05:18, df19237b8736 @ 11-27 01:31:49
 
-## 30m ahead (by 2026-11-27 13:18)
-- completes: **0** goal(s) -> fleet ~84%
-- why: queue order from the auto-loop: these complete first because their lanes are shortest; expected outcome: fleet 93/111 -> 83%
+## 30m ahead (by 2026-11-27 14:24)
+- completes: **0** goal(s) -> fleet ~85%
+- why: queue order from the auto-loop: these complete first because their lanes are shortest; expected outcome: fleet 94/111 -> 84%
 
-## 1h ahead (by 2026-11-27 13:48)
-- completes: **0** goal(s) -> fleet ~84%
-- why: queue order from the auto-loop: these complete first because their lanes are shortest; expected outcome: fleet 93/111 -> 83%
+## 1h ahead (by 2026-11-27 14:54)
+- completes: **0** goal(s) -> fleet ~85%
+- why: queue order from the auto-loop: these complete first because their lanes are shortest; expected outcome: fleet 94/111 -> 84%
 
-## 1d ahead (by 2026-11-28 12:48)
-- completes: **14** goal(s) -> fleet ~96%
-  - #1 designer: Regression Alert Banner (2026-11-27 16:03)
-  - #2 outlet: First live account connection + end-to-end ship (2026-11-27 17:19)
-  - #3 pixel: Close the live CDP screenshot leg (goal #5 carry-over) (2026-11-27 17:19)
-  - #4 verifier: Verification coverage map (2026-11-27 17:22)
-  - #5 outlet: Trend-to-draft pipeline (2026-11-27 20:20)
-- why: queue order from the auto-loop: these complete first because their lanes are shortest; expected outcome: fleet 93/111 -> 92%
+## 1d ahead (by 2026-11-28 13:54)
+- completes: **13** goal(s) -> fleet ~96%
+  - #1 designer: Regression Alert Banner (2026-11-27 17:09)
+  - #2 outlet: First live account connection + end-to-end ship (2026-11-27 18:24)
+  - #3 pixel: Close the live CDP screenshot leg (goal #5 carry-over) (2026-11-27 18:24)
+  - #4 outlet: Trend-to-draft pipeline (2026-11-27 21:26)
+  - #5 designer: Cross-Lane Assist Graph (2026-11-27 21:28)
+- why: queue order from the auto-loop: these complete first because their lanes are shortest; expected outcome: fleet 94/111 -> 93%
 
-## 1w ahead (by 2026-12-04 12:48)
-- completes: **18** goal(s) -> fleet ~100%
-  - #1 designer: Regression Alert Banner (2026-11-27 16:03)
-  - #2 outlet: First live account connection + end-to-end ship (2026-11-27 17:19)
-  - #3 pixel: Close the live CDP screenshot leg (goal #5 carry-over) (2026-11-27 17:19)
-  - #4 verifier: Verification coverage map (2026-11-27 17:22)
-  - #5 outlet: Trend-to-draft pipeline (2026-11-27 20:20)
-- why: queue order from the auto-loop: these complete first because their lanes are shortest; expected outcome: fleet 93/111 -> 92%
+## 1w ahead (by 2026-12-04 13:54)
+- completes: **17** goal(s) -> fleet ~100%
+  - #1 designer: Regression Alert Banner (2026-11-27 17:09)
+  - #2 outlet: First live account connection + end-to-end ship (2026-11-27 18:24)
+  - #3 pixel: Close the live CDP screenshot leg (goal #5 carry-over) (2026-11-27 18:24)
+  - #4 outlet: Trend-to-draft pipeline (2026-11-27 21:26)
+  - #5 designer: Cross-Lane Assist Graph (2026-11-27 21:28)
+- why: queue order from the auto-loop: these complete first because their lanes are shortest; expected outcome: fleet 94/111 -> 93%
 - next-cycle candidates: ARCHIVIST#6 Knowledge decay model productionization - run deca; ARCHIVIST#8 Snapshot diff weekly report - extend cycle-2 snaps; MECHANIC#1 Portal load test completion (cycle-2 #4 carryover); MECHANIC#2 Self-healing mirror productionization - the cycle-
 
-## 1m ahead (by 2026-12-27 12:48)
-- completes: **18** goal(s) -> fleet ~100%
-  - #1 designer: Regression Alert Banner (2026-11-27 16:03)
-  - #2 outlet: First live account connection + end-to-end ship (2026-11-27 17:19)
-  - #3 pixel: Close the live CDP screenshot leg (goal #5 carry-over) (2026-11-27 17:19)
-  - #4 verifier: Verification coverage map (2026-11-27 17:22)
-  - #5 outlet: Trend-to-draft pipeline (2026-11-27 20:20)
-- why: queue order from the auto-loop: these complete first because their lanes are shortest; expected outcome: fleet 93/111 -> 92%
+## 1m ahead (by 2026-12-27 13:54)
+- completes: **17** goal(s) -> fleet ~100%
+  - #1 designer: Regression Alert Banner (2026-11-27 17:09)
+  - #2 outlet: First live account connection + end-to-end ship (2026-11-27 18:24)
+  - #3 pixel: Close the live CDP screenshot leg (goal #5 carry-over) (2026-11-27 18:24)
+  - #4 outlet: Trend-to-draft pipeline (2026-11-27 21:26)
+  - #5 designer: Cross-Lane Assist Graph (2026-11-27 21:28)
+- why: queue order from the auto-loop: these complete first because their lanes are shortest; expected outcome: fleet 94/111 -> 93%
 - next-cycle candidates: ARCHIVIST#6 Knowledge decay model productionization - run deca; ARCHIVIST#8 Snapshot diff weekly report - extend cycle-2 snaps; MECHANIC#1 Portal load test completion (cycle-2 #4 carryover); MECHANIC#2 Self-healing mirror productionization - the cycle-

@@ -1,0 +1,150 @@
+{
+  "verified_at": "2026-11-26T23:52:23.797286+00:00",
+  "goals": [
+    2,
+    3,
+    4,
+    5,
+    6
+  ],
+  "checks": [
+    {
+      "name": "role=alert",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "aria-live=assertive",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "threshold default 5pts",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "auto-dismiss 30s (dismissMs:30000)",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "cooldown 10min (cooldownMs:600000)",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "slide-in CSS transition",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "red color #e53e3e",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "simulateDrop API",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "strict > comparison",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "polls /api/convergence",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "fetches real assist-log data",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "edge width scales with count",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "all agents appear (nodes from data.agents)",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "legend present",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "weights sum to 1 (0.35+0.20+0.25+0.20)",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "polls /api/health",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "tooltip shows component breakdown",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "0-100 scale (clamp)",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "formula documented in header",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "polls /api/goals",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "4 stages present",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "bottleneck detection >3 stuck",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "click-through to detail",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "120x32 dimensions",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "directional arrow (accel/stable/decel)",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "last 8 cycles",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "reduced-motion safe",
+      "pass": true,
+      "detail": ""
+    }
+  ],
+  "passed": 27,
+  "total": 27,
+  "all_met": true
+}

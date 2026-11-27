@@ -1,0 +1,212 @@
+{
+  "generated": "2026-11-26T21:42:36",
+  "cycle": "current",
+  "source": "memory/**/assist-*.md evidence files",
+  "total_assists": 81,
+  "records_parsed": 81,
+  "records_skipped": 4,
+  "agents": [
+    {
+      "name": "Archivist",
+      "count": 39
+    },
+    {
+      "name": "Scribe",
+      "count": 33
+    },
+    {
+      "name": "Builder",
+      "count": 21
+    },
+    {
+      "name": "Orchestrator",
+      "count": 20
+    },
+    {
+      "name": "Designer",
+      "count": 17
+    },
+    {
+      "name": "Mechanic",
+      "count": 16
+    },
+    {
+      "name": "Verifier",
+      "count": 7
+    },
+    {
+      "name": "Researcher",
+      "count": 6
+    },
+    {
+      "name": "Forge",
+      "count": 2
+    },
+    {
+      "name": "Pixel",
+      "count": 1
+    }
+  ],
+  "edges": [
+    {
+      "from": "Scribe",
+      "to": "Archivist",
+      "count": 11
+    },
+    {
+      "from": "Archivist",
+      "to": "Scribe",
+      "count": 7
+    },
+    {
+      "from": "Orchestrator",
+      "to": "Archivist",
+      "count": 7
+    },
+    {
+      "from": "Orchestrator",
+      "to": "Scribe",
+      "count": 5
+    },
+    {
+      "from": "Builder",
+      "to": "Designer",
+      "count": 4
+    },
+    {
+      "from": "Designer",
+      "to": "Archivist",
+      "count": 4
+    },
+    {
+      "from": "Builder",
+      "to": "Archivist",
+      "count": 3
+    },
+    {
+      "from": "Mechanic",
+      "to": "Verifier",
+      "count": 3
+    },
+    {
+      "from": "Researcher",
+      "to": "Archivist",
+      "count": 3
+    },
+    {
+      "from": "Scribe",
+      "to": "Builder",
+      "count": 3
+    },
+    {
+      "from": "Builder",
+      "to": "Mechanic",
+      "count": 2
+    },
+    {
+      "from": "Builder",
+      "to": "Verifier",
+      "count": 2
+    },
+    {
+      "from": "Mechanic",
+      "to": "Archivist",
+      "count": 2
+    },
+    {
+      "from": "Mechanic",
+      "to": "Builder",
+      "count": 2
+    },
+    {
+      "from": "Orchestrator",
+      "to": "Builder",
+      "count": 2
+    },
+    {
+      "from": "Orchestrator",
+      "to": "Designer",
+      "count": 2
+    },
+    {
+      "from": "Orchestrator",
+      "to": "Mechanic",
+      "count": 2
+    },
+    {
+      "from": "Orchestrator",
+      "to": "Researcher",
+      "count": 2
+    },
+    {
+      "from": "Scribe",
+      "to": "Designer",
+      "count": 2
+    },
+    {
+      "from": "Archivist",
+      "to": "Builder",
+      "count": 1
+    },
+    {
+      "from": "Builder",
+      "to": "Researcher",
+      "count": 1
+    },
+    {
+      "from": "Builder",
+      "to": "Scribe",
+      "count": 1
+    },
+    {
+      "from": "Designer",
+      "to": "Forge",
+      "count": 1
+    },
+    {
+      "from": "Designer",
+      "to": "Mechanic",
+      "count": 1
+    },
+    {
+      "from": "Designer",
+      "to": "Pixel",
+      "count": 1
+    },
+    {
+      "from": "Designer",
+      "to": "Scribe",
+      "count": 1
+    },
+    {
+      "from": "Mechanic",
+      "to": "Designer",
+      "count": 1
+    },
+    {
+      "from": "Mechanic",
+      "to": "Scribe",
+      "count": 1
+    },
+    {
+      "from": "Scribe",
+      "to": "Forge",
+      "count": 1
+    },
+    {
+      "from": "Scribe",
+      "to": "Mechanic",
+      "count": 1
+    },
+    {
+      "from": "Verifier",
+      "to": "Archivist",
+      "count": 1
+    },
+    {
+      "from": "Verifier",
+      "to": "Mechanic",
+      "count": 1
+    }
+  ]
+}

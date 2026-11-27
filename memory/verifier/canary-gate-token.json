@@ -1,0 +1,23 @@
+{
+  "status": "PASS",
+  "timestamp": "2026-11-26T23:42:48Z",
+  "duration_s": 0.001,
+  "checks": {
+    "functional": {
+      "f1_core_js_exists": true,
+      "f2_brace_balance": true,
+      "f3_app_css_exists": true,
+      "f4_ssot_exists": true,
+      "f5_index_html_exists": true
+    },
+    "perf": {
+      "p1_core_js_kb": 51.3,
+      "p1_pass": true,
+      "p2_app_css_kb": 37.7,
+      "p2_pass": true,
+      "p3_ui_code_kb": 137.4,
+      "p3_pass": true
+    }
+  },
+  "reasons": []
+}

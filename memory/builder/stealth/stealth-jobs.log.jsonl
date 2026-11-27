@@ -1,0 +1,3 @@
+{"ts": "2026-11-25T20:57:36", "job": "wf1_ar_followup", "status": "FAIL", "elapsed_s": 0.01, "detail": "AttributeError: module 'wf1' has no attribute 'process_invoices'"}
+{"ts": "2026-11-25T20:57:58", "job": "wf1_ar_followup", "status": "FAIL", "elapsed_s": 0.01, "detail": "KeyError: 'due_date'"}
+{"ts": "2026-11-25T20:58:06", "job": "wf1_ar_followup", "status": "PASS", "elapsed_s": 0.01, "detail": "{'batches': 3}"}

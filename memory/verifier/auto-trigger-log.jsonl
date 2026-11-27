@@ -1,0 +1,2 @@
+{"ts": "2026-11-26T12:36:09.246757+00:00", "trigger": "auto_trigger/mtime_change", "files_changed": ["core.js"], "file_hashes": {"core.js": "b1e282d99cb8"}, "suite_exit_code": 0, "suite_duration_s": 0.27, "summary": "1P/0F/0S overall=PASS", "verdict": "PASS", "within_5min": true}
+{"ts": "2026-11-27T00:05:36.351604+00:00", "trigger": "auto_trigger/mtime_change", "files_changed": ["core.js"], "file_hashes": {"core.js": "b1e282d99cb8"}, "suite_exit_code": 0, "suite_duration_s": 1.0, "summary": "1P/0F/0S overall=PASS", "verdict": "PASS", "within_5min": true}

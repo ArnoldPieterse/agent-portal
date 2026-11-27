@@ -1,0 +1,65 @@
+{
+  "week": "2026-W48",
+  "start": "2026-11-23",
+  "days": [
+    {
+      "date": "2026-11-23",
+      "topic": "Fleet status update: cycle progress snapshot",
+      "source": "default",
+      "platform_priority": [
+        "X"
+      ]
+    },
+    {
+      "date": "2026-11-24",
+      "topic": "Trend brief - 2026-11-25",
+      "source": "trend",
+      "platform_priority": [
+        "X",
+        "LinkedIn"
+      ]
+    },
+    {
+      "date": "2026-11-25",
+      "topic": "Trend brief - 2026-11-26 (fleet-internal #1)",
+      "source": "trend",
+      "platform_priority": [
+        "X"
+      ]
+    },
+    {
+      "date": "2026-11-26",
+      "topic": "Community Q&A: top question from last week",
+      "source": "default",
+      "platform_priority": [
+        "X"
+      ]
+    },
+    {
+      "date": "2026-11-27",
+      "topic": "Trend brief - 2026-11-26 (fleet-internal #2)",
+      "source": "trend",
+      "platform_priority": [
+        "X",
+        "LinkedIn"
+      ]
+    },
+    {
+      "date": "2026-11-28",
+      "topic": "Trend brief - 2026-11-26 (fleet-internal #3)",
+      "source": "trend",
+      "platform_priority": [
+        "X"
+      ]
+    },
+    {
+      "date": "2026-11-29",
+      "topic": "OUTLET TREND INTAKE - DM protocol to Researcher",
+      "source": "trend",
+      "platform_priority": [
+        "X"
+      ]
+    }
+  ],
+  "generated_at": "2026-11-26T12:33:57.948039+00:00"
+}

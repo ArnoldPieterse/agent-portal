@@ -1,0 +1,29 @@
+[
+  {
+    "id": "N1",
+    "name": "Nova Plumbing",
+    "source": "web",
+    "stage": "qualified",
+    "value": 6500,
+    "last_contact_iso": "2026-11-14T09:00:00",
+    "silent_days_threshold": 7
+  },
+  {
+    "id": "N2",
+    "name": "Orbit HVAC",
+    "source": "referral",
+    "stage": "proposal",
+    "value": 15000,
+    "last_contact_iso": "2026-11-02T09:00:00",
+    "silent_days_threshold": 7
+  },
+  {
+    "id": "N3",
+    "name": "Pulse Dental",
+    "source": "web",
+    "stage": "lead",
+    "value": 2000,
+    "last_contact_iso": "2026-11-24T09:00:00",
+    "silent_days_threshold": 7
+  }
+]

@@ -444,3 +444,10 @@
 {"ts": "2026-11-27T13:06:42", "ref": ["memory/workspace/INDEX.md", 68], "focus_sig": "028160af", "reason": "lod-evict"}
 {"ts": "2026-11-27T13:06:42", "ref": ["memory/synthesis/hotfile-archive-20261125.md", 38], "focus_sig": "028160af", "reason": "lod-evict"}
 {"ts": "2026-11-27T13:21:40", "ref": ["memory/researcher/INDEX.md", 20], "focus_sig": "0a0ac051", "reason": "lod-evict"}
+{"ts": "2026-11-27T13:39:43", "ref": ["memory/goals/pixel.md", 20], "focus_sig": "2c37e828", "reason": "lod-evict"}
+{"ts": "2026-11-27T13:39:43", "ref": ["memory/goals/archive/mechanic-2026-11-23-cycle8.md", 11], "focus_sig": "2c37e828", "reason": "lod-evict"}
+{"ts": "2026-11-27T13:39:43", "ref": ["memory/goals/archive/researcher-2026-11-18.md", 13], "focus_sig": "2c37e828", "reason": "lod-evict"}
+{"ts": "2026-11-27T13:54:21", "ref": ["memory/synthesis/hotfile-archive-20261125.md", 38], "focus_sig": "ff2db023", "reason": "lod-evict"}
+{"ts": "2026-11-27T13:54:21", "ref": ["memory/workspace/INDEX.md", 68], "focus_sig": "ff2db023", "reason": "lod-evict"}
+{"ts": "2026-11-27T13:54:22", "ref": ["memory/synthesis/hotfile-archive-20261125.md", 38], "focus_sig": "ff2db023", "reason": "lod-evict"}
+{"ts": "2026-11-27T13:54:22", "ref": ["memory/workspace/INDEX.md", 68], "focus_sig": "ff2db023", "reason": "lod-evict"}

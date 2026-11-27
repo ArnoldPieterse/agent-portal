@@ -1,0 +1,80 @@
+{
+  "goal": "Regression Alert Banner (cycle-20 #2)",
+  "verified_at": "2026-11-26T23:51:33.729345+00:00",
+  "checks": [
+    {
+      "name": "Widget file exists",
+      "pass": true,
+      "detail": "ui\\cockpit-regression-banner.js"
+    },
+    {
+      "name": "role=alert present",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "aria-live=assertive",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "Default threshold = 5",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "Auto-dismiss = 30000ms (30s)",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "Cooldown = 600000ms (10 min)",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "Slide-in via CSS transition",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "Red color in banner",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "simulateDrop() exposed in return",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "Cooldown check (Date.now comparison)",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "setTimeout for auto-dismiss",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "Focus on show (a11y)",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "Drop comparison uses strict >",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "Polls /api/convergence",
+      "pass": true,
+      "detail": ""
+    }
+  ],
+  "passed": 14,
+  "total": 14,
+  "widget_file": "ui\\cockpit-regression-banner.js",
+  "acceptance_criteria_met": true
+}

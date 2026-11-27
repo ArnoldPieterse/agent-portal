@@ -1,0 +1,6 @@
+{"ts": "2026-11-26T12:10:11.107296+00:00", "event": "ship_cycle_start", "detail": "2026-11-26-milestone-level-12-90pct.md"}
+{"ts": "2026-11-26T12:10:11.108382+00:00", "event": "gates_passed", "detail": "2026-11-26-milestone-level-12-90pct.md"}
+{"ts": "2026-11-26T12:10:11.109386+00:00", "event": "shipped_to_published", "detail": "2026-11-26-milestone-level-12-90pct.md -> published/2026-11-26-milestone-level-12-90pct.md"}
+{"ts": "2026-11-26T12:10:11.114696+00:00", "event": "ship_cycle_complete", "detail": "2026-11-26-milestone-level-12-90pct.md (cycle: 0s)"}
+{"ts": "2026-11-26T23:54:04.432739+00:00", "event": "fire_queue_start", "detail": "platform=bluesky dry_run=True"}
+{"ts": "2026-11-26T23:54:04.436036+00:00", "event": "fire_queue_no_approved", "detail": "0 approved posts found"}

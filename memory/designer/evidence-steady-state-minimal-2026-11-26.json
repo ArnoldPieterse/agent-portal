@@ -1,0 +1,135 @@
+{
+  "goal": "Steady-State Minimal View (cycle-20 #1)",
+  "verified_at": "2026-11-26T13:05:25.373496+00:00",
+  "checks": [
+    {
+      "name": "Widget file exists",
+      "pass": true,
+      "detail": "ui\\cockpit-steady-state-minimal.js"
+    },
+    {
+      "name": "Hides panels via data-ss-hide attribute",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "CSS rule: body.steady-state + hidden class hides [data-ss-hide]",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "Marks generic panels (.panel, section, #agentList)",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "Hidden class applied to body",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "All Clear title present",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "Score displayed (42px font)",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "Trend indicator present (improving/declining/stable)",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "Last-update timestamp shown",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "data-testid for score/trend/last-update",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "Polls /api/fleet/mode",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "Checks mode === STEADY-STATE",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "Exits minimal mode when not SS (removes hidden class)",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "Conditional: if was hidden and mode changed -> unhide",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "Fetches /api/convergence for score",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "Reads fleet_autonomy_score",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "Reads trend data (trend_5_cycles or cycle_duration_trend)",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "ARIA role=status on card",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "ARIA label present",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "IIFE pattern",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "Error handling (.catch)",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "Balanced parentheses",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "Balanced braces",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "Polls every 30s (POLL_MS = 30000)",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "window.__steadyStateMinimal exposed",
+      "pass": true,
+      "detail": ""
+    }
+  ],
+  "passed": 25,
+  "total": 25,
+  "widget_file": "ui\\cockpit-steady-state-minimal.js",
+  "acceptance_criteria_met": true
+}

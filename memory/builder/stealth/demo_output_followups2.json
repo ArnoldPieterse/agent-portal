@@ -1,0 +1,32 @@
+{
+  "generated": "2026-11-26",
+  "batches": {
+    "gentle": [
+      {
+        "invoice_id": "INV-2026-002",
+        "client": "Beta Electric",
+        "amount": 890,
+        "days_overdue": 16,
+        "tier": "gentle"
+      }
+    ],
+    "firm": [
+      {
+        "invoice_id": "INV-2026-001",
+        "client": "Acme Plumbing",
+        "amount": 3450,
+        "days_overdue": 25,
+        "tier": "firm"
+      }
+    ],
+    "final": [
+      {
+        "invoice_id": "INV-2026-003",
+        "client": "Gamma HVAC",
+        "amount": 12000,
+        "days_overdue": 29,
+        "tier": "final"
+      }
+    ]
+  }
+}

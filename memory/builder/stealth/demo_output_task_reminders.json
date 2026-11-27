@@ -1,0 +1,14 @@
+{
+  "generated": "2026-11-26T07:46:12.497160",
+  "due_count": 1,
+  "skipped_already_reminded": 1,
+  "reminders": [
+    {
+      "id": "APPT-001",
+      "title": "Annual service - boiler",
+      "client": "John Smith",
+      "event_time": "2026-11-25T09:00:00",
+      "hours_until": -22.8
+    }
+  ]
+}

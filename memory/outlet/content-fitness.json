@@ -1,0 +1,115 @@
+{
+  "computed_at": "2026-11-26T12:34:19.796846+00:00",
+  "summary": {
+    "total_posts_scored": 11,
+    "avg_composite": 100.0,
+    "trend": "stable",
+    "lowest_post": {
+      "id": "2026-11-25-fleet-autonomy-convergence",
+      "composite": 100.0,
+      "suggestion": "Consider adding data points"
+    },
+    "scores": [
+      {
+        "post_id": "2026-11-25-fleet-autonomy-convergence",
+        "title": "Staged post: Fleet autonomy convergence",
+        "lint_pass": true,
+        "verification_pass": true,
+        "engagement_proxy": 1.0,
+        "composite": 100.0,
+        "suggestion": ""
+      },
+      {
+        "post_id": "2026-11-25-red-host-restored",
+        "title": "Staged post: Red host restored",
+        "lint_pass": true,
+        "verification_pass": true,
+        "engagement_proxy": 1.0,
+        "composite": 100.0,
+        "suggestion": ""
+      },
+      {
+        "post_id": "2026-11-26-outreach-bookkeeping-recon",
+        "title": "Staged outreach offer: Bookkeeping + invoice reconciliation (last mile on top of QBO/Xero)",
+        "lint_pass": true,
+        "verification_pass": true,
+        "engagement_proxy": 1.0,
+        "composite": 100.0,
+        "suggestion": ""
+      },
+      {
+        "post_id": "2026-11-26-outreach-crm-data-entry",
+        "title": "Staged outreach offer: Data entry / CRM updates (fill the blanks from the messy stuff)",
+        "lint_pass": true,
+        "verification_pass": true,
+        "engagement_proxy": 1.0,
+        "composite": 100.0,
+        "suggestion": ""
+      },
+      {
+        "post_id": "2026-11-26-outreach-social-content-scheduling",
+        "title": "Staged outreach offer: Social media content scheduling + engagement (the brain on top of Buffer)",
+        "lint_pass": true,
+        "verification_pass": true,
+        "engagement_proxy": 1.0,
+        "composite": 100.0,
+        "suggestion": ""
+      },
+      {
+        "post_id": "2026-11-26-trend-40--of-enterprise-applications-will-feat-1",
+        "title": "Staged post: trend observation",
+        "lint_pass": true,
+        "verification_pass": true,
+        "engagement_proxy": 1.0,
+        "composite": 100.0,
+        "suggestion": ""
+      },
+      {
+        "post_id": "2026-11-26-trend-40--of-enterprise-applications-will-feat",
+        "title": "Staged post: trend observation",
+        "lint_pass": true,
+        "verification_pass": true,
+        "engagement_proxy": 1.0,
+        "composite": 100.0,
+        "suggestion": ""
+      },
+      {
+        "post_id": "2026-11-26-trend-fleet-goal-completion-hit-27--this-cycle",
+        "title": "Staged post: trend observation",
+        "lint_pass": true,
+        "verification_pass": true,
+        "engagement_proxy": 1.0,
+        "composite": 100.0,
+        "suggestion": ""
+      },
+      {
+        "post_id": "2026-11-26-trend-fleet-not-converged-per-scribe-invariant",
+        "title": "Staged post: trend observation",
+        "lint_pass": true,
+        "verification_pass": true,
+        "engagement_proxy": 1.0,
+        "composite": 100.0,
+        "suggestion": ""
+      },
+      {
+        "post_id": "2026-11-26-trend-verifier-reached-4-10-goals-with-cross-l",
+        "title": "Staged post: trend observation",
+        "lint_pass": true,
+        "verification_pass": true,
+        "engagement_proxy": 1.0,
+        "composite": 100.0,
+        "suggestion": ""
+      },
+      {
+        "post_id": "2026-11-26-milestone-level-12-90pct",
+        "title": "Staged post: fleet milestone (new-level, pct-step)",
+        "lint_pass": true,
+        "verification_pass": true,
+        "engagement_proxy": 1.0,
+        "composite": 100.0,
+        "suggestion": ""
+      }
+    ],
+    "status": "PASS"
+  }
+}

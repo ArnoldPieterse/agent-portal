@@ -1,0 +1,145 @@
+{
+  "goal": "Next Horizons Panel (cycle-20 #10)",
+  "verified_at": "2026-11-27T00:03:49.157310+00:00",
+  "checks": [
+    {
+      "name": "Widget file exists",
+      "pass": true,
+      "detail": "ui\\cockpit-next-horizons.js"
+    },
+    {
+      "name": "MAX_CARDS = 3",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "Renders ETA per card",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "Slices to top N (slice(0, MAX_CARDS))",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "Source link present (data-src attr)",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "Link format: memory/goals/<agent>.md",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "Link element with href",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "CSS: hidden by default (display:none)",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "CSS: shown when body.steady-state",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "Polls /api/fleet/mode for mode check",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "Checks mode === STEADY-STATE",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "Stale threshold defined (24h)",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "isStale() function present",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "Stale message rendered (Forecast stale)",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "Age calculation (hours)",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "Fetches forecast from /api/memory/file",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "Path: goals/next10.json",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "Parses next10 array",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "ARIA role=region",
+      "pass": "role",
+      "detail": true
+    },
+    {
+      "name": "ARIA label present",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "data-testid attributes for automation",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "IIFE pattern",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "Error handling (.catch on fetches)",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "Balanced parentheses",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "Balanced braces",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "Polling interval (60s)",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "window.__nextHorizons exposed for testing",
+      "pass": true,
+      "detail": ""
+    }
+  ],
+  "passed": 27,
+  "total": 27,
+  "widget_file": "ui\\cockpit-next-horizons.js",
+  "acceptance_criteria_met": true
+}

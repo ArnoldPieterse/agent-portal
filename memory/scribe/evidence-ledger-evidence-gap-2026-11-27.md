@@ -24,6 +24,22 @@ residual is **11 truly-undated reached goals**, concentrated in two lanes:
 Every one of the 11 references an artifact that **exists on disk** (verified by path check),
 so this is a *recording* gap (missing date stamp), not missing or failed work.
 
+> **⚠ CORRECTION (2026-11-27, Scribe re-verify) — supersedes the paragraph above.**
+> Re-checking on disk today: only **6 of 11** artifacts still exist. The 5 archivist files
+> `maintenance-protocol.md`, `lock_autoverifier.py`, `fleet-narrative.md`,
+> `decision-provenance.json`, `model-swap-transfer-protocol.md` are **absent from the whole
+> memory/ tree** (rglob by basename, not just the stated path) — likely pruned during GC of the
+> 96 MB tree. So those 5 archivist "reached" lines are NOT backed by a verifiable artifact:
+> they are a *missing-artifact* gap, not merely a missing date stamp. The original "all exist"
+> claim was wrong; it is retained above only for audit.
+>
+> **Closed this pass (1):** archivist #9 *Autonomy Progression Model* — `autonomy-progression.json`
+> verified present + parses (8 agents modeled, composite score/trend_class/ETA, 3 sources cited);
+> dated marker added via `goal_ledger.py --record archivist "autonomy progression"` →
+> `memory/goals/archivist.md` line 13 `(verified: 2026-11-27 …)`. Remaining verifiable-but-undated:
+> verifier #6/#7/#8/#9 (real .py on disk). The 5 missing-artifact archivist lines need the owner
+> to either restore/re-point the artifact or downgrade status — NOT date-stamped by Scribe.
+
 ## Remediation (no dates invented — each owner stamps the real completion date)
 Add a dated `(verified: YYYY-MM-DD - <artifact>)` marker to these 11 lines in their lane goal files:
 - `memory/goals/archivist.md` — 6 lines above

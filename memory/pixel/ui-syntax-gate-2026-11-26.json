@@ -1,0 +1,146 @@
+{
+  "generated": "2026-11-25T18:42Z",
+  "method": "regex-literal-aware brace/paren/bracket balance (criterion #8 fallback; no node in sandbox)",
+  "files_checked": 31,
+  "all_balanced": false,
+  "fails": [
+    "cockpit-convergence.js",
+    "cockpit-cycle-forecast.js",
+    "cockpit-cycle15.js",
+    "cockpit-decay.js",
+    "cockpit-intervention-timeline.js",
+    "components.js",
+    "core.js",
+    "fleet_topology.js",
+    "runbook_trigger.js",
+    "scheduler.js",
+    "stealth.js",
+    "uploads.js"
+  ],
+  "per_file": {
+    "api-client.js": {
+      "ok": true,
+      "msg": "ok"
+    },
+    "cockpit-autonomy-cards.js": {
+      "ok": true,
+      "msg": "ok"
+    },
+    "cockpit-complexity-heatmap.js": {
+      "ok": true,
+      "msg": "ok"
+    },
+    "cockpit-convergence.js": {
+      "ok": false,
+      "msg": "mismatch '}' (innermost ('(', 1820))"
+    },
+    "cockpit-cycle-forecast.js": {
+      "ok": false,
+      "msg": "mismatch ')' (innermost ('{', 1719))"
+    },
+    "cockpit-cycle-transition.js": {
+      "ok": true,
+      "msg": "ok"
+    },
+    "cockpit-cycle15.js": {
+      "ok": false,
+      "msg": "mismatch ')' (innermost ('{', 16))"
+    },
+    "cockpit-decay.js": {
+      "ok": false,
+      "msg": "mismatch '}' (innermost ('(', 1245))"
+    },
+    "cockpit-density.js": {
+      "ok": true,
+      "msg": "ok"
+    },
+    "cockpit-forecast.js": {
+      "ok": true,
+      "msg": "ok"
+    },
+    "cockpit-intervention-timeline.js": {
+      "ok": false,
+      "msg": "mismatch '}' (innermost ('(', 1029))"
+    },
+    "cockpit-metrics-export.js": {
+      "ok": true,
+      "msg": "ok"
+    },
+    "cockpit-progress-ring.js": {
+      "ok": true,
+      "msg": "ok"
+    },
+    "cockpit-topology.js": {
+      "ok": true,
+      "msg": "ok"
+    },
+    "cockpit.js": {
+      "ok": true,
+      "msg": "ok"
+    },
+    "components.js": {
+      "ok": false,
+      "msg": "mismatch '}' (innermost ('(', 2691))"
+    },
+    "convergence-eta.js": {
+      "ok": true,
+      "msg": "ok"
+    },
+    "core.js": {
+      "ok": false,
+      "msg": "mismatch '}' (innermost ('(', 2939))"
+    },
+    "fleet_health.js": {
+      "ok": true,
+      "msg": "ok"
+    },
+    "fleet_performance.js": {
+      "ok": true,
+      "msg": "ok"
+    },
+    "fleet_status.js": {
+      "ok": true,
+      "msg": "ok"
+    },
+    "fleet_topology.js": {
+      "ok": false,
+      "msg": "mismatch ']' (innermost ('{', 548))"
+    },
+    "icons.js": {
+      "ok": true,
+      "msg": "ok"
+    },
+    "notifications.js": {
+      "ok": true,
+      "msg": "ok"
+    },
+    "runbook_trigger.js": {
+      "ok": false,
+      "msg": "mismatch '}' (innermost ('(', 3367))"
+    },
+    "scheduler.js": {
+      "ok": false,
+      "msg": "mismatch '}' (innermost ('(', 793))"
+    },
+    "state.js": {
+      "ok": true,
+      "msg": "ok"
+    },
+    "stealth.js": {
+      "ok": false,
+      "msg": "mismatch ')' (innermost ('{', 956))"
+    },
+    "topology.js": {
+      "ok": true,
+      "msg": "ok"
+    },
+    "tour.js": {
+      "ok": true,
+      "msg": "ok"
+    },
+    "uploads.js": {
+      "ok": false,
+      "msg": "mismatch '}' (innermost ('(', 20582))"
+    }
+  }
+}

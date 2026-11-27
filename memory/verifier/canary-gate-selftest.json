@@ -1,0 +1,27 @@
+{
+  "ts": "2026-11-26T23:42:46Z",
+  "results": [
+    [
+      "T1_no_token_blocks",
+      true
+    ],
+    [
+      "T2_fail_token_blocks",
+      true
+    ],
+    [
+      "T3_stale_token_blocks",
+      true
+    ],
+    [
+      "T4_valid_token_passes",
+      true
+    ],
+    [
+      "T5_full_gate_pass",
+      true
+    ]
+  ],
+  "passed": 5,
+  "total": 5
+}

@@ -1,0 +1,39 @@
+[
+  {
+    "id": "INV-2026-001",
+    "client": "Acme Plumbing",
+    "amount": 3450,
+    "due_date": "2026-11-01",
+    "status": "unpaid",
+    "sent_tiers": [
+      "gentle"
+    ]
+  },
+  {
+    "id": "INV-2026-002",
+    "client": "Beta Electric",
+    "amount": 890,
+    "due_date": "2026-11-10",
+    "status": "unpaid",
+    "sent_tiers": []
+  },
+  {
+    "id": "INV-2026-003",
+    "client": "Gamma HVAC",
+    "amount": 12000,
+    "due_date": "2026-10-28",
+    "status": "unpaid",
+    "sent_tiers": [
+      "gentle",
+      "firm"
+    ]
+  },
+  {
+    "id": "INV-2026-004",
+    "client": "Delta Solar",
+    "amount": 5600,
+    "due_date": "2026-11-18",
+    "status": "paid",
+    "sent_tiers": []
+  }
+]

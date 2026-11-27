@@ -1,0 +1,64 @@
+{
+  "trends": {
+    "orchestrator": {
+      "slope": -0.01,
+      "weeks": 2,
+      "start": [
+        "2026-W46",
+        0.96
+      ],
+      "end": [
+        "2026-W47",
+        0.95
+      ]
+    },
+    "archivist": {
+      "slope": -0.3878,
+      "weeks": 2,
+      "start": [
+        "2026-W46",
+        0.96
+      ],
+      "end": [
+        "2026-W47",
+        0.5722
+      ]
+    },
+    "researcher": {
+      "slope": null,
+      "weeks": 1,
+      "note": "insufficient data for trend"
+    },
+    "mechanic": {
+      "slope": 0.22,
+      "weeks": 2,
+      "start": [
+        "2026-W46",
+        0.58
+      ],
+      "end": [
+        "2026-W47",
+        0.8
+      ]
+    },
+    "builder": {
+      "slope": 0.012,
+      "weeks": 2,
+      "start": [
+        "2026-W47",
+        0.588
+      ],
+      "end": [
+        "2026-W48",
+        0.6000000000000001
+      ]
+    },
+    "fleet-policy": {
+      "slope": null,
+      "weeks": 1,
+      "note": "insufficient data for trend"
+    }
+  },
+  "sufficient": false,
+  "weeks": 3
+}

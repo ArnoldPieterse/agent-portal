@@ -1,0 +1,181 @@
+{
+  "goal": "Cycle Closeout Convergence Render (cycle-20 #9)",
+  "verified_at": "2026-11-26T13:03:52.377845+00:00",
+  "checks": [
+    {
+      "name": "Widget file exists",
+      "pass": true,
+      "detail": "ui\\cockpit-convergence-section.js"
+    },
+    {
+      "name": "API handler exists",
+      "pass": true,
+      "detail": "memory\\designer\\closeout_api.py"
+    },
+    {
+      "name": "Fetches /api/convergence/closeout",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "API route in agent_portal.py",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "API handler function present",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "Section 1: Autonomy Score Header (48px score)",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "Section 2: Metrics Row (3-col grid)",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "Section 3: Trend Sparkline (SVG 200x48)",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "Section 4: Steady-State Progress (criteria checklist)",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "Section 5: Regressions / Watch Items",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "Empty state for missing score",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "Empty state for no criteria",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "Empty state for insufficient trend",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "IIFE pattern (no global leakage)",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "Error handling on fetch (.catch)",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "Mock fallback data present",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "No unclosed template literals or syntax issues",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "ARIA role=region on container",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "ARIA label on container",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "SVG has role=img + aria-label",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "Uses var(--ok/--warn/--err) for score colors",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "Mode badge classes (work/maint/idle)",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "API returns 'autonomy_score'",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "API returns 'delta_vs_prev'",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "API returns 'interventions'",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "API returns 'goal_completion'",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "API returns 'cycle_mode'",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "API returns 'trend_5_cycles'",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "API returns 'steady_state_criteria'",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "API returns 'regressions'",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "API returns 'watch_items'",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "API reads autonomy-score.json",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "API reads human-interventions.jsonl",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "API reads fleet-mode.json",
+      "pass": true,
+      "detail": ""
+    }
+  ],
+  "passed": 34,
+  "total": 34,
+  "widget_file": "ui\\cockpit-convergence-section.js",
+  "api_file": "memory\\designer\\closeout_api.py",
+  "acceptance_criteria_met": true
+}

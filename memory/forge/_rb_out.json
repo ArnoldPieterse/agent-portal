@@ -1,0 +1,1067 @@
+warning: Failed to set cwd to temp dir
+<unknown>:719: SyntaxWarning: invalid escape sequence '\P'
+<unknown>:719: SyntaxWarning: invalid escape sequence '\P'
+<unknown>:5: SyntaxWarning: invalid escape sequence '\C'
+<unknown>:54: SyntaxWarning: invalid escape sequence '\C'
+<unknown>:5: SyntaxWarning: invalid escape sequence '\C'
+<unknown>:54: SyntaxWarning: invalid escape sequence '\C'
+<unknown>:719: SyntaxWarning: invalid escape sequence '\P'
+<unknown>:719: SyntaxWarning: invalid escape sequence '\P'
+<unknown>:719: SyntaxWarning: invalid escape sequence '\P'
+{
+  "summary": {
+    "timestamp": "2026-11-25T22:58:57.015629",
+    "total_runbooks": 22,
+    "fully_executable": 22,
+    "partial": 0,
+    "paper_only": 0,
+    "no_functional": 0,
+    "gaps": []
+  },
+  "details": [
+    {
+      "runbook": "autonomous-remediation-loop-runbook-2026-11-24.md",
+      "size_bytes": 5595,
+      "overall": "FULLY-EXECUTABLE",
+      "scripts": [
+        {
+          "ref": "decision_digest.py",
+          "status": "EXECUTABLE",
+          "detail": "memory\\scribe\\decision_digest.py"
+        },
+        {
+          "ref": "elev.py",
+          "status": "EXECUTABLE",
+          "detail": "elev.py"
+        },
+        {
+          "ref": "feed_refresh.py",
+          "status": "EXECUTABLE",
+          "detail": "memory\\builder\\feed_refresh.py"
+        },
+        {
+          "ref": "incident_responder.py",
+          "status": "EXECUTABLE",
+          "detail": "memory\\orchestrator\\incident_responder.py"
+        },
+        {
+          "ref": "memory/builder/playbook_runner.py",
+          "status": "EXECUTABLE",
+          "detail": "memory\\builder\\playbook_runner.py"
+        },
+        {
+          "ref": "memory/mechanic/stall_detector.py",
+          "status": "EXECUTABLE",
+          "detail": "memory\\verifier\\stall_detector.py"
+        },
+        {
+          "ref": "memory/ops/feed_refresh.py",
+          "status": "EXECUTABLE",
+          "detail": "memory\\builder\\feed_refresh.py"
+        },
+        {
+          "ref": "memory/orchestrator/incident_responder.py",
+          "status": "EXECUTABLE",
+          "detail": "memory\\orchestrator\\incident_responder.py"
+        },
+        {
+          "ref": "memory/orchestrator/remediation_policy.py",
+          "status": "EXECUTABLE",
+          "detail": "memory\\orchestrator\\remediation_policy.py"
+        },
+        {
+          "ref": "memory/scribe/decision_digest.py",
+          "status": "EXECUTABLE",
+          "detail": "memory\\scribe\\decision_digest.py"
+        },
+        {
+          "ref": "playbook_runner.py",
+          "status": "EXECUTABLE",
+          "detail": "memory\\builder\\playbook_runner.py"
+        },
+        {
+          "ref": "remediation_policy.py",
+          "status": "EXECUTABLE",
+          "detail": "memory\\orchestrator\\remediation_policy.py"
+        },
+        {
+          "ref": "stall_detector.py",
+          "status": "EXECUTABLE",
+          "detail": "memory\\verifier\\stall_detector.py"
+        }
+      ]
+    },
+    {
+      "runbook": "boot-deployment-runbook.md",
+      "size_bytes": 2950,
+      "overall": "FULLY-EXECUTABLE",
+      "scripts": [
+        {
+          "ref": "boot_recovery.py",
+          "status": "EXECUTABLE",
+          "detail": "memory\\ops\\boot_recovery.py"
+        },
+        {
+          "ref": "deploy_boot_task.py",
+          "status": "EXECUTABLE",
+          "detail": "memory\\ops\\deploy_boot_task.py"
+        },
+        {
+          "ref": "deploy_startup_folder.py",
+          "status": "EXECUTABLE",
+          "detail": "memory\\ops\\deploy_startup_folder.py"
+        },
+        {
+          "ref": "fleet_reload.py",
+          "status": "EXECUTABLE",
+          "detail": "fleet_reload.py"
+        },
+        {
+          "ref": "memory/ops/boot_recovery.py",
+          "status": "EXECUTABLE",
+          "detail": "memory\\ops\\boot_recovery.py"
+        },
+        {
+          "ref": "memory/ops/deploy_boot_task.py",
+          "status": "EXECUTABLE",
+          "detail": "memory\\ops\\deploy_boot_task.py"
+        },
+        {
+          "ref": "memory/ops/deploy_startup_folder.py",
+          "status": "EXECUTABLE",
+          "detail": "memory\\ops\\deploy_startup_folder.py"
+        },
+        {
+          "ref": "memory/ops/fleet_reload.py",
+          "status": "EXECUTABLE",
+          "detail": "memory\\ops\\fleet_reload.py"
+        },
+        {
+          "ref": "memory/ops/verify_boot_deployment.py",
+          "status": "EXECUTABLE",
+          "detail": "memory\\ops\\verify_boot_deployment.py"
+        },
+        {
+          "ref": "verify_boot_deployment.py",
+          "status": "EXECUTABLE",
+          "detail": "memory\\ops\\verify_boot_deployment.py"
+        }
+      ]
+    },
+    {
+      "runbook": "boot-detection-runbook.md",
+      "size_bytes": 1968,
+      "overall": "FULLY-EXECUTABLE",
+      "scripts": [
+        {
+          "ref": "boot_recovery.py",
+          "status": "EXECUTABLE",
+          "detail": "memory\\ops\\boot_recovery.py"
+        },
+        {
+          "ref": "fleet_reload.py",
+          "status": "EXECUTABLE",
+          "detail": "fleet_reload.py"
+        }
+      ]
+    },
+    {
+      "runbook": "citation-phantom-triage-runbook.md",
+      "size_bytes": 4107,
+      "overall": "FULLY-EXECUTABLE",
+      "scripts": [
+        {
+          "ref": "extract_decisions.py",
+          "status": "EXECUTABLE",
+          "detail": "memory\\scribe\\extract_decisions.py"
+        },
+        {
+          "ref": "memory/ops/verify_claims.py",
+          "status": "EXECUTABLE",
+          "detail": "memory\\ops\\verify_claims.py"
+        },
+        {
+          "ref": "memory/scribe/weekly_summary.py",
+          "status": "EXECUTABLE",
+          "detail": "memory\\scribe\\weekly_summary.py"
+        },
+        {
+          "ref": "verify_claims.py",
+          "status": "EXECUTABLE",
+          "detail": "memory\\ops\\verify_claims.py"
+        },
+        {
+          "ref": "weekly_digest.py",
+          "status": "EXECUTABLE",
+          "detail": "memory\\archivist\\weekly_digest.py"
+        },
+        {
+          "ref": "weekly_summary.py",
+          "status": "EXECUTABLE",
+          "detail": "memory\\scribe\\weekly_summary.py"
+        },
+        {
+          "ref": "winrm_pool.py",
+          "status": "EXECUTABLE",
+          "detail": "memory\\mechanic\\winrm_pool.py"
+        },
+        {
+          "ref": "winrm_sspi_client.py",
+          "status": "EXECUTABLE",
+          "detail": "memory\\mechanic\\winrm_sspi_client.py"
+        }
+      ]
+    },
+    {
+      "runbook": "cross-seat-protocol.md",
+      "size_bytes": 2896,
+      "overall": "FULLY-EXECUTABLE",
+      "scripts": [
+        {
+          "ref": "elev.py",
+          "status": "EXECUTABLE",
+          "detail": "elev.py"
+        }
+      ]
+    },
+    {
+      "runbook": "cycle-transition-checklist.md",
+      "size_bytes": 2746,
+      "overall": "FULLY-EXECUTABLE",
+      "scripts": [
+        {
+          "ref": "fleet_probe_v2.py",
+          "status": "EXECUTABLE",
+          "detail": "memory\\ops\\fleet_probe_v2.py"
+        },
+        {
+          "ref": "load_probe.py",
+          "status": "EXECUTABLE",
+          "detail": "memory\\ops\\load_probe.py"
+        },
+        {
+          "ref": "memory_mirror.py",
+          "status": "EXECUTABLE",
+          "detail": "memory_mirror.py"
+        }
+      ]
+    },
+    {
+      "runbook": "data-freshness-escalation-protocol-2026-11-24.md",
+      "size_bytes": 2743,
+      "overall": "FULLY-EXECUTABLE",
+      "scripts": [
+        {
+          "ref": "agent_portal.py",
+          "status": "EXECUTABLE",
+          "detail": "agent_portal.py"
+        },
+        {
+          "ref": "elev.py",
+          "status": "EXECUTABLE",
+          "detail": "elev.py"
+        },
+        {
+          "ref": "memory/ops/state_collector.py",
+          "status": "EXECUTABLE",
+          "detail": "memory\\ops\\state_collector.py"
+        },
+        {
+          "ref": "state_collector.py",
+          "status": "EXECUTABLE",
+          "detail": "memory\\mechanic\\state_collector.py"
+        }
+      ]
+    },
+    {
+      "runbook": "design-token-lint-workflow.md",
+      "size_bytes": 2871,
+      "overall": "FULLY-EXECUTABLE",
+      "scripts": [
+        {
+          "ref": "memory/ops/token_lint.py",
+          "status": "EXECUTABLE",
+          "detail": "memory\\designer\\token_lint.py"
+        },
+        {
+          "ref": "token_lint.py",
+          "status": "EXECUTABLE",
+          "detail": "memory\\designer\\token_lint.py"
+        },
+        {
+          "ref": "ui_closure_check.py",
+          "status": "EXECUTABLE",
+          "detail": "memory\\ops\\ui_closure_check.py"
+        }
+      ]
+    },
+    {
+      "runbook": "designer-ui-change-checklist.md",
+      "size_bytes": 2756,
+      "overall": "FULLY-EXECUTABLE",
+      "scripts": [
+        {
+          "ref": "memory_mirror.py",
+          "status": "EXECUTABLE",
+          "detail": "memory_mirror.py"
+        }
+      ]
+    },
+    {
+      "runbook": "evidence-closure-protocol.md",
+      "size_bytes": 1998,
+      "overall": "FULLY-EXECUTABLE",
+      "scripts": [
+        {
+          "ref": "goal_ledger.py",
+          "status": "EXECUTABLE",
+          "detail": "goal_ledger.py"
+        },
+        {
+          "ref": "pre_commit_gate.py",
+          "status": "EXECUTABLE",
+          "detail": "pre_commit_gate.py"
+        }
+      ]
+    },
+    {
+      "runbook": "live-leg-runbook-2026-11-20.md",
+      "size_bytes": 6186,
+      "overall": "FULLY-EXECUTABLE",
+      "scripts": [
+        {
+          "ref": "binding_audit.py",
+          "status": "EXECUTABLE",
+          "detail": "memory\\orchestrator\\binding_audit.py"
+        },
+        {
+          "ref": "decay_production.py",
+          "status": "EXECUTABLE",
+          "detail": "memory\\archivist\\decay_production.py"
+        },
+        {
+          "ref": "deploy_all_schtasks.py",
+          "status": "EXECUTABLE",
+          "detail": "memory\\mechanic\\deploy_all_schtasks.py"
+        },
+        {
+          "ref": "elev.py",
+          "status": "EXECUTABLE",
+          "detail": "elev.py"
+        },
+        {
+          "ref": "goal_ledger.py",
+          "status": "EXECUTABLE",
+          "detail": "goal_ledger.py"
+        },
+        {
+          "ref": "live_hotload_cycle.py",
+          "status": "EXECUTABLE",
+          "detail": "memory\\orchestrator\\live_hotload_cycle.py"
+        },
+        {
+          "ref": "load_probe.py",
+          "status": "EXECUTABLE",
+          "detail": "memory\\ops\\load_probe.py"
+        },
+        {
+          "ref": "memory//archivist//decay_production.py",
+          "status": "EXECUTABLE",
+          "detail": "memory\\archivist\\decay_production.py"
+        },
+        {
+          "ref": "memory/mechanic/deploy_all_schtasks.py",
+          "status": "EXECUTABLE",
+          "detail": "memory\\mechanic\\deploy_all_schtasks.py"
+        },
+        {
+          "ref": "memory/ops/load_probe.py",
+          "status": "EXECUTABLE",
+          "detail": "memory\\ops\\load_probe.py"
+        },
+        {
+          "ref": "memory/orchestrator/binding_audit.py",
+          "status": "EXECUTABLE",
+          "detail": "memory\\orchestrator\\binding_audit.py"
+        },
+        {
+          "ref": "memory/orchestrator/model_scheduler.py",
+          "status": "EXECUTABLE",
+          "detail": "memory\\orchestrator\\model_scheduler.py"
+        },
+        {
+          "ref": "memory/researcher/goal_ledger.py",
+          "status": "EXECUTABLE",
+          "detail": "memory\\researcher\\goal_ledger.py"
+        },
+        {
+          "ref": "memory/researcher/residency_matrix.py",
+          "status": "EXECUTABLE",
+          "detail": "memory\\researcher\\residency_matrix.py"
+        },
+        {
+          "ref": "memory/verifier/perf_gate.py",
+          "status": "EXECUTABLE",
+          "detail": "memory\\verifier\\perf_gate.py"
+        },
+        {
+          "ref": "model_scheduler.py",
+          "status": "EXECUTABLE",
+          "detail": "memory\\orchestrator\\model_scheduler.py"
+        },
+        {
+          "ref": "perf_gate.py",
+          "status": "EXECUTABLE",
+          "detail": "memory\\verifier\\perf_gate.py"
+        },
+        {
+          "ref": "residency_matrix.py",
+          "status": "EXECUTABLE",
+          "detail": "memory\\researcher\\residency_matrix.py"
+        }
+      ]
+    },
+    {
+      "runbook": "live-run-checklist-white-seat.md",
+      "size_bytes": 1974,
+      "overall": "FULLY-EXECUTABLE",
+      "scripts": [
+        {
+          "ref": "capacity_report.py",
+          "status": "EXECUTABLE",
+          "detail": "memory\\mechanic\\capacity_report.py"
+        },
+        {
+          "ref": "goal1_auto_closure.py",
+          "status": "EXECUTABLE",
+          "detail": "memory\\mechanic\\goal1_auto_closure.py"
+        },
+        {
+          "ref": "goal4-live-integration-test.py",
+          "status": "EXECUTABLE",
+          "detail": "memory\\mechanic\\goal4-live-integration-test.py"
+        },
+        {
+          "ref": "goal_ledger.py",
+          "status": "EXECUTABLE",
+          "detail": "goal_ledger.py"
+        },
+        {
+          "ref": "memory/mechanic/capacity_report.py",
+          "status": "EXECUTABLE",
+          "detail": "memory\\mechanic\\capacity_report.py"
+        },
+        {
+          "ref": "memory/mechanic/goal1_auto_closure.py",
+          "status": "EXECUTABLE",
+          "detail": "memory\\mechanic\\goal1_auto_closure.py"
+        },
+        {
+          "ref": "memory/mechanic/goal4-live-integration-test.py",
+          "status": "EXECUTABLE",
+          "detail": "memory\\mechanic\\goal4-live-integration-test.py"
+        },
+        {
+          "ref": "memory/mechanic/winrm_e2e_test.py",
+          "status": "EXECUTABLE",
+          "detail": "memory\\mechanic\\winrm_e2e_test.py"
+        },
+        {
+          "ref": "memory/researcher/goal_ledger.py",
+          "status": "EXECUTABLE",
+          "detail": "memory\\researcher\\goal_ledger.py"
+        },
+        {
+          "ref": "memory/verifier/perf_gate.py",
+          "status": "EXECUTABLE",
+          "detail": "memory\\verifier\\perf_gate.py"
+        },
+        {
+          "ref": "perf_gate.py",
+          "status": "EXECUTABLE",
+          "detail": "memory\\verifier\\perf_gate.py"
+        },
+        {
+          "ref": "winrm_e2e_test.py",
+          "status": "EXECUTABLE",
+          "detail": "memory\\mechanic\\winrm_e2e_test.py"
+        }
+      ]
+    },
+    {
+      "runbook": "memory-tree-runbook.md",
+      "size_bytes": 4894,
+      "overall": "FULLY-EXECUTABLE",
+      "scripts": [
+        {
+          "ref": "citation_map.py",
+          "status": "EXECUTABLE",
+          "detail": "memory\\archivist\\citation_map.py"
+        },
+        {
+          "ref": "decay_score.py",
+          "status": "EXECUTABLE",
+          "detail": "memory\\archivist\\decay_score.py"
+        },
+        {
+          "ref": "dup_detect.py",
+          "status": "EXECUTABLE",
+          "detail": "memory\\archivist\\dup_detect.py"
+        },
+        {
+          "ref": "kb_search.py",
+          "status": "EXECUTABLE",
+          "detail": "memory\\archivist\\kb_search.py"
+        },
+        {
+          "ref": "knowledge_graph_v3.py",
+          "status": "EXECUTABLE",
+          "detail": "memory\\archivist\\knowledge_graph_v3.py"
+        },
+        {
+          "ref": "memory/archivist/citation_map.py",
+          "status": "EXECUTABLE",
+          "detail": "memory\\archivist\\citation_map.py"
+        },
+        {
+          "ref": "memory/archivist/decay_score.py",
+          "status": "EXECUTABLE",
+          "detail": "memory\\archivist\\decay_score.py"
+        },
+        {
+          "ref": "memory/archivist/dup_detect.py",
+          "status": "EXECUTABLE",
+          "detail": "memory\\archivist\\dup_detect.py"
+        },
+        {
+          "ref": "memory/archivist/kb_search.py",
+          "status": "EXECUTABLE",
+          "detail": "memory\\archivist\\kb_search.py"
+        },
+        {
+          "ref": "memory/archivist/knowledge_graph_v3.py",
+          "status": "EXECUTABLE",
+          "detail": "memory\\archivist\\knowledge_graph_v3.py"
+        },
+        {
+          "ref": "memory/archivist/orphan_remediation.py",
+          "status": "EXECUTABLE",
+          "detail": "memory\\archivist\\orphan_remediation.py"
+        },
+        {
+          "ref": "memory/archivist/snapshot.py",
+          "status": "EXECUTABLE",
+          "detail": "memory\\archivist\\snapshot.py"
+        },
+        {
+          "ref": "memory/archivist/xref_check.py",
+          "status": "EXECUTABLE",
+          "detail": "memory\\archivist\\xref_check.py"
+        },
+        {
+          "ref": "memory_health.py",
+          "status": "EXECUTABLE",
+          "detail": "memory\\archivist\\memory_health.py"
+        },
+        {
+          "ref": "orphan_remediation.py",
+          "status": "EXECUTABLE",
+          "detail": "memory\\archivist\\orphan_remediation.py"
+        },
+        {
+          "ref": "snapshot.py",
+          "status": "EXECUTABLE",
+          "detail": "memory\\archivist\\snapshot.py"
+        },
+        {
+          "ref": "xref_check.py",
+          "status": "EXECUTABLE",
+          "detail": "memory\\archivist\\xref_check.py"
+        }
+      ]
+    },
+    {
+      "runbook": "runbook-cockpit-feed-refresh-deploy-2026-11-24.md",
+      "size_bytes": 1189,
+      "overall": "FULLY-EXECUTABLE",
+      "scripts": [
+        {
+          "ref": "//project_root//memory//builder//feed_refresh.py",
+          "status": "EXECUTABLE",
+          "detail": "memory\\builder\\feed_refresh.py"
+        },
+        {
+          "ref": "cockpit_staleness_monitor.py",
+          "status": "EXECUTABLE",
+          "detail": "memory\\verifier\\cockpit_staleness_monitor.py"
+        },
+        {
+          "ref": "deploy_all_schtasks.py",
+          "status": "EXECUTABLE",
+          "detail": "memory\\mechanic\\deploy_all_schtasks.py"
+        },
+        {
+          "ref": "feed_refresh.py",
+          "status": "EXECUTABLE",
+          "detail": "memory\\builder\\feed_refresh.py"
+        },
+        {
+          "ref": "memory//builder//feed_refresh.py",
+          "status": "EXECUTABLE",
+          "detail": "memory\\builder\\feed_refresh.py"
+        },
+        {
+          "ref": "memory/mechanic/deploy_all_schtasks.py",
+          "status": "EXECUTABLE",
+          "detail": "memory\\mechanic\\deploy_all_schtasks.py"
+        },
+        {
+          "ref": "memory/verifier/cockpit_staleness_monitor.py",
+          "status": "EXECUTABLE",
+          "detail": "memory\\verifier\\cockpit_staleness_monitor.py"
+        }
+      ]
+    },
+    {
+      "runbook": "runbook-notes.md",
+      "size_bytes": 8211,
+      "overall": "FULLY-EXECUTABLE",
+      "scripts": [
+        {
+          "ref": "agent_portal.py",
+          "status": "EXECUTABLE",
+          "detail": "agent_portal.py"
+        },
+        {
+          "ref": "lan_probe.py",
+          "status": "EXECUTABLE",
+          "detail": "memory\\ops\\lan_probe.py"
+        },
+        {
+          "ref": "memory_mirror.py",
+          "status": "EXECUTABLE",
+          "detail": "memory_mirror.py"
+        },
+        {
+          "ref": "mirror_canary.py",
+          "status": "EXECUTABLE",
+          "detail": "memory\\ops\\mirror_canary.py"
+        },
+        {
+          "ref": "probe_portal.py",
+          "status": "EXECUTABLE",
+          "detail": "probe_portal.py"
+        },
+        {
+          "ref": "probe_winrm_r17.py",
+          "status": "EXECUTABLE",
+          "detail": "memory\\ops\\probe_winrm_r17.py"
+        }
+      ]
+    },
+    {
+      "runbook": "runbook-staleness-audit-2026-11-24.md",
+      "size_bytes": 4290,
+      "overall": "FULLY-EXECUTABLE",
+      "scripts": [
+        {
+          "ref": "backup.py",
+          "status": "EXECUTABLE",
+          "detail": "memory\\mechanic\\backup.py"
+        },
+        {
+          "ref": "citation_map.py",
+          "status": "EXECUTABLE",
+          "detail": "memory\\archivist\\citation_map.py"
+        },
+        {
+          "ref": "decay_score.py",
+          "status": "EXECUTABLE",
+          "detail": "memory\\archivist\\decay_score.py"
+        },
+        {
+          "ref": "deploy_boot_task.py",
+          "status": "EXECUTABLE",
+          "detail": "memory\\ops\\deploy_boot_task.py"
+        },
+        {
+          "ref": "deploy_one_host.py",
+          "status": "EXECUTABLE",
+          "detail": "memory\\mechanic\\deploy_one_host.py"
+        },
+        {
+          "ref": "deploy_startup_folder.py",
+          "status": "EXECUTABLE",
+          "detail": "memory\\ops\\deploy_startup_folder.py"
+        },
+        {
+          "ref": "disk_monitor.py",
+          "status": "EXECUTABLE",
+          "detail": "memory\\mechanic\\disk_monitor.py"
+        },
+        {
+          "ref": "dup_detect.py",
+          "status": "EXECUTABLE",
+          "detail": "memory\\archivist\\dup_detect.py"
+        },
+        {
+          "ref": "extract_decisions.py",
+          "status": "EXECUTABLE",
+          "detail": "memory\\scribe\\extract_decisions.py"
+        },
+        {
+          "ref": "health_check.py",
+          "status": "EXECUTABLE",
+          "detail": "memory\\mechanic\\health_check.py"
+        },
+        {
+          "ref": "kb_search.py",
+          "status": "EXECUTABLE",
+          "detail": "memory\\archivist\\kb_search.py"
+        },
+        {
+          "ref": "knowledge_graph_v3.py",
+          "status": "EXECUTABLE",
+          "detail": "memory\\archivist\\knowledge_graph_v3.py"
+        },
+        {
+          "ref": "log_rotate.py",
+          "status": "EXECUTABLE",
+          "detail": "memory\\mechanic\\log_rotate.py"
+        },
+        {
+          "ref": "memory/archivist/citation_map.py",
+          "status": "EXECUTABLE",
+          "detail": "memory\\archivist\\citation_map.py"
+        },
+        {
+          "ref": "memory/archivist/decay_score.py",
+          "status": "EXECUTABLE",
+          "detail": "memory\\archivist\\decay_score.py"
+        },
+        {
+          "ref": "memory/archivist/dup_detect.py",
+          "status": "EXECUTABLE",
+          "detail": "memory\\archivist\\dup_detect.py"
+        },
+        {
+          "ref": "memory/archivist/kb_search.py",
+          "status": "EXECUTABLE",
+          "detail": "memory\\archivist\\kb_search.py"
+        },
+        {
+          "ref": "memory/archivist/knowledge_graph_v3.py",
+          "status": "EXECUTABLE",
+          "detail": "memory\\archivist\\knowledge_graph_v3.py"
+        },
+        {
+          "ref": "memory/archivist/memory_health.py",
+          "status": "EXECUTABLE",
+          "detail": "memory\\archivist\\memory_health.py"
+        },
+        {
+          "ref": "memory/archivist/orphan_remediation.py",
+          "status": "EXECUTABLE",
+          "detail": "memory\\archivist\\orphan_remediation.py"
+        },
+        {
+          "ref": "memory/archivist/snapshot.py",
+          "status": "EXECUTABLE",
+          "detail": "memory\\archivist\\snapshot.py"
+        },
+        {
+          "ref": "memory/archivist/weekly_digest.py",
+          "status": "EXECUTABLE",
+          "detail": "memory\\archivist\\weekly_digest.py"
+        },
+        {
+          "ref": "memory/mechanic/backup.py",
+          "status": "EXECUTABLE",
+          "detail": "memory\\mechanic\\backup.py"
+        },
+        {
+          "ref": "memory/mechanic/deploy_one_host.py",
+          "status": "EXECUTABLE",
+          "detail": "memory\\mechanic\\deploy_one_host.py"
+        },
+        {
+          "ref": "memory/mechanic/disk_monitor.py",
+          "status": "EXECUTABLE",
+          "detail": "memory\\mechanic\\disk_monitor.py"
+        },
+        {
+          "ref": "memory/mechanic/health_check.py",
+          "status": "EXECUTABLE",
+          "detail": "memory\\mechanic\\health_check.py"
+        },
+        {
+          "ref": "memory/mechanic/log_rotate.py",
+          "status": "EXECUTABLE",
+          "detail": "memory\\mechanic\\log_rotate.py"
+        },
+        {
+          "ref": "memory/mechanic/memory_mirror_fixed.py",
+          "status": "EXECUTABLE",
+          "detail": "memory\\mechanic\\memory_mirror_fixed.py"
+        },
+        {
+          "ref": "memory/mechanic/net_probe.py",
+          "status": "EXECUTABLE",
+          "detail": "memory\\mechanic\\net_probe.py"
+        },
+        {
+          "ref": "memory/mechanic/postmortem_gen.py",
+          "status": "EXECUTABLE",
+          "detail": "memory\\mechanic\\postmortem_gen.py"
+        },
+        {
+          "ref": "memory/mechanic/revert_sentinel.py",
+          "status": "EXECUTABLE",
+          "detail": "memory\\mechanic\\revert_sentinel.py"
+        },
+        {
+          "ref": "memory/mechanic/winrm_pool.py",
+          "status": "EXECUTABLE",
+          "detail": "memory\\mechanic\\winrm_pool.py"
+        },
+        {
+          "ref": "memory/mechanic/winrm_sspi_client.py",
+          "status": "EXECUTABLE",
+          "detail": "memory\\mechanic\\winrm_sspi_client.py"
+        },
+        {
+          "ref": "memory/ops/deploy_boot_task.py",
+          "status": "EXECUTABLE",
+          "detail": "memory\\ops\\deploy_boot_task.py"
+        },
+        {
+          "ref": "memory/ops/deploy_startup_folder.py",
+          "status": "EXECUTABLE",
+          "detail": "memory\\ops\\deploy_startup_folder.py"
+        },
+        {
+          "ref": "memory/scribe/extract_decisions.py",
+          "status": "EXECUTABLE",
+          "detail": "memory\\scribe\\extract_decisions.py"
+        },
+        {
+          "ref": "memory_health.py",
+          "status": "EXECUTABLE",
+          "detail": "memory\\archivist\\memory_health.py"
+        },
+        {
+          "ref": "memory_mirror_fixed.py",
+          "status": "EXECUTABLE",
+          "detail": "memory\\mechanic\\memory_mirror_fixed.py"
+        },
+        {
+          "ref": "net_probe.py",
+          "status": "EXECUTABLE",
+          "detail": "memory\\mechanic\\net_probe.py"
+        },
+        {
+          "ref": "orphan_remediation.py",
+          "status": "EXECUTABLE",
+          "detail": "memory\\archivist\\orphan_remediation.py"
+        },
+        {
+          "ref": "postmortem_gen.py",
+          "status": "EXECUTABLE",
+          "detail": "memory\\mechanic\\postmortem_gen.py"
+        },
+        {
+          "ref": "revert_sentinel.py",
+          "status": "EXECUTABLE",
+          "detail": "memory\\mechanic\\revert_sentinel.py"
+        },
+        {
+          "ref": "run_steps.py",
+          "status": "EXECUTABLE",
+          "detail": "memory\\ops\\run_steps.py"
+        },
+        {
+          "ref": "serial_e2e_wait.py",
+          "status": "EXECUTABLE",
+          "detail": "memory\\ops\\serial_e2e_wait.py"
+        },
+        {
+          "ref": "snapshot.py",
+          "status": "EXECUTABLE",
+          "detail": "memory\\archivist\\snapshot.py"
+        },
+        {
+          "ref": "weekly_digest.py",
+          "status": "EXECUTABLE",
+          "detail": "memory\\archivist\\weekly_digest.py"
+        },
+        {
+          "ref": "winrm_pool.py",
+          "status": "EXECUTABLE",
+          "detail": "memory\\mechanic\\winrm_pool.py"
+        },
+        {
+          "ref": "winrm_sspi_client.py",
+          "status": "EXECUTABLE",
+          "detail": "memory\\mechanic\\winrm_sspi_client.py"
+        }
+      ]
+    },
+    {
+      "runbook": "schtasks-cli-fallback-workflow-2026-11-23.md",
+      "size_bytes": 1783,
+      "overall": "FULLY-EXECUTABLE",
+      "scripts": [
+        {
+          "ref": "deploy_all_schtasks.py",
+          "status": "EXECUTABLE",
+          "detail": "memory\\mechanic\\deploy_all_schtasks.py"
+        },
+        {
+          "ref": "elev.py",
+          "status": "EXECUTABLE",
+          "detail": "elev.py"
+        }
+      ]
+    },
+    {
+      "runbook": "stale-citation-workflow.md",
+      "size_bytes": 2529,
+      "overall": "FULLY-EXECUTABLE",
+      "scripts": [
+        {
+          "ref": "citation_map.py",
+          "status": "EXECUTABLE",
+          "detail": "memory\\archivist\\citation_map.py"
+        },
+        {
+          "ref": "decay_score.py",
+          "status": "EXECUTABLE",
+          "detail": "memory\\archivist\\decay_score.py"
+        },
+        {
+          "ref": "memory/archivist/citation_map.py",
+          "status": "EXECUTABLE",
+          "detail": "memory\\archivist\\citation_map.py"
+        },
+        {
+          "ref": "xref_check.py",
+          "status": "EXECUTABLE",
+          "detail": "memory\\archivist\\xref_check.py"
+        }
+      ]
+    },
+    {
+      "runbook": "stale-evidence-triage-protocol-2026-11-22.md",
+      "size_bytes": 2039,
+      "overall": "FULLY-EXECUTABLE",
+      "scripts": [
+        {
+          "ref": "decay_score.py",
+          "status": "EXECUTABLE",
+          "detail": "memory\\archivist\\decay_score.py"
+        }
+      ]
+    },
+    {
+      "runbook": "ui-change-checklist.md",
+      "size_bytes": 2240,
+      "overall": "FULLY-EXECUTABLE",
+      "scripts": [
+        {
+          "ref": "a11y_tree_verify.py",
+          "status": "EXECUTABLE",
+          "detail": "memory\\designer\\a11y_tree_verify.py"
+        },
+        {
+          "ref": "agent_portal.py",
+          "status": "EXECUTABLE",
+          "detail": "agent_portal.py"
+        },
+        {
+          "ref": "memory/designer/a11y_tree_verify.py",
+          "status": "EXECUTABLE",
+          "detail": "memory\\designer\\a11y_tree_verify.py"
+        },
+        {
+          "ref": "memory/designer/ui_test_harness.py",
+          "status": "EXECUTABLE",
+          "detail": "memory\\designer\\ui_test_harness.py"
+        },
+        {
+          "ref": "memory_mirror.py",
+          "status": "EXECUTABLE",
+          "detail": "memory_mirror.py"
+        },
+        {
+          "ref": "ui_test_harness.py",
+          "status": "EXECUTABLE",
+          "detail": "memory\\designer\\ui_test_harness.py"
+        }
+      ]
+    },
+    {
+      "runbook": "windows-runbook.md",
+      "size_bytes": 7749,
+      "overall": "FULLY-EXECUTABLE",
+      "scripts": [
+        {
+          "ref": "agent_portal.py",
+          "status": "EXECUTABLE",
+          "detail": "agent_portal.py"
+        },
+        {
+          "ref": "fleet_reload.py",
+          "status": "EXECUTABLE",
+          "detail": "fleet_reload.py"
+        },
+        {
+          "ref": "memory_mirror.py",
+          "status": "EXECUTABLE",
+          "detail": "memory_mirror.py"
+        },
+        {
+          "ref": "pale_dl.py",
+          "status": "EXECUTABLE",
+          "detail": "pale_dl.py"
+        },
+        {
+          "ref": "recover_all.py",
+          "status": "EXECUTABLE",
+          "detail": "recover_all.py"
+        },
+        {
+          "ref": "serial_e2e_wait.py",
+          "status": "EXECUTABLE",
+          "detail": "memory\\ops\\serial_e2e_wait.py"
+        }
+      ]
+    },
+    {
+      "runbook": "workflow-improvement-load-probe-no-schtasks.md",
+      "size_bytes": 1852,
+      "overall": "FULLY-EXECUTABLE",
+      "scripts": [
+        {
+          "ref": "agent_portal.py",
+          "status": "EXECUTABLE",
+          "detail": "agent_portal.py"
+        },
+        {
+          "ref": "elev.py",
+          "status": "EXECUTABLE",
+          "detail": "elev.py"
+        },
+        {
+          "ref": "load_probe.py",
+          "status": "EXECUTABLE",
+          "detail": "memory\\ops\\load_probe.py"
+        },
+        {
+          "ref": "memory/ops/load_probe.py",
+          "status": "EXECUTABLE",
+          "detail": "memory\\ops\\load_probe.py"
+        }
+      ]
+    }
+  ]
+}

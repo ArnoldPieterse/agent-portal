@@ -59,6 +59,11 @@ EVIDENCE_PAT = re.compile(
 # goal's acceptance test passes, e.g. `[REACHED 2026-11-23T14:00:00Z] ...`. It is explicit
 # evidence of closure and must be honored even when it sits on a follower line under the goal.
 REACHED_DATE_PAT = re.compile(r"\[\s*REACHED\b[^\]]*\d{4}-\d{2}-\d{2}", re.IGNORECASE)
+# (reached: <date>) paren closure marker (2026-11-27, Archivist): agents also hand-write the
+# lowercase paren form, e.g. `(reached: 2026-11-27T03:45Z - note)`. Requires a real date so it
+# stays evidence-gated (no bare-word inflation); honored exactly like [REACHED]. Root-cause fix
+# for verifier #7 false-open (marker present but unrecognized -> ledger undercounted 9/10).
+PAREN_REACHED_DATE_PAT = re.compile(r"\(\s*reached\s*:[^)]*\d{4}-\d{2}-\d{2}", re.IGNORECASE)
 # POINTER EVIDENCE (2026-11-15): `(pointer: <relpath>)` counts as evidence ONLY when
 # the leaf exists AND is connected to an index. See validate_pointer().
 POINTER_PAT = re.compile(r"\(\s*pointer\s*:\s*([^\)\s]+)\)", re.IGNORECASE)
@@ -129,6 +134,8 @@ def _line_evidence(line, root, cache):
         return True, "marker", False
     if REACHED_DATE_PAT.search(line):
         return True, "reached-marker", False
+    if PAREN_REACHED_DATE_PAT.search(line):
+        return True, "reached-marker(paren)", False
     pm = POINTER_PAT.search(line)
     if pm:
         leaf = pm.group(1).strip()

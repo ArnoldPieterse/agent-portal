@@ -1,0 +1,36 @@
+{
+  "generated": "2026-11-25",
+  "engine_start": "2026-11-25",
+  "day_num": 0,
+  "target_usd": 3800.0,
+  "revenue_usd": 0.0,
+  "pct_of_target": 0.0,
+  "gap_usd": 3800.0,
+  "ledger_days": [
+    "2026-11-25"
+  ],
+  "outreach": 3,
+  "replies": 0,
+  "demos": 0,
+  "per_wf": {
+    "wf1": {
+      "revenue": 0.0,
+      "status": "running",
+      "decision": "HOLD",
+      "rationale": "$0 attributed yet \u2014 engine pre-revenue; do not kill on day<7"
+    },
+    "wf2": {
+      "revenue": 0.0,
+      "status": "running",
+      "decision": "HOLD",
+      "rationale": "$0 attributed yet \u2014 engine pre-revenue; do not kill on day<7"
+    },
+    "wf3": {
+      "revenue": 0.0,
+      "status": "running",
+      "decision": "HOLD",
+      "rationale": "$0 attributed yet \u2014 engine pre-revenue; do not kill on day<7"
+    }
+  },
+  "day7_date": "2026-12-02"
+}
