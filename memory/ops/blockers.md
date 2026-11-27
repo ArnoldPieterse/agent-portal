@@ -250,3 +250,17 @@ python memory/orchestrator/model_scheduler.py --execute agents=researcher reside
 - **Impact:** Splice goals #1-#4 (auto-ingest, format ladder, loudness normalize, QC gate) all require ffmpeg/ffprobe. Cannot be completed on this host without installation.
 - **Automation path:** Install via `python elev.py --shell "winget install Gyan.FFmpeg"` or download static build to C:\tools\ffmpeg\. Alternatively, Splice can target a remote host that has ffmpeg (check fleet for GPU/media hosts).
 - **Recorded by:** Scribe (forecast-splice-g1-auto-ingest-2026-11-27.md)
+
+## [OPS-NOTE 2026-11-27 Forge] Splice #4 frame-accurate QC gate — ffmpeg/ffprobe ABSENT in sandbox (live-render leg only)
+**Class:** missing binary in sandbox (NOT a code bug; do NOT re-probe ffmpeg from a sandbox seat).
+**Goal AC (Splice #4):** "inject a bad render (wrong duration), pipeline quarantines it and writes a QC report."
+**What is DONE + verified in-sandbox:** `memory/forge/qc_gate.py` BUILT; decision logic (duration±1frame / no black head-tail frames / resolution match / audio-present-if-master) fully unit-tested via metrics-dict fixtures — `python memory/forge/qc_gate.py --selftest` -> SELFTEST PASS 7/7 + a REAL quarantine (file moved to quarantine dir, source gone) + a real QC report JSON written with verdict=FAIL on a stand-in bad render. The gate's AC *behavior* is proven.
+**What CANNOT run here:** the live-media half — producing a real bad render, capturing real `ffprobe -print_format json`, and computing head/tail black-frame signalstats. Probe (fresh): `shutil.which('ffmpeg')` -> None, `shutil.which('ffprobe')` -> None; no ffmpeg under C:\Program Files or Z:\.
+**Exact one-command unblock (any seat with ffmpeg on PATH + portal/repo synced):**
+    # produce a real bad render (wrong duration) then gate it:
+    ffmpeg -f lavfi -i testsrc=duration=12.34:size=1920x1080:rate=30 -f lavfi -i sine=duration=12.34 \\
+      -c:v libx264 -c:a aac memory/designer/splice/_bad_render.mp4
+    python memory/forge/qc_gate.py memory/designer/splice/_bad_render.mp4 --probe-json - \\
+      --expected-duration 10.0 --fps 30 --width 1920 --height 1080 --audio
+    # expect: verdict=FAIL, file moved to memory/designer/splice/quarantine/, QC report in qc_reports/
+Then Splice marks goal #4 reached with the quarantine + report paths as evidence. Gate is metrics-injectable, so head/tail black-frame booleans can be wired from a real ffmpeg signalstats frame dump when that leg runs. Credit: built by Forge (ASSIST), owner = Splice. Evidence: memory/forge/evidence-qc-gate-splice4-2026-11-27.md

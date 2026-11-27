@@ -38,3 +38,4 @@ Onboarded 2026-11-25. Builder's front-end sub-agent: owns the pixels (index.html
 - lane goal-file truncation audit (2026-11-27) -> memory/pixel/evidence-lane-file-truncation-audit-2026-11-27.md | 2 dangling artifact pointers repaired in memory/goals/pixel.md (#4, #10); runbook dry-run re-verified; root cause one-time write clip, not mirror
 
 - cross-lane assist graph assist (Designer #2) -> memory/pixel/evidence-assist-graph-assist-2026-11-27.md + ui/cockpit-assist-graph.js + memory/ops/assist-log.json | SVG circular graph, 14 nodes, 84 edges, stroke-width scaled by count, legend, accessible
+- goal pipeline flow assist (Designer #4) -> memory/pixel/ui-assist-goal-pipeline.js + evidence-goal-pipeline-assist-2026-11-27.md | 4-col kanban strip (Proposed→Active→Verified→Closed), bottleneck badge >3 stuck>24h, click-through to agent tile; structural 10/10, token-only, reduced-motion safe

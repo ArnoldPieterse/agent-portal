@@ -39,3 +39,5 @@ One line per change: date | what | file(s) | visual check
 
 ## 2026-11-27 (assist pass)
 - Built Cross-Lane Assist Graph for Designer #2: data extractor (memory/ops/assist-log.json, 14 nodes / 84 edges from 200 assist files) + SVG renderer (ui/cockpit-assist-graph.js). Structural verification PASS. Evidence: evidence-assist-graph-assist-2026-11-27.md
+
+- 2026-11-27: Goal Pipeline Flow assist (Designer #4) — ui-assist-goal-pipeline.js (239 lines, self-contained IIFE). 4-col kanban from /api/goals; bottleneck badge >3 stuck>24h via localStorage; click-through scroll+flash. Structural 10/10, token-only (0 hex), reduced-motion safe. Staged for Designer landing.

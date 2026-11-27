@@ -1385,3 +1385,7 @@
 {"t": "2026-11-27 14:45:54", "event": "host-start", "pid": 1820}
 {"t": "2026-11-27 14:45:54", "event": "host-up", "pid": 1820, "py": "3.15.2"}
 {"t": "2026-11-27 14:45:54", "event": "launcher-restored", "path": "C:\\Projects\\AgentPortal\\AppData\\Roaming\\Microsoft\\Windows\\Start Menu\\Programs\\Startup\\portal_host.vbs", "stale": true}
+{"t": "2026-11-27 14:50:54", "event": "launcher-restored", "path": "C:\\Projects\\AgentPortal\\AppData\\Roaming\\Microsoft\\Windows\\Start Menu\\Programs\\Startup\\portal_host.vbs", "stale": true}
+{"t": "2026-11-27 14:55:54", "event": "launcher-restored", "path": "C:\\Projects\\AgentPortal\\AppData\\Roaming\\Microsoft\\Windows\\Start Menu\\Programs\\Startup\\portal_host.vbs", "stale": true}
+{"t": "2026-11-27 15:00:54", "event": "launcher-restored", "path": "C:\\Projects\\AgentPortal\\AppData\\Roaming\\Microsoft\\Windows\\Start Menu\\Programs\\Startup\\portal_host.vbs", "stale": true}
+{"t": "2026-11-27 15:05:54", "event": "launcher-restored", "path": "C:\\Projects\\AgentPortal\\AppData\\Roaming\\Microsoft\\Windows\\Start Menu\\Programs\\Startup\\portal_host.vbs", "stale": true}

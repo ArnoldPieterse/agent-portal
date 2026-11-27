@@ -1,5 +1,5 @@
 {
-  "ts": "2026-11-27T04:46:34.058339+00:00",
+  "ts": "2026-11-27T05:06:33.461833+00:00",
   "health_score": 50,
   "fleet_status": "DEGRADED",
   "agents": [
@@ -47,9 +47,9 @@
   "hosts": [
     {
       "host": "White",
-      "vram_pct": 78.5,
-      "cpu_pct": 47.5,
-      "temp_c": 50.9
+      "vram_pct": 78.6,
+      "cpu_pct": 45.0,
+      "temp_c": 50.7
     },
     {
       "host": "Red",
@@ -89,7 +89,7 @@
     }
   ],
   "goals": {
-    "fleet_pct": 98.0,
+    "fleet_pct": 98.1,
     "lanes": {
       "2026-11-13-agent-goals": {
         "total": 2,
@@ -441,6 +441,11 @@
         "verified": 0,
         "pct": 0.0
       },
+      "forecast-outlet-goal1-reconvergence-2026-11-27": {
+        "total": 1,
+        "verified": 0,
+        "pct": 0.0
+      },
       "forecast-pixel-g1-cdp-unblock-from-pale-2026-11-27": {
         "total": 1,
         "verified": 0,
@@ -692,13 +697,13 @@
         "pct": 0.0
       },
       "verifier": {
-        "total": 1,
-        "verified": 1,
+        "total": 3,
+        "verified": 3,
         "pct": 100.0
       }
     },
-    "total_goals": 51,
-    "total_verified": 50
+    "total_goals": 53,
+    "total_verified": 52
   },
   "open_blockers": 35,
   "autonomous_actions": [
