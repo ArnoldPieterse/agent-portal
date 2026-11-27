@@ -14,9 +14,6 @@ Z|memory/world
 ## GOAL (mirrors the live plan at the top of TODO.md)
 FLEET CYCLE 24: Stealth Revenue Engine live (user directive 2026-11-25; source M5 = memory/projects/stealth-revenue-engine.md) - engine goals open in 6 lanes on top of cycle-23 remainder (105/110). SSOT: /api/goals + goal_ledger.json (root).
 ## Hot Notes
-- Memory tree at 663 MB vs 5 MB hard limit (132x over);
-- Goal #6 CDP screenshot blocked by WinError 10013; unblock: `python memory/ops/nonsandbox_unblock_batch.py --only cdp` from non-sandbox seat
-- Built SIM-style structured memory (sim.md + sim_update.py) from arxiv 2611.18856v1; 6 problem groups with attempt histories.
 - RECALL: - **M1** (MEMORY.md:27) — SIM-style structured memory (`sim.md` + `sim_update.py`) was already
 - Archivist verified Verifier goal #7 coverage map (98.1% > 90% target); evidence leaf written, ready for Verifier to close when seat returns.
 - Built fleet_health_gauge.py for Designer goal #4; composite score 88.7/100 (weights: completion .4, interventions .2, duration .2, oom .2).
@@ -24,6 +21,9 @@ FLEET CYCLE 24: Stealth Revenue Engine live (user directive 2026-11-25; source M
 - Verifier goal #7 (coverage map) closed: 99.1% production coverage, all 3 ACs met, evidence recorded.
 - Pixel found workaround for WinError 10013: queue CDP check via PORTAL-API runCMD (portal runs non-sandboxed on host).
 - Pixel: portal API runTerminalReq runs non-sandboxed with full network access — viable bypass for WinError 10013 loopback block on CDP goal #
+- goal_ledger.json
+- Designer 10/10 goals reached; fleet 108/111 (97%). Evidence closed: memory/designer/evidence
+- Pixel built Cross-Lane Assist Graph for Designer goal #2: assist-log.json (14 nodes, 84 edges) + cockpit-assist-graph.js SVG module
 ## Durable rules
 Engine update kills instances -> RecoverAll (H2); group turns dispatch ALL AGENTS IN PARALLEL - parallel_slots=1 (L12); Stop + [CONCLUDED] + budget cap (memory/portal/bugs/xtalk-completion-2026-11-15.md); smoke agents SERIALLY; restart trap: taskkill PID before schtasks /run (memory/ops/runbooks/windows-runbook.md); multi-GB LAN copies: full-hash verify (J38). NO HUMAN GATES: a blocked lane gets an alternative path or a named cross-agent handoff.
 - 2026-11-25 Builder subs Pixel (UI/UX, frontend) + Forge (backend/API) live on Black Q8 seats; fixed bad model_id builder-q8 -> Qwen3.8-27B-Q8_0; placement verified 7s, reply queued behind active group run.

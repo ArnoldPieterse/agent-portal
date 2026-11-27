@@ -4248,3 +4248,11 @@
 {"t": "2026-11-27 14:04:11", "job": "cycle_5m", "event": "done", "rc": 0}
 {"t": "2026-11-27 14:04:16", "job": "cycle_10m", "event": "done", "rc": 0}
 {"t": "2026-11-27 14:06:52", "job": "cycle_30m", "event": "done", "rc": 0}
+{"t": "2026-11-27 14:09:07", "job": "cycle_5m", "event": "start", "pid": 26776}
+{"t": "2026-11-27 14:09:12", "job": "cycle_5m", "event": "done", "rc": 0}
+{"t": "2026-11-27 14:14:07", "job": "cycle_5m", "event": "start", "pid": 27468}
+{"t": "2026-11-27 14:14:07", "job": "cycle_10m", "event": "start", "pid": 26776}
+{"t": "2026-11-27 14:14:12", "job": "cycle_5m", "event": "done", "rc": 0}
+{"t": "2026-11-27 14:14:17", "job": "cycle_10m", "event": "done", "rc": 0}
+{"t": "2026-11-27 14:19:07", "job": "cycle_5m", "event": "start", "pid": 15940}
+{"t": "2026-11-27 14:19:12", "job": "cycle_5m", "event": "done", "rc": 0}

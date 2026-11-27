@@ -1,0 +1,443 @@
+{
+  "generated": "2026-11-27",
+  "cycle": 24,
+  "total_assist_files": 200,
+  "nodes": [
+    "archivist",
+    "builder",
+    "designer",
+    "forge",
+    "lumen",
+    "mechanic",
+    "orchestrator",
+    "outlet",
+    "pixel",
+    "reel",
+    "researcher",
+    "scribe",
+    "splice",
+    "verifier"
+  ],
+  "edges": [
+    {
+      "from": "scribe",
+      "to": "archivist",
+      "count": 18
+    },
+    {
+      "from": "archivist",
+      "to": "scribe",
+      "count": 15
+    },
+    {
+      "from": "builder",
+      "to": "archivist",
+      "count": 13
+    },
+    {
+      "from": "orchestrator",
+      "to": "archivist",
+      "count": 12
+    },
+    {
+      "from": "researcher",
+      "to": "archivist",
+      "count": 12
+    },
+    {
+      "from": "archivist",
+      "to": "builder",
+      "count": 10
+    },
+    {
+      "from": "scribe",
+      "to": "builder",
+      "count": 10
+    },
+    {
+      "from": "builder",
+      "to": "mechanic",
+      "count": 9
+    },
+    {
+      "from": "mechanic",
+      "to": "builder",
+      "count": 9
+    },
+    {
+      "from": "archivist",
+      "to": "mechanic",
+      "count": 8
+    },
+    {
+      "from": "builder",
+      "to": "designer",
+      "count": 8
+    },
+    {
+      "from": "designer",
+      "to": "archivist",
+      "count": 8
+    },
+    {
+      "from": "designer",
+      "to": "builder",
+      "count": 8
+    },
+    {
+      "from": "archivist",
+      "to": "researcher",
+      "count": 7
+    },
+    {
+      "from": "archivist",
+      "to": "orchestrator",
+      "count": 7
+    },
+    {
+      "from": "builder",
+      "to": "researcher",
+      "count": 7
+    },
+    {
+      "from": "mechanic",
+      "to": "verifier",
+      "count": 7
+    },
+    {
+      "from": "orchestrator",
+      "to": "builder",
+      "count": 7
+    },
+    {
+      "from": "orchestrator",
+      "to": "mechanic",
+      "count": 7
+    },
+    {
+      "from": "orchestrator",
+      "to": "scribe",
+      "count": 7
+    },
+    {
+      "from": "scribe",
+      "to": "designer",
+      "count": 7
+    },
+    {
+      "from": "archivist",
+      "to": "verifier",
+      "count": 6
+    },
+    {
+      "from": "builder",
+      "to": "verifier",
+      "count": 6
+    },
+    {
+      "from": "mechanic",
+      "to": "designer",
+      "count": 6
+    },
+    {
+      "from": "researcher",
+      "to": "builder",
+      "count": 6
+    },
+    {
+      "from": "archivist",
+      "to": "designer",
+      "count": 5
+    },
+    {
+      "from": "builder",
+      "to": "scribe",
+      "count": 5
+    },
+    {
+      "from": "designer",
+      "to": "mechanic",
+      "count": 5
+    },
+    {
+      "from": "orchestrator",
+      "to": "designer",
+      "count": 5
+    },
+    {
+      "from": "orchestrator",
+      "to": "researcher",
+      "count": 5
+    },
+    {
+      "from": "researcher",
+      "to": "mechanic",
+      "count": 5
+    },
+    {
+      "from": "scribe",
+      "to": "mechanic",
+      "count": 5
+    },
+    {
+      "from": "scribe",
+      "to": "researcher",
+      "count": 5
+    },
+    {
+      "from": "scribe",
+      "to": "orchestrator",
+      "count": 5
+    },
+    {
+      "from": "scribe",
+      "to": "verifier",
+      "count": 4
+    },
+    {
+      "from": "builder",
+      "to": "outlet",
+      "count": 3
+    },
+    {
+      "from": "designer",
+      "to": "pixel",
+      "count": 3
+    },
+    {
+      "from": "designer",
+      "to": "lumen",
+      "count": 3
+    },
+    {
+      "from": "designer",
+      "to": "reel",
+      "count": 3
+    },
+    {
+      "from": "mechanic",
+      "to": "archivist",
+      "count": 3
+    },
+    {
+      "from": "mechanic",
+      "to": "forge",
+      "count": 3
+    },
+    {
+      "from": "orchestrator",
+      "to": "verifier",
+      "count": 3
+    },
+    {
+      "from": "pixel",
+      "to": "designer",
+      "count": 3
+    },
+    {
+      "from": "researcher",
+      "to": "verifier",
+      "count": 3
+    },
+    {
+      "from": "scribe",
+      "to": "forge",
+      "count": 3
+    },
+    {
+      "from": "archivist",
+      "to": "forge",
+      "count": 2
+    },
+    {
+      "from": "builder",
+      "to": "orchestrator",
+      "count": 2
+    },
+    {
+      "from": "designer",
+      "to": "orchestrator",
+      "count": 2
+    },
+    {
+      "from": "designer",
+      "to": "scribe",
+      "count": 2
+    },
+    {
+      "from": "designer",
+      "to": "researcher",
+      "count": 2
+    },
+    {
+      "from": "designer",
+      "to": "verifier",
+      "count": 2
+    },
+    {
+      "from": "mechanic",
+      "to": "orchestrator",
+      "count": 2
+    },
+    {
+      "from": "mechanic",
+      "to": "scribe",
+      "count": 2
+    },
+    {
+      "from": "mechanic",
+      "to": "researcher",
+      "count": 2
+    },
+    {
+      "from": "researcher",
+      "to": "scribe",
+      "count": 2
+    },
+    {
+      "from": "verifier",
+      "to": "mechanic",
+      "count": 2
+    },
+    {
+      "from": "verifier",
+      "to": "builder",
+      "count": 2
+    },
+    {
+      "from": "verifier",
+      "to": "scribe",
+      "count": 2
+    },
+    {
+      "from": "archivist",
+      "to": "reel",
+      "count": 1
+    },
+    {
+      "from": "archivist",
+      "to": "outlet",
+      "count": 1
+    },
+    {
+      "from": "archivist",
+      "to": "pixel",
+      "count": 1
+    },
+    {
+      "from": "archivist",
+      "to": "lumen",
+      "count": 1
+    },
+    {
+      "from": "archivist",
+      "to": "splice",
+      "count": 1
+    },
+    {
+      "from": "builder",
+      "to": "forge",
+      "count": 1
+    },
+    {
+      "from": "designer",
+      "to": "forge",
+      "count": 1
+    },
+    {
+      "from": "designer",
+      "to": "splice",
+      "count": 1
+    },
+    {
+      "from": "designer",
+      "to": "outlet",
+      "count": 1
+    },
+    {
+      "from": "forge",
+      "to": "verifier",
+      "count": 1
+    },
+    {
+      "from": "forge",
+      "to": "pixel",
+      "count": 1
+    },
+    {
+      "from": "mechanic",
+      "to": "reel",
+      "count": 1
+    },
+    {
+      "from": "mechanic",
+      "to": "outlet",
+      "count": 1
+    },
+    {
+      "from": "mechanic",
+      "to": "pixel",
+      "count": 1
+    },
+    {
+      "from": "mechanic",
+      "to": "lumen",
+      "count": 1
+    },
+    {
+      "from": "mechanic",
+      "to": "splice",
+      "count": 1
+    },
+    {
+      "from": "outlet",
+      "to": "builder",
+      "count": 1
+    },
+    {
+      "from": "outlet",
+      "to": "reel",
+      "count": 1
+    },
+    {
+      "from": "outlet",
+      "to": "archivist",
+      "count": 1
+    },
+    {
+      "from": "outlet",
+      "to": "pixel",
+      "count": 1
+    },
+    {
+      "from": "outlet",
+      "to": "lumen",
+      "count": 1
+    },
+    {
+      "from": "outlet",
+      "to": "forge",
+      "count": 1
+    },
+    {
+      "from": "outlet",
+      "to": "splice",
+      "count": 1
+    },
+    {
+      "from": "researcher",
+      "to": "designer",
+      "count": 1
+    },
+    {
+      "from": "researcher",
+      "to": "orchestrator",
+      "count": 1
+    },
+    {
+      "from": "verifier",
+      "to": "archivist",
+      "count": 1
+    }
+  ]
+}

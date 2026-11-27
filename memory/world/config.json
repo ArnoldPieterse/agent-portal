@@ -1,7 +1,7 @@
 {
- "user_location": null,
- "_user_location_note": "Set to {\"lat\": <float>, \"lon\": <float>, \"place\": \"name\"} to enable the local situation_brief in snapshots. Chosen by us - never derived from user activity (step 63: no location leakage).",
- "host_locations": {},
- "_host_locations_note": "{\"White\": [lat, lon], ...} - enables host-risk cross-reference (step 58): quakes/cyclones within risk_radius_km of a host append NEEDS-HUMAN to memory/ops/blockers.md.",
+ "user_location": {"lat": -27.4698, "lon": 153.0251, "place": "Brisbane QLD (default guess - confirm/correct)"},
+ "_user_location_note": "Set to {\"lat\": <float>, \"lon\": <float>, \"place\": \"name\"} to enable the local situation_brief in snapshots. Chosen by us - never derived from user activity (step 63: no location leakage). 2026-11-27: set to Brisbane as default - the only geo fact on record is 'the machine is UTC+10 (Australia)' (conversation, 2026-11-22); Queensland is the only major Australian region at UTC+10 in November (no DST). Arnold: tell us the actual city and we'll correct this one line.",
+ "host_locations": {"White": [-27.4698, 153.0251], "Red": [-27.4698, 153.0251], "Pale": [-27.4698, 153.0251], "Black": [-27.4698, 153.0251]},
+ "_host_locations_note": "{\"White\": [lat, lon], ...} - enables host-risk cross-reference (step 58): quakes/cyclones within risk_radius_km of a host append NEEDS-HUMAN to memory/ops/blockers.md. 2026-11-27: all four hosts on one LAN = same physical site as the user; same default coords, correct together with user_location.",
  "risk_radius_km": 500
 }
