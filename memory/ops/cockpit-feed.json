@@ -1,5 +1,5 @@
 {
-  "ts": "2026-11-27T03:54:15.392566+00:00",
+  "ts": "2026-11-27T04:04:15.881696+00:00",
   "health_score": 50,
   "fleet_status": "DEGRADED",
   "agents": [
@@ -291,6 +291,21 @@
         "verified": 0,
         "pct": 0.0
       },
+      "designer-forecast-scribe-milestone-tracker": {
+        "total": 1,
+        "verified": 0,
+        "pct": 0.0
+      },
+      "designer-forecast-steady-state-dashboard": {
+        "total": 1,
+        "verified": 0,
+        "pct": 0.0
+      },
+      "designer-forecast-stealth-ops-ui": {
+        "total": 1,
+        "verified": 0,
+        "pct": 0.0
+      },
       "designer-goal2-ops-tiers": {
         "total": 1,
         "verified": 0,
@@ -421,6 +436,11 @@
         "verified": 0,
         "pct": 0.0
       },
+      "forecast-orchestrator-g1-convergence-asymptote-2026-11-26": {
+        "total": 1,
+        "verified": 0,
+        "pct": 0.0
+      },
       "forecast-pixel-g1-cdp-unblock-from-pale-2026-11-27": {
         "total": 1,
         "verified": 0,
@@ -441,10 +461,20 @@
         "verified": 0,
         "pct": 0.0
       },
+      "forge-forecast-convergence-2026-11-25": {
+        "total": 1,
+        "verified": 0,
+        "pct": 0.0
+      },
       "forge": {
         "total": 10,
         "verified": 10,
         "pct": 100.0
+      },
+      "lumen": {
+        "total": 1,
+        "verified": 0,
+        "pct": 0.0
       },
       "mechanic-cycle9-proposals-2026-11-23": {
         "total": 1,
@@ -511,17 +541,42 @@
         "verified": 10,
         "pct": 100.0
       },
+      "outlet-cycle25-proposals": {
+        "total": 1,
+        "verified": 0,
+        "pct": 0.0
+      },
       "outlet": {
         "total": 1,
         "verified": 1,
         "pct": 100.0
+      },
+      "pixel-forecast-scribe-stealth-ledger": {
+        "total": 1,
+        "verified": 0,
+        "pct": 0.0
+      },
+      "pixel-forecast-stealth-ops-panel": {
+        "total": 2,
+        "verified": 0,
+        "pct": 0.0
       },
       "pixel": {
         "total": 9,
         "verified": 9,
         "pct": 100.0
       },
+      "post-convergence-forecast-researcher": {
+        "total": 1,
+        "verified": 0,
+        "pct": 0.0
+      },
       "researcher-attempts-cycle3-2026-11-18": {
+        "total": 1,
+        "verified": 0,
+        "pct": 0.0
+      },
+      "researcher-cycle25-proposal-2026-11-26": {
         "total": 1,
         "verified": 0,
         "pct": 0.0
@@ -597,6 +652,11 @@
         "pct": 100.0
       },
       "slip_prediction_table": {
+        "total": 1,
+        "verified": 0,
+        "pct": 0.0
+      },
+      "splice": {
         "total": 1,
         "verified": 0,
         "pct": 0.0

@@ -1,9 +1,9 @@
 {
   "seeded_test": {
-    "ts": "2026-11-27T03:34:06.793990+00:00",
+    "ts": "2026-11-27T04:04:07.609638+00:00",
     "test_type": "seeded_drift",
     "check_file": "verifier/INDEX.md",
-    "local_hash": "a649d841ade8cb42",
+    "local_hash": "dcc2f820f6207069",
     "simulated": {
       "leg": "remote_1",
       "hash": "deadbeefdeadbeefdeadbeefdeadbeef"
@@ -13,9 +13,9 @@
     "status": "DRIFT_DETECTED"
   },
   "live_check": {
-    "ts": "2026-11-27T03:34:06.794276+00:00",
+    "ts": "2026-11-27T04:04:07.609820+00:00",
     "check_file": "verifier/INDEX.md",
-    "local_hash": "a649d841ade8cb42",
+    "local_hash": "dcc2f820f6207069",
     "max_drift_s": 60,
     "legs": [
       {
