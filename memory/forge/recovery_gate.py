@@ -26,9 +26,9 @@ from datetime import datetime, timezone
 
 HOSTS = {
     "White": {"ip": "127.0.0.1", "local": True},
-    "Red":   {"ip": "192.168.1.245", "local": False},
-    "Pale":  {"ip": "192.168.1.39", "local": False},
-    "Black": {"ip": "192.168.1.99", "local": False},
+    "Red":   {"ip": "IP_LAN", "local": False},
+    "Pale":  {"ip": "IP_LAN", "local": False},
+    "Black": {"ip": "IP_LAN", "local": False},
 }
 CONFIG_FILE = "agents.json"
 REPORT_PATH = "memory/forge/recovery-report.jsonl"

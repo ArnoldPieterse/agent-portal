@@ -1,6 +1,6 @@
 # Decay report 2026-11-27
 
-Leaves: 11986 | flagged (<0.35): 0
+Leaves: 8074 | flagged (<0.35): 0
 
 | leaf | age_d | inrefs | indexed | score |
 |---|---|---|---|---|
@@ -1045,3967 +1045,6 @@ Leaves: 11986 | flagged (<0.35): 0
 | memory/designer/breakpoint-evidence/fleet-states-1024px.png | 9 | 0 | n | 0.500 |
 | memory/designer/breakpoint-evidence/fleet-states-1920px.png | 9 | 0 | n | 0.500 |
 | memory/designer/breakpoint-evidence/fleet-states-768px.png | 9 | 0 | n | 0.500 |
-| memory/designer/_edge_ud_1024_0/FirstLaunchAfterInstallation | 9 | 0 | n | 0.500 |
-| memory/designer/_edge_ud_1024_0/Last Version | 9 | 0 | n | 0.500 |
-| memory/designer/_edge_ud_1024_0/Local State | 9 | 0 | n | 0.500 |
-| memory/designer/_edge_ud_1024_0/Variations | 9 | 0 | n | 0.500 |
-| memory/designer/_edge_ud_1024_0/VariationsRuntimeSeedV2 | 9 | 0 | n | 0.500 |
-| memory/designer/_edge_ud_1024_0/VariationsSafeSeedV2 | 9 | 0 | n | 0.500 |
-| memory/designer/_edge_ud_1024_0/VariationsSeedV2 | 9 | 0 | n | 0.500 |
-| memory/designer/_edge_ud_1024_0/Crashpad/settings.dat | 9 | 0 | n | 0.500 |
-| memory/designer/_edge_ud_1024_0/Crashpad/throttle_store.dat | 9 | 0 | n | 0.500 |
-| memory/designer/_edge_ud_1024_0/Default/Affiliation Database | 9 | 0 | n | 0.500 |
-| memory/designer/_edge_ud_1024_0/Default/Affiliation Database-journal | 9 | 0 | n | 0.500 |
-| memory/designer/_edge_ud_1024_0/Default/declarative_performance_observer.db | 9 | 0 | n | 0.500 |
-| memory/designer/_edge_ud_1024_0/Default/declarative_performance_observer.db-journal | 9 | 0 | n | 0.500 |
-| memory/designer/_edge_ud_1024_0/Default/Favicons | 9 | 0 | n | 0.500 |
-| memory/designer/_edge_ud_1024_0/Default/Favicons-journal | 9 | 0 | n | 0.500 |
-| memory/designer/_edge_ud_1024_0/Default/History | 9 | 0 | n | 0.500 |
-| memory/designer/_edge_ud_1024_0/Default/History-journal | 9 | 0 | n | 0.500 |
-| memory/designer/_edge_ud_1024_0/Default/HubApps Icons | 9 | 0 | n | 0.500 |
-| memory/designer/_edge_ud_1024_0/Default/HubApps Icons-journal | 9 | 0 | n | 0.500 |
-| memory/designer/_edge_ud_1024_0/Default/load_statistics.db | 9 | 0 | n | 0.500 |
-| memory/designer/_edge_ud_1024_0/Default/load_statistics.db-shm | 9 | 0 | n | 0.500 |
-| memory/designer/_edge_ud_1024_0/Default/load_statistics.db-wal | 9 | 0 | n | 0.500 |
-| memory/designer/_edge_ud_1024_0/Default/LOCK | 9 | 0 | n | 0.500 |
-| memory/designer/_edge_ud_1024_0/Default/LOG | 9 | 0 | n | 0.500 |
-| memory/designer/_edge_ud_1024_0/Default/Login Data | 9 | 0 | n | 0.500 |
-| memory/designer/_edge_ud_1024_0/Default/Login Data For Account | 9 | 0 | n | 0.500 |
-| memory/designer/_edge_ud_1024_0/Default/Login Data For Account-journal | 9 | 0 | n | 0.500 |
-| memory/designer/_edge_ud_1024_0/Default/Login Data-journal | 9 | 0 | n | 0.500 |
-| memory/designer/_edge_ud_1024_0/Default/README | 9 | 0 | n | 0.500 |
-| memory/designer/_edge_ud_1024_0/Default/ServerCertificate | 9 | 0 | n | 0.500 |
-| memory/designer/_edge_ud_1024_0/Default/ServerCertificate-journal | 9 | 0 | n | 0.500 |
-| memory/designer/_edge_ud_1024_0/Default/Top Sites | 9 | 0 | n | 0.500 |
-| memory/designer/_edge_ud_1024_0/Default/Top Sites-journal | 9 | 0 | n | 0.500 |
-| memory/designer/_edge_ud_1024_0/Default/Vpn Tokens | 9 | 0 | n | 0.500 |
-| memory/designer/_edge_ud_1024_0/Default/Vpn Tokens-journal | 9 | 0 | n | 0.500 |
-| memory/designer/_edge_ud_1024_0/Default/Web Data | 9 | 0 | n | 0.500 |
-| memory/designer/_edge_ud_1024_0/Default/Web Data-journal | 9 | 0 | n | 0.500 |
-| memory/designer/_edge_ud_1024_0/Default/ClientCertificates/LOCK | 9 | 0 | n | 0.500 |
-| memory/designer/_edge_ud_1024_0/Default/ClientCertificates/LOG | 9 | 0 | n | 0.500 |
-| memory/designer/_edge_ud_1024_0/Default/Code Cache/js/index | 9 | 0 | n | 0.500 |
-| memory/designer/_edge_ud_1024_0/Default/Code Cache/js/index-dir/the-real-index | 9 | 0 | n | 0.500 |
-| memory/designer/_edge_ud_1024_0/Default/Code Cache/wasm/index | 9 | 0 | n | 0.500 |
-| memory/designer/_edge_ud_1024_0/Default/Code Cache/wasm/index-dir/the-real-index | 9 | 0 | n | 0.500 |
-| memory/designer/_edge_ud_1024_0/Default/commerce_subscription_db/LOCK | 9 | 0 | n | 0.500 |
-| memory/designer/_edge_ud_1024_0/Default/commerce_subscription_db/LOG | 9 | 0 | n | 0.500 |
-| memory/designer/_edge_ud_1024_0/Default/DawnGraphiteCache/data_0 | 9 | 0 | n | 0.500 |
-| memory/designer/_edge_ud_1024_0/Default/DawnGraphiteCache/data_1 | 9 | 0 | n | 0.500 |
-| memory/designer/_edge_ud_1024_0/Default/DawnGraphiteCache/data_2 | 9 | 0 | n | 0.500 |
-| memory/designer/_edge_ud_1024_0/Default/DawnGraphiteCache/data_3 | 9 | 0 | n | 0.500 |
-| memory/designer/_edge_ud_1024_0/Default/DawnGraphiteCache/index | 9 | 0 | n | 0.500 |
-| memory/designer/_edge_ud_1024_0/Default/DawnWebGPUCache/data_0 | 9 | 0 | n | 0.500 |
-| memory/designer/_edge_ud_1024_0/Default/DawnWebGPUCache/data_1 | 9 | 0 | n | 0.500 |
-| memory/designer/_edge_ud_1024_0/Default/DawnWebGPUCache/data_2 | 9 | 0 | n | 0.500 |
-| memory/designer/_edge_ud_1024_0/Default/DawnWebGPUCache/data_3 | 9 | 0 | n | 0.500 |
-| memory/designer/_edge_ud_1024_0/Default/DawnWebGPUCache/index | 9 | 0 | n | 0.500 |
-| memory/designer/_edge_ud_1024_0/Default/discounts_db/LOCK | 9 | 0 | n | 0.500 |
-| memory/designer/_edge_ud_1024_0/Default/discounts_db/LOG | 9 | 0 | n | 0.500 |
-| memory/designer/_edge_ud_1024_0/Default/discount_infos_db/LOCK | 9 | 0 | n | 0.500 |
-| memory/designer/_edge_ud_1024_0/Default/discount_infos_db/LOG | 9 | 0 | n | 0.500 |
-| memory/designer/_edge_ud_1024_0/Default/EdgePushStorageWithConnectTokenAndKey/LOCK | 9 | 0 | n | 0.500 |
-| memory/designer/_edge_ud_1024_0/Default/EdgePushStorageWithConnectTokenAndKey/LOG | 9 | 0 | n | 0.500 |
-| memory/designer/_edge_ud_1024_0/Default/Extension Rules/000003.log | 9 | 0 | n | 0.500 |
-| memory/designer/_edge_ud_1024_0/Default/Extension Rules/CURRENT | 9 | 0 | n | 0.500 |
-| memory/designer/_edge_ud_1024_0/Default/Extension Rules/LOCK | 9 | 0 | n | 0.500 |
-| memory/designer/_edge_ud_1024_0/Default/Extension Rules/LOG | 9 | 0 | n | 0.500 |
-| memory/designer/_edge_ud_1024_0/Default/Extension Rules/MANIFEST-000001 | 9 | 0 | n | 0.500 |
-| memory/designer/_edge_ud_1024_0/Default/Extension Scripts/000003.log | 9 | 0 | n | 0.500 |
-| memory/designer/_edge_ud_1024_0/Default/Extension Scripts/CURRENT | 9 | 0 | n | 0.500 |
-| memory/designer/_edge_ud_1024_0/Default/Extension Scripts/LOCK | 9 | 0 | n | 0.500 |
-| memory/designer/_edge_ud_1024_0/Default/Extension Scripts/LOG | 9 | 0 | n | 0.500 |
-| memory/designer/_edge_ud_1024_0/Default/Extension Scripts/MANIFEST-000001 | 9 | 0 | n | 0.500 |
-| memory/designer/_edge_ud_1024_0/Default/Extension State/000003.log | 9 | 0 | n | 0.500 |
-| memory/designer/_edge_ud_1024_0/Default/Extension State/CURRENT | 9 | 0 | n | 0.500 |
-| memory/designer/_edge_ud_1024_0/Default/Extension State/LOCK | 9 | 0 | n | 0.500 |
-| memory/designer/_edge_ud_1024_0/Default/Extension State/LOG | 9 | 0 | n | 0.500 |
-| memory/designer/_edge_ud_1024_0/Default/Extension State/MANIFEST-000001 | 9 | 0 | n | 0.500 |
-| memory/designer/_edge_ud_1024_0/Default/GPUCache/data_0 | 9 | 0 | n | 0.500 |
-| memory/designer/_edge_ud_1024_0/Default/GPUCache/data_1 | 9 | 0 | n | 0.500 |
-| memory/designer/_edge_ud_1024_0/Default/GPUCache/data_2 | 9 | 0 | n | 0.500 |
-| memory/designer/_edge_ud_1024_0/Default/GPUCache/data_3 | 9 | 0 | n | 0.500 |
-| memory/designer/_edge_ud_1024_0/Default/GPUCache/index | 9 | 0 | n | 0.500 |
-| memory/designer/_edge_ud_1024_0/Default/Network/NetworkDataMigrated | 9 | 0 | n | 0.500 |
-| memory/designer/_edge_ud_1024_0/Default/Nurturing/campaign_history | 9 | 0 | n | 0.500 |
-| memory/designer/_edge_ud_1024_0/Default/Nurturing/campaign_history-journal | 9 | 0 | n | 0.500 |
-| memory/designer/_edge_ud_1024_0/Default/parcel_tracking_db/LOCK | 9 | 0 | n | 0.500 |
-| memory/designer/_edge_ud_1024_0/Default/parcel_tracking_db/LOG | 9 | 0 | n | 0.500 |
-| memory/designer/_edge_ud_1024_0/Default/PersistentOriginTrials/LOCK | 9 | 0 | n | 0.500 |
-| memory/designer/_edge_ud_1024_0/Default/PersistentOriginTrials/LOG | 9 | 0 | n | 0.500 |
-| memory/designer/_edge_ud_1024_0/Default/Service Worker/Database/000003.log | 9 | 0 | n | 0.500 |
-| memory/designer/_edge_ud_1024_0/Default/Service Worker/Database/CURRENT | 9 | 0 | n | 0.500 |
-| memory/designer/_edge_ud_1024_0/Default/Service Worker/Database/LOCK | 9 | 0 | n | 0.500 |
-| memory/designer/_edge_ud_1024_0/Default/Service Worker/Database/LOG | 9 | 0 | n | 0.500 |
-| memory/designer/_edge_ud_1024_0/Default/Service Worker/Database/MANIFEST-000001 | 9 | 0 | n | 0.500 |
-| memory/designer/_edge_ud_1024_0/Default/Service Worker/ScriptCache/2cc80dabc69f58b6_0 | 9 | 0 | n | 0.500 |
-| memory/designer/_edge_ud_1024_0/Default/Service Worker/ScriptCache/4cb013792b196a35_0 | 9 | 0 | n | 0.500 |
-| memory/designer/_edge_ud_1024_0/Default/Service Worker/ScriptCache/f1cdccba37924bda_0 | 9 | 0 | n | 0.500 |
-| memory/designer/_edge_ud_1024_0/Default/Service Worker/ScriptCache/index | 9 | 0 | n | 0.500 |
-| memory/designer/_edge_ud_1024_0/Default/Service Worker/ScriptCache/index-dir/the-real-index | 9 | 0 | n | 0.500 |
-| memory/designer/_edge_ud_1024_0/Default/shared_proto_db/000003.log | 9 | 0 | n | 0.500 |
-| memory/designer/_edge_ud_1024_0/Default/shared_proto_db/CURRENT | 9 | 0 | n | 0.500 |
-| memory/designer/_edge_ud_1024_0/Default/shared_proto_db/LOCK | 9 | 0 | n | 0.500 |
-| memory/designer/_edge_ud_1024_0/Default/shared_proto_db/LOG | 9 | 0 | n | 0.500 |
-| memory/designer/_edge_ud_1024_0/Default/shared_proto_db/MANIFEST-000001 | 9 | 0 | n | 0.500 |
-| memory/designer/_edge_ud_1024_0/Default/shared_proto_db/metadata/000003.log | 9 | 0 | n | 0.500 |
-| memory/designer/_edge_ud_1024_0/Default/shared_proto_db/metadata/CURRENT | 9 | 0 | n | 0.500 |
-| memory/designer/_edge_ud_1024_0/Default/shared_proto_db/metadata/LOCK | 9 | 0 | n | 0.500 |
-| memory/designer/_edge_ud_1024_0/Default/shared_proto_db/metadata/LOG | 9 | 0 | n | 0.500 |
-| memory/designer/_edge_ud_1024_0/Default/shared_proto_db/metadata/MANIFEST-000001 | 9 | 0 | n | 0.500 |
-| memory/designer/_edge_ud_1024_0/Default/Site Characteristics Database/000003.log | 9 | 0 | n | 0.500 |
-| memory/designer/_edge_ud_1024_0/Default/Site Characteristics Database/CURRENT | 9 | 0 | n | 0.500 |
-| memory/designer/_edge_ud_1024_0/Default/Site Characteristics Database/LOCK | 9 | 0 | n | 0.500 |
-| memory/designer/_edge_ud_1024_0/Default/Site Characteristics Database/LOG | 9 | 0 | n | 0.500 |
-| memory/designer/_edge_ud_1024_0/Default/Site Characteristics Database/MANIFEST-000001 | 9 | 0 | n | 0.500 |
-| memory/designer/_edge_ud_1024_0/Default/Storage/ext/ihmafllikibpmigkcoadcmckbfhibefp/def/declarative_performance_observer.db | 9 | 0 | n | 0.500 |
-| memory/designer/_edge_ud_1024_0/Default/Storage/ext/ihmafllikibpmigkcoadcmckbfhibefp/def/declarative_performance_observer.db-journal | 9 | 0 | n | 0.500 |
-| memory/designer/_edge_ud_1024_0/Default/Storage/ext/ihmafllikibpmigkcoadcmckbfhibefp/def/Code Cache/js/index | 9 | 0 | n | 0.500 |
-| memory/designer/_edge_ud_1024_0/Default/Storage/ext/ihmafllikibpmigkcoadcmckbfhibefp/def/Code Cache/js/index-dir/the-real-index | 9 | 0 | n | 0.500 |
-| memory/designer/_edge_ud_1024_0/Default/Storage/ext/ihmafllikibpmigkcoadcmckbfhibefp/def/Code Cache/wasm/index | 9 | 0 | n | 0.500 |
-| memory/designer/_edge_ud_1024_0/Default/Storage/ext/ihmafllikibpmigkcoadcmckbfhibefp/def/Code Cache/wasm/index-dir/the-real-index | 9 | 0 | n | 0.500 |
-| memory/designer/_edge_ud_1024_0/Default/Storage/ext/ihmafllikibpmigkcoadcmckbfhibefp/def/DawnGraphiteCache/data_0 | 9 | 0 | n | 0.500 |
-| memory/designer/_edge_ud_1024_0/Default/Storage/ext/ihmafllikibpmigkcoadcmckbfhibefp/def/DawnGraphiteCache/data_1 | 9 | 0 | n | 0.500 |
-| memory/designer/_edge_ud_1024_0/Default/Storage/ext/ihmafllikibpmigkcoadcmckbfhibefp/def/DawnGraphiteCache/data_2 | 9 | 0 | n | 0.500 |
-| memory/designer/_edge_ud_1024_0/Default/Storage/ext/ihmafllikibpmigkcoadcmckbfhibefp/def/DawnGraphiteCache/data_3 | 9 | 0 | n | 0.500 |
-| memory/designer/_edge_ud_1024_0/Default/Storage/ext/ihmafllikibpmigkcoadcmckbfhibefp/def/DawnGraphiteCache/index | 9 | 0 | n | 0.500 |
-| memory/designer/_edge_ud_1024_0/Default/Storage/ext/ihmafllikibpmigkcoadcmckbfhibefp/def/DawnWebGPUCache/data_0 | 9 | 0 | n | 0.500 |
-| memory/designer/_edge_ud_1024_0/Default/Storage/ext/ihmafllikibpmigkcoadcmckbfhibefp/def/DawnWebGPUCache/data_1 | 9 | 0 | n | 0.500 |
-| memory/designer/_edge_ud_1024_0/Default/Storage/ext/ihmafllikibpmigkcoadcmckbfhibefp/def/DawnWebGPUCache/data_2 | 9 | 0 | n | 0.500 |
-| memory/designer/_edge_ud_1024_0/Default/Storage/ext/ihmafllikibpmigkcoadcmckbfhibefp/def/DawnWebGPUCache/data_3 | 9 | 0 | n | 0.500 |
-| memory/designer/_edge_ud_1024_0/Default/Storage/ext/ihmafllikibpmigkcoadcmckbfhibefp/def/DawnWebGPUCache/index | 9 | 0 | n | 0.500 |
-| memory/designer/_edge_ud_1024_0/Default/Storage/ext/ihmafllikibpmigkcoadcmckbfhibefp/def/GPUCache/data_0 | 9 | 0 | n | 0.500 |
-| memory/designer/_edge_ud_1024_0/Default/Storage/ext/ihmafllikibpmigkcoadcmckbfhibefp/def/GPUCache/data_1 | 9 | 0 | n | 0.500 |
-| memory/designer/_edge_ud_1024_0/Default/Storage/ext/ihmafllikibpmigkcoadcmckbfhibefp/def/GPUCache/data_2 | 9 | 0 | n | 0.500 |
-| memory/designer/_edge_ud_1024_0/Default/Storage/ext/ihmafllikibpmigkcoadcmckbfhibefp/def/GPUCache/data_3 | 9 | 0 | n | 0.500 |
-| memory/designer/_edge_ud_1024_0/Default/Storage/ext/ihmafllikibpmigkcoadcmckbfhibefp/def/GPUCache/index | 9 | 0 | n | 0.500 |
-| memory/designer/_edge_ud_1024_0/Default/Storage/ext/ihmafllikibpmigkcoadcmckbfhibefp/def/Network/NetworkDataMigrated | 9 | 0 | n | 0.500 |
-| memory/designer/_edge_ud_1024_0/Default/Sync Data/LevelDB/000003.log | 9 | 0 | n | 0.500 |
-| memory/designer/_edge_ud_1024_0/Default/Sync Data/LevelDB/CURRENT | 9 | 0 | n | 0.500 |
-| memory/designer/_edge_ud_1024_0/Default/Sync Data/LevelDB/LOCK | 9 | 0 | n | 0.500 |
-| memory/designer/_edge_ud_1024_0/Default/Sync Data/LevelDB/LOG | 9 | 0 | n | 0.500 |
-| memory/designer/_edge_ud_1024_0/Default/Sync Data/LevelDB/MANIFEST-000001 | 9 | 0 | n | 0.500 |
-| memory/designer/_edge_ud_1024_0/Default/WebStorage/QuotaManager | 9 | 0 | n | 0.500 |
-| memory/designer/_edge_ud_1024_0/Default/WebStorage/QuotaManager-journal | 9 | 0 | n | 0.500 |
-| memory/designer/_edge_ud_1024_0/GPUPersistentCache/DawnGraphiteCache/23IMHJGI2WIIJ3PDLCHAHUJAGHTLTEBB/cache.db | 9 | 0 | n | 0.500 |
-| memory/designer/_edge_ud_1024_0/GPUPersistentCache/DawnGraphiteCache/23IMHJGI2WIIJ3PDLCHAHUJAGHTLTEBB/cache.db-wal | 9 | 0 | n | 0.500 |
-| memory/designer/_edge_ud_1024_0/GPUPersistentCache/DawnGraphiteCache/23IMHJGI2WIIJ3PDLCHAHUJAGHTLTEBB/cache.journal | 9 | 0 | n | 0.500 |
-| memory/designer/_edge_ud_1024_0/Nurturing/campaign_history | 9 | 0 | n | 0.500 |
-| memory/designer/_edge_ud_1024_0/Nurturing/campaign_history-journal | 9 | 0 | n | 0.500 |
-| memory/designer/_edge_ud_1024_0/ShaderCache/data_0 | 9 | 0 | n | 0.500 |
-| memory/designer/_edge_ud_1024_0/ShaderCache/data_1 | 9 | 0 | n | 0.500 |
-| memory/designer/_edge_ud_1024_0/ShaderCache/data_2 | 9 | 0 | n | 0.500 |
-| memory/designer/_edge_ud_1024_0/ShaderCache/data_3 | 9 | 0 | n | 0.500 |
-| memory/designer/_edge_ud_1024_0/ShaderCache/index | 9 | 0 | n | 0.500 |
-| memory/designer/_edge_ud_1024_0/SmartScreen/RemoteData/customSettings | 9 | 0 | n | 0.500 |
-| memory/designer/_edge_ud_1024_0/SmartScreen/RemoteData/customSettings_F95BA787499AB4FA9EFFF472CE383A14 | 9 | 0 | n | 0.500 |
-| memory/designer/_edge_ud_1024_1/FirstLaunchAfterInstallation | 9 | 0 | n | 0.500 |
-| memory/designer/_edge_ud_1024_1/Last Version | 9 | 0 | n | 0.500 |
-| memory/designer/_edge_ud_1024_1/Local State | 9 | 0 | n | 0.500 |
-| memory/designer/_edge_ud_1024_1/Variations | 9 | 0 | n | 0.500 |
-| memory/designer/_edge_ud_1024_1/VariationsRuntimeSeedV2 | 9 | 0 | n | 0.500 |
-| memory/designer/_edge_ud_1024_1/VariationsSafeSeedV2 | 9 | 0 | n | 0.500 |
-| memory/designer/_edge_ud_1024_1/VariationsSeedV2 | 9 | 0 | n | 0.500 |
-| memory/designer/_edge_ud_1024_1/Crashpad/settings.dat | 9 | 0 | n | 0.500 |
-| memory/designer/_edge_ud_1024_1/Crashpad/throttle_store.dat | 9 | 0 | n | 0.500 |
-| memory/designer/_edge_ud_1024_1/Default/Affiliation Database | 9 | 0 | n | 0.500 |
-| memory/designer/_edge_ud_1024_1/Default/Affiliation Database-journal | 9 | 0 | n | 0.500 |
-| memory/designer/_edge_ud_1024_1/Default/declarative_performance_observer.db | 9 | 0 | n | 0.500 |
-| memory/designer/_edge_ud_1024_1/Default/declarative_performance_observer.db-journal | 9 | 0 | n | 0.500 |
-| memory/designer/_edge_ud_1024_1/Default/Favicons | 9 | 0 | n | 0.500 |
-| memory/designer/_edge_ud_1024_1/Default/Favicons-journal | 9 | 0 | n | 0.500 |
-| memory/designer/_edge_ud_1024_1/Default/History | 9 | 0 | n | 0.500 |
-| memory/designer/_edge_ud_1024_1/Default/History-journal | 9 | 0 | n | 0.500 |
-| memory/designer/_edge_ud_1024_1/Default/HubApps Icons | 9 | 0 | n | 0.500 |
-| memory/designer/_edge_ud_1024_1/Default/HubApps Icons-journal | 9 | 0 | n | 0.500 |
-| memory/designer/_edge_ud_1024_1/Default/load_statistics.db | 9 | 0 | n | 0.500 |
-| memory/designer/_edge_ud_1024_1/Default/load_statistics.db-shm | 9 | 0 | n | 0.500 |
-| memory/designer/_edge_ud_1024_1/Default/load_statistics.db-wal | 9 | 0 | n | 0.500 |
-| memory/designer/_edge_ud_1024_1/Default/LOCK | 9 | 0 | n | 0.500 |
-| memory/designer/_edge_ud_1024_1/Default/LOG | 9 | 0 | n | 0.500 |
-| memory/designer/_edge_ud_1024_1/Default/Login Data | 9 | 0 | n | 0.500 |
-| memory/designer/_edge_ud_1024_1/Default/Login Data For Account | 9 | 0 | n | 0.500 |
-| memory/designer/_edge_ud_1024_1/Default/Login Data For Account-journal | 9 | 0 | n | 0.500 |
-| memory/designer/_edge_ud_1024_1/Default/Login Data-journal | 9 | 0 | n | 0.500 |
-| memory/designer/_edge_ud_1024_1/Default/README | 9 | 0 | n | 0.500 |
-| memory/designer/_edge_ud_1024_1/Default/ServerCertificate | 9 | 0 | n | 0.500 |
-| memory/designer/_edge_ud_1024_1/Default/ServerCertificate-journal | 9 | 0 | n | 0.500 |
-| memory/designer/_edge_ud_1024_1/Default/Top Sites | 9 | 0 | n | 0.500 |
-| memory/designer/_edge_ud_1024_1/Default/Top Sites-journal | 9 | 0 | n | 0.500 |
-| memory/designer/_edge_ud_1024_1/Default/Vpn Tokens | 9 | 0 | n | 0.500 |
-| memory/designer/_edge_ud_1024_1/Default/Vpn Tokens-journal | 9 | 0 | n | 0.500 |
-| memory/designer/_edge_ud_1024_1/Default/Web Data | 9 | 0 | n | 0.500 |
-| memory/designer/_edge_ud_1024_1/Default/Web Data-journal | 9 | 0 | n | 0.500 |
-| memory/designer/_edge_ud_1024_1/Default/ClientCertificates/LOCK | 9 | 0 | n | 0.500 |
-| memory/designer/_edge_ud_1024_1/Default/ClientCertificates/LOG | 9 | 0 | n | 0.500 |
-| memory/designer/_edge_ud_1024_1/Default/Code Cache/js/index | 9 | 0 | n | 0.500 |
-| memory/designer/_edge_ud_1024_1/Default/Code Cache/js/index-dir/the-real-index | 9 | 0 | n | 0.500 |
-| memory/designer/_edge_ud_1024_1/Default/Code Cache/wasm/index | 9 | 0 | n | 0.500 |
-| memory/designer/_edge_ud_1024_1/Default/Code Cache/wasm/index-dir/the-real-index | 9 | 0 | n | 0.500 |
-| memory/designer/_edge_ud_1024_1/Default/commerce_subscription_db/LOCK | 9 | 0 | n | 0.500 |
-| memory/designer/_edge_ud_1024_1/Default/commerce_subscription_db/LOG | 9 | 0 | n | 0.500 |
-| memory/designer/_edge_ud_1024_1/Default/DawnGraphiteCache/data_0 | 9 | 0 | n | 0.500 |
-| memory/designer/_edge_ud_1024_1/Default/DawnGraphiteCache/data_1 | 9 | 0 | n | 0.500 |
-| memory/designer/_edge_ud_1024_1/Default/DawnGraphiteCache/data_2 | 9 | 0 | n | 0.500 |
-| memory/designer/_edge_ud_1024_1/Default/DawnGraphiteCache/data_3 | 9 | 0 | n | 0.500 |
-| memory/designer/_edge_ud_1024_1/Default/DawnGraphiteCache/index | 9 | 0 | n | 0.500 |
-| memory/designer/_edge_ud_1024_1/Default/DawnWebGPUCache/data_0 | 9 | 0 | n | 0.500 |
-| memory/designer/_edge_ud_1024_1/Default/DawnWebGPUCache/data_1 | 9 | 0 | n | 0.500 |
-| memory/designer/_edge_ud_1024_1/Default/DawnWebGPUCache/data_2 | 9 | 0 | n | 0.500 |
-| memory/designer/_edge_ud_1024_1/Default/DawnWebGPUCache/data_3 | 9 | 0 | n | 0.500 |
-| memory/designer/_edge_ud_1024_1/Default/DawnWebGPUCache/index | 9 | 0 | n | 0.500 |
-| memory/designer/_edge_ud_1024_1/Default/discounts_db/LOCK | 9 | 0 | n | 0.500 |
-| memory/designer/_edge_ud_1024_1/Default/discounts_db/LOG | 9 | 0 | n | 0.500 |
-| memory/designer/_edge_ud_1024_1/Default/discount_infos_db/LOCK | 9 | 0 | n | 0.500 |
-| memory/designer/_edge_ud_1024_1/Default/discount_infos_db/LOG | 9 | 0 | n | 0.500 |
-| memory/designer/_edge_ud_1024_1/Default/EdgePushStorageWithConnectTokenAndKey/LOCK | 9 | 0 | n | 0.500 |
-| memory/designer/_edge_ud_1024_1/Default/EdgePushStorageWithConnectTokenAndKey/LOG | 9 | 0 | n | 0.500 |
-| memory/designer/_edge_ud_1024_1/Default/Extension Rules/000003.log | 9 | 0 | n | 0.500 |
-| memory/designer/_edge_ud_1024_1/Default/Extension Rules/CURRENT | 9 | 0 | n | 0.500 |
-| memory/designer/_edge_ud_1024_1/Default/Extension Rules/LOCK | 9 | 0 | n | 0.500 |
-| memory/designer/_edge_ud_1024_1/Default/Extension Rules/LOG | 9 | 0 | n | 0.500 |
-| memory/designer/_edge_ud_1024_1/Default/Extension Rules/MANIFEST-000001 | 9 | 0 | n | 0.500 |
-| memory/designer/_edge_ud_1024_1/Default/Extension Scripts/000003.log | 9 | 0 | n | 0.500 |
-| memory/designer/_edge_ud_1024_1/Default/Extension Scripts/CURRENT | 9 | 0 | n | 0.500 |
-| memory/designer/_edge_ud_1024_1/Default/Extension Scripts/LOCK | 9 | 0 | n | 0.500 |
-| memory/designer/_edge_ud_1024_1/Default/Extension Scripts/LOG | 9 | 0 | n | 0.500 |
-| memory/designer/_edge_ud_1024_1/Default/Extension Scripts/MANIFEST-000001 | 9 | 0 | n | 0.500 |
-| memory/designer/_edge_ud_1024_1/Default/Extension State/000003.log | 9 | 0 | n | 0.500 |
-| memory/designer/_edge_ud_1024_1/Default/Extension State/CURRENT | 9 | 0 | n | 0.500 |
-| memory/designer/_edge_ud_1024_1/Default/Extension State/LOCK | 9 | 0 | n | 0.500 |
-| memory/designer/_edge_ud_1024_1/Default/Extension State/LOG | 9 | 0 | n | 0.500 |
-| memory/designer/_edge_ud_1024_1/Default/Extension State/MANIFEST-000001 | 9 | 0 | n | 0.500 |
-| memory/designer/_edge_ud_1024_1/Default/GPUCache/data_0 | 9 | 0 | n | 0.500 |
-| memory/designer/_edge_ud_1024_1/Default/GPUCache/data_1 | 9 | 0 | n | 0.500 |
-| memory/designer/_edge_ud_1024_1/Default/GPUCache/data_2 | 9 | 0 | n | 0.500 |
-| memory/designer/_edge_ud_1024_1/Default/GPUCache/data_3 | 9 | 0 | n | 0.500 |
-| memory/designer/_edge_ud_1024_1/Default/GPUCache/index | 9 | 0 | n | 0.500 |
-| memory/designer/_edge_ud_1024_1/Default/Network/NetworkDataMigrated | 9 | 0 | n | 0.500 |
-| memory/designer/_edge_ud_1024_1/Default/Nurturing/campaign_history | 9 | 0 | n | 0.500 |
-| memory/designer/_edge_ud_1024_1/Default/Nurturing/campaign_history-journal | 9 | 0 | n | 0.500 |
-| memory/designer/_edge_ud_1024_1/Default/parcel_tracking_db/LOCK | 9 | 0 | n | 0.500 |
-| memory/designer/_edge_ud_1024_1/Default/parcel_tracking_db/LOG | 9 | 0 | n | 0.500 |
-| memory/designer/_edge_ud_1024_1/Default/PersistentOriginTrials/LOCK | 9 | 0 | n | 0.500 |
-| memory/designer/_edge_ud_1024_1/Default/PersistentOriginTrials/LOG | 9 | 0 | n | 0.500 |
-| memory/designer/_edge_ud_1024_1/Default/Service Worker/Database/000003.log | 9 | 0 | n | 0.500 |
-| memory/designer/_edge_ud_1024_1/Default/Service Worker/Database/CURRENT | 9 | 0 | n | 0.500 |
-| memory/designer/_edge_ud_1024_1/Default/Service Worker/Database/LOCK | 9 | 0 | n | 0.500 |
-| memory/designer/_edge_ud_1024_1/Default/Service Worker/Database/LOG | 9 | 0 | n | 0.500 |
-| memory/designer/_edge_ud_1024_1/Default/Service Worker/Database/MANIFEST-000001 | 9 | 0 | n | 0.500 |
-| memory/designer/_edge_ud_1024_1/Default/Service Worker/ScriptCache/2cc80dabc69f58b6_0 | 9 | 0 | n | 0.500 |
-| memory/designer/_edge_ud_1024_1/Default/Service Worker/ScriptCache/4cb013792b196a35_0 | 9 | 0 | n | 0.500 |
-| memory/designer/_edge_ud_1024_1/Default/Service Worker/ScriptCache/f1cdccba37924bda_0 | 9 | 0 | n | 0.500 |
-| memory/designer/_edge_ud_1024_1/Default/Service Worker/ScriptCache/index | 9 | 0 | n | 0.500 |
-| memory/designer/_edge_ud_1024_1/Default/Service Worker/ScriptCache/index-dir/the-real-index | 9 | 0 | n | 0.500 |
-| memory/designer/_edge_ud_1024_1/Default/shared_proto_db/000003.log | 9 | 0 | n | 0.500 |
-| memory/designer/_edge_ud_1024_1/Default/shared_proto_db/CURRENT | 9 | 0 | n | 0.500 |
-| memory/designer/_edge_ud_1024_1/Default/shared_proto_db/LOCK | 9 | 0 | n | 0.500 |
-| memory/designer/_edge_ud_1024_1/Default/shared_proto_db/LOG | 9 | 0 | n | 0.500 |
-| memory/designer/_edge_ud_1024_1/Default/shared_proto_db/MANIFEST-000001 | 9 | 0 | n | 0.500 |
-| memory/designer/_edge_ud_1024_1/Default/shared_proto_db/metadata/000003.log | 9 | 0 | n | 0.500 |
-| memory/designer/_edge_ud_1024_1/Default/shared_proto_db/metadata/CURRENT | 9 | 0 | n | 0.500 |
-| memory/designer/_edge_ud_1024_1/Default/shared_proto_db/metadata/LOCK | 9 | 0 | n | 0.500 |
-| memory/designer/_edge_ud_1024_1/Default/shared_proto_db/metadata/LOG | 9 | 0 | n | 0.500 |
-| memory/designer/_edge_ud_1024_1/Default/shared_proto_db/metadata/MANIFEST-000001 | 9 | 0 | n | 0.500 |
-| memory/designer/_edge_ud_1024_1/Default/Site Characteristics Database/000003.log | 9 | 0 | n | 0.500 |
-| memory/designer/_edge_ud_1024_1/Default/Site Characteristics Database/CURRENT | 9 | 0 | n | 0.500 |
-| memory/designer/_edge_ud_1024_1/Default/Site Characteristics Database/LOCK | 9 | 0 | n | 0.500 |
-| memory/designer/_edge_ud_1024_1/Default/Site Characteristics Database/LOG | 9 | 0 | n | 0.500 |
-| memory/designer/_edge_ud_1024_1/Default/Site Characteristics Database/MANIFEST-000001 | 9 | 0 | n | 0.500 |
-| memory/designer/_edge_ud_1024_1/Default/Storage/ext/ihmafllikibpmigkcoadcmckbfhibefp/def/declarative_performance_observer.db | 9 | 0 | n | 0.500 |
-| memory/designer/_edge_ud_1024_1/Default/Storage/ext/ihmafllikibpmigkcoadcmckbfhibefp/def/declarative_performance_observer.db-journal | 9 | 0 | n | 0.500 |
-| memory/designer/_edge_ud_1024_1/Default/Storage/ext/ihmafllikibpmigkcoadcmckbfhibefp/def/Code Cache/js/index | 9 | 0 | n | 0.500 |
-| memory/designer/_edge_ud_1024_1/Default/Storage/ext/ihmafllikibpmigkcoadcmckbfhibefp/def/Code Cache/js/index-dir/the-real-index | 9 | 0 | n | 0.500 |
-| memory/designer/_edge_ud_1024_1/Default/Storage/ext/ihmafllikibpmigkcoadcmckbfhibefp/def/Code Cache/wasm/index | 9 | 0 | n | 0.500 |
-| memory/designer/_edge_ud_1024_1/Default/Storage/ext/ihmafllikibpmigkcoadcmckbfhibefp/def/Code Cache/wasm/index-dir/the-real-index | 9 | 0 | n | 0.500 |
-| memory/designer/_edge_ud_1024_1/Default/Storage/ext/ihmafllikibpmigkcoadcmckbfhibefp/def/DawnGraphiteCache/data_0 | 9 | 0 | n | 0.500 |
-| memory/designer/_edge_ud_1024_1/Default/Storage/ext/ihmafllikibpmigkcoadcmckbfhibefp/def/DawnGraphiteCache/data_1 | 9 | 0 | n | 0.500 |
-| memory/designer/_edge_ud_1024_1/Default/Storage/ext/ihmafllikibpmigkcoadcmckbfhibefp/def/DawnGraphiteCache/data_2 | 9 | 0 | n | 0.500 |
-| memory/designer/_edge_ud_1024_1/Default/Storage/ext/ihmafllikibpmigkcoadcmckbfhibefp/def/DawnGraphiteCache/data_3 | 9 | 0 | n | 0.500 |
-| memory/designer/_edge_ud_1024_1/Default/Storage/ext/ihmafllikibpmigkcoadcmckbfhibefp/def/DawnGraphiteCache/index | 9 | 0 | n | 0.500 |
-| memory/designer/_edge_ud_1024_1/Default/Storage/ext/ihmafllikibpmigkcoadcmckbfhibefp/def/DawnWebGPUCache/data_0 | 9 | 0 | n | 0.500 |
-| memory/designer/_edge_ud_1024_1/Default/Storage/ext/ihmafllikibpmigkcoadcmckbfhibefp/def/DawnWebGPUCache/data_1 | 9 | 0 | n | 0.500 |
-| memory/designer/_edge_ud_1024_1/Default/Storage/ext/ihmafllikibpmigkcoadcmckbfhibefp/def/DawnWebGPUCache/data_2 | 9 | 0 | n | 0.500 |
-| memory/designer/_edge_ud_1024_1/Default/Storage/ext/ihmafllikibpmigkcoadcmckbfhibefp/def/DawnWebGPUCache/data_3 | 9 | 0 | n | 0.500 |
-| memory/designer/_edge_ud_1024_1/Default/Storage/ext/ihmafllikibpmigkcoadcmckbfhibefp/def/DawnWebGPUCache/index | 9 | 0 | n | 0.500 |
-| memory/designer/_edge_ud_1024_1/Default/Storage/ext/ihmafllikibpmigkcoadcmckbfhibefp/def/GPUCache/data_0 | 9 | 0 | n | 0.500 |
-| memory/designer/_edge_ud_1024_1/Default/Storage/ext/ihmafllikibpmigkcoadcmckbfhibefp/def/GPUCache/data_1 | 9 | 0 | n | 0.500 |
-| memory/designer/_edge_ud_1024_1/Default/Storage/ext/ihmafllikibpmigkcoadcmckbfhibefp/def/GPUCache/data_2 | 9 | 0 | n | 0.500 |
-| memory/designer/_edge_ud_1024_1/Default/Storage/ext/ihmafllikibpmigkcoadcmckbfhibefp/def/GPUCache/data_3 | 9 | 0 | n | 0.500 |
-| memory/designer/_edge_ud_1024_1/Default/Storage/ext/ihmafllikibpmigkcoadcmckbfhibefp/def/GPUCache/index | 9 | 0 | n | 0.500 |
-| memory/designer/_edge_ud_1024_1/Default/Storage/ext/ihmafllikibpmigkcoadcmckbfhibefp/def/Network/NetworkDataMigrated | 9 | 0 | n | 0.500 |
-| memory/designer/_edge_ud_1024_1/Default/Sync Data/LevelDB/000003.log | 9 | 0 | n | 0.500 |
-| memory/designer/_edge_ud_1024_1/Default/Sync Data/LevelDB/CURRENT | 9 | 0 | n | 0.500 |
-| memory/designer/_edge_ud_1024_1/Default/Sync Data/LevelDB/LOCK | 9 | 0 | n | 0.500 |
-| memory/designer/_edge_ud_1024_1/Default/Sync Data/LevelDB/LOG | 9 | 0 | n | 0.500 |
-| memory/designer/_edge_ud_1024_1/Default/Sync Data/LevelDB/MANIFEST-000001 | 9 | 0 | n | 0.500 |
-| memory/designer/_edge_ud_1024_1/Default/WebStorage/QuotaManager | 9 | 0 | n | 0.500 |
-| memory/designer/_edge_ud_1024_1/Default/WebStorage/QuotaManager-journal | 9 | 0 | n | 0.500 |
-| memory/designer/_edge_ud_1024_1/GPUPersistentCache/DawnGraphiteCache/23IMHJGI2WIIJ3PDLCHAHUJAGHTLTEBB/cache.db | 9 | 0 | n | 0.500 |
-| memory/designer/_edge_ud_1024_1/GPUPersistentCache/DawnGraphiteCache/23IMHJGI2WIIJ3PDLCHAHUJAGHTLTEBB/cache.db-wal | 9 | 0 | n | 0.500 |
-| memory/designer/_edge_ud_1024_1/GPUPersistentCache/DawnGraphiteCache/23IMHJGI2WIIJ3PDLCHAHUJAGHTLTEBB/cache.journal | 9 | 0 | n | 0.500 |
-| memory/designer/_edge_ud_1024_1/Nurturing/campaign_history | 9 | 0 | n | 0.500 |
-| memory/designer/_edge_ud_1024_1/Nurturing/campaign_history-journal | 9 | 0 | n | 0.500 |
-| memory/designer/_edge_ud_1024_1/ShaderCache/data_0 | 9 | 0 | n | 0.500 |
-| memory/designer/_edge_ud_1024_1/ShaderCache/data_1 | 9 | 0 | n | 0.500 |
-| memory/designer/_edge_ud_1024_1/ShaderCache/data_2 | 9 | 0 | n | 0.500 |
-| memory/designer/_edge_ud_1024_1/ShaderCache/data_3 | 9 | 0 | n | 0.500 |
-| memory/designer/_edge_ud_1024_1/ShaderCache/index | 9 | 0 | n | 0.500 |
-| memory/designer/_edge_ud_1024_1/SmartScreen/RemoteData/customSettings | 9 | 0 | n | 0.500 |
-| memory/designer/_edge_ud_1024_1/SmartScreen/RemoteData/customSettings_F95BA787499AB4FA9EFFF472CE383A14 | 9 | 0 | n | 0.500 |
-| memory/designer/_edge_ud_1024_2/FirstLaunchAfterInstallation | 9 | 0 | n | 0.500 |
-| memory/designer/_edge_ud_1024_2/Last Version | 9 | 0 | n | 0.500 |
-| memory/designer/_edge_ud_1024_2/Local State | 9 | 0 | n | 0.500 |
-| memory/designer/_edge_ud_1024_2/Variations | 9 | 0 | n | 0.500 |
-| memory/designer/_edge_ud_1024_2/VariationsRuntimeSeedV2 | 9 | 0 | n | 0.500 |
-| memory/designer/_edge_ud_1024_2/VariationsSafeSeedV2 | 9 | 0 | n | 0.500 |
-| memory/designer/_edge_ud_1024_2/VariationsSeedV2 | 9 | 0 | n | 0.500 |
-| memory/designer/_edge_ud_1024_2/Crashpad/settings.dat | 9 | 0 | n | 0.500 |
-| memory/designer/_edge_ud_1024_2/Crashpad/throttle_store.dat | 9 | 0 | n | 0.500 |
-| memory/designer/_edge_ud_1024_2/Default/Affiliation Database | 9 | 0 | n | 0.500 |
-| memory/designer/_edge_ud_1024_2/Default/Affiliation Database-journal | 9 | 0 | n | 0.500 |
-| memory/designer/_edge_ud_1024_2/Default/declarative_performance_observer.db | 9 | 0 | n | 0.500 |
-| memory/designer/_edge_ud_1024_2/Default/declarative_performance_observer.db-journal | 9 | 0 | n | 0.500 |
-| memory/designer/_edge_ud_1024_2/Default/Favicons | 9 | 0 | n | 0.500 |
-| memory/designer/_edge_ud_1024_2/Default/Favicons-journal | 9 | 0 | n | 0.500 |
-| memory/designer/_edge_ud_1024_2/Default/History | 9 | 0 | n | 0.500 |
-| memory/designer/_edge_ud_1024_2/Default/History-journal | 9 | 0 | n | 0.500 |
-| memory/designer/_edge_ud_1024_2/Default/HubApps Icons | 9 | 0 | n | 0.500 |
-| memory/designer/_edge_ud_1024_2/Default/HubApps Icons-journal | 9 | 0 | n | 0.500 |
-| memory/designer/_edge_ud_1024_2/Default/load_statistics.db | 9 | 0 | n | 0.500 |
-| memory/designer/_edge_ud_1024_2/Default/load_statistics.db-shm | 9 | 0 | n | 0.500 |
-| memory/designer/_edge_ud_1024_2/Default/load_statistics.db-wal | 9 | 0 | n | 0.500 |
-| memory/designer/_edge_ud_1024_2/Default/LOCK | 9 | 0 | n | 0.500 |
-| memory/designer/_edge_ud_1024_2/Default/LOG | 9 | 0 | n | 0.500 |
-| memory/designer/_edge_ud_1024_2/Default/Login Data | 9 | 0 | n | 0.500 |
-| memory/designer/_edge_ud_1024_2/Default/Login Data For Account | 9 | 0 | n | 0.500 |
-| memory/designer/_edge_ud_1024_2/Default/Login Data For Account-journal | 9 | 0 | n | 0.500 |
-| memory/designer/_edge_ud_1024_2/Default/Login Data-journal | 9 | 0 | n | 0.500 |
-| memory/designer/_edge_ud_1024_2/Default/README | 9 | 0 | n | 0.500 |
-| memory/designer/_edge_ud_1024_2/Default/ServerCertificate | 9 | 0 | n | 0.500 |
-| memory/designer/_edge_ud_1024_2/Default/ServerCertificate-journal | 9 | 0 | n | 0.500 |
-| memory/designer/_edge_ud_1024_2/Default/Top Sites | 9 | 0 | n | 0.500 |
-| memory/designer/_edge_ud_1024_2/Default/Top Sites-journal | 9 | 0 | n | 0.500 |
-| memory/designer/_edge_ud_1024_2/Default/Vpn Tokens | 9 | 0 | n | 0.500 |
-| memory/designer/_edge_ud_1024_2/Default/Vpn Tokens-journal | 9 | 0 | n | 0.500 |
-| memory/designer/_edge_ud_1024_2/Default/Web Data | 9 | 0 | n | 0.500 |
-| memory/designer/_edge_ud_1024_2/Default/Web Data-journal | 9 | 0 | n | 0.500 |
-| memory/designer/_edge_ud_1024_2/Default/ClientCertificates/LOCK | 9 | 0 | n | 0.500 |
-| memory/designer/_edge_ud_1024_2/Default/ClientCertificates/LOG | 9 | 0 | n | 0.500 |
-| memory/designer/_edge_ud_1024_2/Default/Code Cache/js/index | 9 | 0 | n | 0.500 |
-| memory/designer/_edge_ud_1024_2/Default/Code Cache/js/index-dir/the-real-index | 9 | 0 | n | 0.500 |
-| memory/designer/_edge_ud_1024_2/Default/Code Cache/wasm/index | 9 | 0 | n | 0.500 |
-| memory/designer/_edge_ud_1024_2/Default/Code Cache/wasm/index-dir/the-real-index | 9 | 0 | n | 0.500 |
-| memory/designer/_edge_ud_1024_2/Default/commerce_subscription_db/LOCK | 9 | 0 | n | 0.500 |
-| memory/designer/_edge_ud_1024_2/Default/commerce_subscription_db/LOG | 9 | 0 | n | 0.500 |
-| memory/designer/_edge_ud_1024_2/Default/DawnGraphiteCache/data_0 | 9 | 0 | n | 0.500 |
-| memory/designer/_edge_ud_1024_2/Default/DawnGraphiteCache/data_1 | 9 | 0 | n | 0.500 |
-| memory/designer/_edge_ud_1024_2/Default/DawnGraphiteCache/data_2 | 9 | 0 | n | 0.500 |
-| memory/designer/_edge_ud_1024_2/Default/DawnGraphiteCache/data_3 | 9 | 0 | n | 0.500 |
-| memory/designer/_edge_ud_1024_2/Default/DawnGraphiteCache/index | 9 | 0 | n | 0.500 |
-| memory/designer/_edge_ud_1024_2/Default/DawnWebGPUCache/data_0 | 9 | 0 | n | 0.500 |
-| memory/designer/_edge_ud_1024_2/Default/DawnWebGPUCache/data_1 | 9 | 0 | n | 0.500 |
-| memory/designer/_edge_ud_1024_2/Default/DawnWebGPUCache/data_2 | 9 | 0 | n | 0.500 |
-| memory/designer/_edge_ud_1024_2/Default/DawnWebGPUCache/data_3 | 9 | 0 | n | 0.500 |
-| memory/designer/_edge_ud_1024_2/Default/DawnWebGPUCache/index | 9 | 0 | n | 0.500 |
-| memory/designer/_edge_ud_1024_2/Default/discounts_db/LOCK | 9 | 0 | n | 0.500 |
-| memory/designer/_edge_ud_1024_2/Default/discounts_db/LOG | 9 | 0 | n | 0.500 |
-| memory/designer/_edge_ud_1024_2/Default/discount_infos_db/LOCK | 9 | 0 | n | 0.500 |
-| memory/designer/_edge_ud_1024_2/Default/discount_infos_db/LOG | 9 | 0 | n | 0.500 |
-| memory/designer/_edge_ud_1024_2/Default/EdgePushStorageWithConnectTokenAndKey/LOCK | 9 | 0 | n | 0.500 |
-| memory/designer/_edge_ud_1024_2/Default/EdgePushStorageWithConnectTokenAndKey/LOG | 9 | 0 | n | 0.500 |
-| memory/designer/_edge_ud_1024_2/Default/Extension Rules/000003.log | 9 | 0 | n | 0.500 |
-| memory/designer/_edge_ud_1024_2/Default/Extension Rules/CURRENT | 9 | 0 | n | 0.500 |
-| memory/designer/_edge_ud_1024_2/Default/Extension Rules/LOCK | 9 | 0 | n | 0.500 |
-| memory/designer/_edge_ud_1024_2/Default/Extension Rules/LOG | 9 | 0 | n | 0.500 |
-| memory/designer/_edge_ud_1024_2/Default/Extension Rules/MANIFEST-000001 | 9 | 0 | n | 0.500 |
-| memory/designer/_edge_ud_1024_2/Default/Extension Scripts/000003.log | 9 | 0 | n | 0.500 |
-| memory/designer/_edge_ud_1024_2/Default/Extension Scripts/CURRENT | 9 | 0 | n | 0.500 |
-| memory/designer/_edge_ud_1024_2/Default/Extension Scripts/LOCK | 9 | 0 | n | 0.500 |
-| memory/designer/_edge_ud_1024_2/Default/Extension Scripts/LOG | 9 | 0 | n | 0.500 |
-| memory/designer/_edge_ud_1024_2/Default/Extension Scripts/MANIFEST-000001 | 9 | 0 | n | 0.500 |
-| memory/designer/_edge_ud_1024_2/Default/Extension State/000003.log | 9 | 0 | n | 0.500 |
-| memory/designer/_edge_ud_1024_2/Default/Extension State/CURRENT | 9 | 0 | n | 0.500 |
-| memory/designer/_edge_ud_1024_2/Default/Extension State/LOCK | 9 | 0 | n | 0.500 |
-| memory/designer/_edge_ud_1024_2/Default/Extension State/LOG | 9 | 0 | n | 0.500 |
-| memory/designer/_edge_ud_1024_2/Default/Extension State/MANIFEST-000001 | 9 | 0 | n | 0.500 |
-| memory/designer/_edge_ud_1024_2/Default/GPUCache/data_0 | 9 | 0 | n | 0.500 |
-| memory/designer/_edge_ud_1024_2/Default/GPUCache/data_1 | 9 | 0 | n | 0.500 |
-| memory/designer/_edge_ud_1024_2/Default/GPUCache/data_2 | 9 | 0 | n | 0.500 |
-| memory/designer/_edge_ud_1024_2/Default/GPUCache/data_3 | 9 | 0 | n | 0.500 |
-| memory/designer/_edge_ud_1024_2/Default/GPUCache/index | 9 | 0 | n | 0.500 |
-| memory/designer/_edge_ud_1024_2/Default/Network/NetworkDataMigrated | 9 | 0 | n | 0.500 |
-| memory/designer/_edge_ud_1024_2/Default/Nurturing/campaign_history | 9 | 0 | n | 0.500 |
-| memory/designer/_edge_ud_1024_2/Default/Nurturing/campaign_history-journal | 9 | 0 | n | 0.500 |
-| memory/designer/_edge_ud_1024_2/Default/parcel_tracking_db/LOCK | 9 | 0 | n | 0.500 |
-| memory/designer/_edge_ud_1024_2/Default/parcel_tracking_db/LOG | 9 | 0 | n | 0.500 |
-| memory/designer/_edge_ud_1024_2/Default/PersistentOriginTrials/LOCK | 9 | 0 | n | 0.500 |
-| memory/designer/_edge_ud_1024_2/Default/PersistentOriginTrials/LOG | 9 | 0 | n | 0.500 |
-| memory/designer/_edge_ud_1024_2/Default/Service Worker/Database/000003.log | 9 | 0 | n | 0.500 |
-| memory/designer/_edge_ud_1024_2/Default/Service Worker/Database/CURRENT | 9 | 0 | n | 0.500 |
-| memory/designer/_edge_ud_1024_2/Default/Service Worker/Database/LOCK | 9 | 0 | n | 0.500 |
-| memory/designer/_edge_ud_1024_2/Default/Service Worker/Database/LOG | 9 | 0 | n | 0.500 |
-| memory/designer/_edge_ud_1024_2/Default/Service Worker/Database/MANIFEST-000001 | 9 | 0 | n | 0.500 |
-| memory/designer/_edge_ud_1024_2/Default/Service Worker/ScriptCache/2cc80dabc69f58b6_0 | 9 | 0 | n | 0.500 |
-| memory/designer/_edge_ud_1024_2/Default/Service Worker/ScriptCache/4cb013792b196a35_0 | 9 | 0 | n | 0.500 |
-| memory/designer/_edge_ud_1024_2/Default/Service Worker/ScriptCache/f1cdccba37924bda_0 | 9 | 0 | n | 0.500 |
-| memory/designer/_edge_ud_1024_2/Default/Service Worker/ScriptCache/index | 9 | 0 | n | 0.500 |
-| memory/designer/_edge_ud_1024_2/Default/Service Worker/ScriptCache/index-dir/the-real-index | 9 | 0 | n | 0.500 |
-| memory/designer/_edge_ud_1024_2/Default/shared_proto_db/000003.log | 9 | 0 | n | 0.500 |
-| memory/designer/_edge_ud_1024_2/Default/shared_proto_db/CURRENT | 9 | 0 | n | 0.500 |
-| memory/designer/_edge_ud_1024_2/Default/shared_proto_db/LOCK | 9 | 0 | n | 0.500 |
-| memory/designer/_edge_ud_1024_2/Default/shared_proto_db/LOG | 9 | 0 | n | 0.500 |
-| memory/designer/_edge_ud_1024_2/Default/shared_proto_db/MANIFEST-000001 | 9 | 0 | n | 0.500 |
-| memory/designer/_edge_ud_1024_2/Default/shared_proto_db/metadata/000003.log | 9 | 0 | n | 0.500 |
-| memory/designer/_edge_ud_1024_2/Default/shared_proto_db/metadata/CURRENT | 9 | 0 | n | 0.500 |
-| memory/designer/_edge_ud_1024_2/Default/shared_proto_db/metadata/LOCK | 9 | 0 | n | 0.500 |
-| memory/designer/_edge_ud_1024_2/Default/shared_proto_db/metadata/LOG | 9 | 0 | n | 0.500 |
-| memory/designer/_edge_ud_1024_2/Default/shared_proto_db/metadata/MANIFEST-000001 | 9 | 0 | n | 0.500 |
-| memory/designer/_edge_ud_1024_2/Default/Site Characteristics Database/000003.log | 9 | 0 | n | 0.500 |
-| memory/designer/_edge_ud_1024_2/Default/Site Characteristics Database/CURRENT | 9 | 0 | n | 0.500 |
-| memory/designer/_edge_ud_1024_2/Default/Site Characteristics Database/LOCK | 9 | 0 | n | 0.500 |
-| memory/designer/_edge_ud_1024_2/Default/Site Characteristics Database/LOG | 9 | 0 | n | 0.500 |
-| memory/designer/_edge_ud_1024_2/Default/Site Characteristics Database/MANIFEST-000001 | 9 | 0 | n | 0.500 |
-| memory/designer/_edge_ud_1024_2/Default/Storage/ext/ihmafllikibpmigkcoadcmckbfhibefp/def/declarative_performance_observer.db | 9 | 0 | n | 0.500 |
-| memory/designer/_edge_ud_1024_2/Default/Storage/ext/ihmafllikibpmigkcoadcmckbfhibefp/def/declarative_performance_observer.db-journal | 9 | 0 | n | 0.500 |
-| memory/designer/_edge_ud_1024_2/Default/Storage/ext/ihmafllikibpmigkcoadcmckbfhibefp/def/Code Cache/js/index | 9 | 0 | n | 0.500 |
-| memory/designer/_edge_ud_1024_2/Default/Storage/ext/ihmafllikibpmigkcoadcmckbfhibefp/def/Code Cache/js/index-dir/the-real-index | 9 | 0 | n | 0.500 |
-| memory/designer/_edge_ud_1024_2/Default/Storage/ext/ihmafllikibpmigkcoadcmckbfhibefp/def/Code Cache/wasm/index | 9 | 0 | n | 0.500 |
-| memory/designer/_edge_ud_1024_2/Default/Storage/ext/ihmafllikibpmigkcoadcmckbfhibefp/def/Code Cache/wasm/index-dir/the-real-index | 9 | 0 | n | 0.500 |
-| memory/designer/_edge_ud_1024_2/Default/Storage/ext/ihmafllikibpmigkcoadcmckbfhibefp/def/DawnGraphiteCache/data_0 | 9 | 0 | n | 0.500 |
-| memory/designer/_edge_ud_1024_2/Default/Storage/ext/ihmafllikibpmigkcoadcmckbfhibefp/def/DawnGraphiteCache/data_1 | 9 | 0 | n | 0.500 |
-| memory/designer/_edge_ud_1024_2/Default/Storage/ext/ihmafllikibpmigkcoadcmckbfhibefp/def/DawnGraphiteCache/data_2 | 9 | 0 | n | 0.500 |
-| memory/designer/_edge_ud_1024_2/Default/Storage/ext/ihmafllikibpmigkcoadcmckbfhibefp/def/DawnGraphiteCache/data_3 | 9 | 0 | n | 0.500 |
-| memory/designer/_edge_ud_1024_2/Default/Storage/ext/ihmafllikibpmigkcoadcmckbfhibefp/def/DawnGraphiteCache/index | 9 | 0 | n | 0.500 |
-| memory/designer/_edge_ud_1024_2/Default/Storage/ext/ihmafllikibpmigkcoadcmckbfhibefp/def/DawnWebGPUCache/data_0 | 9 | 0 | n | 0.500 |
-| memory/designer/_edge_ud_1024_2/Default/Storage/ext/ihmafllikibpmigkcoadcmckbfhibefp/def/DawnWebGPUCache/data_1 | 9 | 0 | n | 0.500 |
-| memory/designer/_edge_ud_1024_2/Default/Storage/ext/ihmafllikibpmigkcoadcmckbfhibefp/def/DawnWebGPUCache/data_2 | 9 | 0 | n | 0.500 |
-| memory/designer/_edge_ud_1024_2/Default/Storage/ext/ihmafllikibpmigkcoadcmckbfhibefp/def/DawnWebGPUCache/data_3 | 9 | 0 | n | 0.500 |
-| memory/designer/_edge_ud_1024_2/Default/Storage/ext/ihmafllikibpmigkcoadcmckbfhibefp/def/DawnWebGPUCache/index | 9 | 0 | n | 0.500 |
-| memory/designer/_edge_ud_1024_2/Default/Storage/ext/ihmafllikibpmigkcoadcmckbfhibefp/def/GPUCache/data_0 | 9 | 0 | n | 0.500 |
-| memory/designer/_edge_ud_1024_2/Default/Storage/ext/ihmafllikibpmigkcoadcmckbfhibefp/def/GPUCache/data_1 | 9 | 0 | n | 0.500 |
-| memory/designer/_edge_ud_1024_2/Default/Storage/ext/ihmafllikibpmigkcoadcmckbfhibefp/def/GPUCache/data_2 | 9 | 0 | n | 0.500 |
-| memory/designer/_edge_ud_1024_2/Default/Storage/ext/ihmafllikibpmigkcoadcmckbfhibefp/def/GPUCache/data_3 | 9 | 0 | n | 0.500 |
-| memory/designer/_edge_ud_1024_2/Default/Storage/ext/ihmafllikibpmigkcoadcmckbfhibefp/def/GPUCache/index | 9 | 0 | n | 0.500 |
-| memory/designer/_edge_ud_1024_2/Default/Storage/ext/ihmafllikibpmigkcoadcmckbfhibefp/def/Network/NetworkDataMigrated | 9 | 0 | n | 0.500 |
-| memory/designer/_edge_ud_1024_2/Default/Sync Data/LevelDB/000003.log | 9 | 0 | n | 0.500 |
-| memory/designer/_edge_ud_1024_2/Default/Sync Data/LevelDB/CURRENT | 9 | 0 | n | 0.500 |
-| memory/designer/_edge_ud_1024_2/Default/Sync Data/LevelDB/LOCK | 9 | 0 | n | 0.500 |
-| memory/designer/_edge_ud_1024_2/Default/Sync Data/LevelDB/LOG | 9 | 0 | n | 0.500 |
-| memory/designer/_edge_ud_1024_2/Default/Sync Data/LevelDB/MANIFEST-000001 | 9 | 0 | n | 0.500 |
-| memory/designer/_edge_ud_1024_2/Default/WebStorage/QuotaManager | 9 | 0 | n | 0.500 |
-| memory/designer/_edge_ud_1024_2/Default/WebStorage/QuotaManager-journal | 9 | 0 | n | 0.500 |
-| memory/designer/_edge_ud_1024_2/GPUPersistentCache/DawnGraphiteCache/23IMHJGI2WIIJ3PDLCHAHUJAGHTLTEBB/cache.db | 9 | 0 | n | 0.500 |
-| memory/designer/_edge_ud_1024_2/GPUPersistentCache/DawnGraphiteCache/23IMHJGI2WIIJ3PDLCHAHUJAGHTLTEBB/cache.db-wal | 9 | 0 | n | 0.500 |
-| memory/designer/_edge_ud_1024_2/GPUPersistentCache/DawnGraphiteCache/23IMHJGI2WIIJ3PDLCHAHUJAGHTLTEBB/cache.journal | 9 | 0 | n | 0.500 |
-| memory/designer/_edge_ud_1024_2/Nurturing/campaign_history | 9 | 0 | n | 0.500 |
-| memory/designer/_edge_ud_1024_2/Nurturing/campaign_history-journal | 9 | 0 | n | 0.500 |
-| memory/designer/_edge_ud_1024_2/ShaderCache/data_0 | 9 | 0 | n | 0.500 |
-| memory/designer/_edge_ud_1024_2/ShaderCache/data_1 | 9 | 0 | n | 0.500 |
-| memory/designer/_edge_ud_1024_2/ShaderCache/data_2 | 9 | 0 | n | 0.500 |
-| memory/designer/_edge_ud_1024_2/ShaderCache/data_3 | 9 | 0 | n | 0.500 |
-| memory/designer/_edge_ud_1024_2/ShaderCache/index | 9 | 0 | n | 0.500 |
-| memory/designer/_edge_ud_1024_2/SmartScreen/RemoteData/customSettings | 9 | 0 | n | 0.500 |
-| memory/designer/_edge_ud_1024_2/SmartScreen/RemoteData/customSettings_F95BA787499AB4FA9EFFF472CE383A14 | 9 | 0 | n | 0.500 |
-| memory/designer/_edge_ud_1920_0/FirstLaunchAfterInstallation | 9 | 0 | n | 0.500 |
-| memory/designer/_edge_ud_1920_0/Last Version | 9 | 0 | n | 0.500 |
-| memory/designer/_edge_ud_1920_0/Local State | 9 | 0 | n | 0.500 |
-| memory/designer/_edge_ud_1920_0/Variations | 9 | 0 | n | 0.500 |
-| memory/designer/_edge_ud_1920_0/VariationsRuntimeSeedV2 | 9 | 0 | n | 0.500 |
-| memory/designer/_edge_ud_1920_0/VariationsSafeSeedV2 | 9 | 0 | n | 0.500 |
-| memory/designer/_edge_ud_1920_0/VariationsSeedV2 | 9 | 0 | n | 0.500 |
-| memory/designer/_edge_ud_1920_0/Crashpad/settings.dat | 9 | 0 | n | 0.500 |
-| memory/designer/_edge_ud_1920_0/Crashpad/throttle_store.dat | 9 | 0 | n | 0.500 |
-| memory/designer/_edge_ud_1920_0/Default/Affiliation Database | 9 | 0 | n | 0.500 |
-| memory/designer/_edge_ud_1920_0/Default/Affiliation Database-journal | 9 | 0 | n | 0.500 |
-| memory/designer/_edge_ud_1920_0/Default/declarative_performance_observer.db | 9 | 0 | n | 0.500 |
-| memory/designer/_edge_ud_1920_0/Default/declarative_performance_observer.db-journal | 9 | 0 | n | 0.500 |
-| memory/designer/_edge_ud_1920_0/Default/Favicons | 9 | 0 | n | 0.500 |
-| memory/designer/_edge_ud_1920_0/Default/Favicons-journal | 9 | 0 | n | 0.500 |
-| memory/designer/_edge_ud_1920_0/Default/History | 9 | 0 | n | 0.500 |
-| memory/designer/_edge_ud_1920_0/Default/History-journal | 9 | 0 | n | 0.500 |
-| memory/designer/_edge_ud_1920_0/Default/HubApps Icons | 9 | 0 | n | 0.500 |
-| memory/designer/_edge_ud_1920_0/Default/HubApps Icons-journal | 9 | 0 | n | 0.500 |
-| memory/designer/_edge_ud_1920_0/Default/load_statistics.db | 9 | 0 | n | 0.500 |
-| memory/designer/_edge_ud_1920_0/Default/load_statistics.db-shm | 9 | 0 | n | 0.500 |
-| memory/designer/_edge_ud_1920_0/Default/load_statistics.db-wal | 9 | 0 | n | 0.500 |
-| memory/designer/_edge_ud_1920_0/Default/LOCK | 9 | 0 | n | 0.500 |
-| memory/designer/_edge_ud_1920_0/Default/LOG | 9 | 0 | n | 0.500 |
-| memory/designer/_edge_ud_1920_0/Default/Login Data | 9 | 0 | n | 0.500 |
-| memory/designer/_edge_ud_1920_0/Default/Login Data For Account | 9 | 0 | n | 0.500 |
-| memory/designer/_edge_ud_1920_0/Default/Login Data For Account-journal | 9 | 0 | n | 0.500 |
-| memory/designer/_edge_ud_1920_0/Default/Login Data-journal | 9 | 0 | n | 0.500 |
-| memory/designer/_edge_ud_1920_0/Default/README | 9 | 0 | n | 0.500 |
-| memory/designer/_edge_ud_1920_0/Default/ServerCertificate | 9 | 0 | n | 0.500 |
-| memory/designer/_edge_ud_1920_0/Default/ServerCertificate-journal | 9 | 0 | n | 0.500 |
-| memory/designer/_edge_ud_1920_0/Default/Top Sites | 9 | 0 | n | 0.500 |
-| memory/designer/_edge_ud_1920_0/Default/Top Sites-journal | 9 | 0 | n | 0.500 |
-| memory/designer/_edge_ud_1920_0/Default/Vpn Tokens | 9 | 0 | n | 0.500 |
-| memory/designer/_edge_ud_1920_0/Default/Vpn Tokens-journal | 9 | 0 | n | 0.500 |
-| memory/designer/_edge_ud_1920_0/Default/Web Data | 9 | 0 | n | 0.500 |
-| memory/designer/_edge_ud_1920_0/Default/Web Data-journal | 9 | 0 | n | 0.500 |
-| memory/designer/_edge_ud_1920_0/Default/ClientCertificates/LOCK | 9 | 0 | n | 0.500 |
-| memory/designer/_edge_ud_1920_0/Default/ClientCertificates/LOG | 9 | 0 | n | 0.500 |
-| memory/designer/_edge_ud_1920_0/Default/Code Cache/js/index | 9 | 0 | n | 0.500 |
-| memory/designer/_edge_ud_1920_0/Default/Code Cache/js/index-dir/the-real-index | 9 | 0 | n | 0.500 |
-| memory/designer/_edge_ud_1920_0/Default/Code Cache/wasm/index | 9 | 0 | n | 0.500 |
-| memory/designer/_edge_ud_1920_0/Default/Code Cache/wasm/index-dir/the-real-index | 9 | 0 | n | 0.500 |
-| memory/designer/_edge_ud_1920_0/Default/commerce_subscription_db/LOCK | 9 | 0 | n | 0.500 |
-| memory/designer/_edge_ud_1920_0/Default/commerce_subscription_db/LOG | 9 | 0 | n | 0.500 |
-| memory/designer/_edge_ud_1920_0/Default/DawnGraphiteCache/data_0 | 9 | 0 | n | 0.500 |
-| memory/designer/_edge_ud_1920_0/Default/DawnGraphiteCache/data_1 | 9 | 0 | n | 0.500 |
-| memory/designer/_edge_ud_1920_0/Default/DawnGraphiteCache/data_2 | 9 | 0 | n | 0.500 |
-| memory/designer/_edge_ud_1920_0/Default/DawnGraphiteCache/data_3 | 9 | 0 | n | 0.500 |
-| memory/designer/_edge_ud_1920_0/Default/DawnGraphiteCache/index | 9 | 0 | n | 0.500 |
-| memory/designer/_edge_ud_1920_0/Default/DawnWebGPUCache/data_0 | 9 | 0 | n | 0.500 |
-| memory/designer/_edge_ud_1920_0/Default/DawnWebGPUCache/data_1 | 9 | 0 | n | 0.500 |
-| memory/designer/_edge_ud_1920_0/Default/DawnWebGPUCache/data_2 | 9 | 0 | n | 0.500 |
-| memory/designer/_edge_ud_1920_0/Default/DawnWebGPUCache/data_3 | 9 | 0 | n | 0.500 |
-| memory/designer/_edge_ud_1920_0/Default/DawnWebGPUCache/index | 9 | 0 | n | 0.500 |
-| memory/designer/_edge_ud_1920_0/Default/discounts_db/LOCK | 9 | 0 | n | 0.500 |
-| memory/designer/_edge_ud_1920_0/Default/discounts_db/LOG | 9 | 0 | n | 0.500 |
-| memory/designer/_edge_ud_1920_0/Default/discount_infos_db/LOCK | 9 | 0 | n | 0.500 |
-| memory/designer/_edge_ud_1920_0/Default/discount_infos_db/LOG | 9 | 0 | n | 0.500 |
-| memory/designer/_edge_ud_1920_0/Default/EdgePushStorageWithConnectTokenAndKey/LOCK | 9 | 0 | n | 0.500 |
-| memory/designer/_edge_ud_1920_0/Default/EdgePushStorageWithConnectTokenAndKey/LOG | 9 | 0 | n | 0.500 |
-| memory/designer/_edge_ud_1920_0/Default/Extension Rules/000003.log | 9 | 0 | n | 0.500 |
-| memory/designer/_edge_ud_1920_0/Default/Extension Rules/CURRENT | 9 | 0 | n | 0.500 |
-| memory/designer/_edge_ud_1920_0/Default/Extension Rules/LOCK | 9 | 0 | n | 0.500 |
-| memory/designer/_edge_ud_1920_0/Default/Extension Rules/LOG | 9 | 0 | n | 0.500 |
-| memory/designer/_edge_ud_1920_0/Default/Extension Rules/MANIFEST-000001 | 9 | 0 | n | 0.500 |
-| memory/designer/_edge_ud_1920_0/Default/Extension Scripts/000003.log | 9 | 0 | n | 0.500 |
-| memory/designer/_edge_ud_1920_0/Default/Extension Scripts/CURRENT | 9 | 0 | n | 0.500 |
-| memory/designer/_edge_ud_1920_0/Default/Extension Scripts/LOCK | 9 | 0 | n | 0.500 |
-| memory/designer/_edge_ud_1920_0/Default/Extension Scripts/LOG | 9 | 0 | n | 0.500 |
-| memory/designer/_edge_ud_1920_0/Default/Extension Scripts/MANIFEST-000001 | 9 | 0 | n | 0.500 |
-| memory/designer/_edge_ud_1920_0/Default/Extension State/000003.log | 9 | 0 | n | 0.500 |
-| memory/designer/_edge_ud_1920_0/Default/Extension State/CURRENT | 9 | 0 | n | 0.500 |
-| memory/designer/_edge_ud_1920_0/Default/Extension State/LOCK | 9 | 0 | n | 0.500 |
-| memory/designer/_edge_ud_1920_0/Default/Extension State/LOG | 9 | 0 | n | 0.500 |
-| memory/designer/_edge_ud_1920_0/Default/Extension State/MANIFEST-000001 | 9 | 0 | n | 0.500 |
-| memory/designer/_edge_ud_1920_0/Default/GPUCache/data_0 | 9 | 0 | n | 0.500 |
-| memory/designer/_edge_ud_1920_0/Default/GPUCache/data_1 | 9 | 0 | n | 0.500 |
-| memory/designer/_edge_ud_1920_0/Default/GPUCache/data_2 | 9 | 0 | n | 0.500 |
-| memory/designer/_edge_ud_1920_0/Default/GPUCache/data_3 | 9 | 0 | n | 0.500 |
-| memory/designer/_edge_ud_1920_0/Default/GPUCache/index | 9 | 0 | n | 0.500 |
-| memory/designer/_edge_ud_1920_0/Default/Network/NetworkDataMigrated | 9 | 0 | n | 0.500 |
-| memory/designer/_edge_ud_1920_0/Default/Nurturing/campaign_history | 9 | 0 | n | 0.500 |
-| memory/designer/_edge_ud_1920_0/Default/Nurturing/campaign_history-journal | 9 | 0 | n | 0.500 |
-| memory/designer/_edge_ud_1920_0/Default/parcel_tracking_db/LOCK | 9 | 0 | n | 0.500 |
-| memory/designer/_edge_ud_1920_0/Default/parcel_tracking_db/LOG | 9 | 0 | n | 0.500 |
-| memory/designer/_edge_ud_1920_0/Default/PersistentOriginTrials/LOCK | 9 | 0 | n | 0.500 |
-| memory/designer/_edge_ud_1920_0/Default/PersistentOriginTrials/LOG | 9 | 0 | n | 0.500 |
-| memory/designer/_edge_ud_1920_0/Default/Service Worker/Database/000003.log | 9 | 0 | n | 0.500 |
-| memory/designer/_edge_ud_1920_0/Default/Service Worker/Database/CURRENT | 9 | 0 | n | 0.500 |
-| memory/designer/_edge_ud_1920_0/Default/Service Worker/Database/LOCK | 9 | 0 | n | 0.500 |
-| memory/designer/_edge_ud_1920_0/Default/Service Worker/Database/LOG | 9 | 0 | n | 0.500 |
-| memory/designer/_edge_ud_1920_0/Default/Service Worker/Database/MANIFEST-000001 | 9 | 0 | n | 0.500 |
-| memory/designer/_edge_ud_1920_0/Default/Service Worker/ScriptCache/2cc80dabc69f58b6_0 | 9 | 0 | n | 0.500 |
-| memory/designer/_edge_ud_1920_0/Default/Service Worker/ScriptCache/4cb013792b196a35_0 | 9 | 0 | n | 0.500 |
-| memory/designer/_edge_ud_1920_0/Default/Service Worker/ScriptCache/f1cdccba37924bda_0 | 9 | 0 | n | 0.500 |
-| memory/designer/_edge_ud_1920_0/Default/Service Worker/ScriptCache/index | 9 | 0 | n | 0.500 |
-| memory/designer/_edge_ud_1920_0/Default/Service Worker/ScriptCache/index-dir/the-real-index | 9 | 0 | n | 0.500 |
-| memory/designer/_edge_ud_1920_0/Default/shared_proto_db/000003.log | 9 | 0 | n | 0.500 |
-| memory/designer/_edge_ud_1920_0/Default/shared_proto_db/CURRENT | 9 | 0 | n | 0.500 |
-| memory/designer/_edge_ud_1920_0/Default/shared_proto_db/LOCK | 9 | 0 | n | 0.500 |
-| memory/designer/_edge_ud_1920_0/Default/shared_proto_db/LOG | 9 | 0 | n | 0.500 |
-| memory/designer/_edge_ud_1920_0/Default/shared_proto_db/MANIFEST-000001 | 9 | 0 | n | 0.500 |
-| memory/designer/_edge_ud_1920_0/Default/shared_proto_db/metadata/000003.log | 9 | 0 | n | 0.500 |
-| memory/designer/_edge_ud_1920_0/Default/shared_proto_db/metadata/CURRENT | 9 | 0 | n | 0.500 |
-| memory/designer/_edge_ud_1920_0/Default/shared_proto_db/metadata/LOCK | 9 | 0 | n | 0.500 |
-| memory/designer/_edge_ud_1920_0/Default/shared_proto_db/metadata/LOG | 9 | 0 | n | 0.500 |
-| memory/designer/_edge_ud_1920_0/Default/shared_proto_db/metadata/MANIFEST-000001 | 9 | 0 | n | 0.500 |
-| memory/designer/_edge_ud_1920_0/Default/Site Characteristics Database/000003.log | 9 | 0 | n | 0.500 |
-| memory/designer/_edge_ud_1920_0/Default/Site Characteristics Database/CURRENT | 9 | 0 | n | 0.500 |
-| memory/designer/_edge_ud_1920_0/Default/Site Characteristics Database/LOCK | 9 | 0 | n | 0.500 |
-| memory/designer/_edge_ud_1920_0/Default/Site Characteristics Database/LOG | 9 | 0 | n | 0.500 |
-| memory/designer/_edge_ud_1920_0/Default/Site Characteristics Database/MANIFEST-000001 | 9 | 0 | n | 0.500 |
-| memory/designer/_edge_ud_1920_0/Default/Storage/ext/ihmafllikibpmigkcoadcmckbfhibefp/def/declarative_performance_observer.db | 9 | 0 | n | 0.500 |
-| memory/designer/_edge_ud_1920_0/Default/Storage/ext/ihmafllikibpmigkcoadcmckbfhibefp/def/declarative_performance_observer.db-journal | 9 | 0 | n | 0.500 |
-| memory/designer/_edge_ud_1920_0/Default/Storage/ext/ihmafllikibpmigkcoadcmckbfhibefp/def/Code Cache/js/index | 9 | 0 | n | 0.500 |
-| memory/designer/_edge_ud_1920_0/Default/Storage/ext/ihmafllikibpmigkcoadcmckbfhibefp/def/Code Cache/js/index-dir/the-real-index | 9 | 0 | n | 0.500 |
-| memory/designer/_edge_ud_1920_0/Default/Storage/ext/ihmafllikibpmigkcoadcmckbfhibefp/def/Code Cache/wasm/index | 9 | 0 | n | 0.500 |
-| memory/designer/_edge_ud_1920_0/Default/Storage/ext/ihmafllikibpmigkcoadcmckbfhibefp/def/Code Cache/wasm/index-dir/the-real-index | 9 | 0 | n | 0.500 |
-| memory/designer/_edge_ud_1920_0/Default/Storage/ext/ihmafllikibpmigkcoadcmckbfhibefp/def/DawnGraphiteCache/data_0 | 9 | 0 | n | 0.500 |
-| memory/designer/_edge_ud_1920_0/Default/Storage/ext/ihmafllikibpmigkcoadcmckbfhibefp/def/DawnGraphiteCache/data_1 | 9 | 0 | n | 0.500 |
-| memory/designer/_edge_ud_1920_0/Default/Storage/ext/ihmafllikibpmigkcoadcmckbfhibefp/def/DawnGraphiteCache/data_2 | 9 | 0 | n | 0.500 |
-| memory/designer/_edge_ud_1920_0/Default/Storage/ext/ihmafllikibpmigkcoadcmckbfhibefp/def/DawnGraphiteCache/data_3 | 9 | 0 | n | 0.500 |
-| memory/designer/_edge_ud_1920_0/Default/Storage/ext/ihmafllikibpmigkcoadcmckbfhibefp/def/DawnGraphiteCache/index | 9 | 0 | n | 0.500 |
-| memory/designer/_edge_ud_1920_0/Default/Storage/ext/ihmafllikibpmigkcoadcmckbfhibefp/def/DawnWebGPUCache/data_0 | 9 | 0 | n | 0.500 |
-| memory/designer/_edge_ud_1920_0/Default/Storage/ext/ihmafllikibpmigkcoadcmckbfhibefp/def/DawnWebGPUCache/data_1 | 9 | 0 | n | 0.500 |
-| memory/designer/_edge_ud_1920_0/Default/Storage/ext/ihmafllikibpmigkcoadcmckbfhibefp/def/DawnWebGPUCache/data_2 | 9 | 0 | n | 0.500 |
-| memory/designer/_edge_ud_1920_0/Default/Storage/ext/ihmafllikibpmigkcoadcmckbfhibefp/def/DawnWebGPUCache/data_3 | 9 | 0 | n | 0.500 |
-| memory/designer/_edge_ud_1920_0/Default/Storage/ext/ihmafllikibpmigkcoadcmckbfhibefp/def/DawnWebGPUCache/index | 9 | 0 | n | 0.500 |
-| memory/designer/_edge_ud_1920_0/Default/Storage/ext/ihmafllikibpmigkcoadcmckbfhibefp/def/GPUCache/data_0 | 9 | 0 | n | 0.500 |
-| memory/designer/_edge_ud_1920_0/Default/Storage/ext/ihmafllikibpmigkcoadcmckbfhibefp/def/GPUCache/data_1 | 9 | 0 | n | 0.500 |
-| memory/designer/_edge_ud_1920_0/Default/Storage/ext/ihmafllikibpmigkcoadcmckbfhibefp/def/GPUCache/data_2 | 9 | 0 | n | 0.500 |
-| memory/designer/_edge_ud_1920_0/Default/Storage/ext/ihmafllikibpmigkcoadcmckbfhibefp/def/GPUCache/data_3 | 9 | 0 | n | 0.500 |
-| memory/designer/_edge_ud_1920_0/Default/Storage/ext/ihmafllikibpmigkcoadcmckbfhibefp/def/GPUCache/index | 9 | 0 | n | 0.500 |
-| memory/designer/_edge_ud_1920_0/Default/Storage/ext/ihmafllikibpmigkcoadcmckbfhibefp/def/Network/NetworkDataMigrated | 9 | 0 | n | 0.500 |
-| memory/designer/_edge_ud_1920_0/Default/Sync Data/LevelDB/000003.log | 9 | 0 | n | 0.500 |
-| memory/designer/_edge_ud_1920_0/Default/Sync Data/LevelDB/CURRENT | 9 | 0 | n | 0.500 |
-| memory/designer/_edge_ud_1920_0/Default/Sync Data/LevelDB/LOCK | 9 | 0 | n | 0.500 |
-| memory/designer/_edge_ud_1920_0/Default/Sync Data/LevelDB/LOG | 9 | 0 | n | 0.500 |
-| memory/designer/_edge_ud_1920_0/Default/Sync Data/LevelDB/MANIFEST-000001 | 9 | 0 | n | 0.500 |
-| memory/designer/_edge_ud_1920_0/Default/WebStorage/QuotaManager | 9 | 0 | n | 0.500 |
-| memory/designer/_edge_ud_1920_0/Default/WebStorage/QuotaManager-journal | 9 | 0 | n | 0.500 |
-| memory/designer/_edge_ud_1920_0/GPUPersistentCache/DawnGraphiteCache/23IMHJGI2WIIJ3PDLCHAHUJAGHTLTEBB/cache.db | 9 | 0 | n | 0.500 |
-| memory/designer/_edge_ud_1920_0/GPUPersistentCache/DawnGraphiteCache/23IMHJGI2WIIJ3PDLCHAHUJAGHTLTEBB/cache.db-wal | 9 | 0 | n | 0.500 |
-| memory/designer/_edge_ud_1920_0/GPUPersistentCache/DawnGraphiteCache/23IMHJGI2WIIJ3PDLCHAHUJAGHTLTEBB/cache.journal | 9 | 0 | n | 0.500 |
-| memory/designer/_edge_ud_1920_0/Nurturing/campaign_history | 9 | 0 | n | 0.500 |
-| memory/designer/_edge_ud_1920_0/Nurturing/campaign_history-journal | 9 | 0 | n | 0.500 |
-| memory/designer/_edge_ud_1920_0/ShaderCache/data_0 | 9 | 0 | n | 0.500 |
-| memory/designer/_edge_ud_1920_0/ShaderCache/data_1 | 9 | 0 | n | 0.500 |
-| memory/designer/_edge_ud_1920_0/ShaderCache/data_2 | 9 | 0 | n | 0.500 |
-| memory/designer/_edge_ud_1920_0/ShaderCache/data_3 | 9 | 0 | n | 0.500 |
-| memory/designer/_edge_ud_1920_0/ShaderCache/index | 9 | 0 | n | 0.500 |
-| memory/designer/_edge_ud_1920_0/SmartScreen/RemoteData/customSettings | 9 | 0 | n | 0.500 |
-| memory/designer/_edge_ud_1920_0/SmartScreen/RemoteData/customSettings_F95BA787499AB4FA9EFFF472CE383A14 | 9 | 0 | n | 0.500 |
-| memory/designer/_edge_ud_1920_1/FirstLaunchAfterInstallation | 9 | 0 | n | 0.500 |
-| memory/designer/_edge_ud_1920_1/Last Version | 9 | 0 | n | 0.500 |
-| memory/designer/_edge_ud_1920_1/Local State | 9 | 0 | n | 0.500 |
-| memory/designer/_edge_ud_1920_1/Variations | 9 | 0 | n | 0.500 |
-| memory/designer/_edge_ud_1920_1/VariationsRuntimeSeedV2 | 9 | 0 | n | 0.500 |
-| memory/designer/_edge_ud_1920_1/VariationsSafeSeedV2 | 9 | 0 | n | 0.500 |
-| memory/designer/_edge_ud_1920_1/VariationsSeedV2 | 9 | 0 | n | 0.500 |
-| memory/designer/_edge_ud_1920_1/Crashpad/settings.dat | 9 | 0 | n | 0.500 |
-| memory/designer/_edge_ud_1920_1/Crashpad/throttle_store.dat | 9 | 0 | n | 0.500 |
-| memory/designer/_edge_ud_1920_1/Default/Affiliation Database | 9 | 0 | n | 0.500 |
-| memory/designer/_edge_ud_1920_1/Default/Affiliation Database-journal | 9 | 0 | n | 0.500 |
-| memory/designer/_edge_ud_1920_1/Default/declarative_performance_observer.db | 9 | 0 | n | 0.500 |
-| memory/designer/_edge_ud_1920_1/Default/declarative_performance_observer.db-journal | 9 | 0 | n | 0.500 |
-| memory/designer/_edge_ud_1920_1/Default/Favicons | 9 | 0 | n | 0.500 |
-| memory/designer/_edge_ud_1920_1/Default/Favicons-journal | 9 | 0 | n | 0.500 |
-| memory/designer/_edge_ud_1920_1/Default/History | 9 | 0 | n | 0.500 |
-| memory/designer/_edge_ud_1920_1/Default/History-journal | 9 | 0 | n | 0.500 |
-| memory/designer/_edge_ud_1920_1/Default/HubApps Icons | 9 | 0 | n | 0.500 |
-| memory/designer/_edge_ud_1920_1/Default/HubApps Icons-journal | 9 | 0 | n | 0.500 |
-| memory/designer/_edge_ud_1920_1/Default/load_statistics.db | 9 | 0 | n | 0.500 |
-| memory/designer/_edge_ud_1920_1/Default/load_statistics.db-shm | 9 | 0 | n | 0.500 |
-| memory/designer/_edge_ud_1920_1/Default/load_statistics.db-wal | 9 | 0 | n | 0.500 |
-| memory/designer/_edge_ud_1920_1/Default/LOCK | 9 | 0 | n | 0.500 |
-| memory/designer/_edge_ud_1920_1/Default/LOG | 9 | 0 | n | 0.500 |
-| memory/designer/_edge_ud_1920_1/Default/Login Data | 9 | 0 | n | 0.500 |
-| memory/designer/_edge_ud_1920_1/Default/Login Data For Account | 9 | 0 | n | 0.500 |
-| memory/designer/_edge_ud_1920_1/Default/Login Data For Account-journal | 9 | 0 | n | 0.500 |
-| memory/designer/_edge_ud_1920_1/Default/Login Data-journal | 9 | 0 | n | 0.500 |
-| memory/designer/_edge_ud_1920_1/Default/README | 9 | 0 | n | 0.500 |
-| memory/designer/_edge_ud_1920_1/Default/ServerCertificate | 9 | 0 | n | 0.500 |
-| memory/designer/_edge_ud_1920_1/Default/ServerCertificate-journal | 9 | 0 | n | 0.500 |
-| memory/designer/_edge_ud_1920_1/Default/Top Sites | 9 | 0 | n | 0.500 |
-| memory/designer/_edge_ud_1920_1/Default/Top Sites-journal | 9 | 0 | n | 0.500 |
-| memory/designer/_edge_ud_1920_1/Default/Vpn Tokens | 9 | 0 | n | 0.500 |
-| memory/designer/_edge_ud_1920_1/Default/Vpn Tokens-journal | 9 | 0 | n | 0.500 |
-| memory/designer/_edge_ud_1920_1/Default/Web Data | 9 | 0 | n | 0.500 |
-| memory/designer/_edge_ud_1920_1/Default/Web Data-journal | 9 | 0 | n | 0.500 |
-| memory/designer/_edge_ud_1920_1/Default/ClientCertificates/LOCK | 9 | 0 | n | 0.500 |
-| memory/designer/_edge_ud_1920_1/Default/ClientCertificates/LOG | 9 | 0 | n | 0.500 |
-| memory/designer/_edge_ud_1920_1/Default/Code Cache/js/index | 9 | 0 | n | 0.500 |
-| memory/designer/_edge_ud_1920_1/Default/Code Cache/js/index-dir/the-real-index | 9 | 0 | n | 0.500 |
-| memory/designer/_edge_ud_1920_1/Default/Code Cache/wasm/index | 9 | 0 | n | 0.500 |
-| memory/designer/_edge_ud_1920_1/Default/Code Cache/wasm/index-dir/the-real-index | 9 | 0 | n | 0.500 |
-| memory/designer/_edge_ud_1920_1/Default/commerce_subscription_db/LOCK | 9 | 0 | n | 0.500 |
-| memory/designer/_edge_ud_1920_1/Default/commerce_subscription_db/LOG | 9 | 0 | n | 0.500 |
-| memory/designer/_edge_ud_1920_1/Default/DawnGraphiteCache/data_0 | 9 | 0 | n | 0.500 |
-| memory/designer/_edge_ud_1920_1/Default/DawnGraphiteCache/data_1 | 9 | 0 | n | 0.500 |
-| memory/designer/_edge_ud_1920_1/Default/DawnGraphiteCache/data_2 | 9 | 0 | n | 0.500 |
-| memory/designer/_edge_ud_1920_1/Default/DawnGraphiteCache/data_3 | 9 | 0 | n | 0.500 |
-| memory/designer/_edge_ud_1920_1/Default/DawnGraphiteCache/index | 9 | 0 | n | 0.500 |
-| memory/designer/_edge_ud_1920_1/Default/DawnWebGPUCache/data_0 | 9 | 0 | n | 0.500 |
-| memory/designer/_edge_ud_1920_1/Default/DawnWebGPUCache/data_1 | 9 | 0 | n | 0.500 |
-| memory/designer/_edge_ud_1920_1/Default/DawnWebGPUCache/data_2 | 9 | 0 | n | 0.500 |
-| memory/designer/_edge_ud_1920_1/Default/DawnWebGPUCache/data_3 | 9 | 0 | n | 0.500 |
-| memory/designer/_edge_ud_1920_1/Default/DawnWebGPUCache/index | 9 | 0 | n | 0.500 |
-| memory/designer/_edge_ud_1920_1/Default/discounts_db/LOCK | 9 | 0 | n | 0.500 |
-| memory/designer/_edge_ud_1920_1/Default/discounts_db/LOG | 9 | 0 | n | 0.500 |
-| memory/designer/_edge_ud_1920_1/Default/discount_infos_db/LOCK | 9 | 0 | n | 0.500 |
-| memory/designer/_edge_ud_1920_1/Default/discount_infos_db/LOG | 9 | 0 | n | 0.500 |
-| memory/designer/_edge_ud_1920_1/Default/EdgePushStorageWithConnectTokenAndKey/LOCK | 9 | 0 | n | 0.500 |
-| memory/designer/_edge_ud_1920_1/Default/EdgePushStorageWithConnectTokenAndKey/LOG | 9 | 0 | n | 0.500 |
-| memory/designer/_edge_ud_1920_1/Default/Extension Rules/000003.log | 9 | 0 | n | 0.500 |
-| memory/designer/_edge_ud_1920_1/Default/Extension Rules/CURRENT | 9 | 0 | n | 0.500 |
-| memory/designer/_edge_ud_1920_1/Default/Extension Rules/LOCK | 9 | 0 | n | 0.500 |
-| memory/designer/_edge_ud_1920_1/Default/Extension Rules/LOG | 9 | 0 | n | 0.500 |
-| memory/designer/_edge_ud_1920_1/Default/Extension Rules/MANIFEST-000001 | 9 | 0 | n | 0.500 |
-| memory/designer/_edge_ud_1920_1/Default/Extension Scripts/000003.log | 9 | 0 | n | 0.500 |
-| memory/designer/_edge_ud_1920_1/Default/Extension Scripts/CURRENT | 9 | 0 | n | 0.500 |
-| memory/designer/_edge_ud_1920_1/Default/Extension Scripts/LOCK | 9 | 0 | n | 0.500 |
-| memory/designer/_edge_ud_1920_1/Default/Extension Scripts/LOG | 9 | 0 | n | 0.500 |
-| memory/designer/_edge_ud_1920_1/Default/Extension Scripts/MANIFEST-000001 | 9 | 0 | n | 0.500 |
-| memory/designer/_edge_ud_1920_1/Default/Extension State/000003.log | 9 | 0 | n | 0.500 |
-| memory/designer/_edge_ud_1920_1/Default/Extension State/CURRENT | 9 | 0 | n | 0.500 |
-| memory/designer/_edge_ud_1920_1/Default/Extension State/LOCK | 9 | 0 | n | 0.500 |
-| memory/designer/_edge_ud_1920_1/Default/Extension State/LOG | 9 | 0 | n | 0.500 |
-| memory/designer/_edge_ud_1920_1/Default/Extension State/MANIFEST-000001 | 9 | 0 | n | 0.500 |
-| memory/designer/_edge_ud_1920_1/Default/GPUCache/data_0 | 9 | 0 | n | 0.500 |
-| memory/designer/_edge_ud_1920_1/Default/GPUCache/data_1 | 9 | 0 | n | 0.500 |
-| memory/designer/_edge_ud_1920_1/Default/GPUCache/data_2 | 9 | 0 | n | 0.500 |
-| memory/designer/_edge_ud_1920_1/Default/GPUCache/data_3 | 9 | 0 | n | 0.500 |
-| memory/designer/_edge_ud_1920_1/Default/GPUCache/index | 9 | 0 | n | 0.500 |
-| memory/designer/_edge_ud_1920_1/Default/Network/NetworkDataMigrated | 9 | 0 | n | 0.500 |
-| memory/designer/_edge_ud_1920_1/Default/Nurturing/campaign_history | 9 | 0 | n | 0.500 |
-| memory/designer/_edge_ud_1920_1/Default/Nurturing/campaign_history-journal | 9 | 0 | n | 0.500 |
-| memory/designer/_edge_ud_1920_1/Default/parcel_tracking_db/LOCK | 9 | 0 | n | 0.500 |
-| memory/designer/_edge_ud_1920_1/Default/parcel_tracking_db/LOG | 9 | 0 | n | 0.500 |
-| memory/designer/_edge_ud_1920_1/Default/PersistentOriginTrials/LOCK | 9 | 0 | n | 0.500 |
-| memory/designer/_edge_ud_1920_1/Default/PersistentOriginTrials/LOG | 9 | 0 | n | 0.500 |
-| memory/designer/_edge_ud_1920_1/Default/Service Worker/Database/000003.log | 9 | 0 | n | 0.500 |
-| memory/designer/_edge_ud_1920_1/Default/Service Worker/Database/CURRENT | 9 | 0 | n | 0.500 |
-| memory/designer/_edge_ud_1920_1/Default/Service Worker/Database/LOCK | 9 | 0 | n | 0.500 |
-| memory/designer/_edge_ud_1920_1/Default/Service Worker/Database/LOG | 9 | 0 | n | 0.500 |
-| memory/designer/_edge_ud_1920_1/Default/Service Worker/Database/MANIFEST-000001 | 9 | 0 | n | 0.500 |
-| memory/designer/_edge_ud_1920_1/Default/Service Worker/ScriptCache/2cc80dabc69f58b6_0 | 9 | 0 | n | 0.500 |
-| memory/designer/_edge_ud_1920_1/Default/Service Worker/ScriptCache/4cb013792b196a35_0 | 9 | 0 | n | 0.500 |
-| memory/designer/_edge_ud_1920_1/Default/Service Worker/ScriptCache/f1cdccba37924bda_0 | 9 | 0 | n | 0.500 |
-| memory/designer/_edge_ud_1920_1/Default/Service Worker/ScriptCache/index | 9 | 0 | n | 0.500 |
-| memory/designer/_edge_ud_1920_1/Default/Service Worker/ScriptCache/index-dir/the-real-index | 9 | 0 | n | 0.500 |
-| memory/designer/_edge_ud_1920_1/Default/shared_proto_db/000003.log | 9 | 0 | n | 0.500 |
-| memory/designer/_edge_ud_1920_1/Default/shared_proto_db/CURRENT | 9 | 0 | n | 0.500 |
-| memory/designer/_edge_ud_1920_1/Default/shared_proto_db/LOCK | 9 | 0 | n | 0.500 |
-| memory/designer/_edge_ud_1920_1/Default/shared_proto_db/LOG | 9 | 0 | n | 0.500 |
-| memory/designer/_edge_ud_1920_1/Default/shared_proto_db/MANIFEST-000001 | 9 | 0 | n | 0.500 |
-| memory/designer/_edge_ud_1920_1/Default/shared_proto_db/metadata/000003.log | 9 | 0 | n | 0.500 |
-| memory/designer/_edge_ud_1920_1/Default/shared_proto_db/metadata/CURRENT | 9 | 0 | n | 0.500 |
-| memory/designer/_edge_ud_1920_1/Default/shared_proto_db/metadata/LOCK | 9 | 0 | n | 0.500 |
-| memory/designer/_edge_ud_1920_1/Default/shared_proto_db/metadata/LOG | 9 | 0 | n | 0.500 |
-| memory/designer/_edge_ud_1920_1/Default/shared_proto_db/metadata/MANIFEST-000001 | 9 | 0 | n | 0.500 |
-| memory/designer/_edge_ud_1920_1/Default/Site Characteristics Database/000003.log | 9 | 0 | n | 0.500 |
-| memory/designer/_edge_ud_1920_1/Default/Site Characteristics Database/CURRENT | 9 | 0 | n | 0.500 |
-| memory/designer/_edge_ud_1920_1/Default/Site Characteristics Database/LOCK | 9 | 0 | n | 0.500 |
-| memory/designer/_edge_ud_1920_1/Default/Site Characteristics Database/LOG | 9 | 0 | n | 0.500 |
-| memory/designer/_edge_ud_1920_1/Default/Site Characteristics Database/MANIFEST-000001 | 9 | 0 | n | 0.500 |
-| memory/designer/_edge_ud_1920_1/Default/Storage/ext/ihmafllikibpmigkcoadcmckbfhibefp/def/declarative_performance_observer.db | 9 | 0 | n | 0.500 |
-| memory/designer/_edge_ud_1920_1/Default/Storage/ext/ihmafllikibpmigkcoadcmckbfhibefp/def/declarative_performance_observer.db-journal | 9 | 0 | n | 0.500 |
-| memory/designer/_edge_ud_1920_1/Default/Storage/ext/ihmafllikibpmigkcoadcmckbfhibefp/def/Code Cache/js/index | 9 | 0 | n | 0.500 |
-| memory/designer/_edge_ud_1920_1/Default/Storage/ext/ihmafllikibpmigkcoadcmckbfhibefp/def/Code Cache/js/index-dir/the-real-index | 9 | 0 | n | 0.500 |
-| memory/designer/_edge_ud_1920_1/Default/Storage/ext/ihmafllikibpmigkcoadcmckbfhibefp/def/Code Cache/wasm/index | 9 | 0 | n | 0.500 |
-| memory/designer/_edge_ud_1920_1/Default/Storage/ext/ihmafllikibpmigkcoadcmckbfhibefp/def/Code Cache/wasm/index-dir/the-real-index | 9 | 0 | n | 0.500 |
-| memory/designer/_edge_ud_1920_1/Default/Storage/ext/ihmafllikibpmigkcoadcmckbfhibefp/def/DawnGraphiteCache/data_0 | 9 | 0 | n | 0.500 |
-| memory/designer/_edge_ud_1920_1/Default/Storage/ext/ihmafllikibpmigkcoadcmckbfhibefp/def/DawnGraphiteCache/data_1 | 9 | 0 | n | 0.500 |
-| memory/designer/_edge_ud_1920_1/Default/Storage/ext/ihmafllikibpmigkcoadcmckbfhibefp/def/DawnGraphiteCache/data_2 | 9 | 0 | n | 0.500 |
-| memory/designer/_edge_ud_1920_1/Default/Storage/ext/ihmafllikibpmigkcoadcmckbfhibefp/def/DawnGraphiteCache/data_3 | 9 | 0 | n | 0.500 |
-| memory/designer/_edge_ud_1920_1/Default/Storage/ext/ihmafllikibpmigkcoadcmckbfhibefp/def/DawnGraphiteCache/index | 9 | 0 | n | 0.500 |
-| memory/designer/_edge_ud_1920_1/Default/Storage/ext/ihmafllikibpmigkcoadcmckbfhibefp/def/DawnWebGPUCache/data_0 | 9 | 0 | n | 0.500 |
-| memory/designer/_edge_ud_1920_1/Default/Storage/ext/ihmafllikibpmigkcoadcmckbfhibefp/def/DawnWebGPUCache/data_1 | 9 | 0 | n | 0.500 |
-| memory/designer/_edge_ud_1920_1/Default/Storage/ext/ihmafllikibpmigkcoadcmckbfhibefp/def/DawnWebGPUCache/data_2 | 9 | 0 | n | 0.500 |
-| memory/designer/_edge_ud_1920_1/Default/Storage/ext/ihmafllikibpmigkcoadcmckbfhibefp/def/DawnWebGPUCache/data_3 | 9 | 0 | n | 0.500 |
-| memory/designer/_edge_ud_1920_1/Default/Storage/ext/ihmafllikibpmigkcoadcmckbfhibefp/def/DawnWebGPUCache/index | 9 | 0 | n | 0.500 |
-| memory/designer/_edge_ud_1920_1/Default/Storage/ext/ihmafllikibpmigkcoadcmckbfhibefp/def/GPUCache/data_0 | 9 | 0 | n | 0.500 |
-| memory/designer/_edge_ud_1920_1/Default/Storage/ext/ihmafllikibpmigkcoadcmckbfhibefp/def/GPUCache/data_1 | 9 | 0 | n | 0.500 |
-| memory/designer/_edge_ud_1920_1/Default/Storage/ext/ihmafllikibpmigkcoadcmckbfhibefp/def/GPUCache/data_2 | 9 | 0 | n | 0.500 |
-| memory/designer/_edge_ud_1920_1/Default/Storage/ext/ihmafllikibpmigkcoadcmckbfhibefp/def/GPUCache/data_3 | 9 | 0 | n | 0.500 |
-| memory/designer/_edge_ud_1920_1/Default/Storage/ext/ihmafllikibpmigkcoadcmckbfhibefp/def/GPUCache/index | 9 | 0 | n | 0.500 |
-| memory/designer/_edge_ud_1920_1/Default/Storage/ext/ihmafllikibpmigkcoadcmckbfhibefp/def/Network/NetworkDataMigrated | 9 | 0 | n | 0.500 |
-| memory/designer/_edge_ud_1920_1/Default/Sync Data/LevelDB/000003.log | 9 | 0 | n | 0.500 |
-| memory/designer/_edge_ud_1920_1/Default/Sync Data/LevelDB/CURRENT | 9 | 0 | n | 0.500 |
-| memory/designer/_edge_ud_1920_1/Default/Sync Data/LevelDB/LOCK | 9 | 0 | n | 0.500 |
-| memory/designer/_edge_ud_1920_1/Default/Sync Data/LevelDB/LOG | 9 | 0 | n | 0.500 |
-| memory/designer/_edge_ud_1920_1/Default/Sync Data/LevelDB/MANIFEST-000001 | 9 | 0 | n | 0.500 |
-| memory/designer/_edge_ud_1920_1/Default/WebStorage/QuotaManager | 9 | 0 | n | 0.500 |
-| memory/designer/_edge_ud_1920_1/Default/WebStorage/QuotaManager-journal | 9 | 0 | n | 0.500 |
-| memory/designer/_edge_ud_1920_1/GPUPersistentCache/DawnGraphiteCache/23IMHJGI2WIIJ3PDLCHAHUJAGHTLTEBB/cache.db | 9 | 0 | n | 0.500 |
-| memory/designer/_edge_ud_1920_1/GPUPersistentCache/DawnGraphiteCache/23IMHJGI2WIIJ3PDLCHAHUJAGHTLTEBB/cache.db-wal | 9 | 0 | n | 0.500 |
-| memory/designer/_edge_ud_1920_1/GPUPersistentCache/DawnGraphiteCache/23IMHJGI2WIIJ3PDLCHAHUJAGHTLTEBB/cache.journal | 9 | 0 | n | 0.500 |
-| memory/designer/_edge_ud_1920_1/Nurturing/campaign_history | 9 | 0 | n | 0.500 |
-| memory/designer/_edge_ud_1920_1/Nurturing/campaign_history-journal | 9 | 0 | n | 0.500 |
-| memory/designer/_edge_ud_1920_1/ShaderCache/data_0 | 9 | 0 | n | 0.500 |
-| memory/designer/_edge_ud_1920_1/ShaderCache/data_1 | 9 | 0 | n | 0.500 |
-| memory/designer/_edge_ud_1920_1/ShaderCache/data_2 | 9 | 0 | n | 0.500 |
-| memory/designer/_edge_ud_1920_1/ShaderCache/data_3 | 9 | 0 | n | 0.500 |
-| memory/designer/_edge_ud_1920_1/ShaderCache/index | 9 | 0 | n | 0.500 |
-| memory/designer/_edge_ud_1920_1/SmartScreen/RemoteData/customSettings | 9 | 0 | n | 0.500 |
-| memory/designer/_edge_ud_1920_1/SmartScreen/RemoteData/customSettings_F95BA787499AB4FA9EFFF472CE383A14 | 9 | 0 | n | 0.500 |
-| memory/designer/_edge_ud_1920_2/FirstLaunchAfterInstallation | 9 | 0 | n | 0.500 |
-| memory/designer/_edge_ud_1920_2/Last Version | 9 | 0 | n | 0.500 |
-| memory/designer/_edge_ud_1920_2/Local State | 9 | 0 | n | 0.500 |
-| memory/designer/_edge_ud_1920_2/Variations | 9 | 0 | n | 0.500 |
-| memory/designer/_edge_ud_1920_2/VariationsRuntimeSeedV2 | 9 | 0 | n | 0.500 |
-| memory/designer/_edge_ud_1920_2/VariationsSafeSeedV2 | 9 | 0 | n | 0.500 |
-| memory/designer/_edge_ud_1920_2/VariationsSeedV2 | 9 | 0 | n | 0.500 |
-| memory/designer/_edge_ud_1920_2/Crashpad/settings.dat | 9 | 0 | n | 0.500 |
-| memory/designer/_edge_ud_1920_2/Crashpad/throttle_store.dat | 9 | 0 | n | 0.500 |
-| memory/designer/_edge_ud_1920_2/Default/Affiliation Database | 9 | 0 | n | 0.500 |
-| memory/designer/_edge_ud_1920_2/Default/Affiliation Database-journal | 9 | 0 | n | 0.500 |
-| memory/designer/_edge_ud_1920_2/Default/declarative_performance_observer.db | 9 | 0 | n | 0.500 |
-| memory/designer/_edge_ud_1920_2/Default/declarative_performance_observer.db-journal | 9 | 0 | n | 0.500 |
-| memory/designer/_edge_ud_1920_2/Default/Favicons | 9 | 0 | n | 0.500 |
-| memory/designer/_edge_ud_1920_2/Default/Favicons-journal | 9 | 0 | n | 0.500 |
-| memory/designer/_edge_ud_1920_2/Default/History | 9 | 0 | n | 0.500 |
-| memory/designer/_edge_ud_1920_2/Default/History-journal | 9 | 0 | n | 0.500 |
-| memory/designer/_edge_ud_1920_2/Default/HubApps Icons | 9 | 0 | n | 0.500 |
-| memory/designer/_edge_ud_1920_2/Default/HubApps Icons-journal | 9 | 0 | n | 0.500 |
-| memory/designer/_edge_ud_1920_2/Default/load_statistics.db | 9 | 0 | n | 0.500 |
-| memory/designer/_edge_ud_1920_2/Default/load_statistics.db-shm | 9 | 0 | n | 0.500 |
-| memory/designer/_edge_ud_1920_2/Default/load_statistics.db-wal | 9 | 0 | n | 0.500 |
-| memory/designer/_edge_ud_1920_2/Default/LOCK | 9 | 0 | n | 0.500 |
-| memory/designer/_edge_ud_1920_2/Default/LOG | 9 | 0 | n | 0.500 |
-| memory/designer/_edge_ud_1920_2/Default/Login Data | 9 | 0 | n | 0.500 |
-| memory/designer/_edge_ud_1920_2/Default/Login Data For Account | 9 | 0 | n | 0.500 |
-| memory/designer/_edge_ud_1920_2/Default/Login Data For Account-journal | 9 | 0 | n | 0.500 |
-| memory/designer/_edge_ud_1920_2/Default/Login Data-journal | 9 | 0 | n | 0.500 |
-| memory/designer/_edge_ud_1920_2/Default/README | 9 | 0 | n | 0.500 |
-| memory/designer/_edge_ud_1920_2/Default/ServerCertificate | 9 | 0 | n | 0.500 |
-| memory/designer/_edge_ud_1920_2/Default/ServerCertificate-journal | 9 | 0 | n | 0.500 |
-| memory/designer/_edge_ud_1920_2/Default/Top Sites | 9 | 0 | n | 0.500 |
-| memory/designer/_edge_ud_1920_2/Default/Top Sites-journal | 9 | 0 | n | 0.500 |
-| memory/designer/_edge_ud_1920_2/Default/Vpn Tokens | 9 | 0 | n | 0.500 |
-| memory/designer/_edge_ud_1920_2/Default/Vpn Tokens-journal | 9 | 0 | n | 0.500 |
-| memory/designer/_edge_ud_1920_2/Default/Web Data | 9 | 0 | n | 0.500 |
-| memory/designer/_edge_ud_1920_2/Default/Web Data-journal | 9 | 0 | n | 0.500 |
-| memory/designer/_edge_ud_1920_2/Default/ClientCertificates/LOCK | 9 | 0 | n | 0.500 |
-| memory/designer/_edge_ud_1920_2/Default/ClientCertificates/LOG | 9 | 0 | n | 0.500 |
-| memory/designer/_edge_ud_1920_2/Default/Code Cache/js/index | 9 | 0 | n | 0.500 |
-| memory/designer/_edge_ud_1920_2/Default/Code Cache/js/index-dir/the-real-index | 9 | 0 | n | 0.500 |
-| memory/designer/_edge_ud_1920_2/Default/Code Cache/wasm/index | 9 | 0 | n | 0.500 |
-| memory/designer/_edge_ud_1920_2/Default/Code Cache/wasm/index-dir/the-real-index | 9 | 0 | n | 0.500 |
-| memory/designer/_edge_ud_1920_2/Default/commerce_subscription_db/LOCK | 9 | 0 | n | 0.500 |
-| memory/designer/_edge_ud_1920_2/Default/commerce_subscription_db/LOG | 9 | 0 | n | 0.500 |
-| memory/designer/_edge_ud_1920_2/Default/DawnGraphiteCache/data_0 | 9 | 0 | n | 0.500 |
-| memory/designer/_edge_ud_1920_2/Default/DawnGraphiteCache/data_1 | 9 | 0 | n | 0.500 |
-| memory/designer/_edge_ud_1920_2/Default/DawnGraphiteCache/data_2 | 9 | 0 | n | 0.500 |
-| memory/designer/_edge_ud_1920_2/Default/DawnGraphiteCache/data_3 | 9 | 0 | n | 0.500 |
-| memory/designer/_edge_ud_1920_2/Default/DawnGraphiteCache/index | 9 | 0 | n | 0.500 |
-| memory/designer/_edge_ud_1920_2/Default/DawnWebGPUCache/data_0 | 9 | 0 | n | 0.500 |
-| memory/designer/_edge_ud_1920_2/Default/DawnWebGPUCache/data_1 | 9 | 0 | n | 0.500 |
-| memory/designer/_edge_ud_1920_2/Default/DawnWebGPUCache/data_2 | 9 | 0 | n | 0.500 |
-| memory/designer/_edge_ud_1920_2/Default/DawnWebGPUCache/data_3 | 9 | 0 | n | 0.500 |
-| memory/designer/_edge_ud_1920_2/Default/DawnWebGPUCache/index | 9 | 0 | n | 0.500 |
-| memory/designer/_edge_ud_1920_2/Default/discounts_db/LOCK | 9 | 0 | n | 0.500 |
-| memory/designer/_edge_ud_1920_2/Default/discounts_db/LOG | 9 | 0 | n | 0.500 |
-| memory/designer/_edge_ud_1920_2/Default/discount_infos_db/LOCK | 9 | 0 | n | 0.500 |
-| memory/designer/_edge_ud_1920_2/Default/discount_infos_db/LOG | 9 | 0 | n | 0.500 |
-| memory/designer/_edge_ud_1920_2/Default/EdgePushStorageWithConnectTokenAndKey/LOCK | 9 | 0 | n | 0.500 |
-| memory/designer/_edge_ud_1920_2/Default/EdgePushStorageWithConnectTokenAndKey/LOG | 9 | 0 | n | 0.500 |
-| memory/designer/_edge_ud_1920_2/Default/Extension Rules/000003.log | 9 | 0 | n | 0.500 |
-| memory/designer/_edge_ud_1920_2/Default/Extension Rules/CURRENT | 9 | 0 | n | 0.500 |
-| memory/designer/_edge_ud_1920_2/Default/Extension Rules/LOCK | 9 | 0 | n | 0.500 |
-| memory/designer/_edge_ud_1920_2/Default/Extension Rules/LOG | 9 | 0 | n | 0.500 |
-| memory/designer/_edge_ud_1920_2/Default/Extension Rules/MANIFEST-000001 | 9 | 0 | n | 0.500 |
-| memory/designer/_edge_ud_1920_2/Default/Extension Scripts/000003.log | 9 | 0 | n | 0.500 |
-| memory/designer/_edge_ud_1920_2/Default/Extension Scripts/CURRENT | 9 | 0 | n | 0.500 |
-| memory/designer/_edge_ud_1920_2/Default/Extension Scripts/LOCK | 9 | 0 | n | 0.500 |
-| memory/designer/_edge_ud_1920_2/Default/Extension Scripts/LOG | 9 | 0 | n | 0.500 |
-| memory/designer/_edge_ud_1920_2/Default/Extension Scripts/MANIFEST-000001 | 9 | 0 | n | 0.500 |
-| memory/designer/_edge_ud_1920_2/Default/Extension State/000003.log | 9 | 0 | n | 0.500 |
-| memory/designer/_edge_ud_1920_2/Default/Extension State/CURRENT | 9 | 0 | n | 0.500 |
-| memory/designer/_edge_ud_1920_2/Default/Extension State/LOCK | 9 | 0 | n | 0.500 |
-| memory/designer/_edge_ud_1920_2/Default/Extension State/LOG | 9 | 0 | n | 0.500 |
-| memory/designer/_edge_ud_1920_2/Default/Extension State/MANIFEST-000001 | 9 | 0 | n | 0.500 |
-| memory/designer/_edge_ud_1920_2/Default/GPUCache/data_0 | 9 | 0 | n | 0.500 |
-| memory/designer/_edge_ud_1920_2/Default/GPUCache/data_1 | 9 | 0 | n | 0.500 |
-| memory/designer/_edge_ud_1920_2/Default/GPUCache/data_2 | 9 | 0 | n | 0.500 |
-| memory/designer/_edge_ud_1920_2/Default/GPUCache/data_3 | 9 | 0 | n | 0.500 |
-| memory/designer/_edge_ud_1920_2/Default/GPUCache/index | 9 | 0 | n | 0.500 |
-| memory/designer/_edge_ud_1920_2/Default/Network/NetworkDataMigrated | 9 | 0 | n | 0.500 |
-| memory/designer/_edge_ud_1920_2/Default/Nurturing/campaign_history | 9 | 0 | n | 0.500 |
-| memory/designer/_edge_ud_1920_2/Default/Nurturing/campaign_history-journal | 9 | 0 | n | 0.500 |
-| memory/designer/_edge_ud_1920_2/Default/parcel_tracking_db/LOCK | 9 | 0 | n | 0.500 |
-| memory/designer/_edge_ud_1920_2/Default/parcel_tracking_db/LOG | 9 | 0 | n | 0.500 |
-| memory/designer/_edge_ud_1920_2/Default/PersistentOriginTrials/LOCK | 9 | 0 | n | 0.500 |
-| memory/designer/_edge_ud_1920_2/Default/PersistentOriginTrials/LOG | 9 | 0 | n | 0.500 |
-| memory/designer/_edge_ud_1920_2/Default/Service Worker/Database/000003.log | 9 | 0 | n | 0.500 |
-| memory/designer/_edge_ud_1920_2/Default/Service Worker/Database/CURRENT | 9 | 0 | n | 0.500 |
-| memory/designer/_edge_ud_1920_2/Default/Service Worker/Database/LOCK | 9 | 0 | n | 0.500 |
-| memory/designer/_edge_ud_1920_2/Default/Service Worker/Database/LOG | 9 | 0 | n | 0.500 |
-| memory/designer/_edge_ud_1920_2/Default/Service Worker/Database/MANIFEST-000001 | 9 | 0 | n | 0.500 |
-| memory/designer/_edge_ud_1920_2/Default/Service Worker/ScriptCache/2cc80dabc69f58b6_0 | 9 | 0 | n | 0.500 |
-| memory/designer/_edge_ud_1920_2/Default/Service Worker/ScriptCache/4cb013792b196a35_0 | 9 | 0 | n | 0.500 |
-| memory/designer/_edge_ud_1920_2/Default/Service Worker/ScriptCache/f1cdccba37924bda_0 | 9 | 0 | n | 0.500 |
-| memory/designer/_edge_ud_1920_2/Default/Service Worker/ScriptCache/index | 9 | 0 | n | 0.500 |
-| memory/designer/_edge_ud_1920_2/Default/Service Worker/ScriptCache/index-dir/the-real-index | 9 | 0 | n | 0.500 |
-| memory/designer/_edge_ud_1920_2/Default/shared_proto_db/000003.log | 9 | 0 | n | 0.500 |
-| memory/designer/_edge_ud_1920_2/Default/shared_proto_db/CURRENT | 9 | 0 | n | 0.500 |
-| memory/designer/_edge_ud_1920_2/Default/shared_proto_db/LOCK | 9 | 0 | n | 0.500 |
-| memory/designer/_edge_ud_1920_2/Default/shared_proto_db/LOG | 9 | 0 | n | 0.500 |
-| memory/designer/_edge_ud_1920_2/Default/shared_proto_db/MANIFEST-000001 | 9 | 0 | n | 0.500 |
-| memory/designer/_edge_ud_1920_2/Default/shared_proto_db/metadata/000003.log | 9 | 0 | n | 0.500 |
-| memory/designer/_edge_ud_1920_2/Default/shared_proto_db/metadata/CURRENT | 9 | 0 | n | 0.500 |
-| memory/designer/_edge_ud_1920_2/Default/shared_proto_db/metadata/LOCK | 9 | 0 | n | 0.500 |
-| memory/designer/_edge_ud_1920_2/Default/shared_proto_db/metadata/LOG | 9 | 0 | n | 0.500 |
-| memory/designer/_edge_ud_1920_2/Default/shared_proto_db/metadata/MANIFEST-000001 | 9 | 0 | n | 0.500 |
-| memory/designer/_edge_ud_1920_2/Default/Site Characteristics Database/000003.log | 9 | 0 | n | 0.500 |
-| memory/designer/_edge_ud_1920_2/Default/Site Characteristics Database/CURRENT | 9 | 0 | n | 0.500 |
-| memory/designer/_edge_ud_1920_2/Default/Site Characteristics Database/LOCK | 9 | 0 | n | 0.500 |
-| memory/designer/_edge_ud_1920_2/Default/Site Characteristics Database/LOG | 9 | 0 | n | 0.500 |
-| memory/designer/_edge_ud_1920_2/Default/Site Characteristics Database/MANIFEST-000001 | 9 | 0 | n | 0.500 |
-| memory/designer/_edge_ud_1920_2/Default/Storage/ext/ihmafllikibpmigkcoadcmckbfhibefp/def/declarative_performance_observer.db | 9 | 0 | n | 0.500 |
-| memory/designer/_edge_ud_1920_2/Default/Storage/ext/ihmafllikibpmigkcoadcmckbfhibefp/def/declarative_performance_observer.db-journal | 9 | 0 | n | 0.500 |
-| memory/designer/_edge_ud_1920_2/Default/Storage/ext/ihmafllikibpmigkcoadcmckbfhibefp/def/Code Cache/js/index | 9 | 0 | n | 0.500 |
-| memory/designer/_edge_ud_1920_2/Default/Storage/ext/ihmafllikibpmigkcoadcmckbfhibefp/def/Code Cache/js/index-dir/the-real-index | 9 | 0 | n | 0.500 |
-| memory/designer/_edge_ud_1920_2/Default/Storage/ext/ihmafllikibpmigkcoadcmckbfhibefp/def/Code Cache/wasm/index | 9 | 0 | n | 0.500 |
-| memory/designer/_edge_ud_1920_2/Default/Storage/ext/ihmafllikibpmigkcoadcmckbfhibefp/def/Code Cache/wasm/index-dir/the-real-index | 9 | 0 | n | 0.500 |
-| memory/designer/_edge_ud_1920_2/Default/Storage/ext/ihmafllikibpmigkcoadcmckbfhibefp/def/DawnGraphiteCache/data_0 | 9 | 0 | n | 0.500 |
-| memory/designer/_edge_ud_1920_2/Default/Storage/ext/ihmafllikibpmigkcoadcmckbfhibefp/def/DawnGraphiteCache/data_1 | 9 | 0 | n | 0.500 |
-| memory/designer/_edge_ud_1920_2/Default/Storage/ext/ihmafllikibpmigkcoadcmckbfhibefp/def/DawnGraphiteCache/data_2 | 9 | 0 | n | 0.500 |
-| memory/designer/_edge_ud_1920_2/Default/Storage/ext/ihmafllikibpmigkcoadcmckbfhibefp/def/DawnGraphiteCache/data_3 | 9 | 0 | n | 0.500 |
-| memory/designer/_edge_ud_1920_2/Default/Storage/ext/ihmafllikibpmigkcoadcmckbfhibefp/def/DawnGraphiteCache/index | 9 | 0 | n | 0.500 |
-| memory/designer/_edge_ud_1920_2/Default/Storage/ext/ihmafllikibpmigkcoadcmckbfhibefp/def/DawnWebGPUCache/data_0 | 9 | 0 | n | 0.500 |
-| memory/designer/_edge_ud_1920_2/Default/Storage/ext/ihmafllikibpmigkcoadcmckbfhibefp/def/DawnWebGPUCache/data_1 | 9 | 0 | n | 0.500 |
-| memory/designer/_edge_ud_1920_2/Default/Storage/ext/ihmafllikibpmigkcoadcmckbfhibefp/def/DawnWebGPUCache/data_2 | 9 | 0 | n | 0.500 |
-| memory/designer/_edge_ud_1920_2/Default/Storage/ext/ihmafllikibpmigkcoadcmckbfhibefp/def/DawnWebGPUCache/data_3 | 9 | 0 | n | 0.500 |
-| memory/designer/_edge_ud_1920_2/Default/Storage/ext/ihmafllikibpmigkcoadcmckbfhibefp/def/DawnWebGPUCache/index | 9 | 0 | n | 0.500 |
-| memory/designer/_edge_ud_1920_2/Default/Storage/ext/ihmafllikibpmigkcoadcmckbfhibefp/def/GPUCache/data_0 | 9 | 0 | n | 0.500 |
-| memory/designer/_edge_ud_1920_2/Default/Storage/ext/ihmafllikibpmigkcoadcmckbfhibefp/def/GPUCache/data_1 | 9 | 0 | n | 0.500 |
-| memory/designer/_edge_ud_1920_2/Default/Storage/ext/ihmafllikibpmigkcoadcmckbfhibefp/def/GPUCache/data_2 | 9 | 0 | n | 0.500 |
-| memory/designer/_edge_ud_1920_2/Default/Storage/ext/ihmafllikibpmigkcoadcmckbfhibefp/def/GPUCache/data_3 | 9 | 0 | n | 0.500 |
-| memory/designer/_edge_ud_1920_2/Default/Storage/ext/ihmafllikibpmigkcoadcmckbfhibefp/def/GPUCache/index | 9 | 0 | n | 0.500 |
-| memory/designer/_edge_ud_1920_2/Default/Storage/ext/ihmafllikibpmigkcoadcmckbfhibefp/def/Network/NetworkDataMigrated | 9 | 0 | n | 0.500 |
-| memory/designer/_edge_ud_1920_2/Default/Sync Data/LevelDB/000003.log | 9 | 0 | n | 0.500 |
-| memory/designer/_edge_ud_1920_2/Default/Sync Data/LevelDB/CURRENT | 9 | 0 | n | 0.500 |
-| memory/designer/_edge_ud_1920_2/Default/Sync Data/LevelDB/LOCK | 9 | 0 | n | 0.500 |
-| memory/designer/_edge_ud_1920_2/Default/Sync Data/LevelDB/LOG | 9 | 0 | n | 0.500 |
-| memory/designer/_edge_ud_1920_2/Default/Sync Data/LevelDB/MANIFEST-000001 | 9 | 0 | n | 0.500 |
-| memory/designer/_edge_ud_1920_2/Default/WebStorage/QuotaManager | 9 | 0 | n | 0.500 |
-| memory/designer/_edge_ud_1920_2/Default/WebStorage/QuotaManager-journal | 9 | 0 | n | 0.500 |
-| memory/designer/_edge_ud_1920_2/GPUPersistentCache/DawnGraphiteCache/23IMHJGI2WIIJ3PDLCHAHUJAGHTLTEBB/cache.db | 9 | 0 | n | 0.500 |
-| memory/designer/_edge_ud_1920_2/GPUPersistentCache/DawnGraphiteCache/23IMHJGI2WIIJ3PDLCHAHUJAGHTLTEBB/cache.db-wal | 9 | 0 | n | 0.500 |
-| memory/designer/_edge_ud_1920_2/GPUPersistentCache/DawnGraphiteCache/23IMHJGI2WIIJ3PDLCHAHUJAGHTLTEBB/cache.journal | 9 | 0 | n | 0.500 |
-| memory/designer/_edge_ud_1920_2/Nurturing/campaign_history | 9 | 0 | n | 0.500 |
-| memory/designer/_edge_ud_1920_2/Nurturing/campaign_history-journal | 9 | 0 | n | 0.500 |
-| memory/designer/_edge_ud_1920_2/ShaderCache/data_0 | 9 | 0 | n | 0.500 |
-| memory/designer/_edge_ud_1920_2/ShaderCache/data_1 | 9 | 0 | n | 0.500 |
-| memory/designer/_edge_ud_1920_2/ShaderCache/data_2 | 9 | 0 | n | 0.500 |
-| memory/designer/_edge_ud_1920_2/ShaderCache/data_3 | 9 | 0 | n | 0.500 |
-| memory/designer/_edge_ud_1920_2/ShaderCache/index | 9 | 0 | n | 0.500 |
-| memory/designer/_edge_ud_1920_2/SmartScreen/RemoteData/customSettings | 9 | 0 | n | 0.500 |
-| memory/designer/_edge_ud_1920_2/SmartScreen/RemoteData/customSettings_F95BA787499AB4FA9EFFF472CE383A14 | 9 | 0 | n | 0.500 |
-| memory/designer/_edge_ud_768_0/FirstLaunchAfterInstallation | 9 | 0 | n | 0.500 |
-| memory/designer/_edge_ud_768_0/Last Version | 9 | 0 | n | 0.500 |
-| memory/designer/_edge_ud_768_0/Local State | 9 | 0 | n | 0.500 |
-| memory/designer/_edge_ud_768_0/Variations | 9 | 0 | n | 0.500 |
-| memory/designer/_edge_ud_768_0/VariationsRuntimeSeedV2 | 9 | 0 | n | 0.500 |
-| memory/designer/_edge_ud_768_0/VariationsSafeSeedV2 | 9 | 0 | n | 0.500 |
-| memory/designer/_edge_ud_768_0/VariationsSeedV2 | 9 | 0 | n | 0.500 |
-| memory/designer/_edge_ud_768_0/Crashpad/settings.dat | 9 | 0 | n | 0.500 |
-| memory/designer/_edge_ud_768_0/Crashpad/throttle_store.dat | 9 | 0 | n | 0.500 |
-| memory/designer/_edge_ud_768_0/Default/Affiliation Database | 9 | 0 | n | 0.500 |
-| memory/designer/_edge_ud_768_0/Default/Affiliation Database-journal | 9 | 0 | n | 0.500 |
-| memory/designer/_edge_ud_768_0/Default/declarative_performance_observer.db | 9 | 0 | n | 0.500 |
-| memory/designer/_edge_ud_768_0/Default/declarative_performance_observer.db-journal | 9 | 0 | n | 0.500 |
-| memory/designer/_edge_ud_768_0/Default/Favicons | 9 | 0 | n | 0.500 |
-| memory/designer/_edge_ud_768_0/Default/Favicons-journal | 9 | 0 | n | 0.500 |
-| memory/designer/_edge_ud_768_0/Default/History | 9 | 0 | n | 0.500 |
-| memory/designer/_edge_ud_768_0/Default/History-journal | 9 | 0 | n | 0.500 |
-| memory/designer/_edge_ud_768_0/Default/HubApps Icons | 9 | 0 | n | 0.500 |
-| memory/designer/_edge_ud_768_0/Default/HubApps Icons-journal | 9 | 0 | n | 0.500 |
-| memory/designer/_edge_ud_768_0/Default/load_statistics.db | 9 | 0 | n | 0.500 |
-| memory/designer/_edge_ud_768_0/Default/load_statistics.db-shm | 9 | 0 | n | 0.500 |
-| memory/designer/_edge_ud_768_0/Default/load_statistics.db-wal | 9 | 0 | n | 0.500 |
-| memory/designer/_edge_ud_768_0/Default/LOCK | 9 | 0 | n | 0.500 |
-| memory/designer/_edge_ud_768_0/Default/LOG | 9 | 0 | n | 0.500 |
-| memory/designer/_edge_ud_768_0/Default/Login Data | 9 | 0 | n | 0.500 |
-| memory/designer/_edge_ud_768_0/Default/Login Data For Account | 9 | 0 | n | 0.500 |
-| memory/designer/_edge_ud_768_0/Default/Login Data For Account-journal | 9 | 0 | n | 0.500 |
-| memory/designer/_edge_ud_768_0/Default/Login Data-journal | 9 | 0 | n | 0.500 |
-| memory/designer/_edge_ud_768_0/Default/README | 9 | 0 | n | 0.500 |
-| memory/designer/_edge_ud_768_0/Default/ServerCertificate | 9 | 0 | n | 0.500 |
-| memory/designer/_edge_ud_768_0/Default/ServerCertificate-journal | 9 | 0 | n | 0.500 |
-| memory/designer/_edge_ud_768_0/Default/Top Sites | 9 | 0 | n | 0.500 |
-| memory/designer/_edge_ud_768_0/Default/Top Sites-journal | 9 | 0 | n | 0.500 |
-| memory/designer/_edge_ud_768_0/Default/Vpn Tokens | 9 | 0 | n | 0.500 |
-| memory/designer/_edge_ud_768_0/Default/Vpn Tokens-journal | 9 | 0 | n | 0.500 |
-| memory/designer/_edge_ud_768_0/Default/Web Data | 9 | 0 | n | 0.500 |
-| memory/designer/_edge_ud_768_0/Default/Web Data-journal | 9 | 0 | n | 0.500 |
-| memory/designer/_edge_ud_768_0/Default/ClientCertificates/LOCK | 9 | 0 | n | 0.500 |
-| memory/designer/_edge_ud_768_0/Default/ClientCertificates/LOG | 9 | 0 | n | 0.500 |
-| memory/designer/_edge_ud_768_0/Default/Code Cache/js/index | 9 | 0 | n | 0.500 |
-| memory/designer/_edge_ud_768_0/Default/Code Cache/js/index-dir/the-real-index | 9 | 0 | n | 0.500 |
-| memory/designer/_edge_ud_768_0/Default/Code Cache/wasm/index | 9 | 0 | n | 0.500 |
-| memory/designer/_edge_ud_768_0/Default/Code Cache/wasm/index-dir/the-real-index | 9 | 0 | n | 0.500 |
-| memory/designer/_edge_ud_768_0/Default/commerce_subscription_db/LOCK | 9 | 0 | n | 0.500 |
-| memory/designer/_edge_ud_768_0/Default/commerce_subscription_db/LOG | 9 | 0 | n | 0.500 |
-| memory/designer/_edge_ud_768_0/Default/DawnGraphiteCache/data_0 | 9 | 0 | n | 0.500 |
-| memory/designer/_edge_ud_768_0/Default/DawnGraphiteCache/data_1 | 9 | 0 | n | 0.500 |
-| memory/designer/_edge_ud_768_0/Default/DawnGraphiteCache/data_2 | 9 | 0 | n | 0.500 |
-| memory/designer/_edge_ud_768_0/Default/DawnGraphiteCache/data_3 | 9 | 0 | n | 0.500 |
-| memory/designer/_edge_ud_768_0/Default/DawnGraphiteCache/index | 9 | 0 | n | 0.500 |
-| memory/designer/_edge_ud_768_0/Default/DawnWebGPUCache/data_0 | 9 | 0 | n | 0.500 |
-| memory/designer/_edge_ud_768_0/Default/DawnWebGPUCache/data_1 | 9 | 0 | n | 0.500 |
-| memory/designer/_edge_ud_768_0/Default/DawnWebGPUCache/data_2 | 9 | 0 | n | 0.500 |
-| memory/designer/_edge_ud_768_0/Default/DawnWebGPUCache/data_3 | 9 | 0 | n | 0.500 |
-| memory/designer/_edge_ud_768_0/Default/DawnWebGPUCache/index | 9 | 0 | n | 0.500 |
-| memory/designer/_edge_ud_768_0/Default/discounts_db/LOCK | 9 | 0 | n | 0.500 |
-| memory/designer/_edge_ud_768_0/Default/discounts_db/LOG | 9 | 0 | n | 0.500 |
-| memory/designer/_edge_ud_768_0/Default/discount_infos_db/LOCK | 9 | 0 | n | 0.500 |
-| memory/designer/_edge_ud_768_0/Default/discount_infos_db/LOG | 9 | 0 | n | 0.500 |
-| memory/designer/_edge_ud_768_0/Default/EdgePushStorageWithConnectTokenAndKey/LOCK | 9 | 0 | n | 0.500 |
-| memory/designer/_edge_ud_768_0/Default/EdgePushStorageWithConnectTokenAndKey/LOG | 9 | 0 | n | 0.500 |
-| memory/designer/_edge_ud_768_0/Default/Extension Rules/000003.log | 9 | 0 | n | 0.500 |
-| memory/designer/_edge_ud_768_0/Default/Extension Rules/CURRENT | 9 | 0 | n | 0.500 |
-| memory/designer/_edge_ud_768_0/Default/Extension Rules/LOCK | 9 | 0 | n | 0.500 |
-| memory/designer/_edge_ud_768_0/Default/Extension Rules/LOG | 9 | 0 | n | 0.500 |
-| memory/designer/_edge_ud_768_0/Default/Extension Rules/MANIFEST-000001 | 9 | 0 | n | 0.500 |
-| memory/designer/_edge_ud_768_0/Default/Extension Scripts/000003.log | 9 | 0 | n | 0.500 |
-| memory/designer/_edge_ud_768_0/Default/Extension Scripts/CURRENT | 9 | 0 | n | 0.500 |
-| memory/designer/_edge_ud_768_0/Default/Extension Scripts/LOCK | 9 | 0 | n | 0.500 |
-| memory/designer/_edge_ud_768_0/Default/Extension Scripts/LOG | 9 | 0 | n | 0.500 |
-| memory/designer/_edge_ud_768_0/Default/Extension Scripts/MANIFEST-000001 | 9 | 0 | n | 0.500 |
-| memory/designer/_edge_ud_768_0/Default/Extension State/000003.log | 9 | 0 | n | 0.500 |
-| memory/designer/_edge_ud_768_0/Default/Extension State/CURRENT | 9 | 0 | n | 0.500 |
-| memory/designer/_edge_ud_768_0/Default/Extension State/LOCK | 9 | 0 | n | 0.500 |
-| memory/designer/_edge_ud_768_0/Default/Extension State/LOG | 9 | 0 | n | 0.500 |
-| memory/designer/_edge_ud_768_0/Default/Extension State/MANIFEST-000001 | 9 | 0 | n | 0.500 |
-| memory/designer/_edge_ud_768_0/Default/GPUCache/data_0 | 9 | 0 | n | 0.500 |
-| memory/designer/_edge_ud_768_0/Default/GPUCache/data_1 | 9 | 0 | n | 0.500 |
-| memory/designer/_edge_ud_768_0/Default/GPUCache/data_2 | 9 | 0 | n | 0.500 |
-| memory/designer/_edge_ud_768_0/Default/GPUCache/data_3 | 9 | 0 | n | 0.500 |
-| memory/designer/_edge_ud_768_0/Default/GPUCache/index | 9 | 0 | n | 0.500 |
-| memory/designer/_edge_ud_768_0/Default/Network/NetworkDataMigrated | 9 | 0 | n | 0.500 |
-| memory/designer/_edge_ud_768_0/Default/Nurturing/campaign_history | 9 | 0 | n | 0.500 |
-| memory/designer/_edge_ud_768_0/Default/Nurturing/campaign_history-journal | 9 | 0 | n | 0.500 |
-| memory/designer/_edge_ud_768_0/Default/parcel_tracking_db/LOCK | 9 | 0 | n | 0.500 |
-| memory/designer/_edge_ud_768_0/Default/parcel_tracking_db/LOG | 9 | 0 | n | 0.500 |
-| memory/designer/_edge_ud_768_0/Default/PersistentOriginTrials/LOCK | 9 | 0 | n | 0.500 |
-| memory/designer/_edge_ud_768_0/Default/PersistentOriginTrials/LOG | 9 | 0 | n | 0.500 |
-| memory/designer/_edge_ud_768_0/Default/Service Worker/Database/000003.log | 9 | 0 | n | 0.500 |
-| memory/designer/_edge_ud_768_0/Default/Service Worker/Database/CURRENT | 9 | 0 | n | 0.500 |
-| memory/designer/_edge_ud_768_0/Default/Service Worker/Database/LOCK | 9 | 0 | n | 0.500 |
-| memory/designer/_edge_ud_768_0/Default/Service Worker/Database/LOG | 9 | 0 | n | 0.500 |
-| memory/designer/_edge_ud_768_0/Default/Service Worker/Database/MANIFEST-000001 | 9 | 0 | n | 0.500 |
-| memory/designer/_edge_ud_768_0/Default/Service Worker/ScriptCache/2cc80dabc69f58b6_0 | 9 | 0 | n | 0.500 |
-| memory/designer/_edge_ud_768_0/Default/Service Worker/ScriptCache/4cb013792b196a35_0 | 9 | 0 | n | 0.500 |
-| memory/designer/_edge_ud_768_0/Default/Service Worker/ScriptCache/f1cdccba37924bda_0 | 9 | 0 | n | 0.500 |
-| memory/designer/_edge_ud_768_0/Default/Service Worker/ScriptCache/index | 9 | 0 | n | 0.500 |
-| memory/designer/_edge_ud_768_0/Default/Service Worker/ScriptCache/index-dir/the-real-index | 9 | 0 | n | 0.500 |
-| memory/designer/_edge_ud_768_0/Default/shared_proto_db/000003.log | 9 | 0 | n | 0.500 |
-| memory/designer/_edge_ud_768_0/Default/shared_proto_db/CURRENT | 9 | 0 | n | 0.500 |
-| memory/designer/_edge_ud_768_0/Default/shared_proto_db/LOCK | 9 | 0 | n | 0.500 |
-| memory/designer/_edge_ud_768_0/Default/shared_proto_db/LOG | 9 | 0 | n | 0.500 |
-| memory/designer/_edge_ud_768_0/Default/shared_proto_db/MANIFEST-000001 | 9 | 0 | n | 0.500 |
-| memory/designer/_edge_ud_768_0/Default/shared_proto_db/metadata/000003.log | 9 | 0 | n | 0.500 |
-| memory/designer/_edge_ud_768_0/Default/shared_proto_db/metadata/CURRENT | 9 | 0 | n | 0.500 |
-| memory/designer/_edge_ud_768_0/Default/shared_proto_db/metadata/LOCK | 9 | 0 | n | 0.500 |
-| memory/designer/_edge_ud_768_0/Default/shared_proto_db/metadata/LOG | 9 | 0 | n | 0.500 |
-| memory/designer/_edge_ud_768_0/Default/shared_proto_db/metadata/MANIFEST-000001 | 9 | 0 | n | 0.500 |
-| memory/designer/_edge_ud_768_0/Default/Site Characteristics Database/000003.log | 9 | 0 | n | 0.500 |
-| memory/designer/_edge_ud_768_0/Default/Site Characteristics Database/CURRENT | 9 | 0 | n | 0.500 |
-| memory/designer/_edge_ud_768_0/Default/Site Characteristics Database/LOCK | 9 | 0 | n | 0.500 |
-| memory/designer/_edge_ud_768_0/Default/Site Characteristics Database/LOG | 9 | 0 | n | 0.500 |
-| memory/designer/_edge_ud_768_0/Default/Site Characteristics Database/MANIFEST-000001 | 9 | 0 | n | 0.500 |
-| memory/designer/_edge_ud_768_0/Default/Storage/ext/ihmafllikibpmigkcoadcmckbfhibefp/def/declarative_performance_observer.db | 9 | 0 | n | 0.500 |
-| memory/designer/_edge_ud_768_0/Default/Storage/ext/ihmafllikibpmigkcoadcmckbfhibefp/def/declarative_performance_observer.db-journal | 9 | 0 | n | 0.500 |
-| memory/designer/_edge_ud_768_0/Default/Storage/ext/ihmafllikibpmigkcoadcmckbfhibefp/def/Code Cache/js/index | 9 | 0 | n | 0.500 |
-| memory/designer/_edge_ud_768_0/Default/Storage/ext/ihmafllikibpmigkcoadcmckbfhibefp/def/Code Cache/js/index-dir/the-real-index | 9 | 0 | n | 0.500 |
-| memory/designer/_edge_ud_768_0/Default/Storage/ext/ihmafllikibpmigkcoadcmckbfhibefp/def/Code Cache/wasm/index | 9 | 0 | n | 0.500 |
-| memory/designer/_edge_ud_768_0/Default/Storage/ext/ihmafllikibpmigkcoadcmckbfhibefp/def/Code Cache/wasm/index-dir/the-real-index | 9 | 0 | n | 0.500 |
-| memory/designer/_edge_ud_768_0/Default/Storage/ext/ihmafllikibpmigkcoadcmckbfhibefp/def/DawnGraphiteCache/data_0 | 9 | 0 | n | 0.500 |
-| memory/designer/_edge_ud_768_0/Default/Storage/ext/ihmafllikibpmigkcoadcmckbfhibefp/def/DawnGraphiteCache/data_1 | 9 | 0 | n | 0.500 |
-| memory/designer/_edge_ud_768_0/Default/Storage/ext/ihmafllikibpmigkcoadcmckbfhibefp/def/DawnGraphiteCache/data_2 | 9 | 0 | n | 0.500 |
-| memory/designer/_edge_ud_768_0/Default/Storage/ext/ihmafllikibpmigkcoadcmckbfhibefp/def/DawnGraphiteCache/data_3 | 9 | 0 | n | 0.500 |
-| memory/designer/_edge_ud_768_0/Default/Storage/ext/ihmafllikibpmigkcoadcmckbfhibefp/def/DawnGraphiteCache/index | 9 | 0 | n | 0.500 |
-| memory/designer/_edge_ud_768_0/Default/Storage/ext/ihmafllikibpmigkcoadcmckbfhibefp/def/DawnWebGPUCache/data_0 | 9 | 0 | n | 0.500 |
-| memory/designer/_edge_ud_768_0/Default/Storage/ext/ihmafllikibpmigkcoadcmckbfhibefp/def/DawnWebGPUCache/data_1 | 9 | 0 | n | 0.500 |
-| memory/designer/_edge_ud_768_0/Default/Storage/ext/ihmafllikibpmigkcoadcmckbfhibefp/def/DawnWebGPUCache/data_2 | 9 | 0 | n | 0.500 |
-| memory/designer/_edge_ud_768_0/Default/Storage/ext/ihmafllikibpmigkcoadcmckbfhibefp/def/DawnWebGPUCache/data_3 | 9 | 0 | n | 0.500 |
-| memory/designer/_edge_ud_768_0/Default/Storage/ext/ihmafllikibpmigkcoadcmckbfhibefp/def/DawnWebGPUCache/index | 9 | 0 | n | 0.500 |
-| memory/designer/_edge_ud_768_0/Default/Storage/ext/ihmafllikibpmigkcoadcmckbfhibefp/def/GPUCache/data_0 | 9 | 0 | n | 0.500 |
-| memory/designer/_edge_ud_768_0/Default/Storage/ext/ihmafllikibpmigkcoadcmckbfhibefp/def/GPUCache/data_1 | 9 | 0 | n | 0.500 |
-| memory/designer/_edge_ud_768_0/Default/Storage/ext/ihmafllikibpmigkcoadcmckbfhibefp/def/GPUCache/data_2 | 9 | 0 | n | 0.500 |
-| memory/designer/_edge_ud_768_0/Default/Storage/ext/ihmafllikibpmigkcoadcmckbfhibefp/def/GPUCache/data_3 | 9 | 0 | n | 0.500 |
-| memory/designer/_edge_ud_768_0/Default/Storage/ext/ihmafllikibpmigkcoadcmckbfhibefp/def/GPUCache/index | 9 | 0 | n | 0.500 |
-| memory/designer/_edge_ud_768_0/Default/Storage/ext/ihmafllikibpmigkcoadcmckbfhibefp/def/Network/NetworkDataMigrated | 9 | 0 | n | 0.500 |
-| memory/designer/_edge_ud_768_0/Default/Sync Data/LevelDB/000003.log | 9 | 0 | n | 0.500 |
-| memory/designer/_edge_ud_768_0/Default/Sync Data/LevelDB/CURRENT | 9 | 0 | n | 0.500 |
-| memory/designer/_edge_ud_768_0/Default/Sync Data/LevelDB/LOCK | 9 | 0 | n | 0.500 |
-| memory/designer/_edge_ud_768_0/Default/Sync Data/LevelDB/LOG | 9 | 0 | n | 0.500 |
-| memory/designer/_edge_ud_768_0/Default/Sync Data/LevelDB/MANIFEST-000001 | 9 | 0 | n | 0.500 |
-| memory/designer/_edge_ud_768_0/Default/WebStorage/QuotaManager | 9 | 0 | n | 0.500 |
-| memory/designer/_edge_ud_768_0/Default/WebStorage/QuotaManager-journal | 9 | 0 | n | 0.500 |
-| memory/designer/_edge_ud_768_0/GPUPersistentCache/DawnGraphiteCache/23IMHJGI2WIIJ3PDLCHAHUJAGHTLTEBB/cache.db | 9 | 0 | n | 0.500 |
-| memory/designer/_edge_ud_768_0/GPUPersistentCache/DawnGraphiteCache/23IMHJGI2WIIJ3PDLCHAHUJAGHTLTEBB/cache.db-wal | 9 | 0 | n | 0.500 |
-| memory/designer/_edge_ud_768_0/GPUPersistentCache/DawnGraphiteCache/23IMHJGI2WIIJ3PDLCHAHUJAGHTLTEBB/cache.journal | 9 | 0 | n | 0.500 |
-| memory/designer/_edge_ud_768_0/Nurturing/campaign_history | 9 | 0 | n | 0.500 |
-| memory/designer/_edge_ud_768_0/Nurturing/campaign_history-journal | 9 | 0 | n | 0.500 |
-| memory/designer/_edge_ud_768_0/ShaderCache/data_0 | 9 | 0 | n | 0.500 |
-| memory/designer/_edge_ud_768_0/ShaderCache/data_1 | 9 | 0 | n | 0.500 |
-| memory/designer/_edge_ud_768_0/ShaderCache/data_2 | 9 | 0 | n | 0.500 |
-| memory/designer/_edge_ud_768_0/ShaderCache/data_3 | 9 | 0 | n | 0.500 |
-| memory/designer/_edge_ud_768_0/ShaderCache/index | 9 | 0 | n | 0.500 |
-| memory/designer/_edge_ud_768_0/SmartScreen/RemoteData/customSettings | 9 | 0 | n | 0.500 |
-| memory/designer/_edge_ud_768_0/SmartScreen/RemoteData/customSettings_F95BA787499AB4FA9EFFF472CE383A14 | 9 | 0 | n | 0.500 |
-| memory/designer/_edge_ud_768_1/FirstLaunchAfterInstallation | 9 | 0 | n | 0.500 |
-| memory/designer/_edge_ud_768_1/Last Version | 9 | 0 | n | 0.500 |
-| memory/designer/_edge_ud_768_1/Local State | 9 | 0 | n | 0.500 |
-| memory/designer/_edge_ud_768_1/Variations | 9 | 0 | n | 0.500 |
-| memory/designer/_edge_ud_768_1/VariationsRuntimeSeedV2 | 9 | 0 | n | 0.500 |
-| memory/designer/_edge_ud_768_1/VariationsSafeSeedV2 | 9 | 0 | n | 0.500 |
-| memory/designer/_edge_ud_768_1/VariationsSeedV2 | 9 | 0 | n | 0.500 |
-| memory/designer/_edge_ud_768_1/Crashpad/settings.dat | 9 | 0 | n | 0.500 |
-| memory/designer/_edge_ud_768_1/Crashpad/throttle_store.dat | 9 | 0 | n | 0.500 |
-| memory/designer/_edge_ud_768_1/Default/Affiliation Database | 9 | 0 | n | 0.500 |
-| memory/designer/_edge_ud_768_1/Default/Affiliation Database-journal | 9 | 0 | n | 0.500 |
-| memory/designer/_edge_ud_768_1/Default/declarative_performance_observer.db | 9 | 0 | n | 0.500 |
-| memory/designer/_edge_ud_768_1/Default/declarative_performance_observer.db-journal | 9 | 0 | n | 0.500 |
-| memory/designer/_edge_ud_768_1/Default/Favicons | 9 | 0 | n | 0.500 |
-| memory/designer/_edge_ud_768_1/Default/Favicons-journal | 9 | 0 | n | 0.500 |
-| memory/designer/_edge_ud_768_1/Default/History | 9 | 0 | n | 0.500 |
-| memory/designer/_edge_ud_768_1/Default/History-journal | 9 | 0 | n | 0.500 |
-| memory/designer/_edge_ud_768_1/Default/HubApps Icons | 9 | 0 | n | 0.500 |
-| memory/designer/_edge_ud_768_1/Default/HubApps Icons-journal | 9 | 0 | n | 0.500 |
-| memory/designer/_edge_ud_768_1/Default/load_statistics.db | 9 | 0 | n | 0.500 |
-| memory/designer/_edge_ud_768_1/Default/load_statistics.db-shm | 9 | 0 | n | 0.500 |
-| memory/designer/_edge_ud_768_1/Default/load_statistics.db-wal | 9 | 0 | n | 0.500 |
-| memory/designer/_edge_ud_768_1/Default/LOCK | 9 | 0 | n | 0.500 |
-| memory/designer/_edge_ud_768_1/Default/LOG | 9 | 0 | n | 0.500 |
-| memory/designer/_edge_ud_768_1/Default/Login Data | 9 | 0 | n | 0.500 |
-| memory/designer/_edge_ud_768_1/Default/Login Data For Account | 9 | 0 | n | 0.500 |
-| memory/designer/_edge_ud_768_1/Default/Login Data For Account-journal | 9 | 0 | n | 0.500 |
-| memory/designer/_edge_ud_768_1/Default/Login Data-journal | 9 | 0 | n | 0.500 |
-| memory/designer/_edge_ud_768_1/Default/README | 9 | 0 | n | 0.500 |
-| memory/designer/_edge_ud_768_1/Default/ServerCertificate | 9 | 0 | n | 0.500 |
-| memory/designer/_edge_ud_768_1/Default/ServerCertificate-journal | 9 | 0 | n | 0.500 |
-| memory/designer/_edge_ud_768_1/Default/Top Sites | 9 | 0 | n | 0.500 |
-| memory/designer/_edge_ud_768_1/Default/Top Sites-journal | 9 | 0 | n | 0.500 |
-| memory/designer/_edge_ud_768_1/Default/Vpn Tokens | 9 | 0 | n | 0.500 |
-| memory/designer/_edge_ud_768_1/Default/Vpn Tokens-journal | 9 | 0 | n | 0.500 |
-| memory/designer/_edge_ud_768_1/Default/Web Data | 9 | 0 | n | 0.500 |
-| memory/designer/_edge_ud_768_1/Default/Web Data-journal | 9 | 0 | n | 0.500 |
-| memory/designer/_edge_ud_768_1/Default/ClientCertificates/LOCK | 9 | 0 | n | 0.500 |
-| memory/designer/_edge_ud_768_1/Default/ClientCertificates/LOG | 9 | 0 | n | 0.500 |
-| memory/designer/_edge_ud_768_1/Default/Code Cache/js/index | 9 | 0 | n | 0.500 |
-| memory/designer/_edge_ud_768_1/Default/Code Cache/js/index-dir/the-real-index | 9 | 0 | n | 0.500 |
-| memory/designer/_edge_ud_768_1/Default/Code Cache/wasm/index | 9 | 0 | n | 0.500 |
-| memory/designer/_edge_ud_768_1/Default/Code Cache/wasm/index-dir/the-real-index | 9 | 0 | n | 0.500 |
-| memory/designer/_edge_ud_768_1/Default/commerce_subscription_db/LOCK | 9 | 0 | n | 0.500 |
-| memory/designer/_edge_ud_768_1/Default/commerce_subscription_db/LOG | 9 | 0 | n | 0.500 |
-| memory/designer/_edge_ud_768_1/Default/DawnGraphiteCache/data_0 | 9 | 0 | n | 0.500 |
-| memory/designer/_edge_ud_768_1/Default/DawnGraphiteCache/data_1 | 9 | 0 | n | 0.500 |
-| memory/designer/_edge_ud_768_1/Default/DawnGraphiteCache/data_2 | 9 | 0 | n | 0.500 |
-| memory/designer/_edge_ud_768_1/Default/DawnGraphiteCache/data_3 | 9 | 0 | n | 0.500 |
-| memory/designer/_edge_ud_768_1/Default/DawnGraphiteCache/index | 9 | 0 | n | 0.500 |
-| memory/designer/_edge_ud_768_1/Default/DawnWebGPUCache/data_0 | 9 | 0 | n | 0.500 |
-| memory/designer/_edge_ud_768_1/Default/DawnWebGPUCache/data_1 | 9 | 0 | n | 0.500 |
-| memory/designer/_edge_ud_768_1/Default/DawnWebGPUCache/data_2 | 9 | 0 | n | 0.500 |
-| memory/designer/_edge_ud_768_1/Default/DawnWebGPUCache/data_3 | 9 | 0 | n | 0.500 |
-| memory/designer/_edge_ud_768_1/Default/DawnWebGPUCache/index | 9 | 0 | n | 0.500 |
-| memory/designer/_edge_ud_768_1/Default/discounts_db/LOCK | 9 | 0 | n | 0.500 |
-| memory/designer/_edge_ud_768_1/Default/discounts_db/LOG | 9 | 0 | n | 0.500 |
-| memory/designer/_edge_ud_768_1/Default/discount_infos_db/LOCK | 9 | 0 | n | 0.500 |
-| memory/designer/_edge_ud_768_1/Default/discount_infos_db/LOG | 9 | 0 | n | 0.500 |
-| memory/designer/_edge_ud_768_1/Default/EdgePushStorageWithConnectTokenAndKey/LOCK | 9 | 0 | n | 0.500 |
-| memory/designer/_edge_ud_768_1/Default/EdgePushStorageWithConnectTokenAndKey/LOG | 9 | 0 | n | 0.500 |
-| memory/designer/_edge_ud_768_1/Default/Extension Rules/000003.log | 9 | 0 | n | 0.500 |
-| memory/designer/_edge_ud_768_1/Default/Extension Rules/CURRENT | 9 | 0 | n | 0.500 |
-| memory/designer/_edge_ud_768_1/Default/Extension Rules/LOCK | 9 | 0 | n | 0.500 |
-| memory/designer/_edge_ud_768_1/Default/Extension Rules/LOG | 9 | 0 | n | 0.500 |
-| memory/designer/_edge_ud_768_1/Default/Extension Rules/MANIFEST-000001 | 9 | 0 | n | 0.500 |
-| memory/designer/_edge_ud_768_1/Default/Extension Scripts/000003.log | 9 | 0 | n | 0.500 |
-| memory/designer/_edge_ud_768_1/Default/Extension Scripts/CURRENT | 9 | 0 | n | 0.500 |
-| memory/designer/_edge_ud_768_1/Default/Extension Scripts/LOCK | 9 | 0 | n | 0.500 |
-| memory/designer/_edge_ud_768_1/Default/Extension Scripts/LOG | 9 | 0 | n | 0.500 |
-| memory/designer/_edge_ud_768_1/Default/Extension Scripts/MANIFEST-000001 | 9 | 0 | n | 0.500 |
-| memory/designer/_edge_ud_768_1/Default/Extension State/000003.log | 9 | 0 | n | 0.500 |
-| memory/designer/_edge_ud_768_1/Default/Extension State/CURRENT | 9 | 0 | n | 0.500 |
-| memory/designer/_edge_ud_768_1/Default/Extension State/LOCK | 9 | 0 | n | 0.500 |
-| memory/designer/_edge_ud_768_1/Default/Extension State/LOG | 9 | 0 | n | 0.500 |
-| memory/designer/_edge_ud_768_1/Default/Extension State/MANIFEST-000001 | 9 | 0 | n | 0.500 |
-| memory/designer/_edge_ud_768_1/Default/GPUCache/data_0 | 9 | 0 | n | 0.500 |
-| memory/designer/_edge_ud_768_1/Default/GPUCache/data_1 | 9 | 0 | n | 0.500 |
-| memory/designer/_edge_ud_768_1/Default/GPUCache/data_2 | 9 | 0 | n | 0.500 |
-| memory/designer/_edge_ud_768_1/Default/GPUCache/data_3 | 9 | 0 | n | 0.500 |
-| memory/designer/_edge_ud_768_1/Default/GPUCache/index | 9 | 0 | n | 0.500 |
-| memory/designer/_edge_ud_768_1/Default/Network/NetworkDataMigrated | 9 | 0 | n | 0.500 |
-| memory/designer/_edge_ud_768_1/Default/Nurturing/campaign_history | 9 | 0 | n | 0.500 |
-| memory/designer/_edge_ud_768_1/Default/Nurturing/campaign_history-journal | 9 | 0 | n | 0.500 |
-| memory/designer/_edge_ud_768_1/Default/parcel_tracking_db/LOCK | 9 | 0 | n | 0.500 |
-| memory/designer/_edge_ud_768_1/Default/parcel_tracking_db/LOG | 9 | 0 | n | 0.500 |
-| memory/designer/_edge_ud_768_1/Default/PersistentOriginTrials/LOCK | 9 | 0 | n | 0.500 |
-| memory/designer/_edge_ud_768_1/Default/PersistentOriginTrials/LOG | 9 | 0 | n | 0.500 |
-| memory/designer/_edge_ud_768_1/Default/Service Worker/Database/000003.log | 9 | 0 | n | 0.500 |
-| memory/designer/_edge_ud_768_1/Default/Service Worker/Database/CURRENT | 9 | 0 | n | 0.500 |
-| memory/designer/_edge_ud_768_1/Default/Service Worker/Database/LOCK | 9 | 0 | n | 0.500 |
-| memory/designer/_edge_ud_768_1/Default/Service Worker/Database/LOG | 9 | 0 | n | 0.500 |
-| memory/designer/_edge_ud_768_1/Default/Service Worker/Database/MANIFEST-000001 | 9 | 0 | n | 0.500 |
-| memory/designer/_edge_ud_768_1/Default/Service Worker/ScriptCache/2cc80dabc69f58b6_0 | 9 | 0 | n | 0.500 |
-| memory/designer/_edge_ud_768_1/Default/Service Worker/ScriptCache/4cb013792b196a35_0 | 9 | 0 | n | 0.500 |
-| memory/designer/_edge_ud_768_1/Default/Service Worker/ScriptCache/f1cdccba37924bda_0 | 9 | 0 | n | 0.500 |
-| memory/designer/_edge_ud_768_1/Default/Service Worker/ScriptCache/index | 9 | 0 | n | 0.500 |
-| memory/designer/_edge_ud_768_1/Default/Service Worker/ScriptCache/index-dir/the-real-index | 9 | 0 | n | 0.500 |
-| memory/designer/_edge_ud_768_1/Default/shared_proto_db/000003.log | 9 | 0 | n | 0.500 |
-| memory/designer/_edge_ud_768_1/Default/shared_proto_db/CURRENT | 9 | 0 | n | 0.500 |
-| memory/designer/_edge_ud_768_1/Default/shared_proto_db/LOCK | 9 | 0 | n | 0.500 |
-| memory/designer/_edge_ud_768_1/Default/shared_proto_db/LOG | 9 | 0 | n | 0.500 |
-| memory/designer/_edge_ud_768_1/Default/shared_proto_db/MANIFEST-000001 | 9 | 0 | n | 0.500 |
-| memory/designer/_edge_ud_768_1/Default/shared_proto_db/metadata/000003.log | 9 | 0 | n | 0.500 |
-| memory/designer/_edge_ud_768_1/Default/shared_proto_db/metadata/CURRENT | 9 | 0 | n | 0.500 |
-| memory/designer/_edge_ud_768_1/Default/shared_proto_db/metadata/LOCK | 9 | 0 | n | 0.500 |
-| memory/designer/_edge_ud_768_1/Default/shared_proto_db/metadata/LOG | 9 | 0 | n | 0.500 |
-| memory/designer/_edge_ud_768_1/Default/shared_proto_db/metadata/MANIFEST-000001 | 9 | 0 | n | 0.500 |
-| memory/designer/_edge_ud_768_1/Default/Site Characteristics Database/000003.log | 9 | 0 | n | 0.500 |
-| memory/designer/_edge_ud_768_1/Default/Site Characteristics Database/CURRENT | 9 | 0 | n | 0.500 |
-| memory/designer/_edge_ud_768_1/Default/Site Characteristics Database/LOCK | 9 | 0 | n | 0.500 |
-| memory/designer/_edge_ud_768_1/Default/Site Characteristics Database/LOG | 9 | 0 | n | 0.500 |
-| memory/designer/_edge_ud_768_1/Default/Site Characteristics Database/MANIFEST-000001 | 9 | 0 | n | 0.500 |
-| memory/designer/_edge_ud_768_1/Default/Storage/ext/ihmafllikibpmigkcoadcmckbfhibefp/def/declarative_performance_observer.db | 9 | 0 | n | 0.500 |
-| memory/designer/_edge_ud_768_1/Default/Storage/ext/ihmafllikibpmigkcoadcmckbfhibefp/def/declarative_performance_observer.db-journal | 9 | 0 | n | 0.500 |
-| memory/designer/_edge_ud_768_1/Default/Storage/ext/ihmafllikibpmigkcoadcmckbfhibefp/def/Code Cache/js/index | 9 | 0 | n | 0.500 |
-| memory/designer/_edge_ud_768_1/Default/Storage/ext/ihmafllikibpmigkcoadcmckbfhibefp/def/Code Cache/js/index-dir/the-real-index | 9 | 0 | n | 0.500 |
-| memory/designer/_edge_ud_768_1/Default/Storage/ext/ihmafllikibpmigkcoadcmckbfhibefp/def/Code Cache/wasm/index | 9 | 0 | n | 0.500 |
-| memory/designer/_edge_ud_768_1/Default/Storage/ext/ihmafllikibpmigkcoadcmckbfhibefp/def/Code Cache/wasm/index-dir/the-real-index | 9 | 0 | n | 0.500 |
-| memory/designer/_edge_ud_768_1/Default/Storage/ext/ihmafllikibpmigkcoadcmckbfhibefp/def/DawnGraphiteCache/data_0 | 9 | 0 | n | 0.500 |
-| memory/designer/_edge_ud_768_1/Default/Storage/ext/ihmafllikibpmigkcoadcmckbfhibefp/def/DawnGraphiteCache/data_1 | 9 | 0 | n | 0.500 |
-| memory/designer/_edge_ud_768_1/Default/Storage/ext/ihmafllikibpmigkcoadcmckbfhibefp/def/DawnGraphiteCache/data_2 | 9 | 0 | n | 0.500 |
-| memory/designer/_edge_ud_768_1/Default/Storage/ext/ihmafllikibpmigkcoadcmckbfhibefp/def/DawnGraphiteCache/data_3 | 9 | 0 | n | 0.500 |
-| memory/designer/_edge_ud_768_1/Default/Storage/ext/ihmafllikibpmigkcoadcmckbfhibefp/def/DawnGraphiteCache/index | 9 | 0 | n | 0.500 |
-| memory/designer/_edge_ud_768_1/Default/Storage/ext/ihmafllikibpmigkcoadcmckbfhibefp/def/DawnWebGPUCache/data_0 | 9 | 0 | n | 0.500 |
-| memory/designer/_edge_ud_768_1/Default/Storage/ext/ihmafllikibpmigkcoadcmckbfhibefp/def/DawnWebGPUCache/data_1 | 9 | 0 | n | 0.500 |
-| memory/designer/_edge_ud_768_1/Default/Storage/ext/ihmafllikibpmigkcoadcmckbfhibefp/def/DawnWebGPUCache/data_2 | 9 | 0 | n | 0.500 |
-| memory/designer/_edge_ud_768_1/Default/Storage/ext/ihmafllikibpmigkcoadcmckbfhibefp/def/DawnWebGPUCache/data_3 | 9 | 0 | n | 0.500 |
-| memory/designer/_edge_ud_768_1/Default/Storage/ext/ihmafllikibpmigkcoadcmckbfhibefp/def/DawnWebGPUCache/index | 9 | 0 | n | 0.500 |
-| memory/designer/_edge_ud_768_1/Default/Storage/ext/ihmafllikibpmigkcoadcmckbfhibefp/def/GPUCache/data_0 | 9 | 0 | n | 0.500 |
-| memory/designer/_edge_ud_768_1/Default/Storage/ext/ihmafllikibpmigkcoadcmckbfhibefp/def/GPUCache/data_1 | 9 | 0 | n | 0.500 |
-| memory/designer/_edge_ud_768_1/Default/Storage/ext/ihmafllikibpmigkcoadcmckbfhibefp/def/GPUCache/data_2 | 9 | 0 | n | 0.500 |
-| memory/designer/_edge_ud_768_1/Default/Storage/ext/ihmafllikibpmigkcoadcmckbfhibefp/def/GPUCache/data_3 | 9 | 0 | n | 0.500 |
-| memory/designer/_edge_ud_768_1/Default/Storage/ext/ihmafllikibpmigkcoadcmckbfhibefp/def/GPUCache/index | 9 | 0 | n | 0.500 |
-| memory/designer/_edge_ud_768_1/Default/Storage/ext/ihmafllikibpmigkcoadcmckbfhibefp/def/Network/NetworkDataMigrated | 9 | 0 | n | 0.500 |
-| memory/designer/_edge_ud_768_1/Default/Sync Data/LevelDB/000003.log | 9 | 0 | n | 0.500 |
-| memory/designer/_edge_ud_768_1/Default/Sync Data/LevelDB/CURRENT | 9 | 0 | n | 0.500 |
-| memory/designer/_edge_ud_768_1/Default/Sync Data/LevelDB/LOCK | 9 | 0 | n | 0.500 |
-| memory/designer/_edge_ud_768_1/Default/Sync Data/LevelDB/LOG | 9 | 0 | n | 0.500 |
-| memory/designer/_edge_ud_768_1/Default/Sync Data/LevelDB/MANIFEST-000001 | 9 | 0 | n | 0.500 |
-| memory/designer/_edge_ud_768_1/Default/WebStorage/QuotaManager | 9 | 0 | n | 0.500 |
-| memory/designer/_edge_ud_768_1/Default/WebStorage/QuotaManager-journal | 9 | 0 | n | 0.500 |
-| memory/designer/_edge_ud_768_1/GPUPersistentCache/DawnGraphiteCache/23IMHJGI2WIIJ3PDLCHAHUJAGHTLTEBB/cache.db | 9 | 0 | n | 0.500 |
-| memory/designer/_edge_ud_768_1/GPUPersistentCache/DawnGraphiteCache/23IMHJGI2WIIJ3PDLCHAHUJAGHTLTEBB/cache.db-wal | 9 | 0 | n | 0.500 |
-| memory/designer/_edge_ud_768_1/GPUPersistentCache/DawnGraphiteCache/23IMHJGI2WIIJ3PDLCHAHUJAGHTLTEBB/cache.journal | 9 | 0 | n | 0.500 |
-| memory/designer/_edge_ud_768_1/Nurturing/campaign_history | 9 | 0 | n | 0.500 |
-| memory/designer/_edge_ud_768_1/Nurturing/campaign_history-journal | 9 | 0 | n | 0.500 |
-| memory/designer/_edge_ud_768_1/ShaderCache/data_0 | 9 | 0 | n | 0.500 |
-| memory/designer/_edge_ud_768_1/ShaderCache/data_1 | 9 | 0 | n | 0.500 |
-| memory/designer/_edge_ud_768_1/ShaderCache/data_2 | 9 | 0 | n | 0.500 |
-| memory/designer/_edge_ud_768_1/ShaderCache/data_3 | 9 | 0 | n | 0.500 |
-| memory/designer/_edge_ud_768_1/ShaderCache/index | 9 | 0 | n | 0.500 |
-| memory/designer/_edge_ud_768_1/SmartScreen/RemoteData/customSettings | 9 | 0 | n | 0.500 |
-| memory/designer/_edge_ud_768_1/SmartScreen/RemoteData/customSettings_F95BA787499AB4FA9EFFF472CE383A14 | 9 | 0 | n | 0.500 |
-| memory/designer/_edge_ud_768_2/FirstLaunchAfterInstallation | 9 | 0 | n | 0.500 |
-| memory/designer/_edge_ud_768_2/Last Version | 9 | 0 | n | 0.500 |
-| memory/designer/_edge_ud_768_2/Local State | 9 | 0 | n | 0.500 |
-| memory/designer/_edge_ud_768_2/Variations | 9 | 0 | n | 0.500 |
-| memory/designer/_edge_ud_768_2/VariationsRuntimeSeedV2 | 9 | 0 | n | 0.500 |
-| memory/designer/_edge_ud_768_2/VariationsSafeSeedV2 | 9 | 0 | n | 0.500 |
-| memory/designer/_edge_ud_768_2/VariationsSeedV2 | 9 | 0 | n | 0.500 |
-| memory/designer/_edge_ud_768_2/Crashpad/settings.dat | 9 | 0 | n | 0.500 |
-| memory/designer/_edge_ud_768_2/Crashpad/throttle_store.dat | 9 | 0 | n | 0.500 |
-| memory/designer/_edge_ud_768_2/Default/Affiliation Database | 9 | 0 | n | 0.500 |
-| memory/designer/_edge_ud_768_2/Default/Affiliation Database-journal | 9 | 0 | n | 0.500 |
-| memory/designer/_edge_ud_768_2/Default/declarative_performance_observer.db | 9 | 0 | n | 0.500 |
-| memory/designer/_edge_ud_768_2/Default/declarative_performance_observer.db-journal | 9 | 0 | n | 0.500 |
-| memory/designer/_edge_ud_768_2/Default/Favicons | 9 | 0 | n | 0.500 |
-| memory/designer/_edge_ud_768_2/Default/Favicons-journal | 9 | 0 | n | 0.500 |
-| memory/designer/_edge_ud_768_2/Default/History | 9 | 0 | n | 0.500 |
-| memory/designer/_edge_ud_768_2/Default/History-journal | 9 | 0 | n | 0.500 |
-| memory/designer/_edge_ud_768_2/Default/HubApps Icons | 9 | 0 | n | 0.500 |
-| memory/designer/_edge_ud_768_2/Default/HubApps Icons-journal | 9 | 0 | n | 0.500 |
-| memory/designer/_edge_ud_768_2/Default/load_statistics.db | 9 | 0 | n | 0.500 |
-| memory/designer/_edge_ud_768_2/Default/load_statistics.db-shm | 9 | 0 | n | 0.500 |
-| memory/designer/_edge_ud_768_2/Default/load_statistics.db-wal | 9 | 0 | n | 0.500 |
-| memory/designer/_edge_ud_768_2/Default/LOCK | 9 | 0 | n | 0.500 |
-| memory/designer/_edge_ud_768_2/Default/LOG | 9 | 0 | n | 0.500 |
-| memory/designer/_edge_ud_768_2/Default/Login Data | 9 | 0 | n | 0.500 |
-| memory/designer/_edge_ud_768_2/Default/Login Data For Account | 9 | 0 | n | 0.500 |
-| memory/designer/_edge_ud_768_2/Default/Login Data For Account-journal | 9 | 0 | n | 0.500 |
-| memory/designer/_edge_ud_768_2/Default/Login Data-journal | 9 | 0 | n | 0.500 |
-| memory/designer/_edge_ud_768_2/Default/README | 9 | 0 | n | 0.500 |
-| memory/designer/_edge_ud_768_2/Default/ServerCertificate | 9 | 0 | n | 0.500 |
-| memory/designer/_edge_ud_768_2/Default/ServerCertificate-journal | 9 | 0 | n | 0.500 |
-| memory/designer/_edge_ud_768_2/Default/Top Sites | 9 | 0 | n | 0.500 |
-| memory/designer/_edge_ud_768_2/Default/Top Sites-journal | 9 | 0 | n | 0.500 |
-| memory/designer/_edge_ud_768_2/Default/Vpn Tokens | 9 | 0 | n | 0.500 |
-| memory/designer/_edge_ud_768_2/Default/Vpn Tokens-journal | 9 | 0 | n | 0.500 |
-| memory/designer/_edge_ud_768_2/Default/Web Data | 9 | 0 | n | 0.500 |
-| memory/designer/_edge_ud_768_2/Default/Web Data-journal | 9 | 0 | n | 0.500 |
-| memory/designer/_edge_ud_768_2/Default/ClientCertificates/LOCK | 9 | 0 | n | 0.500 |
-| memory/designer/_edge_ud_768_2/Default/ClientCertificates/LOG | 9 | 0 | n | 0.500 |
-| memory/designer/_edge_ud_768_2/Default/Code Cache/js/index | 9 | 0 | n | 0.500 |
-| memory/designer/_edge_ud_768_2/Default/Code Cache/js/index-dir/the-real-index | 9 | 0 | n | 0.500 |
-| memory/designer/_edge_ud_768_2/Default/Code Cache/wasm/index | 9 | 0 | n | 0.500 |
-| memory/designer/_edge_ud_768_2/Default/Code Cache/wasm/index-dir/the-real-index | 9 | 0 | n | 0.500 |
-| memory/designer/_edge_ud_768_2/Default/commerce_subscription_db/LOCK | 9 | 0 | n | 0.500 |
-| memory/designer/_edge_ud_768_2/Default/commerce_subscription_db/LOG | 9 | 0 | n | 0.500 |
-| memory/designer/_edge_ud_768_2/Default/DawnGraphiteCache/data_0 | 9 | 0 | n | 0.500 |
-| memory/designer/_edge_ud_768_2/Default/DawnGraphiteCache/data_1 | 9 | 0 | n | 0.500 |
-| memory/designer/_edge_ud_768_2/Default/DawnGraphiteCache/data_2 | 9 | 0 | n | 0.500 |
-| memory/designer/_edge_ud_768_2/Default/DawnGraphiteCache/data_3 | 9 | 0 | n | 0.500 |
-| memory/designer/_edge_ud_768_2/Default/DawnGraphiteCache/index | 9 | 0 | n | 0.500 |
-| memory/designer/_edge_ud_768_2/Default/DawnWebGPUCache/data_0 | 9 | 0 | n | 0.500 |
-| memory/designer/_edge_ud_768_2/Default/DawnWebGPUCache/data_1 | 9 | 0 | n | 0.500 |
-| memory/designer/_edge_ud_768_2/Default/DawnWebGPUCache/data_2 | 9 | 0 | n | 0.500 |
-| memory/designer/_edge_ud_768_2/Default/DawnWebGPUCache/data_3 | 9 | 0 | n | 0.500 |
-| memory/designer/_edge_ud_768_2/Default/DawnWebGPUCache/index | 9 | 0 | n | 0.500 |
-| memory/designer/_edge_ud_768_2/Default/discounts_db/LOCK | 9 | 0 | n | 0.500 |
-| memory/designer/_edge_ud_768_2/Default/discounts_db/LOG | 9 | 0 | n | 0.500 |
-| memory/designer/_edge_ud_768_2/Default/discount_infos_db/LOCK | 9 | 0 | n | 0.500 |
-| memory/designer/_edge_ud_768_2/Default/discount_infos_db/LOG | 9 | 0 | n | 0.500 |
-| memory/designer/_edge_ud_768_2/Default/EdgePushStorageWithConnectTokenAndKey/LOCK | 9 | 0 | n | 0.500 |
-| memory/designer/_edge_ud_768_2/Default/EdgePushStorageWithConnectTokenAndKey/LOG | 9 | 0 | n | 0.500 |
-| memory/designer/_edge_ud_768_2/Default/Extension Rules/000003.log | 9 | 0 | n | 0.500 |
-| memory/designer/_edge_ud_768_2/Default/Extension Rules/CURRENT | 9 | 0 | n | 0.500 |
-| memory/designer/_edge_ud_768_2/Default/Extension Rules/LOCK | 9 | 0 | n | 0.500 |
-| memory/designer/_edge_ud_768_2/Default/Extension Rules/LOG | 9 | 0 | n | 0.500 |
-| memory/designer/_edge_ud_768_2/Default/Extension Rules/MANIFEST-000001 | 9 | 0 | n | 0.500 |
-| memory/designer/_edge_ud_768_2/Default/Extension Scripts/000003.log | 9 | 0 | n | 0.500 |
-| memory/designer/_edge_ud_768_2/Default/Extension Scripts/CURRENT | 9 | 0 | n | 0.500 |
-| memory/designer/_edge_ud_768_2/Default/Extension Scripts/LOCK | 9 | 0 | n | 0.500 |
-| memory/designer/_edge_ud_768_2/Default/Extension Scripts/LOG | 9 | 0 | n | 0.500 |
-| memory/designer/_edge_ud_768_2/Default/Extension Scripts/MANIFEST-000001 | 9 | 0 | n | 0.500 |
-| memory/designer/_edge_ud_768_2/Default/Extension State/000003.log | 9 | 0 | n | 0.500 |
-| memory/designer/_edge_ud_768_2/Default/Extension State/CURRENT | 9 | 0 | n | 0.500 |
-| memory/designer/_edge_ud_768_2/Default/Extension State/LOCK | 9 | 0 | n | 0.500 |
-| memory/designer/_edge_ud_768_2/Default/Extension State/LOG | 9 | 0 | n | 0.500 |
-| memory/designer/_edge_ud_768_2/Default/Extension State/MANIFEST-000001 | 9 | 0 | n | 0.500 |
-| memory/designer/_edge_ud_768_2/Default/GPUCache/data_0 | 9 | 0 | n | 0.500 |
-| memory/designer/_edge_ud_768_2/Default/GPUCache/data_1 | 9 | 0 | n | 0.500 |
-| memory/designer/_edge_ud_768_2/Default/GPUCache/data_2 | 9 | 0 | n | 0.500 |
-| memory/designer/_edge_ud_768_2/Default/GPUCache/data_3 | 9 | 0 | n | 0.500 |
-| memory/designer/_edge_ud_768_2/Default/GPUCache/index | 9 | 0 | n | 0.500 |
-| memory/designer/_edge_ud_768_2/Default/Network/NetworkDataMigrated | 9 | 0 | n | 0.500 |
-| memory/designer/_edge_ud_768_2/Default/Nurturing/campaign_history | 9 | 0 | n | 0.500 |
-| memory/designer/_edge_ud_768_2/Default/Nurturing/campaign_history-journal | 9 | 0 | n | 0.500 |
-| memory/designer/_edge_ud_768_2/Default/parcel_tracking_db/LOCK | 9 | 0 | n | 0.500 |
-| memory/designer/_edge_ud_768_2/Default/parcel_tracking_db/LOG | 9 | 0 | n | 0.500 |
-| memory/designer/_edge_ud_768_2/Default/PersistentOriginTrials/LOCK | 9 | 0 | n | 0.500 |
-| memory/designer/_edge_ud_768_2/Default/PersistentOriginTrials/LOG | 9 | 0 | n | 0.500 |
-| memory/designer/_edge_ud_768_2/Default/Service Worker/Database/000003.log | 9 | 0 | n | 0.500 |
-| memory/designer/_edge_ud_768_2/Default/Service Worker/Database/CURRENT | 9 | 0 | n | 0.500 |
-| memory/designer/_edge_ud_768_2/Default/Service Worker/Database/LOCK | 9 | 0 | n | 0.500 |
-| memory/designer/_edge_ud_768_2/Default/Service Worker/Database/LOG | 9 | 0 | n | 0.500 |
-| memory/designer/_edge_ud_768_2/Default/Service Worker/Database/MANIFEST-000001 | 9 | 0 | n | 0.500 |
-| memory/designer/_edge_ud_768_2/Default/Service Worker/ScriptCache/2cc80dabc69f58b6_0 | 9 | 0 | n | 0.500 |
-| memory/designer/_edge_ud_768_2/Default/Service Worker/ScriptCache/4cb013792b196a35_0 | 9 | 0 | n | 0.500 |
-| memory/designer/_edge_ud_768_2/Default/Service Worker/ScriptCache/f1cdccba37924bda_0 | 9 | 0 | n | 0.500 |
-| memory/designer/_edge_ud_768_2/Default/Service Worker/ScriptCache/index | 9 | 0 | n | 0.500 |
-| memory/designer/_edge_ud_768_2/Default/Service Worker/ScriptCache/index-dir/the-real-index | 9 | 0 | n | 0.500 |
-| memory/designer/_edge_ud_768_2/Default/shared_proto_db/000003.log | 9 | 0 | n | 0.500 |
-| memory/designer/_edge_ud_768_2/Default/shared_proto_db/CURRENT | 9 | 0 | n | 0.500 |
-| memory/designer/_edge_ud_768_2/Default/shared_proto_db/LOCK | 9 | 0 | n | 0.500 |
-| memory/designer/_edge_ud_768_2/Default/shared_proto_db/LOG | 9 | 0 | n | 0.500 |
-| memory/designer/_edge_ud_768_2/Default/shared_proto_db/MANIFEST-000001 | 9 | 0 | n | 0.500 |
-| memory/designer/_edge_ud_768_2/Default/shared_proto_db/metadata/000003.log | 9 | 0 | n | 0.500 |
-| memory/designer/_edge_ud_768_2/Default/shared_proto_db/metadata/CURRENT | 9 | 0 | n | 0.500 |
-| memory/designer/_edge_ud_768_2/Default/shared_proto_db/metadata/LOCK | 9 | 0 | n | 0.500 |
-| memory/designer/_edge_ud_768_2/Default/shared_proto_db/metadata/LOG | 9 | 0 | n | 0.500 |
-| memory/designer/_edge_ud_768_2/Default/shared_proto_db/metadata/MANIFEST-000001 | 9 | 0 | n | 0.500 |
-| memory/designer/_edge_ud_768_2/Default/Site Characteristics Database/000003.log | 9 | 0 | n | 0.500 |
-| memory/designer/_edge_ud_768_2/Default/Site Characteristics Database/CURRENT | 9 | 0 | n | 0.500 |
-| memory/designer/_edge_ud_768_2/Default/Site Characteristics Database/LOCK | 9 | 0 | n | 0.500 |
-| memory/designer/_edge_ud_768_2/Default/Site Characteristics Database/LOG | 9 | 0 | n | 0.500 |
-| memory/designer/_edge_ud_768_2/Default/Site Characteristics Database/MANIFEST-000001 | 9 | 0 | n | 0.500 |
-| memory/designer/_edge_ud_768_2/Default/Storage/ext/ihmafllikibpmigkcoadcmckbfhibefp/def/declarative_performance_observer.db | 9 | 0 | n | 0.500 |
-| memory/designer/_edge_ud_768_2/Default/Storage/ext/ihmafllikibpmigkcoadcmckbfhibefp/def/declarative_performance_observer.db-journal | 9 | 0 | n | 0.500 |
-| memory/designer/_edge_ud_768_2/Default/Storage/ext/ihmafllikibpmigkcoadcmckbfhibefp/def/Code Cache/js/index | 9 | 0 | n | 0.500 |
-| memory/designer/_edge_ud_768_2/Default/Storage/ext/ihmafllikibpmigkcoadcmckbfhibefp/def/Code Cache/js/index-dir/the-real-index | 9 | 0 | n | 0.500 |
-| memory/designer/_edge_ud_768_2/Default/Storage/ext/ihmafllikibpmigkcoadcmckbfhibefp/def/Code Cache/wasm/index | 9 | 0 | n | 0.500 |
-| memory/designer/_edge_ud_768_2/Default/Storage/ext/ihmafllikibpmigkcoadcmckbfhibefp/def/Code Cache/wasm/index-dir/the-real-index | 9 | 0 | n | 0.500 |
-| memory/designer/_edge_ud_768_2/Default/Storage/ext/ihmafllikibpmigkcoadcmckbfhibefp/def/DawnGraphiteCache/data_0 | 9 | 0 | n | 0.500 |
-| memory/designer/_edge_ud_768_2/Default/Storage/ext/ihmafllikibpmigkcoadcmckbfhibefp/def/DawnGraphiteCache/data_1 | 9 | 0 | n | 0.500 |
-| memory/designer/_edge_ud_768_2/Default/Storage/ext/ihmafllikibpmigkcoadcmckbfhibefp/def/DawnGraphiteCache/data_2 | 9 | 0 | n | 0.500 |
-| memory/designer/_edge_ud_768_2/Default/Storage/ext/ihmafllikibpmigkcoadcmckbfhibefp/def/DawnGraphiteCache/data_3 | 9 | 0 | n | 0.500 |
-| memory/designer/_edge_ud_768_2/Default/Storage/ext/ihmafllikibpmigkcoadcmckbfhibefp/def/DawnGraphiteCache/index | 9 | 0 | n | 0.500 |
-| memory/designer/_edge_ud_768_2/Default/Storage/ext/ihmafllikibpmigkcoadcmckbfhibefp/def/DawnWebGPUCache/data_0 | 9 | 0 | n | 0.500 |
-| memory/designer/_edge_ud_768_2/Default/Storage/ext/ihmafllikibpmigkcoadcmckbfhibefp/def/DawnWebGPUCache/data_1 | 9 | 0 | n | 0.500 |
-| memory/designer/_edge_ud_768_2/Default/Storage/ext/ihmafllikibpmigkcoadcmckbfhibefp/def/DawnWebGPUCache/data_2 | 9 | 0 | n | 0.500 |
-| memory/designer/_edge_ud_768_2/Default/Storage/ext/ihmafllikibpmigkcoadcmckbfhibefp/def/DawnWebGPUCache/data_3 | 9 | 0 | n | 0.500 |
-| memory/designer/_edge_ud_768_2/Default/Storage/ext/ihmafllikibpmigkcoadcmckbfhibefp/def/DawnWebGPUCache/index | 9 | 0 | n | 0.500 |
-| memory/designer/_edge_ud_768_2/Default/Storage/ext/ihmafllikibpmigkcoadcmckbfhibefp/def/GPUCache/data_0 | 9 | 0 | n | 0.500 |
-| memory/designer/_edge_ud_768_2/Default/Storage/ext/ihmafllikibpmigkcoadcmckbfhibefp/def/GPUCache/data_1 | 9 | 0 | n | 0.500 |
-| memory/designer/_edge_ud_768_2/Default/Storage/ext/ihmafllikibpmigkcoadcmckbfhibefp/def/GPUCache/data_2 | 9 | 0 | n | 0.500 |
-| memory/designer/_edge_ud_768_2/Default/Storage/ext/ihmafllikibpmigkcoadcmckbfhibefp/def/GPUCache/data_3 | 9 | 0 | n | 0.500 |
-| memory/designer/_edge_ud_768_2/Default/Storage/ext/ihmafllikibpmigkcoadcmckbfhibefp/def/GPUCache/index | 9 | 0 | n | 0.500 |
-| memory/designer/_edge_ud_768_2/Default/Storage/ext/ihmafllikibpmigkcoadcmckbfhibefp/def/Network/NetworkDataMigrated | 9 | 0 | n | 0.500 |
-| memory/designer/_edge_ud_768_2/Default/Sync Data/LevelDB/000003.log | 9 | 0 | n | 0.500 |
-| memory/designer/_edge_ud_768_2/Default/Sync Data/LevelDB/CURRENT | 9 | 0 | n | 0.500 |
-| memory/designer/_edge_ud_768_2/Default/Sync Data/LevelDB/LOCK | 9 | 0 | n | 0.500 |
-| memory/designer/_edge_ud_768_2/Default/Sync Data/LevelDB/LOG | 9 | 0 | n | 0.500 |
-| memory/designer/_edge_ud_768_2/Default/Sync Data/LevelDB/MANIFEST-000001 | 9 | 0 | n | 0.500 |
-| memory/designer/_edge_ud_768_2/Default/WebStorage/QuotaManager | 9 | 0 | n | 0.500 |
-| memory/designer/_edge_ud_768_2/Default/WebStorage/QuotaManager-journal | 9 | 0 | n | 0.500 |
-| memory/designer/_edge_ud_768_2/GPUPersistentCache/DawnGraphiteCache/23IMHJGI2WIIJ3PDLCHAHUJAGHTLTEBB/cache.db | 9 | 0 | n | 0.500 |
-| memory/designer/_edge_ud_768_2/GPUPersistentCache/DawnGraphiteCache/23IMHJGI2WIIJ3PDLCHAHUJAGHTLTEBB/cache.db-wal | 9 | 0 | n | 0.500 |
-| memory/designer/_edge_ud_768_2/GPUPersistentCache/DawnGraphiteCache/23IMHJGI2WIIJ3PDLCHAHUJAGHTLTEBB/cache.journal | 9 | 0 | n | 0.500 |
-| memory/designer/_edge_ud_768_2/Nurturing/campaign_history | 9 | 0 | n | 0.500 |
-| memory/designer/_edge_ud_768_2/Nurturing/campaign_history-journal | 9 | 0 | n | 0.500 |
-| memory/designer/_edge_ud_768_2/ShaderCache/data_0 | 9 | 0 | n | 0.500 |
-| memory/designer/_edge_ud_768_2/ShaderCache/data_1 | 9 | 0 | n | 0.500 |
-| memory/designer/_edge_ud_768_2/ShaderCache/data_2 | 9 | 0 | n | 0.500 |
-| memory/designer/_edge_ud_768_2/ShaderCache/data_3 | 9 | 0 | n | 0.500 |
-| memory/designer/_edge_ud_768_2/ShaderCache/index | 9 | 0 | n | 0.500 |
-| memory/designer/_edge_ud_768_2/SmartScreen/RemoteData/customSettings | 9 | 0 | n | 0.500 |
-| memory/designer/_edge_ud_768_2/SmartScreen/RemoteData/customSettings_F95BA787499AB4FA9EFFF472CE383A14 | 9 | 0 | n | 0.500 |
-| memory/designer/_p768/FirstLaunchAfterInstallation | 9 | 0 | n | 0.500 |
-| memory/designer/_p768/Last Version | 9 | 0 | n | 0.500 |
-| memory/designer/_p768/Local State | 9 | 0 | n | 0.500 |
-| memory/designer/_p768/Variations | 9 | 0 | n | 0.500 |
-| memory/designer/_p768/VariationsRuntimeSeedV2 | 9 | 0 | n | 0.500 |
-| memory/designer/_p768/VariationsSafeSeedV2 | 9 | 0 | n | 0.500 |
-| memory/designer/_p768/VariationsSeedV2 | 9 | 0 | n | 0.500 |
-| memory/designer/_p768/Crashpad/settings.dat | 9 | 0 | n | 0.500 |
-| memory/designer/_p768/Crashpad/throttle_store.dat | 9 | 0 | n | 0.500 |
-| memory/designer/_p768/Default/Affiliation Database | 9 | 0 | n | 0.500 |
-| memory/designer/_p768/Default/Affiliation Database-journal | 9 | 0 | n | 0.500 |
-| memory/designer/_p768/Default/declarative_performance_observer.db | 9 | 0 | n | 0.500 |
-| memory/designer/_p768/Default/declarative_performance_observer.db-journal | 9 | 0 | n | 0.500 |
-| memory/designer/_p768/Default/Favicons | 9 | 0 | n | 0.500 |
-| memory/designer/_p768/Default/Favicons-journal | 9 | 0 | n | 0.500 |
-| memory/designer/_p768/Default/History | 9 | 0 | n | 0.500 |
-| memory/designer/_p768/Default/History-journal | 9 | 0 | n | 0.500 |
-| memory/designer/_p768/Default/HubApps Icons | 9 | 0 | n | 0.500 |
-| memory/designer/_p768/Default/HubApps Icons-journal | 9 | 0 | n | 0.500 |
-| memory/designer/_p768/Default/load_statistics.db | 9 | 0 | n | 0.500 |
-| memory/designer/_p768/Default/load_statistics.db-shm | 9 | 0 | n | 0.500 |
-| memory/designer/_p768/Default/load_statistics.db-wal | 9 | 0 | n | 0.500 |
-| memory/designer/_p768/Default/LOCK | 9 | 0 | n | 0.500 |
-| memory/designer/_p768/Default/LOG | 9 | 0 | n | 0.500 |
-| memory/designer/_p768/Default/Login Data | 9 | 0 | n | 0.500 |
-| memory/designer/_p768/Default/Login Data For Account | 9 | 0 | n | 0.500 |
-| memory/designer/_p768/Default/Login Data For Account-journal | 9 | 0 | n | 0.500 |
-| memory/designer/_p768/Default/Login Data-journal | 9 | 0 | n | 0.500 |
-| memory/designer/_p768/Default/README | 9 | 0 | n | 0.500 |
-| memory/designer/_p768/Default/ServerCertificate | 9 | 0 | n | 0.500 |
-| memory/designer/_p768/Default/ServerCertificate-journal | 9 | 0 | n | 0.500 |
-| memory/designer/_p768/Default/Top Sites | 9 | 0 | n | 0.500 |
-| memory/designer/_p768/Default/Top Sites-journal | 9 | 0 | n | 0.500 |
-| memory/designer/_p768/Default/Vpn Tokens | 9 | 0 | n | 0.500 |
-| memory/designer/_p768/Default/Vpn Tokens-journal | 9 | 0 | n | 0.500 |
-| memory/designer/_p768/Default/Web Data | 9 | 0 | n | 0.500 |
-| memory/designer/_p768/Default/Web Data-journal | 9 | 0 | n | 0.500 |
-| memory/designer/_p768/Default/ClientCertificates/LOCK | 9 | 0 | n | 0.500 |
-| memory/designer/_p768/Default/ClientCertificates/LOG | 9 | 0 | n | 0.500 |
-| memory/designer/_p768/Default/Code Cache/js/index | 9 | 0 | n | 0.500 |
-| memory/designer/_p768/Default/Code Cache/js/index-dir/the-real-index | 9 | 0 | n | 0.500 |
-| memory/designer/_p768/Default/Code Cache/wasm/index | 9 | 0 | n | 0.500 |
-| memory/designer/_p768/Default/Code Cache/wasm/index-dir/the-real-index | 9 | 0 | n | 0.500 |
-| memory/designer/_p768/Default/commerce_subscription_db/LOCK | 9 | 0 | n | 0.500 |
-| memory/designer/_p768/Default/commerce_subscription_db/LOG | 9 | 0 | n | 0.500 |
-| memory/designer/_p768/Default/DawnGraphiteCache/data_0 | 9 | 0 | n | 0.500 |
-| memory/designer/_p768/Default/DawnGraphiteCache/data_1 | 9 | 0 | n | 0.500 |
-| memory/designer/_p768/Default/DawnGraphiteCache/data_2 | 9 | 0 | n | 0.500 |
-| memory/designer/_p768/Default/DawnGraphiteCache/data_3 | 9 | 0 | n | 0.500 |
-| memory/designer/_p768/Default/DawnGraphiteCache/index | 9 | 0 | n | 0.500 |
-| memory/designer/_p768/Default/DawnWebGPUCache/data_0 | 9 | 0 | n | 0.500 |
-| memory/designer/_p768/Default/DawnWebGPUCache/data_1 | 9 | 0 | n | 0.500 |
-| memory/designer/_p768/Default/DawnWebGPUCache/data_2 | 9 | 0 | n | 0.500 |
-| memory/designer/_p768/Default/DawnWebGPUCache/data_3 | 9 | 0 | n | 0.500 |
-| memory/designer/_p768/Default/DawnWebGPUCache/index | 9 | 0 | n | 0.500 |
-| memory/designer/_p768/Default/discounts_db/LOCK | 9 | 0 | n | 0.500 |
-| memory/designer/_p768/Default/discounts_db/LOG | 9 | 0 | n | 0.500 |
-| memory/designer/_p768/Default/discount_infos_db/LOCK | 9 | 0 | n | 0.500 |
-| memory/designer/_p768/Default/discount_infos_db/LOG | 9 | 0 | n | 0.500 |
-| memory/designer/_p768/Default/EdgePushStorageWithConnectTokenAndKey/LOCK | 9 | 0 | n | 0.500 |
-| memory/designer/_p768/Default/EdgePushStorageWithConnectTokenAndKey/LOG | 9 | 0 | n | 0.500 |
-| memory/designer/_p768/Default/Extension Rules/000003.log | 9 | 0 | n | 0.500 |
-| memory/designer/_p768/Default/Extension Rules/CURRENT | 9 | 0 | n | 0.500 |
-| memory/designer/_p768/Default/Extension Rules/LOCK | 9 | 0 | n | 0.500 |
-| memory/designer/_p768/Default/Extension Rules/LOG | 9 | 0 | n | 0.500 |
-| memory/designer/_p768/Default/Extension Rules/MANIFEST-000001 | 9 | 0 | n | 0.500 |
-| memory/designer/_p768/Default/Extension Scripts/000003.log | 9 | 0 | n | 0.500 |
-| memory/designer/_p768/Default/Extension Scripts/CURRENT | 9 | 0 | n | 0.500 |
-| memory/designer/_p768/Default/Extension Scripts/LOCK | 9 | 0 | n | 0.500 |
-| memory/designer/_p768/Default/Extension Scripts/LOG | 9 | 0 | n | 0.500 |
-| memory/designer/_p768/Default/Extension Scripts/MANIFEST-000001 | 9 | 0 | n | 0.500 |
-| memory/designer/_p768/Default/Extension State/000003.log | 9 | 0 | n | 0.500 |
-| memory/designer/_p768/Default/Extension State/CURRENT | 9 | 0 | n | 0.500 |
-| memory/designer/_p768/Default/Extension State/LOCK | 9 | 0 | n | 0.500 |
-| memory/designer/_p768/Default/Extension State/LOG | 9 | 0 | n | 0.500 |
-| memory/designer/_p768/Default/Extension State/MANIFEST-000001 | 9 | 0 | n | 0.500 |
-| memory/designer/_p768/Default/GPUCache/data_0 | 9 | 0 | n | 0.500 |
-| memory/designer/_p768/Default/GPUCache/data_1 | 9 | 0 | n | 0.500 |
-| memory/designer/_p768/Default/GPUCache/data_2 | 9 | 0 | n | 0.500 |
-| memory/designer/_p768/Default/GPUCache/data_3 | 9 | 0 | n | 0.500 |
-| memory/designer/_p768/Default/GPUCache/index | 9 | 0 | n | 0.500 |
-| memory/designer/_p768/Default/Network/NetworkDataMigrated | 9 | 0 | n | 0.500 |
-| memory/designer/_p768/Default/Nurturing/campaign_history | 9 | 0 | n | 0.500 |
-| memory/designer/_p768/Default/Nurturing/campaign_history-journal | 9 | 0 | n | 0.500 |
-| memory/designer/_p768/Default/parcel_tracking_db/LOCK | 9 | 0 | n | 0.500 |
-| memory/designer/_p768/Default/parcel_tracking_db/LOG | 9 | 0 | n | 0.500 |
-| memory/designer/_p768/Default/PersistentOriginTrials/LOCK | 9 | 0 | n | 0.500 |
-| memory/designer/_p768/Default/PersistentOriginTrials/LOG | 9 | 0 | n | 0.500 |
-| memory/designer/_p768/Default/Service Worker/Database/000003.log | 9 | 0 | n | 0.500 |
-| memory/designer/_p768/Default/Service Worker/Database/CURRENT | 9 | 0 | n | 0.500 |
-| memory/designer/_p768/Default/Service Worker/Database/LOCK | 9 | 0 | n | 0.500 |
-| memory/designer/_p768/Default/Service Worker/Database/LOG | 9 | 0 | n | 0.500 |
-| memory/designer/_p768/Default/Service Worker/Database/MANIFEST-000001 | 9 | 0 | n | 0.500 |
-| memory/designer/_p768/Default/Service Worker/ScriptCache/2cc80dabc69f58b6_0 | 9 | 0 | n | 0.500 |
-| memory/designer/_p768/Default/Service Worker/ScriptCache/4cb013792b196a35_0 | 9 | 0 | n | 0.500 |
-| memory/designer/_p768/Default/Service Worker/ScriptCache/f1cdccba37924bda_0 | 9 | 0 | n | 0.500 |
-| memory/designer/_p768/Default/Service Worker/ScriptCache/index | 9 | 0 | n | 0.500 |
-| memory/designer/_p768/Default/Service Worker/ScriptCache/index-dir/the-real-index | 9 | 0 | n | 0.500 |
-| memory/designer/_p768/Default/shared_proto_db/000003.log | 9 | 0 | n | 0.500 |
-| memory/designer/_p768/Default/shared_proto_db/CURRENT | 9 | 0 | n | 0.500 |
-| memory/designer/_p768/Default/shared_proto_db/LOCK | 9 | 0 | n | 0.500 |
-| memory/designer/_p768/Default/shared_proto_db/LOG | 9 | 0 | n | 0.500 |
-| memory/designer/_p768/Default/shared_proto_db/MANIFEST-000001 | 9 | 0 | n | 0.500 |
-| memory/designer/_p768/Default/shared_proto_db/metadata/000003.log | 9 | 0 | n | 0.500 |
-| memory/designer/_p768/Default/shared_proto_db/metadata/CURRENT | 9 | 0 | n | 0.500 |
-| memory/designer/_p768/Default/shared_proto_db/metadata/LOCK | 9 | 0 | n | 0.500 |
-| memory/designer/_p768/Default/shared_proto_db/metadata/LOG | 9 | 0 | n | 0.500 |
-| memory/designer/_p768/Default/shared_proto_db/metadata/MANIFEST-000001 | 9 | 0 | n | 0.500 |
-| memory/designer/_p768/Default/Site Characteristics Database/000003.log | 9 | 0 | n | 0.500 |
-| memory/designer/_p768/Default/Site Characteristics Database/CURRENT | 9 | 0 | n | 0.500 |
-| memory/designer/_p768/Default/Site Characteristics Database/LOCK | 9 | 0 | n | 0.500 |
-| memory/designer/_p768/Default/Site Characteristics Database/LOG | 9 | 0 | n | 0.500 |
-| memory/designer/_p768/Default/Site Characteristics Database/MANIFEST-000001 | 9 | 0 | n | 0.500 |
-| memory/designer/_p768/Default/Storage/ext/ihmafllikibpmigkcoadcmckbfhibefp/def/declarative_performance_observer.db | 9 | 0 | n | 0.500 |
-| memory/designer/_p768/Default/Storage/ext/ihmafllikibpmigkcoadcmckbfhibefp/def/declarative_performance_observer.db-journal | 9 | 0 | n | 0.500 |
-| memory/designer/_p768/Default/Storage/ext/ihmafllikibpmigkcoadcmckbfhibefp/def/Code Cache/js/index | 9 | 0 | n | 0.500 |
-| memory/designer/_p768/Default/Storage/ext/ihmafllikibpmigkcoadcmckbfhibefp/def/Code Cache/js/index-dir/the-real-index | 9 | 0 | n | 0.500 |
-| memory/designer/_p768/Default/Storage/ext/ihmafllikibpmigkcoadcmckbfhibefp/def/Code Cache/wasm/index | 9 | 0 | n | 0.500 |
-| memory/designer/_p768/Default/Storage/ext/ihmafllikibpmigkcoadcmckbfhibefp/def/Code Cache/wasm/index-dir/the-real-index | 9 | 0 | n | 0.500 |
-| memory/designer/_p768/Default/Storage/ext/ihmafllikibpmigkcoadcmckbfhibefp/def/DawnGraphiteCache/data_0 | 9 | 0 | n | 0.500 |
-| memory/designer/_p768/Default/Storage/ext/ihmafllikibpmigkcoadcmckbfhibefp/def/DawnGraphiteCache/data_1 | 9 | 0 | n | 0.500 |
-| memory/designer/_p768/Default/Storage/ext/ihmafllikibpmigkcoadcmckbfhibefp/def/DawnGraphiteCache/data_2 | 9 | 0 | n | 0.500 |
-| memory/designer/_p768/Default/Storage/ext/ihmafllikibpmigkcoadcmckbfhibefp/def/DawnGraphiteCache/data_3 | 9 | 0 | n | 0.500 |
-| memory/designer/_p768/Default/Storage/ext/ihmafllikibpmigkcoadcmckbfhibefp/def/DawnGraphiteCache/index | 9 | 0 | n | 0.500 |
-| memory/designer/_p768/Default/Storage/ext/ihmafllikibpmigkcoadcmckbfhibefp/def/DawnWebGPUCache/data_0 | 9 | 0 | n | 0.500 |
-| memory/designer/_p768/Default/Storage/ext/ihmafllikibpmigkcoadcmckbfhibefp/def/DawnWebGPUCache/data_1 | 9 | 0 | n | 0.500 |
-| memory/designer/_p768/Default/Storage/ext/ihmafllikibpmigkcoadcmckbfhibefp/def/DawnWebGPUCache/data_2 | 9 | 0 | n | 0.500 |
-| memory/designer/_p768/Default/Storage/ext/ihmafllikibpmigkcoadcmckbfhibefp/def/DawnWebGPUCache/data_3 | 9 | 0 | n | 0.500 |
-| memory/designer/_p768/Default/Storage/ext/ihmafllikibpmigkcoadcmckbfhibefp/def/DawnWebGPUCache/index | 9 | 0 | n | 0.500 |
-| memory/designer/_p768/Default/Storage/ext/ihmafllikibpmigkcoadcmckbfhibefp/def/GPUCache/data_0 | 9 | 0 | n | 0.500 |
-| memory/designer/_p768/Default/Storage/ext/ihmafllikibpmigkcoadcmckbfhibefp/def/GPUCache/data_1 | 9 | 0 | n | 0.500 |
-| memory/designer/_p768/Default/Storage/ext/ihmafllikibpmigkcoadcmckbfhibefp/def/GPUCache/data_2 | 9 | 0 | n | 0.500 |
-| memory/designer/_p768/Default/Storage/ext/ihmafllikibpmigkcoadcmckbfhibefp/def/GPUCache/data_3 | 9 | 0 | n | 0.500 |
-| memory/designer/_p768/Default/Storage/ext/ihmafllikibpmigkcoadcmckbfhibefp/def/GPUCache/index | 9 | 0 | n | 0.500 |
-| memory/designer/_p768/Default/Storage/ext/ihmafllikibpmigkcoadcmckbfhibefp/def/Network/NetworkDataMigrated | 9 | 0 | n | 0.500 |
-| memory/designer/_p768/Default/Sync Data/LevelDB/000003.log | 9 | 0 | n | 0.500 |
-| memory/designer/_p768/Default/Sync Data/LevelDB/CURRENT | 9 | 0 | n | 0.500 |
-| memory/designer/_p768/Default/Sync Data/LevelDB/LOCK | 9 | 0 | n | 0.500 |
-| memory/designer/_p768/Default/Sync Data/LevelDB/LOG | 9 | 0 | n | 0.500 |
-| memory/designer/_p768/Default/Sync Data/LevelDB/MANIFEST-000001 | 9 | 0 | n | 0.500 |
-| memory/designer/_p768/Default/WebStorage/QuotaManager | 9 | 0 | n | 0.500 |
-| memory/designer/_p768/Default/WebStorage/QuotaManager-journal | 9 | 0 | n | 0.500 |
-| memory/designer/_p768/GPUPersistentCache/DawnGraphiteCache/23IMHJGI2WIIJ3PDLCHAHUJAGHTLTEBB/cache.db | 9 | 0 | n | 0.500 |
-| memory/designer/_p768/GPUPersistentCache/DawnGraphiteCache/23IMHJGI2WIIJ3PDLCHAHUJAGHTLTEBB/cache.db-wal | 9 | 0 | n | 0.500 |
-| memory/designer/_p768/GPUPersistentCache/DawnGraphiteCache/23IMHJGI2WIIJ3PDLCHAHUJAGHTLTEBB/cache.journal | 9 | 0 | n | 0.500 |
-| memory/designer/_p768/Nurturing/campaign_history | 9 | 0 | n | 0.500 |
-| memory/designer/_p768/Nurturing/campaign_history-journal | 9 | 0 | n | 0.500 |
-| memory/designer/_p768/ShaderCache/data_0 | 9 | 0 | n | 0.500 |
-| memory/designer/_p768/ShaderCache/data_1 | 9 | 0 | n | 0.500 |
-| memory/designer/_p768/ShaderCache/data_2 | 9 | 0 | n | 0.500 |
-| memory/designer/_p768/ShaderCache/data_3 | 9 | 0 | n | 0.500 |
-| memory/designer/_p768/ShaderCache/index | 9 | 0 | n | 0.500 |
-| memory/designer/_p768/SmartScreen/RemoteData/customSettings | 9 | 0 | n | 0.500 |
-| memory/designer/_p768/SmartScreen/RemoteData/customSettings_F95BA787499AB4FA9EFFF472CE383A14 | 9 | 0 | n | 0.500 |
-| memory/designer/_t768/FirstLaunchAfterInstallation | 9 | 0 | n | 0.500 |
-| memory/designer/_t768/Last Version | 9 | 0 | n | 0.500 |
-| memory/designer/_t768/Local State | 9 | 0 | n | 0.500 |
-| memory/designer/_t768/Variations | 9 | 0 | n | 0.500 |
-| memory/designer/_t768/VariationsRuntimeSeedV2 | 9 | 0 | n | 0.500 |
-| memory/designer/_t768/VariationsSafeSeedV2 | 9 | 0 | n | 0.500 |
-| memory/designer/_t768/VariationsSeedV2 | 9 | 0 | n | 0.500 |
-| memory/designer/_t768/Crashpad/settings.dat | 9 | 0 | n | 0.500 |
-| memory/designer/_t768/Crashpad/throttle_store.dat | 9 | 0 | n | 0.500 |
-| memory/designer/_t768/Default/Affiliation Database | 9 | 0 | n | 0.500 |
-| memory/designer/_t768/Default/Affiliation Database-journal | 9 | 0 | n | 0.500 |
-| memory/designer/_t768/Default/declarative_performance_observer.db | 9 | 0 | n | 0.500 |
-| memory/designer/_t768/Default/declarative_performance_observer.db-journal | 9 | 0 | n | 0.500 |
-| memory/designer/_t768/Default/Favicons | 9 | 0 | n | 0.500 |
-| memory/designer/_t768/Default/Favicons-journal | 9 | 0 | n | 0.500 |
-| memory/designer/_t768/Default/History | 9 | 0 | n | 0.500 |
-| memory/designer/_t768/Default/History-journal | 9 | 0 | n | 0.500 |
-| memory/designer/_t768/Default/HubApps Icons | 9 | 0 | n | 0.500 |
-| memory/designer/_t768/Default/HubApps Icons-journal | 9 | 0 | n | 0.500 |
-| memory/designer/_t768/Default/load_statistics.db | 9 | 0 | n | 0.500 |
-| memory/designer/_t768/Default/load_statistics.db-shm | 9 | 0 | n | 0.500 |
-| memory/designer/_t768/Default/load_statistics.db-wal | 9 | 0 | n | 0.500 |
-| memory/designer/_t768/Default/LOCK | 9 | 0 | n | 0.500 |
-| memory/designer/_t768/Default/LOG | 9 | 0 | n | 0.500 |
-| memory/designer/_t768/Default/Login Data | 9 | 0 | n | 0.500 |
-| memory/designer/_t768/Default/Login Data For Account | 9 | 0 | n | 0.500 |
-| memory/designer/_t768/Default/Login Data For Account-journal | 9 | 0 | n | 0.500 |
-| memory/designer/_t768/Default/Login Data-journal | 9 | 0 | n | 0.500 |
-| memory/designer/_t768/Default/README | 9 | 0 | n | 0.500 |
-| memory/designer/_t768/Default/ServerCertificate | 9 | 0 | n | 0.500 |
-| memory/designer/_t768/Default/ServerCertificate-journal | 9 | 0 | n | 0.500 |
-| memory/designer/_t768/Default/Top Sites | 9 | 0 | n | 0.500 |
-| memory/designer/_t768/Default/Top Sites-journal | 9 | 0 | n | 0.500 |
-| memory/designer/_t768/Default/Vpn Tokens | 9 | 0 | n | 0.500 |
-| memory/designer/_t768/Default/Vpn Tokens-journal | 9 | 0 | n | 0.500 |
-| memory/designer/_t768/Default/Web Data | 9 | 0 | n | 0.500 |
-| memory/designer/_t768/Default/Web Data-journal | 9 | 0 | n | 0.500 |
-| memory/designer/_t768/Default/ClientCertificates/LOCK | 9 | 0 | n | 0.500 |
-| memory/designer/_t768/Default/ClientCertificates/LOG | 9 | 0 | n | 0.500 |
-| memory/designer/_t768/Default/Code Cache/js/index | 9 | 0 | n | 0.500 |
-| memory/designer/_t768/Default/Code Cache/js/index-dir/the-real-index | 9 | 0 | n | 0.500 |
-| memory/designer/_t768/Default/Code Cache/wasm/index | 9 | 0 | n | 0.500 |
-| memory/designer/_t768/Default/Code Cache/wasm/index-dir/the-real-index | 9 | 0 | n | 0.500 |
-| memory/designer/_t768/Default/commerce_subscription_db/LOCK | 9 | 0 | n | 0.500 |
-| memory/designer/_t768/Default/commerce_subscription_db/LOG | 9 | 0 | n | 0.500 |
-| memory/designer/_t768/Default/DawnGraphiteCache/data_0 | 9 | 0 | n | 0.500 |
-| memory/designer/_t768/Default/DawnGraphiteCache/data_1 | 9 | 0 | n | 0.500 |
-| memory/designer/_t768/Default/DawnGraphiteCache/data_2 | 9 | 0 | n | 0.500 |
-| memory/designer/_t768/Default/DawnGraphiteCache/data_3 | 9 | 0 | n | 0.500 |
-| memory/designer/_t768/Default/DawnGraphiteCache/index | 9 | 0 | n | 0.500 |
-| memory/designer/_t768/Default/DawnWebGPUCache/data_0 | 9 | 0 | n | 0.500 |
-| memory/designer/_t768/Default/DawnWebGPUCache/data_1 | 9 | 0 | n | 0.500 |
-| memory/designer/_t768/Default/DawnWebGPUCache/data_2 | 9 | 0 | n | 0.500 |
-| memory/designer/_t768/Default/DawnWebGPUCache/data_3 | 9 | 0 | n | 0.500 |
-| memory/designer/_t768/Default/DawnWebGPUCache/index | 9 | 0 | n | 0.500 |
-| memory/designer/_t768/Default/discounts_db/LOCK | 9 | 0 | n | 0.500 |
-| memory/designer/_t768/Default/discounts_db/LOG | 9 | 0 | n | 0.500 |
-| memory/designer/_t768/Default/discount_infos_db/LOCK | 9 | 0 | n | 0.500 |
-| memory/designer/_t768/Default/discount_infos_db/LOG | 9 | 0 | n | 0.500 |
-| memory/designer/_t768/Default/EdgePushStorageWithConnectTokenAndKey/LOCK | 9 | 0 | n | 0.500 |
-| memory/designer/_t768/Default/EdgePushStorageWithConnectTokenAndKey/LOG | 9 | 0 | n | 0.500 |
-| memory/designer/_t768/Default/Extension Rules/000003.log | 9 | 0 | n | 0.500 |
-| memory/designer/_t768/Default/Extension Rules/CURRENT | 9 | 0 | n | 0.500 |
-| memory/designer/_t768/Default/Extension Rules/LOCK | 9 | 0 | n | 0.500 |
-| memory/designer/_t768/Default/Extension Rules/LOG | 9 | 0 | n | 0.500 |
-| memory/designer/_t768/Default/Extension Rules/MANIFEST-000001 | 9 | 0 | n | 0.500 |
-| memory/designer/_t768/Default/Extension Scripts/000003.log | 9 | 0 | n | 0.500 |
-| memory/designer/_t768/Default/Extension Scripts/CURRENT | 9 | 0 | n | 0.500 |
-| memory/designer/_t768/Default/Extension Scripts/LOCK | 9 | 0 | n | 0.500 |
-| memory/designer/_t768/Default/Extension Scripts/LOG | 9 | 0 | n | 0.500 |
-| memory/designer/_t768/Default/Extension Scripts/MANIFEST-000001 | 9 | 0 | n | 0.500 |
-| memory/designer/_t768/Default/Extension State/000003.log | 9 | 0 | n | 0.500 |
-| memory/designer/_t768/Default/Extension State/CURRENT | 9 | 0 | n | 0.500 |
-| memory/designer/_t768/Default/Extension State/LOCK | 9 | 0 | n | 0.500 |
-| memory/designer/_t768/Default/Extension State/LOG | 9 | 0 | n | 0.500 |
-| memory/designer/_t768/Default/Extension State/MANIFEST-000001 | 9 | 0 | n | 0.500 |
-| memory/designer/_t768/Default/GPUCache/data_0 | 9 | 0 | n | 0.500 |
-| memory/designer/_t768/Default/GPUCache/data_1 | 9 | 0 | n | 0.500 |
-| memory/designer/_t768/Default/GPUCache/data_2 | 9 | 0 | n | 0.500 |
-| memory/designer/_t768/Default/GPUCache/data_3 | 9 | 0 | n | 0.500 |
-| memory/designer/_t768/Default/GPUCache/index | 9 | 0 | n | 0.500 |
-| memory/designer/_t768/Default/Network/NetworkDataMigrated | 9 | 0 | n | 0.500 |
-| memory/designer/_t768/Default/Nurturing/campaign_history | 9 | 0 | n | 0.500 |
-| memory/designer/_t768/Default/Nurturing/campaign_history-journal | 9 | 0 | n | 0.500 |
-| memory/designer/_t768/Default/parcel_tracking_db/LOCK | 9 | 0 | n | 0.500 |
-| memory/designer/_t768/Default/parcel_tracking_db/LOG | 9 | 0 | n | 0.500 |
-| memory/designer/_t768/Default/PersistentOriginTrials/LOCK | 9 | 0 | n | 0.500 |
-| memory/designer/_t768/Default/PersistentOriginTrials/LOG | 9 | 0 | n | 0.500 |
-| memory/designer/_t768/Default/Service Worker/Database/000003.log | 9 | 0 | n | 0.500 |
-| memory/designer/_t768/Default/Service Worker/Database/CURRENT | 9 | 0 | n | 0.500 |
-| memory/designer/_t768/Default/Service Worker/Database/LOCK | 9 | 0 | n | 0.500 |
-| memory/designer/_t768/Default/Service Worker/Database/LOG | 9 | 0 | n | 0.500 |
-| memory/designer/_t768/Default/Service Worker/Database/MANIFEST-000001 | 9 | 0 | n | 0.500 |
-| memory/designer/_t768/Default/Service Worker/ScriptCache/2cc80dabc69f58b6_0 | 9 | 0 | n | 0.500 |
-| memory/designer/_t768/Default/Service Worker/ScriptCache/4cb013792b196a35_0 | 9 | 0 | n | 0.500 |
-| memory/designer/_t768/Default/Service Worker/ScriptCache/f1cdccba37924bda_0 | 9 | 0 | n | 0.500 |
-| memory/designer/_t768/Default/Service Worker/ScriptCache/index | 9 | 0 | n | 0.500 |
-| memory/designer/_t768/Default/Service Worker/ScriptCache/index-dir/the-real-index | 9 | 0 | n | 0.500 |
-| memory/designer/_t768/Default/shared_proto_db/000003.log | 9 | 0 | n | 0.500 |
-| memory/designer/_t768/Default/shared_proto_db/CURRENT | 9 | 0 | n | 0.500 |
-| memory/designer/_t768/Default/shared_proto_db/LOCK | 9 | 0 | n | 0.500 |
-| memory/designer/_t768/Default/shared_proto_db/LOG | 9 | 0 | n | 0.500 |
-| memory/designer/_t768/Default/shared_proto_db/MANIFEST-000001 | 9 | 0 | n | 0.500 |
-| memory/designer/_t768/Default/shared_proto_db/metadata/000003.log | 9 | 0 | n | 0.500 |
-| memory/designer/_t768/Default/shared_proto_db/metadata/CURRENT | 9 | 0 | n | 0.500 |
-| memory/designer/_t768/Default/shared_proto_db/metadata/LOCK | 9 | 0 | n | 0.500 |
-| memory/designer/_t768/Default/shared_proto_db/metadata/LOG | 9 | 0 | n | 0.500 |
-| memory/designer/_t768/Default/shared_proto_db/metadata/MANIFEST-000001 | 9 | 0 | n | 0.500 |
-| memory/designer/_t768/Default/Site Characteristics Database/000003.log | 9 | 0 | n | 0.500 |
-| memory/designer/_t768/Default/Site Characteristics Database/CURRENT | 9 | 0 | n | 0.500 |
-| memory/designer/_t768/Default/Site Characteristics Database/LOCK | 9 | 0 | n | 0.500 |
-| memory/designer/_t768/Default/Site Characteristics Database/LOG | 9 | 0 | n | 0.500 |
-| memory/designer/_t768/Default/Site Characteristics Database/MANIFEST-000001 | 9 | 0 | n | 0.500 |
-| memory/designer/_t768/Default/Storage/ext/ihmafllikibpmigkcoadcmckbfhibefp/def/declarative_performance_observer.db | 9 | 0 | n | 0.500 |
-| memory/designer/_t768/Default/Storage/ext/ihmafllikibpmigkcoadcmckbfhibefp/def/declarative_performance_observer.db-journal | 9 | 0 | n | 0.500 |
-| memory/designer/_t768/Default/Storage/ext/ihmafllikibpmigkcoadcmckbfhibefp/def/Code Cache/js/index | 9 | 0 | n | 0.500 |
-| memory/designer/_t768/Default/Storage/ext/ihmafllikibpmigkcoadcmckbfhibefp/def/Code Cache/js/index-dir/the-real-index | 9 | 0 | n | 0.500 |
-| memory/designer/_t768/Default/Storage/ext/ihmafllikibpmigkcoadcmckbfhibefp/def/Code Cache/wasm/index | 9 | 0 | n | 0.500 |
-| memory/designer/_t768/Default/Storage/ext/ihmafllikibpmigkcoadcmckbfhibefp/def/Code Cache/wasm/index-dir/the-real-index | 9 | 0 | n | 0.500 |
-| memory/designer/_t768/Default/Storage/ext/ihmafllikibpmigkcoadcmckbfhibefp/def/DawnGraphiteCache/data_0 | 9 | 0 | n | 0.500 |
-| memory/designer/_t768/Default/Storage/ext/ihmafllikibpmigkcoadcmckbfhibefp/def/DawnGraphiteCache/data_1 | 9 | 0 | n | 0.500 |
-| memory/designer/_t768/Default/Storage/ext/ihmafllikibpmigkcoadcmckbfhibefp/def/DawnGraphiteCache/data_2 | 9 | 0 | n | 0.500 |
-| memory/designer/_t768/Default/Storage/ext/ihmafllikibpmigkcoadcmckbfhibefp/def/DawnGraphiteCache/data_3 | 9 | 0 | n | 0.500 |
-| memory/designer/_t768/Default/Storage/ext/ihmafllikibpmigkcoadcmckbfhibefp/def/DawnGraphiteCache/index | 9 | 0 | n | 0.500 |
-| memory/designer/_t768/Default/Storage/ext/ihmafllikibpmigkcoadcmckbfhibefp/def/DawnWebGPUCache/data_0 | 9 | 0 | n | 0.500 |
-| memory/designer/_t768/Default/Storage/ext/ihmafllikibpmigkcoadcmckbfhibefp/def/DawnWebGPUCache/data_1 | 9 | 0 | n | 0.500 |
-| memory/designer/_t768/Default/Storage/ext/ihmafllikibpmigkcoadcmckbfhibefp/def/DawnWebGPUCache/data_2 | 9 | 0 | n | 0.500 |
-| memory/designer/_t768/Default/Storage/ext/ihmafllikibpmigkcoadcmckbfhibefp/def/DawnWebGPUCache/data_3 | 9 | 0 | n | 0.500 |
-| memory/designer/_t768/Default/Storage/ext/ihmafllikibpmigkcoadcmckbfhibefp/def/DawnWebGPUCache/index | 9 | 0 | n | 0.500 |
-| memory/designer/_t768/Default/Storage/ext/ihmafllikibpmigkcoadcmckbfhibefp/def/GPUCache/data_0 | 9 | 0 | n | 0.500 |
-| memory/designer/_t768/Default/Storage/ext/ihmafllikibpmigkcoadcmckbfhibefp/def/GPUCache/data_1 | 9 | 0 | n | 0.500 |
-| memory/designer/_t768/Default/Storage/ext/ihmafllikibpmigkcoadcmckbfhibefp/def/GPUCache/data_2 | 9 | 0 | n | 0.500 |
-| memory/designer/_t768/Default/Storage/ext/ihmafllikibpmigkcoadcmckbfhibefp/def/GPUCache/data_3 | 9 | 0 | n | 0.500 |
-| memory/designer/_t768/Default/Storage/ext/ihmafllikibpmigkcoadcmckbfhibefp/def/GPUCache/index | 9 | 0 | n | 0.500 |
-| memory/designer/_t768/Default/Storage/ext/ihmafllikibpmigkcoadcmckbfhibefp/def/Network/NetworkDataMigrated | 9 | 0 | n | 0.500 |
-| memory/designer/_t768/Default/Sync Data/LevelDB/000003.log | 9 | 0 | n | 0.500 |
-| memory/designer/_t768/Default/Sync Data/LevelDB/CURRENT | 9 | 0 | n | 0.500 |
-| memory/designer/_t768/Default/Sync Data/LevelDB/LOCK | 9 | 0 | n | 0.500 |
-| memory/designer/_t768/Default/Sync Data/LevelDB/LOG | 9 | 0 | n | 0.500 |
-| memory/designer/_t768/Default/Sync Data/LevelDB/MANIFEST-000001 | 9 | 0 | n | 0.500 |
-| memory/designer/_t768/Default/WebStorage/QuotaManager | 9 | 0 | n | 0.500 |
-| memory/designer/_t768/Default/WebStorage/QuotaManager-journal | 9 | 0 | n | 0.500 |
-| memory/designer/_t768/GPUPersistentCache/DawnGraphiteCache/23IMHJGI2WIIJ3PDLCHAHUJAGHTLTEBB/cache.db | 9 | 0 | n | 0.500 |
-| memory/designer/_t768/GPUPersistentCache/DawnGraphiteCache/23IMHJGI2WIIJ3PDLCHAHUJAGHTLTEBB/cache.db-wal | 9 | 0 | n | 0.500 |
-| memory/designer/_t768/GPUPersistentCache/DawnGraphiteCache/23IMHJGI2WIIJ3PDLCHAHUJAGHTLTEBB/cache.journal | 9 | 0 | n | 0.500 |
-| memory/designer/_t768/Nurturing/campaign_history | 9 | 0 | n | 0.500 |
-| memory/designer/_t768/Nurturing/campaign_history-journal | 9 | 0 | n | 0.500 |
-| memory/designer/_t768/ShaderCache/data_0 | 9 | 0 | n | 0.500 |
-| memory/designer/_t768/ShaderCache/data_1 | 9 | 0 | n | 0.500 |
-| memory/designer/_t768/ShaderCache/data_2 | 9 | 0 | n | 0.500 |
-| memory/designer/_t768/ShaderCache/data_3 | 9 | 0 | n | 0.500 |
-| memory/designer/_t768/ShaderCache/index | 9 | 0 | n | 0.500 |
-| memory/designer/_t768/SmartScreen/RemoteData/customSettings | 9 | 0 | n | 0.500 |
-| memory/designer/_t768/SmartScreen/RemoteData/customSettings_F95BA787499AB4FA9EFFF472CE383A14 | 9 | 0 | n | 0.500 |
-| memory/designer/_ud768/FirstLaunchAfterInstallation | 9 | 0 | n | 0.500 |
-| memory/designer/_ud768/Last Version | 9 | 0 | n | 0.500 |
-| memory/designer/_ud768/Local State | 9 | 0 | n | 0.500 |
-| memory/designer/_ud768/Variations | 9 | 0 | n | 0.500 |
-| memory/designer/_ud768/VariationsRuntimeSeedV2 | 9 | 0 | n | 0.500 |
-| memory/designer/_ud768/VariationsSafeSeedV2 | 9 | 0 | n | 0.500 |
-| memory/designer/_ud768/VariationsSeedV2 | 9 | 0 | n | 0.500 |
-| memory/designer/_ud768/Crashpad/metadata | 9 | 0 | n | 0.500 |
-| memory/designer/_ud768/Crashpad/settings.dat | 9 | 0 | n | 0.500 |
-| memory/designer/_ud768/Crashpad/throttle_store.dat | 9 | 0 | n | 0.500 |
-| memory/designer/_ud768/Default/Affiliation Database | 9 | 0 | n | 0.500 |
-| memory/designer/_ud768/Default/Affiliation Database-journal | 9 | 0 | n | 0.500 |
-| memory/designer/_ud768/Default/arbitration_service_config.json | 9 | 0 | n | 0.500 |
-| memory/designer/_ud768/Default/BookmarkMergedSurfaceOrdering | 9 | 0 | n | 0.500 |
-| memory/designer/_ud768/Default/declarative_performance_observer.db | 9 | 0 | n | 0.500 |
-| memory/designer/_ud768/Default/declarative_performance_observer.db-journal | 9 | 0 | n | 0.500 |
-| memory/designer/_ud768/Default/Favicons | 9 | 0 | n | 0.500 |
-| memory/designer/_ud768/Default/Favicons-journal | 9 | 0 | n | 0.500 |
-| memory/designer/_ud768/Default/History | 9 | 0 | n | 0.500 |
-| memory/designer/_ud768/Default/History-journal | 9 | 0 | n | 0.500 |
-| memory/designer/_ud768/Default/HubApps Icons | 9 | 0 | n | 0.500 |
-| memory/designer/_ud768/Default/HubApps Icons-journal | 9 | 0 | n | 0.500 |
-| memory/designer/_ud768/Default/load_statistics.db | 9 | 0 | n | 0.500 |
-| memory/designer/_ud768/Default/load_statistics.db-shm | 9 | 0 | n | 0.500 |
-| memory/designer/_ud768/Default/load_statistics.db-wal | 9 | 0 | n | 0.500 |
-| memory/designer/_ud768/Default/LOCK | 9 | 0 | n | 0.500 |
-| memory/designer/_ud768/Default/LOG | 9 | 0 | n | 0.500 |
-| memory/designer/_ud768/Default/LOG.old | 9 | 0 | n | 0.500 |
-| memory/designer/_ud768/Default/Login Data | 9 | 0 | n | 0.500 |
-| memory/designer/_ud768/Default/Login Data For Account | 9 | 0 | n | 0.500 |
-| memory/designer/_ud768/Default/Login Data For Account-journal | 9 | 0 | n | 0.500 |
-| memory/designer/_ud768/Default/Login Data-journal | 9 | 0 | n | 0.500 |
-| memory/designer/_ud768/Default/Preferences | 9 | 0 | n | 0.500 |
-| memory/designer/_ud768/Default/README | 9 | 0 | n | 0.500 |
-| memory/designer/_ud768/Default/Secure Preferences | 9 | 0 | n | 0.500 |
-| memory/designer/_ud768/Default/ServerCertificate | 9 | 0 | n | 0.500 |
-| memory/designer/_ud768/Default/ServerCertificate-journal | 9 | 0 | n | 0.500 |
-| memory/designer/_ud768/Default/Top Sites | 9 | 0 | n | 0.500 |
-| memory/designer/_ud768/Default/Top Sites-journal | 9 | 0 | n | 0.500 |
-| memory/designer/_ud768/Default/Vpn Tokens | 9 | 0 | n | 0.500 |
-| memory/designer/_ud768/Default/Vpn Tokens-journal | 9 | 0 | n | 0.500 |
-| memory/designer/_ud768/Default/Web Data | 9 | 0 | n | 0.500 |
-| memory/designer/_ud768/Default/Web Data-journal | 9 | 0 | n | 0.500 |
-| memory/designer/_ud768/Default/Cache/Cache_Data/data_0 | 9 | 0 | n | 0.500 |
-| memory/designer/_ud768/Default/Cache/Cache_Data/data_1 | 9 | 0 | n | 0.500 |
-| memory/designer/_ud768/Default/Cache/Cache_Data/data_2 | 9 | 0 | n | 0.500 |
-| memory/designer/_ud768/Default/Cache/Cache_Data/data_3 | 9 | 0 | n | 0.500 |
-| memory/designer/_ud768/Default/Cache/Cache_Data/index | 9 | 0 | n | 0.500 |
-| memory/designer/_ud768/Default/Cache/No_Vary_Search/journal.baj | 9 | 0 | n | 0.500 |
-| memory/designer/_ud768/Default/Cache/No_Vary_Search/snapshot.baf | 9 | 0 | n | 0.500 |
-| memory/designer/_ud768/Default/ClientCertificates/LOCK | 9 | 0 | n | 0.500 |
-| memory/designer/_ud768/Default/ClientCertificates/LOG | 9 | 0 | n | 0.500 |
-| memory/designer/_ud768/Default/ClientCertificates/LOG.old | 9 | 0 | n | 0.500 |
-| memory/designer/_ud768/Default/Code Cache/js/2a8a6f695a3ff316_0 | 9 | 0 | n | 0.500 |
-| memory/designer/_ud768/Default/Code Cache/js/2cca9bc741a6516d_0 | 9 | 0 | n | 0.500 |
-| memory/designer/_ud768/Default/Code Cache/js/5cce1706364839f1_0 | 9 | 0 | n | 0.500 |
-| memory/designer/_ud768/Default/Code Cache/js/5fbb54f36261c413_0 | 9 | 0 | n | 0.500 |
-| memory/designer/_ud768/Default/Code Cache/js/7de0dc67a2b3a69c_0 | 9 | 0 | n | 0.500 |
-| memory/designer/_ud768/Default/Code Cache/js/8020acacb3d13763_0 | 9 | 0 | n | 0.500 |
-| memory/designer/_ud768/Default/Code Cache/js/8bb1867be67136eb_0 | 9 | 0 | n | 0.500 |
-| memory/designer/_ud768/Default/Code Cache/js/945cb8fb56d09a8e_0 | 9 | 0 | n | 0.500 |
-| memory/designer/_ud768/Default/Code Cache/js/b21fb45197b9c728_0 | 9 | 0 | n | 0.500 |
-| memory/designer/_ud768/Default/Code Cache/js/baded5730168391f_0 | 9 | 0 | n | 0.500 |
-| memory/designer/_ud768/Default/Code Cache/js/e94999eac39dfd99_0 | 9 | 0 | n | 0.500 |
-| memory/designer/_ud768/Default/Code Cache/js/e9a142a21b9ad9ef_0 | 9 | 0 | n | 0.500 |
-| memory/designer/_ud768/Default/Code Cache/js/ebce9e52a869b921_0 | 9 | 0 | n | 0.500 |
-| memory/designer/_ud768/Default/Code Cache/js/index | 9 | 0 | n | 0.500 |
-| memory/designer/_ud768/Default/Code Cache/js/index-dir/the-real-index | 9 | 0 | n | 0.500 |
-| memory/designer/_ud768/Default/Code Cache/wasm/index | 9 | 0 | n | 0.500 |
-| memory/designer/_ud768/Default/Code Cache/wasm/index-dir/the-real-index | 9 | 0 | n | 0.500 |
-| memory/designer/_ud768/Default/commerce_subscription_db/LOCK | 9 | 0 | n | 0.500 |
-| memory/designer/_ud768/Default/commerce_subscription_db/LOG | 9 | 0 | n | 0.500 |
-| memory/designer/_ud768/Default/commerce_subscription_db/LOG.old | 9 | 0 | n | 0.500 |
-| memory/designer/_ud768/Default/DawnGraphiteCache/data_0 | 9 | 0 | n | 0.500 |
-| memory/designer/_ud768/Default/DawnGraphiteCache/data_1 | 9 | 0 | n | 0.500 |
-| memory/designer/_ud768/Default/DawnGraphiteCache/data_2 | 9 | 0 | n | 0.500 |
-| memory/designer/_ud768/Default/DawnGraphiteCache/data_3 | 9 | 0 | n | 0.500 |
-| memory/designer/_ud768/Default/DawnGraphiteCache/index | 9 | 0 | n | 0.500 |
-| memory/designer/_ud768/Default/DawnWebGPUCache/data_0 | 9 | 0 | n | 0.500 |
-| memory/designer/_ud768/Default/DawnWebGPUCache/data_1 | 9 | 0 | n | 0.500 |
-| memory/designer/_ud768/Default/DawnWebGPUCache/data_2 | 9 | 0 | n | 0.500 |
-| memory/designer/_ud768/Default/DawnWebGPUCache/data_3 | 9 | 0 | n | 0.500 |
-| memory/designer/_ud768/Default/DawnWebGPUCache/index | 9 | 0 | n | 0.500 |
-| memory/designer/_ud768/Default/discounts_db/LOCK | 9 | 0 | n | 0.500 |
-| memory/designer/_ud768/Default/discounts_db/LOG | 9 | 0 | n | 0.500 |
-| memory/designer/_ud768/Default/discounts_db/LOG.old | 9 | 0 | n | 0.500 |
-| memory/designer/_ud768/Default/discount_infos_db/LOCK | 9 | 0 | n | 0.500 |
-| memory/designer/_ud768/Default/discount_infos_db/LOG | 9 | 0 | n | 0.500 |
-| memory/designer/_ud768/Default/discount_infos_db/LOG.old | 9 | 0 | n | 0.500 |
-| memory/designer/_ud768/Default/DualEngine/SiteList-Consumer.json | 9 | 0 | n | 0.500 |
-| memory/designer/_ud768/Default/DualEngine/SiteList-Enterprise.json | 9 | 0 | n | 0.500 |
-| memory/designer/_ud768/Default/EdgeHubAppUsage/EdgeHubAppUsageSQLite.db | 9 | 0 | n | 0.500 |
-| memory/designer/_ud768/Default/EdgeHubAppUsage/EdgeHubAppUsageSQLite.db-journal | 9 | 0 | n | 0.500 |
-| memory/designer/_ud768/Default/EdgePushStorageWithConnectTokenAndKey/LOCK | 9 | 0 | n | 0.500 |
-| memory/designer/_ud768/Default/EdgePushStorageWithConnectTokenAndKey/LOG | 9 | 0 | n | 0.500 |
-| memory/designer/_ud768/Default/EdgePushStorageWithConnectTokenAndKey/LOG.old | 9 | 0 | n | 0.500 |
-| memory/designer/_ud768/Default/Extension Rules/000003.log | 9 | 0 | n | 0.500 |
-| memory/designer/_ud768/Default/Extension Rules/CURRENT | 9 | 0 | n | 0.500 |
-| memory/designer/_ud768/Default/Extension Rules/LOCK | 9 | 0 | n | 0.500 |
-| memory/designer/_ud768/Default/Extension Rules/LOG | 9 | 0 | n | 0.500 |
-| memory/designer/_ud768/Default/Extension Rules/LOG.old | 9 | 0 | n | 0.500 |
-| memory/designer/_ud768/Default/Extension Rules/MANIFEST-000001 | 9 | 0 | n | 0.500 |
-| memory/designer/_ud768/Default/Extension Scripts/000003.log | 9 | 0 | n | 0.500 |
-| memory/designer/_ud768/Default/Extension Scripts/CURRENT | 9 | 0 | n | 0.500 |
-| memory/designer/_ud768/Default/Extension Scripts/LOCK | 9 | 0 | n | 0.500 |
-| memory/designer/_ud768/Default/Extension Scripts/LOG | 9 | 0 | n | 0.500 |
-| memory/designer/_ud768/Default/Extension Scripts/LOG.old | 9 | 0 | n | 0.500 |
-| memory/designer/_ud768/Default/Extension Scripts/MANIFEST-000001 | 9 | 0 | n | 0.500 |
-| memory/designer/_ud768/Default/Extension State/000003.log | 9 | 0 | n | 0.500 |
-| memory/designer/_ud768/Default/Extension State/CURRENT | 9 | 0 | n | 0.500 |
-| memory/designer/_ud768/Default/Extension State/LOCK | 9 | 0 | n | 0.500 |
-| memory/designer/_ud768/Default/Extension State/LOG | 9 | 0 | n | 0.500 |
-| memory/designer/_ud768/Default/Extension State/LOG.old | 9 | 0 | n | 0.500 |
-| memory/designer/_ud768/Default/Extension State/MANIFEST-000001 | 9 | 0 | n | 0.500 |
-| memory/designer/_ud768/Default/GPUCache/data_0 | 9 | 0 | n | 0.500 |
-| memory/designer/_ud768/Default/GPUCache/data_1 | 9 | 0 | n | 0.500 |
-| memory/designer/_ud768/Default/GPUCache/data_2 | 9 | 0 | n | 0.500 |
-| memory/designer/_ud768/Default/GPUCache/data_3 | 9 | 0 | n | 0.500 |
-| memory/designer/_ud768/Default/GPUCache/index | 9 | 0 | n | 0.500 |
-| memory/designer/_ud768/Default/Local Extension Settings/jdiccldimpdaibmpdkjnbmckianbfold/000003.log | 9 | 0 | n | 0.500 |
-| memory/designer/_ud768/Default/Local Extension Settings/jdiccldimpdaibmpdkjnbmckianbfold/CURRENT | 9 | 0 | n | 0.500 |
-| memory/designer/_ud768/Default/Local Extension Settings/jdiccldimpdaibmpdkjnbmckianbfold/LOCK | 9 | 0 | n | 0.500 |
-| memory/designer/_ud768/Default/Local Extension Settings/jdiccldimpdaibmpdkjnbmckianbfold/LOG | 9 | 0 | n | 0.500 |
-| memory/designer/_ud768/Default/Local Extension Settings/jdiccldimpdaibmpdkjnbmckianbfold/MANIFEST-000001 | 9 | 0 | n | 0.500 |
-| memory/designer/_ud768/Default/Local Storage/leveldb/000003.log | 9 | 0 | n | 0.500 |
-| memory/designer/_ud768/Default/Local Storage/leveldb/CURRENT | 9 | 0 | n | 0.500 |
-| memory/designer/_ud768/Default/Local Storage/leveldb/LOCK | 9 | 0 | n | 0.500 |
-| memory/designer/_ud768/Default/Local Storage/leveldb/LOG | 9 | 0 | n | 0.500 |
-| memory/designer/_ud768/Default/Local Storage/leveldb/MANIFEST-000001 | 9 | 0 | n | 0.500 |
-| memory/designer/_ud768/Default/Network/Cookies | 9 | 0 | n | 0.500 |
-| memory/designer/_ud768/Default/Network/Cookies-journal | 9 | 0 | n | 0.500 |
-| memory/designer/_ud768/Default/Network/Device Bound Sessions | 9 | 0 | n | 0.500 |
-| memory/designer/_ud768/Default/Network/Device Bound Sessions-journal | 9 | 0 | n | 0.500 |
-| memory/designer/_ud768/Default/Network/Network Persistent State | 9 | 0 | n | 0.500 |
-| memory/designer/_ud768/Default/Network/NetworkDataMigrated | 9 | 0 | n | 0.500 |
-| memory/designer/_ud768/Default/Network/Reporting and NEL | 9 | 0 | n | 0.500 |
-| memory/designer/_ud768/Default/Network/Reporting and NEL-journal | 9 | 0 | n | 0.500 |
-| memory/designer/_ud768/Default/Network/SCT Auditing Pending Reports | 9 | 0 | n | 0.500 |
-| memory/designer/_ud768/Default/Network/Sdch Dictionaries | 9 | 0 | n | 0.500 |
-| memory/designer/_ud768/Default/Network/Trust Tokens | 9 | 0 | n | 0.500 |
-| memory/designer/_ud768/Default/Network/Trust Tokens-journal | 9 | 0 | n | 0.500 |
-| memory/designer/_ud768/Default/Nurturing/campaign_history | 9 | 0 | n | 0.500 |
-| memory/designer/_ud768/Default/Nurturing/campaign_history-journal | 9 | 0 | n | 0.500 |
-| memory/designer/_ud768/Default/parcel_tracking_db/LOCK | 9 | 0 | n | 0.500 |
-| memory/designer/_ud768/Default/parcel_tracking_db/LOG | 9 | 0 | n | 0.500 |
-| memory/designer/_ud768/Default/parcel_tracking_db/LOG.old | 9 | 0 | n | 0.500 |
-| memory/designer/_ud768/Default/PersistentOriginTrials/LOCK | 9 | 0 | n | 0.500 |
-| memory/designer/_ud768/Default/PersistentOriginTrials/LOG | 9 | 0 | n | 0.500 |
-| memory/designer/_ud768/Default/PersistentOriginTrials/LOG.old | 9 | 0 | n | 0.500 |
-| memory/designer/_ud768/Default/Service Worker/Database/000003.log | 9 | 0 | n | 0.500 |
-| memory/designer/_ud768/Default/Service Worker/Database/CURRENT | 9 | 0 | n | 0.500 |
-| memory/designer/_ud768/Default/Service Worker/Database/LOCK | 9 | 0 | n | 0.500 |
-| memory/designer/_ud768/Default/Service Worker/Database/LOG | 9 | 0 | n | 0.500 |
-| memory/designer/_ud768/Default/Service Worker/Database/LOG.old | 9 | 0 | n | 0.500 |
-| memory/designer/_ud768/Default/Service Worker/Database/MANIFEST-000001 | 9 | 0 | n | 0.500 |
-| memory/designer/_ud768/Default/Service Worker/ScriptCache/013888a1cda32b90_0 | 9 | 0 | n | 0.500 |
-| memory/designer/_ud768/Default/Service Worker/ScriptCache/297ecea5cebb5dfe_0 | 9 | 0 | n | 0.500 |
-| memory/designer/_ud768/Default/Service Worker/ScriptCache/b6c28cea6ed9dfc1_0 | 9 | 0 | n | 0.500 |
-| memory/designer/_ud768/Default/Service Worker/ScriptCache/b6c28cea6ed9dfc1_1 | 9 | 0 | n | 0.500 |
-| memory/designer/_ud768/Default/Service Worker/ScriptCache/index | 9 | 0 | n | 0.500 |
-| memory/designer/_ud768/Default/Service Worker/ScriptCache/index-dir/the-real-index | 9 | 0 | n | 0.500 |
-| memory/designer/_ud768/Default/Session Storage/000003.log | 9 | 0 | n | 0.500 |
-| memory/designer/_ud768/Default/Session Storage/CURRENT | 9 | 0 | n | 0.500 |
-| memory/designer/_ud768/Default/Session Storage/LOCK | 9 | 0 | n | 0.500 |
-| memory/designer/_ud768/Default/Session Storage/LOG | 9 | 0 | n | 0.500 |
-| memory/designer/_ud768/Default/Session Storage/MANIFEST-000001 | 9 | 0 | n | 0.500 |
-| memory/designer/_ud768/Default/Sessions/Session_13439411378707597 | 9 | 0 | n | 0.500 |
-| memory/designer/_ud768/Default/Sessions/Tabs_13439411378777611 | 9 | 0 | n | 0.500 |
-| memory/designer/_ud768/Default/Sessions_Encrypted/Session_13439411378708482 | 9 | 0 | n | 0.500 |
-| memory/designer/_ud768/Default/Sessions_Encrypted/Tabs_13439411378783180 | 9 | 0 | n | 0.500 |
-| memory/designer/_ud768/Default/Shared Dictionary/db | 9 | 0 | n | 0.500 |
-| memory/designer/_ud768/Default/Shared Dictionary/db-journal | 9 | 0 | n | 0.500 |
-| memory/designer/_ud768/Default/Shared Dictionary/cache/index | 9 | 0 | n | 0.500 |
-| memory/designer/_ud768/Default/Shared Dictionary/cache/index-dir/the-real-index | 9 | 0 | n | 0.500 |
-| memory/designer/_ud768/Default/shared_proto_db/000003.log | 9 | 0 | n | 0.500 |
-| memory/designer/_ud768/Default/shared_proto_db/CURRENT | 9 | 0 | n | 0.500 |
-| memory/designer/_ud768/Default/shared_proto_db/LOCK | 9 | 0 | n | 0.500 |
-| memory/designer/_ud768/Default/shared_proto_db/LOG | 9 | 0 | n | 0.500 |
-| memory/designer/_ud768/Default/shared_proto_db/LOG.old | 9 | 0 | n | 0.500 |
-| memory/designer/_ud768/Default/shared_proto_db/MANIFEST-000001 | 9 | 0 | n | 0.500 |
-| memory/designer/_ud768/Default/shared_proto_db/metadata/000003.log | 9 | 0 | n | 0.500 |
-| memory/designer/_ud768/Default/shared_proto_db/metadata/CURRENT | 9 | 0 | n | 0.500 |
-| memory/designer/_ud768/Default/shared_proto_db/metadata/LOCK | 9 | 0 | n | 0.500 |
-| memory/designer/_ud768/Default/shared_proto_db/metadata/LOG | 9 | 0 | n | 0.500 |
-| memory/designer/_ud768/Default/shared_proto_db/metadata/LOG.old | 9 | 0 | n | 0.500 |
-| memory/designer/_ud768/Default/shared_proto_db/metadata/MANIFEST-000001 | 9 | 0 | n | 0.500 |
-| memory/designer/_ud768/Default/Site Characteristics Database/000003.log | 9 | 0 | n | 0.500 |
-| memory/designer/_ud768/Default/Site Characteristics Database/CURRENT | 9 | 0 | n | 0.500 |
-| memory/designer/_ud768/Default/Site Characteristics Database/LOCK | 9 | 0 | n | 0.500 |
-| memory/designer/_ud768/Default/Site Characteristics Database/LOG | 9 | 0 | n | 0.500 |
-| memory/designer/_ud768/Default/Site Characteristics Database/LOG.old | 9 | 0 | n | 0.500 |
-| memory/designer/_ud768/Default/Site Characteristics Database/MANIFEST-000001 | 9 | 0 | n | 0.500 |
-| memory/designer/_ud768/Default/Storage/ext/ihmafllikibpmigkcoadcmckbfhibefp/def/declarative_performance_observer.db | 9 | 0 | n | 0.500 |
-| memory/designer/_ud768/Default/Storage/ext/ihmafllikibpmigkcoadcmckbfhibefp/def/declarative_performance_observer.db-journal | 9 | 0 | n | 0.500 |
-| memory/designer/_ud768/Default/Storage/ext/ihmafllikibpmigkcoadcmckbfhibefp/def/Code Cache/js/6f3a0dc5e6916f1e_0 | 9 | 0 | n | 0.500 |
-| memory/designer/_ud768/Default/Storage/ext/ihmafllikibpmigkcoadcmckbfhibefp/def/Code Cache/js/index | 9 | 0 | n | 0.500 |
-| memory/designer/_ud768/Default/Storage/ext/ihmafllikibpmigkcoadcmckbfhibefp/def/Code Cache/js/index-dir/the-real-index | 9 | 0 | n | 0.500 |
-| memory/designer/_ud768/Default/Storage/ext/ihmafllikibpmigkcoadcmckbfhibefp/def/Code Cache/wasm/index | 9 | 0 | n | 0.500 |
-| memory/designer/_ud768/Default/Storage/ext/ihmafllikibpmigkcoadcmckbfhibefp/def/Code Cache/wasm/index-dir/the-real-index | 9 | 0 | n | 0.500 |
-| memory/designer/_ud768/Default/Storage/ext/ihmafllikibpmigkcoadcmckbfhibefp/def/DawnGraphiteCache/data_0 | 9 | 0 | n | 0.500 |
-| memory/designer/_ud768/Default/Storage/ext/ihmafllikibpmigkcoadcmckbfhibefp/def/DawnGraphiteCache/data_1 | 9 | 0 | n | 0.500 |
-| memory/designer/_ud768/Default/Storage/ext/ihmafllikibpmigkcoadcmckbfhibefp/def/DawnGraphiteCache/data_2 | 9 | 0 | n | 0.500 |
-| memory/designer/_ud768/Default/Storage/ext/ihmafllikibpmigkcoadcmckbfhibefp/def/DawnGraphiteCache/data_3 | 9 | 0 | n | 0.500 |
-| memory/designer/_ud768/Default/Storage/ext/ihmafllikibpmigkcoadcmckbfhibefp/def/DawnGraphiteCache/index | 9 | 0 | n | 0.500 |
-| memory/designer/_ud768/Default/Storage/ext/ihmafllikibpmigkcoadcmckbfhibefp/def/DawnWebGPUCache/data_0 | 9 | 0 | n | 0.500 |
-| memory/designer/_ud768/Default/Storage/ext/ihmafllikibpmigkcoadcmckbfhibefp/def/DawnWebGPUCache/data_1 | 9 | 0 | n | 0.500 |
-| memory/designer/_ud768/Default/Storage/ext/ihmafllikibpmigkcoadcmckbfhibefp/def/DawnWebGPUCache/data_2 | 9 | 0 | n | 0.500 |
-| memory/designer/_ud768/Default/Storage/ext/ihmafllikibpmigkcoadcmckbfhibefp/def/DawnWebGPUCache/data_3 | 9 | 0 | n | 0.500 |
-| memory/designer/_ud768/Default/Storage/ext/ihmafllikibpmigkcoadcmckbfhibefp/def/DawnWebGPUCache/index | 9 | 0 | n | 0.500 |
-| memory/designer/_ud768/Default/Storage/ext/ihmafllikibpmigkcoadcmckbfhibefp/def/GPUCache/data_0 | 9 | 0 | n | 0.500 |
-| memory/designer/_ud768/Default/Storage/ext/ihmafllikibpmigkcoadcmckbfhibefp/def/GPUCache/data_1 | 9 | 0 | n | 0.500 |
-| memory/designer/_ud768/Default/Storage/ext/ihmafllikibpmigkcoadcmckbfhibefp/def/GPUCache/data_2 | 9 | 0 | n | 0.500 |
-| memory/designer/_ud768/Default/Storage/ext/ihmafllikibpmigkcoadcmckbfhibefp/def/GPUCache/data_3 | 9 | 0 | n | 0.500 |
-| memory/designer/_ud768/Default/Storage/ext/ihmafllikibpmigkcoadcmckbfhibefp/def/GPUCache/index | 9 | 0 | n | 0.500 |
-| memory/designer/_ud768/Default/Storage/ext/ihmafllikibpmigkcoadcmckbfhibefp/def/Local Storage/leveldb/000003.log | 9 | 0 | n | 0.500 |
-| memory/designer/_ud768/Default/Storage/ext/ihmafllikibpmigkcoadcmckbfhibefp/def/Local Storage/leveldb/CURRENT | 9 | 0 | n | 0.500 |
-| memory/designer/_ud768/Default/Storage/ext/ihmafllikibpmigkcoadcmckbfhibefp/def/Local Storage/leveldb/LOCK | 9 | 0 | n | 0.500 |
-| memory/designer/_ud768/Default/Storage/ext/ihmafllikibpmigkcoadcmckbfhibefp/def/Local Storage/leveldb/LOG | 9 | 0 | n | 0.500 |
-| memory/designer/_ud768/Default/Storage/ext/ihmafllikibpmigkcoadcmckbfhibefp/def/Local Storage/leveldb/MANIFEST-000001 | 9 | 0 | n | 0.500 |
-| memory/designer/_ud768/Default/Storage/ext/ihmafllikibpmigkcoadcmckbfhibefp/def/Network/Device Bound Sessions | 9 | 0 | n | 0.500 |
-| memory/designer/_ud768/Default/Storage/ext/ihmafllikibpmigkcoadcmckbfhibefp/def/Network/Device Bound Sessions-journal | 9 | 0 | n | 0.500 |
-| memory/designer/_ud768/Default/Storage/ext/ihmafllikibpmigkcoadcmckbfhibefp/def/Network/Network Persistent State | 9 | 0 | n | 0.500 |
-| memory/designer/_ud768/Default/Storage/ext/ihmafllikibpmigkcoadcmckbfhibefp/def/Network/NetworkDataMigrated | 9 | 0 | n | 0.500 |
-| memory/designer/_ud768/Default/Storage/ext/ihmafllikibpmigkcoadcmckbfhibefp/def/Network/Reporting and NEL | 9 | 0 | n | 0.500 |
-| memory/designer/_ud768/Default/Storage/ext/ihmafllikibpmigkcoadcmckbfhibefp/def/Network/Reporting and NEL-journal | 9 | 0 | n | 0.500 |
-| memory/designer/_ud768/Default/Storage/ext/ihmafllikibpmigkcoadcmckbfhibefp/def/Network/SCT Auditing Pending Reports | 9 | 0 | n | 0.500 |
-| memory/designer/_ud768/Default/Storage/ext/ihmafllikibpmigkcoadcmckbfhibefp/def/Network/Trust Tokens | 9 | 0 | n | 0.500 |
-| memory/designer/_ud768/Default/Storage/ext/ihmafllikibpmigkcoadcmckbfhibefp/def/Network/Trust Tokens-journal | 9 | 0 | n | 0.500 |
-| memory/designer/_ud768/Default/Storage/ext/ihmafllikibpmigkcoadcmckbfhibefp/def/Session Storage/000003.log | 9 | 0 | n | 0.500 |
-| memory/designer/_ud768/Default/Storage/ext/ihmafllikibpmigkcoadcmckbfhibefp/def/Session Storage/CURRENT | 9 | 0 | n | 0.500 |
-| memory/designer/_ud768/Default/Storage/ext/ihmafllikibpmigkcoadcmckbfhibefp/def/Session Storage/LOCK | 9 | 0 | n | 0.500 |
-| memory/designer/_ud768/Default/Storage/ext/ihmafllikibpmigkcoadcmckbfhibefp/def/Session Storage/LOG | 9 | 0 | n | 0.500 |
-| memory/designer/_ud768/Default/Storage/ext/ihmafllikibpmigkcoadcmckbfhibefp/def/Session Storage/MANIFEST-000001 | 9 | 0 | n | 0.500 |
-| memory/designer/_ud768/Default/Storage/ext/ihmafllikibpmigkcoadcmckbfhibefp/def/Shared Dictionary/db | 9 | 0 | n | 0.500 |
-| memory/designer/_ud768/Default/Storage/ext/ihmafllikibpmigkcoadcmckbfhibefp/def/Shared Dictionary/db-journal | 9 | 0 | n | 0.500 |
-| memory/designer/_ud768/Default/Storage/ext/ihmafllikibpmigkcoadcmckbfhibefp/def/Shared Dictionary/cache/index | 9 | 0 | n | 0.500 |
-| memory/designer/_ud768/Default/Storage/ext/ihmafllikibpmigkcoadcmckbfhibefp/def/Shared Dictionary/cache/index-dir/the-real-index | 9 | 0 | n | 0.500 |
-| memory/designer/_ud768/Default/Sync Data/LevelDB/000003.log | 9 | 0 | n | 0.500 |
-| memory/designer/_ud768/Default/Sync Data/LevelDB/CURRENT | 9 | 0 | n | 0.500 |
-| memory/designer/_ud768/Default/Sync Data/LevelDB/LOCK | 9 | 0 | n | 0.500 |
-| memory/designer/_ud768/Default/Sync Data/LevelDB/LOG | 9 | 0 | n | 0.500 |
-| memory/designer/_ud768/Default/Sync Data/LevelDB/LOG.old | 9 | 0 | n | 0.500 |
-| memory/designer/_ud768/Default/Sync Data/LevelDB/MANIFEST-000001 | 9 | 0 | n | 0.500 |
-| memory/designer/_ud768/Default/WebStorage/QuotaManager | 9 | 0 | n | 0.500 |
-| memory/designer/_ud768/Default/WebStorage/QuotaManager-journal | 9 | 0 | n | 0.500 |
-| memory/designer/_ud768/extensions_crx_cache/metadata.json | 9 | 0 | n | 0.500 |
-| memory/designer/_ud768/GPUPersistentCache/DawnGraphiteCache/23IMHJGI2WIIJ3PDLCHAHUJAGHTLTEBB/cache.db | 9 | 0 | n | 0.500 |
-| memory/designer/_ud768/GPUPersistentCache/DawnGraphiteCache/23IMHJGI2WIIJ3PDLCHAHUJAGHTLTEBB/cache.db-wal | 9 | 0 | n | 0.500 |
-| memory/designer/_ud768/GPUPersistentCache/DawnGraphiteCache/23IMHJGI2WIIJ3PDLCHAHUJAGHTLTEBB/cache.journal | 9 | 0 | n | 0.500 |
-| memory/designer/_ud768/GrShaderCache/data_0 | 9 | 0 | n | 0.500 |
-| memory/designer/_ud768/GrShaderCache/data_1 | 9 | 0 | n | 0.500 |
-| memory/designer/_ud768/GrShaderCache/data_2 | 9 | 0 | n | 0.500 |
-| memory/designer/_ud768/GrShaderCache/data_3 | 9 | 0 | n | 0.500 |
-| memory/designer/_ud768/GrShaderCache/index | 9 | 0 | n | 0.500 |
-| memory/designer/_ud768/Nurturing/campaign_history | 9 | 0 | n | 0.500 |
-| memory/designer/_ud768/Nurturing/campaign_history-journal | 9 | 0 | n | 0.500 |
-| memory/designer/_ud768/ShaderCache/data_0 | 9 | 0 | n | 0.500 |
-| memory/designer/_ud768/ShaderCache/data_1 | 9 | 0 | n | 0.500 |
-| memory/designer/_ud768/ShaderCache/data_2 | 9 | 0 | n | 0.500 |
-| memory/designer/_ud768/ShaderCache/data_3 | 9 | 0 | n | 0.500 |
-| memory/designer/_ud768/ShaderCache/index | 9 | 0 | n | 0.500 |
-| memory/designer/_ud768/SmartScreen/RemoteData/customSettings | 9 | 0 | n | 0.500 |
-| memory/designer/_ud768/SmartScreen/RemoteData/customSettings_F95BA787499AB4FA9EFFF472CE383A14 | 9 | 0 | n | 0.500 |
-| memory/designer/_ud768/SmartScreen/RemoteData/edgeSettings | 9 | 0 | n | 0.500 |
-| memory/designer/_ud768/SmartScreen/RemoteData/edgeSettings_2.0-0 | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1024_1/FirstLaunchAfterInstallation | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1024_1/Last Version | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1024_1/Local State | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1024_1/Variations | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1024_1/VariationsRuntimeSeedV2 | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1024_1/VariationsSafeSeedV2 | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1024_1/VariationsSeedV2 | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1024_1/Crashpad/settings.dat | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1024_1/Crashpad/throttle_store.dat | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1024_1/Default/Affiliation Database | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1024_1/Default/Affiliation Database-journal | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1024_1/Default/declarative_performance_observer.db | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1024_1/Default/declarative_performance_observer.db-journal | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1024_1/Default/Favicons | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1024_1/Default/Favicons-journal | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1024_1/Default/History | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1024_1/Default/History-journal | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1024_1/Default/HubApps Icons | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1024_1/Default/HubApps Icons-journal | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1024_1/Default/load_statistics.db | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1024_1/Default/load_statistics.db-shm | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1024_1/Default/load_statistics.db-wal | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1024_1/Default/LOCK | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1024_1/Default/LOG | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1024_1/Default/Login Data | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1024_1/Default/Login Data For Account | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1024_1/Default/Login Data For Account-journal | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1024_1/Default/Login Data-journal | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1024_1/Default/README | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1024_1/Default/ServerCertificate | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1024_1/Default/ServerCertificate-journal | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1024_1/Default/Top Sites | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1024_1/Default/Top Sites-journal | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1024_1/Default/Vpn Tokens | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1024_1/Default/Vpn Tokens-journal | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1024_1/Default/Web Data | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1024_1/Default/Web Data-journal | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1024_1/Default/ClientCertificates/LOCK | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1024_1/Default/ClientCertificates/LOG | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1024_1/Default/Code Cache/js/index | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1024_1/Default/Code Cache/js/index-dir/the-real-index | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1024_1/Default/Code Cache/wasm/index | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1024_1/Default/Code Cache/wasm/index-dir/the-real-index | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1024_1/Default/commerce_subscription_db/LOCK | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1024_1/Default/commerce_subscription_db/LOG | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1024_1/Default/DawnGraphiteCache/data_0 | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1024_1/Default/DawnGraphiteCache/data_1 | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1024_1/Default/DawnGraphiteCache/data_2 | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1024_1/Default/DawnGraphiteCache/data_3 | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1024_1/Default/DawnGraphiteCache/index | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1024_1/Default/DawnWebGPUCache/data_0 | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1024_1/Default/DawnWebGPUCache/data_1 | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1024_1/Default/DawnWebGPUCache/data_2 | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1024_1/Default/DawnWebGPUCache/data_3 | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1024_1/Default/DawnWebGPUCache/index | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1024_1/Default/discounts_db/LOCK | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1024_1/Default/discounts_db/LOG | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1024_1/Default/discount_infos_db/LOCK | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1024_1/Default/discount_infos_db/LOG | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1024_1/Default/EdgePushStorageWithConnectTokenAndKey/LOCK | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1024_1/Default/EdgePushStorageWithConnectTokenAndKey/LOG | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1024_1/Default/Extension Rules/000003.log | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1024_1/Default/Extension Rules/CURRENT | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1024_1/Default/Extension Rules/LOCK | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1024_1/Default/Extension Rules/LOG | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1024_1/Default/Extension Rules/MANIFEST-000001 | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1024_1/Default/Extension Scripts/000003.log | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1024_1/Default/Extension Scripts/CURRENT | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1024_1/Default/Extension Scripts/LOCK | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1024_1/Default/Extension Scripts/LOG | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1024_1/Default/Extension Scripts/MANIFEST-000001 | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1024_1/Default/Extension State/000003.log | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1024_1/Default/Extension State/CURRENT | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1024_1/Default/Extension State/LOCK | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1024_1/Default/Extension State/LOG | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1024_1/Default/Extension State/MANIFEST-000001 | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1024_1/Default/GPUCache/data_0 | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1024_1/Default/GPUCache/data_1 | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1024_1/Default/GPUCache/data_2 | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1024_1/Default/GPUCache/data_3 | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1024_1/Default/GPUCache/index | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1024_1/Default/Network/NetworkDataMigrated | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1024_1/Default/Nurturing/campaign_history | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1024_1/Default/Nurturing/campaign_history-journal | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1024_1/Default/parcel_tracking_db/LOCK | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1024_1/Default/parcel_tracking_db/LOG | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1024_1/Default/PersistentOriginTrials/LOCK | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1024_1/Default/PersistentOriginTrials/LOG | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1024_1/Default/Service Worker/Database/000003.log | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1024_1/Default/Service Worker/Database/CURRENT | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1024_1/Default/Service Worker/Database/LOCK | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1024_1/Default/Service Worker/Database/LOG | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1024_1/Default/Service Worker/Database/MANIFEST-000001 | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1024_1/Default/Service Worker/ScriptCache/2cc80dabc69f58b6_0 | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1024_1/Default/Service Worker/ScriptCache/4cb013792b196a35_0 | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1024_1/Default/Service Worker/ScriptCache/f1cdccba37924bda_0 | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1024_1/Default/Service Worker/ScriptCache/index | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1024_1/Default/Service Worker/ScriptCache/index-dir/the-real-index | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1024_1/Default/shared_proto_db/000003.log | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1024_1/Default/shared_proto_db/CURRENT | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1024_1/Default/shared_proto_db/LOCK | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1024_1/Default/shared_proto_db/LOG | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1024_1/Default/shared_proto_db/MANIFEST-000001 | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1024_1/Default/shared_proto_db/metadata/000003.log | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1024_1/Default/shared_proto_db/metadata/CURRENT | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1024_1/Default/shared_proto_db/metadata/LOCK | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1024_1/Default/shared_proto_db/metadata/LOG | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1024_1/Default/shared_proto_db/metadata/MANIFEST-000001 | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1024_1/Default/Site Characteristics Database/000003.log | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1024_1/Default/Site Characteristics Database/CURRENT | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1024_1/Default/Site Characteristics Database/LOCK | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1024_1/Default/Site Characteristics Database/LOG | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1024_1/Default/Site Characteristics Database/MANIFEST-000001 | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1024_1/Default/Storage/ext/ihmafllikibpmigkcoadcmckbfhibefp/def/declarative_performance_observer.db | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1024_1/Default/Storage/ext/ihmafllikibpmigkcoadcmckbfhibefp/def/declarative_performance_observer.db-journal | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1024_1/Default/Storage/ext/ihmafllikibpmigkcoadcmckbfhibefp/def/Code Cache/js/index | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1024_1/Default/Storage/ext/ihmafllikibpmigkcoadcmckbfhibefp/def/Code Cache/js/index-dir/the-real-index | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1024_1/Default/Storage/ext/ihmafllikibpmigkcoadcmckbfhibefp/def/Code Cache/wasm/index | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1024_1/Default/Storage/ext/ihmafllikibpmigkcoadcmckbfhibefp/def/Code Cache/wasm/index-dir/the-real-index | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1024_1/Default/Storage/ext/ihmafllikibpmigkcoadcmckbfhibefp/def/DawnGraphiteCache/data_0 | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1024_1/Default/Storage/ext/ihmafllikibpmigkcoadcmckbfhibefp/def/DawnGraphiteCache/data_1 | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1024_1/Default/Storage/ext/ihmafllikibpmigkcoadcmckbfhibefp/def/DawnGraphiteCache/data_2 | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1024_1/Default/Storage/ext/ihmafllikibpmigkcoadcmckbfhibefp/def/DawnGraphiteCache/data_3 | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1024_1/Default/Storage/ext/ihmafllikibpmigkcoadcmckbfhibefp/def/DawnGraphiteCache/index | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1024_1/Default/Storage/ext/ihmafllikibpmigkcoadcmckbfhibefp/def/DawnWebGPUCache/data_0 | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1024_1/Default/Storage/ext/ihmafllikibpmigkcoadcmckbfhibefp/def/DawnWebGPUCache/data_1 | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1024_1/Default/Storage/ext/ihmafllikibpmigkcoadcmckbfhibefp/def/DawnWebGPUCache/data_2 | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1024_1/Default/Storage/ext/ihmafllikibpmigkcoadcmckbfhibefp/def/DawnWebGPUCache/data_3 | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1024_1/Default/Storage/ext/ihmafllikibpmigkcoadcmckbfhibefp/def/DawnWebGPUCache/index | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1024_1/Default/Storage/ext/ihmafllikibpmigkcoadcmckbfhibefp/def/GPUCache/data_0 | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1024_1/Default/Storage/ext/ihmafllikibpmigkcoadcmckbfhibefp/def/GPUCache/data_1 | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1024_1/Default/Storage/ext/ihmafllikibpmigkcoadcmckbfhibefp/def/GPUCache/data_2 | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1024_1/Default/Storage/ext/ihmafllikibpmigkcoadcmckbfhibefp/def/GPUCache/data_3 | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1024_1/Default/Storage/ext/ihmafllikibpmigkcoadcmckbfhibefp/def/GPUCache/index | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1024_1/Default/Storage/ext/ihmafllikibpmigkcoadcmckbfhibefp/def/Network/NetworkDataMigrated | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1024_1/Default/Sync Data/LevelDB/000003.log | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1024_1/Default/Sync Data/LevelDB/CURRENT | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1024_1/Default/Sync Data/LevelDB/LOCK | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1024_1/Default/Sync Data/LevelDB/LOG | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1024_1/Default/Sync Data/LevelDB/MANIFEST-000001 | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1024_1/Default/WebStorage/QuotaManager | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1024_1/Default/WebStorage/QuotaManager-journal | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1024_1/GPUPersistentCache/DawnGraphiteCache/23IMHJGI2WIIJ3PDLCHAHUJAGHTLTEBB/cache.db | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1024_1/GPUPersistentCache/DawnGraphiteCache/23IMHJGI2WIIJ3PDLCHAHUJAGHTLTEBB/cache.db-wal | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1024_1/GPUPersistentCache/DawnGraphiteCache/23IMHJGI2WIIJ3PDLCHAHUJAGHTLTEBB/cache.journal | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1024_1/Nurturing/campaign_history | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1024_1/Nurturing/campaign_history-journal | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1024_1/ShaderCache/data_0 | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1024_1/ShaderCache/data_1 | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1024_1/ShaderCache/data_2 | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1024_1/ShaderCache/data_3 | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1024_1/ShaderCache/index | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1024_1/SmartScreen/RemoteData/customSettings | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1024_1/SmartScreen/RemoteData/customSettings_F95BA787499AB4FA9EFFF472CE383A14 | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1024_2/FirstLaunchAfterInstallation | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1024_2/Last Version | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1024_2/Local State | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1024_2/Variations | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1024_2/VariationsRuntimeSeedV2 | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1024_2/VariationsSafeSeedV2 | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1024_2/VariationsSeedV2 | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1024_2/Crashpad/settings.dat | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1024_2/Crashpad/throttle_store.dat | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1024_2/Default/Affiliation Database | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1024_2/Default/Affiliation Database-journal | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1024_2/Default/declarative_performance_observer.db | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1024_2/Default/declarative_performance_observer.db-journal | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1024_2/Default/Favicons | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1024_2/Default/Favicons-journal | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1024_2/Default/History | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1024_2/Default/History-journal | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1024_2/Default/HubApps Icons | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1024_2/Default/HubApps Icons-journal | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1024_2/Default/load_statistics.db | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1024_2/Default/load_statistics.db-shm | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1024_2/Default/load_statistics.db-wal | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1024_2/Default/LOCK | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1024_2/Default/LOG | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1024_2/Default/Login Data | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1024_2/Default/Login Data For Account | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1024_2/Default/Login Data For Account-journal | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1024_2/Default/Login Data-journal | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1024_2/Default/README | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1024_2/Default/ServerCertificate | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1024_2/Default/ServerCertificate-journal | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1024_2/Default/Top Sites | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1024_2/Default/Top Sites-journal | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1024_2/Default/Vpn Tokens | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1024_2/Default/Vpn Tokens-journal | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1024_2/Default/Web Data | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1024_2/Default/Web Data-journal | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1024_2/Default/ClientCertificates/LOCK | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1024_2/Default/ClientCertificates/LOG | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1024_2/Default/Code Cache/js/index | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1024_2/Default/Code Cache/js/index-dir/the-real-index | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1024_2/Default/Code Cache/wasm/index | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1024_2/Default/Code Cache/wasm/index-dir/the-real-index | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1024_2/Default/commerce_subscription_db/LOCK | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1024_2/Default/commerce_subscription_db/LOG | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1024_2/Default/DawnGraphiteCache/data_0 | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1024_2/Default/DawnGraphiteCache/data_1 | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1024_2/Default/DawnGraphiteCache/data_2 | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1024_2/Default/DawnGraphiteCache/data_3 | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1024_2/Default/DawnGraphiteCache/index | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1024_2/Default/DawnWebGPUCache/data_0 | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1024_2/Default/DawnWebGPUCache/data_1 | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1024_2/Default/DawnWebGPUCache/data_2 | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1024_2/Default/DawnWebGPUCache/data_3 | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1024_2/Default/DawnWebGPUCache/index | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1024_2/Default/discounts_db/LOCK | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1024_2/Default/discounts_db/LOG | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1024_2/Default/discount_infos_db/LOCK | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1024_2/Default/discount_infos_db/LOG | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1024_2/Default/EdgePushStorageWithConnectTokenAndKey/LOCK | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1024_2/Default/EdgePushStorageWithConnectTokenAndKey/LOG | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1024_2/Default/Extension Rules/000003.log | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1024_2/Default/Extension Rules/CURRENT | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1024_2/Default/Extension Rules/LOCK | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1024_2/Default/Extension Rules/LOG | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1024_2/Default/Extension Rules/MANIFEST-000001 | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1024_2/Default/Extension Scripts/000003.log | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1024_2/Default/Extension Scripts/CURRENT | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1024_2/Default/Extension Scripts/LOCK | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1024_2/Default/Extension Scripts/LOG | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1024_2/Default/Extension Scripts/MANIFEST-000001 | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1024_2/Default/Extension State/000003.log | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1024_2/Default/Extension State/CURRENT | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1024_2/Default/Extension State/LOCK | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1024_2/Default/Extension State/LOG | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1024_2/Default/Extension State/MANIFEST-000001 | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1024_2/Default/GPUCache/data_0 | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1024_2/Default/GPUCache/data_1 | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1024_2/Default/GPUCache/data_2 | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1024_2/Default/GPUCache/data_3 | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1024_2/Default/GPUCache/index | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1024_2/Default/Network/NetworkDataMigrated | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1024_2/Default/Nurturing/campaign_history | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1024_2/Default/Nurturing/campaign_history-journal | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1024_2/Default/parcel_tracking_db/LOCK | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1024_2/Default/parcel_tracking_db/LOG | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1024_2/Default/PersistentOriginTrials/LOCK | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1024_2/Default/PersistentOriginTrials/LOG | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1024_2/Default/Service Worker/Database/000003.log | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1024_2/Default/Service Worker/Database/CURRENT | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1024_2/Default/Service Worker/Database/LOCK | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1024_2/Default/Service Worker/Database/LOG | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1024_2/Default/Service Worker/Database/MANIFEST-000001 | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1024_2/Default/Service Worker/ScriptCache/2cc80dabc69f58b6_0 | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1024_2/Default/Service Worker/ScriptCache/4cb013792b196a35_0 | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1024_2/Default/Service Worker/ScriptCache/f1cdccba37924bda_0 | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1024_2/Default/Service Worker/ScriptCache/index | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1024_2/Default/Service Worker/ScriptCache/index-dir/the-real-index | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1024_2/Default/shared_proto_db/000003.log | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1024_2/Default/shared_proto_db/CURRENT | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1024_2/Default/shared_proto_db/LOCK | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1024_2/Default/shared_proto_db/LOG | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1024_2/Default/shared_proto_db/MANIFEST-000001 | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1024_2/Default/shared_proto_db/metadata/000003.log | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1024_2/Default/shared_proto_db/metadata/CURRENT | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1024_2/Default/shared_proto_db/metadata/LOCK | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1024_2/Default/shared_proto_db/metadata/LOG | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1024_2/Default/shared_proto_db/metadata/MANIFEST-000001 | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1024_2/Default/Site Characteristics Database/000003.log | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1024_2/Default/Site Characteristics Database/CURRENT | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1024_2/Default/Site Characteristics Database/LOCK | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1024_2/Default/Site Characteristics Database/LOG | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1024_2/Default/Site Characteristics Database/MANIFEST-000001 | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1024_2/Default/Storage/ext/ihmafllikibpmigkcoadcmckbfhibefp/def/declarative_performance_observer.db | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1024_2/Default/Storage/ext/ihmafllikibpmigkcoadcmckbfhibefp/def/declarative_performance_observer.db-journal | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1024_2/Default/Storage/ext/ihmafllikibpmigkcoadcmckbfhibefp/def/Code Cache/js/index | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1024_2/Default/Storage/ext/ihmafllikibpmigkcoadcmckbfhibefp/def/Code Cache/js/index-dir/the-real-index | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1024_2/Default/Storage/ext/ihmafllikibpmigkcoadcmckbfhibefp/def/Code Cache/wasm/index | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1024_2/Default/Storage/ext/ihmafllikibpmigkcoadcmckbfhibefp/def/Code Cache/wasm/index-dir/the-real-index | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1024_2/Default/Storage/ext/ihmafllikibpmigkcoadcmckbfhibefp/def/DawnGraphiteCache/data_0 | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1024_2/Default/Storage/ext/ihmafllikibpmigkcoadcmckbfhibefp/def/DawnGraphiteCache/data_1 | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1024_2/Default/Storage/ext/ihmafllikibpmigkcoadcmckbfhibefp/def/DawnGraphiteCache/data_2 | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1024_2/Default/Storage/ext/ihmafllikibpmigkcoadcmckbfhibefp/def/DawnGraphiteCache/data_3 | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1024_2/Default/Storage/ext/ihmafllikibpmigkcoadcmckbfhibefp/def/DawnGraphiteCache/index | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1024_2/Default/Storage/ext/ihmafllikibpmigkcoadcmckbfhibefp/def/DawnWebGPUCache/data_0 | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1024_2/Default/Storage/ext/ihmafllikibpmigkcoadcmckbfhibefp/def/DawnWebGPUCache/data_1 | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1024_2/Default/Storage/ext/ihmafllikibpmigkcoadcmckbfhibefp/def/DawnWebGPUCache/data_2 | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1024_2/Default/Storage/ext/ihmafllikibpmigkcoadcmckbfhibefp/def/DawnWebGPUCache/data_3 | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1024_2/Default/Storage/ext/ihmafllikibpmigkcoadcmckbfhibefp/def/DawnWebGPUCache/index | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1024_2/Default/Storage/ext/ihmafllikibpmigkcoadcmckbfhibefp/def/GPUCache/data_0 | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1024_2/Default/Storage/ext/ihmafllikibpmigkcoadcmckbfhibefp/def/GPUCache/data_1 | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1024_2/Default/Storage/ext/ihmafllikibpmigkcoadcmckbfhibefp/def/GPUCache/data_2 | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1024_2/Default/Storage/ext/ihmafllikibpmigkcoadcmckbfhibefp/def/GPUCache/data_3 | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1024_2/Default/Storage/ext/ihmafllikibpmigkcoadcmckbfhibefp/def/GPUCache/index | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1024_2/Default/Storage/ext/ihmafllikibpmigkcoadcmckbfhibefp/def/Network/NetworkDataMigrated | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1024_2/Default/Sync Data/LevelDB/000003.log | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1024_2/Default/Sync Data/LevelDB/CURRENT | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1024_2/Default/Sync Data/LevelDB/LOCK | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1024_2/Default/Sync Data/LevelDB/LOG | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1024_2/Default/Sync Data/LevelDB/MANIFEST-000001 | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1024_2/Default/WebStorage/QuotaManager | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1024_2/Default/WebStorage/QuotaManager-journal | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1024_2/GPUPersistentCache/DawnGraphiteCache/23IMHJGI2WIIJ3PDLCHAHUJAGHTLTEBB/cache.db | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1024_2/GPUPersistentCache/DawnGraphiteCache/23IMHJGI2WIIJ3PDLCHAHUJAGHTLTEBB/cache.db-wal | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1024_2/GPUPersistentCache/DawnGraphiteCache/23IMHJGI2WIIJ3PDLCHAHUJAGHTLTEBB/cache.journal | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1024_2/Nurturing/campaign_history | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1024_2/Nurturing/campaign_history-journal | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1024_2/ShaderCache/data_0 | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1024_2/ShaderCache/data_1 | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1024_2/ShaderCache/data_2 | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1024_2/ShaderCache/data_3 | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1024_2/ShaderCache/index | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1024_2/SmartScreen/RemoteData/customSettings | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1024_2/SmartScreen/RemoteData/customSettings_F95BA787499AB4FA9EFFF472CE383A14 | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1024_3/FirstLaunchAfterInstallation | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1024_3/Last Version | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1024_3/Local State | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1024_3/Variations | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1024_3/VariationsRuntimeSeedV2 | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1024_3/VariationsSafeSeedV2 | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1024_3/VariationsSeedV2 | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1024_3/Crashpad/settings.dat | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1024_3/Crashpad/throttle_store.dat | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1024_3/Default/Affiliation Database | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1024_3/Default/Affiliation Database-journal | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1024_3/Default/declarative_performance_observer.db | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1024_3/Default/declarative_performance_observer.db-journal | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1024_3/Default/Favicons | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1024_3/Default/Favicons-journal | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1024_3/Default/History | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1024_3/Default/History-journal | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1024_3/Default/HubApps Icons | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1024_3/Default/HubApps Icons-journal | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1024_3/Default/load_statistics.db | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1024_3/Default/load_statistics.db-shm | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1024_3/Default/load_statistics.db-wal | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1024_3/Default/LOCK | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1024_3/Default/LOG | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1024_3/Default/Login Data | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1024_3/Default/Login Data For Account | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1024_3/Default/Login Data For Account-journal | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1024_3/Default/Login Data-journal | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1024_3/Default/README | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1024_3/Default/ServerCertificate | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1024_3/Default/ServerCertificate-journal | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1024_3/Default/Top Sites | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1024_3/Default/Top Sites-journal | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1024_3/Default/Vpn Tokens | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1024_3/Default/Vpn Tokens-journal | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1024_3/Default/Web Data | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1024_3/Default/Web Data-journal | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1024_3/Default/ClientCertificates/LOCK | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1024_3/Default/ClientCertificates/LOG | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1024_3/Default/Code Cache/js/index | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1024_3/Default/Code Cache/js/index-dir/the-real-index | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1024_3/Default/Code Cache/wasm/index | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1024_3/Default/Code Cache/wasm/index-dir/the-real-index | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1024_3/Default/commerce_subscription_db/LOCK | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1024_3/Default/commerce_subscription_db/LOG | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1024_3/Default/DawnGraphiteCache/data_0 | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1024_3/Default/DawnGraphiteCache/data_1 | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1024_3/Default/DawnGraphiteCache/data_2 | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1024_3/Default/DawnGraphiteCache/data_3 | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1024_3/Default/DawnGraphiteCache/index | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1024_3/Default/DawnWebGPUCache/data_0 | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1024_3/Default/DawnWebGPUCache/data_1 | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1024_3/Default/DawnWebGPUCache/data_2 | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1024_3/Default/DawnWebGPUCache/data_3 | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1024_3/Default/DawnWebGPUCache/index | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1024_3/Default/discounts_db/LOCK | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1024_3/Default/discounts_db/LOG | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1024_3/Default/discount_infos_db/LOCK | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1024_3/Default/discount_infos_db/LOG | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1024_3/Default/EdgePushStorageWithConnectTokenAndKey/LOCK | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1024_3/Default/EdgePushStorageWithConnectTokenAndKey/LOG | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1024_3/Default/Extension Rules/000003.log | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1024_3/Default/Extension Rules/CURRENT | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1024_3/Default/Extension Rules/LOCK | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1024_3/Default/Extension Rules/LOG | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1024_3/Default/Extension Rules/MANIFEST-000001 | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1024_3/Default/Extension Scripts/000003.log | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1024_3/Default/Extension Scripts/CURRENT | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1024_3/Default/Extension Scripts/LOCK | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1024_3/Default/Extension Scripts/LOG | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1024_3/Default/Extension Scripts/MANIFEST-000001 | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1024_3/Default/Extension State/000003.log | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1024_3/Default/Extension State/CURRENT | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1024_3/Default/Extension State/LOCK | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1024_3/Default/Extension State/LOG | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1024_3/Default/Extension State/MANIFEST-000001 | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1024_3/Default/GPUCache/data_0 | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1024_3/Default/GPUCache/data_1 | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1024_3/Default/GPUCache/data_2 | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1024_3/Default/GPUCache/data_3 | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1024_3/Default/GPUCache/index | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1024_3/Default/Network/NetworkDataMigrated | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1024_3/Default/Nurturing/campaign_history | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1024_3/Default/Nurturing/campaign_history-journal | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1024_3/Default/parcel_tracking_db/LOCK | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1024_3/Default/parcel_tracking_db/LOG | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1024_3/Default/PersistentOriginTrials/LOCK | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1024_3/Default/PersistentOriginTrials/LOG | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1024_3/Default/Service Worker/Database/000003.log | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1024_3/Default/Service Worker/Database/CURRENT | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1024_3/Default/Service Worker/Database/LOCK | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1024_3/Default/Service Worker/Database/LOG | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1024_3/Default/Service Worker/Database/MANIFEST-000001 | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1024_3/Default/Service Worker/ScriptCache/2cc80dabc69f58b6_0 | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1024_3/Default/Service Worker/ScriptCache/4cb013792b196a35_0 | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1024_3/Default/Service Worker/ScriptCache/f1cdccba37924bda_0 | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1024_3/Default/Service Worker/ScriptCache/index | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1024_3/Default/Service Worker/ScriptCache/index-dir/the-real-index | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1024_3/Default/shared_proto_db/000003.log | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1024_3/Default/shared_proto_db/CURRENT | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1024_3/Default/shared_proto_db/LOCK | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1024_3/Default/shared_proto_db/LOG | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1024_3/Default/shared_proto_db/MANIFEST-000001 | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1024_3/Default/shared_proto_db/metadata/000003.log | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1024_3/Default/shared_proto_db/metadata/CURRENT | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1024_3/Default/shared_proto_db/metadata/LOCK | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1024_3/Default/shared_proto_db/metadata/LOG | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1024_3/Default/shared_proto_db/metadata/MANIFEST-000001 | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1024_3/Default/Site Characteristics Database/000003.log | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1024_3/Default/Site Characteristics Database/CURRENT | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1024_3/Default/Site Characteristics Database/LOCK | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1024_3/Default/Site Characteristics Database/LOG | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1024_3/Default/Site Characteristics Database/MANIFEST-000001 | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1024_3/Default/Storage/ext/ihmafllikibpmigkcoadcmckbfhibefp/def/declarative_performance_observer.db | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1024_3/Default/Storage/ext/ihmafllikibpmigkcoadcmckbfhibefp/def/declarative_performance_observer.db-journal | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1024_3/Default/Storage/ext/ihmafllikibpmigkcoadcmckbfhibefp/def/Code Cache/js/index | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1024_3/Default/Storage/ext/ihmafllikibpmigkcoadcmckbfhibefp/def/Code Cache/js/index-dir/the-real-index | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1024_3/Default/Storage/ext/ihmafllikibpmigkcoadcmckbfhibefp/def/Code Cache/wasm/index | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1024_3/Default/Storage/ext/ihmafllikibpmigkcoadcmckbfhibefp/def/Code Cache/wasm/index-dir/the-real-index | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1024_3/Default/Storage/ext/ihmafllikibpmigkcoadcmckbfhibefp/def/DawnGraphiteCache/data_0 | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1024_3/Default/Storage/ext/ihmafllikibpmigkcoadcmckbfhibefp/def/DawnGraphiteCache/data_1 | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1024_3/Default/Storage/ext/ihmafllikibpmigkcoadcmckbfhibefp/def/DawnGraphiteCache/data_2 | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1024_3/Default/Storage/ext/ihmafllikibpmigkcoadcmckbfhibefp/def/DawnGraphiteCache/data_3 | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1024_3/Default/Storage/ext/ihmafllikibpmigkcoadcmckbfhibefp/def/DawnGraphiteCache/index | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1024_3/Default/Storage/ext/ihmafllikibpmigkcoadcmckbfhibefp/def/DawnWebGPUCache/data_0 | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1024_3/Default/Storage/ext/ihmafllikibpmigkcoadcmckbfhibefp/def/DawnWebGPUCache/data_1 | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1024_3/Default/Storage/ext/ihmafllikibpmigkcoadcmckbfhibefp/def/DawnWebGPUCache/data_2 | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1024_3/Default/Storage/ext/ihmafllikibpmigkcoadcmckbfhibefp/def/DawnWebGPUCache/data_3 | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1024_3/Default/Storage/ext/ihmafllikibpmigkcoadcmckbfhibefp/def/DawnWebGPUCache/index | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1024_3/Default/Storage/ext/ihmafllikibpmigkcoadcmckbfhibefp/def/GPUCache/data_0 | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1024_3/Default/Storage/ext/ihmafllikibpmigkcoadcmckbfhibefp/def/GPUCache/data_1 | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1024_3/Default/Storage/ext/ihmafllikibpmigkcoadcmckbfhibefp/def/GPUCache/data_2 | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1024_3/Default/Storage/ext/ihmafllikibpmigkcoadcmckbfhibefp/def/GPUCache/data_3 | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1024_3/Default/Storage/ext/ihmafllikibpmigkcoadcmckbfhibefp/def/GPUCache/index | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1024_3/Default/Storage/ext/ihmafllikibpmigkcoadcmckbfhibefp/def/Network/NetworkDataMigrated | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1024_3/Default/Sync Data/LevelDB/000003.log | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1024_3/Default/Sync Data/LevelDB/CURRENT | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1024_3/Default/Sync Data/LevelDB/LOCK | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1024_3/Default/Sync Data/LevelDB/LOG | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1024_3/Default/Sync Data/LevelDB/MANIFEST-000001 | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1024_3/Default/WebStorage/QuotaManager | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1024_3/Default/WebStorage/QuotaManager-journal | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1024_3/GPUPersistentCache/DawnGraphiteCache/23IMHJGI2WIIJ3PDLCHAHUJAGHTLTEBB/cache.db | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1024_3/GPUPersistentCache/DawnGraphiteCache/23IMHJGI2WIIJ3PDLCHAHUJAGHTLTEBB/cache.db-wal | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1024_3/GPUPersistentCache/DawnGraphiteCache/23IMHJGI2WIIJ3PDLCHAHUJAGHTLTEBB/cache.journal | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1024_3/Nurturing/campaign_history | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1024_3/Nurturing/campaign_history-journal | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1024_3/ShaderCache/data_0 | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1024_3/ShaderCache/data_1 | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1024_3/ShaderCache/data_2 | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1024_3/ShaderCache/data_3 | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1024_3/ShaderCache/index | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1024_3/SmartScreen/RemoteData/customSettings | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1024_3/SmartScreen/RemoteData/customSettings_F95BA787499AB4FA9EFFF472CE383A14 | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1024_4/FirstLaunchAfterInstallation | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1024_4/Last Version | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1024_4/Local State | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1024_4/Variations | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1024_4/VariationsRuntimeSeedV2 | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1024_4/VariationsSafeSeedV2 | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1024_4/VariationsSeedV2 | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1024_4/Crashpad/settings.dat | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1024_4/Crashpad/throttle_store.dat | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1024_4/Default/Affiliation Database | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1024_4/Default/Affiliation Database-journal | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1024_4/Default/declarative_performance_observer.db | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1024_4/Default/declarative_performance_observer.db-journal | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1024_4/Default/Favicons | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1024_4/Default/Favicons-journal | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1024_4/Default/History | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1024_4/Default/History-journal | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1024_4/Default/HubApps Icons | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1024_4/Default/HubApps Icons-journal | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1024_4/Default/load_statistics.db | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1024_4/Default/load_statistics.db-shm | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1024_4/Default/load_statistics.db-wal | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1024_4/Default/LOCK | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1024_4/Default/LOG | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1024_4/Default/Login Data | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1024_4/Default/Login Data For Account | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1024_4/Default/Login Data For Account-journal | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1024_4/Default/Login Data-journal | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1024_4/Default/README | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1024_4/Default/ServerCertificate | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1024_4/Default/ServerCertificate-journal | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1024_4/Default/Top Sites | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1024_4/Default/Top Sites-journal | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1024_4/Default/Vpn Tokens | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1024_4/Default/Vpn Tokens-journal | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1024_4/Default/Web Data | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1024_4/Default/Web Data-journal | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1024_4/Default/ClientCertificates/LOCK | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1024_4/Default/ClientCertificates/LOG | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1024_4/Default/Code Cache/js/index | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1024_4/Default/Code Cache/js/index-dir/the-real-index | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1024_4/Default/Code Cache/wasm/index | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1024_4/Default/Code Cache/wasm/index-dir/the-real-index | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1024_4/Default/commerce_subscription_db/LOCK | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1024_4/Default/commerce_subscription_db/LOG | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1024_4/Default/DawnGraphiteCache/data_0 | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1024_4/Default/DawnGraphiteCache/data_1 | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1024_4/Default/DawnGraphiteCache/data_2 | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1024_4/Default/DawnGraphiteCache/data_3 | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1024_4/Default/DawnGraphiteCache/index | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1024_4/Default/DawnWebGPUCache/data_0 | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1024_4/Default/DawnWebGPUCache/data_1 | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1024_4/Default/DawnWebGPUCache/data_2 | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1024_4/Default/DawnWebGPUCache/data_3 | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1024_4/Default/DawnWebGPUCache/index | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1024_4/Default/discounts_db/LOCK | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1024_4/Default/discounts_db/LOG | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1024_4/Default/discount_infos_db/LOCK | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1024_4/Default/discount_infos_db/LOG | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1024_4/Default/EdgePushStorageWithConnectTokenAndKey/LOCK | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1024_4/Default/EdgePushStorageWithConnectTokenAndKey/LOG | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1024_4/Default/Extension Rules/000003.log | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1024_4/Default/Extension Rules/CURRENT | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1024_4/Default/Extension Rules/LOCK | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1024_4/Default/Extension Rules/LOG | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1024_4/Default/Extension Rules/MANIFEST-000001 | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1024_4/Default/Extension Scripts/000003.log | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1024_4/Default/Extension Scripts/CURRENT | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1024_4/Default/Extension Scripts/LOCK | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1024_4/Default/Extension Scripts/LOG | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1024_4/Default/Extension Scripts/MANIFEST-000001 | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1024_4/Default/Extension State/000003.log | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1024_4/Default/Extension State/CURRENT | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1024_4/Default/Extension State/LOCK | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1024_4/Default/Extension State/LOG | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1024_4/Default/Extension State/MANIFEST-000001 | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1024_4/Default/GPUCache/data_0 | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1024_4/Default/GPUCache/data_1 | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1024_4/Default/GPUCache/data_2 | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1024_4/Default/GPUCache/data_3 | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1024_4/Default/GPUCache/index | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1024_4/Default/Network/NetworkDataMigrated | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1024_4/Default/Nurturing/campaign_history | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1024_4/Default/Nurturing/campaign_history-journal | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1024_4/Default/parcel_tracking_db/LOCK | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1024_4/Default/parcel_tracking_db/LOG | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1024_4/Default/PersistentOriginTrials/LOCK | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1024_4/Default/PersistentOriginTrials/LOG | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1024_4/Default/Service Worker/Database/000003.log | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1024_4/Default/Service Worker/Database/CURRENT | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1024_4/Default/Service Worker/Database/LOCK | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1024_4/Default/Service Worker/Database/LOG | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1024_4/Default/Service Worker/Database/MANIFEST-000001 | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1024_4/Default/Service Worker/ScriptCache/2cc80dabc69f58b6_0 | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1024_4/Default/Service Worker/ScriptCache/4cb013792b196a35_0 | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1024_4/Default/Service Worker/ScriptCache/f1cdccba37924bda_0 | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1024_4/Default/Service Worker/ScriptCache/index | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1024_4/Default/Service Worker/ScriptCache/index-dir/the-real-index | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1024_4/Default/shared_proto_db/000003.log | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1024_4/Default/shared_proto_db/CURRENT | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1024_4/Default/shared_proto_db/LOCK | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1024_4/Default/shared_proto_db/LOG | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1024_4/Default/shared_proto_db/MANIFEST-000001 | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1024_4/Default/shared_proto_db/metadata/000003.log | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1024_4/Default/shared_proto_db/metadata/CURRENT | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1024_4/Default/shared_proto_db/metadata/LOCK | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1024_4/Default/shared_proto_db/metadata/LOG | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1024_4/Default/shared_proto_db/metadata/MANIFEST-000001 | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1024_4/Default/Site Characteristics Database/000003.log | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1024_4/Default/Site Characteristics Database/CURRENT | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1024_4/Default/Site Characteristics Database/LOCK | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1024_4/Default/Site Characteristics Database/LOG | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1024_4/Default/Site Characteristics Database/MANIFEST-000001 | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1024_4/Default/Storage/ext/ihmafllikibpmigkcoadcmckbfhibefp/def/declarative_performance_observer.db | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1024_4/Default/Storage/ext/ihmafllikibpmigkcoadcmckbfhibefp/def/declarative_performance_observer.db-journal | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1024_4/Default/Storage/ext/ihmafllikibpmigkcoadcmckbfhibefp/def/Code Cache/js/index | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1024_4/Default/Storage/ext/ihmafllikibpmigkcoadcmckbfhibefp/def/Code Cache/js/index-dir/the-real-index | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1024_4/Default/Storage/ext/ihmafllikibpmigkcoadcmckbfhibefp/def/Code Cache/wasm/index | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1024_4/Default/Storage/ext/ihmafllikibpmigkcoadcmckbfhibefp/def/Code Cache/wasm/index-dir/the-real-index | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1024_4/Default/Storage/ext/ihmafllikibpmigkcoadcmckbfhibefp/def/DawnGraphiteCache/data_0 | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1024_4/Default/Storage/ext/ihmafllikibpmigkcoadcmckbfhibefp/def/DawnGraphiteCache/data_1 | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1024_4/Default/Storage/ext/ihmafllikibpmigkcoadcmckbfhibefp/def/DawnGraphiteCache/data_2 | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1024_4/Default/Storage/ext/ihmafllikibpmigkcoadcmckbfhibefp/def/DawnGraphiteCache/data_3 | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1024_4/Default/Storage/ext/ihmafllikibpmigkcoadcmckbfhibefp/def/DawnGraphiteCache/index | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1024_4/Default/Storage/ext/ihmafllikibpmigkcoadcmckbfhibefp/def/DawnWebGPUCache/data_0 | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1024_4/Default/Storage/ext/ihmafllikibpmigkcoadcmckbfhibefp/def/DawnWebGPUCache/data_1 | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1024_4/Default/Storage/ext/ihmafllikibpmigkcoadcmckbfhibefp/def/DawnWebGPUCache/data_2 | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1024_4/Default/Storage/ext/ihmafllikibpmigkcoadcmckbfhibefp/def/DawnWebGPUCache/data_3 | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1024_4/Default/Storage/ext/ihmafllikibpmigkcoadcmckbfhibefp/def/DawnWebGPUCache/index | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1024_4/Default/Storage/ext/ihmafllikibpmigkcoadcmckbfhibefp/def/GPUCache/data_0 | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1024_4/Default/Storage/ext/ihmafllikibpmigkcoadcmckbfhibefp/def/GPUCache/data_1 | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1024_4/Default/Storage/ext/ihmafllikibpmigkcoadcmckbfhibefp/def/GPUCache/data_2 | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1024_4/Default/Storage/ext/ihmafllikibpmigkcoadcmckbfhibefp/def/GPUCache/data_3 | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1024_4/Default/Storage/ext/ihmafllikibpmigkcoadcmckbfhibefp/def/GPUCache/index | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1024_4/Default/Storage/ext/ihmafllikibpmigkcoadcmckbfhibefp/def/Network/NetworkDataMigrated | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1024_4/Default/Sync Data/LevelDB/000003.log | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1024_4/Default/Sync Data/LevelDB/CURRENT | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1024_4/Default/Sync Data/LevelDB/LOCK | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1024_4/Default/Sync Data/LevelDB/LOG | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1024_4/Default/Sync Data/LevelDB/MANIFEST-000001 | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1024_4/Default/WebStorage/QuotaManager | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1024_4/Default/WebStorage/QuotaManager-journal | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1024_4/GPUPersistentCache/DawnGraphiteCache/23IMHJGI2WIIJ3PDLCHAHUJAGHTLTEBB/cache.db | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1024_4/GPUPersistentCache/DawnGraphiteCache/23IMHJGI2WIIJ3PDLCHAHUJAGHTLTEBB/cache.db-wal | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1024_4/GPUPersistentCache/DawnGraphiteCache/23IMHJGI2WIIJ3PDLCHAHUJAGHTLTEBB/cache.journal | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1024_4/Nurturing/campaign_history | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1024_4/Nurturing/campaign_history-journal | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1024_4/ShaderCache/data_0 | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1024_4/ShaderCache/data_1 | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1024_4/ShaderCache/data_2 | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1024_4/ShaderCache/data_3 | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1024_4/ShaderCache/index | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1024_4/SmartScreen/RemoteData/customSettings | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1024_4/SmartScreen/RemoteData/customSettings_F95BA787499AB4FA9EFFF472CE383A14 | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1024_5/FirstLaunchAfterInstallation | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1024_5/Last Version | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1024_5/Local State | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1024_5/Variations | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1024_5/VariationsRuntimeSeedV2 | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1024_5/VariationsSafeSeedV2 | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1024_5/VariationsSeedV2 | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1024_5/Crashpad/settings.dat | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1024_5/Crashpad/throttle_store.dat | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1024_5/Default/Affiliation Database | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1024_5/Default/Affiliation Database-journal | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1024_5/Default/declarative_performance_observer.db | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1024_5/Default/declarative_performance_observer.db-journal | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1024_5/Default/Favicons | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1024_5/Default/Favicons-journal | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1024_5/Default/History | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1024_5/Default/History-journal | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1024_5/Default/HubApps Icons | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1024_5/Default/HubApps Icons-journal | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1024_5/Default/load_statistics.db | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1024_5/Default/load_statistics.db-shm | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1024_5/Default/load_statistics.db-wal | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1024_5/Default/LOCK | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1024_5/Default/LOG | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1024_5/Default/Login Data | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1024_5/Default/Login Data For Account | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1024_5/Default/Login Data For Account-journal | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1024_5/Default/Login Data-journal | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1024_5/Default/README | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1024_5/Default/ServerCertificate | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1024_5/Default/ServerCertificate-journal | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1024_5/Default/Top Sites | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1024_5/Default/Top Sites-journal | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1024_5/Default/Vpn Tokens | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1024_5/Default/Vpn Tokens-journal | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1024_5/Default/Web Data | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1024_5/Default/Web Data-journal | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1024_5/Default/ClientCertificates/LOCK | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1024_5/Default/ClientCertificates/LOG | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1024_5/Default/Code Cache/js/index | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1024_5/Default/Code Cache/js/index-dir/the-real-index | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1024_5/Default/Code Cache/wasm/index | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1024_5/Default/Code Cache/wasm/index-dir/the-real-index | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1024_5/Default/commerce_subscription_db/LOCK | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1024_5/Default/commerce_subscription_db/LOG | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1024_5/Default/DawnGraphiteCache/data_0 | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1024_5/Default/DawnGraphiteCache/data_1 | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1024_5/Default/DawnGraphiteCache/data_2 | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1024_5/Default/DawnGraphiteCache/data_3 | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1024_5/Default/DawnGraphiteCache/index | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1024_5/Default/DawnWebGPUCache/data_0 | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1024_5/Default/DawnWebGPUCache/data_1 | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1024_5/Default/DawnWebGPUCache/data_2 | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1024_5/Default/DawnWebGPUCache/data_3 | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1024_5/Default/DawnWebGPUCache/index | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1024_5/Default/discounts_db/LOCK | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1024_5/Default/discounts_db/LOG | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1024_5/Default/discount_infos_db/LOCK | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1024_5/Default/discount_infos_db/LOG | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1024_5/Default/EdgePushStorageWithConnectTokenAndKey/LOCK | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1024_5/Default/EdgePushStorageWithConnectTokenAndKey/LOG | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1024_5/Default/Extension Rules/000003.log | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1024_5/Default/Extension Rules/CURRENT | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1024_5/Default/Extension Rules/LOCK | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1024_5/Default/Extension Rules/LOG | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1024_5/Default/Extension Rules/MANIFEST-000001 | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1024_5/Default/Extension Scripts/000003.log | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1024_5/Default/Extension Scripts/CURRENT | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1024_5/Default/Extension Scripts/LOCK | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1024_5/Default/Extension Scripts/LOG | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1024_5/Default/Extension Scripts/MANIFEST-000001 | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1024_5/Default/Extension State/000003.log | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1024_5/Default/Extension State/CURRENT | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1024_5/Default/Extension State/LOCK | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1024_5/Default/Extension State/LOG | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1024_5/Default/Extension State/MANIFEST-000001 | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1024_5/Default/GPUCache/data_0 | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1024_5/Default/GPUCache/data_1 | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1024_5/Default/GPUCache/data_2 | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1024_5/Default/GPUCache/data_3 | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1024_5/Default/GPUCache/index | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1024_5/Default/Network/NetworkDataMigrated | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1024_5/Default/Nurturing/campaign_history | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1024_5/Default/Nurturing/campaign_history-journal | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1024_5/Default/parcel_tracking_db/LOCK | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1024_5/Default/parcel_tracking_db/LOG | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1024_5/Default/PersistentOriginTrials/LOCK | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1024_5/Default/PersistentOriginTrials/LOG | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1024_5/Default/Service Worker/Database/000003.log | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1024_5/Default/Service Worker/Database/CURRENT | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1024_5/Default/Service Worker/Database/LOCK | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1024_5/Default/Service Worker/Database/LOG | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1024_5/Default/Service Worker/Database/MANIFEST-000001 | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1024_5/Default/Service Worker/ScriptCache/2cc80dabc69f58b6_0 | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1024_5/Default/Service Worker/ScriptCache/4cb013792b196a35_0 | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1024_5/Default/Service Worker/ScriptCache/f1cdccba37924bda_0 | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1024_5/Default/Service Worker/ScriptCache/index | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1024_5/Default/Service Worker/ScriptCache/index-dir/the-real-index | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1024_5/Default/shared_proto_db/000003.log | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1024_5/Default/shared_proto_db/CURRENT | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1024_5/Default/shared_proto_db/LOCK | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1024_5/Default/shared_proto_db/LOG | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1024_5/Default/shared_proto_db/MANIFEST-000001 | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1024_5/Default/shared_proto_db/metadata/000003.log | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1024_5/Default/shared_proto_db/metadata/CURRENT | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1024_5/Default/shared_proto_db/metadata/LOCK | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1024_5/Default/shared_proto_db/metadata/LOG | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1024_5/Default/shared_proto_db/metadata/MANIFEST-000001 | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1024_5/Default/Site Characteristics Database/000003.log | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1024_5/Default/Site Characteristics Database/CURRENT | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1024_5/Default/Site Characteristics Database/LOCK | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1024_5/Default/Site Characteristics Database/LOG | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1024_5/Default/Site Characteristics Database/MANIFEST-000001 | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1024_5/Default/Storage/ext/ihmafllikibpmigkcoadcmckbfhibefp/def/declarative_performance_observer.db | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1024_5/Default/Storage/ext/ihmafllikibpmigkcoadcmckbfhibefp/def/declarative_performance_observer.db-journal | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1024_5/Default/Storage/ext/ihmafllikibpmigkcoadcmckbfhibefp/def/Code Cache/js/index | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1024_5/Default/Storage/ext/ihmafllikibpmigkcoadcmckbfhibefp/def/Code Cache/js/index-dir/the-real-index | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1024_5/Default/Storage/ext/ihmafllikibpmigkcoadcmckbfhibefp/def/Code Cache/wasm/index | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1024_5/Default/Storage/ext/ihmafllikibpmigkcoadcmckbfhibefp/def/Code Cache/wasm/index-dir/the-real-index | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1024_5/Default/Storage/ext/ihmafllikibpmigkcoadcmckbfhibefp/def/DawnGraphiteCache/data_0 | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1024_5/Default/Storage/ext/ihmafllikibpmigkcoadcmckbfhibefp/def/DawnGraphiteCache/data_1 | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1024_5/Default/Storage/ext/ihmafllikibpmigkcoadcmckbfhibefp/def/DawnGraphiteCache/data_2 | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1024_5/Default/Storage/ext/ihmafllikibpmigkcoadcmckbfhibefp/def/DawnGraphiteCache/data_3 | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1024_5/Default/Storage/ext/ihmafllikibpmigkcoadcmckbfhibefp/def/DawnGraphiteCache/index | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1024_5/Default/Storage/ext/ihmafllikibpmigkcoadcmckbfhibefp/def/DawnWebGPUCache/data_0 | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1024_5/Default/Storage/ext/ihmafllikibpmigkcoadcmckbfhibefp/def/DawnWebGPUCache/data_1 | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1024_5/Default/Storage/ext/ihmafllikibpmigkcoadcmckbfhibefp/def/DawnWebGPUCache/data_2 | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1024_5/Default/Storage/ext/ihmafllikibpmigkcoadcmckbfhibefp/def/DawnWebGPUCache/data_3 | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1024_5/Default/Storage/ext/ihmafllikibpmigkcoadcmckbfhibefp/def/DawnWebGPUCache/index | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1024_5/Default/Storage/ext/ihmafllikibpmigkcoadcmckbfhibefp/def/GPUCache/data_0 | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1024_5/Default/Storage/ext/ihmafllikibpmigkcoadcmckbfhibefp/def/GPUCache/data_1 | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1024_5/Default/Storage/ext/ihmafllikibpmigkcoadcmckbfhibefp/def/GPUCache/data_2 | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1024_5/Default/Storage/ext/ihmafllikibpmigkcoadcmckbfhibefp/def/GPUCache/data_3 | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1024_5/Default/Storage/ext/ihmafllikibpmigkcoadcmckbfhibefp/def/GPUCache/index | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1024_5/Default/Storage/ext/ihmafllikibpmigkcoadcmckbfhibefp/def/Network/NetworkDataMigrated | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1024_5/Default/Sync Data/LevelDB/000003.log | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1024_5/Default/Sync Data/LevelDB/CURRENT | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1024_5/Default/Sync Data/LevelDB/LOCK | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1024_5/Default/Sync Data/LevelDB/LOG | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1024_5/Default/Sync Data/LevelDB/MANIFEST-000001 | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1024_5/Default/WebStorage/QuotaManager | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1024_5/Default/WebStorage/QuotaManager-journal | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1024_5/GPUPersistentCache/DawnGraphiteCache/23IMHJGI2WIIJ3PDLCHAHUJAGHTLTEBB/cache.db | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1024_5/GPUPersistentCache/DawnGraphiteCache/23IMHJGI2WIIJ3PDLCHAHUJAGHTLTEBB/cache.db-wal | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1024_5/GPUPersistentCache/DawnGraphiteCache/23IMHJGI2WIIJ3PDLCHAHUJAGHTLTEBB/cache.journal | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1024_5/Nurturing/campaign_history | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1024_5/Nurturing/campaign_history-journal | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1024_5/ShaderCache/data_0 | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1024_5/ShaderCache/data_1 | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1024_5/ShaderCache/data_2 | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1024_5/ShaderCache/data_3 | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1024_5/ShaderCache/index | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1024_5/SmartScreen/RemoteData/customSettings | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1024_5/SmartScreen/RemoteData/customSettings_F95BA787499AB4FA9EFFF472CE383A14 | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1024_6/FirstLaunchAfterInstallation | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1024_6/Last Version | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1024_6/Local State | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1024_6/Variations | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1024_6/VariationsRuntimeSeedV2 | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1024_6/VariationsSafeSeedV2 | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1024_6/VariationsSeedV2 | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1024_6/Crashpad/settings.dat | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1024_6/Crashpad/throttle_store.dat | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1024_6/Default/Affiliation Database | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1024_6/Default/Affiliation Database-journal | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1024_6/Default/declarative_performance_observer.db | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1024_6/Default/declarative_performance_observer.db-journal | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1024_6/Default/Favicons | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1024_6/Default/Favicons-journal | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1024_6/Default/History | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1024_6/Default/History-journal | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1024_6/Default/HubApps Icons | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1024_6/Default/HubApps Icons-journal | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1024_6/Default/load_statistics.db | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1024_6/Default/load_statistics.db-shm | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1024_6/Default/load_statistics.db-wal | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1024_6/Default/LOCK | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1024_6/Default/LOG | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1024_6/Default/Login Data | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1024_6/Default/Login Data For Account | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1024_6/Default/Login Data For Account-journal | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1024_6/Default/Login Data-journal | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1024_6/Default/README | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1024_6/Default/ServerCertificate | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1024_6/Default/ServerCertificate-journal | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1024_6/Default/Top Sites | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1024_6/Default/Top Sites-journal | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1024_6/Default/Vpn Tokens | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1024_6/Default/Vpn Tokens-journal | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1024_6/Default/Web Data | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1024_6/Default/Web Data-journal | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1024_6/Default/ClientCertificates/LOCK | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1024_6/Default/ClientCertificates/LOG | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1024_6/Default/Code Cache/js/index | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1024_6/Default/Code Cache/js/index-dir/the-real-index | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1024_6/Default/Code Cache/wasm/index | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1024_6/Default/Code Cache/wasm/index-dir/the-real-index | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1024_6/Default/commerce_subscription_db/LOCK | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1024_6/Default/commerce_subscription_db/LOG | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1024_6/Default/DawnGraphiteCache/data_0 | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1024_6/Default/DawnGraphiteCache/data_1 | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1024_6/Default/DawnGraphiteCache/data_2 | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1024_6/Default/DawnGraphiteCache/data_3 | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1024_6/Default/DawnGraphiteCache/index | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1024_6/Default/DawnWebGPUCache/data_0 | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1024_6/Default/DawnWebGPUCache/data_1 | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1024_6/Default/DawnWebGPUCache/data_2 | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1024_6/Default/DawnWebGPUCache/data_3 | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1024_6/Default/DawnWebGPUCache/index | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1024_6/Default/discounts_db/LOCK | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1024_6/Default/discounts_db/LOG | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1024_6/Default/discount_infos_db/LOCK | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1024_6/Default/discount_infos_db/LOG | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1024_6/Default/EdgePushStorageWithConnectTokenAndKey/LOCK | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1024_6/Default/EdgePushStorageWithConnectTokenAndKey/LOG | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1024_6/Default/Extension Rules/000003.log | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1024_6/Default/Extension Rules/CURRENT | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1024_6/Default/Extension Rules/LOCK | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1024_6/Default/Extension Rules/LOG | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1024_6/Default/Extension Rules/MANIFEST-000001 | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1024_6/Default/Extension Scripts/000003.log | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1024_6/Default/Extension Scripts/CURRENT | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1024_6/Default/Extension Scripts/LOCK | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1024_6/Default/Extension Scripts/LOG | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1024_6/Default/Extension Scripts/MANIFEST-000001 | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1024_6/Default/Extension State/000003.log | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1024_6/Default/Extension State/CURRENT | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1024_6/Default/Extension State/LOCK | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1024_6/Default/Extension State/LOG | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1024_6/Default/Extension State/MANIFEST-000001 | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1024_6/Default/GPUCache/data_0 | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1024_6/Default/GPUCache/data_1 | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1024_6/Default/GPUCache/data_2 | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1024_6/Default/GPUCache/data_3 | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1024_6/Default/GPUCache/index | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1024_6/Default/Network/NetworkDataMigrated | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1024_6/Default/Nurturing/campaign_history | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1024_6/Default/Nurturing/campaign_history-journal | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1024_6/Default/parcel_tracking_db/LOCK | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1024_6/Default/parcel_tracking_db/LOG | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1024_6/Default/PersistentOriginTrials/LOCK | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1024_6/Default/PersistentOriginTrials/LOG | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1024_6/Default/Service Worker/Database/000003.log | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1024_6/Default/Service Worker/Database/CURRENT | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1024_6/Default/Service Worker/Database/LOCK | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1024_6/Default/Service Worker/Database/LOG | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1024_6/Default/Service Worker/Database/MANIFEST-000001 | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1024_6/Default/Service Worker/ScriptCache/2cc80dabc69f58b6_0 | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1024_6/Default/Service Worker/ScriptCache/4cb013792b196a35_0 | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1024_6/Default/Service Worker/ScriptCache/f1cdccba37924bda_0 | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1024_6/Default/Service Worker/ScriptCache/index | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1024_6/Default/Service Worker/ScriptCache/index-dir/the-real-index | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1024_6/Default/shared_proto_db/000003.log | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1024_6/Default/shared_proto_db/CURRENT | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1024_6/Default/shared_proto_db/LOCK | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1024_6/Default/shared_proto_db/LOG | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1024_6/Default/shared_proto_db/MANIFEST-000001 | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1024_6/Default/shared_proto_db/metadata/000003.log | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1024_6/Default/shared_proto_db/metadata/CURRENT | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1024_6/Default/shared_proto_db/metadata/LOCK | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1024_6/Default/shared_proto_db/metadata/LOG | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1024_6/Default/shared_proto_db/metadata/MANIFEST-000001 | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1024_6/Default/Site Characteristics Database/000003.log | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1024_6/Default/Site Characteristics Database/CURRENT | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1024_6/Default/Site Characteristics Database/LOCK | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1024_6/Default/Site Characteristics Database/LOG | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1024_6/Default/Site Characteristics Database/MANIFEST-000001 | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1024_6/Default/Storage/ext/ihmafllikibpmigkcoadcmckbfhibefp/def/declarative_performance_observer.db | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1024_6/Default/Storage/ext/ihmafllikibpmigkcoadcmckbfhibefp/def/declarative_performance_observer.db-journal | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1024_6/Default/Storage/ext/ihmafllikibpmigkcoadcmckbfhibefp/def/Code Cache/js/index | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1024_6/Default/Storage/ext/ihmafllikibpmigkcoadcmckbfhibefp/def/Code Cache/js/index-dir/the-real-index | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1024_6/Default/Storage/ext/ihmafllikibpmigkcoadcmckbfhibefp/def/Code Cache/wasm/index | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1024_6/Default/Storage/ext/ihmafllikibpmigkcoadcmckbfhibefp/def/Code Cache/wasm/index-dir/the-real-index | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1024_6/Default/Storage/ext/ihmafllikibpmigkcoadcmckbfhibefp/def/DawnGraphiteCache/data_0 | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1024_6/Default/Storage/ext/ihmafllikibpmigkcoadcmckbfhibefp/def/DawnGraphiteCache/data_1 | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1024_6/Default/Storage/ext/ihmafllikibpmigkcoadcmckbfhibefp/def/DawnGraphiteCache/data_2 | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1024_6/Default/Storage/ext/ihmafllikibpmigkcoadcmckbfhibefp/def/DawnGraphiteCache/data_3 | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1024_6/Default/Storage/ext/ihmafllikibpmigkcoadcmckbfhibefp/def/DawnGraphiteCache/index | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1024_6/Default/Storage/ext/ihmafllikibpmigkcoadcmckbfhibefp/def/DawnWebGPUCache/data_0 | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1024_6/Default/Storage/ext/ihmafllikibpmigkcoadcmckbfhibefp/def/DawnWebGPUCache/data_1 | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1024_6/Default/Storage/ext/ihmafllikibpmigkcoadcmckbfhibefp/def/DawnWebGPUCache/data_2 | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1024_6/Default/Storage/ext/ihmafllikibpmigkcoadcmckbfhibefp/def/DawnWebGPUCache/data_3 | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1024_6/Default/Storage/ext/ihmafllikibpmigkcoadcmckbfhibefp/def/DawnWebGPUCache/index | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1024_6/Default/Storage/ext/ihmafllikibpmigkcoadcmckbfhibefp/def/GPUCache/data_0 | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1024_6/Default/Storage/ext/ihmafllikibpmigkcoadcmckbfhibefp/def/GPUCache/data_1 | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1024_6/Default/Storage/ext/ihmafllikibpmigkcoadcmckbfhibefp/def/GPUCache/data_2 | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1024_6/Default/Storage/ext/ihmafllikibpmigkcoadcmckbfhibefp/def/GPUCache/data_3 | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1024_6/Default/Storage/ext/ihmafllikibpmigkcoadcmckbfhibefp/def/GPUCache/index | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1024_6/Default/Storage/ext/ihmafllikibpmigkcoadcmckbfhibefp/def/Network/NetworkDataMigrated | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1024_6/Default/Sync Data/LevelDB/000003.log | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1024_6/Default/Sync Data/LevelDB/CURRENT | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1024_6/Default/Sync Data/LevelDB/LOCK | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1024_6/Default/Sync Data/LevelDB/LOG | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1024_6/Default/Sync Data/LevelDB/MANIFEST-000001 | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1024_6/Default/WebStorage/QuotaManager | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1024_6/Default/WebStorage/QuotaManager-journal | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1024_6/GPUPersistentCache/DawnGraphiteCache/23IMHJGI2WIIJ3PDLCHAHUJAGHTLTEBB/cache.db | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1024_6/GPUPersistentCache/DawnGraphiteCache/23IMHJGI2WIIJ3PDLCHAHUJAGHTLTEBB/cache.db-wal | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1024_6/GPUPersistentCache/DawnGraphiteCache/23IMHJGI2WIIJ3PDLCHAHUJAGHTLTEBB/cache.journal | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1024_6/Nurturing/campaign_history | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1024_6/Nurturing/campaign_history-journal | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1024_6/ShaderCache/data_0 | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1024_6/ShaderCache/data_1 | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1024_6/ShaderCache/data_2 | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1024_6/ShaderCache/data_3 | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1024_6/ShaderCache/index | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1024_6/SmartScreen/RemoteData/customSettings | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1024_6/SmartScreen/RemoteData/customSettings_F95BA787499AB4FA9EFFF472CE383A14 | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1920_1/FirstLaunchAfterInstallation | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1920_1/Last Version | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1920_1/Local State | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1920_1/Variations | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1920_1/VariationsRuntimeSeedV2 | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1920_1/VariationsSafeSeedV2 | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1920_1/VariationsSeedV2 | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1920_1/Crashpad/settings.dat | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1920_1/Crashpad/throttle_store.dat | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1920_1/Default/Affiliation Database | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1920_1/Default/Affiliation Database-journal | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1920_1/Default/declarative_performance_observer.db | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1920_1/Default/declarative_performance_observer.db-journal | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1920_1/Default/Favicons | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1920_1/Default/Favicons-journal | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1920_1/Default/History | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1920_1/Default/History-journal | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1920_1/Default/HubApps Icons | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1920_1/Default/HubApps Icons-journal | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1920_1/Default/load_statistics.db | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1920_1/Default/load_statistics.db-shm | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1920_1/Default/load_statistics.db-wal | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1920_1/Default/LOCK | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1920_1/Default/LOG | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1920_1/Default/Login Data | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1920_1/Default/Login Data For Account | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1920_1/Default/Login Data For Account-journal | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1920_1/Default/Login Data-journal | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1920_1/Default/README | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1920_1/Default/ServerCertificate | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1920_1/Default/ServerCertificate-journal | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1920_1/Default/Top Sites | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1920_1/Default/Top Sites-journal | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1920_1/Default/Vpn Tokens | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1920_1/Default/Vpn Tokens-journal | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1920_1/Default/Web Data | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1920_1/Default/Web Data-journal | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1920_1/Default/ClientCertificates/LOCK | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1920_1/Default/ClientCertificates/LOG | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1920_1/Default/Code Cache/js/index | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1920_1/Default/Code Cache/js/index-dir/the-real-index | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1920_1/Default/Code Cache/wasm/index | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1920_1/Default/Code Cache/wasm/index-dir/the-real-index | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1920_1/Default/commerce_subscription_db/LOCK | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1920_1/Default/commerce_subscription_db/LOG | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1920_1/Default/DawnGraphiteCache/data_0 | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1920_1/Default/DawnGraphiteCache/data_1 | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1920_1/Default/DawnGraphiteCache/data_2 | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1920_1/Default/DawnGraphiteCache/data_3 | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1920_1/Default/DawnGraphiteCache/index | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1920_1/Default/DawnWebGPUCache/data_0 | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1920_1/Default/DawnWebGPUCache/data_1 | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1920_1/Default/DawnWebGPUCache/data_2 | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1920_1/Default/DawnWebGPUCache/data_3 | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1920_1/Default/DawnWebGPUCache/index | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1920_1/Default/discounts_db/LOCK | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1920_1/Default/discounts_db/LOG | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1920_1/Default/discount_infos_db/LOCK | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1920_1/Default/discount_infos_db/LOG | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1920_1/Default/EdgePushStorageWithConnectTokenAndKey/LOCK | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1920_1/Default/EdgePushStorageWithConnectTokenAndKey/LOG | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1920_1/Default/Extension Rules/000003.log | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1920_1/Default/Extension Rules/CURRENT | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1920_1/Default/Extension Rules/LOCK | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1920_1/Default/Extension Rules/LOG | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1920_1/Default/Extension Rules/MANIFEST-000001 | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1920_1/Default/Extension Scripts/000003.log | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1920_1/Default/Extension Scripts/CURRENT | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1920_1/Default/Extension Scripts/LOCK | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1920_1/Default/Extension Scripts/LOG | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1920_1/Default/Extension Scripts/MANIFEST-000001 | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1920_1/Default/Extension State/000003.log | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1920_1/Default/Extension State/CURRENT | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1920_1/Default/Extension State/LOCK | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1920_1/Default/Extension State/LOG | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1920_1/Default/Extension State/MANIFEST-000001 | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1920_1/Default/GPUCache/data_0 | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1920_1/Default/GPUCache/data_1 | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1920_1/Default/GPUCache/data_2 | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1920_1/Default/GPUCache/data_3 | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1920_1/Default/GPUCache/index | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1920_1/Default/Network/NetworkDataMigrated | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1920_1/Default/Nurturing/campaign_history | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1920_1/Default/Nurturing/campaign_history-journal | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1920_1/Default/parcel_tracking_db/LOCK | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1920_1/Default/parcel_tracking_db/LOG | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1920_1/Default/PersistentOriginTrials/LOCK | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1920_1/Default/PersistentOriginTrials/LOG | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1920_1/Default/Service Worker/Database/000003.log | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1920_1/Default/Service Worker/Database/CURRENT | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1920_1/Default/Service Worker/Database/LOCK | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1920_1/Default/Service Worker/Database/LOG | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1920_1/Default/Service Worker/Database/MANIFEST-000001 | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1920_1/Default/Service Worker/ScriptCache/2cc80dabc69f58b6_0 | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1920_1/Default/Service Worker/ScriptCache/4cb013792b196a35_0 | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1920_1/Default/Service Worker/ScriptCache/f1cdccba37924bda_0 | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1920_1/Default/Service Worker/ScriptCache/index | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1920_1/Default/Service Worker/ScriptCache/index-dir/the-real-index | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1920_1/Default/shared_proto_db/000003.log | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1920_1/Default/shared_proto_db/CURRENT | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1920_1/Default/shared_proto_db/LOCK | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1920_1/Default/shared_proto_db/LOG | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1920_1/Default/shared_proto_db/MANIFEST-000001 | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1920_1/Default/shared_proto_db/metadata/000003.log | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1920_1/Default/shared_proto_db/metadata/CURRENT | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1920_1/Default/shared_proto_db/metadata/LOCK | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1920_1/Default/shared_proto_db/metadata/LOG | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1920_1/Default/shared_proto_db/metadata/MANIFEST-000001 | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1920_1/Default/Site Characteristics Database/000003.log | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1920_1/Default/Site Characteristics Database/CURRENT | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1920_1/Default/Site Characteristics Database/LOCK | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1920_1/Default/Site Characteristics Database/LOG | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1920_1/Default/Site Characteristics Database/MANIFEST-000001 | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1920_1/Default/Storage/ext/ihmafllikibpmigkcoadcmckbfhibefp/def/declarative_performance_observer.db | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1920_1/Default/Storage/ext/ihmafllikibpmigkcoadcmckbfhibefp/def/declarative_performance_observer.db-journal | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1920_1/Default/Storage/ext/ihmafllikibpmigkcoadcmckbfhibefp/def/Code Cache/js/index | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1920_1/Default/Storage/ext/ihmafllikibpmigkcoadcmckbfhibefp/def/Code Cache/js/index-dir/the-real-index | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1920_1/Default/Storage/ext/ihmafllikibpmigkcoadcmckbfhibefp/def/Code Cache/wasm/index | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1920_1/Default/Storage/ext/ihmafllikibpmigkcoadcmckbfhibefp/def/Code Cache/wasm/index-dir/the-real-index | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1920_1/Default/Storage/ext/ihmafllikibpmigkcoadcmckbfhibefp/def/DawnGraphiteCache/data_0 | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1920_1/Default/Storage/ext/ihmafllikibpmigkcoadcmckbfhibefp/def/DawnGraphiteCache/data_1 | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1920_1/Default/Storage/ext/ihmafllikibpmigkcoadcmckbfhibefp/def/DawnGraphiteCache/data_2 | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1920_1/Default/Storage/ext/ihmafllikibpmigkcoadcmckbfhibefp/def/DawnGraphiteCache/data_3 | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1920_1/Default/Storage/ext/ihmafllikibpmigkcoadcmckbfhibefp/def/DawnGraphiteCache/index | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1920_1/Default/Storage/ext/ihmafllikibpmigkcoadcmckbfhibefp/def/DawnWebGPUCache/data_0 | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1920_1/Default/Storage/ext/ihmafllikibpmigkcoadcmckbfhibefp/def/DawnWebGPUCache/data_1 | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1920_1/Default/Storage/ext/ihmafllikibpmigkcoadcmckbfhibefp/def/DawnWebGPUCache/data_2 | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1920_1/Default/Storage/ext/ihmafllikibpmigkcoadcmckbfhibefp/def/DawnWebGPUCache/data_3 | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1920_1/Default/Storage/ext/ihmafllikibpmigkcoadcmckbfhibefp/def/DawnWebGPUCache/index | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1920_1/Default/Storage/ext/ihmafllikibpmigkcoadcmckbfhibefp/def/GPUCache/data_0 | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1920_1/Default/Storage/ext/ihmafllikibpmigkcoadcmckbfhibefp/def/GPUCache/data_1 | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1920_1/Default/Storage/ext/ihmafllikibpmigkcoadcmckbfhibefp/def/GPUCache/data_2 | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1920_1/Default/Storage/ext/ihmafllikibpmigkcoadcmckbfhibefp/def/GPUCache/data_3 | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1920_1/Default/Storage/ext/ihmafllikibpmigkcoadcmckbfhibefp/def/GPUCache/index | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1920_1/Default/Storage/ext/ihmafllikibpmigkcoadcmckbfhibefp/def/Network/NetworkDataMigrated | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1920_1/Default/Sync Data/LevelDB/000003.log | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1920_1/Default/Sync Data/LevelDB/CURRENT | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1920_1/Default/Sync Data/LevelDB/LOCK | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1920_1/Default/Sync Data/LevelDB/LOG | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1920_1/Default/Sync Data/LevelDB/MANIFEST-000001 | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1920_1/Default/WebStorage/QuotaManager | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1920_1/Default/WebStorage/QuotaManager-journal | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1920_1/GPUPersistentCache/DawnGraphiteCache/23IMHJGI2WIIJ3PDLCHAHUJAGHTLTEBB/cache.db | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1920_1/GPUPersistentCache/DawnGraphiteCache/23IMHJGI2WIIJ3PDLCHAHUJAGHTLTEBB/cache.db-wal | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1920_1/GPUPersistentCache/DawnGraphiteCache/23IMHJGI2WIIJ3PDLCHAHUJAGHTLTEBB/cache.journal | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1920_1/Nurturing/campaign_history | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1920_1/Nurturing/campaign_history-journal | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1920_1/ShaderCache/data_0 | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1920_1/ShaderCache/data_1 | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1920_1/ShaderCache/data_2 | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1920_1/ShaderCache/data_3 | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1920_1/ShaderCache/index | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1920_1/SmartScreen/RemoteData/customSettings | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1920_1/SmartScreen/RemoteData/customSettings_F95BA787499AB4FA9EFFF472CE383A14 | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1920_2/FirstLaunchAfterInstallation | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1920_2/Last Version | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1920_2/Local State | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1920_2/Variations | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1920_2/VariationsRuntimeSeedV2 | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1920_2/VariationsSafeSeedV2 | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1920_2/VariationsSeedV2 | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1920_2/Crashpad/settings.dat | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1920_2/Crashpad/throttle_store.dat | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1920_2/Default/Affiliation Database | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1920_2/Default/Affiliation Database-journal | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1920_2/Default/declarative_performance_observer.db | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1920_2/Default/declarative_performance_observer.db-journal | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1920_2/Default/Favicons | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1920_2/Default/Favicons-journal | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1920_2/Default/History | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1920_2/Default/History-journal | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1920_2/Default/HubApps Icons | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1920_2/Default/HubApps Icons-journal | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1920_2/Default/load_statistics.db | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1920_2/Default/load_statistics.db-shm | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1920_2/Default/load_statistics.db-wal | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1920_2/Default/LOCK | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1920_2/Default/LOG | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1920_2/Default/Login Data | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1920_2/Default/Login Data For Account | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1920_2/Default/Login Data For Account-journal | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1920_2/Default/Login Data-journal | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1920_2/Default/README | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1920_2/Default/ServerCertificate | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1920_2/Default/ServerCertificate-journal | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1920_2/Default/Top Sites | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1920_2/Default/Top Sites-journal | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1920_2/Default/Vpn Tokens | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1920_2/Default/Vpn Tokens-journal | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1920_2/Default/Web Data | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1920_2/Default/Web Data-journal | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1920_2/Default/ClientCertificates/LOCK | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1920_2/Default/ClientCertificates/LOG | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1920_2/Default/Code Cache/js/index | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1920_2/Default/Code Cache/js/index-dir/the-real-index | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1920_2/Default/Code Cache/wasm/index | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1920_2/Default/Code Cache/wasm/index-dir/the-real-index | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1920_2/Default/commerce_subscription_db/LOCK | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1920_2/Default/commerce_subscription_db/LOG | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1920_2/Default/DawnGraphiteCache/data_0 | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1920_2/Default/DawnGraphiteCache/data_1 | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1920_2/Default/DawnGraphiteCache/data_2 | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1920_2/Default/DawnGraphiteCache/data_3 | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1920_2/Default/DawnGraphiteCache/index | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1920_2/Default/DawnWebGPUCache/data_0 | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1920_2/Default/DawnWebGPUCache/data_1 | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1920_2/Default/DawnWebGPUCache/data_2 | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1920_2/Default/DawnWebGPUCache/data_3 | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1920_2/Default/DawnWebGPUCache/index | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1920_2/Default/discounts_db/LOCK | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1920_2/Default/discounts_db/LOG | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1920_2/Default/discount_infos_db/LOCK | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1920_2/Default/discount_infos_db/LOG | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1920_2/Default/EdgePushStorageWithConnectTokenAndKey/LOCK | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1920_2/Default/EdgePushStorageWithConnectTokenAndKey/LOG | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1920_2/Default/Extension Rules/000003.log | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1920_2/Default/Extension Rules/CURRENT | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1920_2/Default/Extension Rules/LOCK | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1920_2/Default/Extension Rules/LOG | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1920_2/Default/Extension Rules/MANIFEST-000001 | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1920_2/Default/Extension Scripts/000003.log | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1920_2/Default/Extension Scripts/CURRENT | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1920_2/Default/Extension Scripts/LOCK | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1920_2/Default/Extension Scripts/LOG | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1920_2/Default/Extension Scripts/MANIFEST-000001 | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1920_2/Default/Extension State/000003.log | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1920_2/Default/Extension State/CURRENT | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1920_2/Default/Extension State/LOCK | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1920_2/Default/Extension State/LOG | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1920_2/Default/Extension State/MANIFEST-000001 | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1920_2/Default/GPUCache/data_0 | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1920_2/Default/GPUCache/data_1 | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1920_2/Default/GPUCache/data_2 | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1920_2/Default/GPUCache/data_3 | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1920_2/Default/GPUCache/index | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1920_2/Default/Network/NetworkDataMigrated | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1920_2/Default/Nurturing/campaign_history | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1920_2/Default/Nurturing/campaign_history-journal | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1920_2/Default/parcel_tracking_db/LOCK | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1920_2/Default/parcel_tracking_db/LOG | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1920_2/Default/PersistentOriginTrials/LOCK | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1920_2/Default/PersistentOriginTrials/LOG | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1920_2/Default/Service Worker/Database/000003.log | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1920_2/Default/Service Worker/Database/CURRENT | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1920_2/Default/Service Worker/Database/LOCK | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1920_2/Default/Service Worker/Database/LOG | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1920_2/Default/Service Worker/Database/MANIFEST-000001 | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1920_2/Default/Service Worker/ScriptCache/2cc80dabc69f58b6_0 | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1920_2/Default/Service Worker/ScriptCache/4cb013792b196a35_0 | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1920_2/Default/Service Worker/ScriptCache/f1cdccba37924bda_0 | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1920_2/Default/Service Worker/ScriptCache/index | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1920_2/Default/Service Worker/ScriptCache/index-dir/the-real-index | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1920_2/Default/shared_proto_db/000003.log | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1920_2/Default/shared_proto_db/CURRENT | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1920_2/Default/shared_proto_db/LOCK | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1920_2/Default/shared_proto_db/LOG | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1920_2/Default/shared_proto_db/MANIFEST-000001 | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1920_2/Default/shared_proto_db/metadata/000003.log | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1920_2/Default/shared_proto_db/metadata/CURRENT | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1920_2/Default/shared_proto_db/metadata/LOCK | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1920_2/Default/shared_proto_db/metadata/LOG | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1920_2/Default/shared_proto_db/metadata/MANIFEST-000001 | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1920_2/Default/Site Characteristics Database/000003.log | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1920_2/Default/Site Characteristics Database/CURRENT | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1920_2/Default/Site Characteristics Database/LOCK | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1920_2/Default/Site Characteristics Database/LOG | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1920_2/Default/Site Characteristics Database/MANIFEST-000001 | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1920_2/Default/Storage/ext/ihmafllikibpmigkcoadcmckbfhibefp/def/declarative_performance_observer.db | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1920_2/Default/Storage/ext/ihmafllikibpmigkcoadcmckbfhibefp/def/declarative_performance_observer.db-journal | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1920_2/Default/Storage/ext/ihmafllikibpmigkcoadcmckbfhibefp/def/Code Cache/js/index | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1920_2/Default/Storage/ext/ihmafllikibpmigkcoadcmckbfhibefp/def/Code Cache/js/index-dir/the-real-index | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1920_2/Default/Storage/ext/ihmafllikibpmigkcoadcmckbfhibefp/def/Code Cache/wasm/index | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1920_2/Default/Storage/ext/ihmafllikibpmigkcoadcmckbfhibefp/def/Code Cache/wasm/index-dir/the-real-index | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1920_2/Default/Storage/ext/ihmafllikibpmigkcoadcmckbfhibefp/def/DawnGraphiteCache/data_0 | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1920_2/Default/Storage/ext/ihmafllikibpmigkcoadcmckbfhibefp/def/DawnGraphiteCache/data_1 | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1920_2/Default/Storage/ext/ihmafllikibpmigkcoadcmckbfhibefp/def/DawnGraphiteCache/data_2 | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1920_2/Default/Storage/ext/ihmafllikibpmigkcoadcmckbfhibefp/def/DawnGraphiteCache/data_3 | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1920_2/Default/Storage/ext/ihmafllikibpmigkcoadcmckbfhibefp/def/DawnGraphiteCache/index | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1920_2/Default/Storage/ext/ihmafllikibpmigkcoadcmckbfhibefp/def/DawnWebGPUCache/data_0 | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1920_2/Default/Storage/ext/ihmafllikibpmigkcoadcmckbfhibefp/def/DawnWebGPUCache/data_1 | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1920_2/Default/Storage/ext/ihmafllikibpmigkcoadcmckbfhibefp/def/DawnWebGPUCache/data_2 | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1920_2/Default/Storage/ext/ihmafllikibpmigkcoadcmckbfhibefp/def/DawnWebGPUCache/data_3 | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1920_2/Default/Storage/ext/ihmafllikibpmigkcoadcmckbfhibefp/def/DawnWebGPUCache/index | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1920_2/Default/Storage/ext/ihmafllikibpmigkcoadcmckbfhibefp/def/GPUCache/data_0 | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1920_2/Default/Storage/ext/ihmafllikibpmigkcoadcmckbfhibefp/def/GPUCache/data_1 | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1920_2/Default/Storage/ext/ihmafllikibpmigkcoadcmckbfhibefp/def/GPUCache/data_2 | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1920_2/Default/Storage/ext/ihmafllikibpmigkcoadcmckbfhibefp/def/GPUCache/data_3 | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1920_2/Default/Storage/ext/ihmafllikibpmigkcoadcmckbfhibefp/def/GPUCache/index | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1920_2/Default/Storage/ext/ihmafllikibpmigkcoadcmckbfhibefp/def/Network/NetworkDataMigrated | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1920_2/Default/Sync Data/LevelDB/000003.log | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1920_2/Default/Sync Data/LevelDB/CURRENT | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1920_2/Default/Sync Data/LevelDB/LOCK | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1920_2/Default/Sync Data/LevelDB/LOG | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1920_2/Default/Sync Data/LevelDB/MANIFEST-000001 | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1920_2/Default/WebStorage/QuotaManager | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1920_2/Default/WebStorage/QuotaManager-journal | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1920_2/GPUPersistentCache/DawnGraphiteCache/23IMHJGI2WIIJ3PDLCHAHUJAGHTLTEBB/cache.db | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1920_2/GPUPersistentCache/DawnGraphiteCache/23IMHJGI2WIIJ3PDLCHAHUJAGHTLTEBB/cache.db-wal | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1920_2/GPUPersistentCache/DawnGraphiteCache/23IMHJGI2WIIJ3PDLCHAHUJAGHTLTEBB/cache.journal | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1920_2/Nurturing/campaign_history | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1920_2/Nurturing/campaign_history-journal | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1920_2/ShaderCache/data_0 | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1920_2/ShaderCache/data_1 | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1920_2/ShaderCache/data_2 | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1920_2/ShaderCache/data_3 | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1920_2/ShaderCache/index | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1920_2/SmartScreen/RemoteData/customSettings | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1920_2/SmartScreen/RemoteData/customSettings_F95BA787499AB4FA9EFFF472CE383A14 | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1920_3/FirstLaunchAfterInstallation | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1920_3/Last Version | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1920_3/Local State | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1920_3/Variations | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1920_3/VariationsRuntimeSeedV2 | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1920_3/VariationsSafeSeedV2 | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1920_3/VariationsSeedV2 | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1920_3/Crashpad/settings.dat | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1920_3/Crashpad/throttle_store.dat | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1920_3/Default/Affiliation Database | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1920_3/Default/Affiliation Database-journal | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1920_3/Default/declarative_performance_observer.db | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1920_3/Default/declarative_performance_observer.db-journal | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1920_3/Default/Favicons | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1920_3/Default/Favicons-journal | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1920_3/Default/History | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1920_3/Default/History-journal | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1920_3/Default/HubApps Icons | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1920_3/Default/HubApps Icons-journal | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1920_3/Default/load_statistics.db | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1920_3/Default/load_statistics.db-shm | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1920_3/Default/load_statistics.db-wal | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1920_3/Default/LOCK | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1920_3/Default/LOG | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1920_3/Default/Login Data | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1920_3/Default/Login Data For Account | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1920_3/Default/Login Data For Account-journal | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1920_3/Default/Login Data-journal | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1920_3/Default/README | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1920_3/Default/ServerCertificate | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1920_3/Default/ServerCertificate-journal | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1920_3/Default/Top Sites | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1920_3/Default/Top Sites-journal | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1920_3/Default/Vpn Tokens | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1920_3/Default/Vpn Tokens-journal | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1920_3/Default/Web Data | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1920_3/Default/Web Data-journal | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1920_3/Default/ClientCertificates/LOCK | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1920_3/Default/ClientCertificates/LOG | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1920_3/Default/Code Cache/js/index | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1920_3/Default/Code Cache/js/index-dir/the-real-index | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1920_3/Default/Code Cache/wasm/index | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1920_3/Default/Code Cache/wasm/index-dir/the-real-index | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1920_3/Default/commerce_subscription_db/LOCK | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1920_3/Default/commerce_subscription_db/LOG | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1920_3/Default/DawnGraphiteCache/data_0 | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1920_3/Default/DawnGraphiteCache/data_1 | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1920_3/Default/DawnGraphiteCache/data_2 | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1920_3/Default/DawnGraphiteCache/data_3 | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1920_3/Default/DawnGraphiteCache/index | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1920_3/Default/DawnWebGPUCache/data_0 | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1920_3/Default/DawnWebGPUCache/data_1 | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1920_3/Default/DawnWebGPUCache/data_2 | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1920_3/Default/DawnWebGPUCache/data_3 | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1920_3/Default/DawnWebGPUCache/index | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1920_3/Default/discounts_db/LOCK | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1920_3/Default/discounts_db/LOG | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1920_3/Default/discount_infos_db/LOCK | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1920_3/Default/discount_infos_db/LOG | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1920_3/Default/EdgePushStorageWithConnectTokenAndKey/LOCK | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1920_3/Default/EdgePushStorageWithConnectTokenAndKey/LOG | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1920_3/Default/Extension Rules/000003.log | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1920_3/Default/Extension Rules/CURRENT | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1920_3/Default/Extension Rules/LOCK | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1920_3/Default/Extension Rules/LOG | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1920_3/Default/Extension Rules/MANIFEST-000001 | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1920_3/Default/Extension Scripts/000003.log | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1920_3/Default/Extension Scripts/CURRENT | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1920_3/Default/Extension Scripts/LOCK | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1920_3/Default/Extension Scripts/LOG | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1920_3/Default/Extension Scripts/MANIFEST-000001 | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1920_3/Default/Extension State/000003.log | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1920_3/Default/Extension State/CURRENT | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1920_3/Default/Extension State/LOCK | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1920_3/Default/Extension State/LOG | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1920_3/Default/Extension State/MANIFEST-000001 | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1920_3/Default/GPUCache/data_0 | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1920_3/Default/GPUCache/data_1 | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1920_3/Default/GPUCache/data_2 | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1920_3/Default/GPUCache/data_3 | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1920_3/Default/GPUCache/index | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1920_3/Default/Network/NetworkDataMigrated | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1920_3/Default/Nurturing/campaign_history | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1920_3/Default/Nurturing/campaign_history-journal | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1920_3/Default/parcel_tracking_db/LOCK | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1920_3/Default/parcel_tracking_db/LOG | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1920_3/Default/PersistentOriginTrials/LOCK | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1920_3/Default/PersistentOriginTrials/LOG | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1920_3/Default/Service Worker/Database/000003.log | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1920_3/Default/Service Worker/Database/CURRENT | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1920_3/Default/Service Worker/Database/LOCK | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1920_3/Default/Service Worker/Database/LOG | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1920_3/Default/Service Worker/Database/MANIFEST-000001 | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1920_3/Default/Service Worker/ScriptCache/2cc80dabc69f58b6_0 | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1920_3/Default/Service Worker/ScriptCache/4cb013792b196a35_0 | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1920_3/Default/Service Worker/ScriptCache/f1cdccba37924bda_0 | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1920_3/Default/Service Worker/ScriptCache/index | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1920_3/Default/Service Worker/ScriptCache/index-dir/the-real-index | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1920_3/Default/shared_proto_db/000003.log | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1920_3/Default/shared_proto_db/CURRENT | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1920_3/Default/shared_proto_db/LOCK | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1920_3/Default/shared_proto_db/LOG | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1920_3/Default/shared_proto_db/MANIFEST-000001 | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1920_3/Default/shared_proto_db/metadata/000003.log | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1920_3/Default/shared_proto_db/metadata/CURRENT | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1920_3/Default/shared_proto_db/metadata/LOCK | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1920_3/Default/shared_proto_db/metadata/LOG | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1920_3/Default/shared_proto_db/metadata/MANIFEST-000001 | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1920_3/Default/Site Characteristics Database/000003.log | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1920_3/Default/Site Characteristics Database/CURRENT | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1920_3/Default/Site Characteristics Database/LOCK | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1920_3/Default/Site Characteristics Database/LOG | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1920_3/Default/Site Characteristics Database/MANIFEST-000001 | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1920_3/Default/Storage/ext/ihmafllikibpmigkcoadcmckbfhibefp/def/declarative_performance_observer.db | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1920_3/Default/Storage/ext/ihmafllikibpmigkcoadcmckbfhibefp/def/declarative_performance_observer.db-journal | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1920_3/Default/Storage/ext/ihmafllikibpmigkcoadcmckbfhibefp/def/Code Cache/js/index | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1920_3/Default/Storage/ext/ihmafllikibpmigkcoadcmckbfhibefp/def/Code Cache/js/index-dir/the-real-index | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1920_3/Default/Storage/ext/ihmafllikibpmigkcoadcmckbfhibefp/def/Code Cache/wasm/index | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1920_3/Default/Storage/ext/ihmafllikibpmigkcoadcmckbfhibefp/def/Code Cache/wasm/index-dir/the-real-index | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1920_3/Default/Storage/ext/ihmafllikibpmigkcoadcmckbfhibefp/def/DawnGraphiteCache/data_0 | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1920_3/Default/Storage/ext/ihmafllikibpmigkcoadcmckbfhibefp/def/DawnGraphiteCache/data_1 | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1920_3/Default/Storage/ext/ihmafllikibpmigkcoadcmckbfhibefp/def/DawnGraphiteCache/data_2 | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1920_3/Default/Storage/ext/ihmafllikibpmigkcoadcmckbfhibefp/def/DawnGraphiteCache/data_3 | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1920_3/Default/Storage/ext/ihmafllikibpmigkcoadcmckbfhibefp/def/DawnGraphiteCache/index | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1920_3/Default/Storage/ext/ihmafllikibpmigkcoadcmckbfhibefp/def/DawnWebGPUCache/data_0 | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1920_3/Default/Storage/ext/ihmafllikibpmigkcoadcmckbfhibefp/def/DawnWebGPUCache/data_1 | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1920_3/Default/Storage/ext/ihmafllikibpmigkcoadcmckbfhibefp/def/DawnWebGPUCache/data_2 | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1920_3/Default/Storage/ext/ihmafllikibpmigkcoadcmckbfhibefp/def/DawnWebGPUCache/data_3 | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1920_3/Default/Storage/ext/ihmafllikibpmigkcoadcmckbfhibefp/def/DawnWebGPUCache/index | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1920_3/Default/Storage/ext/ihmafllikibpmigkcoadcmckbfhibefp/def/GPUCache/data_0 | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1920_3/Default/Storage/ext/ihmafllikibpmigkcoadcmckbfhibefp/def/GPUCache/data_1 | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1920_3/Default/Storage/ext/ihmafllikibpmigkcoadcmckbfhibefp/def/GPUCache/data_2 | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1920_3/Default/Storage/ext/ihmafllikibpmigkcoadcmckbfhibefp/def/GPUCache/data_3 | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1920_3/Default/Storage/ext/ihmafllikibpmigkcoadcmckbfhibefp/def/GPUCache/index | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1920_3/Default/Storage/ext/ihmafllikibpmigkcoadcmckbfhibefp/def/Network/NetworkDataMigrated | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1920_3/Default/Sync Data/LevelDB/000003.log | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1920_3/Default/Sync Data/LevelDB/CURRENT | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1920_3/Default/Sync Data/LevelDB/LOCK | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1920_3/Default/Sync Data/LevelDB/LOG | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1920_3/Default/Sync Data/LevelDB/MANIFEST-000001 | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1920_3/Default/WebStorage/QuotaManager | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1920_3/Default/WebStorage/QuotaManager-journal | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1920_3/GPUPersistentCache/DawnGraphiteCache/23IMHJGI2WIIJ3PDLCHAHUJAGHTLTEBB/cache.db | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1920_3/GPUPersistentCache/DawnGraphiteCache/23IMHJGI2WIIJ3PDLCHAHUJAGHTLTEBB/cache.db-wal | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1920_3/GPUPersistentCache/DawnGraphiteCache/23IMHJGI2WIIJ3PDLCHAHUJAGHTLTEBB/cache.journal | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1920_3/Nurturing/campaign_history | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1920_3/Nurturing/campaign_history-journal | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1920_3/ShaderCache/data_0 | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1920_3/ShaderCache/data_1 | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1920_3/ShaderCache/data_2 | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1920_3/ShaderCache/data_3 | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1920_3/ShaderCache/index | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1920_3/SmartScreen/RemoteData/customSettings | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1920_3/SmartScreen/RemoteData/customSettings_F95BA787499AB4FA9EFFF472CE383A14 | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1920_4/FirstLaunchAfterInstallation | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1920_4/Last Version | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1920_4/Local State | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1920_4/Variations | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1920_4/VariationsRuntimeSeedV2 | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1920_4/VariationsSafeSeedV2 | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1920_4/VariationsSeedV2 | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1920_4/Crashpad/settings.dat | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1920_4/Crashpad/throttle_store.dat | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1920_4/Default/Affiliation Database | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1920_4/Default/Affiliation Database-journal | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1920_4/Default/declarative_performance_observer.db | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1920_4/Default/declarative_performance_observer.db-journal | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1920_4/Default/Favicons | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1920_4/Default/Favicons-journal | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1920_4/Default/History | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1920_4/Default/History-journal | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1920_4/Default/HubApps Icons | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1920_4/Default/HubApps Icons-journal | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1920_4/Default/load_statistics.db | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1920_4/Default/load_statistics.db-shm | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1920_4/Default/load_statistics.db-wal | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1920_4/Default/LOCK | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1920_4/Default/LOG | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1920_4/Default/Login Data | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1920_4/Default/Login Data For Account | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1920_4/Default/Login Data For Account-journal | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1920_4/Default/Login Data-journal | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1920_4/Default/README | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1920_4/Default/ServerCertificate | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1920_4/Default/ServerCertificate-journal | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1920_4/Default/Top Sites | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1920_4/Default/Top Sites-journal | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1920_4/Default/Vpn Tokens | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1920_4/Default/Vpn Tokens-journal | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1920_4/Default/Web Data | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1920_4/Default/Web Data-journal | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1920_4/Default/ClientCertificates/LOCK | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1920_4/Default/ClientCertificates/LOG | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1920_4/Default/Code Cache/js/index | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1920_4/Default/Code Cache/js/index-dir/the-real-index | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1920_4/Default/Code Cache/wasm/index | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1920_4/Default/Code Cache/wasm/index-dir/the-real-index | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1920_4/Default/commerce_subscription_db/LOCK | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1920_4/Default/commerce_subscription_db/LOG | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1920_4/Default/DawnGraphiteCache/data_0 | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1920_4/Default/DawnGraphiteCache/data_1 | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1920_4/Default/DawnGraphiteCache/data_2 | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1920_4/Default/DawnGraphiteCache/data_3 | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1920_4/Default/DawnGraphiteCache/index | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1920_4/Default/DawnWebGPUCache/data_0 | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1920_4/Default/DawnWebGPUCache/data_1 | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1920_4/Default/DawnWebGPUCache/data_2 | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1920_4/Default/DawnWebGPUCache/data_3 | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1920_4/Default/DawnWebGPUCache/index | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1920_4/Default/discounts_db/LOCK | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1920_4/Default/discounts_db/LOG | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1920_4/Default/discount_infos_db/LOCK | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1920_4/Default/discount_infos_db/LOG | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1920_4/Default/EdgePushStorageWithConnectTokenAndKey/LOCK | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1920_4/Default/EdgePushStorageWithConnectTokenAndKey/LOG | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1920_4/Default/Extension Rules/000003.log | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1920_4/Default/Extension Rules/CURRENT | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1920_4/Default/Extension Rules/LOCK | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1920_4/Default/Extension Rules/LOG | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1920_4/Default/Extension Rules/MANIFEST-000001 | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1920_4/Default/Extension Scripts/000003.log | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1920_4/Default/Extension Scripts/CURRENT | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1920_4/Default/Extension Scripts/LOCK | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1920_4/Default/Extension Scripts/LOG | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1920_4/Default/Extension Scripts/MANIFEST-000001 | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1920_4/Default/Extension State/000003.log | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1920_4/Default/Extension State/CURRENT | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1920_4/Default/Extension State/LOCK | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1920_4/Default/Extension State/LOG | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1920_4/Default/Extension State/MANIFEST-000001 | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1920_4/Default/GPUCache/data_0 | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1920_4/Default/GPUCache/data_1 | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1920_4/Default/GPUCache/data_2 | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1920_4/Default/GPUCache/data_3 | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1920_4/Default/GPUCache/index | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1920_4/Default/Network/NetworkDataMigrated | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1920_4/Default/Nurturing/campaign_history | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1920_4/Default/Nurturing/campaign_history-journal | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1920_4/Default/parcel_tracking_db/LOCK | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1920_4/Default/parcel_tracking_db/LOG | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1920_4/Default/PersistentOriginTrials/LOCK | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1920_4/Default/PersistentOriginTrials/LOG | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1920_4/Default/Service Worker/Database/000003.log | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1920_4/Default/Service Worker/Database/CURRENT | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1920_4/Default/Service Worker/Database/LOCK | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1920_4/Default/Service Worker/Database/LOG | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1920_4/Default/Service Worker/Database/MANIFEST-000001 | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1920_4/Default/Service Worker/ScriptCache/2cc80dabc69f58b6_0 | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1920_4/Default/Service Worker/ScriptCache/4cb013792b196a35_0 | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1920_4/Default/Service Worker/ScriptCache/f1cdccba37924bda_0 | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1920_4/Default/Service Worker/ScriptCache/index | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1920_4/Default/Service Worker/ScriptCache/index-dir/the-real-index | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1920_4/Default/shared_proto_db/000003.log | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1920_4/Default/shared_proto_db/CURRENT | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1920_4/Default/shared_proto_db/LOCK | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1920_4/Default/shared_proto_db/LOG | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1920_4/Default/shared_proto_db/MANIFEST-000001 | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1920_4/Default/shared_proto_db/metadata/000003.log | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1920_4/Default/shared_proto_db/metadata/CURRENT | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1920_4/Default/shared_proto_db/metadata/LOCK | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1920_4/Default/shared_proto_db/metadata/LOG | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1920_4/Default/shared_proto_db/metadata/MANIFEST-000001 | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1920_4/Default/Site Characteristics Database/000003.log | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1920_4/Default/Site Characteristics Database/CURRENT | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1920_4/Default/Site Characteristics Database/LOCK | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1920_4/Default/Site Characteristics Database/LOG | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1920_4/Default/Site Characteristics Database/MANIFEST-000001 | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1920_4/Default/Storage/ext/ihmafllikibpmigkcoadcmckbfhibefp/def/declarative_performance_observer.db | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1920_4/Default/Storage/ext/ihmafllikibpmigkcoadcmckbfhibefp/def/declarative_performance_observer.db-journal | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1920_4/Default/Storage/ext/ihmafllikibpmigkcoadcmckbfhibefp/def/Code Cache/js/index | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1920_4/Default/Storage/ext/ihmafllikibpmigkcoadcmckbfhibefp/def/Code Cache/js/index-dir/the-real-index | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1920_4/Default/Storage/ext/ihmafllikibpmigkcoadcmckbfhibefp/def/Code Cache/wasm/index | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1920_4/Default/Storage/ext/ihmafllikibpmigkcoadcmckbfhibefp/def/Code Cache/wasm/index-dir/the-real-index | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1920_4/Default/Storage/ext/ihmafllikibpmigkcoadcmckbfhibefp/def/DawnGraphiteCache/data_0 | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1920_4/Default/Storage/ext/ihmafllikibpmigkcoadcmckbfhibefp/def/DawnGraphiteCache/data_1 | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1920_4/Default/Storage/ext/ihmafllikibpmigkcoadcmckbfhibefp/def/DawnGraphiteCache/data_2 | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1920_4/Default/Storage/ext/ihmafllikibpmigkcoadcmckbfhibefp/def/DawnGraphiteCache/data_3 | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1920_4/Default/Storage/ext/ihmafllikibpmigkcoadcmckbfhibefp/def/DawnGraphiteCache/index | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1920_4/Default/Storage/ext/ihmafllikibpmigkcoadcmckbfhibefp/def/DawnWebGPUCache/data_0 | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1920_4/Default/Storage/ext/ihmafllikibpmigkcoadcmckbfhibefp/def/DawnWebGPUCache/data_1 | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1920_4/Default/Storage/ext/ihmafllikibpmigkcoadcmckbfhibefp/def/DawnWebGPUCache/data_2 | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1920_4/Default/Storage/ext/ihmafllikibpmigkcoadcmckbfhibefp/def/DawnWebGPUCache/data_3 | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1920_4/Default/Storage/ext/ihmafllikibpmigkcoadcmckbfhibefp/def/DawnWebGPUCache/index | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1920_4/Default/Storage/ext/ihmafllikibpmigkcoadcmckbfhibefp/def/GPUCache/data_0 | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1920_4/Default/Storage/ext/ihmafllikibpmigkcoadcmckbfhibefp/def/GPUCache/data_1 | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1920_4/Default/Storage/ext/ihmafllikibpmigkcoadcmckbfhibefp/def/GPUCache/data_2 | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1920_4/Default/Storage/ext/ihmafllikibpmigkcoadcmckbfhibefp/def/GPUCache/data_3 | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1920_4/Default/Storage/ext/ihmafllikibpmigkcoadcmckbfhibefp/def/GPUCache/index | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1920_4/Default/Storage/ext/ihmafllikibpmigkcoadcmckbfhibefp/def/Network/NetworkDataMigrated | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1920_4/Default/Sync Data/LevelDB/000003.log | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1920_4/Default/Sync Data/LevelDB/CURRENT | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1920_4/Default/Sync Data/LevelDB/LOCK | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1920_4/Default/Sync Data/LevelDB/LOG | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1920_4/Default/Sync Data/LevelDB/MANIFEST-000001 | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1920_4/Default/WebStorage/QuotaManager | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1920_4/Default/WebStorage/QuotaManager-journal | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1920_4/GPUPersistentCache/DawnGraphiteCache/23IMHJGI2WIIJ3PDLCHAHUJAGHTLTEBB/cache.db | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1920_4/GPUPersistentCache/DawnGraphiteCache/23IMHJGI2WIIJ3PDLCHAHUJAGHTLTEBB/cache.db-wal | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1920_4/GPUPersistentCache/DawnGraphiteCache/23IMHJGI2WIIJ3PDLCHAHUJAGHTLTEBB/cache.journal | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1920_4/Nurturing/campaign_history | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1920_4/Nurturing/campaign_history-journal | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1920_4/ShaderCache/data_0 | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1920_4/ShaderCache/data_1 | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1920_4/ShaderCache/data_2 | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1920_4/ShaderCache/data_3 | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1920_4/ShaderCache/index | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1920_4/SmartScreen/RemoteData/customSettings | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1920_4/SmartScreen/RemoteData/customSettings_F95BA787499AB4FA9EFFF472CE383A14 | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1920_5/FirstLaunchAfterInstallation | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1920_5/Last Version | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1920_5/Local State | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1920_5/Variations | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1920_5/VariationsRuntimeSeedV2 | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1920_5/VariationsSafeSeedV2 | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1920_5/VariationsSeedV2 | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1920_5/Crashpad/settings.dat | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1920_5/Crashpad/throttle_store.dat | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1920_5/Default/Affiliation Database | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1920_5/Default/Affiliation Database-journal | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1920_5/Default/declarative_performance_observer.db | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1920_5/Default/declarative_performance_observer.db-journal | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1920_5/Default/Favicons | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1920_5/Default/Favicons-journal | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1920_5/Default/History | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1920_5/Default/History-journal | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1920_5/Default/HubApps Icons | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1920_5/Default/HubApps Icons-journal | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1920_5/Default/load_statistics.db | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1920_5/Default/load_statistics.db-shm | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1920_5/Default/load_statistics.db-wal | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1920_5/Default/LOCK | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1920_5/Default/LOG | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1920_5/Default/Login Data | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1920_5/Default/Login Data For Account | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1920_5/Default/Login Data For Account-journal | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1920_5/Default/Login Data-journal | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1920_5/Default/README | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1920_5/Default/ServerCertificate | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1920_5/Default/ServerCertificate-journal | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1920_5/Default/Top Sites | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1920_5/Default/Top Sites-journal | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1920_5/Default/Vpn Tokens | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1920_5/Default/Vpn Tokens-journal | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1920_5/Default/Web Data | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1920_5/Default/Web Data-journal | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1920_5/Default/ClientCertificates/LOCK | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1920_5/Default/ClientCertificates/LOG | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1920_5/Default/Code Cache/js/index | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1920_5/Default/Code Cache/js/index-dir/the-real-index | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1920_5/Default/Code Cache/wasm/index | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1920_5/Default/Code Cache/wasm/index-dir/the-real-index | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1920_5/Default/commerce_subscription_db/LOCK | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1920_5/Default/commerce_subscription_db/LOG | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1920_5/Default/DawnGraphiteCache/data_0 | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1920_5/Default/DawnGraphiteCache/data_1 | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1920_5/Default/DawnGraphiteCache/data_2 | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1920_5/Default/DawnGraphiteCache/data_3 | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1920_5/Default/DawnGraphiteCache/index | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1920_5/Default/DawnWebGPUCache/data_0 | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1920_5/Default/DawnWebGPUCache/data_1 | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1920_5/Default/DawnWebGPUCache/data_2 | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1920_5/Default/DawnWebGPUCache/data_3 | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1920_5/Default/DawnWebGPUCache/index | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1920_5/Default/discounts_db/LOCK | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1920_5/Default/discounts_db/LOG | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1920_5/Default/discount_infos_db/LOCK | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1920_5/Default/discount_infos_db/LOG | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1920_5/Default/EdgePushStorageWithConnectTokenAndKey/LOCK | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1920_5/Default/EdgePushStorageWithConnectTokenAndKey/LOG | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1920_5/Default/Extension Rules/000003.log | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1920_5/Default/Extension Rules/CURRENT | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1920_5/Default/Extension Rules/LOCK | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1920_5/Default/Extension Rules/LOG | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1920_5/Default/Extension Rules/MANIFEST-000001 | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1920_5/Default/Extension Scripts/000003.log | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1920_5/Default/Extension Scripts/CURRENT | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1920_5/Default/Extension Scripts/LOCK | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1920_5/Default/Extension Scripts/LOG | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1920_5/Default/Extension Scripts/MANIFEST-000001 | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1920_5/Default/Extension State/000003.log | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1920_5/Default/Extension State/CURRENT | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1920_5/Default/Extension State/LOCK | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1920_5/Default/Extension State/LOG | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1920_5/Default/Extension State/MANIFEST-000001 | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1920_5/Default/GPUCache/data_0 | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1920_5/Default/GPUCache/data_1 | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1920_5/Default/GPUCache/data_2 | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1920_5/Default/GPUCache/data_3 | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1920_5/Default/GPUCache/index | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1920_5/Default/Network/NetworkDataMigrated | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1920_5/Default/Nurturing/campaign_history | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1920_5/Default/Nurturing/campaign_history-journal | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1920_5/Default/parcel_tracking_db/LOCK | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1920_5/Default/parcel_tracking_db/LOG | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1920_5/Default/PersistentOriginTrials/LOCK | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1920_5/Default/PersistentOriginTrials/LOG | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1920_5/Default/Service Worker/Database/000003.log | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1920_5/Default/Service Worker/Database/CURRENT | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1920_5/Default/Service Worker/Database/LOCK | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1920_5/Default/Service Worker/Database/LOG | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1920_5/Default/Service Worker/Database/MANIFEST-000001 | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1920_5/Default/Service Worker/ScriptCache/2cc80dabc69f58b6_0 | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1920_5/Default/Service Worker/ScriptCache/4cb013792b196a35_0 | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1920_5/Default/Service Worker/ScriptCache/f1cdccba37924bda_0 | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1920_5/Default/Service Worker/ScriptCache/index | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1920_5/Default/Service Worker/ScriptCache/index-dir/the-real-index | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1920_5/Default/shared_proto_db/000003.log | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1920_5/Default/shared_proto_db/CURRENT | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1920_5/Default/shared_proto_db/LOCK | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1920_5/Default/shared_proto_db/LOG | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1920_5/Default/shared_proto_db/MANIFEST-000001 | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1920_5/Default/shared_proto_db/metadata/000003.log | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1920_5/Default/shared_proto_db/metadata/CURRENT | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1920_5/Default/shared_proto_db/metadata/LOCK | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1920_5/Default/shared_proto_db/metadata/LOG | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1920_5/Default/shared_proto_db/metadata/MANIFEST-000001 | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1920_5/Default/Site Characteristics Database/000003.log | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1920_5/Default/Site Characteristics Database/CURRENT | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1920_5/Default/Site Characteristics Database/LOCK | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1920_5/Default/Site Characteristics Database/LOG | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1920_5/Default/Site Characteristics Database/MANIFEST-000001 | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1920_5/Default/Storage/ext/ihmafllikibpmigkcoadcmckbfhibefp/def/declarative_performance_observer.db | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1920_5/Default/Storage/ext/ihmafllikibpmigkcoadcmckbfhibefp/def/declarative_performance_observer.db-journal | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1920_5/Default/Storage/ext/ihmafllikibpmigkcoadcmckbfhibefp/def/Code Cache/js/index | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1920_5/Default/Storage/ext/ihmafllikibpmigkcoadcmckbfhibefp/def/Code Cache/js/index-dir/the-real-index | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1920_5/Default/Storage/ext/ihmafllikibpmigkcoadcmckbfhibefp/def/Code Cache/wasm/index | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1920_5/Default/Storage/ext/ihmafllikibpmigkcoadcmckbfhibefp/def/Code Cache/wasm/index-dir/the-real-index | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1920_5/Default/Storage/ext/ihmafllikibpmigkcoadcmckbfhibefp/def/DawnGraphiteCache/data_0 | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1920_5/Default/Storage/ext/ihmafllikibpmigkcoadcmckbfhibefp/def/DawnGraphiteCache/data_1 | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1920_5/Default/Storage/ext/ihmafllikibpmigkcoadcmckbfhibefp/def/DawnGraphiteCache/data_2 | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1920_5/Default/Storage/ext/ihmafllikibpmigkcoadcmckbfhibefp/def/DawnGraphiteCache/data_3 | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1920_5/Default/Storage/ext/ihmafllikibpmigkcoadcmckbfhibefp/def/DawnGraphiteCache/index | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1920_5/Default/Storage/ext/ihmafllikibpmigkcoadcmckbfhibefp/def/DawnWebGPUCache/data_0 | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1920_5/Default/Storage/ext/ihmafllikibpmigkcoadcmckbfhibefp/def/DawnWebGPUCache/data_1 | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1920_5/Default/Storage/ext/ihmafllikibpmigkcoadcmckbfhibefp/def/DawnWebGPUCache/data_2 | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1920_5/Default/Storage/ext/ihmafllikibpmigkcoadcmckbfhibefp/def/DawnWebGPUCache/data_3 | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1920_5/Default/Storage/ext/ihmafllikibpmigkcoadcmckbfhibefp/def/DawnWebGPUCache/index | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1920_5/Default/Storage/ext/ihmafllikibpmigkcoadcmckbfhibefp/def/GPUCache/data_0 | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1920_5/Default/Storage/ext/ihmafllikibpmigkcoadcmckbfhibefp/def/GPUCache/data_1 | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1920_5/Default/Storage/ext/ihmafllikibpmigkcoadcmckbfhibefp/def/GPUCache/data_2 | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1920_5/Default/Storage/ext/ihmafllikibpmigkcoadcmckbfhibefp/def/GPUCache/data_3 | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1920_5/Default/Storage/ext/ihmafllikibpmigkcoadcmckbfhibefp/def/GPUCache/index | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1920_5/Default/Storage/ext/ihmafllikibpmigkcoadcmckbfhibefp/def/Network/NetworkDataMigrated | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1920_5/Default/Sync Data/LevelDB/000003.log | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1920_5/Default/Sync Data/LevelDB/CURRENT | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1920_5/Default/Sync Data/LevelDB/LOCK | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1920_5/Default/Sync Data/LevelDB/LOG | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1920_5/Default/Sync Data/LevelDB/MANIFEST-000001 | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1920_5/Default/WebStorage/QuotaManager | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1920_5/Default/WebStorage/QuotaManager-journal | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1920_5/GPUPersistentCache/DawnGraphiteCache/23IMHJGI2WIIJ3PDLCHAHUJAGHTLTEBB/cache.db | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1920_5/GPUPersistentCache/DawnGraphiteCache/23IMHJGI2WIIJ3PDLCHAHUJAGHTLTEBB/cache.db-wal | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1920_5/GPUPersistentCache/DawnGraphiteCache/23IMHJGI2WIIJ3PDLCHAHUJAGHTLTEBB/cache.journal | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1920_5/Nurturing/campaign_history | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1920_5/Nurturing/campaign_history-journal | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1920_5/ShaderCache/data_0 | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1920_5/ShaderCache/data_1 | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1920_5/ShaderCache/data_2 | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1920_5/ShaderCache/data_3 | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1920_5/ShaderCache/index | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1920_5/SmartScreen/RemoteData/customSettings | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1920_5/SmartScreen/RemoteData/customSettings_F95BA787499AB4FA9EFFF472CE383A14 | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1920_6/FirstLaunchAfterInstallation | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1920_6/Last Version | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1920_6/Local State | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1920_6/Variations | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1920_6/VariationsRuntimeSeedV2 | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1920_6/VariationsSafeSeedV2 | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1920_6/VariationsSeedV2 | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1920_6/Crashpad/settings.dat | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1920_6/Crashpad/throttle_store.dat | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1920_6/Default/Affiliation Database | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1920_6/Default/Affiliation Database-journal | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1920_6/Default/declarative_performance_observer.db | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1920_6/Default/declarative_performance_observer.db-journal | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1920_6/Default/Favicons | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1920_6/Default/Favicons-journal | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1920_6/Default/History | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1920_6/Default/History-journal | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1920_6/Default/HubApps Icons | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1920_6/Default/HubApps Icons-journal | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1920_6/Default/load_statistics.db | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1920_6/Default/load_statistics.db-shm | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1920_6/Default/load_statistics.db-wal | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1920_6/Default/LOCK | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1920_6/Default/LOG | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1920_6/Default/Login Data | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1920_6/Default/Login Data For Account | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1920_6/Default/Login Data For Account-journal | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1920_6/Default/Login Data-journal | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1920_6/Default/README | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1920_6/Default/ServerCertificate | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1920_6/Default/ServerCertificate-journal | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1920_6/Default/Top Sites | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1920_6/Default/Top Sites-journal | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1920_6/Default/Vpn Tokens | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1920_6/Default/Vpn Tokens-journal | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1920_6/Default/Web Data | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1920_6/Default/Web Data-journal | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1920_6/Default/ClientCertificates/LOCK | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1920_6/Default/ClientCertificates/LOG | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1920_6/Default/Code Cache/js/index | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1920_6/Default/Code Cache/js/index-dir/the-real-index | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1920_6/Default/Code Cache/wasm/index | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1920_6/Default/Code Cache/wasm/index-dir/the-real-index | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1920_6/Default/commerce_subscription_db/LOCK | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1920_6/Default/commerce_subscription_db/LOG | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1920_6/Default/DawnGraphiteCache/data_0 | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1920_6/Default/DawnGraphiteCache/data_1 | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1920_6/Default/DawnGraphiteCache/data_2 | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1920_6/Default/DawnGraphiteCache/data_3 | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1920_6/Default/DawnGraphiteCache/index | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1920_6/Default/DawnWebGPUCache/data_0 | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1920_6/Default/DawnWebGPUCache/data_1 | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1920_6/Default/DawnWebGPUCache/data_2 | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1920_6/Default/DawnWebGPUCache/data_3 | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1920_6/Default/DawnWebGPUCache/index | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1920_6/Default/discounts_db/LOCK | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1920_6/Default/discounts_db/LOG | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1920_6/Default/discount_infos_db/LOCK | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1920_6/Default/discount_infos_db/LOG | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1920_6/Default/EdgePushStorageWithConnectTokenAndKey/LOCK | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1920_6/Default/EdgePushStorageWithConnectTokenAndKey/LOG | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1920_6/Default/Extension Rules/000003.log | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1920_6/Default/Extension Rules/CURRENT | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1920_6/Default/Extension Rules/LOCK | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1920_6/Default/Extension Rules/LOG | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1920_6/Default/Extension Rules/MANIFEST-000001 | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1920_6/Default/Extension Scripts/000003.log | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1920_6/Default/Extension Scripts/CURRENT | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1920_6/Default/Extension Scripts/LOCK | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1920_6/Default/Extension Scripts/LOG | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1920_6/Default/Extension Scripts/MANIFEST-000001 | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1920_6/Default/Extension State/000003.log | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1920_6/Default/Extension State/CURRENT | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1920_6/Default/Extension State/LOCK | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1920_6/Default/Extension State/LOG | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1920_6/Default/Extension State/MANIFEST-000001 | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1920_6/Default/GPUCache/data_0 | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1920_6/Default/GPUCache/data_1 | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1920_6/Default/GPUCache/data_2 | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1920_6/Default/GPUCache/data_3 | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1920_6/Default/GPUCache/index | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1920_6/Default/Network/NetworkDataMigrated | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1920_6/Default/Nurturing/campaign_history | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1920_6/Default/Nurturing/campaign_history-journal | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1920_6/Default/parcel_tracking_db/LOCK | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1920_6/Default/parcel_tracking_db/LOG | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1920_6/Default/PersistentOriginTrials/LOCK | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1920_6/Default/PersistentOriginTrials/LOG | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1920_6/Default/Service Worker/Database/000003.log | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1920_6/Default/Service Worker/Database/CURRENT | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1920_6/Default/Service Worker/Database/LOCK | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1920_6/Default/Service Worker/Database/LOG | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1920_6/Default/Service Worker/Database/MANIFEST-000001 | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1920_6/Default/Service Worker/ScriptCache/2cc80dabc69f58b6_0 | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1920_6/Default/Service Worker/ScriptCache/4cb013792b196a35_0 | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1920_6/Default/Service Worker/ScriptCache/f1cdccba37924bda_0 | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1920_6/Default/Service Worker/ScriptCache/index | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1920_6/Default/Service Worker/ScriptCache/index-dir/the-real-index | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1920_6/Default/shared_proto_db/000003.log | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1920_6/Default/shared_proto_db/CURRENT | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1920_6/Default/shared_proto_db/LOCK | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1920_6/Default/shared_proto_db/LOG | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1920_6/Default/shared_proto_db/MANIFEST-000001 | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1920_6/Default/shared_proto_db/metadata/000003.log | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1920_6/Default/shared_proto_db/metadata/CURRENT | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1920_6/Default/shared_proto_db/metadata/LOCK | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1920_6/Default/shared_proto_db/metadata/LOG | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1920_6/Default/shared_proto_db/metadata/MANIFEST-000001 | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1920_6/Default/Site Characteristics Database/000003.log | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1920_6/Default/Site Characteristics Database/CURRENT | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1920_6/Default/Site Characteristics Database/LOCK | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1920_6/Default/Site Characteristics Database/LOG | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1920_6/Default/Site Characteristics Database/MANIFEST-000001 | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1920_6/Default/Storage/ext/ihmafllikibpmigkcoadcmckbfhibefp/def/declarative_performance_observer.db | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1920_6/Default/Storage/ext/ihmafllikibpmigkcoadcmckbfhibefp/def/declarative_performance_observer.db-journal | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1920_6/Default/Storage/ext/ihmafllikibpmigkcoadcmckbfhibefp/def/Code Cache/js/index | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1920_6/Default/Storage/ext/ihmafllikibpmigkcoadcmckbfhibefp/def/Code Cache/js/index-dir/the-real-index | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1920_6/Default/Storage/ext/ihmafllikibpmigkcoadcmckbfhibefp/def/Code Cache/wasm/index | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1920_6/Default/Storage/ext/ihmafllikibpmigkcoadcmckbfhibefp/def/Code Cache/wasm/index-dir/the-real-index | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1920_6/Default/Storage/ext/ihmafllikibpmigkcoadcmckbfhibefp/def/DawnGraphiteCache/data_0 | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1920_6/Default/Storage/ext/ihmafllikibpmigkcoadcmckbfhibefp/def/DawnGraphiteCache/data_1 | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1920_6/Default/Storage/ext/ihmafllikibpmigkcoadcmckbfhibefp/def/DawnGraphiteCache/data_2 | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1920_6/Default/Storage/ext/ihmafllikibpmigkcoadcmckbfhibefp/def/DawnGraphiteCache/data_3 | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1920_6/Default/Storage/ext/ihmafllikibpmigkcoadcmckbfhibefp/def/DawnGraphiteCache/index | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1920_6/Default/Storage/ext/ihmafllikibpmigkcoadcmckbfhibefp/def/DawnWebGPUCache/data_0 | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1920_6/Default/Storage/ext/ihmafllikibpmigkcoadcmckbfhibefp/def/DawnWebGPUCache/data_1 | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1920_6/Default/Storage/ext/ihmafllikibpmigkcoadcmckbfhibefp/def/DawnWebGPUCache/data_2 | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1920_6/Default/Storage/ext/ihmafllikibpmigkcoadcmckbfhibefp/def/DawnWebGPUCache/data_3 | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1920_6/Default/Storage/ext/ihmafllikibpmigkcoadcmckbfhibefp/def/DawnWebGPUCache/index | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1920_6/Default/Storage/ext/ihmafllikibpmigkcoadcmckbfhibefp/def/GPUCache/data_0 | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1920_6/Default/Storage/ext/ihmafllikibpmigkcoadcmckbfhibefp/def/GPUCache/data_1 | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1920_6/Default/Storage/ext/ihmafllikibpmigkcoadcmckbfhibefp/def/GPUCache/data_2 | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1920_6/Default/Storage/ext/ihmafllikibpmigkcoadcmckbfhibefp/def/GPUCache/data_3 | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1920_6/Default/Storage/ext/ihmafllikibpmigkcoadcmckbfhibefp/def/GPUCache/index | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1920_6/Default/Storage/ext/ihmafllikibpmigkcoadcmckbfhibefp/def/Network/NetworkDataMigrated | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1920_6/Default/Sync Data/LevelDB/000003.log | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1920_6/Default/Sync Data/LevelDB/CURRENT | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1920_6/Default/Sync Data/LevelDB/LOCK | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1920_6/Default/Sync Data/LevelDB/LOG | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1920_6/Default/Sync Data/LevelDB/MANIFEST-000001 | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1920_6/Default/WebStorage/QuotaManager | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1920_6/Default/WebStorage/QuotaManager-journal | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1920_6/GPUPersistentCache/DawnGraphiteCache/23IMHJGI2WIIJ3PDLCHAHUJAGHTLTEBB/cache.db | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1920_6/GPUPersistentCache/DawnGraphiteCache/23IMHJGI2WIIJ3PDLCHAHUJAGHTLTEBB/cache.db-wal | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1920_6/GPUPersistentCache/DawnGraphiteCache/23IMHJGI2WIIJ3PDLCHAHUJAGHTLTEBB/cache.journal | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1920_6/Nurturing/campaign_history | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1920_6/Nurturing/campaign_history-journal | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1920_6/ShaderCache/data_0 | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1920_6/ShaderCache/data_1 | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1920_6/ShaderCache/data_2 | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1920_6/ShaderCache/data_3 | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1920_6/ShaderCache/index | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1920_6/SmartScreen/RemoteData/customSettings | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_1920_6/SmartScreen/RemoteData/customSettings_F95BA787499AB4FA9EFFF472CE383A14 | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_768_1/FirstLaunchAfterInstallation | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_768_1/Last Version | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_768_1/Local State | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_768_1/Variations | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_768_1/VariationsRuntimeSeedV2 | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_768_1/VariationsSafeSeedV2 | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_768_1/VariationsSeedV2 | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_768_1/Crashpad/settings.dat | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_768_1/Crashpad/throttle_store.dat | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_768_1/Default/Affiliation Database | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_768_1/Default/Affiliation Database-journal | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_768_1/Default/declarative_performance_observer.db | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_768_1/Default/declarative_performance_observer.db-journal | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_768_1/Default/Favicons | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_768_1/Default/Favicons-journal | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_768_1/Default/History | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_768_1/Default/History-journal | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_768_1/Default/HubApps Icons | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_768_1/Default/HubApps Icons-journal | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_768_1/Default/load_statistics.db | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_768_1/Default/load_statistics.db-shm | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_768_1/Default/load_statistics.db-wal | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_768_1/Default/LOCK | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_768_1/Default/LOG | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_768_1/Default/Login Data | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_768_1/Default/Login Data For Account | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_768_1/Default/Login Data For Account-journal | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_768_1/Default/Login Data-journal | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_768_1/Default/README | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_768_1/Default/ServerCertificate | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_768_1/Default/ServerCertificate-journal | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_768_1/Default/Top Sites | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_768_1/Default/Top Sites-journal | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_768_1/Default/Vpn Tokens | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_768_1/Default/Vpn Tokens-journal | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_768_1/Default/Web Data | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_768_1/Default/Web Data-journal | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_768_1/Default/ClientCertificates/LOCK | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_768_1/Default/ClientCertificates/LOG | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_768_1/Default/Code Cache/js/index | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_768_1/Default/Code Cache/js/index-dir/the-real-index | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_768_1/Default/Code Cache/wasm/index | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_768_1/Default/Code Cache/wasm/index-dir/the-real-index | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_768_1/Default/commerce_subscription_db/LOCK | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_768_1/Default/commerce_subscription_db/LOG | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_768_1/Default/DawnGraphiteCache/data_0 | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_768_1/Default/DawnGraphiteCache/data_1 | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_768_1/Default/DawnGraphiteCache/data_2 | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_768_1/Default/DawnGraphiteCache/data_3 | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_768_1/Default/DawnGraphiteCache/index | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_768_1/Default/DawnWebGPUCache/data_0 | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_768_1/Default/DawnWebGPUCache/data_1 | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_768_1/Default/DawnWebGPUCache/data_2 | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_768_1/Default/DawnWebGPUCache/data_3 | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_768_1/Default/DawnWebGPUCache/index | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_768_1/Default/discounts_db/LOCK | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_768_1/Default/discounts_db/LOG | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_768_1/Default/discount_infos_db/LOCK | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_768_1/Default/discount_infos_db/LOG | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_768_1/Default/EdgePushStorageWithConnectTokenAndKey/LOCK | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_768_1/Default/EdgePushStorageWithConnectTokenAndKey/LOG | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_768_1/Default/Extension Rules/000003.log | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_768_1/Default/Extension Rules/CURRENT | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_768_1/Default/Extension Rules/LOCK | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_768_1/Default/Extension Rules/LOG | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_768_1/Default/Extension Rules/MANIFEST-000001 | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_768_1/Default/Extension Scripts/000003.log | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_768_1/Default/Extension Scripts/CURRENT | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_768_1/Default/Extension Scripts/LOCK | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_768_1/Default/Extension Scripts/LOG | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_768_1/Default/Extension Scripts/MANIFEST-000001 | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_768_1/Default/Extension State/000003.log | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_768_1/Default/Extension State/CURRENT | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_768_1/Default/Extension State/LOCK | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_768_1/Default/Extension State/LOG | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_768_1/Default/Extension State/MANIFEST-000001 | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_768_1/Default/GPUCache/data_0 | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_768_1/Default/GPUCache/data_1 | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_768_1/Default/GPUCache/data_2 | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_768_1/Default/GPUCache/data_3 | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_768_1/Default/GPUCache/index | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_768_1/Default/Network/NetworkDataMigrated | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_768_1/Default/Nurturing/campaign_history | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_768_1/Default/Nurturing/campaign_history-journal | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_768_1/Default/parcel_tracking_db/LOCK | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_768_1/Default/parcel_tracking_db/LOG | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_768_1/Default/PersistentOriginTrials/LOCK | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_768_1/Default/PersistentOriginTrials/LOG | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_768_1/Default/Service Worker/Database/000003.log | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_768_1/Default/Service Worker/Database/CURRENT | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_768_1/Default/Service Worker/Database/LOCK | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_768_1/Default/Service Worker/Database/LOG | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_768_1/Default/Service Worker/Database/MANIFEST-000001 | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_768_1/Default/Service Worker/ScriptCache/2cc80dabc69f58b6_0 | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_768_1/Default/Service Worker/ScriptCache/4cb013792b196a35_0 | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_768_1/Default/Service Worker/ScriptCache/f1cdccba37924bda_0 | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_768_1/Default/Service Worker/ScriptCache/index | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_768_1/Default/Service Worker/ScriptCache/index-dir/the-real-index | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_768_1/Default/shared_proto_db/000003.log | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_768_1/Default/shared_proto_db/CURRENT | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_768_1/Default/shared_proto_db/LOCK | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_768_1/Default/shared_proto_db/LOG | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_768_1/Default/shared_proto_db/MANIFEST-000001 | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_768_1/Default/shared_proto_db/metadata/000003.log | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_768_1/Default/shared_proto_db/metadata/CURRENT | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_768_1/Default/shared_proto_db/metadata/LOCK | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_768_1/Default/shared_proto_db/metadata/LOG | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_768_1/Default/shared_proto_db/metadata/MANIFEST-000001 | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_768_1/Default/Site Characteristics Database/000003.log | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_768_1/Default/Site Characteristics Database/CURRENT | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_768_1/Default/Site Characteristics Database/LOCK | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_768_1/Default/Site Characteristics Database/LOG | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_768_1/Default/Site Characteristics Database/MANIFEST-000001 | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_768_1/Default/Storage/ext/ihmafllikibpmigkcoadcmckbfhibefp/def/declarative_performance_observer.db | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_768_1/Default/Storage/ext/ihmafllikibpmigkcoadcmckbfhibefp/def/declarative_performance_observer.db-journal | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_768_1/Default/Storage/ext/ihmafllikibpmigkcoadcmckbfhibefp/def/Code Cache/js/index | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_768_1/Default/Storage/ext/ihmafllikibpmigkcoadcmckbfhibefp/def/Code Cache/js/index-dir/the-real-index | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_768_1/Default/Storage/ext/ihmafllikibpmigkcoadcmckbfhibefp/def/Code Cache/wasm/index | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_768_1/Default/Storage/ext/ihmafllikibpmigkcoadcmckbfhibefp/def/Code Cache/wasm/index-dir/the-real-index | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_768_1/Default/Storage/ext/ihmafllikibpmigkcoadcmckbfhibefp/def/DawnGraphiteCache/data_0 | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_768_1/Default/Storage/ext/ihmafllikibpmigkcoadcmckbfhibefp/def/DawnGraphiteCache/data_1 | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_768_1/Default/Storage/ext/ihmafllikibpmigkcoadcmckbfhibefp/def/DawnGraphiteCache/data_2 | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_768_1/Default/Storage/ext/ihmafllikibpmigkcoadcmckbfhibefp/def/DawnGraphiteCache/data_3 | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_768_1/Default/Storage/ext/ihmafllikibpmigkcoadcmckbfhibefp/def/DawnGraphiteCache/index | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_768_1/Default/Storage/ext/ihmafllikibpmigkcoadcmckbfhibefp/def/DawnWebGPUCache/data_0 | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_768_1/Default/Storage/ext/ihmafllikibpmigkcoadcmckbfhibefp/def/DawnWebGPUCache/data_1 | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_768_1/Default/Storage/ext/ihmafllikibpmigkcoadcmckbfhibefp/def/DawnWebGPUCache/data_2 | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_768_1/Default/Storage/ext/ihmafllikibpmigkcoadcmckbfhibefp/def/DawnWebGPUCache/data_3 | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_768_1/Default/Storage/ext/ihmafllikibpmigkcoadcmckbfhibefp/def/DawnWebGPUCache/index | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_768_1/Default/Storage/ext/ihmafllikibpmigkcoadcmckbfhibefp/def/GPUCache/data_0 | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_768_1/Default/Storage/ext/ihmafllikibpmigkcoadcmckbfhibefp/def/GPUCache/data_1 | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_768_1/Default/Storage/ext/ihmafllikibpmigkcoadcmckbfhibefp/def/GPUCache/data_2 | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_768_1/Default/Storage/ext/ihmafllikibpmigkcoadcmckbfhibefp/def/GPUCache/data_3 | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_768_1/Default/Storage/ext/ihmafllikibpmigkcoadcmckbfhibefp/def/GPUCache/index | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_768_1/Default/Storage/ext/ihmafllikibpmigkcoadcmckbfhibefp/def/Network/NetworkDataMigrated | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_768_1/Default/Sync Data/LevelDB/000003.log | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_768_1/Default/Sync Data/LevelDB/CURRENT | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_768_1/Default/Sync Data/LevelDB/LOCK | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_768_1/Default/Sync Data/LevelDB/LOG | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_768_1/Default/Sync Data/LevelDB/MANIFEST-000001 | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_768_1/Default/WebStorage/QuotaManager | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_768_1/Default/WebStorage/QuotaManager-journal | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_768_1/GPUPersistentCache/DawnGraphiteCache/23IMHJGI2WIIJ3PDLCHAHUJAGHTLTEBB/cache.db | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_768_1/GPUPersistentCache/DawnGraphiteCache/23IMHJGI2WIIJ3PDLCHAHUJAGHTLTEBB/cache.db-wal | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_768_1/GPUPersistentCache/DawnGraphiteCache/23IMHJGI2WIIJ3PDLCHAHUJAGHTLTEBB/cache.journal | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_768_1/Nurturing/campaign_history | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_768_1/Nurturing/campaign_history-journal | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_768_1/ShaderCache/data_0 | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_768_1/ShaderCache/data_1 | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_768_1/ShaderCache/data_2 | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_768_1/ShaderCache/data_3 | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_768_1/ShaderCache/index | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_768_1/SmartScreen/RemoteData/customSettings | 9 | 0 | n | 0.500 |
-| memory/designer/_ud_768_1/SmartScreen/RemoteData/customSettings_F95BA787499AB4FA9EFFF472CE383A14 | 9 | 0 | n | 0.500 |
 | memory/designer/__pycache__/capture_baseline.cpython-313.pyc | 9 | 0 | n | 0.500 |
 | memory/designer/__pycache__/close_g2_g10.cpython-313.pyc | 9 | 0 | n | 0.500 |
 | memory/goals/archivist-goal5-forecast-phantom-scan-2026-11-18.md | 9 | 0 | n | 0.500 |
@@ -5910,13 +1949,10 @@ Leaves: 11986 | flagged (<0.35): 0
 | memory/archivist/dedup-apply-evidence-2026-11-20.json | 7 | 0 | n | 0.511 |
 | memory/archivist/dedup-check-2026-11-20.json | 7 | 0 | n | 0.511 |
 | memory/archivist/dedup-report-2026-11-20.json | 7 | 0 | n | 0.511 |
-| memory/archivist/dedup-report-full-2026-11-20.json | 7 | 0 | n | 0.511 |
-| memory/archivist/dedup-report.json | 7 | 0 | n | 0.511 |
 | memory/archivist/dedup-scan-2026-11-20.json | 7 | 0 | n | 0.511 |
 | memory/archivist/dedup-verify-2026-11-20.json | 7 | 0 | n | 0.511 |
 | memory/archivist/dedup.py | 7 | 0 | n | 0.511 |
 | memory/archivist/designer-empty-states-audit-2026-11-20.md | 7 | 0 | n | 0.511 |
-| memory/archivist/dup-detect-report-2026-11-20.json | 7 | 0 | n | 0.511 |
 | memory/archivist/dup-detect-report-2026-11-20.md | 7 | 0 | n | 0.511 |
 | memory/archivist/evidence-assist-scribe-compress-2026-11-20.md | 7 | 0 | n | 0.511 |
 | memory/archivist/evidence-assist-scribe-relevance-map-2026-11-20.md | 7 | 0 | n | 0.511 |
@@ -5943,7 +1979,6 @@ Leaves: 11986 | flagged (<0.35): 0
 | memory/archivist/evidence-log.md | 7 | 0 | n | 0.511 |
 | memory/archivist/evidence-postcompaction-retrieval-2026-11-20.md | 7 | 0 | n | 0.511 |
 | memory/archivist/evidence-scribe-goal8-timeline-verify-2026-11-20.md | 7 | 0 | n | 0.511 |
-| memory/archivist/freshness-report-2026-11-20.json | 7 | 0 | n | 0.511 |
 | memory/archivist/freshness-report-2026-11-20.md | 7 | 0 | n | 0.511 |
 | memory/archivist/freshness-snapshot-2026-11-20.json | 7 | 0 | n | 0.511 |
 | memory/archivist/freshness-sweep-2026-11-20.md | 7 | 0 | n | 0.511 |
@@ -6302,13 +2337,6 @@ Leaves: 11986 | flagged (<0.35): 0
 | memory/mechanic/winrm_pool_selftest.py | 7 | 0 | n | 0.511 |
 | memory/mechanic/winrm_pool_state.json | 7 | 0 | n | 0.511 |
 | memory/mechanic/winrm_rotate.py | 7 | 0 | n | 0.511 |
-| memory/mechanic/backups/fleet-backup-2026-11-19_235248.tar.gz | 7 | 0 | n | 0.511 |
-| memory/mechanic/backups/fleet-backup-2026-11-20_003708.tar.gz | 7 | 0 | n | 0.511 |
-| memory/mechanic/backups/fleet-backup-2026-11-20_003708.tar.json | 7 | 0 | n | 0.511 |
-| memory/mechanic/backups/fleet-backup-2026-11-20_004234.tar.gz | 7 | 0 | n | 0.511 |
-| memory/mechanic/backups/fleet-backup-2026-11-20_004234.tar.json | 7 | 0 | n | 0.511 |
-| memory/mechanic/backups/fleet-backup-2026-11-20_084226.tar.gz | 7 | 0 | n | 0.511 |
-| memory/mechanic/backups/fleet-backup-2026-11-20_084226.tar.json | 7 | 0 | n | 0.511 |
 | memory/mechanic/dep-snapshots/real-white-live.csv | 7 | 0 | n | 0.511 |
 | memory/mechanic/__pycache__/agent_portal_pre-decisions-v2-reland-2026-11-18.cpython-313.pyc | 7 | 0 | n | 0.511 |
 | memory/mechanic/__pycache__/backup.cpython-313.pyc | 7 | 0 | n | 0.511 |
@@ -8490,9 +4518,6 @@ Leaves: 11986 | flagged (<0.35): 0
 | memory/mechanic/unblock_gap_fill.py | 4 | 0 | n | 0.528 |
 | memory/mechanic/verify-verifier-goal9-2026-11-23.md | 4 | 0 | n | 0.528 |
 | memory/mechanic/backups/ARCHIVED.md | 4 | 0 | n | 0.528 |
-| memory/mechanic/backups/archivist-dated-reports-2026-11-23.tar.gz | 4 | 0 | n | 0.528 |
-| memory/mechanic/backups/archivist-dedup-reports-2026-11-20.tar.gz | 4 | 0 | n | 0.528 |
-| memory/mechanic/backups/merge-queue-stale-2026-11-23.tar.gz | 4 | 0 | n | 0.528 |
 | memory/mechanic/__pycache__/boot_recovery_test.cpython-313.pyc | 4 | 0 | n | 0.528 |
 | memory/mechanic/__pycache__/capacity_arbiter.cpython-315.pyc | 4 | 0 | n | 0.528 |
 | memory/mechanic/__pycache__/capacity_plan.cpython-313.pyc | 4 | 0 | n | 0.528 |
@@ -8916,7 +4941,6 @@ Leaves: 11986 | flagged (<0.35): 0
 | memory/archivist/remediation_suggest.py | 3 | 0 | n | 0.533 |
 | memory/archivist/retro_archiver.py | 3 | 0 | n | 0.533 |
 | memory/archivist/semantic-index.json | 3 | 0 | n | 0.533 |
-| memory/archivist/semantic_index.json | 3 | 0 | n | 0.533 |
 | memory/archivist/semantic_search.py | 3 | 0 | n | 0.533 |
 | memory/archivist/test_remediation_suggest.py | 3 | 0 | n | 0.533 |
 | memory/archivist/productivity-history/2026-11-18.json | 3 | 0 | n | 0.533 |
@@ -9593,6 +5617,7 @@ Leaves: 11986 | flagged (<0.35): 0
 | memory/archivist/regression_check.py | 2 | 0 | n | 0.539 |
 | memory/archivist/spf_staleness_monitor.py | 2 | 0 | n | 0.539 |
 | memory/archivist/spof-audit-citation-scan.md | 2 | 0 | n | 0.539 |
+| memory/archivist/spof-audit-researcher-contribution-2026-11-26.md | 2 | 0 | n | 0.539 |
 | memory/archivist/spof_citation_map.md | 2 | 0 | n | 0.539 |
 | memory/archivist/summary-ladder.json | 2 | 0 | n | 0.539 |
 | memory/archivist/abstracts/memory__mechanic__auto-loop-pass-2026-11-22b.md.abstract.json | 2 | 0 | n | 0.539 |
@@ -9612,8 +5637,12 @@ Leaves: 11986 | flagged (<0.35): 0
 | memory/archivist/__pycache__/mode_anomaly.cpython-313.pyc | 2 | 0 | n | 0.539 |
 | memory/archivist/__pycache__/mode_freshness.cpython-313.pyc | 2 | 0 | n | 0.539 |
 | memory/archivist/__pycache__/regression_check.cpython-313.pyc | 2 | 0 | n | 0.539 |
+| memory/builder/assist-scribe-g8-topic-rationales-2026-11-25.md | 2 | 0 | n | 0.539 |
+| memory/builder/assist_forge_consistency_2026-11-25.md | 2 | 0 | n | 0.539 |
+| memory/builder/assist_mechanic_stealth_hosting_2026-11-25.md | 2 | 0 | n | 0.539 |
 | memory/builder/assist_scribe_g8_rationales_2026-11-25.md | 2 | 0 | n | 0.539 |
 | memory/builder/auto_cycle_trigger.py | 2 | 0 | n | 0.539 |
+| memory/builder/auto_loop_stale_2026-11-25b.md | 2 | 0 | n | 0.539 |
 | memory/builder/convergence_health.py | 2 | 0 | n | 0.539 |
 | memory/builder/cycle_estimator.py | 2 | 0 | n | 0.539 |
 | memory/builder/evidence-autonomy-health-playbook-2026-11-25.md | 2 | 0 | n | 0.539 |
@@ -9630,9 +5659,22 @@ Leaves: 11986 | flagged (<0.35): 0
 | memory/builder/seat_draft_validate.py | 2 | 0 | n | 0.539 |
 | memory/builder/state_snapshot.py | 2 | 0 | n | 0.539 |
 | memory/builder/steady_state_scheduler.py | 2 | 0 | n | 0.539 |
+| memory/builder/stealth_goal11_evidence_2026-11-25.md | 2 | 0 | n | 0.539 |
 | memory/builder/test_autonomy_infra.py | 2 | 0 | n | 0.539 |
+| memory/builder/wf_package_evidence_2026-11-26.md | 2 | 0 | n | 0.539 |
+| memory/builder/wf_reverify_2026-11-25.md | 2 | 0 | n | 0.539 |
 | memory/builder/white-rename-closeout-2026-11-14.md | 2 | 0 | n | 0.539 |
 | memory/builder/white-rename-consistency-r20.md | 2 | 0 | n | 0.539 |
+| memory/builder/stealth/run_demo.py | 2 | 0 | n | 0.539 |
+| memory/builder/stealth/run_stealth_jobs.py | 2 | 0 | n | 0.539 |
+| memory/builder/stealth/sample_invoices.json | 2 | 0 | n | 0.539 |
+| memory/builder/stealth/sample_metrics.jsonl | 2 | 0 | n | 0.539 |
+| memory/builder/stealth/sample_schedule.json | 2 | 0 | n | 0.539 |
+| memory/builder/stealth/schtasks_spec.md | 2 | 0 | n | 0.539 |
+| memory/builder/stealth/stealth-jobs.log.jsonl | 2 | 0 | n | 0.539 |
+| memory/builder/stealth/wf1_ar_followup.py | 2 | 0 | n | 0.539 |
+| memory/builder/stealth/wf2_weekly_report.py | 2 | 0 | n | 0.539 |
+| memory/builder/stealth/wf3_reminder_pipeline.py | 2 | 0 | n | 0.539 |
 | memory/builder/__pycache__/intervention_logger.cpython-313.pyc | 2 | 0 | n | 0.539 |
 | memory/builder/__pycache__/state_snapshot.cpython-315.pyc | 2 | 0 | n | 0.539 |
 | memory/designer/assist-pixel-convergence-overflow-static-2026-11-25.md | 2 | 0 | n | 0.539 |
@@ -9648,6 +5690,7 @@ Leaves: 11986 | flagged (<0.35): 0
 | memory/designer/evidence-pass-2026-11-25.md | 2 | 0 | n | 0.539 |
 | memory/designer/evidence-steady-state-indicator-2026-11-24.md | 2 | 0 | n | 0.539 |
 | memory/designer/evidence-steady-state-reland-2026-11-25.md | 2 | 0 | n | 0.539 |
+| memory/designer/evidence-stealth-output-spec-20261125.md | 2 | 0 | n | 0.539 |
 | memory/designer/goal10-blocked-evidence-2026-11-18.md | 2 | 0 | n | 0.539 |
 | memory/designer/index_html_CANONICAL_1ce7ed928844_2026-11-25x.html | 2 | 0 | n | 0.539 |
 | memory/designer/index_html_CANONICAL_346652275eea_2026-11-25x.html | 2 | 0 | n | 0.539 |
@@ -9691,256 +5734,6 @@ Leaves: 11986 | flagged (<0.35): 0
 | memory/designer/reel/video-route-spec.md | 2 | 0 | n | 0.539 |
 | memory/designer/reel/video_engine_probe.py | 2 | 0 | n | 0.539 |
 | memory/designer/splice/evidence-convergence-feed-refresh-2026-11-25.md | 2 | 0 | n | 0.539 |
-| memory/designer/_edge_profile/FirstLaunchAfterInstallation | 2 | 0 | n | 0.539 |
-| memory/designer/_edge_profile/Last Version | 2 | 0 | n | 0.539 |
-| memory/designer/_edge_profile/Local State | 2 | 0 | n | 0.539 |
-| memory/designer/_edge_profile/Variations | 2 | 0 | n | 0.539 |
-| memory/designer/_edge_profile/VariationsRuntimeSeedV2 | 2 | 0 | n | 0.539 |
-| memory/designer/_edge_profile/VariationsSafeSeedV2 | 2 | 0 | n | 0.539 |
-| memory/designer/_edge_profile/VariationsSeedV2 | 2 | 0 | n | 0.539 |
-| memory/designer/_edge_profile/Crashpad/metadata | 2 | 0 | n | 0.539 |
-| memory/designer/_edge_profile/Crashpad/settings.dat | 2 | 0 | n | 0.539 |
-| memory/designer/_edge_profile/Crashpad/throttle_store.dat | 2 | 0 | n | 0.539 |
-| memory/designer/_edge_profile/Default/Affiliation Database | 2 | 0 | n | 0.539 |
-| memory/designer/_edge_profile/Default/Affiliation Database-journal | 2 | 0 | n | 0.539 |
-| memory/designer/_edge_profile/Default/arbitration_service_config.json | 2 | 0 | n | 0.539 |
-| memory/designer/_edge_profile/Default/BookmarkMergedSurfaceOrdering | 2 | 0 | n | 0.539 |
-| memory/designer/_edge_profile/Default/declarative_performance_observer.db | 2 | 0 | n | 0.539 |
-| memory/designer/_edge_profile/Default/declarative_performance_observer.db-journal | 2 | 0 | n | 0.539 |
-| memory/designer/_edge_profile/Default/Favicons | 2 | 0 | n | 0.539 |
-| memory/designer/_edge_profile/Default/Favicons-journal | 2 | 0 | n | 0.539 |
-| memory/designer/_edge_profile/Default/History | 2 | 0 | n | 0.539 |
-| memory/designer/_edge_profile/Default/History-journal | 2 | 0 | n | 0.539 |
-| memory/designer/_edge_profile/Default/HubApps Icons | 2 | 0 | n | 0.539 |
-| memory/designer/_edge_profile/Default/HubApps Icons-journal | 2 | 0 | n | 0.539 |
-| memory/designer/_edge_profile/Default/load_statistics.db | 2 | 0 | n | 0.539 |
-| memory/designer/_edge_profile/Default/load_statistics.db-shm | 2 | 0 | n | 0.539 |
-| memory/designer/_edge_profile/Default/load_statistics.db-wal | 2 | 0 | n | 0.539 |
-| memory/designer/_edge_profile/Default/LOCK | 2 | 0 | n | 0.539 |
-| memory/designer/_edge_profile/Default/LOG | 2 | 0 | n | 0.539 |
-| memory/designer/_edge_profile/Default/Login Data | 2 | 0 | n | 0.539 |
-| memory/designer/_edge_profile/Default/Login Data For Account | 2 | 0 | n | 0.539 |
-| memory/designer/_edge_profile/Default/Login Data For Account-journal | 2 | 0 | n | 0.539 |
-| memory/designer/_edge_profile/Default/Login Data-journal | 2 | 0 | n | 0.539 |
-| memory/designer/_edge_profile/Default/Preferences | 2 | 0 | n | 0.539 |
-| memory/designer/_edge_profile/Default/Preferences.bak | 2 | 0 | n | 0.539 |
-| memory/designer/_edge_profile/Default/README | 2 | 0 | n | 0.539 |
-| memory/designer/_edge_profile/Default/Secure Preferences | 2 | 0 | n | 0.539 |
-| memory/designer/_edge_profile/Default/Secure Preferences.bak | 2 | 0 | n | 0.539 |
-| memory/designer/_edge_profile/Default/ServerCertificate | 2 | 0 | n | 0.539 |
-| memory/designer/_edge_profile/Default/ServerCertificate-journal | 2 | 0 | n | 0.539 |
-| memory/designer/_edge_profile/Default/Top Sites | 2 | 0 | n | 0.539 |
-| memory/designer/_edge_profile/Default/Top Sites-journal | 2 | 0 | n | 0.539 |
-| memory/designer/_edge_profile/Default/Vpn Tokens | 2 | 0 | n | 0.539 |
-| memory/designer/_edge_profile/Default/Vpn Tokens-journal | 2 | 0 | n | 0.539 |
-| memory/designer/_edge_profile/Default/Web Data | 2 | 0 | n | 0.539 |
-| memory/designer/_edge_profile/Default/Web Data-journal | 2 | 0 | n | 0.539 |
-| memory/designer/_edge_profile/Default/Cache/Cache_Data/data_0 | 2 | 0 | n | 0.539 |
-| memory/designer/_edge_profile/Default/Cache/Cache_Data/data_1 | 2 | 0 | n | 0.539 |
-| memory/designer/_edge_profile/Default/Cache/Cache_Data/data_2 | 2 | 0 | n | 0.539 |
-| memory/designer/_edge_profile/Default/Cache/Cache_Data/data_3 | 2 | 0 | n | 0.539 |
-| memory/designer/_edge_profile/Default/Cache/Cache_Data/index | 2 | 0 | n | 0.539 |
-| memory/designer/_edge_profile/Default/Cache/No_Vary_Search/journal.baj | 2 | 0 | n | 0.539 |
-| memory/designer/_edge_profile/Default/Cache/No_Vary_Search/snapshot.baf | 2 | 0 | n | 0.539 |
-| memory/designer/_edge_profile/Default/ClientCertificates/LOCK | 2 | 0 | n | 0.539 |
-| memory/designer/_edge_profile/Default/ClientCertificates/LOG | 2 | 0 | n | 0.539 |
-| memory/designer/_edge_profile/Default/Code Cache/js/2a8a6f695a3ff316_0 | 2 | 0 | n | 0.539 |
-| memory/designer/_edge_profile/Default/Code Cache/js/2cca9bc741a6516d_0 | 2 | 0 | n | 0.539 |
-| memory/designer/_edge_profile/Default/Code Cache/js/5cce1706364839f1_0 | 2 | 0 | n | 0.539 |
-| memory/designer/_edge_profile/Default/Code Cache/js/5fbb54f36261c413_0 | 2 | 0 | n | 0.539 |
-| memory/designer/_edge_profile/Default/Code Cache/js/7de0dc67a2b3a69c_0 | 2 | 0 | n | 0.539 |
-| memory/designer/_edge_profile/Default/Code Cache/js/8020acacb3d13763_0 | 2 | 0 | n | 0.539 |
-| memory/designer/_edge_profile/Default/Code Cache/js/8bb1867be67136eb_0 | 2 | 0 | n | 0.539 |
-| memory/designer/_edge_profile/Default/Code Cache/js/945cb8fb56d09a8e_0 | 2 | 0 | n | 0.539 |
-| memory/designer/_edge_profile/Default/Code Cache/js/b21fb45197b9c728_0 | 2 | 0 | n | 0.539 |
-| memory/designer/_edge_profile/Default/Code Cache/js/baded5730168391f_0 | 2 | 0 | n | 0.539 |
-| memory/designer/_edge_profile/Default/Code Cache/js/e94999eac39dfd99_0 | 2 | 0 | n | 0.539 |
-| memory/designer/_edge_profile/Default/Code Cache/js/e9a142a21b9ad9ef_0 | 2 | 0 | n | 0.539 |
-| memory/designer/_edge_profile/Default/Code Cache/js/ebce9e52a869b921_0 | 2 | 0 | n | 0.539 |
-| memory/designer/_edge_profile/Default/Code Cache/js/index | 2 | 0 | n | 0.539 |
-| memory/designer/_edge_profile/Default/Code Cache/js/index-dir/the-real-index | 2 | 0 | n | 0.539 |
-| memory/designer/_edge_profile/Default/Code Cache/wasm/index | 2 | 0 | n | 0.539 |
-| memory/designer/_edge_profile/Default/Code Cache/wasm/index-dir/the-real-index | 2 | 0 | n | 0.539 |
-| memory/designer/_edge_profile/Default/commerce_subscription_db/LOCK | 2 | 0 | n | 0.539 |
-| memory/designer/_edge_profile/Default/commerce_subscription_db/LOG | 2 | 0 | n | 0.539 |
-| memory/designer/_edge_profile/Default/DawnGraphiteCache/data_0 | 2 | 0 | n | 0.539 |
-| memory/designer/_edge_profile/Default/DawnGraphiteCache/data_1 | 2 | 0 | n | 0.539 |
-| memory/designer/_edge_profile/Default/DawnGraphiteCache/data_2 | 2 | 0 | n | 0.539 |
-| memory/designer/_edge_profile/Default/DawnGraphiteCache/data_3 | 2 | 0 | n | 0.539 |
-| memory/designer/_edge_profile/Default/DawnGraphiteCache/index | 2 | 0 | n | 0.539 |
-| memory/designer/_edge_profile/Default/DawnWebGPUCache/data_0 | 2 | 0 | n | 0.539 |
-| memory/designer/_edge_profile/Default/DawnWebGPUCache/data_1 | 2 | 0 | n | 0.539 |
-| memory/designer/_edge_profile/Default/DawnWebGPUCache/data_2 | 2 | 0 | n | 0.539 |
-| memory/designer/_edge_profile/Default/DawnWebGPUCache/data_3 | 2 | 0 | n | 0.539 |
-| memory/designer/_edge_profile/Default/DawnWebGPUCache/index | 2 | 0 | n | 0.539 |
-| memory/designer/_edge_profile/Default/discounts_db/LOCK | 2 | 0 | n | 0.539 |
-| memory/designer/_edge_profile/Default/discounts_db/LOG | 2 | 0 | n | 0.539 |
-| memory/designer/_edge_profile/Default/discount_infos_db/LOCK | 2 | 0 | n | 0.539 |
-| memory/designer/_edge_profile/Default/discount_infos_db/LOG | 2 | 0 | n | 0.539 |
-| memory/designer/_edge_profile/Default/DualEngine/SiteList-Consumer.json | 2 | 0 | n | 0.539 |
-| memory/designer/_edge_profile/Default/DualEngine/SiteList-Enterprise.json | 2 | 0 | n | 0.539 |
-| memory/designer/_edge_profile/Default/EdgeHubAppUsage/EdgeHubAppUsageSQLite.db | 2 | 0 | n | 0.539 |
-| memory/designer/_edge_profile/Default/EdgeHubAppUsage/EdgeHubAppUsageSQLite.db-journal | 2 | 0 | n | 0.539 |
-| memory/designer/_edge_profile/Default/EdgePushStorageWithConnectTokenAndKey/LOCK | 2 | 0 | n | 0.539 |
-| memory/designer/_edge_profile/Default/EdgePushStorageWithConnectTokenAndKey/LOG | 2 | 0 | n | 0.539 |
-| memory/designer/_edge_profile/Default/Extension Rules/000003.log | 2 | 0 | n | 0.539 |
-| memory/designer/_edge_profile/Default/Extension Rules/CURRENT | 2 | 0 | n | 0.539 |
-| memory/designer/_edge_profile/Default/Extension Rules/LOCK | 2 | 0 | n | 0.539 |
-| memory/designer/_edge_profile/Default/Extension Rules/LOG | 2 | 0 | n | 0.539 |
-| memory/designer/_edge_profile/Default/Extension Rules/MANIFEST-000001 | 2 | 0 | n | 0.539 |
-| memory/designer/_edge_profile/Default/Extension Scripts/000003.log | 2 | 0 | n | 0.539 |
-| memory/designer/_edge_profile/Default/Extension Scripts/CURRENT | 2 | 0 | n | 0.539 |
-| memory/designer/_edge_profile/Default/Extension Scripts/LOCK | 2 | 0 | n | 0.539 |
-| memory/designer/_edge_profile/Default/Extension Scripts/LOG | 2 | 0 | n | 0.539 |
-| memory/designer/_edge_profile/Default/Extension Scripts/MANIFEST-000001 | 2 | 0 | n | 0.539 |
-| memory/designer/_edge_profile/Default/Extension State/000003.log | 2 | 0 | n | 0.539 |
-| memory/designer/_edge_profile/Default/Extension State/CURRENT | 2 | 0 | n | 0.539 |
-| memory/designer/_edge_profile/Default/Extension State/LOCK | 2 | 0 | n | 0.539 |
-| memory/designer/_edge_profile/Default/Extension State/LOG | 2 | 0 | n | 0.539 |
-| memory/designer/_edge_profile/Default/Extension State/MANIFEST-000001 | 2 | 0 | n | 0.539 |
-| memory/designer/_edge_profile/Default/GPUCache/data_0 | 2 | 0 | n | 0.539 |
-| memory/designer/_edge_profile/Default/GPUCache/data_1 | 2 | 0 | n | 0.539 |
-| memory/designer/_edge_profile/Default/GPUCache/data_2 | 2 | 0 | n | 0.539 |
-| memory/designer/_edge_profile/Default/GPUCache/data_3 | 2 | 0 | n | 0.539 |
-| memory/designer/_edge_profile/Default/GPUCache/index | 2 | 0 | n | 0.539 |
-| memory/designer/_edge_profile/Default/Local Extension Settings/jdiccldimpdaibmpdkjnbmckianbfold/000003.log | 2 | 0 | n | 0.539 |
-| memory/designer/_edge_profile/Default/Local Extension Settings/jdiccldimpdaibmpdkjnbmckianbfold/CURRENT | 2 | 0 | n | 0.539 |
-| memory/designer/_edge_profile/Default/Local Extension Settings/jdiccldimpdaibmpdkjnbmckianbfold/LOCK | 2 | 0 | n | 0.539 |
-| memory/designer/_edge_profile/Default/Local Extension Settings/jdiccldimpdaibmpdkjnbmckianbfold/LOG | 2 | 0 | n | 0.539 |
-| memory/designer/_edge_profile/Default/Local Extension Settings/jdiccldimpdaibmpdkjnbmckianbfold/MANIFEST-000001 | 2 | 0 | n | 0.539 |
-| memory/designer/_edge_profile/Default/Local Storage/leveldb/000003.log | 2 | 0 | n | 0.539 |
-| memory/designer/_edge_profile/Default/Local Storage/leveldb/CURRENT | 2 | 0 | n | 0.539 |
-| memory/designer/_edge_profile/Default/Local Storage/leveldb/LOCK | 2 | 0 | n | 0.539 |
-| memory/designer/_edge_profile/Default/Local Storage/leveldb/LOG | 2 | 0 | n | 0.539 |
-| memory/designer/_edge_profile/Default/Local Storage/leveldb/MANIFEST-000001 | 2 | 0 | n | 0.539 |
-| memory/designer/_edge_profile/Default/Network/Cookies | 2 | 0 | n | 0.539 |
-| memory/designer/_edge_profile/Default/Network/Cookies-journal | 2 | 0 | n | 0.539 |
-| memory/designer/_edge_profile/Default/Network/Device Bound Sessions | 2 | 0 | n | 0.539 |
-| memory/designer/_edge_profile/Default/Network/Device Bound Sessions-journal | 2 | 0 | n | 0.539 |
-| memory/designer/_edge_profile/Default/Network/Network Persistent State | 2 | 0 | n | 0.539 |
-| memory/designer/_edge_profile/Default/Network/NetworkDataMigrated | 2 | 0 | n | 0.539 |
-| memory/designer/_edge_profile/Default/Network/Reporting and NEL | 2 | 0 | n | 0.539 |
-| memory/designer/_edge_profile/Default/Network/Reporting and NEL-journal | 2 | 0 | n | 0.539 |
-| memory/designer/_edge_profile/Default/Network/SCT Auditing Pending Reports | 2 | 0 | n | 0.539 |
-| memory/designer/_edge_profile/Default/Network/Sdch Dictionaries | 2 | 0 | n | 0.539 |
-| memory/designer/_edge_profile/Default/Network/Trust Tokens | 2 | 0 | n | 0.539 |
-| memory/designer/_edge_profile/Default/Network/Trust Tokens-journal | 2 | 0 | n | 0.539 |
-| memory/designer/_edge_profile/Default/Nurturing/campaign_history | 2 | 0 | n | 0.539 |
-| memory/designer/_edge_profile/Default/Nurturing/campaign_history-journal | 2 | 0 | n | 0.539 |
-| memory/designer/_edge_profile/Default/parcel_tracking_db/LOCK | 2 | 0 | n | 0.539 |
-| memory/designer/_edge_profile/Default/parcel_tracking_db/LOG | 2 | 0 | n | 0.539 |
-| memory/designer/_edge_profile/Default/PersistentOriginTrials/LOCK | 2 | 0 | n | 0.539 |
-| memory/designer/_edge_profile/Default/PersistentOriginTrials/LOG | 2 | 0 | n | 0.539 |
-| memory/designer/_edge_profile/Default/Service Worker/Database/000003.log | 2 | 0 | n | 0.539 |
-| memory/designer/_edge_profile/Default/Service Worker/Database/CURRENT | 2 | 0 | n | 0.539 |
-| memory/designer/_edge_profile/Default/Service Worker/Database/LOCK | 2 | 0 | n | 0.539 |
-| memory/designer/_edge_profile/Default/Service Worker/Database/LOG | 2 | 0 | n | 0.539 |
-| memory/designer/_edge_profile/Default/Service Worker/Database/MANIFEST-000001 | 2 | 0 | n | 0.539 |
-| memory/designer/_edge_profile/Default/Service Worker/ScriptCache/2cc80dabc69f58b6_0 | 2 | 0 | n | 0.539 |
-| memory/designer/_edge_profile/Default/Service Worker/ScriptCache/2cc80dabc69f58b6_1 | 2 | 0 | n | 0.539 |
-| memory/designer/_edge_profile/Default/Service Worker/ScriptCache/f1cdccba37924bda_0 | 2 | 0 | n | 0.539 |
-| memory/designer/_edge_profile/Default/Service Worker/ScriptCache/index | 2 | 0 | n | 0.539 |
-| memory/designer/_edge_profile/Default/Service Worker/ScriptCache/index-dir/the-real-index | 2 | 0 | n | 0.539 |
-| memory/designer/_edge_profile/Default/Session Storage/000003.log | 2 | 0 | n | 0.539 |
-| memory/designer/_edge_profile/Default/Session Storage/CURRENT | 2 | 0 | n | 0.539 |
-| memory/designer/_edge_profile/Default/Session Storage/LOCK | 2 | 0 | n | 0.539 |
-| memory/designer/_edge_profile/Default/Session Storage/LOG | 2 | 0 | n | 0.539 |
-| memory/designer/_edge_profile/Default/Session Storage/MANIFEST-000001 | 2 | 0 | n | 0.539 |
-| memory/designer/_edge_profile/Default/Sessions/Session_13440035658030580 | 2 | 0 | n | 0.539 |
-| memory/designer/_edge_profile/Default/Sessions/Tabs_13440035658092357 | 2 | 0 | n | 0.539 |
-| memory/designer/_edge_profile/Default/Sessions_Encrypted/Session_13440035658031482 | 2 | 0 | n | 0.539 |
-| memory/designer/_edge_profile/Default/Sessions_Encrypted/Tabs_13440035658095039 | 2 | 0 | n | 0.539 |
-| memory/designer/_edge_profile/Default/Shared Dictionary/db | 2 | 0 | n | 0.539 |
-| memory/designer/_edge_profile/Default/Shared Dictionary/db-journal | 2 | 0 | n | 0.539 |
-| memory/designer/_edge_profile/Default/Shared Dictionary/cache/index | 2 | 0 | n | 0.539 |
-| memory/designer/_edge_profile/Default/Shared Dictionary/cache/index-dir/the-real-index | 2 | 0 | n | 0.539 |
-| memory/designer/_edge_profile/Default/shared_proto_db/000003.log | 2 | 0 | n | 0.539 |
-| memory/designer/_edge_profile/Default/shared_proto_db/CURRENT | 2 | 0 | n | 0.539 |
-| memory/designer/_edge_profile/Default/shared_proto_db/LOCK | 2 | 0 | n | 0.539 |
-| memory/designer/_edge_profile/Default/shared_proto_db/LOG | 2 | 0 | n | 0.539 |
-| memory/designer/_edge_profile/Default/shared_proto_db/MANIFEST-000001 | 2 | 0 | n | 0.539 |
-| memory/designer/_edge_profile/Default/shared_proto_db/metadata/000003.log | 2 | 0 | n | 0.539 |
-| memory/designer/_edge_profile/Default/shared_proto_db/metadata/CURRENT | 2 | 0 | n | 0.539 |
-| memory/designer/_edge_profile/Default/shared_proto_db/metadata/LOCK | 2 | 0 | n | 0.539 |
-| memory/designer/_edge_profile/Default/shared_proto_db/metadata/LOG | 2 | 0 | n | 0.539 |
-| memory/designer/_edge_profile/Default/shared_proto_db/metadata/MANIFEST-000001 | 2 | 0 | n | 0.539 |
-| memory/designer/_edge_profile/Default/Site Characteristics Database/000003.log | 2 | 0 | n | 0.539 |
-| memory/designer/_edge_profile/Default/Site Characteristics Database/CURRENT | 2 | 0 | n | 0.539 |
-| memory/designer/_edge_profile/Default/Site Characteristics Database/LOCK | 2 | 0 | n | 0.539 |
-| memory/designer/_edge_profile/Default/Site Characteristics Database/LOG | 2 | 0 | n | 0.539 |
-| memory/designer/_edge_profile/Default/Site Characteristics Database/MANIFEST-000001 | 2 | 0 | n | 0.539 |
-| memory/designer/_edge_profile/Default/Storage/ext/ihmafllikibpmigkcoadcmckbfhibefp/def/declarative_performance_observer.db | 2 | 0 | n | 0.539 |
-| memory/designer/_edge_profile/Default/Storage/ext/ihmafllikibpmigkcoadcmckbfhibefp/def/declarative_performance_observer.db-journal | 2 | 0 | n | 0.539 |
-| memory/designer/_edge_profile/Default/Storage/ext/ihmafllikibpmigkcoadcmckbfhibefp/def/Code Cache/js/6f3a0dc5e6916f1e_0 | 2 | 0 | n | 0.539 |
-| memory/designer/_edge_profile/Default/Storage/ext/ihmafllikibpmigkcoadcmckbfhibefp/def/Code Cache/js/index | 2 | 0 | n | 0.539 |
-| memory/designer/_edge_profile/Default/Storage/ext/ihmafllikibpmigkcoadcmckbfhibefp/def/Code Cache/js/index-dir/the-real-index | 2 | 0 | n | 0.539 |
-| memory/designer/_edge_profile/Default/Storage/ext/ihmafllikibpmigkcoadcmckbfhibefp/def/Code Cache/wasm/index | 2 | 0 | n | 0.539 |
-| memory/designer/_edge_profile/Default/Storage/ext/ihmafllikibpmigkcoadcmckbfhibefp/def/Code Cache/wasm/index-dir/the-real-index | 2 | 0 | n | 0.539 |
-| memory/designer/_edge_profile/Default/Storage/ext/ihmafllikibpmigkcoadcmckbfhibefp/def/DawnGraphiteCache/data_0 | 2 | 0 | n | 0.539 |
-| memory/designer/_edge_profile/Default/Storage/ext/ihmafllikibpmigkcoadcmckbfhibefp/def/DawnGraphiteCache/data_1 | 2 | 0 | n | 0.539 |
-| memory/designer/_edge_profile/Default/Storage/ext/ihmafllikibpmigkcoadcmckbfhibefp/def/DawnGraphiteCache/data_2 | 2 | 0 | n | 0.539 |
-| memory/designer/_edge_profile/Default/Storage/ext/ihmafllikibpmigkcoadcmckbfhibefp/def/DawnGraphiteCache/data_3 | 2 | 0 | n | 0.539 |
-| memory/designer/_edge_profile/Default/Storage/ext/ihmafllikibpmigkcoadcmckbfhibefp/def/DawnGraphiteCache/index | 2 | 0 | n | 0.539 |
-| memory/designer/_edge_profile/Default/Storage/ext/ihmafllikibpmigkcoadcmckbfhibefp/def/DawnWebGPUCache/data_0 | 2 | 0 | n | 0.539 |
-| memory/designer/_edge_profile/Default/Storage/ext/ihmafllikibpmigkcoadcmckbfhibefp/def/DawnWebGPUCache/data_1 | 2 | 0 | n | 0.539 |
-| memory/designer/_edge_profile/Default/Storage/ext/ihmafllikibpmigkcoadcmckbfhibefp/def/DawnWebGPUCache/data_2 | 2 | 0 | n | 0.539 |
-| memory/designer/_edge_profile/Default/Storage/ext/ihmafllikibpmigkcoadcmckbfhibefp/def/DawnWebGPUCache/data_3 | 2 | 0 | n | 0.539 |
-| memory/designer/_edge_profile/Default/Storage/ext/ihmafllikibpmigkcoadcmckbfhibefp/def/DawnWebGPUCache/index | 2 | 0 | n | 0.539 |
-| memory/designer/_edge_profile/Default/Storage/ext/ihmafllikibpmigkcoadcmckbfhibefp/def/GPUCache/data_0 | 2 | 0 | n | 0.539 |
-| memory/designer/_edge_profile/Default/Storage/ext/ihmafllikibpmigkcoadcmckbfhibefp/def/GPUCache/data_1 | 2 | 0 | n | 0.539 |
-| memory/designer/_edge_profile/Default/Storage/ext/ihmafllikibpmigkcoadcmckbfhibefp/def/GPUCache/data_2 | 2 | 0 | n | 0.539 |
-| memory/designer/_edge_profile/Default/Storage/ext/ihmafllikibpmigkcoadcmckbfhibefp/def/GPUCache/data_3 | 2 | 0 | n | 0.539 |
-| memory/designer/_edge_profile/Default/Storage/ext/ihmafllikibpmigkcoadcmckbfhibefp/def/GPUCache/index | 2 | 0 | n | 0.539 |
-| memory/designer/_edge_profile/Default/Storage/ext/ihmafllikibpmigkcoadcmckbfhibefp/def/Local Storage/leveldb/000003.log | 2 | 0 | n | 0.539 |
-| memory/designer/_edge_profile/Default/Storage/ext/ihmafllikibpmigkcoadcmckbfhibefp/def/Local Storage/leveldb/CURRENT | 2 | 0 | n | 0.539 |
-| memory/designer/_edge_profile/Default/Storage/ext/ihmafllikibpmigkcoadcmckbfhibefp/def/Local Storage/leveldb/LOCK | 2 | 0 | n | 0.539 |
-| memory/designer/_edge_profile/Default/Storage/ext/ihmafllikibpmigkcoadcmckbfhibefp/def/Local Storage/leveldb/LOG | 2 | 0 | n | 0.539 |
-| memory/designer/_edge_profile/Default/Storage/ext/ihmafllikibpmigkcoadcmckbfhibefp/def/Local Storage/leveldb/MANIFEST-000001 | 2 | 0 | n | 0.539 |
-| memory/designer/_edge_profile/Default/Storage/ext/ihmafllikibpmigkcoadcmckbfhibefp/def/Network/Device Bound Sessions | 2 | 0 | n | 0.539 |
-| memory/designer/_edge_profile/Default/Storage/ext/ihmafllikibpmigkcoadcmckbfhibefp/def/Network/Device Bound Sessions-journal | 2 | 0 | n | 0.539 |
-| memory/designer/_edge_profile/Default/Storage/ext/ihmafllikibpmigkcoadcmckbfhibefp/def/Network/Network Persistent State | 2 | 0 | n | 0.539 |
-| memory/designer/_edge_profile/Default/Storage/ext/ihmafllikibpmigkcoadcmckbfhibefp/def/Network/NetworkDataMigrated | 2 | 0 | n | 0.539 |
-| memory/designer/_edge_profile/Default/Storage/ext/ihmafllikibpmigkcoadcmckbfhibefp/def/Network/Reporting and NEL | 2 | 0 | n | 0.539 |
-| memory/designer/_edge_profile/Default/Storage/ext/ihmafllikibpmigkcoadcmckbfhibefp/def/Network/Reporting and NEL-journal | 2 | 0 | n | 0.539 |
-| memory/designer/_edge_profile/Default/Storage/ext/ihmafllikibpmigkcoadcmckbfhibefp/def/Network/SCT Auditing Pending Reports | 2 | 0 | n | 0.539 |
-| memory/designer/_edge_profile/Default/Storage/ext/ihmafllikibpmigkcoadcmckbfhibefp/def/Network/Trust Tokens | 2 | 0 | n | 0.539 |
-| memory/designer/_edge_profile/Default/Storage/ext/ihmafllikibpmigkcoadcmckbfhibefp/def/Network/Trust Tokens-journal | 2 | 0 | n | 0.539 |
-| memory/designer/_edge_profile/Default/Storage/ext/ihmafllikibpmigkcoadcmckbfhibefp/def/Session Storage/000003.log | 2 | 0 | n | 0.539 |
-| memory/designer/_edge_profile/Default/Storage/ext/ihmafllikibpmigkcoadcmckbfhibefp/def/Session Storage/CURRENT | 2 | 0 | n | 0.539 |
-| memory/designer/_edge_profile/Default/Storage/ext/ihmafllikibpmigkcoadcmckbfhibefp/def/Session Storage/LOCK | 2 | 0 | n | 0.539 |
-| memory/designer/_edge_profile/Default/Storage/ext/ihmafllikibpmigkcoadcmckbfhibefp/def/Session Storage/LOG | 2 | 0 | n | 0.539 |
-| memory/designer/_edge_profile/Default/Storage/ext/ihmafllikibpmigkcoadcmckbfhibefp/def/Session Storage/MANIFEST-000001 | 2 | 0 | n | 0.539 |
-| memory/designer/_edge_profile/Default/Storage/ext/ihmafllikibpmigkcoadcmckbfhibefp/def/Shared Dictionary/db | 2 | 0 | n | 0.539 |
-| memory/designer/_edge_profile/Default/Storage/ext/ihmafllikibpmigkcoadcmckbfhibefp/def/Shared Dictionary/db-journal | 2 | 0 | n | 0.539 |
-| memory/designer/_edge_profile/Default/Storage/ext/ihmafllikibpmigkcoadcmckbfhibefp/def/Shared Dictionary/cache/index | 2 | 0 | n | 0.539 |
-| memory/designer/_edge_profile/Default/Storage/ext/ihmafllikibpmigkcoadcmckbfhibefp/def/Shared Dictionary/cache/index-dir/the-real-index | 2 | 0 | n | 0.539 |
-| memory/designer/_edge_profile/Default/Sync Data/LevelDB/000003.log | 2 | 0 | n | 0.539 |
-| memory/designer/_edge_profile/Default/Sync Data/LevelDB/CURRENT | 2 | 0 | n | 0.539 |
-| memory/designer/_edge_profile/Default/Sync Data/LevelDB/LOCK | 2 | 0 | n | 0.539 |
-| memory/designer/_edge_profile/Default/Sync Data/LevelDB/LOG | 2 | 0 | n | 0.539 |
-| memory/designer/_edge_profile/Default/Sync Data/LevelDB/MANIFEST-000001 | 2 | 0 | n | 0.539 |
-| memory/designer/_edge_profile/Default/WebStorage/QuotaManager | 2 | 0 | n | 0.539 |
-| memory/designer/_edge_profile/Default/WebStorage/QuotaManager-journal | 2 | 0 | n | 0.539 |
-| memory/designer/_edge_profile/extensions_crx_cache/metadata.json | 2 | 0 | n | 0.539 |
-| memory/designer/_edge_profile/GPUPersistentCache/DawnGraphiteCache/NDWEEXLJMJ6C2FVOJVYE645YJQVCYHRX/cache.db | 2 | 0 | n | 0.539 |
-| memory/designer/_edge_profile/GPUPersistentCache/DawnGraphiteCache/NDWEEXLJMJ6C2FVOJVYE645YJQVCYHRX/cache.db-wal | 2 | 0 | n | 0.539 |
-| memory/designer/_edge_profile/GPUPersistentCache/DawnGraphiteCache/NDWEEXLJMJ6C2FVOJVYE645YJQVCYHRX/cache.journal | 2 | 0 | n | 0.539 |
-| memory/designer/_edge_profile/GrShaderCache/data_0 | 2 | 0 | n | 0.539 |
-| memory/designer/_edge_profile/GrShaderCache/data_1 | 2 | 0 | n | 0.539 |
-| memory/designer/_edge_profile/GrShaderCache/data_2 | 2 | 0 | n | 0.539 |
-| memory/designer/_edge_profile/GrShaderCache/data_3 | 2 | 0 | n | 0.539 |
-| memory/designer/_edge_profile/GrShaderCache/index | 2 | 0 | n | 0.539 |
-| memory/designer/_edge_profile/Nurturing/campaign_history | 2 | 0 | n | 0.539 |
-| memory/designer/_edge_profile/Nurturing/campaign_history-journal | 2 | 0 | n | 0.539 |
-| memory/designer/_edge_profile/ShaderCache/data_0 | 2 | 0 | n | 0.539 |
-| memory/designer/_edge_profile/ShaderCache/data_1 | 2 | 0 | n | 0.539 |
-| memory/designer/_edge_profile/ShaderCache/data_2 | 2 | 0 | n | 0.539 |
-| memory/designer/_edge_profile/ShaderCache/data_3 | 2 | 0 | n | 0.539 |
-| memory/designer/_edge_profile/ShaderCache/index | 2 | 0 | n | 0.539 |
-| memory/designer/_edge_profile/SmartScreen/RemoteData/customSettings | 2 | 0 | n | 0.539 |
-| memory/designer/_edge_profile/SmartScreen/RemoteData/customSettings_F95BA787499AB4FA9EFFF472CE383A14 | 2 | 0 | n | 0.539 |
-| memory/designer/_edge_profile/SmartScreen/RemoteData/edgeSettings | 2 | 0 | n | 0.539 |
-| memory/designer/_edge_profile/SmartScreen/RemoteData/edgeSettings_2.0-0 | 2 | 0 | n | 0.539 |
 | memory/dna/art_outlet.py | 2 | 0 | n | 0.539 |
 | memory/dna/__pycache__/rebuild.cpython-313.pyc | 2 | 0 | n | 0.539 |
 | memory/dna/__pycache__/rebuild.cpython-315.pyc | 2 | 0 | n | 0.539 |
@@ -9948,8 +5741,15 @@ Leaves: 11986 | flagged (<0.35): 0
 | memory/dream/latest.json | 2 | 0 | n | 0.539 |
 | memory/dream/state.json | 2 | 0 | n | 0.539 |
 | memory/dream/reports/2026-11-25.md | 2 | 0 | n | 0.539 |
+| memory/forge/convergence_gate.py | 2 | 0 | n | 0.539 |
 | memory/forge/drift-log.jsonl | 2 | 0 | n | 0.539 |
+| memory/forge/evidence-drift-pipeline-coverage-20261125.md | 2 | 0 | n | 0.539 |
+| memory/forge/evidence-fleet-autonomy-gate-20261125.md | 2 | 0 | n | 0.539 |
 | memory/forge/evidence-goal10-drift-detect.md | 2 | 0 | n | 0.539 |
+| memory/forge/evidence-reverify-2026-11-25.md | 2 | 0 | n | 0.539 |
+| memory/forge/evidence-runbook-audit-reached.md | 2 | 0 | n | 0.539 |
+| memory/forge/fleet_autonomy_gate.py | 2 | 0 | n | 0.539 |
+| memory/forge/ledger-registration-2026-11-25.md | 2 | 0 | n | 0.539 |
 | memory/forge/red-powered-on-2026-11-25.md | 2 | 0 | n | 0.539 |
 | memory/forge/red_probe.py | 2 | 0 | n | 0.539 |
 | memory/forge/red_probe_last.json | 2 | 0 | n | 0.539 |
@@ -9957,14 +5757,20 @@ Leaves: 11986 | flagged (<0.35): 0
 | memory/forge/runbook-audit.json | 2 | 0 | n | 0.539 |
 | memory/forge/runbook-executability-partial-audit-2026-11-25.md | 2 | 0 | n | 0.539 |
 | memory/forge/smoke-results.jsonl | 2 | 0 | n | 0.539 |
+| memory/forge/_rb_out.json | 2 | 0 | n | 0.539 |
 | memory/forge/__pycache__/canary_deploy.cpython-313.pyc | 2 | 0 | n | 0.539 |
 | memory/forge/__pycache__/gate_metrics.cpython-313.pyc | 2 | 0 | n | 0.539 |
 | memory/forge/__pycache__/red_probe.cpython-313.pyc | 2 | 0 | n | 0.539 |
 | memory/forge/__pycache__/runbook_audit.cpython-313.pyc | 2 | 0 | n | 0.539 |
+| memory/goals/designer-forecast-steady-state-dashboard.md | 2 | 0 | n | 0.539 |
+| memory/goals/designer-forecast-stealth-ops-ui.md | 2 | 0 | n | 0.539 |
 | memory/goals/designer-pixel-g1-spec-2026-11-25.md | 2 | 0 | n | 0.539 |
 | memory/goals/dispatch_order.json | 2 | 0 | n | 0.539 |
 | memory/goals/forecast-researcher-task-inventory-2026-11-25.md | 2 | 0 | n | 0.539 |
+| memory/goals/forge-forecast-convergence-2026-11-25.md | 2 | 0 | n | 0.539 |
 | memory/goals/mechanic-goal1-forecast-2026-11-18.md | 2 | 0 | n | 0.539 |
+| memory/goals/pixel-forecast-scribe-stealth-ledger.md | 2 | 0 | n | 0.539 |
+| memory/goals/pixel-forecast-stealth-ops-panel.md | 2 | 0 | n | 0.539 |
 | memory/goals/transitions.jsonl | 2 | 0 | n | 0.539 |
 | memory/goals/archive/archivist-2026-11-25-cycle17.md | 2 | 0 | n | 0.539 |
 | memory/goals/archive/designer-2026-11-26.md | 2 | 0 | n | 0.539 |
@@ -10002,6 +5808,7 @@ Leaves: 11986 | flagged (<0.35): 0
 | memory/goals/history/forecast-20261125-205406.json | 2 | 0 | n | 0.539 |
 | memory/goals/history/forecast-20261125-213936.json | 2 | 0 | n | 0.539 |
 | memory/goals/history/forecast-20261125-224815.json | 2 | 0 | n | 0.539 |
+| memory/goals/history/forecast-20261125-234936.json | 2 | 0 | n | 0.539 |
 | memory/goals/history/forecast-20261125-235210.json | 2 | 0 | n | 0.539 |
 | memory/handoffs/2026-11-25-builder-assist-mechanic2-autorestart-2026-11-19-to-remains.md | 2 | 0 | n | 0.539 |
 | memory/handoffs/2026-11-25-builder-to-archivist.md | 2 | 0 | n | 0.539 |
@@ -10127,6 +5934,7 @@ Leaves: 11986 | flagged (<0.35): 0
 | memory/mechanic/winrm-cred-guard.md | 2 | 0 | n | 0.539 |
 | memory/mechanic/winrm_check_batch.bat | 2 | 0 | n | 0.539 |
 | memory/mechanic/winrm_cred_probe.py | 2 | 0 | n | 0.539 |
+| memory/mechanic/winrm_e2e_test.py | 2 | 0 | n | 0.539 |
 | memory/mechanic/winrm_exec_test.py | 2 | 0 | n | 0.539 |
 | memory/mechanic/winrm_ntlm_full.py | 2 | 0 | n | 0.539 |
 | memory/mechanic/winrm_ntlm_probe.py | 2 | 0 | n | 0.539 |
@@ -10140,7 +5948,6 @@ Leaves: 11986 | flagged (<0.35): 0
 | memory/mechanic/_elev_err.txt | 2 | 0 | n | 0.539 |
 | memory/mechanic/_quick_winrm_probe.py | 2 | 0 | n | 0.539 |
 | memory/mechanic/_winrm_probe_now.py | 2 | 0 | n | 0.539 |
-| memory/mechanic/backups/fleet-backup-2026-11-19_235248.tar.json | 2 | 0 | n | 0.539 |
 | memory/mechanic/hotload_results/plan_20261117_222144.json | 2 | 0 | n | 0.539 |
 | memory/mechanic/hotload_results/select_20261117_222122.json | 2 | 0 | n | 0.539 |
 | memory/mechanic/hotload_results/select_20261118_213944.json | 2 | 0 | n | 0.539 |
@@ -10182,8 +5989,6 @@ Leaves: 11986 | flagged (<0.35): 0
 | memory/mechanic/__pycache__/fleet_mode_api.cpython-313.pyc | 2 | 0 | n | 0.539 |
 | memory/ops/alerts.jsonl | 2 | 0 | n | 0.539 |
 | memory/ops/anomalies.jsonl | 2 | 0 | n | 0.539 |
-| memory/ops/api-reqs.json | 2 | 0 | n | 0.539 |
-| memory/ops/api-reqs.jsonl | 2 | 0 | n | 0.539 |
 | memory/ops/autonomy-health-report.json | 2 | 0 | n | 0.539 |
 | memory/ops/autonomy-regression.json | 2 | 0 | n | 0.539 |
 | memory/ops/autonomy-score.json | 2 | 0 | n | 0.539 |
@@ -10205,6 +6010,7 @@ Leaves: 11986 | flagged (<0.35): 0
 | memory/ops/cycle-duration-stats.json | 2 | 0 | n | 0.539 |
 | memory/ops/cycle-durations.jsonl | 2 | 0 | n | 0.539 |
 | memory/ops/cycle-efficiency-index.jsonl | 2 | 0 | n | 0.539 |
+| memory/ops/cycle_transition_check.py | 2 | 0 | n | 0.539 |
 | memory/ops/decision-quality.json | 2 | 0 | n | 0.539 |
 | memory/ops/deploy_boot_recovery_fleet.py | 2 | 0 | n | 0.539 |
 | memory/ops/deploy_boot_task.py | 2 | 0 | n | 0.539 |
@@ -10222,6 +6028,7 @@ Leaves: 11986 | flagged (<0.35): 0
 | memory/ops/host-status-note-20261125.md | 2 | 0 | n | 0.539 |
 | memory/ops/human-interventions.jsonl | 2 | 0 | n | 0.539 |
 | memory/ops/inheritance-proposals.json | 2 | 0 | n | 0.539 |
+| memory/ops/lan_probe.py | 2 | 0 | n | 0.539 |
 | memory/ops/launch_host.vbs | 2 | 0 | n | 0.539 |
 | memory/ops/ledger-staleness-fix-2026-11-25.md | 2 | 0 | n | 0.539 |
 | memory/ops/load-outage.jsonl | 2 | 0 | n | 0.539 |
@@ -10232,6 +6039,7 @@ Leaves: 11986 | flagged (<0.35): 0
 | memory/ops/memory-integrity-2026-11-21.md | 2 | 0 | n | 0.539 |
 | memory/ops/memory-integrity-2026-11-23.md | 2 | 0 | n | 0.539 |
 | memory/ops/mirror-revert-guard-winrm-creds.md | 2 | 0 | n | 0.539 |
+| memory/ops/mirror_canary.py | 2 | 0 | n | 0.539 |
 | memory/ops/mode-forecasts.jsonl | 2 | 0 | n | 0.539 |
 | memory/ops/pale-hot-investigation-2026-11-25.md | 2 | 0 | n | 0.539 |
 | memory/ops/policy-applied-PE-6f3f8323.json | 2 | 0 | n | 0.539 |
@@ -10243,7 +6051,9 @@ Leaves: 11986 | flagged (<0.35): 0
 | memory/ops/prioritized-goals.json | 2 | 0 | n | 0.539 |
 | memory/ops/priority-ranking.json | 2 | 0 | n | 0.539 |
 | memory/ops/probe-cadence.json | 2 | 0 | n | 0.539 |
+| memory/ops/probe_winrm_r17.py | 2 | 0 | n | 0.539 |
 | memory/ops/public_repo_scrub.py | 2 | 0 | n | 0.539 |
+| memory/ops/reboot_recovery_check.py | 2 | 0 | n | 0.539 |
 | memory/ops/recovery-sla-summary.json | 2 | 0 | n | 0.539 |
 | memory/ops/recovery-times.jsonl | 2 | 0 | n | 0.539 |
 | memory/ops/recovery-trend-results.json | 2 | 0 | n | 0.539 |
@@ -10255,8 +6065,11 @@ Leaves: 11986 | flagged (<0.35): 0
 | memory/ops/schtask-snapshot-2026-11-25-input.csv | 2 | 0 | n | 0.539 |
 | memory/ops/schtask-snapshot-2026-11-25.json | 2 | 0 | n | 0.539 |
 | memory/ops/seat-latency-history.jsonl | 2 | 0 | n | 0.539 |
+| memory/ops/serial_e2e_wait.py | 2 | 0 | n | 0.539 |
 | memory/ops/snapshot_white_2026-11-20.csv | 2 | 0 | n | 0.539 |
+| memory/ops/state_collector.py | 2 | 0 | n | 0.539 |
 | memory/ops/steady-state-scheduler-log.jsonl | 2 | 0 | n | 0.539 |
+| memory/ops/stealth-output-spec.md | 2 | 0 | n | 0.539 |
 | memory/ops/stealth-workflow-contracts-2026-11-25.md | 2 | 0 | n | 0.539 |
 | memory/ops/task-load-trace.jsonl | 2 | 0 | n | 0.539 |
 | memory/ops/taskdump.csv | 2 | 0 | n | 0.539 |
@@ -10288,6 +6101,7 @@ Leaves: 11986 | flagged (<0.35): 0
 | memory/ops/merge-queue/agents.json.c05e6fcebf | 2 | 0 | n | 0.539 |
 | memory/ops/merge-queue/agents.json.d33370d9f5 | 2 | 0 | n | 0.539 |
 | memory/ops/merge-queue/agent_portal.py.023768df9577 | 2 | 0 | n | 0.539 |
+| memory/ops/merge-queue/agent_portal.py.fdcf1f1764 | 2 | 0 | n | 0.539 |
 | memory/ops/merge-queue/black_dual_load2.py.b9f3bb0ddc | 2 | 0 | n | 0.539 |
 | memory/ops/merge-queue/fleet_reload.bat.543667fac8 | 2 | 0 | n | 0.539 |
 | memory/ops/merge-queue/fleet_reload.bat.b7605f4e79 | 2 | 0 | n | 0.539 |
@@ -10335,11 +6149,14 @@ Leaves: 11986 | flagged (<0.35): 0
 | memory/orchestrator/assist-researcher-g1-cycle-history-consolidation-2026-11-25.md | 2 | 0 | n | 0.539 |
 | memory/orchestrator/assist-scribe-g1-stale-ledger-fix-2026-11-25.md | 2 | 0 | n | 0.539 |
 | memory/orchestrator/assist-scribe-g2-closeout-v3-verify-2026-11-25.md | 2 | 0 | n | 0.539 |
+| memory/orchestrator/assist-scribe-goal9-self-assessment-2026-11-25.md | 2 | 0 | n | 0.539 |
 | memory/orchestrator/autonomy_score.py | 2 | 0 | n | 0.539 |
 | memory/orchestrator/auto_priority.py | 2 | 0 | n | 0.539 |
 | memory/orchestrator/closeout-contract-evidence-2026-11-25.md | 2 | 0 | n | 0.539 |
 | memory/orchestrator/complexity_scorer.py | 2 | 0 | n | 0.539 |
 | memory/orchestrator/cycle_estimator.py | 2 | 0 | n | 0.539 |
+| memory/orchestrator/day7-checkpoint-infra-2026-11-25.md | 2 | 0 | n | 0.539 |
+| memory/orchestrator/day7-datasource-hardening-2026-11-25.md | 2 | 0 | n | 0.539 |
 | memory/orchestrator/draft-gate-results.json | 2 | 0 | n | 0.539 |
 | memory/orchestrator/efficiency-index-gen.py | 2 | 0 | n | 0.539 |
 | memory/orchestrator/evidence-forge-g8-verify-2026-11-25.md | 2 | 0 | n | 0.539 |
@@ -10353,6 +6170,13 @@ Leaves: 11986 | flagged (<0.35): 0
 | memory/orchestrator/live_hotload_cycle.py | 2 | 0 | n | 0.539 |
 | memory/orchestrator/seat_draft_gate.py | 2 | 0 | n | 0.539 |
 | memory/orchestrator/steady_state_detector.py | 2 | 0 | n | 0.539 |
+| memory/orchestrator/stealth-checkpoint-latest.json | 2 | 0 | n | 0.539 |
+| memory/orchestrator/stealth-checkpoint-latest.md | 2 | 0 | n | 0.539 |
+| memory/orchestrator/stealth-checkpoint-tooling-ready-2026-11-25.md | 2 | 0 | n | 0.539 |
+| memory/orchestrator/stealth-day7-progress-2026-11-25.md | 2 | 0 | n | 0.539 |
+| memory/orchestrator/stealth_checkpoint.py | 2 | 0 | n | 0.539 |
+| memory/orchestrator/stealth_ledger_daily.bat | 2 | 0 | n | 0.539 |
+| memory/orchestrator/stealth_ledger_daily.py | 2 | 0 | n | 0.539 |
 | memory/orchestrator/test_goal_prioritizer.py | 2 | 0 | n | 0.539 |
 | memory/orchestrator/__pycache__/autonomy_score.cpython-313.pyc | 2 | 0 | n | 0.539 |
 | memory/orchestrator/__pycache__/auto_priority.cpython-313.pyc | 2 | 0 | n | 0.539 |
@@ -10360,7 +6184,13 @@ Leaves: 11986 | flagged (<0.35): 0
 | memory/orchestrator/__pycache__/convergence_api.cpython-315.pyc | 2 | 0 | n | 0.539 |
 | memory/orchestrator/__pycache__/steady_state_detector.cpython-313.pyc | 2 | 0 | n | 0.539 |
 | memory/outlet/dna-art-2026-11-25.md | 2 | 0 | n | 0.539 |
+| memory/outlet/draft_state.json | 2 | 0 | n | 0.539 |
 | memory/outlet/evidence-auto-loop-2026-11-25.md | 2 | 0 | n | 0.539 |
+| memory/outlet/milestone-auto-verify.md | 2 | 0 | n | 0.539 |
+| memory/outlet/publish.py | 2 | 0 | n | 0.539 |
+| memory/outlet/queue-check.py | 2 | 0 | n | 0.539 |
+| memory/outlet/queue-contract.md | 2 | 0 | n | 0.539 |
+| memory/outlet/test_milestone_trigger.py | 2 | 0 | n | 0.539 |
 | memory/outlet/briefs/2026-11-25-trend-brief.md | 2 | 0 | n | 0.539 |
 | memory/outlet/briefs/protocol.md | 2 | 0 | n | 0.539 |
 | memory/outlet/digests/2026-11-25.md | 2 | 0 | n | 0.539 |
@@ -10377,12 +6207,17 @@ Leaves: 11986 | flagged (<0.35): 0
 | memory/outlet/dna-art/b06-world-page.json | 2 | 0 | n | 0.539 |
 | memory/outlet/dna-art/b06-world-page.png | 2 | 0 | n | 0.539 |
 | memory/outlet/queue/2026-11-25-fleet-autonomy-convergence.md | 2 | 0 | n | 0.539 |
+| memory/outlet/queue/2026-11-25-milestone-l10-98pct.md | 2 | 0 | n | 0.539 |
 | memory/pixel/conv-harness.html | 2 | 0 | n | 0.539 |
 | memory/pixel/convergence_overflow_check.py | 2 | 0 | n | 0.539 |
 | memory/pixel/convergence_overflow_static_2026-11-25.txt | 2 | 0 | n | 0.539 |
 | memory/pixel/evidence-a11y-goal3-2026-11-25.md | 2 | 0 | n | 0.539 |
+| memory/pixel/evidence-convergence-fallback-badge-2026-11-25.md | 2 | 0 | n | 0.539 |
 | memory/pixel/evidence-drilldown-goal2-2026-11-25.md | 2 | 0 | n | 0.539 |
+| memory/pixel/evidence-forecast-forge-convergence-2026-11-25.md | 2 | 0 | n | 0.539 |
+| memory/pixel/evidence-scribe-scorecard-renderer-2026-11-25.md | 2 | 0 | n | 0.539 |
 | memory/pixel/evidence-stale-refresh-goal4-2026-11-25.md | 2 | 0 | n | 0.539 |
+| memory/pixel/stealth-panel-trigger-day.md | 2 | 0 | n | 0.539 |
 | memory/pixel/_dom.txt | 2 | 0 | n | 0.539 |
 | memory/pixel/_err.txt | 2 | 0 | n | 0.539 |
 | memory/portal/memfocus.md | 2 | 0 | n | 0.539 |
@@ -10418,11 +6253,13 @@ Leaves: 11986 | flagged (<0.35): 0
 | memory/researcher/efficiency_index.py | 2 | 0 | n | 0.539 |
 | memory/researcher/evidence-d1-autonomy-discrepancy-resolved-2026-11-25.md | 2 | 0 | n | 0.539 |
 | memory/researcher/evidence-stale-goal-line-closure-2026-11-25.md | 2 | 0 | n | 0.539 |
+| memory/researcher/evidence-task-inventory-2026-11-25.md | 2 | 0 | n | 0.539 |
 | memory/researcher/failure-taxonomy.md | 2 | 0 | n | 0.539 |
 | memory/researcher/goal-acceptance-model.json | 2 | 0 | n | 0.539 |
 | memory/researcher/goal-acceptance-predictor-findings.md | 2 | 0 | n | 0.539 |
 | memory/researcher/goal-acceptance-results.json | 2 | 0 | n | 0.539 |
 | memory/researcher/goal_acceptance_predictor.py | 2 | 0 | n | 0.539 |
+| memory/researcher/goal_ledger.json | 2 | 0 | n | 0.539 |
 | memory/researcher/hot_load.py | 2 | 0 | n | 0.539 |
 | memory/researcher/intervention-predictor-results.json | 2 | 0 | n | 0.539 |
 | memory/researcher/intervention_predictor.py | 2 | 0 | n | 0.539 |
@@ -10450,6 +6287,7 @@ Leaves: 11986 | flagged (<0.35): 0
 | memory/researcher/topic_scorer.py | 2 | 0 | n | 0.539 |
 | memory/researcher/unavailability-forecast.json | 2 | 0 | n | 0.539 |
 | memory/researcher/unavailability-impact-v2.md | 2 | 0 | n | 0.539 |
+| memory/researcher/stealth/wf4-wf5-build-spec.md | 2 | 0 | n | 0.539 |
 | memory/scribe/assist-archivist-goal2-dead-rate-analysis-2026-11-19.md | 2 | 0 | n | 0.539 |
 | memory/scribe/autonomy_trend.py | 2 | 0 | n | 0.539 |
 | memory/scribe/convergence-glossary.md | 2 | 0 | n | 0.539 |
@@ -10464,10 +6302,14 @@ Leaves: 11986 | flagged (<0.35): 0
 | memory/scribe/intervention-pattern-summary.json | 2 | 0 | n | 0.539 |
 | memory/scribe/intervention_classifier.py | 2 | 0 | n | 0.539 |
 | memory/scribe/milestones_tracker.py | 2 | 0 | n | 0.539 |
+| memory/scribe/milestone_tracker.py | 2 | 0 | n | 0.539 |
 | memory/scribe/spof-audit-2026-11-25.md | 2 | 0 | n | 0.539 |
 | memory/scribe/steady-state-declaration.md | 2 | 0 | n | 0.539 |
 | memory/scribe/stealth-ledger-data.json | 2 | 0 | n | 0.539 |
+| memory/scribe/stealth-ledger-goal1-evidence-2026-11-25.md | 2 | 0 | n | 0.539 |
+| memory/scribe/stealth-ledger.jsonl | 2 | 0 | n | 0.539 |
 | memory/scribe/stealth-ledger.md | 2 | 0 | n | 0.539 |
+| memory/scribe/stealth-scorecard.html | 2 | 0 | n | 0.539 |
 | memory/scribe/stealth_scorecard.py | 2 | 0 | n | 0.539 |
 | memory/scribe/topic-rationales.jsonl | 2 | 0 | n | 0.539 |
 | memory/scribe/_sup_err.txt | 2 | 0 | n | 0.539 |
@@ -10503,8 +6345,15 @@ Leaves: 11986 | flagged (<0.35): 0
 | memory/verifier/cycle18-goals5-10-complete-2026-11-25.md | 2 | 0 | n | 0.539 |
 | memory/verifier/data-readiness-researcher-seat-model-v2.md | 2 | 0 | n | 0.539 |
 | memory/verifier/decision-audit-results.json | 2 | 0 | n | 0.539 |
+| memory/verifier/evidence-assist-scribe-g10-milestone-tracker-2026-11-25.md | 2 | 0 | n | 0.539 |
+| memory/verifier/evidence-autonomy-value-drift-2026-11-25.md | 2 | 0 | n | 0.539 |
+| memory/verifier/evidence-builder-stealth-selftests-2026-11-25.md | 2 | 0 | n | 0.539 |
 | memory/verifier/evidence-convergence-metric-validation-2026-11-25.md | 2 | 0 | n | 0.539 |
 | memory/verifier/evidence-d1-discrepancy-verified-2026-11-25.md | 2 | 0 | n | 0.539 |
+| memory/verifier/evidence-forge-drift-verified-2026-11-25.md | 2 | 0 | n | 0.539 |
+| memory/verifier/evidence-forge-stealth-gate-verified-2026-11-25.md | 2 | 0 | n | 0.539 |
+| memory/verifier/evidence-stealth-ledger-schema-gap-2026-11-25.md | 2 | 0 | n | 0.539 |
+| memory/verifier/evidence-stealth-wf-repro-2026-11-26.md | 2 | 0 | n | 0.539 |
 | memory/verifier/evolution-lifecycle-validator-2026-11-17.json | 2 | 0 | n | 0.539 |
 | memory/verifier/failover-verify-results.json | 2 | 0 | n | 0.539 |
 | memory/verifier/fleet-recovery-sla-results.json | 2 | 0 | n | 0.539 |
@@ -10537,6 +6386,7 @@ Leaves: 11986 | flagged (<0.35): 0
 | memory/verifier/seat_draft_check_report.json | 2 | 0 | n | 0.539 |
 | memory/verifier/shared-tree-claim-check-2026-11-15.md | 2 | 0 | n | 0.539 |
 | memory/verifier/slo-report-2026-11-25.md | 2 | 0 | n | 0.539 |
+| memory/verifier/stale-goal-line-reconciled-2026-11-25.md | 2 | 0 | n | 0.539 |
 | memory/verifier/stale-ledger-scribe-closeout-2026-11-25.md | 2 | 0 | n | 0.539 |
 | memory/verifier/steady-state-transition-results.json | 2 | 0 | n | 0.539 |
 | memory/verifier/steady-state-transition-test-verified-2026-11-25.md | 2 | 0 | n | 0.539 |
@@ -10548,6 +6398,11 @@ Leaves: 11986 | flagged (<0.35): 0
 | memory/verifier/_e2e_out.txt | 2 | 0 | n | 0.539 |
 | memory/archivist/anomaly-baseline-library.md | 1 | 0 | n | 0.544 |
 | memory/archivist/decision-quality-analysis.json | 1 | 0 | n | 0.544 |
+| memory/archivist/decision-quality-baseline.json | 1 | 0 | n | 0.544 |
+| memory/archivist/decision-quality-trend.json | 1 | 0 | n | 0.544 |
+| memory/archivist/decision-quality-trend.md | 1 | 0 | n | 0.544 |
+| memory/archivist/decision_quality_trend.py | 1 | 0 | n | 0.544 |
+| memory/archivist/evidence-assist-orchestrator-g1-asymptote-forecast-2026-11-26.md | 1 | 0 | n | 0.544 |
 | memory/archivist/evidence-convergence-lock-cycle24-2026-11-26.md | 1 | 0 | n | 0.544 |
 | memory/archivist/evidence-researcher-g11-lead-spotcheck-2026-11-26.md | 1 | 0 | n | 0.544 |
 | memory/archivist/knowledge_tiering.py | 1 | 0 | n | 0.544 |
@@ -10556,6 +6411,7 @@ Leaves: 11986 | flagged (<0.35): 0
 | memory/archivist/onboarding-pack-sample.md | 1 | 0 | n | 0.544 |
 | memory/archivist/onboarding-pack-sentinel.md | 1 | 0 | n | 0.544 |
 | memory/archivist/onboarding-pack-template.md | 1 | 0 | n | 0.544 |
+| memory/archivist/onboard_gen.py | 1 | 0 | n | 0.544 |
 | memory/archivist/pulse_heartbeat.py | 1 | 0 | n | 0.544 |
 | memory/archivist/reached-claim-citation-audit-2026-11-26.json | 1 | 0 | n | 0.544 |
 | memory/archivist/splats.json | 1 | 0 | n | 0.544 |
@@ -10565,10 +6421,14 @@ Leaves: 11986 | flagged (<0.35): 0
 | memory/archivist/voxel.py | 1 | 0 | n | 0.544 |
 | memory/archivist/voxels.json.tmp22852 | 1 | 0 | n | 0.544 |
 | memory/archivist/voxel_pulse.py | 1 | 0 | n | 0.544 |
+| memory/archivist/_dq_run.py | 1 | 0 | n | 0.544 |
+| memory/archivist/_dq_tmp.json | 1 | 0 | n | 0.544 |
 | memory/archivist/_t.txt | 1 | 0 | n | 0.544 |
 | memory/archivist/_t2.txt | 1 | 0 | n | 0.544 |
 | memory/archivist/_tmp_matrix.json | 1 | 0 | n | 0.544 |
 | memory/archivist/_tmp_model.json | 1 | 0 | n | 0.544 |
+| memory/archivist/onboarding-packs/pixel.md | 1 | 0 | n | 0.544 |
+| memory/archivist/onboarding-packs/splice.md | 1 | 0 | n | 0.544 |
 | memory/archivist/__pycache__/modulize.cpython-313.pyc | 1 | 0 | n | 0.544 |
 | memory/archivist/__pycache__/onboarding_pack.cpython-313.pyc | 1 | 0 | n | 0.544 |
 | memory/archivist/__pycache__/pulse_heartbeat.cpython-313.pyc | 1 | 0 | n | 0.544 |
@@ -10577,6 +6437,7 @@ Leaves: 11986 | flagged (<0.35): 0
 | memory/archivist/__pycache__/voxel.cpython-315.pyc | 1 | 0 | n | 0.544 |
 | memory/archivist/__pycache__/voxel_pulse.cpython-313.pyc | 1 | 0 | n | 0.544 |
 | memory/archivist/__pycache__/voxel_pulse.cpython-315.pyc | 1 | 0 | n | 0.544 |
+| memory/builder/assist_outlet_demo_showcase_2026-11-26.md | 1 | 0 | n | 0.544 |
 | memory/builder/autonomy_regression_gate.py | 1 | 0 | n | 0.544 |
 | memory/builder/closeout-audit.jsonl | 1 | 0 | n | 0.544 |
 | memory/builder/contracts.py | 1 | 0 | n | 0.544 |
@@ -10588,16 +6449,28 @@ Leaves: 11986 | flagged (<0.35): 0
 | memory/builder/infra_health.py | 1 | 0 | n | 0.544 |
 | memory/builder/intervention_logger.py | 1 | 0 | n | 0.544 |
 | memory/builder/knowledge_stream_smoke_test_evidence_2026-11-26.md | 1 | 0 | n | 0.544 |
+| memory/builder/reconfirm_2026-11-26.md | 1 | 0 | n | 0.544 |
 | memory/builder/regression_dispatcher.py | 1 | 0 | n | 0.544 |
 | memory/builder/seat_draft_autonomy.py | 1 | 0 | n | 0.544 |
+| memory/builder/stealth_reverify_2026-11-26.md | 1 | 0 | n | 0.544 |
+| memory/builder/stealth_wf4_evidence_2026-11-26.md | 1 | 0 | n | 0.544 |
 | memory/builder/swap-guard.jsonl | 1 | 0 | n | 0.544 |
 | memory/builder/swap_guard.py | 1 | 0 | n | 0.544 |
 | memory/builder/touch_census.py | 1 | 0 | n | 0.544 |
+| memory/builder/wf123_recheck_2026-11-26.md | 1 | 0 | n | 0.544 |
 | memory/builder/stealth/crm_schema.json | 1 | 0 | n | 0.544 |
+| memory/builder/stealth/demo_output_followups.json | 1 | 0 | n | 0.544 |
+| memory/builder/stealth/demo_output_followups2.json | 1 | 0 | n | 0.544 |
+| memory/builder/stealth/demo_output_reminders.json | 1 | 0 | n | 0.544 |
+| memory/builder/stealth/demo_output_report.md | 1 | 0 | n | 0.544 |
+| memory/builder/stealth/demo_output_task_reminders.json | 1 | 0 | n | 0.544 |
+| memory/builder/stealth/demo_showcase.html | 1 | 0 | n | 0.544 |
 | memory/builder/stealth/raw_contacts.json | 1 | 0 | n | 0.544 |
+| memory/builder/stealth/README.md | 1 | 0 | n | 0.544 |
 | memory/builder/stealth/run_log.json | 1 | 0 | n | 0.544 |
 | memory/builder/stealth/sample_brief.json | 1 | 0 | n | 0.544 |
 | memory/builder/stealth/sample_invoices.csv | 1 | 0 | n | 0.544 |
+| memory/builder/stealth/sample_leads.json | 1 | 0 | n | 0.544 |
 | memory/builder/stealth/sample_ledger.csv | 1 | 0 | n | 0.544 |
 | memory/builder/stealth/test_workflows.py | 1 | 0 | n | 0.544 |
 | memory/builder/stealth/wf1_invoice_recon.py | 1 | 0 | n | 0.544 |
@@ -10606,6 +6479,7 @@ Leaves: 11986 | flagged (<0.35): 0
 | memory/builder/stealth/wf2_spec.md | 1 | 0 | n | 0.544 |
 | memory/builder/stealth/wf3_crm_entry.py | 1 | 0 | n | 0.544 |
 | memory/builder/stealth/wf3_spec.md | 1 | 0 | n | 0.544 |
+| memory/builder/stealth/wf4_lead_followup.py | 1 | 0 | n | 0.544 |
 | memory/builder/stealth/test_out_wf1/reconciliation_report.json | 1 | 0 | n | 0.544 |
 | memory/builder/stealth/test_out_wf1b/reconciliation_report.json | 1 | 0 | n | 0.544 |
 | memory/builder/stealth/test_out_wf2/scheduled_posts.json | 1 | 0 | n | 0.544 |
@@ -10633,23 +6507,54 @@ Leaves: 11986 | flagged (<0.35): 0
 | memory/builder/__pycache__/fleet_mode_writer.cpython-315.pyc | 1 | 0 | n | 0.544 |
 | memory/builder/__pycache__/regression_dispatcher.cpython-313.pyc | 1 | 0 | n | 0.544 |
 | memory/builder/__pycache__/seat_draft_validate.cpython-313.pyc | 1 | 0 | n | 0.544 |
+| memory/designer/assist-pixel-debug-purge-manifest-2026-11-26.md | 1 | 0 | n | 0.544 |
+| memory/designer/auto-loop-pass-2026-11-26.md | 1 | 0 | n | 0.544 |
+| memory/designer/closeout_api.py | 1 | 0 | n | 0.544 |
 | memory/designer/convergence-panel-spec-2026-11-26.md | 1 | 0 | n | 0.544 |
+| memory/designer/day7-checkpoint-render-spec.md | 1 | 0 | n | 0.544 |
+| memory/designer/day7-checkpoint-report-mockup.html | 1 | 0 | n | 0.544 |
 | memory/designer/design-qa-encoding-fix-2026-11-26.md | 1 | 0 | n | 0.544 |
 | memory/designer/design-qa-encoding-fix-reapplied-2026-11-26.md | 1 | 0 | n | 0.544 |
 | memory/designer/design-qa-gate-ground-truth-2026-11-26.md | 1 | 0 | n | 0.544 |
+| memory/designer/evidence-all-clear-ux-spec-2026-11-25.md | 1 | 0 | n | 0.544 |
+| memory/designer/evidence-closeout-render-2026-11-26.json | 1 | 0 | n | 0.544 |
+| memory/designer/evidence-design-qa-12of12-2026-11-26.md | 1 | 0 | n | 0.544 |
+| memory/designer/evidence-design-qa-gate-fix-2026-11-26.md | 1 | 0 | n | 0.544 |
+| memory/designer/evidence-design-qa-pass2-2026-11-26.md | 1 | 0 | n | 0.544 |
+| memory/designer/evidence-regression-banner-2026-11-26.md | 1 | 0 | n | 0.544 |
+| memory/designer/evidence-scribe-milestone-forecast-2026-11-26.md | 1 | 0 | n | 0.544 |
+| memory/designer/evidence-steady-state-minimal-2026-11-26.json | 1 | 0 | n | 0.544 |
+| memory/designer/evidence-steady-state-trigger-fix-2026-11-26.md | 1 | 0 | n | 0.544 |
 | memory/designer/outlet-goal11-outreach-pack-verified-2026-11-26.md | 1 | 0 | n | 0.544 |
 | memory/designer/outreach-pack-offer-drafts-2026-11-26.md | 1 | 0 | n | 0.544 |
+| memory/designer/stale-claim-scribe-convergence-glossary-2026-11-26.md | 1 | 0 | n | 0.544 |
 | memory/designer/stale-verify-pixel-convergence-states-2026-11-26.md | 1 | 0 | n | 0.544 |
+| memory/designer/test_anomaly_watch.py | 1 | 0 | n | 0.544 |
+| memory/designer/test_assist_graph.py | 1 | 0 | n | 0.544 |
+| memory/designer/test_fleet_gauge.py | 1 | 0 | n | 0.544 |
+| memory/designer/test_pipeline_flow.py | 1 | 0 | n | 0.544 |
+| memory/designer/test_util_timeline.py | 1 | 0 | n | 0.544 |
+| memory/designer/test_velocity.py | 1 | 0 | n | 0.544 |
+| memory/designer/verify_goal_evidence.py | 1 | 0 | n | 0.544 |
+| memory/designer/lumen/assist-archivist-onboard-gen-2026-11-26.md | 1 | 0 | n | 0.544 |
 | memory/designer/lumen/evidence-assist-archivist-stale-verification-2026-11-26.md | 1 | 0 | n | 0.544 |
+| memory/designer/lumen/evidence-ssot-subagent-lanes-2026-11-26.md | 1 | 0 | n | 0.544 |
+| memory/designer/lumen/mindlab-knowledge-stream-eval-2026-11-26.md | 1 | 0 | n | 0.544 |
+| memory/designer/lumen/mindlab-knowledge-stream-smoke.py | 1 | 0 | n | 0.544 |
 | memory/designer/lumen/outreach-pack-visual-spec-2026-11-26.md | 1 | 0 | n | 0.544 |
 | memory/designer/lumen/stale-claim-outlet-6-10-resolution.md | 1 | 0 | n | 0.544 |
 | memory/designer/lumen/stealth/workflow-visual-specs-2026-11-26.md | 1 | 0 | n | 0.544 |
 | memory/designer/reel/assist-forge9-consistency-20261126.md | 1 | 0 | n | 0.544 |
 | memory/designer/reel/evidence-forecast-forge-g9-20261126.md | 1 | 0 | n | 0.544 |
 | memory/designer/reel/evidence-outlet-g11-assist-2026-11-26.md | 1 | 0 | n | 0.544 |
+| memory/designer/reel/evidence-pipeline-autonomy-gate-2026-11-26.md | 1 | 0 | n | 0.544 |
 | memory/designer/reel/evidence-task-inventory-verify-20261126.md | 1 | 0 | n | 0.544 |
+| memory/designer/reel/goals-cycle25-proposal.md | 1 | 0 | n | 0.544 |
 | memory/designer/reel/sb_demo-social-scheduling.md | 1 | 0 | n | 0.544 |
 | memory/designer/reel/sb_demo_template_stealth-engine-2026-11-26.md | 1 | 0 | n | 0.544 |
+| memory/designer/reel/sb_test_gate_pass.md | 1 | 0 | n | 0.544 |
+| memory/designer/reel/storyboard-workflow-demo-clip1.md | 1 | 0 | n | 0.544 |
+| memory/designer/reel/storyboard_gate.py | 1 | 0 | n | 0.544 |
 | memory/designer/splice/evidence-outlet-g11-verified-2026-11-26.md | 1 | 0 | n | 0.544 |
 | memory/designer/splice/evidence-splice-pipeline-2026-11-26.md | 1 | 0 | n | 0.544 |
 | memory/designer/splice/evidence-stale-claim-outlet-g6-g10-2026-11-26.md | 1 | 0 | n | 0.544 |
@@ -10658,37 +6563,66 @@ Leaves: 11986 | flagged (<0.35): 0
 | memory/designer/splice/stale-evidence-design_qa-crash-2026-11-26.md | 1 | 0 | n | 0.544 |
 | memory/forge/chair_idempotency_last.json | 1 | 0 | n | 0.544 |
 | memory/forge/consistency-check-built-2026-11-26.md | 1 | 0 | n | 0.544 |
+| memory/forge/consistency-report.jsonl | 1 | 0 | n | 0.544 |
 | memory/forge/consistency_check.py | 1 | 0 | n | 0.544 |
 | memory/forge/consistency_check_last.json | 1 | 0 | n | 0.544 |
+| memory/forge/convergence-alerts.jsonl | 1 | 0 | n | 0.544 |
+| memory/forge/convergence-report.jsonl | 1 | 0 | n | 0.544 |
+| memory/forge/convergence-stability-report-20261126.md | 1 | 0 | n | 0.544 |
+| memory/forge/convergence-trend-report.jsonl | 1 | 0 | n | 0.544 |
+| memory/forge/convergence_trend.py | 1 | 0 | n | 0.544 |
+| memory/forge/convergence_watch.py | 1 | 0 | n | 0.544 |
+| memory/forge/deps_baseline.json | 1 | 0 | n | 0.544 |
 | memory/forge/dispatch-gate-log.jsonl | 1 | 0 | n | 0.544 |
 | memory/forge/drift-detect-built-2026-11-26.md | 1 | 0 | n | 0.544 |
+| memory/forge/drift-report.jsonl | 1 | 0 | n | 0.544 |
 | memory/forge/drift-results.jsonl | 1 | 0 | n | 0.544 |
 | memory/forge/drift_detect.py | 1 | 0 | n | 0.544 |
 | memory/forge/drift_detect_last.json | 1 | 0 | n | 0.544 |
 | memory/forge/evidence-2026-11-26-goals9-10.md | 1 | 0 | n | 0.544 |
+| memory/forge/evidence-autoloop-20261126.md | 1 | 0 | n | 0.544 |
 | memory/forge/evidence-chair-idempotency-2026-11-26.md | 1 | 0 | n | 0.544 |
+| memory/forge/evidence-consistency-check-20261125.md | 1 | 0 | n | 0.544 |
 | memory/forge/evidence-convergence-infra-battery-2026-11-26.md | 1 | 0 | n | 0.544 |
+| memory/forge/evidence-convergence-trend-20261126.md | 1 | 0 | n | 0.544 |
+| memory/forge/evidence-convergence-watch-20261125.md | 1 | 0 | n | 0.544 |
+| memory/forge/evidence-css-drift-integration-20261125.md | 1 | 0 | n | 0.544 |
 | memory/forge/evidence-dispatch-gate-2026-11-26.md | 1 | 0 | n | 0.544 |
+| memory/forge/evidence-drift-detector-20261125.md | 1 | 0 | n | 0.544 |
+| memory/forge/evidence-drift-live-20261126.md | 1 | 0 | n | 0.544 |
 | memory/forge/evidence-forecast-backtest-2026-11-26.md | 1 | 0 | n | 0.544 |
+| memory/forge/evidence-fresh-verification-20261126.md | 1 | 0 | n | 0.544 |
+| memory/forge/evidence-gate-heartbeat-20261126.md | 1 | 0 | n | 0.544 |
 | memory/forge/evidence-idle-floor-2026-11-26.md | 1 | 0 | n | 0.544 |
 | memory/forge/evidence-mode-fuzz-2026-11-26.md | 1 | 0 | n | 0.544 |
 | memory/forge/evidence-plateau-gate-2026-11-26.md | 1 | 0 | n | 0.544 |
+| memory/forge/evidence-recovery-gate-20261126.md | 1 | 0 | n | 0.544 |
+| memory/forge/evidence-runbook-audit-20261125.md | 1 | 0 | n | 0.544 |
 | memory/forge/evidence-seat-sizing-audit-2026-11-26.md | 1 | 0 | n | 0.544 |
 | memory/forge/evidence-sentinel-precision-2026-11-26.md | 1 | 0 | n | 0.544 |
+| memory/forge/evidence-stealth-gate-wf4-20261126.md | 1 | 0 | n | 0.544 |
+| memory/forge/fleet-autonomy-gate-report.jsonl | 1 | 0 | n | 0.544 |
 | memory/forge/forecast-backtest-report.md | 1 | 0 | n | 0.544 |
 | memory/forge/forecast_backtest_last.json | 1 | 0 | n | 0.544 |
 | memory/forge/gate-breaker-state.json | 1 | 0 | n | 0.544 |
+| memory/forge/gate-heartbeat.jsonl | 1 | 0 | n | 0.544 |
+| memory/forge/gate_heartbeat.py | 1 | 0 | n | 0.544 |
 | memory/forge/gate_rc.bat | 1 | 0 | n | 0.544 |
 | memory/forge/js_syntax_gate.py | 1 | 0 | n | 0.544 |
 | memory/forge/mode_fuzz.py | 1 | 0 | n | 0.544 |
 | memory/forge/plateau-gate-report.md | 1 | 0 | n | 0.544 |
 | memory/forge/plateau_gate_last.json | 1 | 0 | n | 0.544 |
 | memory/forge/proposal-next-cycle.md | 1 | 0 | n | 0.544 |
+| memory/forge/recovery-report.jsonl | 1 | 0 | n | 0.544 |
+| memory/forge/recovery_gate.py | 1 | 0 | n | 0.544 |
+| memory/forge/runbook-audit-last-run.json | 1 | 0 | n | 0.544 |
 | memory/forge/runbook_audit.py | 1 | 0 | n | 0.544 |
 | memory/forge/seat-sizing-audit-report.md | 1 | 0 | n | 0.544 |
 | memory/forge/seat_sizing_audit_last.json | 1 | 0 | n | 0.544 |
 | memory/forge/sentinel-precision-report.json | 1 | 0 | n | 0.544 |
 | memory/forge/sentinel-precision-report.md | 1 | 0 | n | 0.544 |
+| memory/forge/stealth-gate-report.jsonl | 1 | 0 | n | 0.544 |
+| memory/forge/stealth_smoke_gate.py | 1 | 0 | n | 0.544 |
 | memory/forge/runbooks/boot_detection_runbook.py | 1 | 0 | n | 0.544 |
 | memory/forge/runbooks/browser_gate_decision_tree.py | 1 | 0 | n | 0.544 |
 | memory/forge/runbooks/citation_phantom_triage_runbook.py | 1 | 0 | n | 0.544 |
@@ -10701,13 +6635,20 @@ Leaves: 11986 | flagged (<0.35): 0
 | memory/forge/__pycache__/dispatch_gate.cpython-313.pyc | 1 | 0 | n | 0.544 |
 | memory/forge/__pycache__/idle_floor_enforce.cpython-313.pyc | 1 | 0 | n | 0.544 |
 | memory/forge/__pycache__/js_syntax_gate.cpython-313.pyc | 1 | 0 | n | 0.544 |
+| memory/goals/designer-forecast-scribe-milestone-tracker.md | 1 | 0 | n | 0.544 |
 | memory/goals/forecast-forge-g9-consistency-by-reel-2026-11-26.md | 1 | 0 | n | 0.544 |
 | memory/goals/forecast-orchestrator-g1-convergence-api-2026-11-26.md | 1 | 0 | n | 0.544 |
+| memory/goals/forecast-orchestrator-g1-convergence-asymptote-2026-11-26.md | 1 | 0 | n | 0.544 |
 | memory/goals/forge-consistency-forecast-2026-11-26.md | 1 | 0 | n | 0.544 |
 | memory/goals/GOAL_RESET_PENDING.json | 1 | 0 | n | 0.544 |
+| memory/goals/lumen.md | 1 | 0 | n | 0.544 |
 | memory/goals/mechanic-forecast-outlet-g10-platform-runbook-2026-11-26.md | 1 | 0 | n | 0.544 |
+| memory/goals/outlet-cycle25-proposals.md | 1 | 0 | n | 0.544 |
+| memory/goals/post-convergence-forecast-researcher.md | 1 | 0 | n | 0.544 |
+| memory/goals/researcher-cycle25-proposal-2026-11-26.md | 1 | 0 | n | 0.544 |
 | memory/goals/scribe-forecast-archivist7-sustainability-2026-11-26.md | 1 | 0 | n | 0.544 |
 | memory/goals/scribe-forecast-archivist7-sustainability.json | 1 | 0 | n | 0.544 |
+| memory/goals/splice.md | 1 | 0 | n | 0.544 |
 | memory/goals/archive/archivist-2026-11-26.md | 1 | 0 | n | 0.544 |
 | memory/goals/archive/builder-2026-11-26-cycle18.md | 1 | 0 | n | 0.544 |
 | memory/goals/archive/builder-2026-11-26.md | 1 | 0 | n | 0.544 |
@@ -10732,6 +6673,7 @@ Leaves: 11986 | flagged (<0.35): 0
 | memory/goals/history/forecast-20261126-040308.json | 1 | 0 | n | 0.544 |
 | memory/goals/history/forecast-20261126-050735.json | 1 | 0 | n | 0.544 |
 | memory/goals/history/forecast-20261126-060833.json | 1 | 0 | n | 0.544 |
+| memory/goals/history/forecast-20261126-070925.json | 1 | 0 | n | 0.544 |
 | memory/goals/history/forecast-20261126-072019.json | 1 | 0 | n | 0.544 |
 | memory/goals/history/forecast-20261126-082454.json | 1 | 0 | n | 0.544 |
 | memory/goals/history/forecast-20261126-092836.json | 1 | 0 | n | 0.544 |
@@ -10861,6 +6803,7 @@ Leaves: 11986 | flagged (<0.35): 0
 | memory/mechanic/stealth/runs/lead_enrichment_20261126_050430.json | 1 | 0 | n | 0.544 |
 | memory/mechanic/stealth/runs/lead_enrichment_20261126_110434.json | 1 | 0 | n | 0.544 |
 | memory/mechanic/__pycache__/winrm_pool.cpython-315.pyc | 1 | 0 | n | 0.544 |
+| memory/ops/all-clear-state-ux-spec.md | 1 | 0 | n | 0.544 |
 | memory/ops/autonomy-score-history.jsonl | 1 | 0 | n | 0.544 |
 | memory/ops/boot-review-2026-11-26.md | 1 | 0 | n | 0.544 |
 | memory/ops/builder-prompt-audit-2026-11-26.md | 1 | 0 | n | 0.544 |
@@ -10870,7 +6813,9 @@ Leaves: 11986 | flagged (<0.35): 0
 | memory/ops/cycle-timeout-diag-20261126T111812Z.json | 1 | 0 | n | 0.544 |
 | memory/ops/cycle-timeout-diag-20261126T111832Z.json | 1 | 0 | n | 0.544 |
 | memory/ops/cycle-timeout-diag-20261126T111839Z.json | 1 | 0 | n | 0.544 |
+| memory/ops/design_token_lint.py | 1 | 0 | n | 0.544 |
 | memory/ops/dispatch-conformance.json | 1 | 0 | n | 0.544 |
+| memory/ops/dispatch-goal-desync-2026-11-26.md | 1 | 0 | n | 0.544 |
 | memory/ops/elev-audit-summary-latest.json | 1 | 0 | n | 0.544 |
 | memory/ops/elev-audit-summary.jsonl | 1 | 0 | n | 0.544 |
 | memory/ops/elev-audit.jsonl | 1 | 0 | n | 0.544 |
@@ -10883,6 +6828,9 @@ Leaves: 11986 | flagged (<0.35): 0
 | memory/ops/idle-rebalance-state.json | 1 | 0 | n | 0.544 |
 | memory/ops/lumen-image-spec-workflow.md | 1 | 0 | n | 0.544 |
 | memory/ops/media-format-ladder-spec-2026-11-26.md | 1 | 0 | n | 0.544 |
+| memory/ops/media-pipeline-autonomy-gaps-2026-11-26.md | 1 | 0 | n | 0.544 |
+| memory/ops/media-pipeline-autonomy.md | 1 | 0 | n | 0.544 |
+| memory/ops/media-qc-gate-spec-2026-11-26.md | 1 | 0 | n | 0.544 |
 | memory/ops/mirror_cache.json.tmp | 1 | 0 | n | 0.544 |
 | memory/ops/mode-drift.jsonl | 1 | 0 | n | 0.544 |
 | memory/ops/model-resolution-sla.json | 1 | 0 | n | 0.544 |
@@ -10893,16 +6841,23 @@ Leaves: 11986 | flagged (<0.35): 0
 | memory/ops/power-limits-2026-11-26.md | 1 | 0 | n | 0.544 |
 | memory/ops/prompt-drilldown-2026-11-26.md | 1 | 0 | n | 0.544 |
 | memory/ops/ratification-request.jsonl | 1 | 0 | n | 0.544 |
+| memory/ops/recovery-drills.jsonl | 1 | 0 | n | 0.544 |
 | memory/ops/RECOVERY_2026-11-26.md | 1 | 0 | n | 0.544 |
 | memory/ops/remediation_loop_healthcheck.py | 1 | 0 | n | 0.544 |
 | memory/ops/runbook-executions.jsonl | 1 | 0 | n | 0.544 |
 | memory/ops/schtask-snapshot-2026-11-26-input.csv | 1 | 0 | n | 0.544 |
 | memory/ops/schtask-snapshot-2026-11-26.json | 1 | 0 | n | 0.544 |
+| memory/ops/schtasks_fallback_check.py | 1 | 0 | n | 0.544 |
 | memory/ops/seat-reachability-history.jsonl | 1 | 0 | n | 0.544 |
 | memory/ops/seat-sizing.json | 1 | 0 | n | 0.544 |
 | memory/ops/snapshot_score.py | 1 | 0 | n | 0.544 |
+| memory/ops/sub-agent-lanes-missing-from-ssot.md | 1 | 0 | n | 0.544 |
 | memory/ops/touch-census-history.jsonl | 1 | 0 | n | 0.544 |
 | memory/ops/touches.jsonl | 1 | 0 | n | 0.544 |
+| memory/ops/verify_boot_detection.py | 1 | 0 | n | 0.544 |
+| memory/ops/verify_onboarding.py | 1 | 0 | n | 0.544 |
+| memory/ops/verify_ui_change.py | 1 | 0 | n | 0.544 |
+| memory/ops/wf2-report-visual-spec.md | 1 | 0 | n | 0.544 |
 | memory/ops/_report_prompts.md | 1 | 0 | n | 0.544 |
 | memory/ops/alerts/mirror-drift.jsonl | 1 | 0 | n | 0.544 |
 | memory/ops/incidents/cycle-timeout-2026-11-26_093001.md | 1 | 0 | n | 0.544 |
@@ -10928,6 +6883,8 @@ Leaves: 11986 | flagged (<0.35): 0
 | memory/ops/runbooks/portal-ui-frozen.md | 1 | 0 | n | 0.544 |
 | memory/ops/runbooks/seat-failover.md | 1 | 0 | n | 0.544 |
 | memory/ops/runbooks/seat-unreachable.md | 1 | 0 | n | 0.544 |
+| memory/orchestrator/assist-log.json | 1 | 0 | n | 0.544 |
+| memory/orchestrator/assist_log.py | 1 | 0 | n | 0.544 |
 | memory/orchestrator/auto_chair.py | 1 | 0 | n | 0.544 |
 | memory/orchestrator/auto_cycle_transition.py | 1 | 0 | n | 0.544 |
 | memory/orchestrator/chair-cycle19-round-2026-11-26.md | 1 | 0 | n | 0.544 |
@@ -10939,6 +6896,7 @@ Leaves: 11986 | flagged (<0.35): 0
 | memory/orchestrator/dispatch_audit.py | 1 | 0 | n | 0.544 |
 | memory/orchestrator/dispatch_audit_2026-11-26.json | 1 | 0 | n | 0.544 |
 | memory/orchestrator/dispatch_audit_2026-11-26.md | 1 | 0 | n | 0.544 |
+| memory/orchestrator/evidence-day7-checkpoint-interim-2026-11-26.md | 1 | 0 | n | 0.544 |
 | memory/orchestrator/fleet_mode.py | 1 | 0 | n | 0.544 |
 | memory/orchestrator/forecast-calibration-evidence.md | 1 | 0 | n | 0.544 |
 | memory/orchestrator/forecast_calibration.py | 1 | 0 | n | 0.544 |
@@ -10951,19 +6909,59 @@ Leaves: 11986 | flagged (<0.35): 0
 | memory/orchestrator/seat-sizing-evidence.md | 1 | 0 | n | 0.544 |
 | memory/orchestrator/seat_sizing.py | 1 | 0 | n | 0.544 |
 | memory/orchestrator/sentinel-evidence.md | 1 | 0 | n | 0.544 |
+| memory/orchestrator/stealth-day7-review.md | 1 | 0 | n | 0.544 |
 | memory/orchestrator/__pycache__/convergence_api.cpython-313.pyc | 1 | 0 | n | 0.544 |
 | memory/orchestrator/__pycache__/convergence_asymptote.cpython-313.pyc | 1 | 0 | n | 0.544 |
 | memory/orchestrator/__pycache__/convergence_sentinel.cpython-313.pyc | 1 | 0 | n | 0.544 |
 | memory/orchestrator/__pycache__/forecast_calibration.cpython-313.pyc | 1 | 0 | n | 0.544 |
+| memory/outlet/autonomy-audit.md | 1 | 0 | n | 0.544 |
+| memory/outlet/content-fitness.json | 1 | 0 | n | 0.544 |
+| memory/outlet/content_calendar.py | 1 | 0 | n | 0.544 |
+| memory/outlet/content_fitness.py | 1 | 0 | n | 0.544 |
+| memory/outlet/evidence-auto-loop-2026-11-26.md | 1 | 0 | n | 0.544 |
+| memory/outlet/evidence-autoloop-2026-11-26b.md | 1 | 0 | n | 0.544 |
+| memory/outlet/evidence-content-calendar-2026-11-26.md | 1 | 0 | n | 0.544 |
 | memory/outlet/evidence-milestone-trigger-2026-11-26.md | 1 | 0 | n | 0.544 |
 | memory/outlet/evidence-platform-runbook-2026-11-26.md | 1 | 0 | n | 0.544 |
+| memory/outlet/evidence-reply-triage-2026-11-26.md | 1 | 0 | n | 0.544 |
 | memory/outlet/milestone_trigger_state.json | 1 | 0 | n | 0.544 |
 | memory/outlet/platform-connection-runbook.md | 1 | 0 | n | 0.544 |
 | memory/outlet/platform_connect.py | 1 | 0 | n | 0.544 |
+| memory/outlet/platform_variants.py | 1 | 0 | n | 0.544 |
+| memory/outlet/reply_triage.py | 1 | 0 | n | 0.544 |
+| memory/outlet/repost_rubric.py | 1 | 0 | n | 0.544 |
+| memory/outlet/ship_pipeline.py | 1 | 0 | n | 0.544 |
+| memory/outlet/trend_to_draft.py | 1 | 0 | n | 0.544 |
+| memory/outlet/verify_gate.py | 1 | 0 | n | 0.544 |
+| memory/outlet/briefs/2026-11-26-fleet-brief-2.md | 1 | 0 | n | 0.544 |
+| memory/outlet/briefs/2026-11-26-fleet-brief-3.md | 1 | 0 | n | 0.544 |
+| memory/outlet/briefs/2026-11-26-fleet-brief-4.md | 1 | 0 | n | 0.544 |
+| memory/outlet/briefs/2026-11-26-fleet-brief-5.md | 1 | 0 | n | 0.544 |
+| memory/outlet/calendar/2026-W48.json | 1 | 0 | n | 0.544 |
+| memory/outlet/calendar/2026-W49.json | 1 | 0 | n | 0.544 |
+| memory/outlet/published/2026-11-26-milestone-level-12-90pct.md | 1 | 0 | n | 0.544 |
+| memory/outlet/queue/2026-11-25-outreach-pack-wf1-3.md | 1 | 0 | n | 0.544 |
 | memory/outlet/queue/2026-11-25-red-host-restored.md | 1 | 0 | n | 0.544 |
 | memory/outlet/queue/2026-11-26-milestone-level-12-90pct.md | 1 | 0 | n | 0.544 |
+| memory/outlet/queue/2026-11-26-outreach-bookkeeping-recon.md | 1 | 0 | n | 0.544 |
+| memory/outlet/queue/2026-11-26-outreach-crm-data-entry.md | 1 | 0 | n | 0.544 |
+| memory/outlet/queue/2026-11-26-outreach-social-content-scheduling.md | 1 | 0 | n | 0.544 |
+| memory/outlet/queue/2026-11-26-prestaged-milestone-100pct.md | 1 | 0 | n | 0.544 |
+| memory/outlet/queue/2026-11-26-trend-40--of-enterprise-applications-will-feat-1.md | 1 | 0 | n | 0.544 |
+| memory/outlet/queue/2026-11-26-trend-40--of-enterprise-applications-will-feat.md | 1 | 0 | n | 0.544 |
+| memory/outlet/queue/2026-11-26-trend-fleet-goal-completion-hit-27--this-cycle.md | 1 | 0 | n | 0.544 |
+| memory/outlet/queue/2026-11-26-trend-fleet-not-converged-per-scribe-invariant.md | 1 | 0 | n | 0.544 |
+| memory/outlet/queue/2026-11-26-trend-verifier-reached-4-10-goals-with-cross-l.md | 1 | 0 | n | 0.544 |
+| memory/pixel/css_baseline.json | 1 | 0 | n | 0.544 |
+| memory/pixel/css_drift_check.py | 1 | 0 | n | 0.544 |
+| memory/pixel/css_drift_subcheck.py | 1 | 0 | n | 0.544 |
+| memory/pixel/evidence-css-drift-check-2026-11-26.md | 1 | 0 | n | 0.544 |
+| memory/pixel/evidence-css-drift-fix-readable-2026-11-26.md | 1 | 0 | n | 0.544 |
+| memory/pixel/evidence-css-drift-subcheck-forge-2026-11-26.md | 1 | 0 | n | 0.544 |
 | memory/pixel/evidence-fleet-health-sparkline-2026-11-26.md | 1 | 0 | n | 0.544 |
 | memory/pixel/evidence-js-syntax-gate-2026-11-26.md | 1 | 0 | n | 0.544 |
+| memory/pixel/evidence-steady-state-2026-11-26.md | 1 | 0 | n | 0.544 |
+| memory/pixel/evidence-steady-state-selftest-2026-11-26.md | 1 | 0 | n | 0.544 |
 | memory/pixel/evidence-token-enforcement-gate-2026-11-26.md | 1 | 0 | n | 0.544 |
 | memory/pixel/evidence-token-gate-2026-11-26.md | 1 | 0 | n | 0.544 |
 | memory/pixel/evidence-widget-error-boundary-2026-11-26.md | 1 | 0 | n | 0.544 |
@@ -10971,15 +6969,24 @@ Leaves: 11986 | flagged (<0.35): 0
 | memory/pixel/screenshot-375.png | 1 | 0 | n | 0.544 |
 | memory/pixel/screenshot-768.png | 1 | 0 | n | 0.544 |
 | memory/pixel/screenshot-test.html | 1 | 0 | n | 0.544 |
+| memory/pixel/steady_state_selftest.py | 1 | 0 | n | 0.544 |
+| memory/pixel/ui-syntax-gate-2026-11-26.json | 1 | 0 | n | 0.544 |
+| memory/pixel/ui_syntax_gate.py | 1 | 0 | n | 0.544 |
 | memory/portal/__pycache__/memfocus.cpython-313.pyc | 1 | 0 | n | 0.544 |
+| memory/researcher/convergence-status-2026-11-26.md | 1 | 0 | n | 0.544 |
 | memory/researcher/dependency-graph.json | 1 | 0 | n | 0.544 |
+| memory/researcher/evidence-archivist-assist-decision-quality-2026-11-26.md | 1 | 0 | n | 0.544 |
+| memory/researcher/evidence-autoloop-feed-staleness-2026-11-26.md | 1 | 0 | n | 0.544 |
+| memory/researcher/evidence-convergence-refresh-2026-11-26.md | 1 | 0 | n | 0.544 |
+| memory/researcher/evidence-fleet-pct-ssot-mismatch-2026-11-26.md | 1 | 0 | n | 0.544 |
 | memory/researcher/gaussian-splatting-object-detection-2026-11-26.md | 1 | 0 | n | 0.544 |
-| memory/researcher/goal_ledger.py | 1 | 0 | n | 0.544 |
 | memory/researcher/infinite-detail-voxel-rendering-2026-11-26.md | 1 | 0 | n | 0.544 |
 | memory/researcher/stealth/lead-list-01.md | 1 | 0 | n | 0.544 |
+| memory/researcher/stealth/outlet-outreach-support-2026-11-26.md | 1 | 0 | n | 0.544 |
+| memory/researcher/stealth/revenue-readiness-gap.md | 1 | 0 | n | 0.544 |
 | memory/researcher/stealth/task-inventory.md | 1 | 0 | n | 0.544 |
+| memory/researcher/stealth/validated-lead-list.md | 1 | 0 | n | 0.544 |
 | memory/researcher/__pycache__/goal_ledger.cpython-313.pyc | 1 | 0 | n | 0.544 |
-| memory/researcher/__pycache__/goal_ledger.cpython-315.pyc | 1 | 0 | n | 0.544 |
 | memory/scribe/assist-archivist7-sustainability-forecast-2026-11-26.md | 1 | 0 | n | 0.544 |
 | memory/scribe/assist-attribution.jsonl | 1 | 0 | n | 0.544 |
 | memory/scribe/assist-forge-goal8-runbook-audit.md | 1 | 0 | n | 0.544 |
@@ -11000,10 +7007,43 @@ Leaves: 11986 | flagged (<0.35): 0
 | memory/scribe/steady-state-cert.jsonl | 1 | 0 | n | 0.544 |
 | memory/scribe/__pycache__/decision_replay.cpython-313.pyc | 1 | 0 | n | 0.544 |
 | memory/scribe/__pycache__/exit_trigger.cpython-313.pyc | 1 | 0 | n | 0.544 |
+| memory/synthesis/decision-digest-2026-11-26.md | 1 | 0 | n | 0.544 |
 | memory/synthesis/researcher-goal11-state-reconciliation-2026-11-26.md | 1 | 0 | n | 0.544 |
 | memory/synthesis/stale-claim-researcher-task-inventory-2026-11-26.md | 1 | 0 | n | 0.544 |
+| memory/verifier/acceptance-test-goal6-evidence-2026-11-26.md | 1 | 0 | n | 0.544 |
+| memory/verifier/acceptance_test_gen.py | 1 | 0 | n | 0.544 |
+| memory/verifier/auto-trigger-goal1-evidence-2026-11-26.md | 1 | 0 | n | 0.544 |
+| memory/verifier/autonomy-gap-audit-report.md | 1 | 0 | n | 0.544 |
+| memory/verifier/autonomy-gap-audit.json | 1 | 0 | n | 0.544 |
+| memory/verifier/autonomy-gap-goal9-evidence-2026-11-26.md | 1 | 0 | n | 0.544 |
+| memory/verifier/autonomy_gap_audit.py | 1 | 0 | n | 0.544 |
+| memory/verifier/auto_trigger_hook.py | 1 | 0 | n | 0.544 |
+| memory/verifier/backtest-v2-explicit-data-2026-11-26.md | 1 | 0 | n | 0.544 |
+| memory/verifier/canary-gate-goal8-evidence-2026-11-26.md | 1 | 0 | n | 0.544 |
+| memory/verifier/canary-gate-log.jsonl | 1 | 0 | n | 0.544 |
+| memory/verifier/canary-gate-promotions.jsonl | 1 | 0 | n | 0.544 |
+| memory/verifier/canary-gate-selftest.json | 1 | 0 | n | 0.544 |
+| memory/verifier/canary-gate-token.json | 1 | 0 | n | 0.544 |
+| memory/verifier/canary_gate.py | 1 | 0 | n | 0.544 |
+| memory/verifier/chaos-recovery-drill-results.json | 1 | 0 | n | 0.544 |
+| memory/verifier/chaos-recovery-goal2-evidence-2026-11-26.md | 1 | 0 | n | 0.544 |
+| memory/verifier/coverage-map-goal7-evidence-2026-11-26.md | 1 | 0 | n | 0.544 |
+| memory/verifier/evidence-autonomy-score-staleness-2026-11-26.md | 1 | 0 | n | 0.544 |
+| memory/verifier/evidence-convergence-current-forge-ccs-repro-2026-11-26.md | 1 | 0 | n | 0.544 |
+| memory/verifier/evidence-design-qa-stale-claim-closed-2026-11-26.md | 1 | 0 | n | 0.544 |
+| memory/verifier/evidence-fleet-gate-reverify-20261126.md | 1 | 0 | n | 0.544 |
+| memory/verifier/evidence-forecast-staleness-convergence-2026-11-26.md | 1 | 0 | n | 0.544 |
+| memory/verifier/evidence-scribe-g9-g10-close-2026-11-26.md | 1 | 0 | n | 0.544 |
+| memory/verifier/evidence-spo-audit-20261126.md | 1 | 0 | n | 0.544 |
+| memory/verifier/freshness-goal3-evidence-2026-11-26.md | 1 | 0 | n | 0.544 |
 | memory/verifier/red-8888-reprobe-contradiction-2026-11-25.md | 1 | 0 | n | 0.544 |
+| memory/verifier/self-verify-goal10-evidence-2026-11-26.md | 1 | 0 | n | 0.544 |
+| memory/verifier/self-verify-result.json | 1 | 0 | n | 0.544 |
+| memory/verifier/self_verify.py | 1 | 0 | n | 0.544 |
 | memory/verifier/slo-report-2026-11-26.md | 1 | 0 | n | 0.544 |
+| memory/verifier/verification-coverage-map.json | 1 | 0 | n | 0.544 |
+| memory/verifier/verification-coverage-map.md | 1 | 0 | n | 0.544 |
+| memory/verifier/verification_coverage_map.py | 1 | 0 | n | 0.544 |
 | memory/verifier/__pycache__/mode_schema_check.cpython-313.pyc | 1 | 0 | n | 0.544 |
 | memory/verifier/__pycache__/mode_schema_check.cpython-315.pyc | 1 | 0 | n | 0.544 |
 | memory/archivist/autonomy-progress-dataset.json | 0 | 0 | n | 0.550 |
@@ -11032,6 +7072,15 @@ Leaves: 11986 | flagged (<0.35): 0
 | memory/builder/sim.jsonl | 0 | 0 | n | 0.550 |
 | memory/builder/__pycache__/convergence_api.cpython-313.pyc | 0 | 0 | n | 0.550 |
 | memory/builder/__pycache__/fleet_health_gauge.cpython-313.pyc | 0 | 0 | n | 0.550 |
+| memory/designer/evidence-cycle20-goals2-6-2026-11-27.json | 0 | 0 | n | 0.550 |
+| memory/designer/evidence-cycle20-goals2-6-2026-11-27.md | 0 | 0 | n | 0.550 |
+| memory/designer/evidence-cycle20-goals7-10-2026-11-27.md | 0 | 0 | n | 0.550 |
+| memory/designer/evidence-next-horizons-2026-11-26.json | 0 | 0 | n | 0.550 |
+| memory/designer/evidence-regression-banner-2026-11-26.json | 0 | 0 | n | 0.550 |
+| memory/designer/reel/evidence-dna-art-storyboards-2026-11-27.md | 0 | 0 | n | 0.550 |
+| memory/designer/reel/storyboard-b01-portal-core.md | 0 | 0 | n | 0.550 |
+| memory/designer/reel/storyboard-b05-dna-rebuild.md | 0 | 0 | n | 0.550 |
+| memory/designer/splice/evidence-outlet-media-qc-gate-2026-11-27.md | 0 | 0 | n | 0.550 |
 | memory/forge/convergence-drill.jsonl | 0 | 0 | n | 0.550 |
 | memory/forge/convergence-e2e-drill-report.md | 0 | 0 | n | 0.550 |
 | memory/forge/convergence_e2e_drill_last.json | 0 | 0 | n | 0.550 |
@@ -11050,6 +7099,7 @@ Leaves: 11986 | flagged (<0.35): 0
 | memory/goals/forecast-archivist-autonomy-progression-2026-11-27.md | 0 | 0 | n | 0.550 |
 | memory/goals/forecast-latest.md | 0 | 0 | n | 0.550 |
 | memory/goals/forecast-pixel-g1-cdp-unblock-from-pale-2026-11-27.md | 0 | 0 | n | 0.550 |
+| memory/goals/forecast-splice-g1-auto-ingest-2026-11-27.md | 0 | 0 | n | 0.550 |
 | memory/goals/forge.md | 0 | 0 | n | 0.550 |
 | memory/goals/goal_ledger.json | 0 | 0 | n | 0.550 |
 | memory/goals/outlet.md | 0 | 0 | n | 0.550 |
@@ -11067,6 +7117,8 @@ Leaves: 11986 | flagged (<0.35): 0
 | memory/goals/history/forecast-20261127-103934.json | 0 | 0 | n | 0.550 |
 | memory/goals/history/forecast-20261127-114703.json | 0 | 0 | n | 0.550 |
 | memory/goals/history/forecast-20261127-124855.json | 0 | 0 | n | 0.550 |
+| memory/goals/history/forecast-20261127-135422.json | 0 | 0 | n | 0.550 |
+| memory/lumen/evidence-verify-splice-media-qc-gate-2026-11-27.md | 0 | 0 | n | 0.550 |
 | memory/mechanic/auto-loop-pass-2026-11-27.md | 0 | 0 | n | 0.550 |
 | memory/mechanic/auto-loop-pass-2026-11-27b.md | 0 | 0 | n | 0.550 |
 | memory/mechanic/auto-loop-pass-2026-11-27c.md | 0 | 0 | n | 0.550 |
@@ -11108,10 +7160,15 @@ Leaves: 11986 | flagged (<0.35): 0
 | memory/mechanic/stealth/runs/lead_enrichment_20261126_203357.json | 0 | 0 | n | 0.550 |
 | memory/mechanic/stealth/runs/lead_enrichment_20261127_023400.json | 0 | 0 | n | 0.550 |
 | memory/mind-lab/world.json | 0 | 0 | n | 0.550 |
+| memory/ops/api-reqs.json | 0 | 0 | n | 0.550 |
+| memory/ops/api-reqs.jsonl | 0 | 0 | n | 0.550 |
+| memory/ops/api-results.json | 0 | 0 | n | 0.550 |
+| memory/ops/assist-log.json | 0 | 0 | n | 0.550 |
 | memory/ops/auto-trigger-regression-battery-spec-2026-11-27.md | 0 | 0 | n | 0.550 |
 | memory/ops/autoloop.json | 0 | 0 | n | 0.550 |
 | memory/ops/autoloop.jsonl | 0 | 0 | n | 0.550 |
 | memory/ops/autonomy-score-freshness-guard-2026-11-27.md | 0 | 0 | n | 0.550 |
+| memory/ops/blocked.md | 0 | 0 | n | 0.550 |
 | memory/ops/canary-gate-token.json | 0 | 0 | n | 0.550 |
 | memory/ops/convergence-critical-path-2026-11-27.md | 0 | 0 | n | 0.550 |
 | memory/ops/convergence-prediction.json | 0 | 0 | n | 0.550 |
@@ -11153,8 +7210,12 @@ Leaves: 11986 | flagged (<0.35): 0
 | memory/ops/merge-queue/agent_portal.py.2593e953e6 | 0 | 0 | n | 0.550 |
 | memory/ops/merge-queue/agent_portal.py.9918402bb0 | 0 | 0 | n | 0.550 |
 | memory/ops/merge-queue/agent_portal.py.ef93d2e1b6 | 0 | 0 | n | 0.550 |
+| memory/ops/merge-queue/memory_mirror.py.379d85ea14 | 0 | 0 | n | 0.550 |
 | memory/ops/merge-queue/memory_mirror.py.c8a7514c6e | 0 | 0 | n | 0.550 |
+| memory/ops/merge-queue/memory_mirror.py.d36cc03342 | 0 | 0 | n | 0.550 |
 | memory/ops/merge-queue/memory_mirror.py.f752ee4941 | 0 | 0 | n | 0.550 |
+| memory/ops/merge-queue/portal_scheduler.py.a1f8a36306 | 0 | 0 | n | 0.550 |
+| memory/ops/merge-queue/portal_scheduler.py.b157afaf9d | 0 | 0 | n | 0.550 |
 | memory/ops/__pycache__/nonsandbox_unblock_batch.cpython-313.pyc | 0 | 0 | n | 0.550 |
 | memory/ops/__pycache__/sim_memory.cpython-313.pyc | 0 | 0 | n | 0.550 |
 | memory/orchestrator/assist-verifier-goal1-auto-trigger-2026-11-27.md | 0 | 0 | n | 0.550 |
@@ -11165,6 +7226,17 @@ Leaves: 11986 | flagged (<0.35): 0
 | memory/orchestrator/liveleg-queue-refresh-2026-11-27.md | 0 | 0 | n | 0.550 |
 | memory/orchestrator/memory-tree-trim-2026-11-27.md | 0 | 0 | n | 0.550 |
 | memory/orchestrator/post-mirror-goal-repair-2026-11-27.md | 0 | 0 | n | 0.550 |
+| memory/outlet/evidence-content-fitness-2026-11-27.md | 0 | 0 | n | 0.550 |
+| memory/outlet/evidence-fire-queue-2026-11-27.md | 0 | 0 | n | 0.550 |
+| memory/outlet/evidence-platform-variants-2026-11-27.md | 0 | 0 | n | 0.550 |
+| memory/outlet/evidence-reply-triage-2026-11-27.md | 0 | 0 | n | 0.550 |
+| memory/outlet/evidence-repost-rubric-2026-11-27.md | 0 | 0 | n | 0.550 |
+| memory/outlet/evidence-trend-to-draft-2026-11-27.md | 0 | 0 | n | 0.550 |
+| memory/outlet/evidence-verify-gate-2026-11-27.md | 0 | 0 | n | 0.550 |
+| memory/outlet/fire_queue.py | 0 | 0 | n | 0.550 |
+| memory/outlet/gate-log.jsonl | 0 | 0 | n | 0.550 |
+| memory/outlet/media_qc_gate.py | 0 | 0 | n | 0.550 |
+| memory/outlet/ship-timeline.jsonl | 0 | 0 | n | 0.550 |
 | memory/outlet/ship_log.jsonl | 0 | 0 | n | 0.550 |
 | memory/pixel/cdp_probe_bounded.py | 0 | 0 | n | 0.550 |
 | memory/pixel/conv-shot.html | 0 | 0 | n | 0.550 |
@@ -11172,6 +7244,7 @@ Leaves: 11986 | flagged (<0.35): 0
 | memory/pixel/evidence-fleet-health-gauge-assist-2026-11-27.md | 0 | 0 | n | 0.550 |
 | memory/pixel/evidence-nonsandbox-closure-runbook-2026-11-27.md | 0 | 0 | n | 0.550 |
 | memory/pixel/prepin_asset_gate.py | 0 | 0 | n | 0.550 |
+| memory/pixel/ui-assist-assist-graph.js | 0 | 0 | n | 0.550 |
 | memory/pixel/_dom_smoke.html | 0 | 0 | n | 0.550 |
 | memory/pixel/_edge_log.txt | 0 | 0 | n | 0.550 |
 | memory/pixel/_purge_manifest_2026-11-27.txt | 0 | 0 | n | 0.550 |
@@ -11183,7 +7256,9 @@ Leaves: 11986 | flagged (<0.35): 0
 | memory/portal/memfocus-parked.jsonl | 0 | 0 | n | 0.550 |
 | memory/portal/memfocus-state.json | 0 | 0 | n | 0.550 |
 | memory/portal/__pycache__/context_bundle.cpython-315.pyc | 0 | 0 | n | 0.550 |
+| memory/researcher/goal_ledger.py | 0 | 0 | n | 0.550 |
 | memory/researcher/goal_ledger_current.json | 0 | 0 | n | 0.550 |
+| memory/researcher/__pycache__/goal_ledger.cpython-315.pyc | 0 | 0 | n | 0.550 |
 | memory/scribe/assist-verifier-g1-commit-trigger-2026-11-27.md | 0 | 0 | n | 0.550 |
 | memory/scribe/assist-verifier-g1-e2e-smoke8-fix-067.md | 0 | 0 | n | 0.550 |
 | memory/scribe/auto-loop-contribution-2026-11-27.md | 0 | 0 | n | 0.550 |
@@ -11197,6 +7272,7 @@ Leaves: 11986 | flagged (<0.35): 0
 | memory/scribe/evidence-sim-v2-automation-2026-11-27.md | 0 | 0 | n | 0.550 |
 | memory/scribe/evidence-verifier-g1-deploy-2026-11-27.md | 0 | 0 | n | 0.550 |
 | memory/scribe/ledger-regen-discrepancy-flag-2026-11-27.md | 0 | 0 | n | 0.550 |
+| memory/verifier/auto-trigger-log.jsonl | 0 | 0 | n | 0.550 |
 | memory/verifier/auto_trigger_log.jsonl | 0 | 0 | n | 0.550 |
 | memory/verifier/auto_trigger_poll.bat | 0 | 0 | n | 0.550 |
 | memory/verifier/auto_trigger_regression.py | 0 | 0 | n | 0.550 |
@@ -11207,10 +7283,15 @@ Leaves: 11986 | flagged (<0.35): 0
 | memory/verifier/commit-trigger-log.state.json | 0 | 0 | n | 0.550 |
 | memory/verifier/commit_trigger.py | 0 | 0 | n | 0.550 |
 | memory/verifier/cross-lane-contract-assist-2026-11-26.md | 0 | 0 | n | 0.550 |
+| memory/verifier/cross_lane_contracts.py | 0 | 0 | n | 0.550 |
 | memory/verifier/cross_lane_contract_results.json | 0 | 0 | n | 0.550 |
 | memory/verifier/cross_lane_contract_tests.py | 0 | 0 | n | 0.550 |
 | memory/verifier/daemon-stdout.log | 0 | 0 | n | 0.550 |
 | memory/verifier/deploy_commit_trigger.py | 0 | 0 | n | 0.550 |
+| memory/verifier/evidence-autonomy-gap-audit-goal9-2026-11-27.md | 0 | 0 | n | 0.550 |
+| memory/verifier/evidence-coverage-map-goal7-2026-11-27.md | 0 | 0 | n | 0.550 |
+| memory/verifier/evidence-cross-lane-contracts-goal4-2026-11-27.md | 0 | 0 | n | 0.550 |
+| memory/verifier/evidence-self-verify-goal10-2026-11-27.md | 0 | 0 | n | 0.550 |
 | memory/verifier/multi-file-regression-log.jsonl | 0 | 0 | n | 0.550 |
 | memory/verifier/perf-report.md | 0 | 0 | n | 0.550 |
 | memory/verifier/register_trigger_task.py | 0 | 0 | n | 0.550 |
@@ -11271,6 +7352,11 @@ Leaves: 11986 | flagged (<0.35): 0
 | memory/verifier/tests/test_verifier_g1_auto_trigger_regression_battery.py | 0 | 0 | n | 0.550 |
 | memory/verifier/tests/test_verifier_g2_chaos_recovery_verification.py | 0 | 0 | n | 0.550 |
 | memory/verifier/tests/test_verifier_g3_evidence_freshness_sla.py | 0 | 0 | n | 0.550 |
+| memory/verifier/tests/test_verifier_goal1.py | 0 | 0 | n | 0.550 |
+| memory/verifier/tests/test_verifier_goal2.py | 0 | 0 | n | 0.550 |
+| memory/verifier/tests/test_verifier_goal3.py | 0 | 0 | n | 0.550 |
+| memory/verifier/tests/test_verifier_goal4.py | 0 | 0 | n | 0.550 |
+| memory/verifier/tests/test_verifier_goal5.py | 0 | 0 | n | 0.550 |
 | memory/verifier/__pycache__/chaos_recovery_drill.cpython-313.pyc | 0 | 0 | n | 0.550 |
 | memory/verifier/__pycache__/deploy_commit_trigger.cpython-313.pyc | 0 | 0 | n | 0.550 |
 | memory/world/annotations.jsonl | 0 | 0 | n | 0.550 |
@@ -11655,6 +7741,7 @@ Leaves: 11986 | flagged (<0.35): 0
 | memory/archivist/autonomy_progression.py | 0 | 1 | Y | 0.769 |
 | memory/archivist/evidence-assist-verifier-goal7-coverage-2026-11-27.md | 0 | 1 | Y | 0.769 |
 | memory/archivist/evidence-stale-goal-ledger-regen-2026-11-27.md | 0 | 1 | Y | 0.769 |
+| memory/archivist/evidence-stale-verifier-goal7-falseopen-2026-11-27.md | 0 | 1 | Y | 0.769 |
 | memory/builder/evidence-ledger-stale-closure-2026-11-27.md | 0 | 1 | Y | 0.769 |
 | memory/builder/fleet_health_gauge.py | 0 | 1 | Y | 0.769 |
 | memory/forge/canary_gate_token.py | 0 | 1 | Y | 0.769 |
@@ -11673,6 +7760,7 @@ Leaves: 11986 | flagged (<0.35): 0
 | memory/ops/smoke-circuit-breaker.md | 0 | 1 | Y | 0.769 |
 | memory/outlet/ship_post.py | 0 | 1 | Y | 0.769 |
 | memory/pixel/cdp_375_dom_check.py | 0 | 1 | Y | 0.769 |
+| memory/pixel/evidence-assist-graph-assist-2026-11-27.md | 0 | 1 | Y | 0.769 |
 | memory/pixel/evidence-cdp-artifact-fix-2026-11-27.md | 0 | 1 | Y | 0.769 |
 | memory/pixel/evidence-cdp-goal6-blocker-reprobe-2026-11-27.md | 0 | 1 | Y | 0.769 |
 | memory/pixel/evidence-convergence-375-live-verify-2026-11-27.md | 0 | 1 | Y | 0.769 |

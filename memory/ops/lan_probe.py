@@ -6,10 +6,10 @@ Exit codes: 0=all reachable, 1=some unreachable
 import socket, sys, time
 
 HOSTS = {
-    "White": ("192.168.1.179", 8888),
-    "Pale": ("192.168.1.39", 8888),
-    "Black": ("192.168.1.99", 8888),
-    "Red": ("192.168.1.245", 8888),
+    "White": ("IP_LAN", 8888),
+    "Pale": ("IP_LAN", 8888),
+    "Black": ("IP_LAN", 8888),
+    "Red": ("IP_LAN", 8888),
 }
 
 def probe(ip, port, timeout):

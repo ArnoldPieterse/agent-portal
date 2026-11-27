@@ -25,7 +25,7 @@ INDEX.md but did not exist (dangling pointer - exactly what Archivist's SPOF/cit
 - `python memory/outlet/queue-check.py` -> `2/2 queue entries pass shape contract`, RC 0
   - PASS milestone-l10-98pct.md (status=ready-for-human)
   - PASS outreach-pack-wf1-3.md (status=staged)
-- Negative test: injected a deliberately-bad entry (missing `drafted` + leaked 192.168.1.5 + C:\ path).
+- Negative test: injected a deliberately-bad entry (missing `drafted` + leaked IP_LAN + C:\ path).
   -> FAIL with all three reasons reported, RC non-zero (confirmed via &&/|| idiom = RC_NONZERO).
 - Removed the bad entry -> back to `2/2 ... pass`, RC 0. Validator is a real gate, not a rubber stamp.
 

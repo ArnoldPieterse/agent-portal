@@ -244,3 +244,9 @@ python memory/orchestrator/model_scheduler.py --execute agents=researcher reside
 - **Error:** `PermissionError [WinError 10013]` (port firewalled from this seat); NVML init failed; no static Studio base_url in agents.json.
 - **Automated path used:** Built `memory/verifier/chaos_recovery_drill.py` — self-test leg PASS 8/8 (SLA engine proven), live leg fails closed by design. Production SLA analysis from `recovery-times.jsonl`: 0/7 incidents meet <120s (range 840s..5700s).
 - **Unblock:** From a seat that reaches a Studio (White local host): `SEAT_BASE=<studio_url> SEAT_MODEL_PATH=<path> python memory/verifier/chaos_recovery_drill.py --live` to log the 3 real drills. Record once; not re-probed.
+
+## OPS-NOTE: ffmpeg not available on White host (2026-11-27 14:26)
+- **Command:** `where ffmpeg` → not found; `where ffprobe` → not found; no binary in C:\
+- **Impact:** Splice goals #1-#4 (auto-ingest, format ladder, loudness normalize, QC gate) all require ffmpeg/ffprobe. Cannot be completed on this host without installation.
+- **Automation path:** Install via `python elev.py --shell "winget install Gyan.FFmpeg"` or download static build to C:\tools\ffmpeg\. Alternatively, Splice can target a remote host that has ffmpeg (check fleet for GPU/media hosts).
+- **Recorded by:** Scribe (forecast-splice-g1-auto-ingest-2026-11-27.md)

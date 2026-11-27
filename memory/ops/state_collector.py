@@ -7,10 +7,10 @@ import json, sys, pathlib
 from datetime import datetime
 
 HOSTS = {
-    "White": {"ip": "192.168.1.179", "port": 8888},
-    "Pale": {"ip": "192.168.1.39", "port": 8888},
-    "Black": {"ip": "192.168.1.99", "port": 8888},
-    "Red": {"ip": "192.168.1.245", "port": 8888},
+    "White": {"ip": "IP_LAN", "port": 8888},
+    "Pale": {"ip": "IP_LAN", "port": 8888},
+    "Black": {"ip": "IP_LAN", "port": 8888},
+    "Red": {"ip": "IP_LAN", "port": 8888},
 }
 
 def probe_host(name, cfg):

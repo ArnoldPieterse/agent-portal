@@ -60,3 +60,7 @@ archive/fleet-backups/
 # 2026-11-27: fleet/report tarballs never tracked again (they keep getting re-pulled from remotes and resurrected by git restore); backups live in archive/fleet-backups/ now
 memory/mechanic/backups/*.tar.gz
 memory/mechanic/backups/*.tar.json
+
+# 2026-11-27: one-off Nov-20 archivist reports + stale underscore index dup - archived in archive/bloat_20261123/archivist-reports/
+memory/archivist/dedup-report.json
+memory/archivist/semantic_index.json

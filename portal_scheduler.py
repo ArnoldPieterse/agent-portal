@@ -73,6 +73,11 @@ JOBS = [
                                    "memory/verifier/perf_gate.py",
                                    "memory/verifier/slo_enforce.py"],
      "consolidated 2026-11-23: winrm_rotate (was schtask WinRMRotation 03:00) + forecast_engine (was FleetForecast30) + verifier_daily (perf_gate+slo_enforce, was 07:00); unified to 03:00. backup.py --run added FIRST 2026-11-27 (nightly fleet backup with 7-day rotation -> archive/fleet-backups/, outside memory/ so size_guard stays green; it was never scheduled before - no backup existed after 2026-11-20)", (3, 0)),
+    # ---- every 6h: keep the memory tree under size_guard limits (2026-11-27) ----
+    ('cycle_6h',           21600,  [PY, os.path.join(HERE, 'memory', 'ops', 'run_steps.py'),
+                                   'memory/ops/tree_reclaim.py --apply',
+                                   'memory/ops/prune_memory_tree.py --apply'],
+     'added 2026-11-27: periodic bloat reclamation (Builder evidence-prune-memory-tree-2026-11-27 next step). tree_reclaim keeps newest fleet backup + N merge snapshots and drops regenerable designer browser-profile dirs; prune_memory_tree applies age rules. Conservative keep-rules, 6h apart so an in-use Playwright profile dir is rarely hit.'),
     # ---- weekly ----
     ("schtask_dep_weekly", 604800, [PY, os.path.join(HERE, "memory", "ops", "schtask_dep_weekly.py")],
      "was PortalSchtaskDepGen; PortalDepGenCanary dropped (cmd echo no-op)"),
