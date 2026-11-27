@@ -36,12 +36,12 @@
    "RUN_STEP_TIMEOUT": "1800"
   },
   "next_run": 1795756584.6697907,
-  "last_run": null,
-  "last_rc": null,
-  "last_err": "",
+  "last_run": 1795754909.739143,
+  "last_rc": 0,
+  "last_err": "ver.py\r\nrun_steps [2/4]: memory/verifier/smb_drift_detector.py\r\nrun_steps [3/4]: memory/mechanic/state_collector.py collect\r\nrun_steps [4/4]: memory_mirror.py",
   "runs": 1,
   "paused": false,
-  "running": true
+  "running": false
  },
  "cycle_1h": {
   "name": "cycle_1h",

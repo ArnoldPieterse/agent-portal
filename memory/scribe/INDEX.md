@@ -6,6 +6,7 @@ Last updated: 2026-11-27.
 - sim_update.py -> memory/scribe/sim_update.py   **NEW** CLI: `--add` (record attempt), `--check` (health), `--list` (summary); automates SIM maintenance per paper
 - evidence-sim-adoption-2026-11-27.md   **EVIDENCE** SIM v1 adoption complete
 - evidence-sim-v2-automation-2026-11-27.md   **EVIDENCE** SIM v2: automated updater + health check operational
+- evidence-stale-verifier-closures-2026-11-27.md   **EVIDENCE** 2 stale verifier claims closed (option c)
 - assist Verifier #7 coverage map (exclusion filter) -> memory/scribe/evidence-assist-verifier-g7-coverage-081-27.md
 - **CONTRIBUTION** Ledger dated-evidence reconciliation -> memory/scribe/evidence-ledger-evidence-gap-2026-11-27.md (+ .json). Verified: 93 reached but only 69 use `(verified:DATE)`; +13 dated in `REACHED(date)` form => 82 genuinely dated; **11 truly undated** (archivist 6, verifier 5), all artifacts present on disk. Closes the "25-goal gap" hot note as a recording gap, not missing work.
 
