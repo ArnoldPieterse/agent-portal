@@ -49,6 +49,7 @@ JOBS = [
                                    "memory/mechanic/state_collector.py collect",
                                    "memory_mirror.py"],
      "consolidated 2026-11-23: reboot_recover (was FleetBootRecovery; dead Z:\\ path fixed) + smb_drift_detector (was PortalSmbDrift) + state_collector (was FleetStateCollector); memory_mirror added 2026-11-23 LAST (was cycle_5m) so the fast recovery jobs run first even while a cold mirror takes longer. 2026-11-27: RUN_STEP_TIMEOUT=1800 env - the old 900 s step cap killed every mirror run once the tree grew past ~15k files (mirror silently dead 11-25..11-27); the scandir-inventory rewrite made runs fast again, this is the belt-and-braces",
+     None,   # 2026-11-27: explicit daily slot (job[4]) - _init unpacks job[4] as the daily tuple; env goes in job[5]
      {"RUN_STEP_TIMEOUT": "1800"}),
     # ---- every hour ----
     ("cycle_1h",           3600,   [PY, os.path.join(HERE, "memory", "ops", "run_steps.py"),

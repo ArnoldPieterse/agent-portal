@@ -14,7 +14,6 @@ Z|memory/world
 ## GOAL (mirrors the live plan at the top of TODO.md)
 FLEET CYCLE 24: Stealth Revenue Engine live (user directive 2026-11-25; source M5 = memory/projects/stealth-revenue-engine.md) - engine goals open in 6 lanes on top of cycle-23 remainder (105/110). SSOT: /api/goals + goal_ledger.json (root).
 ## Hot Notes
-- RECALL: - **M1** (MEMORY.md:27) — SIM-style structured memory (`sim.md` + `sim_update.py`) was already
 - Archivist verified Verifier goal #7 coverage map (98.1% > 90% target); evidence leaf written, ready for Verifier to close when seat returns.
 - Built fleet_health_gauge.py for Designer goal #4; composite score 88.7/100 (weights: completion .4, interventions .2, duration .2, oom .2).
 - Verifier goal #7 (coverage map) closed: 1145/1145 files, 99.1% prod coverage, evidence at memory/orchestrator/evidence-assist-verifier-cover
@@ -24,6 +23,7 @@ FLEET CYCLE 24: Stealth Revenue Engine live (user directive 2026-11-25; source M
 - goal_ledger.json
 - Designer 10/10 goals reached; fleet 108/111 (97%). Evidence closed: memory/designer/evidence
 - Pixel built Cross-Lane Assist Graph for Designer goal #2: assist-log.json (14 nodes, 84 edges) + cockpit-assist-graph.js SVG module
+- Closed stale verifier claims #6 & #9; dated-evidence count now 86/9
 ## Durable rules
 Engine update kills instances -> RecoverAll (H2); group turns dispatch ALL AGENTS IN PARALLEL - parallel_slots=1 (L12); Stop + [CONCLUDED] + budget cap (memory/portal/bugs/xtalk-completion-2026-11-15.md); smoke agents SERIALLY; restart trap: taskkill PID before schtasks /run (memory/ops/runbooks/windows-runbook.md); multi-GB LAN copies: full-hash verify (J38). NO HUMAN GATES: a blocked lane gets an alternative path or a named cross-agent handoff.
 - 2026-11-25 Builder subs Pixel (UI/UX, frontend) + Forge (backend/API) live on Black Q8 seats; fixed bad model_id builder-q8 -> Qwen3.8-27B-Q8_0; placement verified 7s, reply queued behind active group run.

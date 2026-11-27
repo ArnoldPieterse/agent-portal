@@ -1,5 +1,5 @@
 {
-  "ts": "2026-11-27T04:24:16.094080+00:00",
+  "ts": "2026-11-27T04:46:34.058339+00:00",
   "health_score": 50,
   "fleet_status": "DEGRADED",
   "agents": [
@@ -47,9 +47,9 @@
   "hosts": [
     {
       "host": "White",
-      "vram_pct": 78.6,
-      "cpu_pct": 0.5,
-      "temp_c": 46.3
+      "vram_pct": 78.5,
+      "cpu_pct": 47.5,
+      "temp_c": 50.9
     },
     {
       "host": "Red",
@@ -451,6 +451,11 @@
         "verified": 0,
         "pct": 0.0
       },
+      "forecast-splice-g1-auto-ingest-2026-11-27": {
+        "total": 1,
+        "verified": 0,
+        "pct": 0.0
+      },
       "forecast-verifier-cluster-2026-11-24": {
         "total": 1,
         "verified": 0,
@@ -695,7 +700,7 @@
     "total_goals": 51,
     "total_verified": 50
   },
-  "open_blockers": 34,
+  "open_blockers": 35,
   "autonomous_actions": [
     {
       "ts": "2026-11-23T20:56:44Z",

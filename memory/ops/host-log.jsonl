@@ -1373,3 +1373,15 @@
 {"t": "2026-11-27 14:29:46", "event": "host-start", "pid": 27072}
 {"t": "2026-11-27 14:29:46", "event": "exit-duplicate", "existing": [21952]}
 {"t": "2026-11-27 14:33:27", "event": "launcher-restored", "path": "C:\\Users\\White\\AppData\\Roaming\\Microsoft\\Windows\\Start Menu\\Programs\\Startup\\portal_host.vbs", "stale": true}
+{"t": "2026-11-27 14:40:52", "event": "host-start", "pid": 1224}
+{"t": "2026-11-27 14:41:06", "event": "host-start", "pid": 19436}
+{"t": "2026-11-27 14:41:07", "event": "host-up", "pid": 19436, "py": "3.15.2"}
+{"t": "2026-11-27 14:41:07", "event": "launcher-restored", "path": "C:\\Projects\\AgentPortal\\AppData\\Roaming\\Microsoft\\Windows\\Start Menu\\Programs\\Startup\\portal_host.vbs", "stale": true}
+{"t": "2026-11-27 14:42:48", "event": "host-start", "pid": 23540}
+{"t": "2026-11-27 14:42:49", "event": "exit-duplicate", "existing": [19436]}
+{"t": "2026-11-27 14:43:50", "event": "host-start", "pid": 13556}
+{"t": "2026-11-27 14:43:50", "event": "host-up", "pid": 13556, "py": "3.15.2"}
+{"t": "2026-11-27 14:43:50", "event": "launcher-restored", "path": "C:\\Projects\\AgentPortal\\AppData\\Roaming\\Microsoft\\Windows\\Start Menu\\Programs\\Startup\\portal_host.vbs", "stale": true}
+{"t": "2026-11-27 14:45:54", "event": "host-start", "pid": 1820}
+{"t": "2026-11-27 14:45:54", "event": "host-up", "pid": 1820, "py": "3.15.2"}
+{"t": "2026-11-27 14:45:54", "event": "launcher-restored", "path": "C:\\Projects\\AgentPortal\\AppData\\Roaming\\Microsoft\\Windows\\Start Menu\\Programs\\Startup\\portal_host.vbs", "stale": true}

@@ -1,7 +1,7 @@
 {
-  "generated": "2026-11-27T06:33:58.531614",
+  "generated": "2026-11-27T14:46:26.616925",
   "host": "WHITE",
-  "task_count": 3,
+  "task_count": 5,
   "tasks": [
     {
       "name": "\\GCC",
@@ -10,8 +10,20 @@
       "next_run": "N/A"
     },
     {
-      "name": "\\PortalRun",
+      "name": "\\PortalBundle",
       "status": "Ready",
+      "schedule_type": "One Time Only, Minute",
+      "next_run": "27/11/2026 2:47:00 PM"
+    },
+    {
+      "name": "\\PortalGEV",
+      "status": "Ready",
+      "schedule_type": "One Time Only, Minute",
+      "next_run": "27/11/2026 2:47:00 PM"
+    },
+    {
+      "name": "\\PortalRun",
+      "status": "Running",
       "schedule_type": "One Time Only",
       "next_run": "N/A"
     },
@@ -19,7 +31,7 @@
       "name": "\\PortalWatchdog",
       "status": "Ready",
       "schedule_type": "One Time Only, Minute",
-      "next_run": "27/11/2026 6:35:00 AM"
+      "next_run": "27/11/2026 2:55:00 PM"
     }
   ],
   "edges": [
@@ -40,7 +52,10 @@
     }
   ],
   "diff": {
-    "added": [],
+    "added": [
+      "\\PortalBundle",
+      "\\PortalGEV"
+    ],
     "removed": []
   }
 }

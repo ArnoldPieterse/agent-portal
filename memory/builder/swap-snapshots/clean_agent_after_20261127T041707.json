@@ -1,0 +1,7 @@
+{
+  "agent_id": "clean_agent",
+  "new_model": "model-b",
+  "agents_json_sha": "bb984d6aa0c6e05a",
+  "fsm_state": "CONVERGING",
+  "fleet_mode_ts": "2026-11-27T00:14:10.171356+00:00"
+}
