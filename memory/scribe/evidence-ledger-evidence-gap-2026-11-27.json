@@ -1,0 +1,155 @@
+{
+  "generated": "2026-11-27",
+  "by": "Scribe",
+  "fleet_reached": 93,
+  "verified_form": 69,
+  "other_form_dated": [
+    {
+      "agent": "researcher",
+      "goal": "**Knowledge Decay Rate Measurement** - measure how quickly KB entries ",
+      "artifact": "memory/researcher/decay-forecast.md",
+      "artifact_exists": true
+    },
+    {
+      "agent": "researcher",
+      "goal": "**Seat Unavailability Impact Model v2** - extend cycle-16 model with p",
+      "artifact": "memory/researcher/unavailability-forecast.json",
+      "artifact_exists": true
+    },
+    {
+      "agent": "researcher",
+      "goal": "**Cycle Topic Relevance Scorer** - `python memory/researcher/topic_sco",
+      "artifact": "memory/researcher/topic_scorer.py",
+      "artifact_exists": true
+    },
+    {
+      "agent": "builder",
+      "goal": "**Zero-Touch Cycle Closeout Orchestrator** - `python memory/builder/cy",
+      "artifact": "memory/builder/cycle_closeout.py",
+      "artifact_exists": true
+    },
+    {
+      "agent": "builder",
+      "goal": "**Steady-State Observability Bundle (delegated)** - integrate goals 3-",
+      "artifact": "memory/builder/steady-state-scheduler-evidence-2026-11-25.md",
+      "artifact_exists": true
+    },
+    {
+      "agent": "scribe",
+      "goal": "**Convergence Invariant Contract** - define \"converged\" as machine-che",
+      "artifact": "memory/scribe/convergence_contract.py",
+      "artifact_exists": true
+    },
+    {
+      "agent": "scribe",
+      "goal": "**Steady-State Re-Certification Loop** - extend my one-shot \"Steady-St",
+      "artifact": "memory/scribe/steady-state-cert.json",
+      "artifact_exists": true
+    },
+    {
+      "agent": "verifier",
+      "goal": "**Evidence freshness SLA** - flag any evidence artifact >48h old as st",
+      "artifact": "memory/verifier/goal5-freshness-audit-evidence-2026-11-19.md",
+      "artifact_exists": true
+    },
+    {
+      "agent": "verifier",
+      "goal": "**Cross-lane contract tests** - define 5 inter-agent API contracts (e.",
+      "artifact": "memory/verifier/cross-lane-contract-assist-2026-11-26.md",
+      "artifact_exists": true
+    },
+    {
+      "agent": "verifier",
+      "goal": "**Self-verification of the verifier** - meta-test: confirm that when I",
+      "artifact": "memory/verifier/agent-portal-size-verify-2026-11-16.md",
+      "artifact_exists": true
+    },
+    {
+      "agent": "designer",
+      "goal": "**Steady-State Minimal View** - cockpit collapses to one \"All Clear\" c",
+      "artifact": "memory/designer/evidence-steady-state-indicator-2026-11-25.md",
+      "artifact_exists": true
+    },
+    {
+      "agent": "designer",
+      "goal": "**Cycle Closeout Convergence Render** - implement my existing layout s",
+      "artifact": "memory/designer/evidence-metrics-export-2026-11-25.md",
+      "artifact_exists": true
+    },
+    {
+      "agent": "designer",
+      "goal": "**\"Next Horizons\" Panel** - steady-state-only forward-planning cards f",
+      "artifact": "memory/designer/evidence-steady-state-indicator-2026-11-25.md",
+      "artifact_exists": true
+    }
+  ],
+  "truly_undated": [
+    {
+      "agent": "archivist",
+      "goal": "**Steady-State Maintenance Protocol** - productionize cycle-18 decay m",
+      "artifact": "memory/archivist/maintenance-protocol.md",
+      "artifact_exists": true
+    },
+    {
+      "agent": "archivist",
+      "goal": "**Convergence Lock Auto-Verifier** - extend the lock protocol into a s",
+      "artifact": "memory/archivist/lock_autoverifier.py",
+      "artifact_exists": true
+    },
+    {
+      "agent": "archivist",
+      "goal": "**Cross-Cycle Definitive Narrative** - single document summarizing the",
+      "artifact": "memory/archivist/fleet-narrative.md",
+      "artifact_exists": true
+    },
+    {
+      "agent": "archivist",
+      "goal": "**Decision Provenance Chain** - for each autonomous decision in the la",
+      "artifact": "memory/archivist/decision-provenance.json",
+      "artifact_exists": true
+    },
+    {
+      "agent": "archivist",
+      "goal": "**Autonomy Progression Model** - model how each agent's autonomy has g",
+      "artifact": "memory/archivist/autonomy-progression.json",
+      "artifact_exists": true
+    },
+    {
+      "agent": "archivist",
+      "goal": "**Model-Swap Knowledge Transfer Protocol** - document what knowledge m",
+      "artifact": "memory/archivist/model-swap-transfer-protocol.md",
+      "artifact_exists": true
+    },
+    {
+      "agent": "verifier",
+      "goal": "**Auto-trigger regression battery** - hook into commit events; run the",
+      "artifact": "memory/verifier/auto_trigger_regression.py",
+      "artifact_exists": true
+    },
+    {
+      "agent": "verifier",
+      "goal": "**Chaos-recovery verification** - periodically kill a model seat, conf",
+      "artifact": "memory/verifier/chaos_recovery_drill.py",
+      "artifact_exists": true
+    },
+    {
+      "agent": "verifier",
+      "goal": "**Drift detector** - diff deployed file hashes against `PIN_FILES` + c",
+      "artifact": "memory/verifier/autonomy_drift_detector.py",
+      "artifact_exists": true
+    },
+    {
+      "agent": "verifier",
+      "goal": "**Acceptance-test auto-generation** - when a goal line appears in a la",
+      "artifact": "memory/verifier/acceptance_test_generator.py",
+      "artifact_exists": true
+    },
+    {
+      "agent": "verifier",
+      "goal": "**Autonomy gap audit** - scan all `memory/ops/blockers.md` entries fro",
+      "artifact": "memory/ops/blockers.md",
+      "artifact_exists": true
+    }
+  ],
+  "note": "Ledger evidence_gated counts 93 reached; only 69 use the (verified:DATE) marker. 13 more are dated in REACHED(date) form => 82 genuinely dated. 11 truly lack any date, all with artifacts present on disk."
+}
