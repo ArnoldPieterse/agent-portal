@@ -88,3 +88,5 @@ Result: EXIT 1 (CIRCUIT_BREAKER) - correct: all 4 smoke runs show 100% TCP-fail 
 - 2026-11-27 04:35 | chaos_recovery_drill.py --self-test | PASS 8/8 | evidence-chaos-drill-assist-2026-11-27.md
 
 | 2026-11-27 11:27 | live-leg readiness readout (contribution, round=Fleet Autonomy Convergence) | gate re-measured Pixel CDP=INELIGIBLE(portal:8099 down,CDP egress 10013); reconciles Mechanic unblock-from-pale forecast; 6 blocked legs table -> memory/forge/live_leg_readiness_2026-11-27.md |
+
+| 2026-11-27 12:30 | smoke_suite.py: added per-host remediation circuit breaker (CB_OPEN_AFTER=3, CB_COOLDOWN_S=900) + --self-test; 8/8 PASS, dry-run exit 0. Stops thrash on stuck-CRIT hosts (~10x fewer wasted recover_all/WinRM calls). Evidence: evidence-smoke-circuit-breaker-2026-11-27.md | ops note: memory/ops/smoke-circuit-breaker.md |

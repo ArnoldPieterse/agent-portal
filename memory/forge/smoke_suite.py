@@ -24,6 +24,11 @@ HOSTS = [
 LATENCY_THRESHOLD_MS = 500
 PROBE_TIMEOUT_S = 5
 REMEDY_WAIT_S = 30
+# --- Circuit breaker (anti-thrash): stop hammering remediation on hosts that stay CRIT. ---
+# State persists across schtask cycles in smoke_circuit.json: {host: {consec_fails, last_remedy_ts}}
+CB_STATE_FILE = os.path.join(ROOT, "memory", "forge", "smoke_circuit.json")
+CB_OPEN_AFTER = 3     # consecutive failed remediations before a host's circuit opens
+CB_COOLDOWN_S = 900   # backoff (s) before retrying a host whose circuit is open
 
 
 def now_iso():
@@ -192,6 +197,98 @@ def remediate_host(host, use_elev=False):
         return rc == 0
 
 
+# ---------------------------------------------------------------------------
+# Remediation circuit breaker (anti-thrash). Pure + side-effect-light so it can
+# be self-tested without network. State shape:
+#   {"<host>": {"consec_fails": int, "last_remedy_ts": float}}
+# ---------------------------------------------------------------------------
+def cb_load():
+    try:
+        with open(CB_STATE_FILE, encoding="utf-8") as f:
+            return json.load(f)
+    except (OSError, ValueError):
+        return {}
+
+
+def cb_save(state):
+    try:
+        os.makedirs(os.path.dirname(CB_STATE_FILE), exist_ok=True)
+        with open(CB_STATE_FILE, "w", encoding="utf-8") as f:
+            json.dump(state, f)
+    except OSError:
+        pass
+
+
+def cb_should_remediate(name, state, now=None):
+    """Return (allow: bool, reason: str). allow=False => circuit is OPEN."""
+    if now is None:
+        now = time.time()
+    rec = state.get(name, {})
+    consec = rec.get("consec_fails", 0)
+    last = rec.get("last_remedy_ts", 0.0)
+    if consec >= CB_OPEN_AFTER and (now - last) < CB_COOLDOWN_S:
+        remain = int(CB_COOLDOWN_S - (now - last))
+        return False, "circuit OPEN (%d consec fails, backoff %ds)" % (consec, remain)
+    return True, "open"
+
+
+def cb_record(name, ok, state, now=None):
+    """Update breaker state after a remediation attempt. ok=True resets/closes."""
+    if now is None:
+        now = time.time()
+    rec = state.get(name, {"consec_fails": 0, "last_remedy_ts": 0.0})
+    if ok:
+        state[name] = {"consec_fails": 0, "last_remedy_ts": now}
+    else:
+        rec["consec_fails"] = rec.get("consec_fails", 0) + 1
+        rec["last_remedy_ts"] = now
+        state[name] = rec
+    return state
+
+
+def self_test():
+    """Pure-logic self-test for the remediation circuit breaker (no network)."""
+    checks = []
+
+    def check(label, cond):
+        checks.append((label, bool(cond)))
+
+    t0 = 1_000_000.0
+    state = {}
+    # CB_OPEN_AFTER consecutive failing remediations; each allowed while circuit still closed
+    for i in range(CB_OPEN_AFTER):
+        allow, _ = cb_should_remediate("X", state, now=t0 + i)
+        check("attempt %d allowed while closed" % (i + 1), allow is True)
+        cb_record("X", False, state, now=t0 + i)
+    # Once CB_OPEN_AFTER failures are recorded the circuit must be OPEN within cooldown
+    allow_open, _ = cb_should_remediate("X", state, now=t0 + 2.5)
+    check("circuit opens after %d consec fails" % CB_OPEN_AFTER, allow_open is False)
+    # While open, a later attempt inside the cooldown stays suppressed
+    allow_still, _ = cb_should_remediate("X", state, now=t0 + 100)
+    check("suppressed while open (inside cooldown)", allow_still is False)
+    # After the cooldown elapses (from last remedy ts) the circuit re-arms and allows a retry
+    last_ts = t0 + (CB_OPEN_AFTER - 1)
+    allow_retry, _ = cb_should_remediate("X", state, now=last_ts + CB_COOLDOWN_S + 1)
+    check("re-arms after cooldown", allow_retry is True)
+    # A successful remediation closes the circuit immediately (even if consec was high)
+    state["Y"] = {"consec_fails": 99, "last_remedy_ts": t0}
+    cb_record("Y", True, state, now=t0 + 1)
+    allow_y, _ = cb_should_remediate("Y", state, now=t0 + 2)
+    check("success closes circuit (reset)",
+          allow_y is True and state["Y"]["consec_fails"] == 0)
+    # A host with no state is always allowed
+    allow_h, _ = cb_should_remediate("H", {}, now=t0)
+    check("no-state host allowed", allow_h is True)
+
+    passed = sum(1 for _, ok in checks if ok)
+    total = len(checks)
+    print("=== smoke_suite --self-test (circuit breaker) ===")
+    for label, ok in checks:
+        print("  [%s] %s" % ("PASS" if ok else "FAIL", label))
+    print("RESULT: %d/%d" % (passed, total))
+    return passed == total
+
+
 def main():
     no_remediate = "--no-remediate" in sys.argv
     dry_run = "--dry-run" in sys.argv
@@ -224,6 +321,10 @@ def main():
         print("Remediation: %s" % ("DISABLED" if no_remediate else "ENABLED"))
         sys.exit(0)
 
+    if "--self-test" in sys.argv:
+        ok = self_test()
+        sys.exit(0 if ok else 1)
+
     ts_start = now_iso()
     print("=== Forge Smoke Suite: %s ===" % datetime.datetime.now().strftime("%Y-%m-%d %H:%M:%S"))
     print("Targets: %s" % [h["name"] for h in hosts_to_test])
@@ -250,11 +351,20 @@ def main():
         if status != "OK":
             failures.append(r)
 
-    # Phase 3: Remediate (if enabled and there are failures)
+    # Phase 3: Remediate (if enabled and there are failures) - circuit-breaker guarded
     if failures and not no_remediate:
         print("\n--- Remediating %d failed host(s) ---" % len(failures))
+        cb_state = cb_load()
         for f in failures:
             host_def = next(h for h in hosts_to_test if h["name"] == f["host"])
+            allow, reason = cb_should_remediate(f["host"], cb_state)
+            if not allow:
+                # Circuit OPEN: skip the expensive remediation call entirely (no WinRM/recover_all).
+                f["remediated"] = False
+                f["final_status"] = f["status"]
+                print("  %s -> SKIPPED (%s)" % (f["host"], reason))
+                log_line("smoke_suite: CIRCUIT OPEN %s - skipping remediation (%s)" % (f["host"], reason))
+                continue
             print("  Attempting remediation: %s (%s)" % (f["host"], f.get("error", "model not loaded")))
             log_line("smoke_suite: REMEDIATING %s - %s" % (f["host"], f.get("error", "no model")))
             ok = remediate_host(host_def, use_elev)
@@ -262,6 +372,7 @@ def main():
             # Re-probe to verify
             recheck = probe_one(host_def, timeout)
             new_status = classify(recheck)
+            cb_record(f["host"], new_status == "OK", cb_state)
             if new_status == "OK":
                 f["remediated"] = True
                 f["final_status"] = "OK"
@@ -272,6 +383,7 @@ def main():
                 f["final_status"] = new_status
                 print("  %s -> FAILED (still %s)" % (f["host"], new_status))
                 log_line("smoke_suite: %s REMEDIATION FAILED (status=%s)" % (f["host"], new_status))
+        cb_save(cb_state)
     elif failures:
         for f in failures:
             f["remediated"] = False

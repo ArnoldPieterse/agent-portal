@@ -1341,3 +1341,5 @@
 {"timestamp": "2026-11-27T02:13:10.280328+00:00", "agent": "Builder", "task_type": "WORK", "task_text": "", "productive": true, "duration_ms": 600755}
 {"timestamp": "2026-11-27T02:13:10.291328+00:00", "agent": "Scribe", "task_type": "WORK", "task_text": "", "productive": true, "duration_ms": 600705}
 {"timestamp": "2026-11-27T02:22:10.021396+00:00", "agent": "Pixel", "task_type": "WORK", "task_text": "", "productive": true, "duration_ms": 3600000}
+{"timestamp": "2026-11-27T02:31:05.840561+00:00", "agent": "Pixel", "task_type": "WORK", "task_text": "", "productive": true, "duration_ms": 535813}
+{"timestamp": "2026-11-27T02:31:05.852261+00:00", "agent": "Forge", "task_type": "WORK", "task_text": "", "productive": true, "duration_ms": 3600000}
