@@ -123,7 +123,10 @@ def task_clear_cache():
     t0 = time.perf_counter()
     cleared = []
     
-    cache_dirs = ["memory/mechanic/dep-snapshots/", "memory/mechanic/backups/"]
+    # 2026-11-27: 'memory/mechanic/backups/' REMOVED from this list - it used to delete the
+    # nightly fleet backup within 24 h (why no backup newer than 2026-11-20 ever existed).
+    # Backups now live in archive/fleet-backups/ with their own 7-day rotation (backup.py).
+    cache_dirs = ["memory/mechanic/dep-snapshots/"]
     cutoff = datetime.now(timezone.utc) - timedelta(hours=24)
     
     for d in cache_dirs:

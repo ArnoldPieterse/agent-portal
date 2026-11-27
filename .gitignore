@@ -53,3 +53,6 @@ memory/ops/mirror_cache.json*
 /memory/llm/hosts.md
 /fleet_local.json
 /agents.json
+
+# 2026-11-27: nightly fleet backups (backup.py) live outside memory/ so size_guard stays green; host-local, never commit tarballs
+archive/fleet-backups/

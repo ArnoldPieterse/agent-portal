@@ -81,6 +81,21 @@ def plan_profiles(root: Path):
             # only take the profile ROOT (the one that directly contains 'Default'), avoid double-counting children
             if (d / 'Default').is_dir() or any(c.name.startswith('Crashpad') for c in d.iterdir()):
                 to_del.append(d)
+    # 2026-11-27: the original name match above only caught '.edge*'/'_edge_profile' and
+    # missed ~24 dirs (130 MB) named _ud*, _edge_ud*, _p768, _t768 ... that Playwright
+    # verification runs create under memory/designer/. Convention (same as the mirror's
+    # _excluded): any '_'-prefixed dir directly under memory/designer/ holding a browser
+    # profile (Default/ or Crashpad/) is regenerable state, never content.
+    des = mem / 'designer'
+    if des.is_dir():
+        for d in des.iterdir():
+            try:
+                if d.is_dir() and d.name.startswith('_') and (
+                        (d / 'Default').is_dir()
+                        or any(c.is_dir() and c.name.startswith('Crashpad') for c in d.iterdir())):
+                    to_del.append(d)
+            except OSError:
+                pass
     # de-dup: drop any dir that is inside another selected dir
     to_del.sort(key=lambda p: len(p.parts))
     kept = []
@@ -91,7 +106,8 @@ def plan_profiles(root: Path):
 
 
 def plan_backups(root: Path):
-    bk = root / 'memory' / 'mechanic' / 'backups'
+    # 2026-11-27: backups moved to archive/fleet-backups/ (outside memory/, see backup.py)
+    bk = root / 'archive' / 'fleet-backups'
     to_del = []
     if not bk.exists():
         return to_del
@@ -141,7 +157,7 @@ def main():
     print(f"\n[browser-profiles] {len(prof_del)} dirs, {prof_mb:.2f} MB  (regenerable Playwright/Edge user-data)")
     for d in prof_del:
         print(f"   {act} {d.relative_to(ROOT)}/")
-    print(f"\n[fleet-backups] {len([p for p in bk_del if p.suffix=='.tar.gz'])} older tarballs, {bk_mb:.2f} MB  (keep newest same-scope)")
+    print(f"\n[fleet-backups] {len([p for p in bk_del if str(p).endswith('.tar.gz')])} older tarballs, {bk_mb:.2f} MB  (keep newest same-scope)")
     for f in sorted(bk_del, key=lambda p: -p.stat().st_size):
         print(f"   {act} {f.relative_to(ROOT)}")
 

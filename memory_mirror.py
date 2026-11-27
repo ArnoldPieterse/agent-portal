@@ -109,13 +109,17 @@ def _mt100(st):
     ns = getattr(st, "st_mtime_ns", None)
     return ns // 100 if ns is not None else int(round(st.st_mtime * 1e7))
 
-def _hash_cached(path, base, ent):
-    """md5 of path via the persistent cache: re-read ONLY when size or mtime moved."""
+def _hash_cached(path, base, ent, st=None):
+    """md5 of path via the persistent cache: re-read ONLY when size or mtime moved.
+    2026-11-27: optional pre-supplied stat (from the scandir inventory walk) so a
+    remote file costs ZERO extra SMB round-trips - on Windows DirEntry.stat() uses
+    the attributes already returned by the directory enumeration."""
     global _dirty
-    try:
-        st = os.stat(path)
-    except OSError:
-        return None
+    if st is None:
+        try:
+            st = os.stat(path)
+        except OSError:
+            return None
     if ent[base + 2] is not None and st.st_size == ent[base] and _mt100(st) == ent[base + 1]:
         return ent[base + 2]
     h = _md5(path)
@@ -124,6 +128,36 @@ def _hash_cached(path, base, ent):
     if _dirty >= 200:
         _save_cache()
     return h
+
+def _walk_inv(base_dir):
+    """relpath -> os.stat_result for every file under base_dir, via recursive scandir.
+
+    2026-11-27 (mirror timeout fix): the old design re-stated every file on BOTH sides
+    per cycle (~3 SMB round-trips x ~20k files x 3 hosts = >900 s), so runs kept dying
+    at the step timeout and the mirror was silently dead from 2026-11-25 on. On Windows,
+    scandir entries carry size/mtime/attributes from the directory enumeration itself,
+    so walking a remote tree now costs one round-trip PER DIRECTORY, not per file."""
+    inv = {}
+
+    def rec(d, prefix):
+        try:
+            it = os.scandir(d)
+        except OSError:
+            return
+        with it:
+            for e in it:
+                try:
+                    if e.is_dir(follow_symlinks=False):
+                        if not e.name.startswith(".") and e.name != "__pycache__":
+                            rec(e.path, prefix + e.name + "/")
+                    elif not e.name.startswith(".") and not e.name.endswith(".pyc"):
+                        inv[prefix + e.name] = e.stat(follow_symlinks=False)
+                except OSError:
+                    pass
+
+    rec(base_dir, "")
+    return inv
+
 
 def log(line):
     try:
@@ -255,70 +289,61 @@ def mirror_host(h):
         except Exception as e:
             errors.append("%s: %s" % (rel, str(e)[:80]))
 
-    # 2) push White memory/ tree (read-view for remotes) - LWW within skew band only
+    # 2+3) unified push/pull of the memory/ tree (2026-11-27 rewrite, replaces the old
+    # separate os.walk push + pull passes). One scandir inventory per side, then ONE
+    # symmetric LWW decision per file. Same semantics as before: new-on-either-side is
+    # copied across, mtime-LWW within the skew band, |dm|>skew_tol = SKEW_SUSPECT
+    # conflict, equal-mtime content drift stays (both old walks skipped it too).
     msrc = os.path.join(HERE, "memory")
-    if os.path.isdir(msrc):
-        for root, dirs, files in os.walk(msrc):
-            dirs[:] = [d for d in dirs if not d.startswith(".") and d != "__pycache__"]
-            for f in files:
-                if f.startswith(".") or f.endswith(".pyc"):
-                    continue
-                sp = os.path.join(root, f)
-                rel = "memory/" + os.path.relpath(sp, msrc).replace(os.sep, "/")
-                if _excluded(rel):
-                    continue
-                dp = os.path.join(dst_root, "memory", os.path.relpath(sp, msrc).replace(os.sep, os.sep))
-                try:
-                    ent = ent_for(rel)
-                    hs = _hash_cached(sp, 0, ent)
-                    hd = _hash_cached(dp, 3, ent)
-                    action, meta = _decide(sp, dp, skew_tol, hs, hd)
-                    if action == "copy":
-                        os.makedirs(os.path.dirname(dp), exist_ok=True)
-                        shutil.copy2(sp, dp)
-                        seed_both(sp, ent)
-                        pushed.append(rel)
-                    elif action == "skip_same":
-                        same += 1
-                    elif action == "skip_stale":
-                        stale += 1
-                    else:
-                        conflicts.append({"dir": "push", "path": rel, **meta})
-                except Exception as e:
-                    errors.append("%s: %s" % (rel, str(e)[:80]))
-
-    # 3) pull back remote memory/ tree - LWW within skew band; large-dm mismatches are SKEW_SUSPECT
     rm = os.path.join(dst_root, "memory")
-    if os.path.isdir(rm):
-        for root, dirs, files in os.walk(rm):
-            dirs[:] = [d for d in dirs if not d.startswith(".") and d != "__pycache__"]
-            for f in files:
-                if f.startswith(".") or f.endswith(".pyc"):
-                    continue
-                sp = os.path.join(root, f)
-                rel = "memory/" + os.path.relpath(sp, rm).replace(os.sep, "/")
-                if _excluded(rel):
-                    continue
-                dp = os.path.join(HERE, rel.replace("/", os.sep))
-                try:
-                    ent = ent_for(rel)
-                    hs = _hash_cached(sp, 3, ent)   # pull: source is the REMOTE side
-                    hd = _hash_cached(dp, 0, ent)
-                    action, meta = _decide(sp, dp, skew_tol, hs, hd)
-                    if action == "copy":
-                        os.makedirs(os.path.dirname(dp), exist_ok=True)
-                        shutil.copy2(sp, dp)
-                        seed_both(sp, ent)
-                        pulled.append(rel)
-                    elif action == "skip_same":
-                        same += 1
-                    elif action == "skip_stale":
-                        stale += 1
-                    else:
-                        conflicts.append({"dir": "pull", "path": rel, **meta})
-                except Exception as e:
-                    perrors_note = "%s: %s" % (rel, str(e)[:80])
-                    errors.append("pull " + perrors_note)
+    local_inv = _walk_inv(msrc) if os.path.isdir(msrc) else {}
+    remote_inv = _walk_inv(rm) if os.path.isdir(rm) else {}
+    for rel0 in sorted(set(local_inv) | set(remote_inv)):
+        rel = "memory/" + rel0
+        if _excluded(rel):
+            continue
+        sp = os.path.join(HERE, rel.replace("/", os.sep))          # local (White) side
+        dp = os.path.join(dst_root, rel.replace("/", os.sep))      # remote side
+        ls = local_inv.get(rel0)
+        rs = remote_inv.get(rel0)
+        try:
+            ent = ent_for(rel)
+            if ls is None or rs is None:
+                # one-sided file: push a new White file, pull a new remote file
+                src, dst = (sp, dp) if ls is not None else (dp, sp)
+                os.makedirs(os.path.dirname(dst), exist_ok=True)
+                shutil.copy2(src, dst)
+                seed_both(src, ent)   # copy2 preserves mtime -> both sides match source
+                (pushed if ls is not None else pulled).append(rel)
+                continue
+            hs = _hash_cached(sp, 0, ent, st=ls)
+            hd = _hash_cached(dp, 3, ent, st=rs)
+            if hs == hd:
+                same += 1
+                continue
+            dm = ls.st_mtime - rs.st_mtime
+            if abs(dm) > skew_tol:
+                conflicts.append({"dir": "push" if dm > 0 else "pull", "path": rel,
+                                  "hs": hs, "hd": hd,
+                                  "ssz": ls.st_size, "dsz": rs.st_size,
+                                  "src_mt": datetime.datetime.fromtimestamp(max(ls.st_mtime, rs.st_mtime)).strftime("%H:%M:%S"),
+                                  "dst_mt": datetime.datetime.fromtimestamp(min(ls.st_mtime, rs.st_mtime)).strftime("%H:%M:%S"),
+                                  "dm_s": round(dm, 1)})
+                continue
+            if dm > MTOL:
+                os.makedirs(os.path.dirname(dp), exist_ok=True)
+                shutil.copy2(sp, dp)
+                seed_both(sp, ent)
+                pushed.append(rel)
+            elif dm < -MTOL:
+                os.makedirs(os.path.dirname(sp), exist_ok=True)
+                shutil.copy2(dp, sp)
+                seed_both(dp, ent)
+                pulled.append(rel)
+            else:
+                stale += 1   # equal mtime, differing content: old code skipped it both ways
+        except Exception as e:
+            errors.append("%s: %s" % (rel, str(e)[:80]))
 
     res = {"host": name, "pushed": len(pushed), "files": pushed[:12],
            "pulled": len(pulled), "pulled_files": pulled[:12],

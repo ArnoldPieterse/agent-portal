@@ -1,13 +1,21 @@
 """Fleet Backup Automation - nightly backup of critical state with 7-day rotation.
 Usage: python memory/mechanic/backup.py --run [--restore <date>]
 Backs up: agents.json, memory/ dir, TODO.md, agent_portal.py
-Output: memory/mechanic/backups/fleet-backup-<YYYY-MM-DD_HHMMSS>.tar.gz
-Rotation: keeps 7 most recent; 8th oldest auto-deleted."""
+Output: archive/fleet-backups/fleet-backup-<YYYY-MM-DD_HHMMSS>.tar.gz
+Rotation: keeps 7 most recent; 8th oldest auto-deleted.
+
+2026-11-27: BACKUP_DIR moved OUT of memory/ - archivist/size_guard.py (300 MB hard
+limit) counts everything under memory/, and mechanic/maintenance_window.py's 24 h
+cache-clear used to delete the nightly backup within a day (why no backup newer than
+2026-11-20 ever existed). archive/fleet-backups/ is host-local: not mirrored (the
+mirror only pushes root allowlist + memory/) and gitignored. Scheduled nightly via
+portal_scheduler cycle_daily (was never scheduled - the 11-19/20 tarballs were manual).
+"""
 import os, sys, tarfile, json, shutil, glob
 from datetime import datetime, timezone
 from pathlib import Path
 
-BACKUP_DIR = Path(__file__).parent / "backups"
+BACKUP_DIR = Path(__file__).resolve().parent.parent.parent / "archive" / "fleet-backups"
 ROTATION_KEEP = 7  # keep 7 most recent backups
 
 # Files/dirs to back up (relative to project root)

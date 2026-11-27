@@ -2,35 +2,35 @@
  "window": [
   [
    "memory/goals/archive/researcher-2026-11-18.md",
-   31
+   15
   ],
   [
    "memory/goals/archive/researcher-2026-11-18.md",
-   15
+   31
   ],
   [
    "memory/workspace/INDEX.md",
    54
   ],
   [
-   "memory/workspace/INDEX.md",
-   73
-  ],
-  [
    "memory/goals/archive/orchestrator-2026-11-13.md",
    11
+  ],
+  [
+   "memory/goals/pixel.md",
+   20
   ],
   [
    "memory/scribe/MEMORY.md",
    19
   ],
   [
-   "memory/researcher/INDEX.md",
-   20
+   "memory/workspace/INDEX.md",
+   73
   ],
   [
-   "memory/researcher/open-questions-log.md",
-   131
+   "memory/synthesis/hotfile-archive-20261125.md",
+   38
   ],
   [
    "memory/workspace/INDEX.md",
@@ -45,13 +45,13 @@
    13
   ],
   [
-   "memory/goals/archive/researcher-2026-11-18.md",
-   21
+   "memory/researcher/open-questions-log.md",
+   131
   ]
  ],
- "focus_sig": "028160af",
- "parked_total": 49,
- "last_gc_ts": "2026-11-27T13:06:42",
- "rounds": 67,
- "updated": "2026-11-27T13:17:07"
+ "focus_sig": "0a0ac051",
+ "parked_total": 50,
+ "last_gc_ts": "2026-11-27T13:21:40",
+ "rounds": 68,
+ "updated": "2026-11-27T13:21:40"
 }

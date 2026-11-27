@@ -48,7 +48,8 @@ JOBS = [
                                    "memory/verifier/smb_drift_detector.py",
                                    "memory/mechanic/state_collector.py collect",
                                    "memory_mirror.py"],
-     "consolidated 2026-11-23: reboot_recover (was FleetBootRecovery; dead Z:\\ path fixed) + smb_drift_detector (was PortalSmbDrift) + state_collector (was FleetStateCollector); memory_mirror added 2026-11-23 LAST (was cycle_5m) so the fast recovery jobs run first even while a cold mirror takes longer"),
+     "consolidated 2026-11-23: reboot_recover (was FleetBootRecovery; dead Z:\\ path fixed) + smb_drift_detector (was PortalSmbDrift) + state_collector (was FleetStateCollector); memory_mirror added 2026-11-23 LAST (was cycle_5m) so the fast recovery jobs run first even while a cold mirror takes longer. 2026-11-27: RUN_STEP_TIMEOUT=1800 env - the old 900 s step cap killed every mirror run once the tree grew past ~15k files (mirror silently dead 11-25..11-27); the scandir-inventory rewrite made runs fast again, this is the belt-and-braces",
+     {"RUN_STEP_TIMEOUT": "1800"}),
     # ---- every hour ----
     ("cycle_1h",           3600,   [PY, os.path.join(HERE, "memory", "ops", "run_steps.py"),
                                    "memory/mechanic/maintenance_window.py",
@@ -66,11 +67,12 @@ JOBS = [
      "added 2026-11-25 (Mechanic goal #11): resource-budgeted stealth workflows per memory/mechanic/stealth-hosting.md; user-space only, zero model-seat impact; run logs in memory/mechanic/stealth/runs/"),
     # ---- daily, pinned 03:00 (low-activity window) ----
     ("cycle_daily",        86400,  [PY, os.path.join(HERE, "memory", "ops", "run_steps.py"),
+                                   "memory/mechanic/backup.py --run",
                                    "memory/mechanic/winrm_rotate.py",
                                    "memory/goals/forecast_engine.py",
                                    "memory/verifier/perf_gate.py",
                                    "memory/verifier/slo_enforce.py"],
-     "consolidated 2026-11-23: winrm_rotate (was schtask WinRMRotation 03:00) + forecast_engine (was FleetForecast30) + verifier_daily (perf_gate+slo_enforce, was 07:00); unified to 03:00", (3, 0)),
+     "consolidated 2026-11-23: winrm_rotate (was schtask WinRMRotation 03:00) + forecast_engine (was FleetForecast30) + verifier_daily (perf_gate+slo_enforce, was 07:00); unified to 03:00. backup.py --run added FIRST 2026-11-27 (nightly fleet backup with 7-day rotation -> archive/fleet-backups/, outside memory/ so size_guard stays green; it was never scheduled before - no backup existed after 2026-11-20)", (3, 0)),
     # ---- weekly ----
     ("schtask_dep_weekly", 604800, [PY, os.path.join(HERE, "memory", "ops", "schtask_dep_weekly.py")],
      "was PortalSchtaskDepGen; PortalDepGenCanary dropped (cmd echo no-op)"),
@@ -101,9 +103,10 @@ def _init():
         for job in JOBS:
             name, every, argv, note = job[0], job[1], job[2], job[3]
             daily = job[4] if len(job) > 4 else None
+            env_extra = job[5] if len(job) > 5 else None   # 2026-11-27: per-job env override
             if name not in _state:
                 _state[name] = {"name": name, "interval": every, "argv": argv, "note": note,
-                                "daily": daily,
+                                "daily": daily, "env": env_extra,
                                 "next_run": _next_daily(*daily) if daily else time.time() + 30,
                                 "last_run": None, "last_rc": None,
                                 "last_err": "", "runs": 0, "paused": False, "running": False,
@@ -112,9 +115,13 @@ def _init():
 
 def _launch(name):
     st = _state[name]
+    env = None
+    if st.get("env"):
+        env = dict(os.environ)
+        env.update(st["env"])
     try:
         st["proc"] = subprocess.Popen(st["argv"], cwd=HERE, stdout=subprocess.DEVNULL,
-                                      stderr=subprocess.PIPE, creationflags=NO_WINDOW)
+                                      stderr=subprocess.PIPE, creationflags=NO_WINDOW, env=env)
         st["running"] = True
         st["runs"] += 1
         _log({"t": time.strftime("%Y-%m-%d %H:%M:%S"), "job": name, "event": "start", "pid": st["proc"].pid})

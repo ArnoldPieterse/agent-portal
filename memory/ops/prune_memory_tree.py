@@ -19,7 +19,7 @@ PRACTICAL_LIMIT = 250 * 1024 * 1024  # target with headroom under the 300MB hard
 
 PRUNE_RULES = [
     # (path_glob_relative_to_ROOT, max_age_days, description)
-    ("memory/mechanic/backups/fleet-backup-*.tar.gz", 5, "Fleet backups >5d"),
+    ("archive/fleet-backups/fleet-backup-*.tar.gz", 5, "Fleet backups >5d (moved out of memory/ 2026-11-27)"),
     ("memory/archivist/dedup-report*.json", 5, "Dedup reports >5d"),
     ("_edgeud/Crashpad/reports/*", 1, "Edge crashpad >24h"),
     ("edgeprofile/Crashpad/reports/*", 1, "Edge profile crashpad >24h"),
@@ -67,7 +67,9 @@ def main():
     args = ap.parse_args()
 
     limit = int(args.limit_mb * 1024 * 1024)
-    current = tree_size(ROOT)
+    # 2026-11-27: measure memory/ only, like archivist/size_guard.py does. The old
+    # whole-project walk counted MinGit/node_modules/etc and reported ~966 MB forever.
+    current = tree_size(ROOT / 'memory')
     print(f"Current tree size: {current/1024/1024:.1f} MB (target: {args.limit_mb} MB)")
 
     prunable = find_prunable(ROOT)
