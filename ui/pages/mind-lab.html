@@ -50,6 +50,7 @@ canvas{display:block;width:100%;height:100%}
    <h2>CONTROLS</h2><div style="font-size:11px;color:var(--dim)">drag / WASD — pan<br>wheel — zoom<br>F — flow 3D mode<br>Esc — deselect</div></aside>
  <div id="cvWrap"><canvas id="cv"></canvas><div id="status">tile —, —</div><div id="toast"></div></div>
  <aside id="side"><h2>RESULTS — accept to solidify</h2><div id="results"></div>
+   <h2>PLANET FEED <span id="pfN" style="color:#7ed6ff">(0)</span></h2><div id="planetFeed"></div>
    <h2>SOLIDIFIED <span id="solN" style="color:var(--ok)">(0)</span></h2><div id="solid"></div>
    <h2>IDEAS FEED</h2><div id="ideas"></div></aside>
 </main>
@@ -97,6 +98,19 @@ function renderSide(){
  const I=document.getElementById('ideas');I.innerHTML='';
  (world.ideas||[]).slice(-5).reverse().forEach(i=>{I.insertAdjacentHTML('beforeend','<div class="card">💡 '+i.text.slice(0,120)+'<br><span style="color:var(--dim);font-size:10px">'+i.ts+'</span></div>');});}
 window.solidify=function(id,acc){api('solidify',{id,accept:acc}).then(r=>{if(r.ok){toast(acc?'Solidified as most-probable outcome ✓':'Result rejected');refresh();}else toast(r.error||'err');});};
+// ---------- planet feed (Phase 8 step 59): real-world observations from the GEV snapshot job ----------
+function planetPoll(){api('planet').then(r=>{if(!r.ok)return;const P=document.getElementById('planetFeed');P.innerHTML='';
+ const evs=r.events||[];document.getElementById('pfN').textContent='('+evs.length+')';
+ if(!evs.length)P.insertAdjacentHTML('beforeend','<div class="card" style="opacity:.55">no unacked world events — GEV snapshots land every 30 min</div>');
+ evs.forEach(e=>{const d=document.createElement('div');d.className='card';
+  d.innerHTML='🌍 <b>'+e.kind+'</b><br>'+e.desc+'<br><span style="color:var(--dim);font-size:10px">'+(e.ts||'')+'</span>'+
+   '<div class="btns"><button onclick="planetAck(\''+e.id+'\',true)">ACCEPT → solidify</button><button onclick="planetAck(\''+e.id+'\',false)">dismiss</button></div>';
+  P.appendChild(d);});
+ const hr=r.host_risk_active||[];
+ if(hr.length)P.insertAdjacentHTML('beforeend','<div class="card" style="border-color:#ff6b6b">⚠ HOST RISK: '+hr.map(h=>h.host+' — '+h.kind).join(', ')+'</div>');
+}).catch(()=>{});}
+window.planetAck=function(id,acc){api('planet-ack',{id,accept:acc}).then(r=>{if(r.ok){toast(acc?'World observation solidified ✓':'Event dismissed');planetPoll();refresh();}else toast(r.error||'err');});};
+setInterval(planetPoll,60000);planetPoll();
 function feedIdea(){const v=document.getElementById('ideaIn').value.trim();if(!v)return;
  api('idea',{text:v}).then(r=>{if(r.ok){document.getElementById('ideaIn').value='';toast('Idea fed to agent portal ✓ (broadcast to all seats)');refresh();}else toast(r.error||'err');});}
 let flash=new Set();

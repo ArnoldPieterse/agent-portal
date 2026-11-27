@@ -1,4 +1,8 @@
 <!DOCTYPE html>
+<!-- 2026-11-27 (Phase 8 step 53): full-screen GEV embed. Quick views set the iframe hash
+     (documented long-form share state: #lat=&lon=&alt=&style=&map=...); layers persist in
+     GEV's own localStorage across reloads, so a style flip only re-applies our params.
+     Health chip polls /api/gev/ping; if the globe is down we say so instead of showing a dead iframe. -->
 <html><head><meta charset="utf-8"><title>World Feed — God's Eye View</title>
 <style>
 html,body{margin:0;height:100%;background:#04070d;overflow:hidden;font-family:'Segoe UI',Arial}
@@ -13,14 +17,30 @@ iframe{width:100%;height:100%;border:0}
 #hint{position:fixed;bottom:8px;left:12px;z-index:9;font-size:11px;color:#5f7ba6}
 </style></head><body>
 <div id="bar"><b>WORLD FEED</b><span style="color:#5f7ba6">God's Eye View — live planet (local, keyless)</span>
+ <span id="chip" title="globe health via /api/gev/ping" style="font-size:11px;color:#5f7ba6">● checking…</span>
  <span class="sp"></span>
+ <button onclick="setView({style:'flir'})" title="thermal sensor look">FLIR</button>
+ <button onclick="setView({style:'nvg'})" title="surveillance / night-vision look">NVG</button>
+ <button onclick="setView({style:'normal'})" title="standard look">Normal</button>
+ <button onclick="setView({map:'esri-imagery'})" title="Esri satellite imagery">Esri</button>
+ <button onclick="setView({map:'photoreal'})" title="photoreal base map">Photo</button>
  <a href="http://localhost:4173" target="_blank" style="color:#9fd0ff;text-decoration:none;font-size:12px">open standalone ↗</a>
  <a href="/page/mind.html" style="color:#5f7ba6;text-decoration:none;font-size:12px">← mind room</a></div>
-<div id="frame"><iframe src="http://localhost:4173" allow="fullscreen"></iframe></div>
-<div id="hint">click into the globe to fly · layers &amp; sensor looks live inside GEV · data feeds are public/open</div>
+<div id="frame"><iframe src="http://localhost:4173/" allow="fullscreen"></iframe></div>
+<div id="hint">click into the globe to fly · full layer toggles + tracking live inside GEV · data feeds are public/open (keyless)</div>
 <script>
-// health probe: if the local server is down, say so instead of a dead iframe
-setInterval(function(){fetch('http://localhost:4173',{mode:'no-cors',cache:'no-store'})
- .catch(function(){}).then(function(){var f=document.querySelector('#frame iframe');
-  if(!f||f.dataset.ok)return;});},8000);
+var view={};   // our last requested hash state (camera persists in GEV's own localStorage)
+function setView(p){
+ Object.assign(view,p);
+ var h=Object.keys(view).map(function(k){return k+'='+encodeURIComponent(view[k]);}).join('&');
+ document.querySelector('#frame iframe').src='http://localhost:4173/'+(h?'#'+h:'');
+}
+function pollPing(){
+ fetch('/api/gev/ping',{cache:'no-store'}).then(function(r){return r.json();}).then(function(d){
+  var c=document.getElementById('chip');
+  if(d.globe_up){c.textContent='● globe up';c.style.color='#3ddc84';}
+  else{c.textContent='● globe DOWN — watchdog restarts it (PortalGEV)';c.style.color='#ff6b6b';}
+ }).catch(function(){var c=document.getElementById('chip');c.textContent='● ping failed';c.style.color='#ffb347';});
+}
+pollPing();setInterval(pollPing,10000);
 </script></body></html>

@@ -1,57 +1,57 @@
 {
  "window": [
   [
-   "memory/goals/archive/researcher-2026-11-18.md",
-   31
+   "memory/archivist/citation-audit-cycle5-v2-report.md",
+   86
   ],
   [
-   "memory/goals/archive/researcher-2026-11-18.md",
-   15
+   "memory/archivist/citation-audit-cycle5-v2-report.md",
+   87
   ],
   [
-   "memory/goals/archive/orchestrator-2026-11-13.md",
-   11
+   "memory/archivist/citation-audit-cycle5-v2-report.md",
+   97
   ],
   [
-   "memory/workspace/INDEX.md",
-   54
+   "memory/archivist/citation-audit-cycle5-v2-report.md",
+   98
   ],
   [
-   "memory/workspace/INDEX.md",
-   73
+   "memory/archivist/citation-audit-cycle5-v2-report.md",
+   99
   ],
   [
-   "memory/scribe/MEMORY.md",
-   19
+   "memory/archivist/citation-audit-cycle5-v2-report.md",
+   100
   ],
   [
-   "memory/synthesis/cycle-narrative.md",
+   "memory/archivist/citation-audit-cycle5-v2-report.md",
+   101
+  ],
+  [
+   "memory/archivist/citation-audit-cycle5-v2-report.md",
+   126
+  ],
+  [
+   "memory/researcher/citation-manifest-2026-11-15.md",
    12
   ],
   [
-   "memory/goals/archive/researcher-2026-11-18.md",
-   21
+   "memory/researcher/source-reliability-2026-11-22.md",
+   33
   ],
   [
-   "memory/researcher/INDEX.md",
-   20
+   "memory/researcher/source-reliability-2026-11-22.md",
+   39
   ],
   [
-   "memory/goals/archive/researcher-2026-11-18.md",
-   13
-  ],
-  [
-   "memory/goals/pixel.md",
-   20
-  ],
-  [
-   "memory/synthesis/hotfile-archive-20261125.md",
-   38
+   "memory/researcher/source-reliability-2026-11-22.md",
+   43
   ]
  ],
- "focus_sig": "1e935a7f",
- "parked_total": 5,
- "last_gc_ts": "2026-11-27T11:22:40",
- "rounds": 25,
- "updated": "2026-11-27T11:27:21"
+ "focus_sig": "8b35498e",
+ "parked_total": 17,
+ "last_gc_ts": "2026-11-27T11:30:56",
+ "rounds": 33,
+ "updated": "2026-11-27T11:32:32"
 }

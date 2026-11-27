@@ -1,0 +1,7 @@
+{
+ "user_location": null,
+ "_user_location_note": "Set to {\"lat\": <float>, \"lon\": <float>, \"place\": \"name\"} to enable the local situation_brief in snapshots. Chosen by us - never derived from user activity (step 63: no location leakage).",
+ "host_locations": {},
+ "_host_locations_note": "{\"White\": [lat, lon], ...} - enables host-risk cross-reference (step 58): quakes/cyclones within risk_radius_km of a host append NEEDS-HUMAN to memory/ops/blockers.md.",
+ "risk_radius_km": 500
+}

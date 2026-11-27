@@ -291,6 +291,35 @@ var coin;
  coin.position.set(12.5,2.3,11.2);coin.rotation.z=Math.PI/2;scene.add(coin);
  var l=makeLabel('dcabots — your BTC trading bots (by the market window)','#fbbf24',1.2);l.position.set(12.5,.9,10.6);scene.add(l);
 })();
+/* ============ WORLD FEED WINDOW (Phase 8 step 54): wall monitor on the south window wall ============
+   Static satellite-style texture at rest (zero iframe cost until clicked); click opens
+   /page/gods-eye.html with the live globe. */
+(function(){
+ var wc=document.createElement('canvas');wc.width=512;wc.height=300;
+ var x2=wc.getContext('2d');
+ x2.fillStyle='#06121f';x2.fillRect(0,0,512,300);           /* ocean */
+ var seed=7;function rnd(){seed=(seed*16807)%2147483647;return seed/2147483647;}
+ for(var i=0;i<26;i++){                                     /* landmasses: muted blobs */
+  x2.fillStyle='rgba('+(52+rnd()*30|0)+','+(96+rnd()*40|0)+','+(60+rnd()*24|0)+',.8)';
+  var cx=rnd()*512,cy=rnd()*300,rx=18+rnd()*70,ry=12+rnd()*40;
+  x2.beginPath();x2.ellipse(cx,cy,rx,ry,rnd()*3,0,6.29);x2.fill();}
+ x2.strokeStyle='rgba(120,170,255,.14)';x2.lineWidth=1;     /* graticule */
+ for(var gx=0;gx<=512;gx+=64){x2.beginPath();x2.moveTo(gx,0);x2.lineTo(gx,300);x2.stroke();}
+ for(var gy=0;gy<=300;gy+=50){x2.beginPath();x2.moveTo(0,gy);x2.lineTo(512,gy);x2.stroke();}
+ x2.fillStyle='#3ddc84';x2.beginPath();x2.arc(26,26,5,0,6.29);x2.fill();
+ x2.font='bold 17px Consolas,monospace';x2.fillStyle='#bfe3ff';
+ x2.fillText('WORLD FEED — GEV live planet',44,32);
+ x2.font='12px Consolas,monospace';x2.fillStyle='#5f7ba6';
+ x2.fillText('flights · ships · satellites · weather · quakes   (keyless)',44,52);
+ var wtex=new THREE.CanvasTexture(wc);
+ var mon=new THREE.Group();mon.position.set(9.3,2.8,RD-.18);mon.rotation.y=Math.PI;scene.add(mon);
+ var frame=new THREE.Mesh(new THREE.BoxGeometry(3.7,2.25,.14),new THREE.MeshStandardMaterial({color:0x0d1424,roughness:.6,metalness:.3}));
+ mon.add(frame);
+ var screen=new THREE.Mesh(new THREE.PlaneGeometry(3.5,2.05),new THREE.MeshBasicMaterial({map:wtex}));
+ screen.position.z=-.08;screen.userData.worldFeed=true;mon.add(screen);
+ frame.userData.worldFeed=true;
+ var wl=makeLabel('click → fly the live globe','#7ed6ff',1.0);wl.position.set(9.3,1.55,RD-.4);scene.add(wl);
+})();
 /* ============ FACTS ON THE WALLS (memory/ tree) — pinned where they belong ============ */
 var facts=[
  ['github.com/ArnoldPieterse/agent-portal','#93c5fd',-RW+1.2,5.6,6],
@@ -450,8 +479,10 @@ canvas.addEventListener('click',function(ev){
   var o=hits[hi].object;
   while(o){if(o.userData&&o.userData.podId){found=o.userData.podId;break;}
    if(o.userData&&o.userData.lane){found='book:'+o.userData.lane;break;}
+   if(o.userData&&o.userData.worldFeed){found='worldfeed';break;}   /* Phase 8 step 54 */
    o=o.parent;}}
  if(!found){acard.style.display='none';return;}
+ if(found==='worldfeed'){ev.stopImmediatePropagation();location.href='/page/gods-eye.html';return;}
  if(found.indexOf('book:')===0){ev.stopImmediatePropagation();showAgentCard(found.slice(5));return;}
  var reg=!!agentHome[found];
  if(!reg)ev.stopImmediatePropagation();
