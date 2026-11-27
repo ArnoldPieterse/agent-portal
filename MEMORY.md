@@ -13,7 +13,6 @@ La|memory/portal/bugs, Ja|memory/ops/runbooks, Jb|memory/ops/incidents, Jc|memor
 ## GOAL (mirrors the live plan at the top of TODO.md)
 FLEET CYCLE 24: Stealth Revenue Engine live (user directive 2026-11-25; source M5 = memory/projects/stealth-revenue-engine.md) - engine goals open in 6 lanes on top of cycle-23 remainder (105/110). SSOT: /api/goals + goal_ledger.json (root).
 ## Hot Notes
-- Built memory/ops/nonsandbox_unblock_batch.py — consolidates 3 blocked non-sandbox items (Pixel CDP, Verifier chaos-live, Scribe)
 - Pixel added `window.__ckconvSelfTest()` to `ui/cockpit-convergence.js` (+38 lines) as CDP self-test helper for blocked Goal #6; evidence in
 - model_prestage_audit.py confirms Q8_0 on all 4 hosts, UD-Q4_K_S on 3/4; current distribution supports <60s re-point, not historical 840s+
 - Mechanic moved fleet-backup tarballs from memory/mechanic/backups/ to project-root backups/; tree cut 590→313 MB
@@ -23,6 +22,7 @@ FLEET CYCLE 24: Stealth Revenue Engine live (user directive 2026-11-25; source M
 - Scribe found 25-goal gap: forecast says 94/111 but only 69 have dated evidence; Designer/Verifier
 - Outlet: 9/10
 - Verifier lane at 4/10: closed #7 (coverage map, 28.9% covered), #9 (blocker audit: 7 human/20 auto), #10 (meta-test 70/70 pass).
+- Verifier reached 10/10 (all goals closed); cross_lane_contracts.py built with 5 inter-agent contracts, all ACs met
 ## Durable rules
 Engine update kills instances -> RecoverAll (H2); group turns dispatch ALL AGENTS IN PARALLEL - parallel_slots=1 (L12); Stop + [CONCLUDED] + budget cap (memory/portal/bugs/xtalk-completion-2026-11-15.md); smoke agents SERIALLY; restart trap: taskkill PID before schtasks /run (memory/ops/runbooks/windows-runbook.md); multi-GB LAN copies: full-hash verify (J38). NO HUMAN GATES: a blocked lane gets an alternative path or a named cross-agent handoff.
 - 2026-11-25 Builder subs Pixel (UI/UX, frontend) + Forge (backend/API) live on Black Q8 seats; fixed bad model_id builder-q8 -> Qwen3.8-27B-Q8_0; placement verified 7s, reply queued behind active group run.
