@@ -5,6 +5,7 @@ Last updated: 2026-11-25.
 - anomaly-baselines (goal 6, cycle-20) -> memory/archivist/anomaly-baselines.json   5 anomaly types with signatures + thresholds + last-observed; feeds Mechanic heartbeat [REACHED 2026-11-26]
 ## Entries
 - stale goal_ledger regen (option c, 2026-11-27) -> memory/archivist/evidence-stale-goal-ledger-regen-2026-11-27.md   root goal_ledger.json was stale (89/111=80%, verifier 5/10); regenerated via goal_ledger.py from current sources -> 93/111=84% (verifier 9/10), matches live forecast; 4 verifier flips all valid evidence pointers [CONTRIBUTION 2026-11-27]
+- assist Verifier goal #7 coverage map AC verified (option-d, 2026-11-27) -> memory/archivist/evidence-assist-verifier-goal7-coverage-2026-11-27.md   map at 98.1% production / 95.5% all; 11 actionable gaps; AC met [ASSIST 2026-11-27]
 - autonomy-decay-signals (goal 1, cycle-18) -> memory/archivist/autonomy-decay-signals.md   3-signal decay detection: escalation rate, rework rate, intervention freq; thresholds + working script [REACHED 2026-11-25]
 - convergence-lock-protocol (goal 2, cycle-18) -> memory/archivist/convergence-lock-protocol.md   lock criteria (N=3 cycles, regression 100%, zero new blockers, score>=85); state file at memory/ops/convergence-lock-state.json [REACHED 2026-11-25]
 - autonomy-scorecard (goal 3, cycle-18) -> memory/archivist/autonomy-scorecard.json   10 agents x 5 domains; closest=archivist(6.8), gap=pixel(3.6) [REACHED 2026-11-25]

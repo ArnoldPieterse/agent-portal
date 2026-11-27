@@ -2,56 +2,56 @@
  "window": [
   [
    "memory/goals/archive/researcher-2026-11-18.md",
-   31
-  ],
-  [
-   "memory/goals/archive/researcher-2026-11-18.md",
    15
   ],
   [
-   "memory/synthesis/cycle-narrative.md",
-   12
-  ],
-  [
-   "memory/workspace/INDEX.md",
-   54
-  ],
-  [
-   "memory/scribe/MEMORY.md",
-   19
+   "memory/goals/archive/researcher-2026-11-18.md",
+   31
   ],
   [
    "memory/workspace/INDEX.md",
    73
   ],
   [
+   "memory/workspace/INDEX.md",
+   54
+  ],
+  [
+   "memory/synthesis/cycle-narrative.md",
+   12
+  ],
+  [
+   "memory/scribe/MEMORY.md",
+   19
+  ],
+  [
    "memory/goals/archive/orchestrator-2026-11-13.md",
    11
-  ],
-  [
-   "memory/synthesis/hotfile-archive-20261125.md",
-   38
-  ],
-  [
-   "memory/goals/archive/researcher-2026-11-18.md",
-   21
-  ],
-  [
-   "memory/workspace/INDEX.md",
-   68
   ],
   [
    "memory/workspace/INDEX.md",
    79
   ],
   [
-   "memory/ops/fleet-summary-2026-11-23.md",
-   19
+   "memory/workspace/INDEX.md",
+   68
+  ],
+  [
+   "memory/goals/archive/researcher-2026-11-18.md",
+   21
+  ],
+  [
+   "memory/researcher/INDEX.md",
+   20
+  ],
+  [
+   "memory/synthesis/hotfile-archive-20261125.md",
+   38
   ]
  ],
- "focus_sig": "5242ac6f",
- "parked_total": 45,
- "last_gc_ts": "2026-11-27T12:48:55",
- "rounds": 57,
- "updated": "2026-11-27T12:51:13"
+ "focus_sig": "51640ef4",
+ "parked_total": 46,
+ "last_gc_ts": "2026-11-27T12:57:07",
+ "rounds": 59,
+ "updated": "2026-11-27T13:03:25"
 }

@@ -439,3 +439,4 @@
 {"ts": "2026-11-27T12:48:55", "ref": ["memory/goals/archive/researcher-2026-11-18.md", 13], "focus_sig": "5242ac6f", "reason": "lod-evict"}
 {"ts": "2026-11-27T12:48:55", "ref": ["memory/workspace/INDEX.md", 3], "focus_sig": "5242ac6f", "reason": "lod-evict"}
 {"ts": "2026-11-27T12:48:55", "ref": ["memory/scribe/MEMORY.md", 12], "focus_sig": "5242ac6f", "reason": "lod-evict"}
+{"ts": "2026-11-27T12:57:07", "ref": ["memory/ops/fleet-summary-2026-11-23.md", 19], "focus_sig": "51640ef4", "reason": "lod-evict"}
