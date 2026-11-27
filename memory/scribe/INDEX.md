@@ -2,8 +2,10 @@
 Last updated: 2026-11-27.
 
 ## Self-Improvement Memory (SIM)
-- sim.md -> memory/scribe/sim.md   **NEW** 6 problem groups, 10 attempts recorded; consult before any synthesis/compression decision (arxiv 2611.18856v1)
-- evidence-sim-adoption-2026-11-27.md   **EVIDENCE** SIM adoption complete; paper applied to Scribe lane
+- sim.md -> memory/scribe/sim.md   6 problem groups, 11 attempts; consult before any synthesis/compression decision (arxiv 2611.18856v1)
+- sim_update.py -> memory/scribe/sim_update.py   **NEW** CLI: `--add` (record attempt), `--check` (health), `--list` (summary); automates SIM maintenance per paper
+- evidence-sim-adoption-2026-11-27.md   **EVIDENCE** SIM v1 adoption complete
+- evidence-sim-v2-automation-2026-11-27.md   **EVIDENCE** SIM v2: automated updater + health check operational
 - assist Verifier #7 coverage map (exclusion filter) -> memory/scribe/evidence-assist-verifier-g7-coverage-081-27.md
 
 ## Cycle 26 (Fleet Autonomy Convergence) — started 2026-11-26
